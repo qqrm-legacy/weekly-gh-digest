@@ -2,275 +2,6 @@
   "schema": 0,
   "snapshots": [
     {
-      "full_name": "852wa/JIZURA",
-      "captured_at": "2026-09-26T18:56:59Z",
-      "stars": 603,
-      "forks": 107,
-      "language": "HTML",
-      "description": "歌詞から文字PVを自動で組み立てるブラウザアプリ",
-      "html_url": "https://github.com/852wa/JIZURA",
-      "topics": [],
-      "created_at": "2026-09-23T04:04:13Z",
-      "updated_at": "2026-09-26T18:52:48Z",
-      "default_branch": "main",
-      "sources": [
-        {
-          "type": "new_repo_search"
-        }
-      ],
-      "readme_excerpt": null
-    },
-    {
-      "full_name": "Contrastive-LM/CLM",
-      "captured_at": "2026-09-26T18:56:59Z",
-      "stars": 1510,
-      "forks": 121,
-      "language": "Python",
-      "description": null,
-      "html_url": "https://github.com/Contrastive-LM/CLM",
-      "topics": [],
-      "created_at": "2026-09-23T19:29:56Z",
-      "updated_at": "2026-09-26T18:54:44Z",
-      "default_branch": "main",
-      "sources": [
-        {
-          "type": "new_repo_search"
-        }
-      ],
-      "readme_excerpt": "<!-- markdownlint-disable MD001 MD041 -->\n<p align=\"center\">\n  <picture>\n    <img alt=\"CLM v0.1\" src=\"assets/logo.png\" width=45%>\n  </picture>\n</p>\n\n<h3 align=\"center\">\nContrastive Language Models\n</h3>\n\n<p align=\"center\">\n<i>A System One Model for Fast and Generalizable Decision-Making</i>\n</p>\n\n<p align=\"center\">\n| 📄 <a href=\"https://contrastive-lm.notion.site\"><b>Blog</b></a> | 🗣️ <a href=\"https://discord.gg/5dAQEDJBs\"><b>Discord</b></a> | 🤗 <a href=\"https://huggingface.co/Contrastive-LM\"><b>Data &amp; Models</b></a> | 📚 <a href=\"#api-reference\"><b>API Reference</b></a> | 🛠️ <a href=\"#fine-tuning-clm-on-your-own-data\"><b>Fine-Tuning Tutorial</b></a> |\n</p>\n\n🔥 **Contrastive Language Models (CLMs)** are a new class of **System One\nmodel** trained with a **contrastive learning** objective that connects\n**states and actions**. This repo serves **CLM-8B** behind a\nTypeSafe-compatible API.\n\n- **CLM-8B** is pre-trained on **60M Nemotron Q&A pairs**, mid-trained on\n  **30M synthetic hard ne"
-    },
-    {
-      "full_name": "Haleclipse/CometixCode",
-      "captured_at": "2026-09-26T18:56:59Z",
-      "stars": 562,
-      "forks": 33,
-      "language": "Rust",
-      "description": "An unofficial Rust reimplementation of Anthropic's Claude Code terminal UI, built on iocraft",
-      "html_url": "https://github.com/Haleclipse/CometixCode",
-      "topics": [],
-      "created_at": "2026-09-20T08:58:08Z",
-      "updated_at": "2026-09-26T18:42:58Z",
-      "default_branch": "master",
-      "sources": [
-        {
-          "type": "new_repo_search"
-        }
-      ],
-      "readme_excerpt": null
-    },
-    {
-      "full_name": "JohnHeibel/PDoomVideo",
-      "captured_at": "2026-09-26T18:56:59Z",
-      "stars": 1020,
-      "forks": 104,
-      "language": "JavaScript",
-      "description": "Source code for the Claude Opus 5.5 music video for I'm Upping My P(doom)",
-      "html_url": "https://github.com/JohnHeibel/PDoomVideo",
-      "topics": [],
-      "created_at": "2026-09-22T23:32:19Z",
-      "updated_at": "2026-09-26T18:46:44Z",
-      "default_branch": "main",
-      "sources": [
-        {
-          "type": "new_repo_search"
-        }
-      ],
-      "readme_excerpt": null
-    },
-    {
-      "full_name": "Mak5er/AirCard-iOS",
-      "captured_at": "2026-09-26T18:56:59Z",
-      "stars": 1024,
-      "forks": 94,
-      "language": "Swift",
-      "description": " Apple Wallet card skins and lock screen passcode themes on iOS 27. ",
-      "html_url": "https://github.com/Mak5er/AirCard-iOS",
-      "topics": [],
-      "created_at": "2026-09-19T09:22:23Z",
-      "updated_at": "2026-09-26T18:55:12Z",
-      "default_branch": "main",
-      "sources": [
-        {
-          "type": "new_repo_search"
-        }
-      ],
-      "readme_excerpt": null
-    },
-    {
-      "full_name": "Rizzo-AI-Academy/rizzo-flow",
-      "captured_at": "2026-09-26T18:56:59Z",
-      "stars": 597,
-      "forks": 34,
-      "language": "Python",
-      "description": "The open, local take on Jev: typed decisions from an LLM, without generating a single token",
-      "html_url": "https://github.com/Rizzo-AI-Academy/rizzo-flow",
-      "topics": [],
-      "created_at": "2026-09-21T00:00:02Z",
-      "updated_at": "2026-09-26T18:54:56Z",
-      "default_branch": "main",
-      "sources": [
-        {
-          "type": "new_repo_search"
-        }
-      ],
-      "readme_excerpt": null
-    },
-    {
-      "full_name": "anishfn/shapeshift",
-      "captured_at": "2026-09-26T18:56:59Z",
-      "stars": 675,
-      "forks": 72,
-      "language": "TypeScript",
-      "description": "An input that becomes what you mean: one text box that morphs into the right UI as you type. Powered by TypeSafe Jev, works offline.",
-      "html_url": "https://github.com/anishfn/shapeshift",
-      "topics": [],
-      "created_at": "2026-09-22T08:52:32Z",
-      "updated_at": "2026-09-26T18:42:21Z",
-      "default_branch": "main",
-      "sources": [
-        {
-          "type": "new_repo_search"
-        }
-      ],
-      "readme_excerpt": null
-    },
-    {
-      "full_name": "asokurasu/text-humanizer",
-      "captured_at": "2026-09-26T18:56:59Z",
-      "stars": 724,
-      "forks": 83,
-      "language": "Python",
-      "description": "A completely free open-sourced project designed to humanize AI-generated text through a multilingual LLM-powered rewriting pipeline. ",
-      "html_url": "https://github.com/asokurasu/text-humanizer",
-      "topics": [
-        "ai-detector",
-        "ai-detector-bypass",
-        "ai-detectors",
-        "text-humanizer",
-        "zerogpt",
-        "zerogpt-bypass"
-      ],
-      "created_at": "2026-09-23T17:32:37Z",
-      "updated_at": "2026-09-26T18:09:44Z",
-      "default_branch": "main",
-      "sources": [
-        {
-          "type": "new_repo_search"
-        }
-      ],
-      "readme_excerpt": null
-    },
-    {
-      "full_name": "deepopen-com/deepopen",
-      "captured_at": "2026-09-26T18:56:59Z",
-      "stars": 1035,
-      "forks": 110,
-      "language": "Python",
-      "description": "非自回归System 1决策引擎，专为结构化类型决策场景设计  DeepOpen Multilingual, non-autoregressive System 1 decision engine. ",
-      "html_url": "https://github.com/deepopen-com/deepopen",
-      "topics": [],
-      "created_at": "2026-09-21T02:12:24Z",
-      "updated_at": "2026-09-26T17:10:32Z",
-      "default_branch": "main",
-      "sources": [
-        {
-          "type": "new_repo_search"
-        }
-      ],
-      "readme_excerpt": null
-    },
-    {
-      "full_name": "dgreenheck/tidewater",
-      "captured_at": "2026-09-26T18:56:59Z",
-      "stars": 709,
-      "forks": 173,
-      "language": "JavaScript",
-      "description": "Coastal town built with Opus 5.5",
-      "html_url": "https://github.com/dgreenheck/tidewater",
-      "topics": [],
-      "created_at": "2026-09-23T21:40:29Z",
-      "updated_at": "2026-09-26T18:56:10Z",
-      "default_branch": "main",
-      "sources": [
-        {
-          "type": "new_repo_search"
-        }
-      ],
-      "readme_excerpt": null
-    },
-    {
-      "full_name": "driceroland/Search",
-      "captured_at": "2026-09-26T18:56:59Z",
-      "stars": 2083,
-      "forks": 183,
-      "language": "Swift",
-      "description": "A small, fast WebKit browser for macOS, by Office Commun.",
-      "html_url": "https://github.com/driceroland/Search",
-      "topics": [],
-      "created_at": "2026-09-20T10:29:47Z",
-      "updated_at": "2026-09-26T18:45:15Z",
-      "default_branch": "main",
-      "sources": [
-        {
-          "type": "new_repo_search"
-        }
-      ],
-      "readme_excerpt": "# Search\n\nA small, fast, quiet web browser for the Mac, by [Office Commun](https://officecommun.com).\n\n![Search, with its tabs down the left and a page taking the rest of the window](.github/screenshot.png)\n\n**[Download for macOS →](https://officecommun.com/search)** · macOS 14 or later · free · about 3 MB\n\nOr with [Homebrew](https://brew.sh): `brew install --cask driceroland/tap/search`\n\n---\n\n## What it is\n\nSearch is a browser with nothing in the way. A row of tabs — across the top or down the left, your choice — and the page. There is no toolbar, no start page, no sidebar of suggestions, no account to sign into, nothing that wants your attention. You type an address or a few words in one field and you are on the page.\n\nIt uses **WebKit**, the engine already inside every Mac (it is what Safari runs on). That is why the whole app is about 3 MB on disk and opens instantly: there is no second copy of Chromium to download, update and keep in memory.\n\nIt was built by a design studio that s"
-    },
-    {
-      "full_name": "freestylefly/WeChatBridge",
-      "captured_at": "2026-09-26T18:56:59Z",
-      "stars": 782,
-      "forks": 299,
-      "language": "Swift",
-      "description": "微信聊天记录一键转发到 AI Agent 与 Obsidian 的原生 macOS 工具",
-      "html_url": "https://github.com/freestylefly/WeChatBridge",
-      "topics": [
-        "ai-agent",
-        "chat-history",
-        "macos",
-        "obsidian",
-        "share-extension",
-        "swift",
-        "wechat"
-      ],
-      "created_at": "2026-09-21T02:54:51Z",
-      "updated_at": "2026-09-26T17:36:46Z",
-      "default_branch": "main",
-      "sources": [
-        {
-          "type": "new_repo_search"
-        }
-      ],
-      "readme_excerpt": null
-    },
-    {
-      "full_name": "heyjunpenn/awesome-jev",
-      "captured_at": "2026-09-26T18:56:59Z",
-      "stars": 848,
-      "forks": 60,
-      "language": "Astro",
-      "description": "A verified, community-maintained catalog of 916 open-source projects built with Jev.",
-      "html_url": "https://github.com/heyjunpenn/awesome-jev",
-      "topics": [
-        "astro",
-        "awesome",
-        "awesome-jev",
-        "awesome-list",
-        "jev",
-        "typesafe"
-      ],
-      "created_at": "2026-09-19T05:14:36Z",
-      "updated_at": "2026-09-26T17:13:31Z",
-      "default_branch": "main",
-      "sources": [
-        {
-          "type": "new_repo_search"
-        }
-      ],
-      "readme_excerpt": null
-    },
-    {
       "full_name": "jev-chat/jev-chat-jarvis",
       "captured_at": "2026-09-26T18:56:59Z",
       "stars": 6661,
@@ -706,6 +437,792 @@
         }
       ],
       "readme_excerpt": "# ZCode\n\n<div align=\"center\">\n  <img src=\"public/logo/icons/1024x1024.png\" alt=\"ZCode\" width=\"128\" height=\"128\" />\n</div>\n<p align=\"center\">\n  <a href=\"https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=47ag983c-8fcb-4d6d-814b-5395193a712c&amp;qr_code=true\">飞书社群</a> ·\n  <a href=\"https://discord.gg/z9aBcQXZQ3\">Discord</a>\n</p>\n<p align=\"center\">\n  简体中文 | <a href=\"README.en.md\">English</a>\n</p>\n\n\n\nZCode 是 AI 编程工作台，提供桌面应用、浏览器界面和终端 Agent。本仓库包含客户端、后端服务、共享 UI，以及 Agent CLI 与运行时源码。\n\n## 更新\n\n- 2026-9-23：更新至 ZCode v3.14.3 版本。\n\n## 初始化\n\n准备 Git、Node.js **24.14.0** 和 pnpm **10.33.2**，版本以 [mise.toml](mise.toml) 为准。以下开发和打包命令均在仓库根目录执行。\n\n```bash\npnpm bootstrap\n```\n\n`pnpm bootstrap` 安装 workspace 依赖、准备桌面本地运行资源，再执行 `build:bootstrap`。\n\nAgent CLI 与运行时源码位于 [apps/zcode-cli/](apps/zcode-cli/)，作为普通目录随本仓库一起克隆，无需单独拉取或初始化 Git submodule。\n\n根据需要选择其他初始化或构建入口：\n\n| 命令                           | 用途                                                              |\n| ------------------------------ | ----------"
+    },
+    {
+      "full_name": "852wa/JIZURA",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 604,
+      "forks": 107,
+      "language": "HTML",
+      "description": "歌詞から文字PVを自動で組み立てるブラウザアプリ",
+      "html_url": "https://github.com/852wa/JIZURA",
+      "topics": [],
+      "created_at": "2026-09-23T04:04:13Z",
+      "updated_at": "2026-09-26T18:58:08Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Contrastive-LM/CLM",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 1510,
+      "forks": 121,
+      "language": "Python",
+      "description": null,
+      "html_url": "https://github.com/Contrastive-LM/CLM",
+      "topics": [],
+      "created_at": "2026-09-23T19:29:56Z",
+      "updated_at": "2026-09-26T18:54:44Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 50614,
+      "forks": 4630,
+      "language": "Python",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "html_url": "https://github.com/HKUDS/CLI-Anything",
+      "topics": [],
+      "created_at": "2026-03-08T13:52:57Z",
+      "updated_at": "2026-09-26T19:01:29Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+          "full_name": "HKUDS/CLI-Anything",
+          "language": "Python",
+          "trending_stars_period": 972,
+          "trending_total_forks": null,
+          "trending_total_stars": 50614,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": "<h1 align=\"center\"><img src=\"assets/icon.png\" alt=\"\" width=\"64\" style=\"vertical-align: middle;\">&nbsp; CLI-Anything: Making ALL Software Agent-Native</h1>\n\n<div align=\"center\">\n<a href=\"https://www.star-history.com/hkuds/cli-anything\"><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://api.star-history.com/badge?repo=HKUDS/CLI-Anything&amp;type=trending&amp;theme=dark\"><source media=\"(prefers-color-scheme: light)\" srcset=\"https://api.star-history.com/badge?repo=HKUDS/CLI-Anything&amp;type=trending\"><img alt=\"GitHub Trending Repository of the Day\" src=\"https://api.star-history.com/badge?repo=HKUDS/CLI-Anything&amp;type=trending\" height=\"55\"></picture></a>&#32;<a href=\"https://trendshift.io/repositories/22991\" target=\"_blank\"><img src=\"https://trendshift.io/api/badge/repositories/22991\" alt=\"HKUDS/CLI-Anything | Trendshift\" height=\"55\"></a>&#32;<a href=\"https://www.star-history.com/hkuds/cli-anything\"><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https:/"
+    },
+    {
+      "full_name": "Haleclipse/CometixCode",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 562,
+      "forks": 33,
+      "language": "Rust",
+      "description": "An unofficial Rust reimplementation of Anthropic's Claude Code terminal UI, built on iocraft",
+      "html_url": "https://github.com/Haleclipse/CometixCode",
+      "topics": [],
+      "created_at": "2026-09-20T08:58:08Z",
+      "updated_at": "2026-09-26T18:42:58Z",
+      "default_branch": "master",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JohnHeibel/PDoomVideo",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 1020,
+      "forks": 104,
+      "language": "JavaScript",
+      "description": "Source code for the Claude Opus 5.5 music video for I'm Upping My P(doom)",
+      "html_url": "https://github.com/JohnHeibel/PDoomVideo",
+      "topics": [],
+      "created_at": "2026-09-22T23:32:19Z",
+      "updated_at": "2026-09-26T18:46:44Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Mak5er/AirCard-iOS",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 1026,
+      "forks": 94,
+      "language": "Swift",
+      "description": " Apple Wallet card skins and lock screen passcode themes on iOS 27. ",
+      "html_url": "https://github.com/Mak5er/AirCard-iOS",
+      "topics": [],
+      "created_at": "2026-09-19T09:22:23Z",
+      "updated_at": "2026-09-26T19:01:04Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NVIDIA/Model-Optimizer",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 4686,
+      "forks": 663,
+      "language": "Python",
+      "description": "A unified library of SOTA model optimization techniques like quantization, distillation, pruning, neural architecture search, speculative decoding, etc. It compresses deep learning models for downstream deployment frameworks like TensorRT-LLM, TensorRT, vLLM, etc. to optimize inference speed.",
+      "html_url": "https://github.com/NVIDIA/Model-Optimizer",
+      "topics": [],
+      "created_at": "2024-04-23T19:00:54Z",
+      "updated_at": "2026-09-26T18:59:48Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A unified library of SOTA model optimization techniques like quantization, distillation, pruning, neural architecture search, speculative decoding, etc. It compresses deep learning models for downstream deployment frameworks like TensorRT-LLM, TensorRT, vLLM, etc. to optimize inference speed.",
+          "full_name": "NVIDIA/Model-Optimizer",
+          "language": "Python",
+          "trending_stars_period": 354,
+          "trending_total_forks": null,
+          "trending_total_stars": 4686,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Rizzo-AI-Academy/rizzo-flow",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 600,
+      "forks": 34,
+      "language": "Python",
+      "description": "The open, local take on Jev: typed decisions from an LLM, without generating a single token",
+      "html_url": "https://github.com/Rizzo-AI-Academy/rizzo-flow",
+      "topics": [],
+      "created_at": "2026-09-21T00:00:02Z",
+      "updated_at": "2026-09-26T19:01:38Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Tencent/WeKnora",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 30299,
+      "forks": 4064,
+      "language": "Go",
+      "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+      "html_url": "https://github.com/Tencent/WeKnora",
+      "topics": [
+        "agent",
+        "agentic",
+        "ai",
+        "chatbot",
+        "dsh-plugin",
+        "embeddings",
+        "evaluation",
+        "generative-ai",
+        "golang",
+        "knowledge-base",
+        "llm",
+        "multi-tenant",
+        "ollama",
+        "openai",
+        "question-answering",
+        "rag",
+        "reranking",
+        "semantic-search",
+        "vector-search",
+        "wiki"
+      ],
+      "created_at": "2025-07-22T08:01:23Z",
+      "updated_at": "2026-09-26T19:00:23Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+          "full_name": "Tencent/WeKnora",
+          "language": "Go",
+          "trending_stars_period": 3189,
+          "trending_total_forks": null,
+          "trending_total_stars": 30299,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": "<p align=\"center\">\n  <a href=\"https://weknora.weixin.qq.com\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"./docs/images/readme/hero-en-dark.svg\">\n      <img src=\"./docs/images/readme/hero-en-light.svg\" alt=\"WeKnora: find the answers, and put knowledge to work. Tencent's open-source knowledge management framework for Q&A, tasks and wikis.\" width=\"100%\">\n    </picture>\n  </a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://weknora.weixin.qq.com\"><img alt=\"Website\" src=\"https://img.shields.io/badge/website-weknora.weixin.qq.com-b8863b?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"https://weknora.weixin.qq.com/docs/\"><img alt=\"Docs\" src=\"https://img.shields.io/badge/docs-read-b8863b?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"./CHANGELOG.md\"><img alt=\"Release\" src=\"https://img.shields.io/badge/release-v0.8.2-b8863b?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"./LICENSE\"><img alt=\"License\" src=\"https://img.shields.io/badge/license-MIT-b8863b?"
+    },
+    {
+      "full_name": "TencentCloud/Octop",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 5085,
+      "forks": 601,
+      "language": "Python",
+      "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
+      "html_url": "https://github.com/TencentCloud/Octop",
+      "topics": [
+        "agent",
+        "agentic-ai",
+        "ai",
+        "ai-agent",
+        "ai-agents",
+        "local-first",
+        "long-term-memory"
+      ],
+      "created_at": "2026-07-08T12:54:20Z",
+      "updated_at": "2026-09-26T18:59:42Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
+          "full_name": "TencentCloud/Octop",
+          "language": "Python",
+          "trending_stars_period": 1149,
+          "trending_total_forks": null,
+          "trending_total_stars": 5085,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "actions/runner-images",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 13261,
+      "forks": 3863,
+      "language": "PowerShell",
+      "description": "GitHub Actions runner images",
+      "html_url": "https://github.com/actions/runner-images",
+      "topics": [],
+      "created_at": "2019-06-05T15:02:59Z",
+      "updated_at": "2026-09-26T19:00:00Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "GitHub Actions runner images",
+          "full_name": "actions/runner-images",
+          "language": "PowerShell",
+          "trending_stars_period": 13,
+          "trending_total_forks": null,
+          "trending_total_stars": 13261,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 99239,
+      "forks": 10420,
+      "language": "JavaScript",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "html_url": "https://github.com/addyosmani/agent-skills",
+      "topics": [
+        "agent-skills",
+        "antigravity",
+        "claude-code",
+        "codex",
+        "cursor",
+        "skills"
+      ],
+      "created_at": "2026-02-15T20:20:26Z",
+      "updated_at": "2026-09-26T18:56:28Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Production-grade engineering skills for AI coding agents.",
+          "full_name": "addyosmani/agent-skills",
+          "language": "JavaScript",
+          "trending_stars_period": 2911,
+          "trending_total_forks": null,
+          "trending_total_stars": 99239,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": "# Agent Skills\n\n**Production-grade engineering skills for AI coding agents.**\n\nSkills encode the workflows, quality gates, and best practices that senior engineers use when building software. These ones are packaged so AI agents follow them consistently across every phase of development.\n\n<a href=\"https://trendshift.io/repositories/25200\" target=\"_blank\"><img src=\"https://trendshift.io/api/badge/repositories/25200\" alt=\"addyosmani%2Fagent-skills | Trendshift\" style=\"width: 250px; height: 55px;\" width=\"250\" height=\"55\"/></a>\n\n![Addy's Agent Skills](https://addyosmani.com/assets/images/addys-agent-skills.jpg)\n\n```\n  DEFINE          PLAN           BUILD          VERIFY         REVIEW          SHIP\n ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐\n │ Idea │ ───▶ │ Spec │ ───▶ │ Code │ ───▶ │ Test │ ───▶ │  QA  │ ───▶ │  Go  │\n │Refine│      │  PRD │      │ Impl │      │Debug │      │ Gate │      │ Live │\n └──────┘      └──────┘      └──────┘      └──────┘     "
+    },
+    {
+      "full_name": "affaan-m/ECC",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 267849,
+      "forks": 40015,
+      "language": "JavaScript",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "html_url": "https://github.com/affaan-m/ECC",
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ],
+      "created_at": "2026-01-18T00:51:51Z",
+      "updated_at": "2026-09-26T18:53:52Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+          "full_name": "affaan-m/ECC",
+          "language": "JavaScript",
+          "trending_stars_period": 6037,
+          "trending_total_forks": null,
+          "trending_total_stars": 267849,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": "<p align=\"center\">\n  <img src=\"assets/hero.png\" alt=\"ECC - the agent harness operating system\" width=\"100%\" />\n</p>\n\n<p align=\"center\">\n  <a href=\"https://www.star-history.com/affaan-m/ecc\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=trending&theme=dark\" />\n      <img src=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=trending\" alt=\"GitHub Trending Repository of the Day\" height=\"46\" />\n    </picture>\n  </a>\n  <a href=\"https://www.star-history.com/affaan-m/ecc\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=rank&theme=dark\" />\n      <img src=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=rank\" alt=\"Star History Global Rank\" height=\"46\" />\n    </picture>\n  </a>\n</p>\n\n<p align=\"center\">\n  <strong>Language:</strong>\n  <a href=\"README.md\">English</a> |\n  <a href=\"docs/pt-BR/README.md\">Português (B"
+    },
+    {
+      "full_name": "alibaba/open-code-review",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 41565,
+      "forks": 2988,
+      "language": "Go",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "html_url": "https://github.com/alibaba/open-code-review",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "code-review",
+        "code-review-assistant",
+        "harness",
+        "repository-level-context"
+      ],
+      "created_at": "2026-05-18T02:16:36Z",
+      "updated_at": "2026-09-26T18:58:56Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+          "full_name": "alibaba/open-code-review",
+          "language": "Go",
+          "trending_stars_period": 5030,
+          "trending_total_forks": null,
+          "trending_total_stars": 41565,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": "<div align=\"center\">\n  <a href=\"https://open-codereview.ai\">\n    <img src=\"imgs/logo-core.svg\" alt=\"OpenCodeReview logo\" width=\"180\" />\n  </a>\n  <h1>OpenCodeReview</h1>\n</div>\n\n<p align=\"center\">\n  <a href=\"https://trendshift.io/repositories/41087?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-41087\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <img src=\"https://trendshift.io/api/badge/repositories/41087\" alt=\"alibaba%2Fopen-code-review | Trendshift\" style=\"width: 280px; height: 60px;\" width=\"280\" height=\"60\" />\n  </a>\n</p>\n<p align=\"center\">\n  <a href=\"https://trendshift.io/repositories/41087\" target=\"_blank\">\n    <img src=\"https://trendshift.io/api/badge/trendshift/repositories/41087/weekly\" alt=\"alibaba%2Fopen-code-review | Trendshift\" style=\"width: 280px; height: 60px;\" width=\"280\" height=\"60\" />\n  </a>\n  <a href=\"https://trendshift.io/repositories/41087\" target=\"_blank\">\n    <img src=\"https://trendshift.io/api/badge/trendshift/repositories/410"
+    },
+    {
+      "full_name": "anishfn/shapeshift",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 675,
+      "forks": 72,
+      "language": "TypeScript",
+      "description": "An input that becomes what you mean: one text box that morphs into the right UI as you type. Powered by TypeSafe Jev, works offline.",
+      "html_url": "https://github.com/anishfn/shapeshift",
+      "topics": [],
+      "created_at": "2026-09-22T08:52:32Z",
+      "updated_at": "2026-09-26T18:42:21Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/claude-code",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 148185,
+      "forks": 24702,
+      "language": "TypeScript",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "html_url": "https://github.com/anthropics/claude-code",
+      "topics": [],
+      "created_at": "2025-02-22T17:41:21Z",
+      "updated_at": "2026-09-26T18:59:13Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+          "full_name": "anthropics/claude-code",
+          "language": "TypeScript",
+          "trending_stars_period": 2102,
+          "trending_total_forks": null,
+          "trending_total_stars": 148185,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": "# Claude Code\n\n![](https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square) [![npm]](https://www.npmjs.com/package/@anthropic-ai/claude-code)\n\n[npm]: https://img.shields.io/npm/v/@anthropic-ai/claude-code.svg?style=flat-square\n\nClaude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. Use it in your terminal, IDE, or tag @claude on Github.\n\n**Learn more in the [official documentation](https://code.claude.com/docs/en/overview)**.\n\n<img src=\"./demo.gif\" />\n\n## Get started\n> [!NOTE]\n> Installation via npm is deprecated. Use one of the recommended methods below.\n\nFor more installation options, uninstall steps, and troubleshooting, see the [setup documentation](https://code.claude.com/docs/en/setup).\n\n1. Install Claude Code:\n\n    **MacOS/Linux (Recommended):**\n    ```bash\n    curl -fsSL https:"
+    },
+    {
+      "full_name": "anthropics/claude-code-action",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 9046,
+      "forks": 2161,
+      "language": "TypeScript",
+      "description": null,
+      "html_url": "https://github.com/anthropics/claude-code-action",
+      "topics": [],
+      "created_at": "2025-05-19T15:26:50Z",
+      "updated_at": "2026-09-26T19:01:14Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "",
+          "full_name": "anthropics/claude-code-action",
+          "language": "TypeScript",
+          "trending_stars_period": 15,
+          "trending_total_forks": null,
+          "trending_total_stars": 9046,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/financial-services",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 37674,
+      "forks": 5443,
+      "language": "Python",
+      "description": null,
+      "html_url": "https://github.com/anthropics/financial-services",
+      "topics": [],
+      "created_at": "2026-02-23T19:24:50Z",
+      "updated_at": "2026-09-26T19:02:13Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "",
+          "full_name": "anthropics/financial-services",
+          "language": "Python",
+          "trending_stars_period": 2623,
+          "trending_total_forks": null,
+          "trending_total_stars": 37674,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": "# Claude for Financial Services\n\nReference agents, skills, and data connectors for the financial-services workflows we see most — investment banking, equity research, private equity, and wealth management.\n\nEverything here is available **two ways from one source**: install it as a [Claude Cowork](https://claude.com/product/cowork) plugin, or deploy it through the [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) behind your own workflow engine. Same system prompt, same skills — you choose where it runs.\n\n> [!IMPORTANT]\n> Nothing in this repository constitutes investment, legal, tax, or accounting advice. These agents draft analyst work product — models, memos, research notes, reconciliations — for review by a qualified professional. They do not make investment recommendations, execute transactions, bind risk, post to a ledger, or approve onboarding; every output is staged for human sign-off. You are responsible for verifying outputs and for compliance with the "
+    },
+    {
+      "full_name": "anthropics/knowledge-work-plugins",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 25673,
+      "forks": 3036,
+      "language": "Python",
+      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+      "html_url": "https://github.com/anthropics/knowledge-work-plugins",
+      "topics": [],
+      "created_at": "2026-01-23T20:11:54Z",
+      "updated_at": "2026-09-26T18:39:26Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+          "full_name": "anthropics/knowledge-work-plugins",
+          "language": "Python",
+          "trending_stars_period": 889,
+          "trending_total_forks": null,
+          "trending_total_stars": 25673,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": "# Knowledge Work Plugins\n\nPlugins that turn Claude into a specialist for your role, team, and company. Built for [Claude Cowork](https://claude.com/product/cowork), also compatible with [Claude Code](https://claude.com/product/claude-code).\n\n## Why Plugins\n\nCowork lets you set the goal and Claude delivers finished, professional work. Plugins let you go further: tell Claude how you like work done, which tools and data to pull from, how to handle critical workflows, and what slash commands to expose — so your team gets better and more consistent outcomes.\n\nEach plugin bundles the skills, connectors, slash commands, and sub-agents for a specific job function. Out of the box, they give Claude a strong starting point for helping anyone in that role. The real power comes when you customize them for your company — your tools, your terminology, your processes — so Claude works like it was built for your team.\n\n## Plugin Marketplace\n\nWe're open-sourcing 11 plugins built and inspired by our own "
+    },
+    {
+      "full_name": "asokurasu/text-humanizer",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 725,
+      "forks": 83,
+      "language": "Python",
+      "description": "A completely free open-sourced project designed to humanize AI-generated text through a multilingual LLM-powered rewriting pipeline. ",
+      "html_url": "https://github.com/asokurasu/text-humanizer",
+      "topics": [
+        "ai-detector",
+        "ai-detector-bypass",
+        "ai-detectors",
+        "text-humanizer",
+        "zerogpt",
+        "zerogpt-bypass"
+      ],
+      "created_at": "2026-09-23T17:32:37Z",
+      "updated_at": "2026-09-26T19:01:12Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "block/buzz",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 34787,
+      "forks": 4594,
+      "language": "Rust",
+      "description": "A hive mind communication platform",
+      "html_url": "https://github.com/block/buzz",
+      "topics": [],
+      "created_at": "2026-03-06T21:00:56Z",
+      "updated_at": "2026-09-26T19:01:36Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A hive mind communication platform",
+          "full_name": "block/buzz",
+          "language": "Rust",
+          "trending_stars_period": 367,
+          "trending_total_forks": null,
+          "trending_total_stars": 34787,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": "<h1 align=\"center\">Buzz 🐝</h1>\n\n<p align=\"center\">\n  <strong>A workspace where humans and agents build together, on a relay you own.</strong>\n</p>\n\n<p align=\"center\">\n  <a href=\"VISION.md\">Vision</a> ·\n  <a href=\"VISION_SOVEREIGN.md\">Sovereign</a> ·\n  <a href=\"VISION_PROJECTS.md\">Forge</a> ·\n  <a href=\"VISION_AGENT.md\">Agents</a> ·\n  <a href=\"ARCHITECTURE.md\">Architecture</a> ·\n  <a href=\"RELEASING.md\">Releasing</a> ·\n  <a href=\"LICENSE\">Apache 2.0</a>\n</p>\n\n<p align=\"center\">\n  <img src=\"docs/assets/screenshots/channel-thread.png\" alt=\"A Buzz project channel where people and an agent coordinate on a release plan\" width=\"100%\">\n</p>\n\n<p align=\"center\">\n  <sub><em>People and agents building together in the same room.</em></sub>\n</p>\n\n---\n\n## What is this, really?\n\nBuzz is a self-hostable workspace where humans and AI agents share the same rooms.\n\nA Buzz **community** is the workspace a user reaches by URL. In the single-relay\nsetup that ships today, the relay URL selects exactly one com"
+    },
+    {
+      "full_name": "cloudflare/quiche",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 12625,
+      "forks": 1149,
+      "language": "Rust",
+      "description": "🥧 Savoury implementation of the QUIC transport protocol and HTTP/3",
+      "html_url": "https://github.com/cloudflare/quiche",
+      "topics": [
+        "http3",
+        "network-programming",
+        "protocol",
+        "quic",
+        "rust"
+      ],
+      "created_at": "2018-09-29T18:22:05Z",
+      "updated_at": "2026-09-26T17:43:36Z",
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "🥧 Savoury implementation of the QUIC transport protocol and HTTP/3",
+          "full_name": "cloudflare/quiche",
+          "language": "Rust",
+          "trending_stars_period": 769,
+          "trending_total_forks": null,
+          "trending_total_stars": 12625,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 21959,
+      "forks": 1268,
+      "language": "JavaScript",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "html_url": "https://github.com/cloudflare/security-audit-skill",
+      "topics": [],
+      "created_at": "2026-06-18T14:08:44Z",
+      "updated_at": "2026-09-26T18:56:52Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "full_name": "cloudflare/security-audit-skill",
+          "language": "JavaScript",
+          "trending_stars_period": 9547,
+          "trending_total_forks": null,
+          "trending_total_stars": 21959,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "davila7/claude-code-templates",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 31912,
+      "forks": 3629,
+      "language": "Python",
+      "description": "CLI tool for configuring and monitoring Claude Code",
+      "html_url": "https://github.com/davila7/claude-code-templates",
+      "topics": [
+        "anthropic",
+        "anthropic-claude",
+        "claude",
+        "claude-code"
+      ],
+      "created_at": "2025-07-04T01:26:26Z",
+      "updated_at": "2026-09-26T19:00:06Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "CLI tool for configuring and monitoring Claude Code",
+          "full_name": "davila7/claude-code-templates",
+          "language": "Python",
+          "trending_stars_period": 1041,
+          "trending_total_forks": null,
+          "trending_total_stars": 31912,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": "[![npm version](https://img.shields.io/npm/v/claude-code-templates.svg)](https://www.npmjs.com/package/claude-code-templates)\n[![npm downloads](https://img.shields.io/npm/dt/claude-code-templates.svg)](https://www.npmjs.com/package/claude-code-templates)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)\n[![Sponsored by Z.AI](https://img.shields.io/badge/Sponsored%20by-Z.AI-2563eb?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMiAyMkgyMkwxMiAyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+)](https://z.ai/subscribe?ic=8JVLJQFSKB&utm_source=github&utm_medium=badge&utm_campaign=readme)\n[![Claude for Open Source](https://img.shields.io/badge/Claude-Open%20Source%20Program-D97757?style=flat&logo=data:image/svg+xml;base"
+    },
+    {
+      "full_name": "deepopen-com/deepopen",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 1035,
+      "forks": 110,
+      "language": "Python",
+      "description": "非自回归System 1决策引擎，专为结构化类型决策场景设计  DeepOpen Multilingual, non-autoregressive System 1 decision engine. ",
+      "html_url": "https://github.com/deepopen-com/deepopen",
+      "topics": [],
+      "created_at": "2026-09-21T02:12:24Z",
+      "updated_at": "2026-09-26T17:10:32Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dgreenheck/tidewater",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 710,
+      "forks": 173,
+      "language": "JavaScript",
+      "description": "Coastal town built with Opus 5.5",
+      "html_url": "https://github.com/dgreenheck/tidewater",
+      "topics": [],
+      "created_at": "2026-09-23T21:40:29Z",
+      "updated_at": "2026-09-26T19:01:23Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dream-num/univer",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 19116,
+      "forks": 1626,
+      "language": "TypeScript",
+      "description": "The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime.",
+      "html_url": "https://github.com/dream-num/univer",
+      "topics": [
+        "board",
+        "collaboration",
+        "data-table",
+        "doc",
+        "docx",
+        "excel",
+        "grid",
+        "pdf",
+        "ppt",
+        "pptx",
+        "presentation",
+        "sdk",
+        "sheet",
+        "slides",
+        "spreadsheet",
+        "table",
+        "word",
+        "wordprocessor",
+        "xlsx"
+      ],
+      "created_at": "2022-09-29T12:09:14Z",
+      "updated_at": "2026-09-26T19:00:49Z",
+      "default_branch": "dev",
+      "sources": [
+        {
+          "description": "The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime.",
+          "full_name": "dream-num/univer",
+          "language": "TypeScript",
+          "trending_stars_period": 3928,
+          "trending_total_forks": null,
+          "trending_total_stars": 19116,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime.",
+          "full_name": "dream-num/univer",
+          "language": "TypeScript",
+          "trending_stars_period": 845,
+          "trending_total_forks": null,
+          "trending_total_stars": 19116,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "driceroland/Search",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 2083,
+      "forks": 183,
+      "language": "Swift",
+      "description": "A small, fast WebKit browser for macOS, by Office Commun.",
+      "html_url": "https://github.com/driceroland/Search",
+      "topics": [],
+      "created_at": "2026-09-20T10:29:47Z",
+      "updated_at": "2026-09-26T19:02:08Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "freestylefly/WeChatBridge",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 782,
+      "forks": 299,
+      "language": "Swift",
+      "description": "微信聊天记录一键转发到 AI Agent 与 Obsidian 的原生 macOS 工具",
+      "html_url": "https://github.com/freestylefly/WeChatBridge",
+      "topics": [
+        "ai-agent",
+        "chat-history",
+        "macos",
+        "obsidian",
+        "share-extension",
+        "swift",
+        "wechat"
+      ],
+      "created_at": "2026-09-21T02:54:51Z",
+      "updated_at": "2026-09-26T17:36:46Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "heyjunpenn/awesome-jev",
+      "captured_at": "2026-09-26T19:02:13Z",
+      "stars": 848,
+      "forks": 60,
+      "language": "Astro",
+      "description": "A verified, community-maintained catalog of 916 open-source projects built with Jev.",
+      "html_url": "https://github.com/heyjunpenn/awesome-jev",
+      "topics": [
+        "astro",
+        "awesome",
+        "awesome-jev",
+        "awesome-list",
+        "jev",
+        "typesafe"
+      ],
+      "created_at": "2026-09-19T05:14:36Z",
+      "updated_at": "2026-09-26T17:13:31Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "sent_weeks": []

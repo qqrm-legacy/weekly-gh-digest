@@ -1,0 +1,1191 @@
+{
+  "entries": [
+    {
+      "baseline": null,
+      "delta": 9547,
+      "full_name": "cloudflare/security-audit-skill",
+      "latest": {
+        "captured_at": "2026-09-26T19:02:13Z",
+        "created_at": "2026-06-18T14:08:44Z",
+        "default_branch": "main",
+        "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+        "forks": 1268,
+        "full_name": "cloudflare/security-audit-skill",
+        "html_url": "https://github.com/cloudflare/security-audit-skill",
+        "language": "JavaScript",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+            "full_name": "cloudflare/security-audit-skill",
+            "language": "JavaScript",
+            "trending_stars_period": 9547,
+            "trending_total_forks": null,
+            "trending_total_stars": 21959,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 21959,
+        "topics": [],
+        "updated_at": "2026-09-26T18:56:52Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 1,
+      "summary": "Описание GitHub: A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings Язык: JavaScript. README не удалось проверить моделью; предметный вывод не сформирован.",
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 6037,
+      "full_name": "affaan-m/ECC",
+      "latest": {
+        "captured_at": "2026-09-26T19:02:13Z",
+        "created_at": "2026-01-18T00:51:51Z",
+        "default_branch": "main",
+        "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+        "forks": 40015,
+        "full_name": "affaan-m/ECC",
+        "html_url": "https://github.com/affaan-m/ECC",
+        "language": "JavaScript",
+        "readme_excerpt": "<p align=\"center\">\n  <img src=\"assets/hero.png\" alt=\"ECC - the agent harness operating system\" width=\"100%\" />\n</p>\n\n<p align=\"center\">\n  <a href=\"https://www.star-history.com/affaan-m/ecc\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=trending&theme=dark\" />\n      <img src=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=trending\" alt=\"GitHub Trending Repository of the Day\" height=\"46\" />\n    </picture>\n  </a>\n  <a href=\"https://www.star-history.com/affaan-m/ecc\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=rank&theme=dark\" />\n      <img src=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=rank\" alt=\"Star History Global Rank\" height=\"46\" />\n    </picture>\n  </a>\n</p>\n\n<p align=\"center\">\n  <strong>Language:</strong>\n  <a href=\"README.md\">English</a> |\n  <a href=\"docs/pt-BR/README.md\">Português (B",
+        "sources": [
+          {
+            "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+            "full_name": "affaan-m/ECC",
+            "language": "JavaScript",
+            "trending_stars_period": 6037,
+            "trending_total_forks": null,
+            "trending_total_stars": 267849,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 267849,
+        "topics": [
+          "ai-agents",
+          "anthropic",
+          "claude",
+          "claude-code",
+          "developer-tools",
+          "llm",
+          "mcp",
+          "productivity"
+        ],
+        "updated_at": "2026-09-26T18:53:52Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 2,
+      "summary": "Описание GitHub: The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. Язык: JavaScript. README не удалось проверить моделью; предметный вывод не сформирован.",
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 5030,
+      "full_name": "alibaba/open-code-review",
+      "latest": {
+        "captured_at": "2026-09-26T19:02:13Z",
+        "created_at": "2026-05-18T02:16:36Z",
+        "default_branch": "main",
+        "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+        "forks": 2988,
+        "full_name": "alibaba/open-code-review",
+        "html_url": "https://github.com/alibaba/open-code-review",
+        "language": "Go",
+        "readme_excerpt": "<div align=\"center\">\n  <a href=\"https://open-codereview.ai\">\n    <img src=\"imgs/logo-core.svg\" alt=\"OpenCodeReview logo\" width=\"180\" />\n  </a>\n  <h1>OpenCodeReview</h1>\n</div>\n\n<p align=\"center\">\n  <a href=\"https://trendshift.io/repositories/41087?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-41087\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <img src=\"https://trendshift.io/api/badge/repositories/41087\" alt=\"alibaba%2Fopen-code-review | Trendshift\" style=\"width: 280px; height: 60px;\" width=\"280\" height=\"60\" />\n  </a>\n</p>\n<p align=\"center\">\n  <a href=\"https://trendshift.io/repositories/41087\" target=\"_blank\">\n    <img src=\"https://trendshift.io/api/badge/trendshift/repositories/41087/weekly\" alt=\"alibaba%2Fopen-code-review | Trendshift\" style=\"width: 280px; height: 60px;\" width=\"280\" height=\"60\" />\n  </a>\n  <a href=\"https://trendshift.io/repositories/41087\" target=\"_blank\">\n    <img src=\"https://trendshift.io/api/badge/trendshift/repositories/410",
+        "sources": [
+          {
+            "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+            "full_name": "alibaba/open-code-review",
+            "language": "Go",
+            "trending_stars_period": 5030,
+            "trending_total_forks": null,
+            "trending_total_stars": 41565,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 41565,
+        "topics": [
+          "agent",
+          "agent-skills",
+          "code-review",
+          "code-review-assistant",
+          "harness",
+          "repository-level-context"
+        ],
+        "updated_at": "2026-09-26T18:58:56Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 3,
+      "summary": "Описание GitHub: Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible. Язык: Go. README не удалось проверить моделью; предметный вывод не сформирован.",
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 3928,
+      "full_name": "dream-num/univer",
+      "latest": {
+        "captured_at": "2026-09-26T19:02:13Z",
+        "created_at": "2022-09-29T12:09:14Z",
+        "default_branch": "dev",
+        "description": "The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime.",
+        "forks": 1626,
+        "full_name": "dream-num/univer",
+        "html_url": "https://github.com/dream-num/univer",
+        "language": "TypeScript",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "description": "The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime.",
+            "full_name": "dream-num/univer",
+            "language": "TypeScript",
+            "trending_stars_period": 3928,
+            "trending_total_forks": null,
+            "trending_total_stars": 19116,
+            "type": "trending_weekly"
+          },
+          {
+            "description": "The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime.",
+            "full_name": "dream-num/univer",
+            "language": "TypeScript",
+            "trending_stars_period": 845,
+            "trending_total_forks": null,
+            "trending_total_stars": 19116,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 19116,
+        "topics": [
+          "board",
+          "collaboration",
+          "data-table",
+          "doc",
+          "docx",
+          "excel",
+          "grid",
+          "pdf",
+          "ppt",
+          "pptx",
+          "presentation",
+          "sdk",
+          "sheet",
+          "slides",
+          "spreadsheet",
+          "table",
+          "word",
+          "wordprocessor",
+          "xlsx"
+        ],
+        "updated_at": "2026-09-26T19:00:49Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 4,
+      "summary": "Описание GitHub: The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime. Язык: TypeScript. README не удалось проверить моделью; предметный вывод не сформирован.",
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 3189,
+      "full_name": "Tencent/WeKnora",
+      "latest": {
+        "captured_at": "2026-09-26T19:02:13Z",
+        "created_at": "2025-07-22T08:01:23Z",
+        "default_branch": "main",
+        "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+        "forks": 4064,
+        "full_name": "Tencent/WeKnora",
+        "html_url": "https://github.com/Tencent/WeKnora",
+        "language": "Go",
+        "readme_excerpt": "<p align=\"center\">\n  <a href=\"https://weknora.weixin.qq.com\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"./docs/images/readme/hero-en-dark.svg\">\n      <img src=\"./docs/images/readme/hero-en-light.svg\" alt=\"WeKnora: find the answers, and put knowledge to work. Tencent's open-source knowledge management framework for Q&A, tasks and wikis.\" width=\"100%\">\n    </picture>\n  </a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://weknora.weixin.qq.com\"><img alt=\"Website\" src=\"https://img.shields.io/badge/website-weknora.weixin.qq.com-b8863b?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"https://weknora.weixin.qq.com/docs/\"><img alt=\"Docs\" src=\"https://img.shields.io/badge/docs-read-b8863b?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"./CHANGELOG.md\"><img alt=\"Release\" src=\"https://img.shields.io/badge/release-v0.8.2-b8863b?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"./LICENSE\"><img alt=\"License\" src=\"https://img.shields.io/badge/license-MIT-b8863b?",
+        "sources": [
+          {
+            "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+            "full_name": "Tencent/WeKnora",
+            "language": "Go",
+            "trending_stars_period": 3189,
+            "trending_total_forks": null,
+            "trending_total_stars": 30299,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 30299,
+        "topics": [
+          "agent",
+          "agentic",
+          "ai",
+          "chatbot",
+          "dsh-plugin",
+          "embeddings",
+          "evaluation",
+          "generative-ai",
+          "golang",
+          "knowledge-base",
+          "llm",
+          "multi-tenant",
+          "ollama",
+          "openai",
+          "question-answering",
+          "rag",
+          "reranking",
+          "semantic-search",
+          "vector-search",
+          "wiki"
+        ],
+        "updated_at": "2026-09-26T19:00:23Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 5,
+      "summary": "Описание GitHub: Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki. Язык: Go. README не удалось проверить моделью; предметный вывод не сформирован.",
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 2911,
+      "full_name": "addyosmani/agent-skills",
+      "latest": {
+        "captured_at": "2026-09-26T19:02:13Z",
+        "created_at": "2026-02-15T20:20:26Z",
+        "default_branch": "main",
+        "description": "Production-grade engineering skills for AI coding agents.",
+        "forks": 10420,
+        "full_name": "addyosmani/agent-skills",
+        "html_url": "https://github.com/addyosmani/agent-skills",
+        "language": "JavaScript",
+        "readme_excerpt": "# Agent Skills\n\n**Production-grade engineering skills for AI coding agents.**\n\nSkills encode the workflows, quality gates, and best practices that senior engineers use when building software. These ones are packaged so AI agents follow them consistently across every phase of development.\n\n<a href=\"https://trendshift.io/repositories/25200\" target=\"_blank\"><img src=\"https://trendshift.io/api/badge/repositories/25200\" alt=\"addyosmani%2Fagent-skills | Trendshift\" style=\"width: 250px; height: 55px;\" width=\"250\" height=\"55\"/></a>\n\n![Addy's Agent Skills](https://addyosmani.com/assets/images/addys-agent-skills.jpg)\n\n```\n  DEFINE          PLAN           BUILD          VERIFY         REVIEW          SHIP\n ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐\n │ Idea │ ───▶ │ Spec │ ───▶ │ Code │ ───▶ │ Test │ ───▶ │  QA  │ ───▶ │  Go  │\n │Refine│      │  PRD │      │ Impl │      │Debug │      │ Gate │      │ Live │\n └──────┘      └──────┘      └──────┘      └──────┘     ",
+        "sources": [
+          {
+            "description": "Production-grade engineering skills for AI coding agents.",
+            "full_name": "addyosmani/agent-skills",
+            "language": "JavaScript",
+            "trending_stars_period": 2911,
+            "trending_total_forks": null,
+            "trending_total_stars": 99239,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 99239,
+        "topics": [
+          "agent-skills",
+          "antigravity",
+          "claude-code",
+          "codex",
+          "cursor",
+          "skills"
+        ],
+        "updated_at": "2026-09-26T18:56:28Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 6,
+      "summary": "Описание GitHub: Production-grade engineering skills for AI coding agents. Язык: JavaScript. README не удалось проверить моделью; предметный вывод не сформирован.",
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 2623,
+      "full_name": "anthropics/financial-services",
+      "latest": {
+        "captured_at": "2026-09-26T19:02:13Z",
+        "created_at": "2026-02-23T19:24:50Z",
+        "default_branch": "main",
+        "description": null,
+        "forks": 5443,
+        "full_name": "anthropics/financial-services",
+        "html_url": "https://github.com/anthropics/financial-services",
+        "language": "Python",
+        "readme_excerpt": "# Claude for Financial Services\n\nReference agents, skills, and data connectors for the financial-services workflows we see most — investment banking, equity research, private equity, and wealth management.\n\nEverything here is available **two ways from one source**: install it as a [Claude Cowork](https://claude.com/product/cowork) plugin, or deploy it through the [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) behind your own workflow engine. Same system prompt, same skills — you choose where it runs.\n\n> [!IMPORTANT]\n> Nothing in this repository constitutes investment, legal, tax, or accounting advice. These agents draft analyst work product — models, memos, research notes, reconciliations — for review by a qualified professional. They do not make investment recommendations, execute transactions, bind risk, post to a ledger, or approve onboarding; every output is staged for human sign-off. You are responsible for verifying outputs and for compliance with the ",
+        "sources": [
+          {
+            "description": "",
+            "full_name": "anthropics/financial-services",
+            "language": "Python",
+            "trending_stars_period": 2623,
+            "trending_total_forks": null,
+            "trending_total_stars": 37674,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 37674,
+        "topics": [],
+        "updated_at": "2026-09-26T19:02:13Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 7,
+      "summary": "Описание GitHub: не указано Язык: Python. README не удалось проверить моделью; предметный вывод не сформирован.",
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 2102,
+      "full_name": "anthropics/claude-code",
+      "latest": {
+        "captured_at": "2026-09-26T19:02:13Z",
+        "created_at": "2025-02-22T17:41:21Z",
+        "default_branch": "main",
+        "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+        "forks": 24702,
+        "full_name": "anthropics/claude-code",
+        "html_url": "https://github.com/anthropics/claude-code",
+        "language": "TypeScript",
+        "readme_excerpt": "# Claude Code\n\n![](https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square) [![npm]](https://www.npmjs.com/package/@anthropic-ai/claude-code)\n\n[npm]: https://img.shields.io/npm/v/@anthropic-ai/claude-code.svg?style=flat-square\n\nClaude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. Use it in your terminal, IDE, or tag @claude on Github.\n\n**Learn more in the [official documentation](https://code.claude.com/docs/en/overview)**.\n\n<img src=\"./demo.gif\" />\n\n## Get started\n> [!NOTE]\n> Installation via npm is deprecated. Use one of the recommended methods below.\n\nFor more installation options, uninstall steps, and troubleshooting, see the [setup documentation](https://code.claude.com/docs/en/setup).\n\n1. Install Claude Code:\n\n    **MacOS/Linux (Recommended):**\n    ```bash\n    curl -fsSL https:",
+        "sources": [
+          {
+            "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+            "full_name": "anthropics/claude-code",
+            "language": "TypeScript",
+            "trending_stars_period": 2102,
+            "trending_total_forks": null,
+            "trending_total_stars": 148185,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 148185,
+        "topics": [],
+        "updated_at": "2026-09-26T18:59:13Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 8,
+      "summary": "Описание GitHub: Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. Язык: TypeScript. README не удалось проверить моделью; предметный вывод не сформирован.",
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 1149,
+      "full_name": "TencentCloud/Octop",
+      "latest": {
+        "captured_at": "2026-09-26T19:02:13Z",
+        "created_at": "2026-07-08T12:54:20Z",
+        "default_branch": "main",
+        "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
+        "forks": 601,
+        "full_name": "TencentCloud/Octop",
+        "html_url": "https://github.com/TencentCloud/Octop",
+        "language": "Python",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
+            "full_name": "TencentCloud/Octop",
+            "language": "Python",
+            "trending_stars_period": 1149,
+            "trending_total_forks": null,
+            "trending_total_stars": 5085,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 5085,
+        "topics": [
+          "agent",
+          "agentic-ai",
+          "ai",
+          "ai-agent",
+          "ai-agents",
+          "local-first",
+          "long-term-memory"
+        ],
+        "updated_at": "2026-09-26T18:59:42Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 9,
+      "summary": "Описание GitHub: A smarter, self-hosted AI assistant — multi-user, multi-agent. Язык: Python. README не удалось проверить моделью; предметный вывод не сформирован.",
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 1041,
+      "full_name": "davila7/claude-code-templates",
+      "latest": {
+        "captured_at": "2026-09-26T19:02:13Z",
+        "created_at": "2025-07-04T01:26:26Z",
+        "default_branch": "main",
+        "description": "CLI tool for configuring and monitoring Claude Code",
+        "forks": 3629,
+        "full_name": "davila7/claude-code-templates",
+        "html_url": "https://github.com/davila7/claude-code-templates",
+        "language": "Python",
+        "readme_excerpt": "[![npm version](https://img.shields.io/npm/v/claude-code-templates.svg)](https://www.npmjs.com/package/claude-code-templates)\n[![npm downloads](https://img.shields.io/npm/dt/claude-code-templates.svg)](https://www.npmjs.com/package/claude-code-templates)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)\n[![Sponsored by Z.AI](https://img.shields.io/badge/Sponsored%20by-Z.AI-2563eb?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMiAyMkgyMkwxMiAyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+)](https://z.ai/subscribe?ic=8JVLJQFSKB&utm_source=github&utm_medium=badge&utm_campaign=readme)\n[![Claude for Open Source](https://img.shields.io/badge/Claude-Open%20Source%20Program-D97757?style=flat&logo=data:image/svg+xml;base",
+        "sources": [
+          {
+            "description": "CLI tool for configuring and monitoring Claude Code",
+            "full_name": "davila7/claude-code-templates",
+            "language": "Python",
+            "trending_stars_period": 1041,
+            "trending_total_forks": null,
+            "trending_total_stars": 31912,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 31912,
+        "topics": [
+          "anthropic",
+          "anthropic-claude",
+          "claude",
+          "claude-code"
+        ],
+        "updated_at": "2026-09-26T19:00:06Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 10,
+      "summary": "Описание GitHub: CLI tool for configuring and monitoring Claude Code Язык: Python. README не удалось проверить моделью; предметный вывод не сформирован.",
+      "trending_source": true
+    }
+  ],
+  "generated_at": "2026-09-26T19:02:13Z",
+  "llm_budget": {
+    "actual_requests": 0,
+    "analysis_chunk_size": 5,
+    "estimated_input_tokens": 0,
+    "estimated_neurons_at_max_output": 0.0,
+    "local_inference": false,
+    "max_neurons_estimate": 4000.0,
+    "max_output_tokens_per_analysis_item": 260,
+    "max_requests": 3,
+    "model": "@cf/openai/gpt-oss-120b",
+    "paid_fallback": false,
+    "provider": "Cloudflare Workers AI",
+    "reason": "Cloudflare credentials or explicit free-tier confirmation missing",
+    "synthesis_max_output_tokens": 400
+  },
+  "llm_used": false,
+  "manifest": {
+    "api_repositories": [
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:17Z",
+        "forks": 107,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 604,
+        "status": "included",
+        "url": "https://api.github.com/repos/852wa/JIZURA"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:17Z",
+        "forks": 121,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1510,
+        "status": "included",
+        "url": "https://api.github.com/repos/Contrastive-LM/CLM"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:18Z",
+        "forks": 4630,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 50614,
+        "status": "included",
+        "url": "https://api.github.com/repos/HKUDS/CLI-Anything"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:18Z",
+        "forks": 33,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 562,
+        "status": "included",
+        "url": "https://api.github.com/repos/Haleclipse/CometixCode"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:18Z",
+        "forks": 104,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1020,
+        "status": "included",
+        "url": "https://api.github.com/repos/JohnHeibel/PDoomVideo"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:19Z",
+        "forks": 94,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1026,
+        "status": "included",
+        "url": "https://api.github.com/repos/Mak5er/AirCard-iOS"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:19Z",
+        "forks": 663,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 4686,
+        "status": "included",
+        "url": "https://api.github.com/repos/NVIDIA/Model-Optimizer"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:19Z",
+        "forks": 34,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 600,
+        "status": "included",
+        "url": "https://api.github.com/repos/Rizzo-AI-Academy/rizzo-flow"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:20Z",
+        "forks": 4064,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 30299,
+        "status": "included",
+        "url": "https://api.github.com/repos/Tencent/WeKnora"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:20Z",
+        "forks": 601,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 5085,
+        "status": "included",
+        "url": "https://api.github.com/repos/TencentCloud/Octop"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:20Z",
+        "forks": 3863,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 13261,
+        "status": "included",
+        "url": "https://api.github.com/repos/actions/runner-images"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:21Z",
+        "forks": 10420,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 99239,
+        "status": "included",
+        "url": "https://api.github.com/repos/addyosmani/agent-skills"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:21Z",
+        "forks": 40015,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 267849,
+        "status": "included",
+        "url": "https://api.github.com/repos/affaan-m/ECC"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:21Z",
+        "forks": 2988,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 41565,
+        "status": "included",
+        "url": "https://api.github.com/repos/alibaba/open-code-review"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:22Z",
+        "forks": 72,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 675,
+        "status": "included",
+        "url": "https://api.github.com/repos/anishfn/shapeshift"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:22Z",
+        "forks": 24702,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 148185,
+        "status": "included",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:22Z",
+        "forks": 2161,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 9046,
+        "status": "included",
+        "url": "https://api.github.com/repos/anthropics/claude-code-action"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:23Z",
+        "forks": 5443,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 37674,
+        "status": "included",
+        "url": "https://api.github.com/repos/anthropics/financial-services"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:23Z",
+        "forks": 3036,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 25673,
+        "status": "included",
+        "url": "https://api.github.com/repos/anthropics/knowledge-work-plugins"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:23Z",
+        "forks": 83,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 725,
+        "status": "included",
+        "url": "https://api.github.com/repos/asokurasu/text-humanizer"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:24Z",
+        "forks": 4594,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 34787,
+        "status": "included",
+        "url": "https://api.github.com/repos/block/buzz"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:24Z",
+        "forks": 1149,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 12625,
+        "status": "included",
+        "url": "https://api.github.com/repos/cloudflare/quiche"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:24Z",
+        "forks": 1268,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 21959,
+        "status": "included",
+        "url": "https://api.github.com/repos/cloudflare/security-audit-skill"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:25Z",
+        "forks": 3629,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 31912,
+        "status": "included",
+        "url": "https://api.github.com/repos/davila7/claude-code-templates"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:25Z",
+        "forks": 110,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1035,
+        "status": "included",
+        "url": "https://api.github.com/repos/deepopen-com/deepopen"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:25Z",
+        "forks": 173,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 710,
+        "status": "included",
+        "url": "https://api.github.com/repos/dgreenheck/tidewater"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:25Z",
+        "forks": 1626,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 19116,
+        "status": "included",
+        "url": "https://api.github.com/repos/dream-num/univer"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:26Z",
+        "forks": 183,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2083,
+        "status": "included",
+        "url": "https://api.github.com/repos/driceroland/Search"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:26Z",
+        "forks": 299,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 782,
+        "status": "included",
+        "url": "https://api.github.com/repos/freestylefly/WeChatBridge"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:26Z",
+        "forks": 60,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 848,
+        "status": "included",
+        "url": "https://api.github.com/repos/heyjunpenn/awesome-jev"
+      }
+    ],
+    "candidate_count": 30,
+    "candidate_policy": "Weekly Trending, daily Trending, then Search; stable order; max 30; not a global GitHub census.",
+    "captured_at": "2026-09-26T19:02:13Z",
+    "excluded_candidates": [
+      {
+        "full_name": "jev-chat/jev-chat-jarvis",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "jev-chat/jev-chat-windows",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "kryvora-network/kryvora-node",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "llvm/llvm-project",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "microsoft/vscode",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "mikehasa/golive-skill",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "mizorewww/laya-coreml",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "mizorewww/laya-mlx",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "mobile-next/mobile-mcp",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "newliver666/apk-reverse",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "nokia-applied-research/AnyJev",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "openbao/openbao",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "pallavi-shekhar/ai-engineering-interview-questions-company-wise",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "paperclipai/paperclip",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "pytorch/pytorch",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "riba2534/claude-opus-5-5-demo",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "rohitg00/ai-engineering-from-scratch",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "stablyai/orca",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "superdesigndev/treg",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "tensorflow/tensorflow",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "tobi/disktree",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "unreallabsai/unreal-agent",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "v-modal/awesome-jev-tools",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "vectorize-io/hindsight",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "vercel/next.js",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "volotat/mini-AGI",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "yetone/magpie",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "yukitorido/short-video-generator-AI",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "zai-org/ZCode",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "zhaoxuya520/reverse-skill",
+        "reason": "candidate cap after stable source priority"
+      }
+    ],
+    "sources": [
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:15Z",
+        "pagination": "HTML first page as returned; no pagination",
+        "parsed_candidates": 18,
+        "reason": "repository rows parsed from first page",
+        "source": "GitHub Trending weekly",
+        "status": "included",
+        "url": "https://github.com/trending?since=weekly"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:16Z",
+        "pagination": "HTML first page as returned; no pagination",
+        "parsed_candidates": 15,
+        "reason": "repository rows parsed from first page",
+        "source": "GitHub Trending daily",
+        "status": "included",
+        "url": "https://github.com/trending?since=daily"
+      },
+      {
+        "complete": false,
+        "fetched_at": "2026-09-26T19:02:17Z",
+        "pagination": "per_page=30; first page only; Search API result cap applies",
+        "query": "created:>=2026-09-19 stars:>10",
+        "reason": "first page ingested as candidate source only",
+        "returned": 30,
+        "source": "GitHub REST Search repositories created in last 7 days",
+        "status": "included",
+        "total_count": 1898,
+        "url": "https://api.github.com/search/repositories?q=created%3A%3E%3D2026-09-19+stars%3A%3E10&sort=stars&order=desc&per_page=30"
+      },
+      {
+        "candidate": "affaan-m/ECC",
+        "chars": 1000,
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:27Z",
+        "pagination": "root README.md on default branch; excerpt capped at 1000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/affaan-m/ECC/main/README.md"
+      },
+      {
+        "candidate": "anthropics/claude-code",
+        "chars": 1000,
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:27Z",
+        "pagination": "root README.md on default branch; excerpt capped at 1000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/README.md"
+      },
+      {
+        "candidate": "addyosmani/agent-skills",
+        "chars": 1000,
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:27Z",
+        "pagination": "root README.md on default branch; excerpt capped at 1000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/README.md"
+      },
+      {
+        "candidate": "HKUDS/CLI-Anything",
+        "chars": 1000,
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:27Z",
+        "pagination": "root README.md on default branch; excerpt capped at 1000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/HKUDS/CLI-Anything/main/README.md"
+      },
+      {
+        "candidate": "alibaba/open-code-review",
+        "chars": 1000,
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:27Z",
+        "pagination": "root README.md on default branch; excerpt capped at 1000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/alibaba/open-code-review/main/README.md"
+      },
+      {
+        "candidate": "anthropics/financial-services",
+        "chars": 1000,
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:28Z",
+        "pagination": "root README.md on default branch; excerpt capped at 1000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/anthropics/financial-services/main/README.md"
+      },
+      {
+        "candidate": "block/buzz",
+        "chars": 1000,
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:28Z",
+        "pagination": "root README.md on default branch; excerpt capped at 1000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/block/buzz/main/README.md"
+      },
+      {
+        "candidate": "davila7/claude-code-templates",
+        "chars": 1000,
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:28Z",
+        "pagination": "root README.md on default branch; excerpt capped at 1000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/davila7/claude-code-templates/main/README.md"
+      },
+      {
+        "candidate": "Tencent/WeKnora",
+        "chars": 1000,
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:28Z",
+        "pagination": "root README.md on default branch; excerpt capped at 1000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/Tencent/WeKnora/main/README.md"
+      },
+      {
+        "candidate": "anthropics/knowledge-work-plugins",
+        "chars": 1000,
+        "complete": true,
+        "fetched_at": "2026-09-26T19:02:28Z",
+        "pagination": "root README.md on default branch; excerpt capped at 1000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/anthropics/knowledge-work-plugins/main/README.md"
+      }
+    ],
+    "validation_notes": []
+  },
+  "new_repositories_by_total_stars": [
+    {
+      "created_at": "2026-09-20T12:01:16Z",
+      "full_name": "zai-org/ZCode",
+      "stars": 6828,
+      "url": "https://github.com/zai-org/ZCode"
+    },
+    {
+      "created_at": "2026-09-21T11:12:53Z",
+      "full_name": "jev-chat/jev-chat-jarvis",
+      "stars": 6661,
+      "url": "https://github.com/jev-chat/jev-chat-jarvis"
+    },
+    {
+      "created_at": "2026-09-20T10:29:47Z",
+      "full_name": "driceroland/Search",
+      "stars": 2083,
+      "url": "https://github.com/driceroland/Search"
+    },
+    {
+      "created_at": "2026-09-21T23:14:02Z",
+      "full_name": "unreallabsai/unreal-agent",
+      "stars": 1958,
+      "url": "https://github.com/unreallabsai/unreal-agent"
+    },
+    {
+      "created_at": "2026-09-23T19:29:56Z",
+      "full_name": "Contrastive-LM/CLM",
+      "stars": 1510,
+      "url": "https://github.com/Contrastive-LM/CLM"
+    },
+    {
+      "created_at": "2026-09-19T23:14:13Z",
+      "full_name": "mizorewww/laya-coreml",
+      "stars": 1486,
+      "url": "https://github.com/mizorewww/laya-coreml"
+    },
+    {
+      "created_at": "2026-09-24T20:56:29Z",
+      "full_name": "tobi/disktree",
+      "stars": 1230,
+      "url": "https://github.com/tobi/disktree"
+    },
+    {
+      "created_at": "2026-09-21T02:12:24Z",
+      "full_name": "deepopen-com/deepopen",
+      "stars": 1035,
+      "url": "https://github.com/deepopen-com/deepopen"
+    },
+    {
+      "created_at": "2026-09-22T23:32:19Z",
+      "full_name": "JohnHeibel/PDoomVideo",
+      "stars": 1020,
+      "url": "https://github.com/JohnHeibel/PDoomVideo"
+    },
+    {
+      "created_at": "2026-09-23T13:37:26Z",
+      "full_name": "mikehasa/golive-skill",
+      "stars": 977,
+      "url": "https://github.com/mikehasa/golive-skill"
+    }
+  ],
+  "official_github_trending_weekly": [
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "stars": 21959,
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "weekly_trending_stars": 9547
+    },
+    {
+      "full_name": "affaan-m/ECC",
+      "stars": 267849,
+      "url": "https://github.com/affaan-m/ECC",
+      "weekly_trending_stars": 6037
+    },
+    {
+      "full_name": "alibaba/open-code-review",
+      "stars": 41565,
+      "url": "https://github.com/alibaba/open-code-review",
+      "weekly_trending_stars": 5030
+    },
+    {
+      "full_name": "dream-num/univer",
+      "stars": 19116,
+      "url": "https://github.com/dream-num/univer",
+      "weekly_trending_stars": 3928
+    },
+    {
+      "full_name": "Tencent/WeKnora",
+      "stars": 30299,
+      "url": "https://github.com/Tencent/WeKnora",
+      "weekly_trending_stars": 3189
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "stars": 99239,
+      "url": "https://github.com/addyosmani/agent-skills",
+      "weekly_trending_stars": 2911
+    },
+    {
+      "full_name": "anthropics/financial-services",
+      "stars": 37674,
+      "url": "https://github.com/anthropics/financial-services",
+      "weekly_trending_stars": 2623
+    },
+    {
+      "full_name": "anthropics/claude-code",
+      "stars": 148185,
+      "url": "https://github.com/anthropics/claude-code",
+      "weekly_trending_stars": 2102
+    },
+    {
+      "full_name": "TencentCloud/Octop",
+      "stars": 5085,
+      "url": "https://github.com/TencentCloud/Octop",
+      "weekly_trending_stars": 1149
+    },
+    {
+      "full_name": "davila7/claude-code-templates",
+      "stars": 31912,
+      "url": "https://github.com/davila7/claude-code-templates",
+      "weekly_trending_stars": 1041
+    }
+  ],
+  "ranking": "top-10 tracked candidates by measured star increase over available period; initial preview uses GitHub Trending weekly stars when no historical baseline exists",
+  "trend_summary": "По доступным метрикам видно движение в выборке, но причины популярности без подтверждённого анализа не называю.",
+  "trends": {
+    "forks": [],
+    "percent": []
+  }
+}
