@@ -122,7 +122,9 @@ fn get(client: &Client, url: &str, raw: bool, max_bytes: Option<usize>) -> Resul
         let mut req = client
             .get(url)
             .header(USER_AGENT, "github-weekly-digest-bot/0.2");
-        req = if raw {
+        req = if raw && url.contains("github.com/trending") {
+            req.header(ACCEPT, "text/html,application/xhtml+xml")
+        } else if raw {
             req.header(ACCEPT, "text/plain")
         } else {
             req.header(ACCEPT, "application/vnd.github+json")
