@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@6bed0761d98439e5a578e2877258200ad565ba87 # stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Format
+        run: cargo fmt --all -- --check
+
+      - name: Check
+        run: cargo check --tests --benches
+
+      - name: Clippy
+        run: cargo clippy --all-targets --all-features -- -D warnings
+
+      - name: Install cargo-nextest
+        uses: taiki-e/install-action@76c2e6406e52637deed7160d77bded76bd83e06e # v2.87.14
+        with:
+          tool: cargo-nextest
+          fallback: none
+
+      - name: Test with nextest
+        run: cargo nextest run --no-tests=pass
+
+      - name: Install dependency tooling
+        uses: taiki-e/install-action@76c2e6406e52637deed7160d77bded76bd83e06e # v2.87.14
+        with:
+          tool: |
+            cargo-audit@0.22.2
+            cargo-deny@0.20.2
+            cargo-machete@0.9.2
+          fallback: none
+
+      # This application template intentionally has no committed Cargo.lock yet.
+      - name: Resolve dependencies for audit
+        run: cargo generate-lockfile
+
+      - name: Audit dependencies
+        run: cargo audit
+
+      - name: Check dependency advisories and sources
+        run: cargo deny check advisories bans sources
+
+      - name: Check unused dependencies
+        run: cargo machete
