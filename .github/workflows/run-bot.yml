@@ -1,14 +1,21 @@
 name: Run Bot
 
 on:
+  schedule:
+    - cron: '17 7 * * *'
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Build and upload a preview without Telegram delivery
+        type: boolean
+        default: true
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
-  group: run-bot-${{ github.ref }}
-  cancel-in-progress: true
+  group: weekly-gh-digest-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   run:
@@ -20,13 +27,86 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          persist-credentials: false
+          fetch-depth: 0
+          persist-credentials: true
 
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@6bed0761d98439e5a578e2877258200ad565ba87 # stable
 
-      - name: Run bot
+      - name: Build bot
+        run: cargo build --release --locked
+
+      - name: Restore persistent state
+        shell: bash
+        run: |
+          if git fetch origin bot-state:refs/remotes/origin/bot-state 2>/dev/null; then
+            mkdir -p data
+            git archive origin/bot-state data | tar -x
+          fi
+
+      - name: Collect, preview, or send digest
         env:
+          GITHUB_TOKEN: ${{ github.token }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: cargo run --release --locked
+          TELEGRAM_DELIVERY_ENABLED: ${{ vars.TELEGRAM_DELIVERY_ENABLED }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_FREE_TIER_CONFIRMED: ${{ vars.CLOUDFLARE_FREE_TIER_CONFIRMED }}
+          IS_MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
+          MANUAL_DRY_RUN: ${{ inputs.dry_run }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          bot=./target/release/weekly-gh-digest
+          if [[ "$IS_MANUAL" == "true" ]]; then
+            if [[ "$MANUAL_DRY_RUN" == "true" ]]; then
+              "$bot" preview --dry-run --llm
+            else
+              "$bot" digest --llm
+            fi
+          elif [[ "$(date -u +%u)" == "1" ]]; then
+            if [[ "$TELEGRAM_DELIVERY_ENABLED" == "true" ]]; then
+              "$bot" digest --llm
+            else
+              "$bot" preview --dry-run --llm
+            fi
+          else
+            "$bot" collect
+          fi
+
+      - name: Save state and source provenance
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! -d data ]]; then
+            echo "No data directory was created; state was not changed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          state_dir="$RUNNER_TEMP/weekly-gh-digest-state"
+          if git fetch origin bot-state:refs/remotes/origin/bot-state 2>/dev/null; then
+            git worktree add "$state_dir" origin/bot-state
+          else
+            git worktree add --detach "$state_dir" HEAD
+            git -C "$state_dir" checkout --orphan bot-state
+            git -C "$state_dir" rm -rf . >/dev/null 2>&1 || true
+          fi
+          mkdir -p "$state_dir/data"
+          cp -a data/. "$state_dir/data/"
+          git -C "$state_dir" add data
+          if ! git -C "$state_dir" diff --cached --quiet; then
+            git -C "$state_dir" commit -m "Update digest state and source archive"
+            git -C "$state_dir" push origin HEAD:bot-state
+          fi
+
+      - name: Upload run preview and provenance
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: weekly-gh-digest-${{ github.run_id }}
+          path: data/runs/
+          if-no-files-found: ignore
+          retention-days: 90
