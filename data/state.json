@@ -1,0 +1,712 @@
+{
+  "schema": 0,
+  "snapshots": [
+    {
+      "full_name": "852wa/JIZURA",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 603,
+      "forks": 107,
+      "language": "HTML",
+      "description": "歌詞から文字PVを自動で組み立てるブラウザアプリ",
+      "html_url": "https://github.com/852wa/JIZURA",
+      "topics": [],
+      "created_at": "2026-09-23T04:04:13Z",
+      "updated_at": "2026-09-26T18:52:48Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Contrastive-LM/CLM",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 1510,
+      "forks": 121,
+      "language": "Python",
+      "description": null,
+      "html_url": "https://github.com/Contrastive-LM/CLM",
+      "topics": [],
+      "created_at": "2026-09-23T19:29:56Z",
+      "updated_at": "2026-09-26T18:54:44Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "<!-- markdownlint-disable MD001 MD041 -->\n<p align=\"center\">\n  <picture>\n    <img alt=\"CLM v0.1\" src=\"assets/logo.png\" width=45%>\n  </picture>\n</p>\n\n<h3 align=\"center\">\nContrastive Language Models\n</h3>\n\n<p align=\"center\">\n<i>A System One Model for Fast and Generalizable Decision-Making</i>\n</p>\n\n<p align=\"center\">\n| 📄 <a href=\"https://contrastive-lm.notion.site\"><b>Blog</b></a> | 🗣️ <a href=\"https://discord.gg/5dAQEDJBs\"><b>Discord</b></a> | 🤗 <a href=\"https://huggingface.co/Contrastive-LM\"><b>Data &amp; Models</b></a> | 📚 <a href=\"#api-reference\"><b>API Reference</b></a> | 🛠️ <a href=\"#fine-tuning-clm-on-your-own-data\"><b>Fine-Tuning Tutorial</b></a> |\n</p>\n\n🔥 **Contrastive Language Models (CLMs)** are a new class of **System One\nmodel** trained with a **contrastive learning** objective that connects\n**states and actions**. This repo serves **CLM-8B** behind a\nTypeSafe-compatible API.\n\n- **CLM-8B** is pre-trained on **60M Nemotron Q&A pairs**, mid-trained on\n  **30M synthetic hard ne"
+    },
+    {
+      "full_name": "Haleclipse/CometixCode",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 562,
+      "forks": 33,
+      "language": "Rust",
+      "description": "An unofficial Rust reimplementation of Anthropic's Claude Code terminal UI, built on iocraft",
+      "html_url": "https://github.com/Haleclipse/CometixCode",
+      "topics": [],
+      "created_at": "2026-09-20T08:58:08Z",
+      "updated_at": "2026-09-26T18:42:58Z",
+      "default_branch": "master",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JohnHeibel/PDoomVideo",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 1020,
+      "forks": 104,
+      "language": "JavaScript",
+      "description": "Source code for the Claude Opus 5.5 music video for I'm Upping My P(doom)",
+      "html_url": "https://github.com/JohnHeibel/PDoomVideo",
+      "topics": [],
+      "created_at": "2026-09-22T23:32:19Z",
+      "updated_at": "2026-09-26T18:46:44Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Mak5er/AirCard-iOS",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 1024,
+      "forks": 94,
+      "language": "Swift",
+      "description": " Apple Wallet card skins and lock screen passcode themes on iOS 27. ",
+      "html_url": "https://github.com/Mak5er/AirCard-iOS",
+      "topics": [],
+      "created_at": "2026-09-19T09:22:23Z",
+      "updated_at": "2026-09-26T18:55:12Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Rizzo-AI-Academy/rizzo-flow",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 597,
+      "forks": 34,
+      "language": "Python",
+      "description": "The open, local take on Jev: typed decisions from an LLM, without generating a single token",
+      "html_url": "https://github.com/Rizzo-AI-Academy/rizzo-flow",
+      "topics": [],
+      "created_at": "2026-09-21T00:00:02Z",
+      "updated_at": "2026-09-26T18:54:56Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anishfn/shapeshift",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 675,
+      "forks": 72,
+      "language": "TypeScript",
+      "description": "An input that becomes what you mean: one text box that morphs into the right UI as you type. Powered by TypeSafe Jev, works offline.",
+      "html_url": "https://github.com/anishfn/shapeshift",
+      "topics": [],
+      "created_at": "2026-09-22T08:52:32Z",
+      "updated_at": "2026-09-26T18:42:21Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "asokurasu/text-humanizer",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 724,
+      "forks": 83,
+      "language": "Python",
+      "description": "A completely free open-sourced project designed to humanize AI-generated text through a multilingual LLM-powered rewriting pipeline. ",
+      "html_url": "https://github.com/asokurasu/text-humanizer",
+      "topics": [
+        "ai-detector",
+        "ai-detector-bypass",
+        "ai-detectors",
+        "text-humanizer",
+        "zerogpt",
+        "zerogpt-bypass"
+      ],
+      "created_at": "2026-09-23T17:32:37Z",
+      "updated_at": "2026-09-26T18:09:44Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "deepopen-com/deepopen",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 1035,
+      "forks": 110,
+      "language": "Python",
+      "description": "非自回归System 1决策引擎，专为结构化类型决策场景设计  DeepOpen Multilingual, non-autoregressive System 1 decision engine. ",
+      "html_url": "https://github.com/deepopen-com/deepopen",
+      "topics": [],
+      "created_at": "2026-09-21T02:12:24Z",
+      "updated_at": "2026-09-26T17:10:32Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dgreenheck/tidewater",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 709,
+      "forks": 173,
+      "language": "JavaScript",
+      "description": "Coastal town built with Opus 5.5",
+      "html_url": "https://github.com/dgreenheck/tidewater",
+      "topics": [],
+      "created_at": "2026-09-23T21:40:29Z",
+      "updated_at": "2026-09-26T18:56:10Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "driceroland/Search",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 2083,
+      "forks": 183,
+      "language": "Swift",
+      "description": "A small, fast WebKit browser for macOS, by Office Commun.",
+      "html_url": "https://github.com/driceroland/Search",
+      "topics": [],
+      "created_at": "2026-09-20T10:29:47Z",
+      "updated_at": "2026-09-26T18:45:15Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# Search\n\nA small, fast, quiet web browser for the Mac, by [Office Commun](https://officecommun.com).\n\n![Search, with its tabs down the left and a page taking the rest of the window](.github/screenshot.png)\n\n**[Download for macOS →](https://officecommun.com/search)** · macOS 14 or later · free · about 3 MB\n\nOr with [Homebrew](https://brew.sh): `brew install --cask driceroland/tap/search`\n\n---\n\n## What it is\n\nSearch is a browser with nothing in the way. A row of tabs — across the top or down the left, your choice — and the page. There is no toolbar, no start page, no sidebar of suggestions, no account to sign into, nothing that wants your attention. You type an address or a few words in one field and you are on the page.\n\nIt uses **WebKit**, the engine already inside every Mac (it is what Safari runs on). That is why the whole app is about 3 MB on disk and opens instantly: there is no second copy of Chromium to download, update and keep in memory.\n\nIt was built by a design studio that s"
+    },
+    {
+      "full_name": "freestylefly/WeChatBridge",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 782,
+      "forks": 299,
+      "language": "Swift",
+      "description": "微信聊天记录一键转发到 AI Agent 与 Obsidian 的原生 macOS 工具",
+      "html_url": "https://github.com/freestylefly/WeChatBridge",
+      "topics": [
+        "ai-agent",
+        "chat-history",
+        "macos",
+        "obsidian",
+        "share-extension",
+        "swift",
+        "wechat"
+      ],
+      "created_at": "2026-09-21T02:54:51Z",
+      "updated_at": "2026-09-26T17:36:46Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "heyjunpenn/awesome-jev",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 848,
+      "forks": 60,
+      "language": "Astro",
+      "description": "A verified, community-maintained catalog of 916 open-source projects built with Jev.",
+      "html_url": "https://github.com/heyjunpenn/awesome-jev",
+      "topics": [
+        "astro",
+        "awesome",
+        "awesome-jev",
+        "awesome-list",
+        "jev",
+        "typesafe"
+      ],
+      "created_at": "2026-09-19T05:14:36Z",
+      "updated_at": "2026-09-26T17:13:31Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jev-chat/jev-chat-jarvis",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 6661,
+      "forks": 1147,
+      "language": "Kotlin",
+      "description": "装在手机上的对话副驾：在 QQ / X / 飞书里读懂对方、给出候选回复、一键填入输入框，发不发由你。非侵入，只读屏幕，不 hook 不改包。",
+      "html_url": "https://github.com/jev-chat/jev-chat-jarvis",
+      "topics": [
+        "accessibility-service",
+        "android",
+        "chat-assistant",
+        "llm",
+        "qq"
+      ],
+      "created_at": "2026-09-21T11:12:53Z",
+      "updated_at": "2026-09-26T18:52:24Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "<div align=\"center\">\n\n<img src=\"docs/images/logo.png\" width=\"150\" alt=\"Jev 聊天助手\" />\n\n# Jev 聊天助手\n\n**装在手机上的「对话副驾」：在支持的聊天 App 里读懂对方、告诉你该怎么回，一键填进输入框，发不发由你。**\n\n[![Stars](https://img.shields.io/github/stars/jev-chat/jev-chat-jarvis?style=flat-square&logo=github&label=Stars)](https://github.com/jev-chat/jev-chat-jarvis/stargazers)\n[![Forks](https://img.shields.io/github/forks/jev-chat/jev-chat-jarvis?style=flat-square&logo=github&label=Forks)](https://github.com/jev-chat/jev-chat-jarvis/forks)\n[![Version](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-v1.4-1f6feb?style=flat-square)](CHANGELOG.md)\n[![Android](https://img.shields.io/badge/Android-11%2B-3DDC84?style=flat-square&logo=android&logoColor=white)](#快速开始)\n[![License](https://img.shields.io/github/license/jev-chat/jev-chat-jarvis?style=flat-square)](LICENSE)\n\n[官网](https://chatjevs.com) · [隐私政策](PRIVACY.md) · [下载 APK](apk/jev-assistant-v1.4-release.apk) · [历史版本](https://github.com/jev-chat/jev-chat-jarvis/releases) · [更新日志](CHANGELOG.md"
+    },
+    {
+      "full_name": "jev-chat/jev-chat-windows",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 589,
+      "forks": 128,
+      "language": "Python",
+      "description": "JevChat-Windows：聊天窗口旁挂的回复辅助。窗口截图 + 本地离线 OCR 读对方消息 → Jev 判断意图 → 3 条候选一键填入，发送永远手动",
+      "html_url": "https://github.com/jev-chat/jev-chat-windows",
+      "topics": [
+        "chat-assistant",
+        "jev",
+        "llm",
+        "local-first",
+        "ocr",
+        "privacy",
+        "pyqt",
+        "python",
+        "wechat",
+        "windows"
+      ],
+      "created_at": "2026-09-21T14:37:14Z",
+      "updated_at": "2026-09-26T18:43:29Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kryvora-network/kryvora-node",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 864,
+      "forks": 24,
+      "language": "Go",
+      "description": "Reference client daemon and verification worker for Kryvora Network nodes.",
+      "html_url": "https://github.com/kryvora-network/kryvora-node",
+      "topics": [
+        "depin",
+        "distributed-systems",
+        "golang",
+        "infrastructure",
+        "node-runner",
+        "telemetry",
+        "worker-daemon"
+      ],
+      "created_at": "2026-09-22T16:10:23Z",
+      "updated_at": "2026-09-26T18:49:31Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mikehasa/golive-skill",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 977,
+      "forks": 67,
+      "language": "TypeScript",
+      "description": "Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account, backend or telemetry.",
+      "html_url": "https://github.com/mikehasa/golive-skill",
+      "topics": [
+        "agent-skill",
+        "agent-skills",
+        "ai-agents",
+        "claude-code",
+        "cloudflare",
+        "codex",
+        "database",
+        "deployment",
+        "developer-tools",
+        "devops",
+        "dns",
+        "godaddy",
+        "hosting",
+        "infrastructure",
+        "neon",
+        "netlify",
+        "porkbun",
+        "skills",
+        "supabase",
+        "vercel"
+      ],
+      "created_at": "2026-09-23T13:37:26Z",
+      "updated_at": "2026-09-26T18:27:44Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mizorewww/laya-coreml",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 1486,
+      "forks": 124,
+      "language": "Python",
+      "description": "Local Laya typed decisions on Apple Core ML and Neural Engine. Validated ports, ~5 ms short decisions on M3 Max, reproducible speed and energy benchmarks.",
+      "html_url": "https://github.com/mizorewww/laya-coreml",
+      "topics": [
+        "apple-neural-engine",
+        "apple-silicon",
+        "coreml",
+        "decision-model",
+        "laya",
+        "local-ai",
+        "modernbert",
+        "on-device-ai",
+        "typed-decisions"
+      ],
+      "created_at": "2026-09-19T23:14:13Z",
+      "updated_at": "2026-09-26T18:52:17Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "![Laya Core ML playing Snake with real local model probabilities](https://raw.githubusercontent.com/mizorewww/laya-coreml/main/docs/assets/snake-demo.gif)\n\n# Laya-CoreML\n\n**Open-weight typed decisions on Apple Silicon. Core ML, Neural Engine, zero generated tokens.**\n\n[PyPI](https://pypi.org/project/laya-coreml/) · [Hugging Face weights](https://huggingface.co/aac6fef/laya-multilingual-coreml-ane) · [中文](https://github.com/mizorewww/laya-coreml/blob/main/README.zh-CN.md)\n\nA real Laya model plays Snake locally, with visible probabilities, score, length,\nlatency and safety interventions. The GIF replays a recorded Core ML run at **1× speed**.\nThe game uses explicit planner features and a visible cycle safety layer.\n\nThe complete active Snake loop sustained **49.1–50.0 decisions/s** across three\nuncapped 600-step episodes, with zero deaths and two safety interventions.\n[Game-loop timings and paced-rate limits](https://github.com/mizorewww/laya-coreml/blob/main/docs/SNAKE_BENCHMARKS.md)\nin"
+    },
+    {
+      "full_name": "mizorewww/laya-mlx",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 6412,
+      "forks": 498,
+      "language": "Python",
+      "description": "Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API.",
+      "html_url": "https://github.com/mizorewww/laya-mlx",
+      "topics": [
+        "apple-silicon",
+        "decision-model",
+        "inference",
+        "laya",
+        "local-ai",
+        "machine-learning",
+        "mlx",
+        "modernbert",
+        "system-one",
+        "typed-decisions"
+      ],
+      "created_at": "2026-09-19T13:50:26Z",
+      "updated_at": "2026-09-26T18:52:56Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# Laya-MLX\n\n![Laya MLX playing Snake — actual decisions, original speed](https://raw.githubusercontent.com/mizorewww/laya-mlx/main/docs/assets/snake-demo.gif)\n\n**Open-weight typed decisions, running natively on Apple Silicon.**\n\n**13.4 ms** median end-to-end for a short English typed decision. **7.4 ms** with the multilingual checkpoint. **0 output tokens.** Local MLX inference, with no PyTorch, Transformers runtime, or cloud API.\n\n[中文](https://github.com/mizorewww/laya-mlx/blob/main/README.zh-CN.md) · [Benchmarks](https://github.com/mizorewww/laya-mlx/blob/main/BENCHMARKS.md) · [Snake demo](https://github.com/mizorewww/laya-mlx/blob/main/docs/SNAKE_DEMO.md) · [Hugging Face weights](https://huggingface.co/aac6fef/laya-mlx)\n\nThe GIF is an original-speed render of a real local Snake run. Every move calls Laya; the visible cycle safety layer can correct unsafe proposals. The latency figures above are the separate **one-question API benchmark**, not the frame time of the three-question Sna"
+    },
+    {
+      "full_name": "newliver666/apk-reverse",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 1898,
+      "forks": 435,
+      "language": "Python",
+      "description": "Suitable for Android APK reverse engineering analysis",
+      "html_url": "https://github.com/newliver666/apk-reverse",
+      "topics": [],
+      "created_at": "2026-09-19T13:12:54Z",
+      "updated_at": "2026-09-26T18:55:04Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "<p align=\"center\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/banner-dark.svg\">\n    <img src=\"assets/banner-light.svg\" alt=\"apk-reverse\" width=\"100%\">\n  </picture>\n</p>\n\n<p align=\"center\">\n  <b>English</b> · <a href=\"README.zh-CN.md\">简体中文</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/newliver666/apk-reverse/stargazers\"><img src=\"https://img.shields.io/github/stars/newliver666/apk-reverse?style=flat-square&label=stars&color=49454F\" alt=\"stars\"></a>\n  <a href=\"https://github.com/newliver666/apk-reverse/network/members\"><img src=\"https://img.shields.io/github/forks/newliver666/apk-reverse?style=flat-square&label=forks&color=49454F\" alt=\"forks\"></a>\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/github/license/newliver666/apk-reverse?style=flat-square&color=49454F\" alt=\"license\"></a>\n  <img src=\"https://img.shields.io/badge/python-3.9%2B-49454F?style=flat-square&logo=python&logoColor=white\" alt=\"python\">\n  <img src=\"https://img.shields.io"
+    },
+    {
+      "full_name": "nokia-applied-research/AnyJev",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 788,
+      "forks": 104,
+      "language": "Python",
+      "description": "Turn any LLM into a Jev-style decision model: typed decisions, real probabilities, no training. (continue updating, welcome any issue and PR request)",
+      "html_url": "https://github.com/nokia-applied-research/AnyJev",
+      "topics": [
+        "calibration",
+        "decision-model",
+        "jev",
+        "jev-model",
+        "llm",
+        "system-one",
+        "transformers",
+        "vllm"
+      ],
+      "created_at": "2026-09-21T05:55:40Z",
+      "updated_at": "2026-09-26T18:53:59Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "pallavi-shekhar/ai-engineering-interview-questions-company-wise",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 1365,
+      "forks": 127,
+      "language": "Markdown",
+      "description": "Your Cheat Sheet For AI Engineering Interviews at Top AI Companies - Questions and Answers.",
+      "html_url": "https://github.com/pallavi-shekhar/ai-engineering-interview-questions-company-wise",
+      "topics": [
+        "ai",
+        "ai-engineering",
+        "ai-engineering-interview",
+        "ai-interview",
+        "ai-interview-questions",
+        "company-wise-prep",
+        "company-wise-questions",
+        "interview-questions",
+        "llm-inference",
+        "questions-and-answers"
+      ],
+      "created_at": "2026-09-19T04:14:43Z",
+      "updated_at": "2026-09-26T18:46:21Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "<p align=\"center\">\n    <img alt=\"AI Engineering Interview Questions Company Wise\" src=\"https://github.com/pallavi-shekhar/ai-engineering-interview-questions-company-wise/blob/main/assets/banner.png\">\n</p>\n\n# AI Engineering Interview Questions Company Wise\n\n> AI Engineering Interview Questions Company Wise - Your Cheat Sheet For AI Engineering Interviews at Top AI Companies\n>\n> Real interview questions asked in AI Engineering interviews at 35 companies, organized company by company, with answers linked wherever we have them.\n>\n> These interview questions and answers are helpful for roles such as:\n>\n> - AI Engineer\n> - Gen AI Engineer\n> - LLM Engineer\n> - Agentic AI Engineer\n> - AI Agent Engineer\n> - Machine Learning Engineer\n> - Research Engineer\n> - Applied Scientist\n> - Forward Deployed Engineer\n> - AI Solutions Architect\n> - AI Platform Engineer\n> - Applied AI Engineer\n> - LLM Inference and Performance Engineer\n> - MLOps Engineer\n> - LLMOps Engineer\n\n## Table of Contents\n\n- [How to u"
+    },
+    {
+      "full_name": "riba2534/claude-opus-5-5-demo",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 808,
+      "forks": 119,
+      "language": "JavaScript",
+      "description": "claude-opus-5-5-demo",
+      "html_url": "https://github.com/riba2534/claude-opus-5-5-demo",
+      "topics": [],
+      "created_at": "2026-09-23T06:31:00Z",
+      "updated_at": "2026-09-26T17:33:38Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tobi/disktree",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 1230,
+      "forks": 81,
+      "language": "Rust",
+      "description": "A treemap for finding and removing what fills your disk, for Omarchy. Rust + GPUI.",
+      "html_url": "https://github.com/tobi/disktree",
+      "topics": [],
+      "created_at": "2026-09-24T20:56:29Z",
+      "updated_at": "2026-09-26T18:51:25Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# disktree\n\n![disktree: a home directory as a treemap, coloured by kind of data, with reclaimable space hatched and the selection, findings and free space in the side panel](assets/screenshot.png)\n\nFind what is filling a disk, mark what should go, and remove it — with the\nvolume's free space in view the whole time.\n\ndisktree is a treemap for Omarchy. It scans your home directory by default,\ndraws every directory as a nested mosaic sized by what it really costs on disk,\nand lets you walk into it with the keyboard or the mouse. Mark as much as you\nlike; nothing happens until you review the list and commit, and the permanent\npath always asks first.\n\nBuilt with [GPUI](https://gpui-kit.com/) through\n[gpui-omarchy](https://github.com/huacnlee/gpui-omarchy), so it follows your\nOmarchy theme and behaves like the rest of the desktop.\n\n## Install\n\nDownload `disktree-*-x86_64-linux.tar.gz` (`aarch64-linux` on ARM) from the\n[latest release](https://github.com/tobi/disktree/releases/latest), unpack"
+    },
+    {
+      "full_name": "unreallabsai/unreal-agent",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 1958,
+      "forks": 103,
+      "language": "Go",
+      "description": "Async-first agent harness",
+      "html_url": "https://github.com/unreallabsai/unreal-agent",
+      "topics": [],
+      "created_at": "2026-09-21T23:14:02Z",
+      "updated_at": "2026-09-26T17:11:37Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# Unreal Agent\n\nAn async-first agent harness from Unreal Labs.\n\n- [harness/](harness/) — the library.\n- [cmd/](cmd/) — executables that use the library.\n- [benchmarks/](benchmarks/) — benchmark runners.\n\n## Glossary\n\n- **Input**: an event with a caller-supplied globally unique ID that remains\n  stable across redeliveries.\n- **Inbox**: session-scoped, in-memory deduplication of external, control, and\n  crash inputs.\n- **Session**: append-only persisted history that can be forked.\n- **LLM turn**: the coordinator-managed sequence around one logical LLM request.\n- **Tool**: a capability described by a schema and bound to a translator.\n- **Tool call**: a model-produced request to use a tool.\n- **Tool translator**: validates a tool call and translates it into one or more\n  operations. It runs synchronously on the coordinator's event loop and must not\n  perform I/O or suspend the loop.\n- **Tool call status**: the translation outcome: a validation error or references\n  to submitted operations."
+    },
+    {
+      "full_name": "v-modal/awesome-jev-tools",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 725,
+      "forks": 34,
+      "language": null,
+      "description": "A curated list of tools  built for Jev — TypeSafe AI's System One model for typed decisions.",
+      "html_url": "https://github.com/v-modal/awesome-jev-tools",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "awesome-lists",
+        "jev",
+        "llm",
+        "robotics",
+        "robotics-algorithms",
+        "robotics-control",
+        "robotics-simulation"
+      ],
+      "created_at": "2026-09-19T16:48:59Z",
+      "updated_at": "2026-09-26T13:16:50Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "volotat/mini-AGI",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 776,
+      "forks": 113,
+      "language": "Python",
+      "description": "Continual learning model trained from scratch on 8GB VRAM laptop with batch-1 stream of data.",
+      "html_url": "https://github.com/volotat/mini-AGI",
+      "topics": [],
+      "created_at": "2026-09-19T00:25:59Z",
+      "updated_at": "2026-09-26T15:39:18Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "yetone/magpie",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 968,
+      "forks": 60,
+      "language": "Go",
+      "description": "Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
+      "html_url": "https://github.com/yetone/magpie",
+      "topics": [
+        "claude-code",
+        "codex",
+        "deepseek",
+        "gemini-cli",
+        "llm",
+        "macos"
+      ],
+      "created_at": "2026-09-23T16:22:35Z",
+      "updated_at": "2026-09-26T18:54:19Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "yukitorido/short-video-generator-AI",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 716,
+      "forks": 82,
+      "language": "Python",
+      "description": "AI video processing pipeline for generating vertical shorts using LLMs, Whisper transcription, highlight detection and automated editing",
+      "html_url": "https://github.com/yukitorido/short-video-generator-AI",
+      "topics": [
+        "ai",
+        "llm",
+        "llm-tools",
+        "opus-clip",
+        "opus-clip-alternative",
+        "short-video",
+        "short-video-automation",
+        "short-video-generator",
+        "short-video-maker"
+      ],
+      "created_at": "2026-09-23T18:11:57Z",
+      "updated_at": "2026-09-26T15:24:45Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "zai-org/ZCode",
+      "captured_at": "2026-09-26T18:56:59Z",
+      "stars": 6828,
+      "forks": 2055,
+      "language": "TypeScript",
+      "description": "Z.ai's coding agent harness. Powerful, intelligent, extensible.",
+      "html_url": "https://github.com/zai-org/ZCode",
+      "topics": [],
+      "created_at": "2026-09-20T12:01:16Z",
+      "updated_at": "2026-09-26T18:46:51Z",
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# ZCode\n\n<div align=\"center\">\n  <img src=\"public/logo/icons/1024x1024.png\" alt=\"ZCode\" width=\"128\" height=\"128\" />\n</div>\n<p align=\"center\">\n  <a href=\"https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=47ag983c-8fcb-4d6d-814b-5395193a712c&amp;qr_code=true\">飞书社群</a> ·\n  <a href=\"https://discord.gg/z9aBcQXZQ3\">Discord</a>\n</p>\n<p align=\"center\">\n  简体中文 | <a href=\"README.en.md\">English</a>\n</p>\n\n\n\nZCode 是 AI 编程工作台，提供桌面应用、浏览器界面和终端 Agent。本仓库包含客户端、后端服务、共享 UI，以及 Agent CLI 与运行时源码。\n\n## 更新\n\n- 2026-9-23：更新至 ZCode v3.14.3 版本。\n\n## 初始化\n\n准备 Git、Node.js **24.14.0** 和 pnpm **10.33.2**，版本以 [mise.toml](mise.toml) 为准。以下开发和打包命令均在仓库根目录执行。\n\n```bash\npnpm bootstrap\n```\n\n`pnpm bootstrap` 安装 workspace 依赖、准备桌面本地运行资源，再执行 `build:bootstrap`。\n\nAgent CLI 与运行时源码位于 [apps/zcode-cli/](apps/zcode-cli/)，作为普通目录随本仓库一起克隆，无需单独拉取或初始化 Git submodule。\n\n根据需要选择其他初始化或构建入口：\n\n| 命令                           | 用途                                                              |\n| ------------------------------ | ----------"
+    }
+  ],
+  "sent_weeks": []
+}
