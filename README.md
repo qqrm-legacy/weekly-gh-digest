@@ -27,7 +27,7 @@ Add these repository Actions secrets:
 
 The inference provider is Cloudflare Workers AI `@cf/openai/gpt-oss-120b`. The workflow only calls it when the repository Actions variable `CLOUDFLARE_FREE_TIER_CONFIRMED` is set to `yes`, all Cloudflare credentials are non-empty, and the preflight estimate stays under 4,000 Neurons for the complete run. There is no paid fallback. The confirmation variable is an operator assertion: the API does not certify that the account cannot bill beyond its free allowance. Without the variable, the bot makes no model requests.
 
-Scheduled Telegram delivery is gated separately. Set `TELEGRAM_DELIVERY_ENABLED=true` only after adding the Telegram secrets and verifying the chat. Until then Monday runs create previews and do not send. A manual run with `dry_run=false` sends immediately, so use the default dry run for review.
+On Mondays, scheduled runs send automatically when both `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` secrets are configured; otherwise they create a preview and do not send. No separate delivery variable is needed. A manual run with `dry_run=false` sends immediately, so use the default dry run for review.
 
 The workflow needs repository `contents: write` permission to update `bot-state`. It serializes updates to that branch. Telegram does not provide an idempotency key for `sendMessage`, so a retry after an ambiguous network result can duplicate a message.
 
