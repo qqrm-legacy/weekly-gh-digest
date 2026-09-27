@@ -1,6 +1,6 @@
 use anyhow::{Context, Result, anyhow};
 use chrono::{DateTime, Datelike, Duration, Utc};
-use reqwest::blocking::Client;
+use reqwest::blocking::{Client, Response};
 use reqwest::header::{ACCEPT, USER_AGENT};
 use scraper::{Html, Selector};
 use serde::{Deserialize, Serialize};
@@ -17,6 +17,7 @@ const MAX_CANDIDATES: usize = 30;
 const README_LIMIT: usize = 5_000;
 const MAX_LLM_REQUESTS: usize = 40;
 const DAILY_LLM_REQUEST_CAP: usize = 100;
+const MAX_PROVIDER_ATTEMPTS: usize = 3;
 const ROOT: &str = env!("CARGO_MANIFEST_DIR");
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -709,14 +710,12 @@ fn make_digest(
             continue;
         }
         let payload = serde_json::to_string(&bundle)?;
-        reserve_llm_request(state, &mut calls)?;
         prompts.push(json!({"stage":"project_review","provider":"gemini","user_json":payload}));
-        let gemini_result = gemini(&payload, analyst_system, 700);
+        let gemini_result = gemini(&payload, analyst_system, 700, state, &mut calls);
         thread::sleep(StdDuration::from_secs(2));
-        reserve_llm_request(state, &mut calls)?;
         prompts.push(json!({"stage":"project_review","provider":"groq","user_json":payload}));
         thread::sleep(StdDuration::from_secs(30));
-        let groq_result = groq(&payload, analyst_system, 700);
+        let groq_result = groq(&payload, analyst_system, 700, state, &mut calls);
         let gemini_text = match gemini_result {
             Ok(text) => text,
             Err(e) => {
@@ -780,11 +779,10 @@ fn make_digest(
         let synthesis_input =
             json!({"project":bundle,"gemini_review":gemini_json,"groq_review":groq_json});
         let synth_payload = serde_json::to_string(&synthesis_input)?;
-        reserve_llm_request(state, &mut calls)?;
         prompts.push(
             json!({"stage":"project_synthesis","provider":"gemini","user_json":synth_payload}),
         );
-        match gemini(&synth_payload, synth_system, 500) {
+        match gemini(&synth_payload, synth_system, 500, state, &mut calls) {
             Ok(text) => match serde_json::from_str::<Value>(&extract_json(&text)) {
                 Ok(card) => {
                     let required_card_fields = [
@@ -859,9 +857,8 @@ fn make_digest(
         }).collect::<Vec<_>>();
         let editorial_system = "Ты редактор дайджеста. Синтезируй десятку, опирайся только на карточки. JSON {\"summary\":до 500 символов,\"joke\":до 180 символов}. Назови 1-2 реальные повторяющиеся технические темы и прямо укажи, что выборка — только недельный Trending, не весь GitHub. Юмор сатирический и технический: высмеивай подтверждённые архитектурные или маркетинговые несоответствия, не людей и не придумывай причины роста звёзд.";
         let payload = serde_json::to_string(&cards)?;
-        reserve_llm_request(state, &mut calls)?;
         prompts.push(json!({"stage":"weekly_editorial","provider":"gemini","user_json":payload}));
-        match gemini(&payload, editorial_system, 700) {
+        match gemini(&payload, editorial_system, 700, state, &mut calls) {
             Ok(text) => match serde_json::from_str::<Value>(&extract_json(&text)) {
                 Ok(result) => {
                     if result["summary"]
@@ -954,36 +951,83 @@ fn extract_json(s: &str) -> String {
     s[a..b].to_string()
 }
 
-fn groq(payload: &str, system: &str, max_tokens: usize) -> Result<String> {
+fn provider_json_with_retry<F>(state: &mut State, calls: &mut usize, mut send: F) -> Result<Value>
+where
+    F: FnMut() -> reqwest::Result<Response>,
+{
+    let mut last_error = None;
+    for attempt in 0..MAX_PROVIDER_ATTEMPTS {
+        reserve_llm_request(state, calls)?;
+        match send() {
+            Ok(response) if response.status().is_success() => return Ok(response.json()?),
+            Ok(response) => {
+                let status = response.status();
+                let body = response.text().unwrap_or_default();
+                let error = anyhow!(
+                    "HTTP {status}: {}",
+                    body.chars().take(300).collect::<String>()
+                );
+                if status != reqwest::StatusCode::TOO_MANY_REQUESTS && !status.is_server_error() {
+                    return Err(error);
+                }
+                last_error = Some(error);
+            }
+            Err(error) => {
+                let retryable = error.is_timeout() || error.is_connect();
+                let error = anyhow!(error);
+                if !retryable {
+                    return Err(error);
+                }
+                last_error = Some(error);
+            }
+        }
+        if attempt + 1 < MAX_PROVIDER_ATTEMPTS {
+            thread::sleep(StdDuration::from_secs(2_u64.pow(attempt as u32)));
+        }
+    }
+    Err(last_error.unwrap_or_else(|| anyhow!("provider request failed without an error")))
+}
+
+fn groq(
+    payload: &str,
+    system: &str,
+    max_tokens: usize,
+    state: &mut State,
+    calls: &mut usize,
+) -> Result<String> {
     let token = env::var("GROQ_API_KEY").context("GROQ_API_KEY missing")?;
     let http = client()?;
     let model = model_name("GROQ_MODEL", "openai/gpt-oss-120b");
-    let response: Value = http
-        .post("https://api.groq.com/openai/v1/chat/completions")
-        .bearer_auth(token)
-        .json(&json!({"model":model,"messages":[{"role":"system","content":system},{"role":"user","content":payload}],"max_tokens":max_tokens,"temperature":0.2,"stream":false,"response_format":{"type":"json_object"}}))
-        .send()?
-        .error_for_status()?
-        .json()?;
+    let response = provider_json_with_retry(state, calls, || {
+        http.post("https://api.groq.com/openai/v1/chat/completions")
+            .bearer_auth(&token)
+            .json(&json!({"model":model,"messages":[{"role":"system","content":system},{"role":"user","content":payload}],"max_tokens":max_tokens,"temperature":0.2,"stream":false,"response_format":{"type":"json_object"}}))
+            .send()
+    })?;
     response["choices"][0]["message"]["content"]
         .as_str()
         .map(str::to_string)
         .ok_or_else(|| anyhow!("Groq response did not contain a completion"))
 }
 
-fn gemini(payload: &str, system: &str, max_tokens: usize) -> Result<String> {
+fn gemini(
+    payload: &str,
+    system: &str,
+    max_tokens: usize,
+    state: &mut State,
+    calls: &mut usize,
+) -> Result<String> {
     let token = env::var("GEMINI_API_KEY").context("GEMINI_API_KEY missing")?;
     let model = model_name("GEMINI_MODEL", "gemini-3.8-flash");
     let url =
         format!("https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent");
     let http = client()?;
-    let response: Value = http
-        .post(url)
-        .header("x-goog-api-key", token)
-        .json(&json!({"systemInstruction":{"parts":[{"text":system}]} ,"contents":[{"role":"user","parts":[{"text":payload}]}],"generationConfig":{"temperature":0.2,"maxOutputTokens":max_tokens,"responseMimeType":"application/json"}}))
-        .send()?
-        .error_for_status()?
-        .json()?;
+    let response = provider_json_with_retry(state, calls, || {
+        http.post(&url)
+            .header("x-goog-api-key", &token)
+            .json(&json!({"systemInstruction":{"parts":[{"text":system}]} ,"contents":[{"role":"user","parts":[{"text":payload}]}],"generationConfig":{"temperature":0.2,"maxOutputTokens":max_tokens,"responseMimeType":"application/json"}}))
+            .send()
+    })?;
     response["candidates"][0]["content"]["parts"][0]["text"]
         .as_str()
         .map(str::to_string)
