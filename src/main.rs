@@ -1043,7 +1043,7 @@ fn gemini(
     let response = provider_json_with_retry(state, calls, || {
         http.post(&url)
             .header("x-goog-api-key", &token)
-            .json(&json!({"systemInstruction":{"parts":[{"text":system}]} ,"contents":[{"role":"user","parts":[{"text":payload}]}],"generationConfig":{"temperature":0.2,"maxOutputTokens":max_tokens,"responseMimeType":"application/json"}}))
+            .json(&json!({"systemInstruction":{"parts":[{"text":system}]} ,"contents":[{"role":"user","parts":[{"text":payload}]}],"generationConfig":{"temperature":0.2,"maxOutputTokens":max_tokens,"responseMimeType":"application/json","thinkingConfig":{"thinkingLevel":"low"}}}))
             .send()
     })?;
     response["candidates"][0]["content"]["parts"][0]["text"]
