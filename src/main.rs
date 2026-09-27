@@ -809,7 +809,7 @@ fn make_digest(
         prompts.push(
             json!({"stage":"project_synthesis","provider":"gemini","user_json":synth_payload}),
         );
-        match gemini(&synth_payload, synth_system, 500, state, &mut calls) {
+        match gemini(&synth_payload, synth_system, 1200, state, &mut calls) {
             Ok(text) => match serde_json::from_str::<Value>(&extract_json(&text)) {
                 Ok(mut card) => {
                     let required_card_fields =
@@ -851,8 +851,11 @@ fn make_digest(
                     );
                     synthesized_cards.push(json!({"id":s.full_name,"card":card}));
                 }
-                Err(_) => {
-                    failure_reason = "project synthesis was not valid JSON".into();
+                Err(error) => {
+                    failure_reason = format!(
+                        "project synthesis was not valid JSON ({error}); response starts: {}",
+                        text.chars().take(180).collect::<String>()
+                    );
                     break;
                 }
             },
