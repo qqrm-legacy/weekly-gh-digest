@@ -1,0 +1,200 @@
+{
+  "budget": {
+    "actual_requests": 0,
+    "analysis_chunk_size": 5,
+    "estimated_input_tokens": 0,
+    "estimated_neurons_at_max_output": 0.0,
+    "local_inference": false,
+    "max_neurons_estimate": 4000.0,
+    "max_output_tokens_per_analysis_item": 260,
+    "max_requests": 3,
+    "model": "@cf/openai/gpt-oss-120b",
+    "paid_fallback": false,
+    "provider": "Cloudflare Workers AI",
+    "reason": "LLM disabled",
+    "synthesis_max_output_tokens": 400
+  },
+  "items": [
+    {
+      "captured_at": "2026-09-27T13:02:48Z",
+      "description": "The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime.",
+      "id": "dream-num/univer",
+      "language": "TypeScript",
+      "metrics": {
+        "forks": 1691,
+        "observed_period": "доступно 0.8 дн.",
+        "stars": 19874,
+        "tracked_stars_change": 758
+      },
+      "readme_excerpt": "",
+      "topics": [
+        "board",
+        "collaboration",
+        "data-table",
+        "doc",
+        "docx"
+      ],
+      "url": "https://github.com/dream-num/univer"
+    },
+    {
+      "captured_at": "2026-09-27T13:02:48Z",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "id": "affaan-m/ECC",
+      "language": "JavaScript",
+      "metrics": {
+        "forks": 40056,
+        "observed_period": "доступно 0.8 дн.",
+        "stars": 268130,
+        "tracked_stars_change": 281
+      },
+      "readme_excerpt": "<p align=\"center\">\n  <img src=\"assets/hero.png\" alt=\"ECC - the agent harness operating system\" width=\"100%\" />\n</p>\n\n<p align=\"center\">\n  <a href=\"https://www.star-history.com/affaan-m/ecc\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=trending&theme=dark\" />\n      <img src=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=trending\" alt=\"GitHub Trending Repository of the Day\" height=\"46\" />\n    </picture>\n  </a>\n  <a href=\"https://www.star-history.com/affaan-m/ecc\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=rank&theme=dark\" />\n      <img src=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=rank\" alt=\"Star History Global Rank\" height=\"46\" />\n    </picture>\n  </a>\n</p>\n\n<p align=\"center\">\n  <strong>Language:</strong>\n  <a href=\"README.md\">English</a> |\n  <a href=\"docs/pt-BR/README.md\">Português (B",
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools"
+      ],
+      "url": "https://github.com/affaan-m/ECC"
+    },
+    {
+      "captured_at": "2026-09-27T13:02:48Z",
+      "description": "",
+      "id": "Contrastive-LM/CLM",
+      "language": "Python",
+      "metrics": {
+        "forks": 151,
+        "observed_period": "доступно 0.8 дн.",
+        "stars": 1755,
+        "tracked_stars_change": 245
+      },
+      "readme_excerpt": "",
+      "topics": [],
+      "url": "https://github.com/Contrastive-LM/CLM"
+    },
+    {
+      "captured_at": "2026-09-27T13:02:48Z",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "id": "cloudflare/security-audit-skill",
+      "language": "JavaScript",
+      "metrics": {
+        "forks": 1287,
+        "observed_period": "доступно 0.8 дн.",
+        "stars": 22187,
+        "tracked_stars_change": 228
+      },
+      "readme_excerpt": "# security-audit\n\nA coding-agent skill that turns your agent into a security auditor. It orchestrates isolated agents through reconnaissance, coverage-led hunting, candidate validation, structured output, independent record verification, and target-neutral reporting.\n\nThis is the skill that seeded Cloudflare's vulnerability discovery harness, described in [Build your own vulnerability harness](https://blog.cloudflare.com/build-your-own-vulnerability-harness). The harness grew into a multi-stage, fleet-wide system; this skill is the single-repo starting point it evolved from.\n\n## What it does\n\nThe skill runs a structured audit in six phases:\n\n1. **Reconnaissance** -- map architecture, trust boundaries, input surfaces, prior evidence, and deterministic coverage in `architecture.md` and `coverage-ledger.json`.\n2. **Coverage-led hunting** -- assign isolated hunters from ledger units, record their checks, and use coverage critics to find gaps.\n3. **Candidate validation** -- give every uniqu",
+      "topics": [],
+      "url": "https://github.com/cloudflare/security-audit-skill"
+    },
+    {
+      "captured_at": "2026-09-27T13:02:48Z",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "id": "alibaba/open-code-review",
+      "language": "Go",
+      "metrics": {
+        "forks": 3006,
+        "observed_period": "доступно 0.8 дн.",
+        "stars": 41787,
+        "tracked_stars_change": 222
+      },
+      "readme_excerpt": "<div align=\"center\">\n  <a href=\"https://open-codereview.ai\">\n    <img src=\"imgs/logo-core.svg\" alt=\"OpenCodeReview logo\" width=\"180\" />\n  </a>\n  <h1>OpenCodeReview</h1>\n</div>\n\n<p align=\"center\">\n  <a href=\"https://trendshift.io/repositories/41087?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-41087\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <img src=\"https://trendshift.io/api/badge/repositories/41087\" alt=\"alibaba%2Fopen-code-review | Trendshift\" style=\"width: 280px; height: 60px;\" width=\"280\" height=\"60\" />\n  </a>\n</p>\n<p align=\"center\">\n  <a href=\"https://trendshift.io/repositories/41087\" target=\"_blank\">\n    <img src=\"https://trendshift.io/api/badge/trendshift/repositories/41087/weekly\" alt=\"alibaba%2Fopen-code-review | Trendshift\" style=\"width: 280px; height: 60px;\" width=\"280\" height=\"60\" />\n  </a>\n  <a href=\"https://trendshift.io/repositories/41087\" target=\"_blank\">\n    <img src=\"https://trendshift.io/api/badge/trendshift/repositories/410",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "code-review",
+        "code-review-assistant",
+        "harness"
+      ],
+      "url": "https://github.com/alibaba/open-code-review"
+    },
+    {
+      "captured_at": "2026-09-27T13:02:48Z",
+      "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+      "id": "Tencent/WeKnora",
+      "language": "Go",
+      "metrics": {
+        "forks": 4079,
+        "observed_period": "доступно 0.8 дн.",
+        "stars": 30478,
+        "tracked_stars_change": 179
+      },
+      "readme_excerpt": "<p align=\"center\">\n  <a href=\"https://weknora.weixin.qq.com\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"./docs/images/readme/hero-en-dark.svg\">\n      <img src=\"./docs/images/readme/hero-en-light.svg\" alt=\"WeKnora: find the answers, and put knowledge to work. Tencent's open-source knowledge management framework for Q&A, tasks and wikis.\" width=\"100%\">\n    </picture>\n  </a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://weknora.weixin.qq.com\"><img alt=\"Website\" src=\"https://img.shields.io/badge/website-weknora.weixin.qq.com-b8863b?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"https://weknora.weixin.qq.com/docs/\"><img alt=\"Docs\" src=\"https://img.shields.io/badge/docs-read-b8863b?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"./CHANGELOG.md\"><img alt=\"Release\" src=\"https://img.shields.io/badge/release-v0.8.2-b8863b?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"./LICENSE\"><img alt=\"License\" src=\"https://img.shields.io/badge/license-MIT-b8863b?",
+      "topics": [
+        "agent",
+        "agentic",
+        "ai",
+        "chatbot",
+        "dsh-plugin"
+      ],
+      "url": "https://github.com/Tencent/WeKnora"
+    },
+    {
+      "captured_at": "2026-09-27T13:02:48Z",
+      "description": "歌詞から文字PVを自動で組み立てるブラウザアプリ",
+      "id": "852wa/JIZURA",
+      "language": "HTML",
+      "metrics": {
+        "forks": 115,
+        "observed_period": "доступно 0.8 дн.",
+        "stars": 728,
+        "tracked_stars_change": 124
+      },
+      "readme_excerpt": "",
+      "topics": [],
+      "url": "https://github.com/852wa/JIZURA"
+    },
+    {
+      "captured_at": "2026-09-27T13:02:48Z",
+      "description": "Source code for the Claude Opus 5.5 music video for I'm Upping My P(doom)",
+      "id": "JohnHeibel/PDoomVideo",
+      "language": "JavaScript",
+      "metrics": {
+        "forks": 118,
+        "observed_period": "доступно 0.8 дн.",
+        "stars": 1132,
+        "tracked_stars_change": 112
+      },
+      "readme_excerpt": "",
+      "topics": [],
+      "url": "https://github.com/JohnHeibel/PDoomVideo"
+    },
+    {
+      "captured_at": "2026-09-27T13:02:48Z",
+      "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
+      "id": "TencentCloud/Octop",
+      "language": "Python",
+      "metrics": {
+        "forks": 626,
+        "observed_period": "доступно 0.8 дн.",
+        "stars": 5197,
+        "tracked_stars_change": 112
+      },
+      "readme_excerpt": "",
+      "topics": [
+        "agent",
+        "agentic-ai",
+        "ai",
+        "ai-agent",
+        "ai-agents"
+      ],
+      "url": "https://github.com/TencentCloud/Octop"
+    },
+    {
+      "captured_at": "2026-09-27T13:02:48Z",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "id": "anthropics/claude-code",
+      "language": "TypeScript",
+      "metrics": {
+        "forks": 24797,
+        "observed_period": "доступно 0.8 дн.",
+        "stars": 148285,
+        "tracked_stars_change": 100
+      },
+      "readme_excerpt": "# Claude Code\n\n![](https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square) [![npm]](https://www.npmjs.com/package/@anthropic-ai/claude-code)\n\n[npm]: https://img.shields.io/npm/v/@anthropic-ai/claude-code.svg?style=flat-square\n\nClaude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. Use it in your terminal, IDE, or tag @claude on Github.\n\n**Learn more in the [official documentation](https://code.claude.com/docs/en/overview)**.\n\n<img src=\"./demo.gif\" />\n\n## Get started\n> [!NOTE]\n> Installation via npm is deprecated. Use one of the recommended methods below.\n\nFor more installation options, uninstall steps, and troubleshooting, see the [setup documentation](https://code.claude.com/docs/en/setup).\n\n1. Install Claude Code:\n\n    **MacOS/Linux (Recommended):**\n    ```bash\n    curl -fsSL https:",
+      "topics": [],
+      "url": "https://github.com/anthropics/claude-code"
+    }
+  ],
+  "prompts": []
+}
