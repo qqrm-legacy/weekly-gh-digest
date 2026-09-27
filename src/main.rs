@@ -715,7 +715,7 @@ fn make_digest(
         thread::sleep(StdDuration::from_secs(2));
         prompts.push(json!({"stage":"project_review","provider":"groq","user_json":payload}));
         thread::sleep(StdDuration::from_secs(30));
-        let groq_result = groq(&payload, analyst_system, 700, state, &mut calls);
+        let groq_result = groq(&payload, analyst_system, 1600, state, &mut calls);
         let gemini_text = match gemini_result {
             Ok(text) => text,
             Err(e) => {
