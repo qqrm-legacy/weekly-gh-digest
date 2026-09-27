@@ -731,7 +731,7 @@ fn make_digest(
         }
         let payload = serde_json::to_string(&bundle)?;
         prompts.push(json!({"stage":"project_review","provider":"gemini","user_json":payload}));
-        let gemini_result = gemini(&payload, analyst_system, 700, state, &mut calls);
+        let gemini_result = gemini(&payload, analyst_system, 1500, state, &mut calls);
         thread::sleep(StdDuration::from_secs(2));
         prompts.push(json!({"stage":"project_review","provider":"groq","user_json":payload}));
         thread::sleep(StdDuration::from_secs(30));
@@ -750,11 +750,25 @@ fn make_digest(
                 break;
             }
         };
-        let gemini_json = serde_json::from_str::<Value>(&extract_json(&gemini_text));
-        let groq_json = serde_json::from_str::<Value>(&extract_json(&groq_text));
-        let (Ok(mut gemini_json), Ok(mut groq_json)) = (gemini_json, groq_json) else {
-            failure_reason = "provider analysis was not valid JSON".into();
-            break;
+        let mut gemini_json = match serde_json::from_str::<Value>(&extract_json(&gemini_text)) {
+            Ok(value) => value,
+            Err(error) => {
+                failure_reason = format!(
+                    "Gemini analysis was not valid JSON ({error}); response starts: {}",
+                    gemini_text.chars().take(180).collect::<String>()
+                );
+                break;
+            }
+        };
+        let mut groq_json = match serde_json::from_str::<Value>(&extract_json(&groq_text)) {
+            Ok(value) => value,
+            Err(error) => {
+                failure_reason = format!(
+                    "Groq analysis was not valid JSON ({error}); response starts: {}",
+                    groq_text.chars().take(180).collect::<String>()
+                );
+                break;
+            }
         };
         let required_review_fields = [
             "what",
