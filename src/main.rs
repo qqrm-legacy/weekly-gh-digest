@@ -729,7 +729,7 @@ fn make_digest(
             .get(&now.format("%Y-%m-%d").to_string())
             .copied()
             .unwrap_or(0)
-            .saturating_add(entries.len() + 3)
+            .saturating_add(entries.len() * 2 + 3)
             > DAILY_LLM_REQUEST_CAP
     {
         failure_reason =
@@ -884,7 +884,7 @@ fn make_digest(
     } else {
         0
     };
-    let llm_budget = json!({"providers":[{"name":"Gemini","model":model_name("GEMINI_MODEL", "gemini-3.8-flash")},{"name":"Groq","model":model_name("GROQ_MODEL", "openai/gpt-oss-120b")}],"expected_requests":expected_requests,"actual_requests":calls,"max_requests_per_run":MAX_LLM_REQUESTS,"max_requests_per_utc_day":DAILY_LLM_REQUEST_CAP,"paid_fallback":false,"local_inference":false,"all_ten_cards_synthesized":llm_texts.len()==entries.len() && entries.len()==10,"reason":if failure_reason.is_empty(){if llm_texts.len()==entries.len() && entries.len()==10{"Groq project reviews and Gemini weekly synthesis completed".to_string()}else if !do_llm{"LLM disabled for this run".to_string()}else{"fewer than ten weekly Trending projects available".to_string()}}else{failure_reason}});
+    let llm_budget = json!({"providers":[{"name":"Gemini","model":model_name("GEMINI_MODEL", "gemini-3.8-flash")},{"name":"Groq","model":model_name("GROQ_MODEL", "openai/gpt-oss-120b")}],"expected_requests":expected_requests,"max_requests_with_retries":if do_llm && configured && entries.len()==10{entries.len()*2+3}else{0},"actual_requests":calls,"max_requests_per_run":MAX_LLM_REQUESTS,"max_requests_per_utc_day":DAILY_LLM_REQUEST_CAP,"paid_fallback":false,"local_inference":false,"all_ten_cards_synthesized":llm_texts.len()==entries.len() && entries.len()==10,"reason":if failure_reason.is_empty(){if llm_texts.len()==entries.len() && entries.len()==10{"Groq project reviews and Gemini weekly synthesis completed".to_string()}else if !do_llm{"LLM disabled for this run".to_string()}else{"fewer than ten weekly Trending projects available".to_string()}}else{failure_reason}});
     write_json(
         &runs_dir().join(stamp(now)).join("llm-bundle.json"),
         &json!({"budget":llm_budget,"items":bundles,"prompts":prompts,"provider_reviews":provider_reviews,"synthesized_cards":synthesized_cards,"weekly_synthesis":synth_summary}),
@@ -999,12 +999,25 @@ fn groq(
     let token = env::var("GROQ_API_KEY").context("GROQ_API_KEY missing")?;
     let http = client()?;
     let model = model_name("GROQ_MODEL", "openai/gpt-oss-120b");
-    let response = provider_json_with_retry(state, calls, || {
+    let send = |json_mode: bool| {
+        let mut body = json!({"model":model,"messages":[{"role":"system","content":system},{"role":"user","content":payload}],"max_tokens":max_tokens,"temperature":0.2,"stream":false});
+        if json_mode {
+            body["response_format"] = json!({"type":"json_object"});
+        }
         http.post("https://api.groq.com/openai/v1/chat/completions")
             .bearer_auth(&token)
-            .json(&json!({"model":model,"messages":[{"role":"system","content":system},{"role":"user","content":payload}],"max_tokens":max_tokens,"temperature":0.2,"stream":false,"response_format":{"type":"json_object"}}))
+            .json(&body)
             .send()
-    })?;
+    };
+    let response = match provider_json_with_retry(state, calls, || send(true)) {
+        Ok(response) => response,
+        Err(error) if error.to_string().contains("json_validate_failed") => {
+            provider_json_with_retry(state, calls, || send(false)).with_context(
+                || "Groq JSON-mode validation failed and plain completion retry also failed",
+            )?
+        }
+        Err(error) => return Err(error),
+    };
     response["choices"][0]["message"]["content"]
         .as_str()
         .map(str::to_string)
