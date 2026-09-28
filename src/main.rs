@@ -1239,6 +1239,26 @@ fn telegram_message_link(configured_chat: &str, message_id: i64) -> Result<Strin
 }
 
 fn render_overview(digest: &Value, links: &[String]) -> String {
+    let entries = digest["entries"].as_array();
+    let weekly_stars: i64 = entries
+        .into_iter()
+        .flatten()
+        .map(|entry| entry["delta"].as_i64().unwrap_or(0).max(0))
+        .sum();
+    let mut languages = BTreeMap::<String, usize>::new();
+    for entry in entries.into_iter().flatten() {
+        if let Some(language) = entry["latest"]["language"].as_str() {
+            *languages.entry(language.to_string()).or_default() += 1;
+        }
+    }
+    let mut languages = languages.into_iter().collect::<Vec<_>>();
+    languages.sort_by(|a, b| b.1.cmp(&a.1).then_with(|| a.0.cmp(&b.0)));
+    let language_line = languages
+        .iter()
+        .take(3)
+        .map(|(language, count)| format!("{language} {count}"))
+        .collect::<Vec<_>>()
+        .join(" · ");
     let mut lines = vec![
         "*🚀 GitHub Weekly Digest — обзор недели*".to_string(),
         format!(
@@ -1250,12 +1270,16 @@ fn render_overview(digest: &Value, links: &[String]) -> String {
         ),
         String::new(),
         format!(
-            "*Тренды:* {}",
-            markdown_v2_escape(&safe_public_text(
-                digest["trend_summary"].as_str().unwrap_or("")
-            ))
+            "*В этой десятке:* {} звёзд за неделю по счётчику Trending",
+            markdown_v2_escape(&weekly_stars.to_string())
         ),
     ];
+    if !language_line.is_empty() {
+        lines.push(format!(
+            "*Чаще встречаются:* {}",
+            markdown_v2_escape(&language_line)
+        ));
+    }
     if let Some(joke) = digest["joke"]
         .as_str()
         .filter(|joke| !joke.trim().is_empty())
@@ -1329,6 +1353,28 @@ fn telegram_send_to(chat: &str, text: &str) -> Result<i64> {
 
 fn telegram_send_project_to(chat: &str, entry: &Value) -> Result<i64> {
     telegram_send_to(chat, &render_project(entry))
+}
+
+fn telegram_edit_to(chat: &str, message_id: i64, text: &str) -> Result<()> {
+    let token = env::var("TELEGRAM_BOT_TOKEN").context("TELEGRAM_BOT_TOKEN missing")?;
+    let response: Value = client()?
+        .post(format!(
+            "https://api.telegram.org/bot{token}/editMessageText"
+        ))
+        .json(&json!({
+            "chat_id":chat,
+            "message_id":message_id,
+            "text":text,
+            "parse_mode":"MarkdownV2",
+            "disable_web_page_preview":true
+        }))
+        .send()?
+        .error_for_status()?
+        .json()?;
+    if response["ok"] != true {
+        return Err(anyhow!("Telegram editMessageText failed"));
+    }
+    Ok(())
 }
 
 fn telegram_pin_in(chat: &str, message_id: i64) -> Result<()> {
@@ -1609,8 +1655,13 @@ fn telegram_deliver_debug_digest(
                 "existing debug delivery does not match this digest"
             ));
         }
-        project_message_links(digest, &chat, &delivery.posts)?;
-        telegram_pin_in(&chat, delivery.overview_message_id)?;
+        let links = project_message_links(digest, &chat, &delivery.posts)?;
+        let overview = render_overview(digest, &links);
+        let overview_path = run_dir.join("overview.md");
+        if fs::read_to_string(&overview_path).ok().as_deref() != Some(overview.as_str()) {
+            telegram_edit_to(&chat, delivery.overview_message_id, &overview)?;
+            fs::write(&overview_path, overview)?;
+        }
         return Ok(delivery);
     }
     let progress_path = run_dir.join("debug-post-progress.json");
@@ -1642,7 +1693,6 @@ fn telegram_deliver_debug_digest(
         overview_message_id,
     };
     write_json(&delivery_path, &delivery)?;
-    telegram_pin_in(&delivery.chat_id, delivery.overview_message_id)?;
     Ok(delivery)
 }
 
@@ -1833,18 +1883,24 @@ fn main() -> Result<()> {
         let week = format!("{}-W{:02}", iso.year(), iso.week());
         let delivery = telegram_deliver_debug_digest(&digest, &week, &run_dir)?;
         let mut state = read_state();
-        let audit = match release_audit(&digest, &delivery, &mut state) {
-            Ok(audit) => audit,
-            Err(_) => json!({
-                "approved": false,
-                "status": "review-unavailable",
-                "deterministic_scan": "passed",
-                "blocking_findings": ["AI review could not be completed; publication is blocked."],
-                "review": null,
-            }),
+        let audit_path = run_dir.join("release-audit.json");
+        let audit = if audit_path.exists() {
+            serde_json::from_slice(&fs::read(&audit_path)?)?
+        } else {
+            match release_audit(&digest, &delivery, &mut state) {
+                Ok(audit) => audit,
+                Err(_) => json!({
+                    "approved": false,
+                    "status": "review-unavailable",
+                    "deterministic_scan": "passed",
+                    "blocking_findings": ["AI review could not be completed; publication is blocked."],
+                    "review": null,
+                }),
+            }
         };
-        write_json(&run_dir.join("release-audit.json"), &audit)?;
+        write_json(&audit_path, &audit)?;
         write_json(&state_path(), &state)?;
+        telegram_pin_in(&delivery.chat_id, delivery.overview_message_id)?;
         println!(
             "Technical preview delivery accepted for {} projects; release audit status: {}.",
             delivery.posts.len(),
@@ -1976,6 +2032,7 @@ fn main() -> Result<()> {
         };
         write_json(&run_dir.join("release-audit.json"), &audit)?;
         write_json(&state_path(), &state)?;
+        telegram_pin_in(&delivery.chat_id, delivery.overview_message_id)?;
         println!(
             "Debug digest delivered to the technical chat; release audit status: {}",
             audit["status"]
@@ -2138,6 +2195,9 @@ mod tests {
         let overview = render_overview(&digest, &links);
         assert!(overview.contains("[org/repo\\-1](https://t.me/c/123/101)"));
         assert!(!overview.contains("[org/repo\\-1](https://github.com/"));
+        assert!(overview.contains("1000 звёзд за неделю"));
+        assert!(overview.contains("Rust 10"));
+        assert!(!overview.contains("Срез недельного внимания"));
     }
 
     #[test]
