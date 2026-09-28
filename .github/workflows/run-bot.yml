@@ -9,8 +9,13 @@ on:
         description: Build and upload a preview without sending to the technical chat
         type: boolean
         default: true
+      retry_delivery_run_id:
+        description: Reuse an existing Run Bot analysis artifact and retry technical-chat delivery without model requests
+        type: string
+        required: false
 
 permissions:
+  actions: read
   contents: write
 
 concurrency:
@@ -54,6 +59,8 @@ jobs:
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL }}
           LLM_FREE_TIER_CONFIRMED: ${{ vars.LLM_FREE_TIER_CONFIRMED }}
+          GH_TOKEN: ${{ github.token }}
+          RETRY_DELIVERY_RUN_ID: ${{ inputs.retry_delivery_run_id }}
           IS_MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
           MANUAL_DRY_RUN: ${{ inputs.dry_run }}
         shell: bash
@@ -61,7 +68,22 @@ jobs:
           set -euo pipefail
           bot=./target/release/weekly-gh-digest
           if [[ "$IS_MANUAL" == "true" ]]; then
-            if [[ "$MANUAL_DRY_RUN" == "true" ]]; then
+            if [[ -n "${RETRY_DELIVERY_RUN_ID:-}" ]]; then
+              [[ "$RETRY_DELIVERY_RUN_ID" =~ ^[0-9]+$ ]] || { echo "retry_delivery_run_id must contain digits only" >&2; exit 1; }
+              source=$(gh run view "$RETRY_DELIVERY_RUN_ID" --repo "$GITHUB_REPOSITORY" --json workflowName,headBranch)
+              [[ "$(jq -r .workflowName <<<"$source")" == "Run Bot" ]] || { echo "Source run is not Run Bot" >&2; exit 1; }
+              [[ "$(jq -r .headBranch <<<"$source")" == "$GITHUB_REF_NAME" ]] || { echo "Source run belongs to a different branch" >&2; exit 1; }
+              source_dir="$RUNNER_TEMP/weekly-gh-digest-source-$RETRY_DELIVERY_RUN_ID"
+              mkdir -p "$source_dir"
+              gh run download "$RETRY_DELIVERY_RUN_ID" --repo "$GITHUB_REPOSITORY" \
+                --name "weekly-gh-digest-$RETRY_DELIVERY_RUN_ID" --dir "$source_dir"
+              source_input=$(find "$source_dir" -name ranking-input.json -print -quit)
+              test -n "$source_input"
+              delivery_dir="data/runs/retry-$GITHUB_RUN_ID"
+              mkdir -p "$delivery_dir"
+              cp -a "$(dirname "$source_input")/." "$delivery_dir/"
+              "$bot" debug-delivery "$delivery_dir"
+            elif [[ "$MANUAL_DRY_RUN" == "true" ]]; then
               "$bot" preview --dry-run --llm
             else
               "$bot" debug --llm

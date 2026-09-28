@@ -1376,14 +1376,21 @@ fn telegram_send_to(chat: &str, text: &str) -> Result<i64> {
     }
     let http = client()?;
     let body = json!({"chat_id":chat,"text":text,"parse_mode":"MarkdownV2","disable_web_page_preview":true});
-    let resp: Value = http
+    let response = http
         .post(format!("https://api.telegram.org/bot{token}/sendMessage"))
         .json(&body)
-        .send()?
-        .error_for_status()?
-        .json()?;
-    if resp["ok"] != true {
-        return Err(anyhow!("Telegram sendMessage returned ok=false"));
+        .send()?;
+    let status = response.status();
+    let resp: Value = response.json()?;
+    if !status.is_success() || resp["ok"] != true {
+        let description = resp["description"]
+            .as_str()
+            .unwrap_or("Telegram rejected the message without a description");
+        return Err(anyhow!(
+            "Telegram sendMessage rejected the message (HTTP {}): {}",
+            status.as_u16(),
+            description.chars().take(200).collect::<String>()
+        ));
     }
     resp["result"]["message_id"]
         .as_i64()
@@ -1596,11 +1603,11 @@ fn release_audit(digest: &Value, state: &mut State) -> Result<Value> {
 }
 
 fn render_debug_overview(digest: &Value, week: &str) -> String {
-    format!(
-        "*🧪 DEBUG · GitHub Weekly Digest*\nНеделя: {}\nСрез: {}\n10/10 карточек приняты Telegram API с MarkdownV2. Предпросмотр опубликован в технический чат; основной канал не затронут.",
-        markdown_v2_escape(week),
-        markdown_v2_escape(digest["generated_at"].as_str().unwrap_or("дата не указана"))
-    )
+    let text = format!(
+        "🧪 DEBUG · GitHub Weekly Digest\nНеделя: {week}\nСрез: {}\n10/10 карточек приняты Telegram API с MarkdownV2. Предпросмотр опубликован в технический чат; основной канал не затронут.",
+        digest["generated_at"].as_str().unwrap_or("дата не указана")
+    );
+    markdown_v2_escape(&text)
 }
 
 fn telegram_deliver_debug_digest(
@@ -1612,13 +1619,23 @@ fn telegram_deliver_debug_digest(
         .as_array()
         .ok_or_else(|| anyhow!("digest has no project entries"))?;
     let chat = env::var("TELEGRAM_TECH_CHAT_ID").context("TELEGRAM_TECH_CHAT_ID missing")?;
-    let mut posts = BTreeMap::new();
+    let progress_path = run_dir.join("debug-post-progress.json");
+    let mut posts = if progress_path.exists() {
+        serde_json::from_slice::<BTreeMap<String, i64>>(&fs::read(&progress_path)?)
+            .context("debug post progress file is invalid")?
+    } else {
+        BTreeMap::new()
+    };
     for entry in entries {
         let name = entry["full_name"]
             .as_str()
             .ok_or_else(|| anyhow!("digest entry has no repository name"))?;
+        if posts.contains_key(name) {
+            continue;
+        }
         let id = telegram_send_project_to(&chat, entry)?;
         posts.insert(name.to_string(), id);
+        write_json(&progress_path, &posts)?;
     }
     let overview_message_id = telegram_send_to(&chat, &render_debug_overview(digest, week))?;
     let delivery = DebugDelivery {
@@ -1785,6 +1802,44 @@ fn telegram_deliver_digest(digest: &Value, week: &str, state: &mut State) -> Res
 fn main() -> Result<()> {
     let args: Vec<String> = env::args().skip(1).collect();
     let command = args.first().map(String::as_str).unwrap_or("preview");
+    if command == "debug-delivery" {
+        let run_dir = args
+            .get(1)
+            .map(PathBuf::from)
+            .ok_or_else(|| anyhow!("usage: weekly-gh-digest debug-delivery <run-directory>"))?;
+        let digest: Value = serde_json::from_slice(&fs::read(run_dir.join("ranking-input.json"))?)
+            .context("debug artifact has invalid ranking-input.json")?;
+        if digest["llm_used"] != true
+            || digest["entries"]
+                .as_array()
+                .is_none_or(|entries| entries.len() != 10)
+        {
+            return Err(anyhow!(
+                "refusing debug delivery without ten completed project analyses"
+            ));
+        }
+        let posts = publication_audit_text(&digest)?;
+        if posts
+            .iter()
+            .any(|post| !credential_markers(post).is_empty())
+        {
+            return Err(anyhow!(
+                "debug delivery blocked by deterministic credential scan"
+            ));
+        }
+        let generated_at = digest["generated_at"]
+            .as_str()
+            .ok_or_else(|| anyhow!("debug artifact has no generation timestamp"))?;
+        let generated = DateTime::parse_from_rfc3339(generated_at)?.with_timezone(&Utc);
+        let iso = generated.iso_week();
+        let week = format!("{}-W{:02}", iso.year(), iso.week());
+        let delivery = telegram_deliver_debug_digest(&digest, &week, &run_dir)?;
+        println!(
+            "Technical preview delivery accepted for {} projects.",
+            delivery.posts.len()
+        );
+        return Ok(());
+    }
     if command == "release" {
         let run_dir = args
             .get(1)
