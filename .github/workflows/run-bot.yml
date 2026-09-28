@@ -79,7 +79,7 @@ jobs:
                 --name "weekly-gh-digest-$RETRY_DELIVERY_RUN_ID" --dir "$source_dir"
               source_input=""
               while IFS= read -r candidate; do
-                if jq -e '.llm_used == true and (.entries | length == 10)' "$candidate" >/dev/null; then
+                if jq -e '.format_version == 2 and .llm_used == true and (.entries | length == 10) and all(.entries[]; .llm_used == true and (.description | type == "string" and length > 0))' "$candidate" >/dev/null; then
                   source_input="$candidate"
                   break
                 fi
