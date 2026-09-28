@@ -10,7 +10,7 @@ on:
         type: boolean
         default: true
       retry_delivery_run_id:
-        description: Reuse an existing Run Bot analysis artifact and retry technical-chat delivery without model requests
+        description: Reuse a Run Bot analysis artifact without repeating Groq requests; Gemini audit may rerun
         type: string
         required: false
 
@@ -79,7 +79,7 @@ jobs:
                 --name "weekly-gh-digest-$RETRY_DELIVERY_RUN_ID" --dir "$source_dir"
               source_input=""
               while IFS= read -r candidate; do
-                if jq -e '.format_version == 2 and .llm_used == true and (.entries | length == 10) and all(.entries[]; .llm_used == true and (.description | type == "string" and length > 0))' "$candidate" >/dev/null; then
+                if jq -e '.format_version == 2 and .llm_used == true and (.entries | length == 10) and all(.entries[]; .llm_used == true and (.description | type == "string") and (.description | length > 0))' "$candidate" >/dev/null; then
                   source_input="$candidate"
                   break
                 fi

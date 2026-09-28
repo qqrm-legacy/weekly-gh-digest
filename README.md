@@ -21,7 +21,7 @@ Add these repository Actions secrets:
 
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
-- `TELEGRAM_TECH_CHAT_ID` (private debug group)
+- `TELEGRAM_TECH_CHAT_ID` (private debug supergroup; use its Bot API `-100...` ID so individual posts have private `t.me/c/...` links)
 - `GEMINI_API_KEY`
 - `GROQ_API_KEY`
 
@@ -30,6 +30,8 @@ The defaults are Gemini `gemini-3.8-flash` and Groq `openai/gpt-oss-120b`; optio
 The Groq free-plan table currently lists 1,000 requests/day for `openai/gpt-oss-120b`; a normal weekly run uses ten Groq calls, with at most one JSON-mode fallback per project. Provider limits and model availability can change, and Gemini quotas are project-specific: check the active limits in Google AI Studio before enabling the secrets.
 
 On Mondays, `Run Bot` posts to the private technical group and records its audit result. To publish, inspect the technical posts and audit message, then run `Release Digest` manually with the successful `Run Bot` run ID. The release workflow refuses runs from other workflows, unsuccessful runs, branches other than `main`, missing audit artifacts, failed credential scans, and non-approved AI audits. Manual `Run Bot` runs default to `dry_run=true`; set it to `false` to create a live debug candidate. The scheduled pipeline never publishes to the curated channel by itself.
+
+Automatic pinning in the technical supergroup requires the bot to be an administrator with only `can_pin_messages`. An operator may pin the overview manually; a delivery-only retry recognizes the already pinned message and completes without expanding the bot's rights. The retry preserves the ten project post IDs and can rerun the Gemini audit if the previous verdict was unavailable. The technical group's auto-delete setting applies to these posts, so review and release must happen before Telegram deletes them.
 
 The workflows need `contents: write` permission to update `bot-state`; the release workflow also needs `actions: read` to download the selected debug artifact. They serialize updates to that branch. Telegram does not provide an idempotency key, so a retry after an ambiguous network result can still duplicate the one message whose send succeeded just before a runner stopped.
 
