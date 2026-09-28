@@ -1,0 +1,576 @@
+{
+  "api_repositories": [
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:11Z",
+      "forks": 5322,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 39886,
+      "status": "included",
+      "url": "https://api.github.com/repos/vectorize-io/hindsight"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:11Z",
+      "forks": 4973,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 42249,
+      "status": "included",
+      "url": "https://api.github.com/repos/debpalash/VoiceStudio"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:12Z",
+      "forks": 15819,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 91821,
+      "status": "included",
+      "url": "https://api.github.com/repos/paperclipai/paperclip"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:12Z",
+      "forks": 5237,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 80362,
+      "status": "included",
+      "url": "https://api.github.com/repos/stablyai/orca"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:12Z",
+      "forks": 1312,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 22583,
+      "status": "included",
+      "url": "https://api.github.com/repos/cloudflare/security-audit-skill"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:13Z",
+      "forks": 10352,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 60100,
+      "status": "included",
+      "url": "https://api.github.com/repos/rohitg00/ai-engineering-from-scratch"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:13Z",
+      "forks": 4125,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 30858,
+      "status": "included",
+      "url": "https://api.github.com/repos/Tencent/WeKnora"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:13Z",
+      "forks": 5477,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 37986,
+      "status": "included",
+      "url": "https://api.github.com/repos/anthropics/financial-services"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:14Z",
+      "forks": 1859,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 26759,
+      "status": "included",
+      "url": "https://api.github.com/repos/trycua/cua"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:14Z",
+      "forks": 579,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 8520,
+      "status": "included",
+      "url": "https://api.github.com/repos/akitaonrails/ai-memory"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:15Z",
+      "forks": 3649,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 32048,
+      "status": "included",
+      "url": "https://api.github.com/repos/davila7/claude-code-templates"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:15Z",
+      "forks": 4646,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 50843,
+      "status": "included",
+      "url": "https://api.github.com/repos/HKUDS/CLI-Anything"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:15Z",
+      "forks": 670,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 5459,
+      "status": "included",
+      "url": "https://api.github.com/repos/TencentCloud/Octop"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:16Z",
+      "forks": 1152,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 12681,
+      "status": "included",
+      "url": "https://api.github.com/repos/cloudflare/quiche"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:16Z",
+      "forks": 33346,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 142841,
+      "status": "included",
+      "url": "https://api.github.com/repos/vercel/next.js"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:17Z",
+      "forks": 264,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 5536,
+      "status": "included",
+      "url": "https://api.github.com/repos/FxEmbed/FxEmbed"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:17Z",
+      "forks": 30814,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 103452,
+      "status": "included",
+      "url": "https://api.github.com/repos/pytorch/pytorch"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:17Z",
+      "forks": 26096,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 78028,
+      "status": "included",
+      "url": "https://api.github.com/repos/elastic/elasticsearch"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:18Z",
+      "forks": 1785,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 20996,
+      "status": "included",
+      "url": "https://api.github.com/repos/dream-num/univer"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:18Z",
+      "forks": 125,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 1435,
+      "status": "included",
+      "url": "https://api.github.com/repos/mvschwarz/openrig"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:18Z",
+      "forks": 6497,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 64429,
+      "status": "included",
+      "url": "https://api.github.com/repos/byoungd/up"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:19Z",
+      "forks": 221,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 2286,
+      "status": "included",
+      "url": "https://api.github.com/repos/cs341-illinois/coursebook"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:19Z",
+      "forks": 5874,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 25637,
+      "status": "included",
+      "url": "https://api.github.com/repos/NawfalMotii79/PLFM_RADAR"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:20Z",
+      "forks": 139,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 927,
+      "status": "included",
+      "url": "https://api.github.com/repos/852wa/JIZURA"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:20Z",
+      "forks": 21,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 535,
+      "status": "included",
+      "url": "https://api.github.com/repos/Alex314618-create/JevRev"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:20Z",
+      "forks": 190,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 2146,
+      "status": "included",
+      "url": "https://api.github.com/repos/Contrastive-LM/CLM"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:21Z",
+      "forks": 148,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 1380,
+      "status": "included",
+      "url": "https://api.github.com/repos/JohnHeibel/PDoomVideo"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:21Z",
+      "forks": 77,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 792,
+      "status": "included",
+      "url": "https://api.github.com/repos/Niko1221/Strata"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:21Z",
+      "forks": 10,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 659,
+      "status": "included",
+      "url": "https://api.github.com/repos/OnlistTeam/ai-manager"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:22Z",
+      "forks": 44,
+      "pagination": "single repository response",
+      "reason": "metadata captured",
+      "source": "GitHub REST repository metadata",
+      "stars": 725,
+      "status": "included",
+      "url": "https://api.github.com/repos/Rizzo-AI-Academy/rizzo-flow"
+    }
+  ],
+  "candidate_count": 30,
+  "candidate_policy": "Weekly Trending, daily Trending, then Search; stable order; max 30; not a global GitHub census.",
+  "captured_at": "2026-09-28T14:12:07Z",
+  "excluded_candidates": [
+    {
+      "full_name": "alexgreensh/anidoodle",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "anishfn/shapeshift",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "asokurasu/text-humanizer",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "deepopen-com/deepopen",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "dgreenheck/tidewater",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "dzhng/jevgrep",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "feitangyuan/onetake",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "freestylefly/WeChatBridge",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "jev-chat/jev-chat-jarvis",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "jev-chat/jev-chat-windows",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "kryvora-network/kryvora-node",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "kydlikebtc/awesome-jev",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "mexicat/pdoom-video",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "mikehasa/golive-skill",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "nokia-applied-research/AnyJev",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "ollaya-dev/ollaya",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "riba2534/claude-opus-5-5-demo",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "supermemoryai/company-brain",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "tobi/disktree",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "unreallabsai/unreal-agent",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "yetone/magpie",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "yihui-dev/awesome-opus5-5-videos",
+      "reason": "candidate cap after stable source priority"
+    },
+    {
+      "full_name": "yukitorido/short-video-generator-AI",
+      "reason": "candidate cap after stable source priority"
+    }
+  ],
+  "sources": [
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:08Z",
+      "pagination": "HTML first page as returned; no pagination",
+      "parsed_candidates": 18,
+      "reason": "repository rows parsed from first page",
+      "source": "GitHub Trending weekly",
+      "status": "included",
+      "url": "https://github.com/trending?since=weekly"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:09Z",
+      "pagination": "HTML first page as returned; no pagination",
+      "parsed_candidates": 8,
+      "reason": "repository rows parsed from first page",
+      "source": "GitHub Trending daily",
+      "status": "included",
+      "url": "https://github.com/trending?since=daily"
+    },
+    {
+      "complete": false,
+      "fetched_at": "2026-09-28T14:12:10Z",
+      "pagination": "per_page=30; first page only; Search API result cap applies",
+      "query": "created:>=2026-09-21 stars:>10",
+      "reason": "first page ingested as candidate source only",
+      "returned": 30,
+      "source": "GitHub REST Search repositories created in last 7 days",
+      "status": "included",
+      "total_count": 1789,
+      "url": "https://api.github.com/search/repositories?q=created%3A%3E%3D2026-09-21+stars%3A%3E10&sort=stars&order=desc&per_page=30"
+    },
+    {
+      "candidate": "vectorize-io/hindsight",
+      "chars": 5000,
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:22Z",
+      "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+      "reason": "raw README captured; bounded excerpt used for model",
+      "source": "GitHub raw README.md",
+      "status": "included",
+      "url": "https://raw.githubusercontent.com/vectorize-io/hindsight/main/README.md"
+    },
+    {
+      "candidate": "debpalash/VoiceStudio",
+      "chars": 5000,
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:22Z",
+      "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+      "reason": "raw README captured; bounded excerpt used for model",
+      "source": "GitHub raw README.md",
+      "status": "included",
+      "url": "https://raw.githubusercontent.com/debpalash/VoiceStudio/main/README.md"
+    },
+    {
+      "candidate": "paperclipai/paperclip",
+      "chars": 5000,
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:23Z",
+      "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+      "reason": "raw README captured; bounded excerpt used for model",
+      "source": "GitHub raw README.md",
+      "status": "included",
+      "url": "https://raw.githubusercontent.com/paperclipai/paperclip/master/README.md"
+    },
+    {
+      "candidate": "stablyai/orca",
+      "chars": 5000,
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:23Z",
+      "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+      "reason": "raw README captured; bounded excerpt used for model",
+      "source": "GitHub raw README.md",
+      "status": "included",
+      "url": "https://raw.githubusercontent.com/stablyai/orca/main/README.md"
+    },
+    {
+      "candidate": "cloudflare/security-audit-skill",
+      "chars": 5000,
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:23Z",
+      "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+      "reason": "raw README captured; bounded excerpt used for model",
+      "source": "GitHub raw README.md",
+      "status": "included",
+      "url": "https://raw.githubusercontent.com/cloudflare/security-audit-skill/main/README.md"
+    },
+    {
+      "candidate": "rohitg00/ai-engineering-from-scratch",
+      "chars": 5000,
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:24Z",
+      "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+      "reason": "raw README captured; bounded excerpt used for model",
+      "source": "GitHub raw README.md",
+      "status": "included",
+      "url": "https://raw.githubusercontent.com/rohitg00/ai-engineering-from-scratch/main/README.md"
+    },
+    {
+      "candidate": "Tencent/WeKnora",
+      "chars": 5000,
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:24Z",
+      "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+      "reason": "raw README captured; bounded excerpt used for model",
+      "source": "GitHub raw README.md",
+      "status": "included",
+      "url": "https://raw.githubusercontent.com/Tencent/WeKnora/main/README.md"
+    },
+    {
+      "candidate": "anthropics/financial-services",
+      "chars": 5000,
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:24Z",
+      "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+      "reason": "raw README captured; bounded excerpt used for model",
+      "source": "GitHub raw README.md",
+      "status": "included",
+      "url": "https://raw.githubusercontent.com/anthropics/financial-services/main/README.md"
+    },
+    {
+      "candidate": "trycua/cua",
+      "chars": 5000,
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:25Z",
+      "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+      "reason": "raw README captured; bounded excerpt used for model",
+      "source": "GitHub raw README.md",
+      "status": "included",
+      "url": "https://raw.githubusercontent.com/trycua/cua/main/README.md"
+    },
+    {
+      "candidate": "akitaonrails/ai-memory",
+      "chars": 5000,
+      "complete": true,
+      "fetched_at": "2026-09-28T14:12:25Z",
+      "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+      "reason": "raw README captured; bounded excerpt used for model",
+      "source": "GitHub raw README.md",
+      "status": "included",
+      "url": "https://raw.githubusercontent.com/akitaonrails/ai-memory/main/README.md"
+    }
+  ],
+  "validation_notes": []
+}
