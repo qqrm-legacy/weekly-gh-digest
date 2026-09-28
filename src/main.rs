@@ -1205,7 +1205,7 @@ fn render_project(entry: &Value) -> String {
         format!("*🔎 ПРОЕКТ {rank}/10*"),
         title,
         format!(
-            "⭐ {} всего · +{} в недельном Trending · {}",
+            "⭐ {} всего · \\+{} в недельном Trending · {}",
             markdown_v2_escape(&stars.to_string()),
             markdown_v2_escape(&delta.to_string()),
             markdown_v2_escape(language)
@@ -1331,7 +1331,7 @@ fn render_overview(digest: &Value, links: &[String]) -> String {
             .as_str()
             .unwrap_or("проект");
         format!(
-            "{}. [{}]({})",
+            "{}\\. [{}]({})",
             i + 1,
             markdown_v2_escape(name),
             markdown_v2_url_escape(link)
@@ -2067,6 +2067,7 @@ mod tests {
         });
         let post = render_project(&project);
         assert!(post.contains("*🔎 ПРОЕКТ 1/10*\n[org/repo](https://github.com/org/repo)"));
+        assert!(post.contains("всего · \\+120 в недельном Trending"));
         assert!(post.contains("*Что делает:* инструмент\n*Как попробовать:* см\\. README"));
         assert!(!post.contains("Сатира:"));
         assert!(!post.contains("Основание:"));
@@ -2082,7 +2083,7 @@ mod tests {
         });
         let overview = render_overview(&digest, &["https://t.me/c/123/456".into()]);
         assert!(overview.starts_with("*🚀 GitHub Weekly Digest — обзор недели*"));
-        assert!(overview.contains("[org/repo](https://t.me/c/123/456)"));
+        assert!(overview.contains("1\\. [org/repo](https://t.me/c/123/456)"));
     }
 
     #[test]
