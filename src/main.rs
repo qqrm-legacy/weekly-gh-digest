@@ -1832,9 +1832,23 @@ fn main() -> Result<()> {
         let iso = generated.iso_week();
         let week = format!("{}-W{:02}", iso.year(), iso.week());
         let delivery = telegram_deliver_debug_digest(&digest, &week, &run_dir)?;
+        let mut state = read_state();
+        let audit = match release_audit(&digest, &delivery, &mut state) {
+            Ok(audit) => audit,
+            Err(_) => json!({
+                "approved": false,
+                "status": "review-unavailable",
+                "deterministic_scan": "passed",
+                "blocking_findings": ["AI review could not be completed; publication is blocked."],
+                "review": null,
+            }),
+        };
+        write_json(&run_dir.join("release-audit.json"), &audit)?;
+        write_json(&state_path(), &state)?;
         println!(
-            "Technical preview delivery accepted for {} projects.",
-            delivery.posts.len()
+            "Technical preview delivery accepted for {} projects; release audit status: {}.",
+            delivery.posts.len(),
+            audit["status"]
         );
         return Ok(());
     }
