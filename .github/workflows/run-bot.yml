@@ -77,7 +77,13 @@ jobs:
               mkdir -p "$source_dir"
               gh run download "$RETRY_DELIVERY_RUN_ID" --repo "$GITHUB_REPOSITORY" \
                 --name "weekly-gh-digest-$RETRY_DELIVERY_RUN_ID" --dir "$source_dir"
-              source_input=$(find "$source_dir" -name ranking-input.json -print -quit)
+              source_input=""
+              while IFS= read -r candidate; do
+                if jq -e '.llm_used == true and (.entries | length == 10)' "$candidate" >/dev/null; then
+                  source_input="$candidate"
+                  break
+                fi
+              done < <(find "$source_dir" -name ranking-input.json -print | sort -r)
               test -n "$source_input"
               delivery_dir="data/runs/retry-$GITHUB_RUN_ID"
               mkdir -p "$delivery_dir"
