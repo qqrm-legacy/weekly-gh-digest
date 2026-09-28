@@ -1,0 +1,1340 @@
+{
+  "entries": [
+    {
+      "baseline": null,
+      "delta": 11089,
+      "description": "Hindsight: Agent Memory That Learns",
+      "evidence_quote": "Hindsight: Agent Memory That Learns",
+      "full_name": "vectorize-io/hindsight",
+      "latest": {
+        "captured_at": "2026-09-28T20:15:49Z",
+        "created_at": "2025-10-30T11:49:48Z",
+        "default_branch": "main",
+        "description": "Hindsight: Agent Memory That Learns",
+        "forks": 5521,
+        "full_name": "vectorize-io/hindsight",
+        "html_url": "https://github.com/vectorize-io/hindsight",
+        "language": "Python",
+        "license": "MIT",
+        "open_issues": 179,
+        "pushed_at": "2026-09-28T19:14:04Z",
+        "readme_excerpt": "<div align=\"center\">\n\n![Hindsight Banner](./hindsight-docs/static/img/hindsight-github-banner.png)\n\n[Documentation](https://hindsight.vectorize.io) • [Integrations](https://hindsight.vectorize.io/integrations) • [Cookbook](https://hindsight.vectorize.io/cookbook) • [Benchmarks](https://benchmarks.hindsight.vectorize.io/) • [Paper](https://arxiv.org/abs/2512.12818) • [Hindsight Cloud](https://ui.hindsight.vectorize.io/signup)\n\n[![Release](https://github.com/vectorize-io/hindsight/actions/workflows/release.yml/badge.svg)](https://github.com/vectorize-io/hindsight/actions/workflows/release.yml)\n[![Version](https://img.shields.io/pypi/v/hindsight-api?logo=python&logoColor=white&label=version&color=blue)](https://pypi.org/project/hindsight-api/)\n[![PyPI Downloads](https://img.shields.io/pypi/dm/hindsight-client?logo=pypi&logoColor=white&label=PyPI&color=blue)](https://pypi.org/project/hindsight-client/)\n[![NPM Downloads](https://img.shields.io/npm/dm/%40vectorize-io%2Fhindsight-client?logo=npm&logoColor=white&label=NPM&color=blue)](https://www.npmjs.com/package/@vectorize-io/hindsight-client)\n[![Slack Community](https://img.shields.io/badge/Slack-Join%20Community-4A154B?logo=slack)](https://vectorize.io/slack)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n<br/>\n<p align=\"center\">\n <a href=\"https://www.star-history.com/vectorize-io/hindsight\"><img src=\"https://api.star-history.com/badge?repo=vectorize-io/hindsight&type=rank\" alt=\"Star History Rank\" /> <img src=\"https://api.star-history.com/badge?repo=vectorize-io/hindsight&type=trending\" alt=\"GitHub Trending Repository of the Day\" /></a>\n</p>\n\n</div>\n\n---\n\n## What is Hindsight?\n\nHindsight™ is an agent memory system built to create smarter agents that learn over time. Most agent memory systems focus on recalling conversation history. Hindsight is focused on making agents that learn, not just remember.\n\n<video src=\"https://github.com/user-attachments/assets/923b798d-3581-4897-bb62-9cfa5a931682\" controls></video>\n\nIt eliminates the shortcomings of alternative techniques such as RAG and knowledge graph and delivers state-of-the-art performance on long term memory tasks.\n\n**Contents**\n\n- [Memory Performance & Accuracy](#memory-performance--accuracy)\n- [Quick Start](#quick-start) — [server](#1-start-a-server) · [clients](#2-connect-a-client) · [platforms](#supported-platforms) · [embedded](#python-embedded-no-server-required)\n- [Adding Hindsight to Your Agent](#adding-hindsight-to-your-agent) — [LLM Wrapper](#llm-wrapper-2-lines-of-code) · [integrations](#integrations) · [coding agents](#coding-agents) · [MCP](#mcp-server)\n- [Core Concepts](#core-concepts) — [memory types](#memory-types) · [retain / recall / reflect](#the-three-operations) · [observations](#observations) · [mental models & knowledge pages](#mental-models--knowledge-pages) · [banks](#memory-banks)\n- [Use Cases](#use-cases)\n- [Running in Production](#running-in-production)\n- [Resources](#resources)\n\n---\n\n## Memory Performance & Accuracy\n\nHindsight is the most accurate agent memory system ever tested according to benchmark performance. It has achieved state-of-the-art performance on the LongMemEval benchmark, widely used to assess memory system performance across a variety of conversational AI scenarios. The current reported performance of Hindsight and other agent memory solutions as of January 2026 is shown here:\n\n![Overview](./hindsight-docs/static/img/hindsight-benchmarks.png)\n\n> Live, continuously updated results — including per-model accuracy, latency and cost — are published at [benchmarks.hindsight.vectorize.io](https://benchmarks.hindsight.vectorize.io/).\n\nThe benchmark performance data for Hindsight has been independently reproduced by research collaborators at the Virginia Tech [Sanghani Center for Artificial Intelligence and Data Analytics](https://sanghani.cs.vt.edu/) and The Washington Post. Other scores are self-reported by software vendors.\n\nHindsight is being used in production at Fortune 500 enterprises and by a growing number of AI startups.\n\n---\n\n> 🤖 **Using a coding agent?** Install the Hindsight documentation skill for instant access to docs while you code:\n> ```bash\n> npx skills add https://github.com/vectorize-io/hindsight --skill hindsight-docs\n> ```\n> Works with Claude Code, Cursor, and other AI coding assistants.\n\n---\n\n## Quick Start\n\n### 1. Start a server\n\n#### Docker (recommended)\n\n```bash\nexport OPENAI_API_KEY=sk-xxx\n\ndocker run -it --pull always --name hindsight --restart unless-stopped -p 8888:8888 -p 9999:9999 \\\n  -e HINDSIGHT_API_LLM_API_KEY=$OPENAI_API_KEY \\\n  -v hindsight-data:/home/hindsight/.pg0 \\\n  ghcr.io/vectorize-io/hindsight:latest\n```\n\n>API: http://localhost:8888\n>UI: http://localhost:9999\n\nHindsight works with **25+ LLM providers** via `HINDSIGHT_API_LLM_PROVIDER` — hosted (`openai`, `anthropic`, `gemini`, `groq`, `bedrock`, `vertexai`, `minimax`, `deepseek`, `atlas`, `meta`, …), fully local (`ollama",
+        "sources": [
+          {
+            "description": "Hindsight: Agent Memory That Learns",
+            "full_name": "vectorize-io/hindsight",
+            "language": "Python",
+            "trending_stars_period": 11089,
+            "trending_total_forks": null,
+            "trending_total_stars": 40771,
+            "type": "trending_weekly"
+          },
+          {
+            "description": "Hindsight: Agent Memory That Learns",
+            "full_name": "vectorize-io/hindsight",
+            "language": "Python",
+            "trending_stars_period": 4413,
+            "trending_total_forks": null,
+            "trending_total_stars": 40771,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 40772,
+        "topics": [
+          "agentic-ai",
+          "agents",
+          "ai-memory",
+          "memory"
+        ],
+        "updated_at": "2026-09-28T20:15:53Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 1,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 7793,
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "evidence_quote": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "full_name": "debpalash/VoiceStudio",
+      "latest": {
+        "captured_at": "2026-09-28T20:15:49Z",
+        "created_at": "2026-04-09T21:40:26Z",
+        "default_branch": "main",
+        "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+        "forks": 5059,
+        "full_name": "debpalash/VoiceStudio",
+        "html_url": "https://github.com/debpalash/VoiceStudio",
+        "language": "Python",
+        "license": "AGPL-3.0",
+        "open_issues": 45,
+        "pushed_at": "2026-09-28T17:59:35Z",
+        "readme_excerpt": "<div align=\"center\">\n  <img src=\"docs/logo.png\" alt=\"VoiceStudio\" width=\"88\" />\n  <h1>VoiceStudio</h1>\n  <p>\n    <a href=\"https://trendshift.io/repositories/28176?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-28176\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://trendshift.io/api/badge/repositories/28176\" alt=\"VoiceStudio ranking on Trendshift\" width=\"220\" height=\"48\" /></a>\n  </p>\n  <p><strong>Open-source voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.</strong></p>\n  <p>\n    <a href=\"https://voicestudio.sh/?utm_source=github&utm_medium=readme&utm_campaign=project\">Website</a> ·\n    <a href=\"https://github.com/debpalash/VoiceStudio/releases/latest\">Download</a> ·\n    <a href=\"#get-started\">Get started</a> ·\n    <a href=\"#documentation\">Docs</a> ·\n    <a href=\"https://discord.gg/bzQavDfVV9\">Discord</a> ·\n    <a href=\"README_CN.md\">简体中文</a>\n  </p>\n  <p>\n    <a href=\"https://github.com/debpalash/VoiceStudio/actions/workflows/ci.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/debpalash/VoiceStudio/ci.yml?branch=main\" alt=\"CI\" /></a>\n    <a href=\"https://github.com/debpalash/VoiceStudio/releases/latest\"><img src=\"https://img.shields.io/github/v/release/debpalash/VoiceStudio\" alt=\"Latest release\" /></a>\n    <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-AGPL--3.0-blue\" alt=\"AGPL-3.0\" /></a>\n  </p>\n</div>\n\n![A tour of the Electron app: voice cloning, voice design, dubbing, and model management](docs/media/electron/voicestudio.gif)\n\n## Your voice. Your workflow.\n\n| Create | Produce | Connect |\n| :--- | :--- | :--- |\n| Clone a voice or design your own | Dub videos with timed speech | Local API & MCP for agents |\n| Dictate with a floating widget | Stories, audiobooks & batch jobs | Optional remote workers |\n\nStart with **VoiceStudio** (default, powered by k2-fsa/OmniVoice), or choose another engine. [Features & engine catalog](docs/feature-catalog.md).\n\nLocal workflows run on your hardware. Remote services are optional; usage analytics requires consent.\n\n<details>\n<summary><strong>Explore the workspaces</strong> · Clone, dub, design & models</summary>\n\n<table>\n  <tr>\n    <td><img src=\"docs/media/electron/voice-cloning.png\" alt=\"Electron voice cloning workspace with the bundled demo voice\" width=\"100%\" /></td>\n    <td><img src=\"docs/media/electron/dubbing.png\" alt=\"Electron video dubbing workspace\" width=\"100%\" /></td>\n  </tr>\n  <tr><td align=\"center\">Voice cloning</td><td align=\"center\">Video dubbing</td></tr>\n  <tr>\n    <td><img src=\"docs/media/electron/voice-design.png\" alt=\"Describe a voice in the Electron voice design workspace\" width=\"100%\" /></td>\n    <td><img src=\"docs/media/electron/models.png\" alt=\"Install and manage local speech models\" width=\"100%\" /></td>\n  </tr>\n  <tr><td align=\"center\">Voice design</td><td align=\"center\">Local models</td></tr>\n</table>\n\n<img width=\"2628\" height=\"1950\" alt=\"VoiceStudio desktop workspace\" src=\"https://github.com/user-attachments/assets/b474497d-a453-49a3-a2dd-f023ec6b7659\" />\n\n</details>\n\n## Get started\n\n### One-command install (macOS / Linux)\n\n```sh\n# Latest Electron release\ncurl -fsSL https://voicestudio.sh/install | sh\n\n# A specific published Electron release (replace X.Y.Z)\ncurl -fsSL https://voicestudio.sh/install | sh -s -- --version X.Y.Z\n\n# Build current main and install the desktop app\ncurl -fsSL https://voicestudio.sh/install | sh -s -- --main\n\n# Uninstall the app, keeping your data\ncurl -fsSL https://voicestudio.sh/install | sh -s -- --uninstall\n```\n\nRelease downloads require curl and a SHA-256 tool. `--main` requires Git,\nNode.js 22+, Bun, Rust/Cargo, and platform build tools; see\n[installer prerequisites and behavior](docs/install/script.md).\nThe installer preserves your settings, projects, and models. Older versions\nmust contain Electron packages; it never falls back to archived Tauri builds.\n\nDownload from [Releases](https://github.com/debpalash/VoiceStudio/releases/latest), then follow your platform guide:\n\n**[macOS](docs/install/macos.md) · [Windows](docs/install/windows.md) · [Linux](docs/install/linux.md) · [Docker](docs/install/docker.md)**\n\nOpen **Voice cloning**, choose a voice or add a clean reference recording, enter your text, and generate. Install the required model when prompted. Hardware needs vary by engine; see [performance](docs/performance.md).\n\n### Install with prompt\n\nPaste into your coding agent (Claude Code, Codex, Cursor, …):\n\n```text\nInstall the VoiceStudio Electron app on this device and verify it works, following\nhttps://github.com/debpalash/VoiceStudio/blob/main/docs/install/agent.md\n```\n\nThe [agent guide](docs/install/agent.md) covers hardware detection, reusing existing\ndata, asking before model downloads, and a test generation. Agents that support skills\ncan also run `npx skills add debpalash/VoiceStudio`.\n\n<details>\n<summary><strong>Run the Electron preview from source</strong></su",
+        "sources": [
+          {
+            "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+            "full_name": "debpalash/VoiceStudio",
+            "language": "Python",
+            "trending_stars_period": 7793,
+            "trending_total_forks": null,
+            "trending_total_stars": 43509,
+            "type": "trending_weekly"
+          },
+          {
+            "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+            "full_name": "debpalash/VoiceStudio",
+            "language": "Python",
+            "trending_stars_period": 3274,
+            "trending_total_forks": null,
+            "trending_total_stars": 43509,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 43510,
+        "topics": [
+          "ai",
+          "audiobook",
+          "cuda",
+          "dubbing",
+          "elevenlabs-alternative",
+          "huggingface",
+          "local-first",
+          "mlx",
+          "omnivoice-studio",
+          "speech-to-text",
+          "tauri",
+          "text-to-speech",
+          "transcription",
+          "translate",
+          "tts",
+          "voice-ai",
+          "voice-cloning",
+          "voice-generation",
+          "voicestudio",
+          "workflow"
+        ],
+        "updated_at": "2026-09-28T20:15:52Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 2,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 7364,
+      "description": "The open-source app everyone uses to manage agents at work",
+      "evidence_quote": "The open-source app everyone uses to manage agents at work",
+      "full_name": "paperclipai/paperclip",
+      "latest": {
+        "captured_at": "2026-09-28T20:15:49Z",
+        "created_at": "2026-03-02T15:01:51Z",
+        "default_branch": "master",
+        "description": "The open-source app everyone uses to manage agents at work",
+        "forks": 15862,
+        "full_name": "paperclipai/paperclip",
+        "html_url": "https://github.com/paperclipai/paperclip",
+        "language": "TypeScript",
+        "license": "MIT",
+        "open_issues": 5975,
+        "pushed_at": "2026-09-28T20:14:04Z",
+        "readme_excerpt": "<p align=\"center\">\n  <img src=\"doc/assets/banner.jpg\" alt=\"Paperclip is the app people use to manage AI agents for work.\" width=\"720\" />\n</p>\n\n<p align=\"center\">\n  <a href=\"#quickstart\"><strong>Quickstart</strong></a> &middot;\n  <a href=\"https://docs.paperclip.ing\"><strong>Docs</strong></a> &middot;\n  <a href=\"https://github.com/paperclipai/paperclip\"><strong>GitHub</strong></a> &middot;\n  <a href=\"https://discord.gg/m4HZY7xNG3\"><strong>Discord</strong></a> &middot;\n  <a href=\"https://x.com/papercliping\"><strong>Twitter</strong></a> &middot;\n  <a href=\"https://paperclip.ing\"><strong>Website</strong></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/paperclipai/paperclip/blob/master/LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-blue\" alt=\"MIT License\" /></a>\n  <a href=\"https://github.com/paperclipai/paperclip/stargazers\"><img src=\"https://img.shields.io/github/stars/paperclipai/paperclip?style=flat\" alt=\"Stars\" /></a>\n  <a href=\"https://www.star-history.com/paperclipai/paperclip\"><img src=\"https://api.star-history.com/badge?repo=paperclipai/paperclip\" alt=\"Star History Rank\" /></a>\n  <a href=\"https://discord.gg/m4HZY7xNG3\"><img src=\"https://img.shields.io/badge/discord-join-7289da\" alt=\"Discord\" /></a>\n</p>\n\n<br/>\n\n<div align=\"center\">\n  <video src=\"https://github.com/user-attachments/assets/773bdfb2-6d1e-4e30-8c5f-3487d5b70c8f\" width=\"600\" controls></video>\n</div>\n\n<br/>\n\n# Paperclip is the app people use to manage AI agents for work.\n\nOpen-source orchestration for teams of AI agents.\n\n**If OpenClaw is an _employee_, Paperclip is the _company_.**\n\nPaperclip is a Node.js server and React UI that orchestrates a team of AI agents to run a business. Bring your own agents, assign goals, and track work and costs from one dashboard.\n\nIt looks like a task manager. Under the hood: org charts, budgets, governance, goal alignment, and agent coordination.\n\n**Manage business goals, not pull requests.**\n\n|        | Step            | Example                                                            |\n| ------ | --------------- | ------------------------------------------------------------------ |\n| **01** | Define the goal | _\"Build the #1 AI note-taking app to $1M MRR.\"_                    |\n| **02** | Hire the team   | CEO, CTO, engineers, designers, marketers — any bot, any provider. |\n| **03** | Approve and run | Review strategy. Set budgets. Hit go. Monitor from the dashboard.  |\n\n<br/>\n\n<div align=\"center\">\n<table>\n  <tr>\n    <td align=\"center\"><strong>Works<br/>with</strong></td>\n    <td align=\"center\"><img src=\"doc/assets/logos/openclaw.svg\" width=\"32\" alt=\"OpenClaw\" /><br/><sub>OpenClaw</sub></td>\n    <td align=\"center\"><img src=\"doc/assets/logos/claude.svg\" width=\"32\" alt=\"Claude\" /><br/><sub>Claude Code</sub></td>\n    <td align=\"center\"><img src=\"doc/assets/logos/codex.svg\" width=\"32\" alt=\"Codex\" /><br/><sub>Codex</sub></td>\n    <td align=\"center\"><img src=\"doc/assets/logos/cursor.svg\" width=\"32\" alt=\"Cursor\" /><br/><sub>Cursor</sub></td>\n    <td align=\"center\"><img src=\"doc/assets/logos/bash.svg\" width=\"32\" alt=\"Bash\" /><br/><sub>Bash</sub></td>\n    <td align=\"center\"><img src=\"doc/assets/logos/http.svg\" width=\"32\" alt=\"HTTP\" /><br/><sub>HTTP</sub></td>\n  </tr>\n</table>\n\n<em>If it can receive a heartbeat, it's hired.</em>\n\n</div>\n\n<br/>\n\n## Paperclip is right for you if\n\n- ✅ You want to build **autonomous AI organizations**\n- ✅ You **coordinate many different agents** (OpenClaw, Codex, Claude, Cursor) toward a common goal\n- ✅ You have **20 simultaneous Claude Code terminals** open and lose track of what everyone is doing\n- ✅ You want agents running **autonomously 24/7**, but still want to audit work and chime in when needed\n- ✅ You want to **monitor costs** and enforce budgets\n- ✅ You want a process for managing agents that **feels like using a task manager**\n- ✅ You want to manage your autonomous businesses **from your phone**\n\n<br/>\n\n## The four pillars\n\nFour things have to work for an organization of AI agents to actually produce: the tasks, the org, the training, and the infrastructure. Paperclip is built around exactly those four pillars.\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/paperclipai/paperclip/1ec33ffd8b597f7e36aac3e2fbb4665b8c42dc3c/doc/assets/four-pillars-dark.png\">\n  <source media=\"(prefers-color-scheme: light)\" srcset=\"https://raw.githubusercontent.com/paperclipai/paperclip/1ec33ffd8b597f7e36aac3e2fbb4665b8c42dc3c/doc/assets/four-pillars-light.png\">\n  <img src=\"https://raw.githubusercontent.com/paperclipai/paperclip/1ec33ffd8b597f7e36aac3e2fbb4665b8c42dc3c/doc/assets/four-pillars-light.png\" alt=\"The four pillars of Paperclip\">\n</picture>\n\n| Pillar | Built for | What it covers |\n| --- | --- | --- |\n| **Agentic Task Manager** — Declare intent. Agents work. You verify the output. | Everyone, daily | Tasks, approvals & review gates · proactive agent coworkers · auditable routines & workflows · verify from diffs, scre",
+        "sources": [
+          {
+            "description": "The open-source app everyone uses to manage agents at work",
+            "full_name": "paperclipai/paperclip",
+            "language": "TypeScript",
+            "trending_stars_period": 7364,
+            "trending_total_forks": null,
+            "trending_total_stars": 92481,
+            "type": "trending_weekly"
+          },
+          {
+            "description": "The open-source app everyone uses to manage agents at work",
+            "full_name": "paperclipai/paperclip",
+            "language": "TypeScript",
+            "trending_stars_period": 3185,
+            "trending_total_forks": null,
+            "trending_total_stars": 92481,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 92481,
+        "topics": [],
+        "updated_at": "2026-09-28T20:15:49Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 3,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 6227,
+      "description": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+      "evidence_quote": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+      "full_name": "stablyai/orca",
+      "latest": {
+        "captured_at": "2026-09-28T20:15:49Z",
+        "created_at": "2026-03-17T03:28:57Z",
+        "default_branch": "main",
+        "description": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+        "forks": 5248,
+        "full_name": "stablyai/orca",
+        "html_url": "https://github.com/stablyai/orca",
+        "language": "TypeScript",
+        "license": "MIT",
+        "open_issues": 6991,
+        "pushed_at": "2026-09-28T20:15:36Z",
+        "readme_excerpt": "<h1 align=\"center\">\n  <a href=\"https://onOrca.dev\"><img src=\"resources/build/icon.png\" alt=\"Orca\" width=\"64\" valign=\"middle\" /></a> Orca\n</h1>\n\n<p align=\"center\">\n  <a href=\"https://github.com/stablyai/orca\"><img src=\"https://img.shields.io/github/stars/stablyai/orca?style=flat&amp;label=%E2%98%85&amp;color=08C\" alt=\"GitHub stars\" /></a>\n  <a href=\"https://github.com/stablyai/orca/releases\"><img src=\"docs/assets/readme-downloads.svg\" alt=\"Total downloads across all releases\" /></a>\n  <img src=\"https://img.shields.io/badge/license-MIT-08C?style=flat\" alt=\"License: MIT\" />\n  <a href=\"https://discord.gg/fzjDKHxv8Q\"><img src=\"https://img.shields.io/badge/Discord-5865F2?logo=discord&logoColor=white\" alt=\"Join the Orca Discord\" /></a>\n  <a href=\"https://x.com/orca_build\"><img src=\"https://img.shields.io/badge/X-000000?logo=x&logoColor=white\" alt=\"Follow Orca on X\" /></a>\n  <img src=\"https://img.shields.io/badge/macOS%20%7C%20Windows%20%7C%20Linux-4493F8?style=flat-square\" alt=\"Supported platforms: macOS, Windows, and Linux\" />\n</p>\n\n<p align=\"center\">\n  <sub><a href=\"docs/readme/README.zh-CN.md\">中文</a> · <a href=\"docs/readme/README.ja.md\">日本語</a> · <a href=\"docs/readme/README.ko.md\">한국어</a> · <a href=\"docs/readme/README.es.md\">Español</a> · <a href=\"docs/readme/README.fr.md\">Français</a> · <a href=\"docs/readme/README.pt.md\">Português</a></sub>\n</p>\n\n<p align=\"center\">\n  <strong>The AI Orchestrator for 100x builders.</strong><br/>\n  Run Codex, ClaudeCode, OpenCode or Pi side-by-side — each in its own worktree, tracked in one place.\n</p>\n\n<h3 align=\"center\"><a href=\"https://onorca.dev/download\"><ins>Download Orca</ins></a></h3>\n\n<p align=\"center\">\n  <img src=\"docs/assets/readme-hero.jpg\" alt=\"Orca desktop app running agents in parallel worktrees, with the Orca mobile companion app in the corner\" width=\"960\" />\n</p>\n\n## Features\n\n<table>\n<tr>\n<td width=\"50%\" valign=\"middle\">\n\n### Mobile Companion\n\nMonitor and steer your agents from your phone — get notified when an agent finishes and send follow-ups from anywhere.\n\n[iOS App Store](https://apps.apple.com/us/app/orca-ide/id6766130217) · [Android APK 0.0.50](https://github.com/stablyai/orca/releases/download/mobile-android-v0.0.50/app-release.apk) · [Docs →](https://www.onorca.dev/docs/mobile)\n\n</td>\n<td width=\"50%\">\n  <a href=\"https://www.onorca.dev/docs/mobile\"><picture><source srcset=\"docs/assets/feature-wall/mobile-companion-app-showcase.gif\" type=\"image/gif\"><img src=\"docs/assets/feature-wall/mobile-companion-app-showcase.jpg\" alt=\"Orca desktop with the mobile companion app\" width=\"100%\" /></picture></a>\n</td>\n</tr>\n<tr>\n<td width=\"50%\" valign=\"middle\">\n\n### Parallel Worktrees\n\nFan one prompt across five agents, each in its own isolated git worktree — compare the results and merge the winner.\n\n[Docs →](https://www.onorca.dev/docs/model/worktrees)\n\n</td>\n<td width=\"50%\">\n  <a href=\"https://www.onorca.dev/docs/model/worktrees\"><picture><source srcset=\"docs/site/public/docs/tab-split.gif\" type=\"image/gif\"><img src=\"docs/site/public/docs/posters/tab-split.jpg\" alt=\"Parallel worktree orchestration\" width=\"100%\" /></picture></a>\n</td>\n</tr>\n<tr>\n<td width=\"50%\" valign=\"middle\">\n\n### Terminal Splits\n\nGhostty-class terminals with WebGL rendering, infinite splits, and scrollback that survives restarts.\n\n[Docs →](https://www.onorca.dev/docs/terminal)\n\n</td>\n<td width=\"50%\">\n  <a href=\"https://www.onorca.dev/docs/terminal\"><picture><source srcset=\"resources/onboarding/feature-wall/tile-02.gif\" type=\"image/gif\"><img src=\"resources/onboarding/feature-wall/tile-02.poster.jpg\" alt=\"Terminal splits\" width=\"100%\" /></picture></a>\n</td>\n</tr>\n<tr>\n<td width=\"50%\" valign=\"middle\">\n\n### Design Mode\n\nClick any UI element in a real Chromium window to send its HTML, CSS, and a cropped screenshot straight into your agent's prompt.\n\n[Docs →](https://www.onorca.dev/docs/browser/design-mode)\n\n</td>\n<td width=\"50%\">\n  <a href=\"https://www.onorca.dev/docs/browser/design-mode\"><picture><source srcset=\"docs/site/public/docs/orca-design-mode.gif\" type=\"image/gif\"><img src=\"resources/onboarding/feature-wall/tile-05.poster.jpg\" alt=\"Embedded browser and Design Mode\" width=\"100%\" /></picture></a>\n</td>\n</tr>\n<tr>\n<td width=\"50%\" valign=\"middle\">\n\n### GitHub &amp; Linear, Native\n\nBrowse PRs, issues, and project boards in-app — open a worktree from any task and review without a context switch.\n\n[Docs →](https://www.onorca.dev/docs/review/linear)\n\n</td>\n<td width=\"50%\">\n  <a href=\"https://www.onorca.dev/docs/review/linear\"><picture><source srcset=\"resources/onboarding/feature-wall/tile-03.gif\" type=\"image/gif\"><img src=\"resources/onboarding/feature-wall/tile-03.poster.jpg\" alt=\"GitHub and Linear task workflows in Orca\" width=\"100%\" /></picture></a>\n</td>\n</tr>\n<tr>\n<td width=\"50%\" valign=\"middle\">\n\n### SSH Worktrees\n\nRun agents on a beefy remote box with full file editing, git, and terminals — auto-reconnect and port forwarding included.\n\n[Docs →](https://www.onorca.dev/docs/ssh)\n\n</td>\n<td width=\"50%",
+        "sources": [
+          {
+            "description": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+            "full_name": "stablyai/orca",
+            "language": "TypeScript",
+            "trending_stars_period": 6227,
+            "trending_total_forks": null,
+            "trending_total_stars": 80594,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 80594,
+        "topics": [
+          "ade",
+          "agent-ide",
+          "ai-agents",
+          "claude-code",
+          "cli",
+          "codex",
+          "cursor-agent",
+          "devtools",
+          "ghostty",
+          "ide",
+          "mobile-app",
+          "opencode",
+          "orchestration",
+          "parallel-agents",
+          "pi",
+          "terminal",
+          "worktrees",
+          "yc-backed"
+        ],
+        "updated_at": "2026-09-28T20:12:35Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 4,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 5175,
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "evidence_quote": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "full_name": "affaan-m/ECC",
+      "latest": {
+        "captured_at": "2026-09-28T02:23:02Z",
+        "created_at": "2026-01-18T00:51:51Z",
+        "default_branch": "main",
+        "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+        "forks": 40107,
+        "full_name": "affaan-m/ECC",
+        "html_url": "https://github.com/affaan-m/ECC",
+        "language": "JavaScript",
+        "license": null,
+        "open_issues": null,
+        "pushed_at": null,
+        "readme_excerpt": "<p align=\"center\">\n  <img src=\"assets/hero.png\" alt=\"ECC - the agent harness operating system\" width=\"100%\" />\n</p>\n\n<p align=\"center\">\n  <a href=\"https://www.star-history.com/affaan-m/ecc\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=trending&theme=dark\" />\n      <img src=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=trending\" alt=\"GitHub Trending Repository of the Day\" height=\"46\" />\n    </picture>\n  </a>\n  <a href=\"https://www.star-history.com/affaan-m/ecc\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=rank&theme=dark\" />\n      <img src=\"https://api.star-history.com/badge?repo=affaan-m/ECC&type=rank\" alt=\"Star History Global Rank\" height=\"46\" />\n    </picture>\n  </a>\n</p>\n\n<p align=\"center\">\n  <strong>Language:</strong>\n  <a href=\"README.md\">English</a> |\n  <a href=\"docs/pt-BR/README.md\">Português (Brasil)</a> |\n  <a href=\"README.zh-CN.md\">简体中文</a> |\n  <a href=\"docs/zh-TW/README.md\">繁體中文</a> |\n  <a href=\"docs/ja-JP/README.md\">日本語</a> |\n  <a href=\"docs/ko-KR/README.md\">한국어</a> |\n  <a href=\"docs/tr/README.md\">Türkçe</a> |\n  <a href=\"docs/ru/README.md\">Русский</a> |\n  <a href=\"docs/vi-VN/README.md\">Tiếng Việt</a> |\n  <a href=\"docs/th/README.md\">ไทย</a> |\n  <a href=\"docs/de-DE/README.md\">Deutsch</a> |\n  <a href=\"docs/es/README.md\">Español</a> |\n  <a href=\"docs/uk-UA/README.md\">Українська</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://discord.gg/36yGMHGFbR\"><img src=\"https://img.shields.io/discord/1496644400590094540?logo=discord&logoColor=white&label=Discord&color=5865F2\" alt=\"Discord\" /></a>\n  <a href=\"https://ecc.tools\"><img src=\"https://img.shields.io/badge/Website-ecc.tools-E07856?logo=googlechrome&logoColor=white\" alt=\"Website\" /></a>\n  <a href=\"https://github.com/apps/ecc-tools\"><img src=\"https://img.shields.io/badge/GitHub%20App-ECC%20Tools-181717?logo=github&logoColor=white\" alt=\"GitHub App\" /></a>\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-blue.svg\" alt=\"MIT license\" /></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/affaan-m/ECC\"><img src=\"https://img.shields.io/github/stars/affaan-m/ECC?style=flat\" alt=\"GitHub stars\" /></a>\n  <a href=\"https://github.com/affaan-m/ECC/forks\"><img src=\"https://img.shields.io/github/forks/affaan-m/ECC?style=flat\" alt=\"GitHub forks\" /></a>\n  <a href=\"https://github.com/affaan-m/ECC/graphs/contributors\"><img src=\"https://img.shields.io/github/contributors/affaan-m/ECC?style=flat\" alt=\"Contributors\" /></a>\n  <a href=\"https://github.com/marketplace/ecc-tools\"><img src=\"https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Finstalls&logo=github\" alt=\"GitHub App installs\" /></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://www.npmjs.com/package/ecc-universal\"><img src=\"https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal&logo=npm\" alt=\"ecc-universal npm downloads\" /></a>\n  <a href=\"https://www.npmjs.com/package/ecc-agentshield\"><img src=\"https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield&logo=npm\" alt=\"ecc-agentshield npm downloads\" /></a>\n</p>\n\n<p align=\"center\">\n  <img src=\"https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash&logoColor=white\" alt=\"Shell\" />\n  <img src=\"https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white\" alt=\"TypeScript\" />\n  <img src=\"https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white\" alt=\"Python\" />\n  <img src=\"https://img.shields.io/badge/-Go-00ADD8?logo=go&logoColor=white\" alt=\"Go\" />\n  <img src=\"https://img.shields.io/badge/-Java-ED8B00?logo=openjdk&logoColor=white\" alt=\"Java\" />\n  <img src=\"https://img.shields.io/badge/-Perl-39457E?logo=perl&logoColor=white\" alt=\"Perl\" />\n  <img src=\"https://img.shields.io/badge/-Markdown-000000?logo=markdown&logoColor=white\" alt=\"Markdown\" />\n</p>\n\n> [!WARNING]\n> **Official sources only.** Install ECC only from verified channels: the GitHub repository [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC), the npm packages [`ecc-universal`](https://www.npmjs.com/package/ecc-universal) and [`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield), the [GitHub App](https://github.com/apps/ecc-tools), the plugin slug `ecc@ecc`, and the project website [ecc.tools](https://ecc.tools). Third-party re-uploads and unofficial mirrors are not maintained or reviewed by the project and may contain malware.\n\n## Install with Claude Code\n\nUse the [guided setup](#install-ecc) or [native plugin commands](#claude-code-details). Both install the same `ecc@ecc` plugin. Choose one and do not stack a full manual Claude install on top.\n\n<div align=\"center\">\n\n<table aria-label=\"ECC primary links\">\n<tr>\n<td width=\"33%\" align=\"center\">\n  <a href=\"https://ecc.tools/pricing\">\n    <img src=\"assets/images/community/ecc-tools-mark.svg\" height=\"42\" alt=\"ECC Tools\" /><br />\n    <strong>ECC Pro + GitHub App</strong>",
+        "sources": [
+          {
+            "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+            "full_name": "affaan-m/ECC",
+            "language": "JavaScript",
+            "trending_stars_period": 5175,
+            "trending_total_forks": null,
+            "trending_total_stars": 268453,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 268453,
+        "topics": [
+          "ai-agents",
+          "anthropic",
+          "claude",
+          "claude-code",
+          "developer-tools",
+          "llm",
+          "mcp",
+          "productivity"
+        ],
+        "updated_at": "2026-09-28T02:22:39Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 5,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 4805,
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "evidence_quote": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "full_name": "cloudflare/security-audit-skill",
+      "latest": {
+        "captured_at": "2026-09-28T20:15:49Z",
+        "created_at": "2026-06-18T14:08:44Z",
+        "default_branch": "main",
+        "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+        "forks": 1319,
+        "full_name": "cloudflare/security-audit-skill",
+        "html_url": "https://github.com/cloudflare/security-audit-skill",
+        "language": "JavaScript",
+        "license": "MIT",
+        "open_issues": 51,
+        "pushed_at": "2026-09-14T19:29:02Z",
+        "readme_excerpt": "# security-audit\n\nA coding-agent skill that turns your agent into a security auditor. It orchestrates isolated agents through reconnaissance, coverage-led hunting, candidate validation, structured output, independent record verification, and target-neutral reporting.\n\nThis is the skill that seeded Cloudflare's vulnerability discovery harness, described in [Build your own vulnerability harness](https://blog.cloudflare.com/build-your-own-vulnerability-harness). The harness grew into a multi-stage, fleet-wide system; this skill is the single-repo starting point it evolved from.\n\n## What it does\n\nThe skill runs a structured audit in six phases:\n\n1. **Reconnaissance** -- map architecture, trust boundaries, input surfaces, prior evidence, and deterministic coverage in `architecture.md` and `coverage-ledger.json`.\n2. **Coverage-led hunting** -- assign isolated hunters from ledger units, record their checks, and use coverage critics to find gaps.\n3. **Candidate validation** -- give every unique candidate to a fresh verifier that tries to disprove it.\n4. **Structured output** -- write `confirmed`, `needs_validation`, and `rejected` records to `findings.json` and validate them against `report-schema.json`.\n5. **Independent record verification** -- fresh agents verify final source claims. Material replacements receive another independent verifier.\n6. **Target-neutral reporting** -- derive `REPORT.md`, `FINDINGS-DETAIL.md`, and `NEEDS-VALIDATION.md` from the verified records and coverage ledger.\n\nThe parent runs `validate-coverage-ledger.cjs` after creating the ledger and after each later ledger update. It runs `validate-findings.cjs` in Phase 4 and again after every Phase 5 replacement.\n\nThe verdicts are distinct: `confirmed` has a complete source trace and bounded observed result, `needs_validation` has an exact unresolved fact and no severity, and `rejected` records a disproved candidate.\n\nMultiple runs against the same repo are additive. The skill uses prior ledgers and findings to target gaps, revalidate changed source, and carry forward current-source evidence without treating stale or unresolved work as covered.\n\n## Files\n\n| File | Purpose |\n|------|---------|\n| `SKILL.md` | Setup, core principles, platform terminology, workflow overview, and audit anti-patterns |\n| `RECONNAISSANCE.md` | Phase 1 reconnaissance prompts and synthesis instructions |\n| `HUNTING.md` | Phase 2 orchestration, hunting methodology, and validation rules |\n| `ATTACK-CLASSES.md` | Core, wildcard, and obvious-things attack prompts |\n| `MEMORY-SAFETY-AND-BINARY.md` | Memory-safety, binary, and kernel hunting classes for native targets |\n| `AI-AND-LLM.md` | Prompt-injection, agent/tool, and output-handling hunting classes for LLM-backed targets |\n| `WEB-PROTOCOL-AND-AUTH.md` | HTTP request-framing, cache, and authentication-protocol hunting classes for HTTP-protocol and auth targets |\n| `CLIENT-SIDE.md` | DOM-injection, messaging-trust, UI-redress, and prototype-pollution hunting classes for client-side/browser targets |\n| `SUPPLY-CHAIN-AND-RELEASE.md` | Dependency, CI, release, signing, update, plugin, and extension hunting classes |\n| `CLOUD-AND-DEPLOYMENT.md` | IAM, infrastructure-as-code, container, serverless, ingress, and runtime-configuration hunting classes |\n| `PROTOCOLS-RPC-AND-MESSAGING.md` | RPC, serialization, queue, broker, webhook, and streaming-protocol hunting classes |\n| `RESOURCE-EXHAUSTION-AND-AVAILABILITY.md` | Shared resource, quota, queue, worker, and operator-spend hunting classes |\n| `DATA-ISOLATION-AND-LIFECYCLE.md` | Tenant isolation, cache, search, export, backup, migration, deletion, and restore hunting classes |\n| `DESKTOP-MOBILE-AND-LOCAL-IPC.md` | Native app, deep-link, webview, exported-component, helper, daemon, and local-IPC hunting classes |\n| `VALIDATION-AND-REPORTING.md` | Phases 3–6 candidate validation, structured output, record verification, and reporting |\n| `report-schema.json` | JSON schema for all three `findings.json` verdicts |\n| `validate-findings.cjs` | Zero-dependency validator for `findings.json` in Phases 4 and 5 |\n| `validate-findings.test.cjs` | Findings-validator tests and producer-compatible fixture checks |\n| `validate-coverage-ledger.cjs` | Zero-dependency validator for `coverage-ledger.json` in Phases 1–5 |\n| `validate-coverage-ledger.test.cjs` | Coverage-ledger validator tests |\n\n## Installation\n\nInstall the skill with the [Skills CLI](https://skills.sh):\n\n```bash\nnpx skills add https://github.com/cloudflare/security-audit-skill \\\n  --skill security-audit\n```\n\nUse `--global` for a user-level installation:\n\n```bash\nnpx skills add https://github.com/cloudflare/security-audit-skill \\\n  --skill security-audit \\\n  --global\n```\n\nRun `npx skills --help` for agent-selection and non-interactive options.\n\n## Usage\n\nStart your coding agent in (or pointed at) the codebase you want to audit, then ask it to do a security audit:\n\n```\nsecurity audit this codebase\n```\n\n```\nfind security vulnerabilitie",
+        "sources": [
+          {
+            "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+            "full_name": "cloudflare/security-audit-skill",
+            "language": "JavaScript",
+            "trending_stars_period": 4805,
+            "trending_total_forks": null,
+            "trending_total_stars": 22680,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 22680,
+        "topics": [],
+        "updated_at": "2026-09-28T20:09:33Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 6,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 3850,
+      "description": "Learn it. Build it. Ship it for others.",
+      "evidence_quote": "Learn it. Build it. Ship it for others.",
+      "full_name": "rohitg00/ai-engineering-from-scratch",
+      "latest": {
+        "captured_at": "2026-09-28T20:15:49Z",
+        "created_at": "2026-03-18T18:38:02Z",
+        "default_branch": "main",
+        "description": "Learn it. Build it. Ship it for others.",
+        "forks": 10377,
+        "full_name": "rohitg00/ai-engineering-from-scratch",
+        "html_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "language": "Python",
+        "license": "MIT",
+        "open_issues": 44,
+        "pushed_at": "2026-09-28T20:11:19Z",
+        "readme_excerpt": "<p align=\"center\">\n  <img src=\"assets/banner.svg\" alt=\"AI Engineering from Scratch — reference manual banner\" width=\"100%\">\n</p>\n\n<p align=\"center\">\n  <b>Read in your language:</b>\n  <a href=\"i18n/es/README.md\">Español</a> ·\n  <a href=\"i18n/fr/README.md\">Français</a> ·\n  <a href=\"i18n/pt/README.md\">Português</a> ·\n  <a href=\"i18n/de/README.md\">Deutsch</a> ·\n  <a href=\"i18n/it/README.md\">Italiano</a> ·\n  <a href=\"i18n/zh/README.md\">简体中文</a> ·\n  <a href=\"i18n/ja/README.md\">日本語</a> ·\n  <a href=\"i18n/ko/README.md\">한국어</a> ·\n  <a href=\"i18n/hi/README.md\">हिन्दी</a> ·\n  <a href=\"i18n/ar/README.md\">العربية</a> ·\n  <a href=\"i18n/ru/README.md\">Русский</a> ·\n  <a href=\"i18n/tr/README.md\">Türkçe</a>\n  <br><sub>Translated landing pages, committed to the repo. English is canonical; lesson pages are machine-translated on the <code>translations</code> branch. See <a href=\"docs/i18n.md\">docs/i18n.md</a>.</sub>\n</p>\n\n<p align=\"center\">\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-1a1a1a?style=flat-square&labelColor=fafaf5\" alt=\"MIT License\"></a>\n  <a href=\"ROADMAP.md\"><img src=\"https://img.shields.io/badge/lessons-523-3553ff?style=flat-square&labelColor=fafaf5\" alt=\"523 lessons\"></a>\n  <a href=\"#contents\"><img src=\"https://img.shields.io/badge/phases-20-3553ff?style=flat-square&labelColor=fafaf5\" alt=\"20 phases\"></a>\n  <a href=\"https://github.com/rohitg00/ai-engineering-from-scratch/stargazers\"><img src=\"https://img.shields.io/github/stars/rohitg00/ai-engineering-from-scratch?style=flat-square&labelColor=fafaf5&color=3553ff\" alt=\"GitHub stars\"></a>\n  <a href=\"https://aiengineeringfromscratch.com\"><img src=\"https://img.shields.io/badge/web-aiengineeringfromscratch.com-3553ff?style=flat-square&labelColor=fafaf5\" alt=\"Website\"></a>\n</p>\n\n## From the creator of [Agent Memory - #1 Persistent memory ⭐](https://github.com/rohitg00/agentmemory) <a href=\"https://github.com/rohitg00/agentmemory/stargazers\"><img src=\"https://img.shields.io/github/stars/rohitg00/agentmemory?style=flat-square&labelColor=fafaf5&color=3553ff\" alt=\"GitHub stars\"></a> which naturally works with any agents or chat assistants.\n\n```text\n░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒\n```\n\n> **84% of students already use AI tools. Only 18% feel prepared to use them\n> professionally.** This curriculum closes that gap.\n>\n> 523 lessons. 20 phases. ~342 hours. Python, TypeScript, Rust, Julia. Every lesson ships\n> a reusable artifact: a prompt, a skill, an agent, an MCP server. Free, open source, MIT.\n>\n> You don't just learn AI. You build it. End-to-end. By hand.\n\n<!-- STATS:START (generated from site/stats.json by build.js — do not edit by hand) -->\n<p align=\"center\"><sub><b>114,584</b> readers &nbsp;·&nbsp; <b>181,995</b> page views in the last 30 days &nbsp;·&nbsp; as of 2026-08-29</sub></p>\n<!-- STATS:END -->\n\n## Start here: choose what you want to build\n\nYou do not need to scan 523 lessons before beginning. Pick one goal. Each link\nopens the same curriculum on GitHub or the website, and both versions use the\nsame lesson code.\n\n| Your goal | Learn on GitHub | Learn on the website |\n|---|---|---|\n| I am new and want the complete foundation | [Phase 0: Setup and Tooling](phases/00-setup-and-tooling/) | [Dev Environment](https://aiengineeringfromscratch.com/lesson?path=phases/00-setup-and-tooling/01-dev-environment) |\n| I know Python and want math plus ML foundations | [Phase 1: Math Foundations](phases/01-math-foundations/) | [Linear Algebra Intuition](https://aiengineeringfromscratch.com/lesson?path=phases/01-math-foundations/01-linear-algebra-intuition) |\n| I want to build production LLM applications | [Phase 11: LLM Engineering](phases/11-llm-engineering/) | [Prompt Engineering](https://aiengineeringfromscratch.com/lesson?path=phases/11-llm-engineering/01-prompt-engineering) |\n| I want to build agents | [Phase 14: Agent Engineering](phases/14-agent-engineering/) | [The Agent Loop](https://aiengineeringfromscratch.com/lesson?path=phases/14-agent-engineering/01-the-agent-loop) |\n| I want to use coding agents on real repositories | [Agent-Assisted Engineering path](learning-paths/using-coding-agents.json) | [Agent-Assisted Engineering](https://aiengineeringfromscratch.com/lesson?path=phases/14-agent-engineering/31-agent-workbench-why-models-fail&learningPath=using-coding-agents) |\n| I want to shape the right build before implementation | [Product Judgment and Delivery path](learning-paths/shaping-the-build.json) | [Product Judgment and Delivery](https://aiengineeringfromscratch.com/lesson?path=phases/14-agent-engineering/47-outcomes-before-output&learningPath=shaping-the-build) |\n| I want to build with Model Context Protocol (MCP) | [Model Context Protocol (MCP) route](phases/13-tools-and-protocols/README.md#model-context-protocol-mcp-path) | [Model Context Protocol (MCP) path](https://aiengineeringfromscratch.com/lesson?path=phases/13-tools-and-protocols/06-mcp-fundamentals&learningPath=model-c",
+        "sources": [
+          {
+            "description": "Learn it. Build it. Ship it for others.",
+            "full_name": "rohitg00/ai-engineering-from-scratch",
+            "language": "Python",
+            "trending_stars_period": 3850,
+            "trending_total_forks": null,
+            "trending_total_stars": 60272,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 60272,
+        "topics": [
+          "agents",
+          "ai",
+          "ai-agents",
+          "ai-engineering",
+          "computer-vision",
+          "course",
+          "deep-learning",
+          "from-scratch",
+          "generative-ai",
+          "llm",
+          "machine-learning",
+          "mcp",
+          "nlp",
+          "python",
+          "reinforcement-learning",
+          "rust",
+          "swarm-intelligence",
+          "transformers",
+          "tutorial",
+          "typescript"
+        ],
+        "updated_at": "2026-09-28T20:15:22Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 7,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 3727,
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "evidence_quote": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-la",
+      "full_name": "alibaba/open-code-review",
+      "latest": {
+        "captured_at": "2026-09-28T02:23:02Z",
+        "created_at": "2026-05-18T02:16:36Z",
+        "default_branch": "main",
+        "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+        "forks": 3011,
+        "full_name": "alibaba/open-code-review",
+        "html_url": "https://github.com/alibaba/open-code-review",
+        "language": "Go",
+        "license": null,
+        "open_issues": null,
+        "pushed_at": null,
+        "readme_excerpt": "<div align=\"center\">\n  <a href=\"https://open-codereview.ai\">\n    <img src=\"imgs/logo-core.svg\" alt=\"OpenCodeReview logo\" width=\"180\" />\n  </a>\n  <h1>OpenCodeReview</h1>\n</div>\n\n<p align=\"center\">\n  <a href=\"https://trendshift.io/repositories/41087?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-41087\" target=\"_blank\" rel=\"noopener noreferrer\">\n    <img src=\"https://trendshift.io/api/badge/repositories/41087\" alt=\"alibaba%2Fopen-code-review | Trendshift\" style=\"width: 280px; height: 60px;\" width=\"280\" height=\"60\" />\n  </a>\n</p>\n<p align=\"center\">\n  <a href=\"https://trendshift.io/repositories/41087\" target=\"_blank\">\n    <img src=\"https://trendshift.io/api/badge/trendshift/repositories/41087/weekly\" alt=\"alibaba%2Fopen-code-review | Trendshift\" style=\"width: 280px; height: 60px;\" width=\"280\" height=\"60\" />\n  </a>\n  <a href=\"https://trendshift.io/repositories/41087\" target=\"_blank\">\n    <img src=\"https://trendshift.io/api/badge/trendshift/repositories/41087/monthly?language=Go\" alt=\"alibaba%2Fopen-code-review | Trendshift\" style=\"width: 280px; height: 60px;\" width=\"280\" height=\"60\" />\n  </a>\n</p>\n<p align=\"center\">\n  <a href=\"https://www.npmjs.com/package/@alibaba-group/open-code-review\"><img alt=\"npm\" src=\"https://img.shields.io/npm/v/@alibaba-group/open-code-review?style=flat-square\" /></a>\n  <a href=\"https://github.com/alibaba/open-code-review/actions/workflows/release.yml\"><img alt=\"Build status\" src=\"https://img.shields.io/github/actions/workflow/status/alibaba/open-code-review/release.yml?style=flat-square\" /></a>\n  <a href=\"https://github.com/alibaba/open-code-review/blob/main/LICENSE\"><img alt=\"License\" src=\"https://img.shields.io/github/license/alibaba/open-code-review?style=flat-square\" /></a>\n  <a href=\"https://deepwiki.com/alibaba/open-code-review\"><img alt=\"Ask DeepWiki\" src=\"https://deepwiki.com/badge.svg\" /></a>\n  <a href=\"https://www.bestpractices.dev/projects/13328\"><img alt=\"OpenSSF Best Practices\" src=\"https://img.shields.io/badge/OpenSSF-Gold-D4AF37?style=flat-square\" /></a>\n</p>\n<p align=\"center\">\n  <a href=\"#supported-platforms\"><img alt=\"Windows\" src=\"https://img.shields.io/badge/Windows-supported-blue.svg\" /></a>\n  <a href=\"#supported-platforms\"><img alt=\"macOS\" src=\"https://img.shields.io/badge/macOS-supported-blue.svg\" /></a>\n  <a href=\"#supported-platforms\"><img alt=\"Linux\" src=\"https://img.shields.io/badge/Linux-supported-blue.svg\" /></a>\n  <a href=\"#supported-agents\"><img alt=\"Claude Code\" src=\"https://img.shields.io/badge/Claude_Code-supported-blueviolet.svg\" /></a>\n  <a href=\"#supported-agents\"><img alt=\"Codex\" src=\"https://img.shields.io/badge/Codex-supported-blueviolet.svg\" /></a>\n  <a href=\"#supported-agents\"><img alt=\"Cursor\" src=\"https://img.shields.io/badge/Cursor-supported-blueviolet.svg\" /></a>\n  <a href=\"#supported-agents\"><img alt=\"Kimi Code\" src=\"https://img.shields.io/badge/Kimi_Code-supported-blueviolet.svg\" /></a>\n</p>\n<p align=\"center\">\n  English | <a href=\"docs/i18n/README.zh-CN.md\">简体中文</a> | <a href=\"docs/i18n/README.ja-JP.md\">日本語</a> | <a href=\"docs/i18n/README.ko-KR.md\">한국어</a> | <a href=\"docs/i18n/README.ru-RU.md\">Русский</a>\n</p>\n\n---\n\n## What is Open Code Review?\n\nOpen Code Review is an AI-powered code review CLI tool. It originated as Alibaba Group's internal official AI code review assistant — over the past two years, it has served tens of thousands of developers and identified millions of code defects. After thorough validation at massive scale, we incubated it into an open source project for the community. Simply configure a model endpoint to get started.\n\nIt reads Git diffs, sends changed files to a configurable LLM via an agent with tool-use capabilities, and generates structured review comments with line-level precision. The agent can read full file contents, search the codebase, inspect other changed files for context, and produce deep reviews — not just surface-level diff feedback. Beyond diff review, `ocr scan` reviews entire files for auditing unfamiliar codebases or directories that have no meaningful diff.\n\nVisit the [official website](https://open-codereview.ai) for more details.\n\n![Highlights](imgs/highlights-en.png)\n\n## Benchmark\n\n> Compared to general-purpose agents (Claude Code), Open Code Review achieves significantly higher **Precision** and **F1** with the same underlying model, while consuming only **~1/9 of the tokens** and completing reviews faster. Note that its Recall is lower than general-purpose agents — a deliberate trade-off favoring precision over noise.\n\nA real-world code review benchmark built from **50** popular open-source repositories, **200** real Pull Requests, and **10** programming languages — cross-validated by 80+ senior engineers (**1,505** annotated ground-truth issues).\n\n<a href=\"https://huggingface.co/datasets/Alibaba-Aone/aacr-bench\"><img src=\"https://huggingface.co/favicon.ico\" alt=\"Hugging Face\" width=\"20\" height=\"20\" /> Explore the AACR-Bench dataset on Hugging Face</a>.\n\n| ",
+        "sources": [
+          {
+            "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+            "full_name": "alibaba/open-code-review",
+            "language": "Go",
+            "trending_stars_period": 3727,
+            "trending_total_forks": null,
+            "trending_total_stars": 41958,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 41958,
+        "topics": [
+          "agent",
+          "agent-skills",
+          "code-review",
+          "code-review-assistant",
+          "harness",
+          "repository-level-context"
+        ],
+        "updated_at": "2026-09-28T02:20:15Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 8,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 2911,
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "evidence_quote": "Production-grade engineering skills for AI coding agents.",
+      "full_name": "addyosmani/agent-skills",
+      "latest": {
+        "captured_at": "2026-09-26T19:02:13Z",
+        "created_at": "2026-02-15T20:20:26Z",
+        "default_branch": "main",
+        "description": "Production-grade engineering skills for AI coding agents.",
+        "forks": 10420,
+        "full_name": "addyosmani/agent-skills",
+        "html_url": "https://github.com/addyosmani/agent-skills",
+        "language": "JavaScript",
+        "license": null,
+        "open_issues": null,
+        "pushed_at": null,
+        "readme_excerpt": "# Agent Skills\n\n**Production-grade engineering skills for AI coding agents.**\n\nSkills encode the workflows, quality gates, and best practices that senior engineers use when building software. These ones are packaged so AI agents follow them consistently across every phase of development.\n\n<a href=\"https://trendshift.io/repositories/25200\" target=\"_blank\"><img src=\"https://trendshift.io/api/badge/repositories/25200\" alt=\"addyosmani%2Fagent-skills | Trendshift\" style=\"width: 250px; height: 55px;\" width=\"250\" height=\"55\"/></a>\n\n![Addy's Agent Skills](https://addyosmani.com/assets/images/addys-agent-skills.jpg)\n\n```\n  DEFINE          PLAN           BUILD          VERIFY         REVIEW          SHIP\n ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐\n │ Idea │ ───▶ │ Spec │ ───▶ │ Code │ ───▶ │ Test │ ───▶ │  QA  │ ───▶ │  Go  │\n │Refine│      │  PRD │      │ Impl │      │Debug │      │ Gate │      │ Live │\n └──────┘      └──────┘      └──────┘      └──────┘     ",
+        "sources": [
+          {
+            "description": "Production-grade engineering skills for AI coding agents.",
+            "full_name": "addyosmani/agent-skills",
+            "language": "JavaScript",
+            "trending_stars_period": 2911,
+            "trending_total_forks": null,
+            "trending_total_stars": 99239,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 99239,
+        "topics": [
+          "agent-skills",
+          "antigravity",
+          "claude-code",
+          "codex",
+          "cursor",
+          "skills"
+        ],
+        "updated_at": "2026-09-26T18:56:28Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 9,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 2705,
+      "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+      "evidence_quote": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+      "full_name": "Tencent/WeKnora",
+      "latest": {
+        "captured_at": "2026-09-28T20:15:49Z",
+        "created_at": "2025-07-22T08:01:23Z",
+        "default_branch": "main",
+        "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+        "forks": 4131,
+        "full_name": "Tencent/WeKnora",
+        "html_url": "https://github.com/Tencent/WeKnora",
+        "language": "Go",
+        "license": "Other",
+        "open_issues": 565,
+        "pushed_at": "2026-09-28T17:32:23Z",
+        "readme_excerpt": "<p align=\"center\">\n  <a href=\"https://weknora.weixin.qq.com\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"./docs/images/readme/hero-en-dark.svg\">\n      <img src=\"./docs/images/readme/hero-en-light.svg\" alt=\"WeKnora: find the answers, and put knowledge to work. Tencent's open-source knowledge management framework for Q&A, tasks and wikis.\" width=\"100%\">\n    </picture>\n  </a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://weknora.weixin.qq.com\"><img alt=\"Website\" src=\"https://img.shields.io/badge/website-weknora.weixin.qq.com-b8863b?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"https://weknora.weixin.qq.com/docs/\"><img alt=\"Docs\" src=\"https://img.shields.io/badge/docs-read-b8863b?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"./CHANGELOG.md\"><img alt=\"Release\" src=\"https://img.shields.io/badge/release-v0.8.2-b8863b?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"./LICENSE\"><img alt=\"License\" src=\"https://img.shields.io/badge/license-MIT-b8863b?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"https://github.com/Tencent/WeKnora/stargazers\"><img alt=\"Stars\" src=\"https://img.shields.io/github/stars/Tencent/WeKnora?style=flat-square&labelColor=101f38&color=b8863b\"></a>\n  <br/>\n  <a href=\"https://chatbot.weixin.qq.com\"><img alt=\"WeChat Dialog Open Platform\" src=\"https://img.shields.io/badge/WeChat_Dialog-Open_Platform-07c160?style=flat-square&labelColor=101f38&logo=wechat&logoColor=white\"></a>\n  <a href=\"https://chromewebstore.google.com/detail/jpemjbopikggjlmikmclgbmkhhopjdgd\"><img alt=\"Chrome Extension\" src=\"https://img.shields.io/badge/Chrome-extension-4285f4?style=flat-square&labelColor=101f38&logo=googlechrome&logoColor=white\"></a>\n  <a href=\"https://clawhub.ai/lyingbug/weknora\"><img alt=\"ClawHub Skill\" src=\"https://img.shields.io/badge/ClawHub-skill-ff6b35?style=flat-square&labelColor=101f38\"></a>\n  <a href=\"https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora\"><img alt=\"npm @wxg-prc-cpg/dsh-weknora\" src=\"https://img.shields.io/npm/v/@wxg-prc-cpg/dsh-weknora?style=flat-square&label=dsh-weknora&labelColor=101f38&color=cb3837&logo=npm&logoColor=white\"></a>\n</p>\n\n<p align=\"center\">\n  <b>English</b> · <a href=\"./README_CN.md\">简体中文</a> · <a href=\"./README_JA.md\">日本語</a> · <a href=\"./README_KO.md\">한국어</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"#overview\">Overview</a> ·\n  <a href=\"#quick-start\">Quick Start</a> ·\n  <a href=\"#whats-new\">What's New</a> ·\n  <a href=\"#features\">Features</a> ·\n  <a href=\"#clients-and-integrations\">Clients</a> ·\n  <a href=\"#documentation\">Docs</a> ·\n  <a href=\"#development\">Development</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://trendshift.io/repositories/15289\"><img src=\"https://trendshift.io/api/badge/repositories/15289\" alt=\"Tencent/WeKnora | Trendshift\" width=\"220\" height=\"48\"/></a>\n</p>\n\n## Overview\n\n[WeKnora](https://weknora.weixin.qq.com) is an open-source, LLM-powered knowledge framework for enterprise document understanding, semantic retrieval and reasoning. It brings a team's documents together so they can be searched, reasoned over and kept up to date.\n\nhttps://github.com/user-attachments/assets/5722b10d-d04d-49ed-a6cc-635a8c77d91f\n\n<p align=\"center\"><sub>1:52 · 1080p · No narration, English on-screen text</sub></p>\n\nUse RAG to look things up, the agent for multi-step tasks, and the wiki to organize knowledge. All three work on the same knowledge bases.\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"./docs/images/readme/capabilities-en-dark.svg\">\n  <img src=\"./docs/images/readme/capabilities-en-light.svg\" alt=\"01 RAG: answers you can check, with hybrid search, multimodal parsing and citations. 02 Agent: tasks done with knowledge and tools, with multi-step reasoning, skills and sandbox, the local browser, MCP tools and memory. 03 Wiki: documents organized into a wiki, with a knowledge graph and rollback.\" width=\"100%\">\n</picture>\n\n**The agent's toolbox.** Skills installed from ClawHub / SkillHub / Git / ZIP run in session-persistent Docker / E2B / Cube sandboxes, with an interactive terminal and graphical desktop beside the chat. Through the BrowserSkill extension the agent operates the user's own Chrome or Edge, and external MCP services (OAuth included) can be connected and enabled tool by tool.\n\nBeyond the three modes:\n\n- **Memory and curation**: cross-session long-term memory keeps the profile, preferences and facts a user has confirmed. Folder uploads keep their directory tree, and retrieval chunks can be edited, diffed and rolled back.\n- **Data sources and formats**: auto-sync from Feishu wiki / Feishu Drive / Confluence / GitLab / Tencent IMA / Notion / Yuque / DingTalk Docs / RSS, with more on the way. 10+ document formats including PDF, Word, images, Excel and XMind; Office files are parsed in-process by anydoc.\n- **Channels and integrations**: Q&A in WeCom, Feishu, Slack, Telegram and other IM apps; an embed widget for external websites; a built-in MCP Server for Cursor, Claude and other AI tools; sco",
+        "sources": [
+          {
+            "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+            "full_name": "Tencent/WeKnora",
+            "language": "Go",
+            "trending_stars_period": 2705,
+            "trending_total_forks": null,
+            "trending_total_stars": 30920,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 30920,
+        "topics": [
+          "agent",
+          "agentic",
+          "ai",
+          "chatbot",
+          "dsh-plugin",
+          "embeddings",
+          "evaluation",
+          "generative-ai",
+          "golang",
+          "knowledge-base",
+          "llm",
+          "multi-tenant",
+          "ollama",
+          "openai",
+          "question-answering",
+          "rag",
+          "reranking",
+          "semantic-search",
+          "vector-search",
+          "wiki"
+        ],
+        "updated_at": "2026-09-28T20:12:51Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 10,
+      "trending_source": true
+    }
+  ],
+  "format_version": 2,
+  "generated_at": "2026-09-28T20:15:49Z",
+  "joke": "",
+  "llm_budget": {
+    "actual_requests": 3,
+    "all_ten_descriptions_complete": false,
+    "expected_requests": 10,
+    "local_inference": false,
+    "max_requests_per_run": 40,
+    "max_requests_per_utc_day": 100,
+    "max_requests_with_retries": 40,
+    "paid_fallback": false,
+    "providers": [
+      {
+        "model": "openai/gpt-oss-120b",
+        "name": "Groq"
+      }
+    ],
+    "reason": "Groq description remained incomplete after one schema-repair request; response omitted from logs"
+  },
+  "llm_used": false,
+  "manifest": {
+    "api_repositories": [
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:53Z",
+        "forks": 5521,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 40772,
+        "status": "included",
+        "url": "https://api.github.com/repos/vectorize-io/hindsight"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:54Z",
+        "forks": 5059,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 43510,
+        "status": "included",
+        "url": "https://api.github.com/repos/debpalash/VoiceStudio"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:54Z",
+        "forks": 15862,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 92481,
+        "status": "included",
+        "url": "https://api.github.com/repos/paperclipai/paperclip"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:54Z",
+        "forks": 5248,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 80594,
+        "status": "included",
+        "url": "https://api.github.com/repos/stablyai/orca"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:54Z",
+        "forks": 1319,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 22680,
+        "status": "included",
+        "url": "https://api.github.com/repos/cloudflare/security-audit-skill"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:55Z",
+        "forks": 10377,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 60272,
+        "status": "included",
+        "url": "https://api.github.com/repos/rohitg00/ai-engineering-from-scratch"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:55Z",
+        "forks": 4131,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 30920,
+        "status": "included",
+        "url": "https://api.github.com/repos/Tencent/WeKnora"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:55Z",
+        "forks": 5478,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 38026,
+        "status": "included",
+        "url": "https://api.github.com/repos/anthropics/financial-services"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:56Z",
+        "forks": 1867,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 26834,
+        "status": "included",
+        "url": "https://api.github.com/repos/trycua/cua"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:56Z",
+        "forks": 582,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 8548,
+        "status": "included",
+        "url": "https://api.github.com/repos/akitaonrails/ai-memory"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:56Z",
+        "forks": 3652,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 32066,
+        "status": "included",
+        "url": "https://api.github.com/repos/davila7/claude-code-templates"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:57Z",
+        "forks": 4647,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 50872,
+        "status": "included",
+        "url": "https://api.github.com/repos/HKUDS/CLI-Anything"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:57Z",
+        "forks": 673,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 5496,
+        "status": "included",
+        "url": "https://api.github.com/repos/TencentCloud/Octop"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:57Z",
+        "forks": 1152,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 12687,
+        "status": "included",
+        "url": "https://api.github.com/repos/cloudflare/quiche"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:58Z",
+        "forks": 33346,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 142851,
+        "status": "included",
+        "url": "https://api.github.com/repos/vercel/next.js"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:58Z",
+        "forks": 264,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 5545,
+        "status": "included",
+        "url": "https://api.github.com/repos/FxEmbed/FxEmbed"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:58Z",
+        "forks": 30812,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 103463,
+        "status": "included",
+        "url": "https://api.github.com/repos/pytorch/pytorch"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:59Z",
+        "forks": 26094,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 78041,
+        "status": "included",
+        "url": "https://api.github.com/repos/elastic/elasticsearch"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:59Z",
+        "forks": 1795,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 21151,
+        "status": "included",
+        "url": "https://api.github.com/repos/dream-num/univer"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:59Z",
+        "forks": 132,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1607,
+        "status": "included",
+        "url": "https://api.github.com/repos/mvschwarz/openrig"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:59Z",
+        "forks": 231,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2437,
+        "status": "included",
+        "url": "https://api.github.com/repos/cs341-illinois/coursebook"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:00Z",
+        "forks": 6508,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 64592,
+        "status": "included",
+        "url": "https://api.github.com/repos/byoungd/up"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:00Z",
+        "forks": 5882,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 25698,
+        "status": "included",
+        "url": "https://api.github.com/repos/NawfalMotii79/PLFM_RADAR"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:00Z",
+        "forks": 144,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 954,
+        "status": "included",
+        "url": "https://api.github.com/repos/852wa/JIZURA"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:01Z",
+        "forks": 21,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 581,
+        "status": "included",
+        "url": "https://api.github.com/repos/Alex314618-create/JevRev"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:01Z",
+        "forks": 197,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2245,
+        "status": "included",
+        "url": "https://api.github.com/repos/Contrastive-LM/CLM"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:01Z",
+        "forks": 60,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 540,
+        "status": "included",
+        "url": "https://api.github.com/repos/JohnHeibel/ClaudeAnimationBase"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:01Z",
+        "forks": 154,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1414,
+        "status": "included",
+        "url": "https://api.github.com/repos/JohnHeibel/PDoomVideo"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:02Z",
+        "forks": 101,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 982,
+        "status": "included",
+        "url": "https://api.github.com/repos/Niko1221/Strata"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:02Z",
+        "forks": 11,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 747,
+        "status": "included",
+        "url": "https://api.github.com/repos/OnlistTeam/ai-manager"
+      }
+    ],
+    "candidate_count": 30,
+    "candidate_policy": "Weekly Trending, daily Trending, then Search; stable order; max 30; not a global GitHub census.",
+    "captured_at": "2026-09-28T20:15:49Z",
+    "excluded_candidates": [
+      {
+        "full_name": "Rizzo-AI-Academy/rizzo-flow",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "alexgreensh/anidoodle",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "anishfn/shapeshift",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "deepopen-com/deepopen",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "dgreenheck/tidewater",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "dzhng/jevgrep",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "feitangyuan/onetake",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "freestylefly/WeChatBridge",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "jev-chat/jev-chat-jarvis",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "jev-chat/jev-chat-windows",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "kryvora-network/kryvora-node",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "kydlikebtc/awesome-jev",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "mexicat/pdoom-video",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "mikehasa/golive-skill",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "nokia-applied-research/AnyJev",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "ollaya-dev/ollaya",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "riba2534/claude-opus-5-5-demo",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "supermemoryai/company-brain",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "tobi/disktree",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "unreallabsai/unreal-agent",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "yetone/magpie",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "yihui-dev/awesome-opus5-5-videos",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "yukitorido/short-video-generator-AI",
+        "reason": "candidate cap after stable source priority"
+      }
+    ],
+    "sources": [
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:50Z",
+        "pagination": "HTML first page as returned; no pagination",
+        "parsed_candidates": 18,
+        "reason": "repository rows parsed from first page",
+        "source": "GitHub Trending weekly",
+        "status": "included",
+        "url": "https://github.com/trending?since=weekly"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-28T20:15:51Z",
+        "pagination": "HTML first page as returned; no pagination",
+        "parsed_candidates": 8,
+        "reason": "repository rows parsed from first page",
+        "source": "GitHub Trending daily",
+        "status": "included",
+        "url": "https://github.com/trending?since=daily"
+      },
+      {
+        "complete": false,
+        "fetched_at": "2026-09-28T20:15:52Z",
+        "pagination": "per_page=30; first page only; Search API result cap applies",
+        "query": "created:>=2026-09-21 stars:>10",
+        "reason": "first page ingested as candidate source only",
+        "returned": 30,
+        "source": "GitHub REST Search repositories created in last 7 days",
+        "status": "included",
+        "total_count": 1877,
+        "url": "https://api.github.com/search/repositories?q=created%3A%3E%3D2026-09-21+stars%3A%3E10&sort=stars&order=desc&per_page=30"
+      },
+      {
+        "candidate": "vectorize-io/hindsight",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:02Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/vectorize-io/hindsight/main/README.md"
+      },
+      {
+        "candidate": "debpalash/VoiceStudio",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:02Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/debpalash/VoiceStudio/main/README.md"
+      },
+      {
+        "candidate": "paperclipai/paperclip",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:02Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/paperclipai/paperclip/master/README.md"
+      },
+      {
+        "candidate": "stablyai/orca",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:03Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/stablyai/orca/main/README.md"
+      },
+      {
+        "candidate": "cloudflare/security-audit-skill",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:03Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/cloudflare/security-audit-skill/main/README.md"
+      },
+      {
+        "candidate": "rohitg00/ai-engineering-from-scratch",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:03Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/rohitg00/ai-engineering-from-scratch/main/README.md"
+      },
+      {
+        "candidate": "Tencent/WeKnora",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:03Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/Tencent/WeKnora/main/README.md"
+      },
+      {
+        "candidate": "anthropics/financial-services",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:03Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/anthropics/financial-services/main/README.md"
+      },
+      {
+        "candidate": "trycua/cua",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:03Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/trycua/cua/main/README.md"
+      },
+      {
+        "candidate": "akitaonrails/ai-memory",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-09-28T20:16:03Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/akitaonrails/ai-memory/main/README.md"
+      }
+    ],
+    "validation_notes": []
+  },
+  "new_repositories_by_total_stars": [
+    {
+      "created_at": "2026-09-23T19:29:56Z",
+      "full_name": "Contrastive-LM/CLM",
+      "stars": 2245,
+      "url": "https://github.com/Contrastive-LM/CLM"
+    },
+    {
+      "created_at": "2026-09-21T23:14:02Z",
+      "full_name": "unreallabsai/unreal-agent",
+      "stars": 1958,
+      "url": "https://github.com/unreallabsai/unreal-agent"
+    },
+    {
+      "created_at": "2026-09-22T23:32:19Z",
+      "full_name": "JohnHeibel/PDoomVideo",
+      "stars": 1414,
+      "url": "https://github.com/JohnHeibel/PDoomVideo"
+    },
+    {
+      "created_at": "2026-09-24T20:56:29Z",
+      "full_name": "tobi/disktree",
+      "stars": 1230,
+      "url": "https://github.com/tobi/disktree"
+    },
+    {
+      "created_at": "2026-09-26T04:06:56Z",
+      "full_name": "dzhng/jevgrep",
+      "stars": 1195,
+      "url": "https://github.com/dzhng/jevgrep"
+    },
+    {
+      "created_at": "2026-09-24T16:40:20Z",
+      "full_name": "Niko1221/Strata",
+      "stars": 982,
+      "url": "https://github.com/Niko1221/Strata"
+    },
+    {
+      "created_at": "2026-09-23T13:37:26Z",
+      "full_name": "mikehasa/golive-skill",
+      "stars": 977,
+      "url": "https://github.com/mikehasa/golive-skill"
+    },
+    {
+      "created_at": "2026-09-23T16:22:35Z",
+      "full_name": "yetone/magpie",
+      "stars": 968,
+      "url": "https://github.com/yetone/magpie"
+    },
+    {
+      "created_at": "2026-09-23T04:04:13Z",
+      "full_name": "852wa/JIZURA",
+      "stars": 954,
+      "url": "https://github.com/852wa/JIZURA"
+    },
+    {
+      "created_at": "2026-09-22T16:10:23Z",
+      "full_name": "kryvora-network/kryvora-node",
+      "stars": 953,
+      "url": "https://github.com/kryvora-network/kryvora-node"
+    }
+  ],
+  "official_github_trending_weekly": [
+    {
+      "full_name": "vectorize-io/hindsight",
+      "stars": 40772,
+      "url": "https://github.com/vectorize-io/hindsight",
+      "weekly_trending_stars": 11089
+    },
+    {
+      "full_name": "debpalash/VoiceStudio",
+      "stars": 43510,
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "weekly_trending_stars": 7793
+    },
+    {
+      "full_name": "paperclipai/paperclip",
+      "stars": 92481,
+      "url": "https://github.com/paperclipai/paperclip",
+      "weekly_trending_stars": 7364
+    },
+    {
+      "full_name": "stablyai/orca",
+      "stars": 80594,
+      "url": "https://github.com/stablyai/orca",
+      "weekly_trending_stars": 6227
+    },
+    {
+      "full_name": "affaan-m/ECC",
+      "stars": 268453,
+      "url": "https://github.com/affaan-m/ECC",
+      "weekly_trending_stars": 5175
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "stars": 22680,
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "weekly_trending_stars": 4805
+    },
+    {
+      "full_name": "rohitg00/ai-engineering-from-scratch",
+      "stars": 60272,
+      "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "weekly_trending_stars": 3850
+    },
+    {
+      "full_name": "alibaba/open-code-review",
+      "stars": 41958,
+      "url": "https://github.com/alibaba/open-code-review",
+      "weekly_trending_stars": 3727
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "stars": 99239,
+      "url": "https://github.com/addyosmani/agent-skills",
+      "weekly_trending_stars": 2911
+    },
+    {
+      "full_name": "Tencent/WeKnora",
+      "stars": 30920,
+      "url": "https://github.com/Tencent/WeKnora",
+      "weekly_trending_stars": 2705
+    }
+  ],
+  "ranking": "top 10 repositories from the latest captured GitHub Trending weekly page, sorted by weekly Trending star increase (+N); current total stars are shown separately and do not determine order; not a global GitHub census",
+  "trend_summary": "Десять репозиториев из недельного GitHub Trending, отсортированных по недельному приросту звёзд. Это срез внимания, не рейтинг качества и не весь GitHub.",
+  "trends": {
+    "forks": [
+      {
+        "delta": 693,
+        "full_name": "vectorize-io/hindsight"
+      },
+      {
+        "delta": 316,
+        "full_name": "debpalash/VoiceStudio"
+      },
+      {
+        "delta": 221,
+        "full_name": "paperclipai/paperclip"
+      },
+      {
+        "delta": 173,
+        "full_name": "anthropics/claude-code"
+      },
+      {
+        "delta": 169,
+        "full_name": "dream-num/univer"
+      },
+      {
+        "delta": 155,
+        "full_name": "rohitg00/ai-engineering-from-scratch"
+      },
+      {
+        "delta": 92,
+        "full_name": "affaan-m/ECC"
+      },
+      {
+        "delta": 76,
+        "full_name": "Contrastive-LM/CLM"
+      },
+      {
+        "delta": 72,
+        "full_name": "TencentCloud/Octop"
+      },
+      {
+        "delta": 67,
+        "full_name": "Tencent/WeKnora"
+      }
+    ],
+    "percent": [
+      {
+        "delta": 3610,
+        "full_name": "vectorize-io/hindsight"
+      },
+      {
+        "delta": 3584,
+        "full_name": "debpalash/VoiceStudio"
+      },
+      {
+        "delta": 2791,
+        "full_name": "paperclipai/paperclip"
+      },
+      {
+        "delta": 2035,
+        "full_name": "dream-num/univer"
+      },
+      {
+        "delta": 1085,
+        "full_name": "stablyai/orca"
+      },
+      {
+        "delta": 1064,
+        "full_name": "rohitg00/ai-engineering-from-scratch"
+      },
+      {
+        "delta": 735,
+        "full_name": "Contrastive-LM/CLM"
+      },
+      {
+        "delta": 721,
+        "full_name": "cloudflare/security-audit-skill"
+      },
+      {
+        "delta": 692,
+        "full_name": "mvschwarz/openrig"
+      },
+      {
+        "delta": 621,
+        "full_name": "Tencent/WeKnora"
+      }
+    ]
+  }
+}
