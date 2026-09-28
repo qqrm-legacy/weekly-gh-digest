@@ -13,7 +13,7 @@ Three measurements stay separate: observed star change for tracked repositories 
 
 ## Evidence-based project analysis
 
-Each of the ten projects gets a Groq technical review of its purpose, user, use case, setup, architecture, documented dependencies, demonstrated behavior, tradeoffs, unknowns, and a technically grounded joke. Gemini writes the cross-project editorial summary. Every card must contain an exact excerpt from that repository's description or README; the program rejects missing or inexact quotes. Criticism and jokes must be grounded in the supplied evidence. Stars are presented as attention, never as a proxy for quality.
+Each of the ten projects gets a Groq technical review of its purpose, user, use case, setup, architecture, documented dependencies, demonstrated behavior, tradeoffs, unknowns, and a technically grounded joke. Gemini writes the cross-project editorial summary. Every card must contain an exact excerpt from that repository's description or README; the program rejects missing or inexact quotes. Evidence stays in the run artifact and audit input rather than taking space in Telegram cards. In Telegram, each `owner/repository` title links directly to GitHub; jokes have no extra “satire” label. Stars are presented as attention, never as a proxy for quality.
 
 If either provider is unavailable or any evidence check fails, the preview marks the analysis incomplete and falls back to factual GitHub descriptions; it does not present partial model output as a reviewed card. A `digest` run refuses Telegram delivery unless all ten cards and the final editorial synthesis are complete. It never falls back to filler like “open the README and decide.”
 
