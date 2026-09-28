@@ -6,16 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: Build and upload a preview without Telegram delivery
+        description: Build and upload a preview without sending to the technical chat
         type: boolean
         default: true
-      delivery_target:
-        description: Telegram destination for a manual live delivery
-        type: choice
-        options:
-          - curated
-          - technical
-        default: curated
 
 permissions:
   contents: write
@@ -51,11 +44,11 @@ jobs:
             git archive origin/bot-state data | tar -x
           fi
 
-      - name: Collect, preview, or send digest
+      - name: Collect, preview, or send debug digest
         env:
           GITHUB_TOKEN: ${{ github.token }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ inputs.delivery_target == 'technical' && secrets.TELEGRAM_TECH_CHAT_ID || secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TECH_CHAT_ID: ${{ secrets.TELEGRAM_TECH_CHAT_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
@@ -71,11 +64,11 @@ jobs:
             if [[ "$MANUAL_DRY_RUN" == "true" ]]; then
               "$bot" preview --dry-run --llm
             else
-              "$bot" digest --llm
+              "$bot" debug --llm
             fi
           elif [[ "$(date -u +%u)" == "1" ]]; then
-            if [[ -n "${TELEGRAM_BOT_TOKEN:-}" && -n "${TELEGRAM_CHAT_ID:-}" ]]; then
-              "$bot" digest --llm
+            if [[ -n "${TELEGRAM_BOT_TOKEN:-}" && -n "${TELEGRAM_TECH_CHAT_ID:-}" ]]; then
+              "$bot" debug --llm
             else
               "$bot" preview --dry-run --llm
             fi

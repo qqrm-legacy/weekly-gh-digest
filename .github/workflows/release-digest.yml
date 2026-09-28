@@ -1,0 +1,104 @@
+name: Release Digest
+
+on:
+  workflow_dispatch:
+    inputs:
+      debug_run_id:
+        description: Successful Run Bot workflow run containing the reviewed technical digest
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: weekly-gh-digest-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CARGO_TERM_COLOR: always
+      DEBUG_RUN_ID: ${{ inputs.debug_run_id }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Validate source debug run
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$DEBUG_RUN_ID" =~ ^[0-9]+$ ]] || { echo "debug_run_id must contain digits only" >&2; exit 1; }
+          run=$(gh run view "$DEBUG_RUN_ID" --repo "$GITHUB_REPOSITORY" --json workflowName,conclusion,headBranch)
+          [[ "$(jq -r .workflowName <<<"$run")" == "Run Bot" ]] || { echo "Source run is not Run Bot" >&2; exit 1; }
+          [[ "$(jq -r .conclusion <<<"$run")" == "success" ]] || { echo "Source debug run did not succeed" >&2; exit 1; }
+          [[ "$(jq -r .headBranch <<<"$run")" == "main" ]] || { echo "Only debug runs from main can be released" >&2; exit 1; }
+
+      - name: Download reviewed debug artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/weekly-gh-digest-debug"
+          gh run download "$DEBUG_RUN_ID" --repo "$GITHUB_REPOSITORY" \
+            --name "weekly-gh-digest-$DEBUG_RUN_ID" \
+            --dir "$RUNNER_TEMP/weekly-gh-digest-debug"
+          test -n "$(find "$RUNNER_TEMP/weekly-gh-digest-debug" -name ranking-input.json -print -quit)"
+
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@6bed0761d98439e5a578e2877258200ad565ba87 # stable
+
+      - name: Build bot
+        run: cargo build --release --locked
+
+      - name: Restore persistent state
+        shell: bash
+        run: |
+          if git fetch origin bot-state:refs/remotes/origin/bot-state 2>/dev/null; then
+            mkdir -p data
+            git archive origin/bot-state data | tar -x
+          fi
+
+      - name: Promote reviewed posts to the curated channel
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TECH_CHAT_ID: ${{ secrets.TELEGRAM_TECH_CHAT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          run_dir=$(dirname "$(find "$RUNNER_TEMP/weekly-gh-digest-debug" -name ranking-input.json -print -quit)")
+          ./target/release/weekly-gh-digest release "$run_dir"
+
+      - name: Save release state
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! -d data ]]; then
+            echo "No data directory was created; release state was not changed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          state_dir="$RUNNER_TEMP/weekly-gh-digest-state"
+          if git fetch origin bot-state:refs/remotes/origin/bot-state 2>/dev/null; then
+            git worktree add "$state_dir" origin/bot-state
+          else
+            git worktree add --detach "$state_dir" HEAD
+            git -C "$state_dir" checkout --orphan bot-state
+            git -C "$state_dir" rm -rf . >/dev/null 2>&1 || true
+          fi
+          mkdir -p "$state_dir/data"
+          cp -a data/. "$state_dir/data/"
+          git -C "$state_dir" add data
+          if ! git -C "$state_dir" diff --cached --quiet; then
+            git -C "$state_dir" commit -m "Record weekly digest release state"
+            git -C "$state_dir" push origin HEAD:bot-state
+          fi
