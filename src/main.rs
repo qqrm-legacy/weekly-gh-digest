@@ -52,6 +52,8 @@ struct State {
     #[serde(default)]
     sent_weeks: Vec<String>,
     #[serde(default)]
+    released_debug_overviews: BTreeMap<String, i64>,
+    #[serde(default)]
     llm_daily_requests: BTreeMap<String, usize>,
     #[serde(default)]
     delivery_progress: BTreeMap<String, DeliveryProgress>,
@@ -1873,15 +1875,39 @@ fn telegram_deliver_debug_digest(
     Ok(delivery)
 }
 
+fn mark_release_candidate(run_dir: &Path) -> Result<()> {
+    let Ok(run_id) = env::var("GITHUB_RUN_ID") else {
+        return Ok(());
+    };
+    if run_id.is_empty() || !run_id.bytes().all(|byte| byte.is_ascii_digit()) {
+        return Err(anyhow!("GITHUB_RUN_ID is not numeric"));
+    }
+    let directory = run_dir
+        .file_name()
+        .and_then(|name| name.to_str())
+        .ok_or_else(|| anyhow!("debug run directory has no valid name"))?;
+    fs::write(
+        runs_dir().join(format!("release-candidate-{run_id}.txt")),
+        format!("{directory}\n"),
+    )?;
+    Ok(())
+}
+
 fn telegram_promote_debug_digest(
     digest: &Value,
     delivery: &DebugDelivery,
     state: &mut State,
-) -> Result<()> {
+    replace_existing_week: bool,
+) -> Result<bool> {
     let week = &delivery.week;
-    if state.sent_weeks.contains(week) {
-        println!("Release for {week} was already delivered; skipping");
-        return Ok(());
+    if state.released_debug_overviews.get(week) == Some(&delivery.overview_message_id) {
+        println!("This reviewed digest was already released for {week}; skipping");
+        return Ok(false);
+    }
+    if state.sent_weeks.contains(week) && !replace_existing_week {
+        return Err(anyhow!(
+            "{week} was already released; use explicit --replace-week to supersede it"
+        ));
     }
     let source_chat = env::var("TELEGRAM_TECH_CHAT_ID").context("TELEGRAM_TECH_CHAT_ID missing")?;
     if delivery.chat_id != source_chat {
@@ -1950,10 +1976,15 @@ fn telegram_promote_debug_digest(
         }
     };
     telegram_pin(overview_id)?;
-    state.sent_weeks.push(week.clone());
+    if !state.sent_weeks.contains(week) {
+        state.sent_weeks.push(week.clone());
+    }
+    state
+        .released_debug_overviews
+        .insert(week.clone(), delivery.overview_message_id);
     state.delivery_progress.remove(week);
     write_json(&state_path(), state)?;
-    Ok(())
+    Ok(true)
 }
 
 fn telegram_deliver_digest(digest: &Value, week: &str, state: &mut State) -> Result<()> {
@@ -2091,6 +2122,7 @@ fn main() -> Result<()> {
         write_json(&audit_path, &audit)?;
         write_json(&state_path(), &state)?;
         telegram_pin_in(&delivery.chat_id, delivery.overview_message_id)?;
+        mark_release_candidate(&run_dir)?;
         println!(
             "Technical preview delivery accepted for {} projects; release audit status: {}.",
             delivery.posts.len(),
@@ -2130,8 +2162,10 @@ fn main() -> Result<()> {
             ));
         }
         let mut state = read_state();
-        telegram_promote_debug_digest(&digest, &delivery, &mut state)?;
-        println!("AI-approved debug posts copied to the curated Telegram channel.");
+        let replace_existing_week = args.iter().any(|arg| arg == "--replace-week");
+        if telegram_promote_debug_digest(&digest, &delivery, &mut state, replace_existing_week)? {
+            println!("AI-approved debug posts copied to the curated Telegram channel.");
+        }
         return Ok(());
     }
     if !["collect", "preview", "digest", "debug"].contains(&command) {
@@ -2233,6 +2267,7 @@ fn main() -> Result<()> {
         write_json(&run_dir.join("release-audit.json"), &audit)?;
         write_json(&state_path(), &state)?;
         telegram_pin_in(&delivery.chat_id, delivery.overview_message_id)?;
+        mark_release_candidate(run_dir)?;
         println!(
             "Debug digest delivered to the technical chat; release audit status: {}",
             audit["status"]
@@ -2432,6 +2467,7 @@ mod tests {
             schema: 1,
             snapshots,
             sent_weeks: Vec::new(),
+            released_debug_overviews: BTreeMap::new(),
             llm_daily_requests: BTreeMap::new(),
             delivery_progress: BTreeMap::new(),
         };
