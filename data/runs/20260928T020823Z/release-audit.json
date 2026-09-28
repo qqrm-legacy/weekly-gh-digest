@@ -1,0 +1,22 @@
+{
+  "approved": false,
+  "blocking_findings": [
+    "The overview_summary text is truncated mid-sentence ('...с простых чат-ботов н').",
+    "The weekly_scope description claims sorting by 'GitHub stars this week', but the provided project list order does not strictly follow this metric (e.g., Project 4 has 268k stars, Project 1 has 37k, Project 2 has 90k, Project 3 has 79k).",
+    "The project list contains placeholder links (https://t.me/c/0000000000/1) which are invalid/broken."
+  ],
+  "deterministic_scan": "passed",
+  "review": {
+    "approved": false,
+    "blocking_findings": [
+      "The overview_summary text is truncated mid-sentence ('...с простых чат-ботов н').",
+      "The weekly_scope description claims sorting by 'GitHub stars this week', but the provided project list order does not strictly follow this metric (e.g., Project 4 has 268k stars, Project 1 has 37k, Project 2 has 90k, Project 3 has 79k).",
+      "The project list contains placeholder links (https://t.me/c/0000000000/1) which are invalid/broken."
+    ],
+    "claims_supported": false,
+    "format_review": false,
+    "privacy_review": true,
+    "summary": "Digest rejected due to truncated summary text, inconsistent sorting logic compared to claims, and broken placeholder links in the project list."
+  },
+  "status": "blocked"
+}
