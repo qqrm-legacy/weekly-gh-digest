@@ -729,7 +729,7 @@ fn make_digest(
             .get(&now.format("%Y-%m-%d").to_string())
             .copied()
             .unwrap_or(0)
-            .saturating_add(entries.len() + 1)
+            .saturating_add(entries.len() + 3)
             > DAILY_LLM_REQUEST_CAP
     {
         failure_reason =
@@ -850,47 +850,37 @@ fn make_digest(
             let (what, use_case, how_to_try, critique, evidence) = llm_texts.get(id)?;
             Some(json!({"id":id,"what":what,"use_case":use_case,"how_to_try":how_to_try,"critique":critique,"evidence":evidence,"weekly_stars":e.delta}))
         }).collect::<Vec<_>>();
-        let editorial_system = "Ты редактор дайджеста. Синтезируй десятку, опирайся только на карточки. JSON {\"summary\":до 500 символов,\"joke\":до 180 символов}. Назови 1-2 реальные повторяющиеся технические темы и прямо укажи, что выборка — только недельный Trending, не весь GitHub. Юмор сатирический и технический: высмеивай подтверждённые архитектурные или маркетинговые несоответствия, не людей и не придумывай причины роста звёзд.";
+        let editorial_system = "Ты редактор дайджеста. Синтезируй десятку, опирайся только на карточки. Верни только один валидный JSON-объект без Markdown и текста вокруг: {\"summary\":строка до 500 символов,\"joke\":строка до 180 символов}. Назови 1-2 реальные повторяющиеся технические темы и прямо укажи, что выборка — только недельный Trending, не весь GitHub. Юмор сатирический и технический: высмеивай подтверждённые архитектурные или маркетинговые несоответствия, не людей и не придумывай причины роста звёзд.";
         let payload = serde_json::to_string(&cards)?;
         prompts.push(json!({"stage":"weekly_editorial","provider":"gemini","user_json":payload}));
-        match gemini(&payload, editorial_system, 700, state, &mut calls) {
-            Ok(text) => match serde_json::from_str::<Value>(&extract_json(&text)) {
-                Ok(result) => {
-                    if result["summary"]
-                        .as_str()
-                        .is_none_or(|value| value.trim().is_empty())
-                        || result["joke"]
-                            .as_str()
-                            .is_none_or(|value| value.trim().is_empty())
-                    {
-                        failure_reason =
-                            "weekly editorial synthesis omitted its summary or technical joke"
-                                .into();
-                    }
-                    trends_summary = result["summary"]
-                        .as_str()
-                        .unwrap_or("")
-                        .chars()
-                        .take(500)
-                        .collect();
-                    joke = result["joke"]
-                        .as_str()
-                        .unwrap_or("")
-                        .chars()
-                        .take(180)
-                        .collect();
-                    synth_summary = trends_summary.clone();
+        let editorial = match gemini(&payload, editorial_system, 1400, state, &mut calls) {
+            Ok(text) => match parse_weekly_synthesis(&text) {
+                Ok(parsed) => Ok(parsed),
+                Err(_) => {
+                    let repair_system = "Предыдущий ответ не соответствовал схеме. Снова синтезируй обзор только по переданным карточкам. Верни только один валидный JSON-объект без Markdown и текста вокруг с непустыми полями {\"summary\":строка до 500 символов,\"joke\":строка до 180 символов}. Укажи 1-2 повторяющиеся технические темы и что выборка — только недельный GitHub Trending. Шутка техническая и направлена на подтверждённый компромисс, не на людей.";
+                    prompts.push(json!({"stage":"weekly_editorial_schema_repair","provider":"gemini","user_json":payload}));
+                    gemini(&payload, repair_system, 1400, state, &mut calls)
+                        .and_then(|repaired| parse_weekly_synthesis(&repaired))
                 }
-                Err(_) => failure_reason = "weekly editorial synthesis was not valid JSON".into(),
             },
-            Err(e) => failure_reason = format!("weekly synthesis request failed: {e:#}"),
+            Err(error) => Err(error),
+        };
+        match editorial {
+            Ok((summary, weekly_joke)) => {
+                trends_summary = summary;
+                joke = weekly_joke;
+                synth_summary = trends_summary.clone();
+            }
+            Err(_) => {
+                failure_reason = "weekly Gemini editorial synthesis failed schema validation".into()
+            }
         }
     }
     if llm_texts.len() != 10 || !failure_reason.is_empty() {
         llm_texts.clear();
     }
     let expected_requests = if do_llm && configured && entries.len() == 10 {
-        entries.len() + 1
+        entries.len() + 2
     } else {
         0
     };
@@ -944,6 +934,22 @@ fn extract_json(s: &str) -> String {
     let a = s.find('{').unwrap_or(0);
     let b = s.rfind('}').map(|x| x + 1).unwrap_or(s.len());
     s[a..b].to_string()
+}
+
+fn parse_weekly_synthesis(text: &str) -> Result<(String, String)> {
+    let result: Value = serde_json::from_str(&extract_json(text))?;
+    let summary = result["summary"]
+        .as_str()
+        .filter(|value| !value.trim().is_empty())
+        .ok_or_else(|| anyhow!("weekly synthesis omitted its summary"))?;
+    let joke = result["joke"]
+        .as_str()
+        .filter(|value| !value.trim().is_empty())
+        .ok_or_else(|| anyhow!("weekly synthesis omitted its joke"))?;
+    Ok((
+        summary.chars().take(500).collect(),
+        joke.chars().take(180).collect(),
+    ))
 }
 
 fn provider_json_with_retry<F>(state: &mut State, calls: &mut usize, mut send: F) -> Result<Value>
@@ -1023,10 +1029,26 @@ fn gemini(
             .json(&json!({"systemInstruction":{"parts":[{"text":system}]} ,"contents":[{"role":"user","parts":[{"text":payload}]}],"generationConfig":{"temperature":0.2,"maxOutputTokens":max_tokens,"responseMimeType":"application/json","thinkingConfig":{"thinkingLevel":"low"}}}))
             .send()
     })?;
-    response["candidates"][0]["content"]["parts"][0]["text"]
-        .as_str()
-        .map(str::to_string)
-        .ok_or_else(|| anyhow!("Gemini response did not contain text"))
+    let parts = response["candidates"][0]["content"]["parts"]
+        .as_array()
+        .ok_or_else(|| anyhow!("Gemini response did not contain content parts"))?;
+    let final_text = parts
+        .iter()
+        .filter(|part| part["thought"] != true)
+        .filter_map(|part| part["text"].as_str())
+        .collect::<Vec<_>>();
+    let text = if final_text.is_empty() {
+        parts
+            .iter()
+            .filter_map(|part| part["text"].as_str())
+            .collect::<Vec<_>>()
+    } else {
+        final_text
+    };
+    if text.is_empty() {
+        return Err(anyhow!("Gemini response did not contain text"));
+    }
+    Ok(text.join("\n"))
 }
 
 fn safe_public_text(text: &str) -> String {
@@ -1740,6 +1762,29 @@ mod tests {
             telegram_message_link("-1003944093514", 42).unwrap(),
             "https://t.me/c/3944093514/42"
         );
+    }
+
+    #[test]
+    fn deterministic_release_scan_catches_credentials_without_logging_values() {
+        let text = "debug response gsk_abcdefghijklmnopqrstuvwxyz0123456789";
+        let matches = credential_markers(text);
+        assert!(matches.contains(&"groq-key"));
+        assert!(!matches.iter().any(|marker| text.contains(marker)));
+
+        let telegram_token = "9988776655:abcdefghijklmnopqrstuvwxyzABCDEFGH123456";
+        assert!(credential_markers(telegram_token).contains(&"telegram-bot-token-pattern"));
+        assert!(credential_markers("Normal Rust project overview").is_empty());
+    }
+
+    #[test]
+    fn weekly_synthesis_parser_accepts_json_and_rejects_missing_fields() {
+        let parsed = parse_weekly_synthesis(
+            "```json\n{\"summary\":\"Two real themes\",\"joke\":\"A technical joke\"}\n```",
+        )
+        .unwrap();
+        assert_eq!(parsed.0, "Two real themes");
+        assert_eq!(parsed.1, "A technical joke");
+        assert!(parse_weekly_synthesis("{\"summary\":\"Only one field\"}").is_err());
     }
 
     #[test]
