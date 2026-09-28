@@ -1884,16 +1884,24 @@ fn main() -> Result<()> {
         let delivery = telegram_deliver_debug_digest(&digest, &week, &run_dir)?;
         let mut state = read_state();
         let audit_path = run_dir.join("release-audit.json");
-        let audit = if audit_path.exists() {
-            serde_json::from_slice(&fs::read(&audit_path)?)?
+        let prior_audit: Option<Value> = if audit_path.exists() {
+            Some(serde_json::from_slice(&fs::read(&audit_path)?)?)
+        } else {
+            None
+        };
+        let audit = if let Some(prior) =
+            prior_audit.filter(|audit| audit["status"] != "review-unavailable")
+        {
+            prior
         } else {
             match release_audit(&digest, &delivery, &mut state) {
                 Ok(audit) => audit,
-                Err(_) => json!({
+                Err(error) => json!({
                     "approved": false,
                     "status": "review-unavailable",
                     "deterministic_scan": "passed",
                     "blocking_findings": ["AI review could not be completed; publication is blocked."],
+                    "review_error": format!("{error:#}"),
                     "review": null,
                 }),
             }
@@ -2022,11 +2030,12 @@ fn main() -> Result<()> {
         let delivery = telegram_deliver_debug_digest(&digest, &week, run_dir)?;
         let audit = match release_audit(&digest, &delivery, &mut state) {
             Ok(audit) => audit,
-            Err(_) => json!({
+            Err(error) => json!({
                 "approved": false,
                 "status": "review-unavailable",
                 "deterministic_scan": "passed",
                 "blocking_findings": ["AI review could not be completed; publication is blocked."],
+                "review_error": format!("{error:#}"),
                 "review": null,
             }),
         };
