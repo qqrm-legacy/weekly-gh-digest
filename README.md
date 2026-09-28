@@ -9,7 +9,7 @@ Rust Telegram bot derived from [`qqrm/template-tg-bot-rs`](https://github.com/qq
 - A separate, manually triggered `Release Digest` workflow accepts the successful debug run ID. It requires the stored audit to pass, copies the exact reviewed project messages from the technical group into the curated channel, then posts and pins a linked overview. Release delivery is idempotent across normal workflow retries.
 - Stores source responses, manifests, and star history on the `bot-state` branch. Each run also uploads a 90-day artifact with the digest preview and provenance.
 
-Three measurements stay separate: observed star change for tracked repositories with a baseline; GitHub Trending's displayed weekly-star count; and new repositories sorted by total stars. It does not invent a weekly baseline when no history exists.
+Three measurements stay separate: observed star change for tracked repositories with a baseline; GitHub Trending's displayed weekly-star count; and new repositories sorted by total stars. It does not invent a weekly baseline when no history exists. Only repositories present on the current run's captured weekly Trending page can enter that run's published ten; historical snapshots remain for trend metrics, not candidate selection. Debug delivery and release reject artifacts whose ten ranked names and `+N` values do not match the saved weekly page.
 
 ## Project descriptions and deterministic format
 

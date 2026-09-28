@@ -644,19 +644,13 @@ fn latest_metric(s: &Snapshot, field: &str) -> Option<i64> {
     if field == "forks" { s.forks } else { s.stars }
 }
 
-fn weekly_ranked(state: &State, now: DateTime<Utc>) -> Vec<Ranked> {
-    let mut latest = BTreeMap::<String, Snapshot>::new();
-    for snapshot in &state.snapshots {
-        if parse_time(&snapshot.captured_at).is_some_and(|t| t <= now)
-            && latest
-                .get(&snapshot.full_name)
-                .is_none_or(|old| old.captured_at < snapshot.captured_at)
-        {
-            latest.insert(snapshot.full_name.clone(), snapshot.clone());
-        }
-    }
-    let mut entries = latest
-        .values()
+fn weekly_ranked(current: &[Snapshot], now: DateTime<Utc>) -> Vec<Ranked> {
+    let mut entries = current
+        .iter()
+        .filter(|snapshot| {
+            parse_time(&snapshot.captured_at)
+                .is_some_and(|time| time.timestamp() == now.timestamp())
+        })
         .filter_map(|snapshot| {
             let source = snapshot
                 .sources
@@ -681,6 +675,60 @@ fn weekly_ranked(state: &State, now: DateTime<Utc>) -> Vec<Ranked> {
     entries
 }
 
+fn expected_weekly_top_ten(run_dir: &Path) -> Result<Vec<(String, i64)>> {
+    let raw = fs::read_to_string(run_dir.join("trending-weekly.html"))
+        .context("captured weekly Trending page is missing")?;
+    if !raw.contains("stars this week") {
+        return Err(anyhow!("captured Trending page has no weekly-star labels"));
+    }
+    let mut rows = parse_trending(&raw)
+        .into_iter()
+        .filter_map(|row| {
+            Some((
+                row["full_name"].as_str()?.to_string(),
+                row["trending_stars_period"].as_i64()?,
+            ))
+        })
+        .collect::<Vec<_>>();
+    if rows.len() < 10 {
+        return Err(anyhow!(
+            "captured weekly Trending page has fewer than ten ranked rows"
+        ));
+    }
+    rows.sort_by(|a, b| b.1.cmp(&a.1).then(a.0.cmp(&b.0)));
+    rows.truncate(10);
+    Ok(rows)
+}
+
+fn validate_weekly_selection(run_dir: &Path, entries: &[(String, i64)]) -> Result<()> {
+    if entries != expected_weekly_top_ten(run_dir)? {
+        return Err(anyhow!(
+            "digest ranking differs from the captured weekly Trending page"
+        ));
+    }
+    Ok(())
+}
+
+fn validate_digest_weekly_selection(run_dir: &Path, digest: &Value) -> Result<()> {
+    let entries = digest["entries"]
+        .as_array()
+        .ok_or_else(|| anyhow!("digest has no ranked entries"))?
+        .iter()
+        .map(|entry| {
+            Ok((
+                entry["full_name"]
+                    .as_str()
+                    .ok_or_else(|| anyhow!("ranked entry has no repository name"))?
+                    .to_string(),
+                entry["delta"]
+                    .as_i64()
+                    .ok_or_else(|| anyhow!("ranked entry has no weekly-star count"))?,
+            ))
+        })
+        .collect::<Result<Vec<_>>>()?;
+    validate_weekly_selection(run_dir, &entries)
+}
+
 fn exact_evidence_quote(description: Option<&str>, readme_excerpt: Option<&str>) -> Option<String> {
     if let Some(description) = description
         .map(str::trim)
@@ -701,11 +749,19 @@ fn exact_evidence_quote(description: Option<&str>, readme_excerpt: Option<&str>)
 
 fn make_digest(
     state: &mut State,
+    current: &[Snapshot],
     manifest: &Value,
     now: DateTime<Utc>,
     do_llm: bool,
 ) -> Result<(Value, String)> {
-    let entries = weekly_ranked(state, now);
+    let entries = weekly_ranked(current, now);
+    validate_weekly_selection(
+        &runs_dir().join(stamp(now)),
+        &entries
+            .iter()
+            .map(|entry| (entry.snapshot.full_name.clone(), entry.delta))
+            .collect::<Vec<_>>(),
+    )?;
     let mut descriptions = HashMap::<String, String>::new();
     let configured = env::var("GROQ_API_KEY").is_ok_and(|v| !v.trim().is_empty())
         && env::var("LLM_FREE_TIER_CONFIRMED")
@@ -868,16 +924,7 @@ fn make_digest(
     let mut official = BTreeMap::<String, Value>::new();
     let mut newrepos = Vec::<Value>::new();
     let cutoff = now - Duration::days(7);
-    let mut latest: HashMap<String, Snapshot> = HashMap::new();
-    for snapshot in &state.snapshots {
-        if latest
-            .get(&snapshot.full_name)
-            .is_none_or(|previous| previous.captured_at < snapshot.captured_at)
-        {
-            latest.insert(snapshot.full_name.clone(), snapshot.clone());
-        }
-    }
-    for snapshot in latest.values() {
+    for snapshot in current {
         for source in &snapshot.sources {
             if source["type"] == "trending_weekly" && source["trending_stars_period"].is_number() {
                 official.insert(
@@ -2066,6 +2113,7 @@ fn main() -> Result<()> {
         let mut digest: Value =
             serde_json::from_slice(&fs::read(run_dir.join("ranking-input.json"))?)
                 .context("debug artifact has invalid ranking-input.json")?;
+        validate_digest_weekly_selection(&run_dir, &digest)?;
         if digest["llm_used"] != true
             || digest["entries"]
                 .as_array()
@@ -2137,6 +2185,7 @@ fn main() -> Result<()> {
             .ok_or_else(|| anyhow!("usage: weekly-gh-digest release <debug-run-directory>"))?;
         let digest: Value = serde_json::from_slice(&fs::read(run_dir.join("ranking-input.json"))?)
             .context("debug artifact has invalid ranking-input.json")?;
+        validate_digest_weekly_selection(&run_dir, &digest)?;
         if !overview_content_valid(&digest) {
             return Err(anyhow!(
                 "release blocked: overview lacks a reviewed introduction or project teasers"
@@ -2178,7 +2227,13 @@ fn main() -> Result<()> {
     let now = Utc::now();
     let gathered = collect(now)?;
     let mut state = update_state(&gathered.snapshots, now)?;
-    let (mut digest, output) = make_digest(&mut state, &gathered.manifest, now, llm)?;
+    let (mut digest, output) = make_digest(
+        &mut state,
+        &gathered.snapshots,
+        &gathered.manifest,
+        now,
+        llm,
+    )?;
     write_json(&gathered.dir.join("ranking-input.json"), &digest)?;
     if digest["llm_used"] == true {
         ensure_overview_content(&mut digest, &mut state, &gathered.dir)?;
@@ -2472,7 +2527,7 @@ mod tests {
             delivery_progress: BTreeMap::new(),
         };
 
-        let selected = weekly_ranked(&state, now);
+        let selected = weekly_ranked(&state.snapshots, now);
 
         assert_eq!(selected.len(), 10);
         assert_eq!(selected.first().unwrap().snapshot.full_name, "org/week-11");
