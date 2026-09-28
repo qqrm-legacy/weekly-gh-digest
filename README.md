@@ -4,7 +4,7 @@ Rust Telegram bot derived from [`qqrm/template-tg-bot-rs`](https://github.com/qq
 
 ## What the workflow does
 
-- Runs every day at 07:17 UTC and captures metrics from the first pages of GitHub Trending (daily and weekly) and GitHub Search for repositories created in the previous seven days. The weekly issue analyzes exactly the ten highest `stars this week` rows on the captured weekly Trending page; it does not mix in daily Trending or new-repository search results.
+- Runs every day at 07:17 UTC and captures metrics from the first pages of GitHub Trending (daily and weekly) and GitHub Search for repositories created in the previous seven days. The weekly issue analyzes exactly the ten highest weekly Trending star-count (`+N`) rows on the captured page; total repository stars are displayed separately and do not determine order. It does not mix in daily Trending or new-repository search results.
 - On Mondays, prepares a Russian digest and posts the candidate to a private technical Telegram group. It then runs a deterministic credential scan and a Gemini publication audit; the verdict and source post IDs are stored with the run artifact. This debug stage never posts to the curated channel.
 - A separate, manually triggered `Release Digest` workflow accepts the successful debug run ID. It requires the stored audit to pass, copies the exact reviewed project messages from the technical group into the curated channel, then posts and pins a linked overview. Release delivery is idempotent across normal workflow retries.
 - Stores source responses, manifests, and star history on the `bot-state` branch. Each run also uploads a 90-day artifact with the digest preview and provenance.
