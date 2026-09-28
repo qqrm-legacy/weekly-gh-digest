@@ -1165,10 +1165,83 @@ fn render_project(entry: &Value) -> String {
     let delta = entry["delta"].as_i64().unwrap_or_default();
     let stars = snapshot["stars"].as_i64().unwrap_or_default();
     let summary = entry["summary"].as_str().unwrap_or("");
-    format!(
-        "🔎 ПРОЕКТ {rank}/10\n{id}\n⭐ {stars} всего · +{delta} в недельном Trending · {language}\n\n{}",
-        summary
-    )
+    let title = project_github_url(id)
+        .map(|url| {
+            format!(
+                "[{}]({})",
+                markdown_v2_escape(id),
+                markdown_v2_url_escape(&url)
+            )
+        })
+        .unwrap_or_else(|| markdown_v2_escape(id));
+    let mut lines = vec![
+        format!("*🔎 ПРОЕКТ {rank}/10*"),
+        title,
+        format!(
+            "⭐ {} всего · +{} в недельном Trending · {}",
+            markdown_v2_escape(&stars.to_string()),
+            markdown_v2_escape(&delta.to_string()),
+            markdown_v2_escape(language)
+        ),
+        String::new(),
+    ];
+    lines.extend(summary.lines().map(render_project_summary_line));
+    lines.join("\n")
+}
+
+fn markdown_v2_escape(text: &str) -> String {
+    let mut escaped = String::with_capacity(text.len());
+    for ch in text.chars() {
+        if "_*[]()~`>#+-=|{}.!\\".contains(ch) {
+            escaped.push('\\');
+        }
+        escaped.push(ch);
+    }
+    escaped
+}
+
+fn markdown_v2_url_escape(url: &str) -> String {
+    url.replace('\\', "\\\\").replace(')', "\\)")
+}
+
+fn render_project_summary_line(line: &str) -> String {
+    for label in [
+        "Что делает:",
+        "Кому пригодится:",
+        "Как попробовать:",
+        "Ограничение:",
+    ] {
+        if let Some(value) = line.strip_prefix(label) {
+            return format!(
+                "*{}*{}",
+                markdown_v2_escape(label),
+                render_markdown_v2_inline(value)
+            );
+        }
+    }
+    if let Some(value) = line.strip_prefix("😏 ") {
+        return format!("😏 _{}_", render_markdown_v2_inline(value));
+    }
+    markdown_v2_escape(line)
+}
+
+fn render_markdown_v2_inline(text: &str) -> String {
+    let mut output = String::new();
+    let mut remaining = text;
+    while let Some(start) = remaining.find('`') {
+        let after_start = &remaining[start + 1..];
+        let Some(end) = after_start.find('`') else {
+            output.push_str(&markdown_v2_escape(remaining));
+            return output;
+        };
+        output.push_str(&markdown_v2_escape(&remaining[..start]));
+        output.push('`');
+        output.push_str(&after_start[..end].replace('\\', "\\\\").replace('`', "\\`"));
+        output.push('`');
+        remaining = &after_start[end + 1..];
+    }
+    output.push_str(&markdown_v2_escape(remaining));
+    output
 }
 
 fn project_github_url(repository: &str) -> Option<String> {
@@ -1185,40 +1258,8 @@ fn project_github_url(repository: &str) -> Option<String> {
     (valid_owner && valid_name).then(|| format!("https://github.com/{owner}/{name}"))
 }
 
-fn project_message_entities(entry: &Value) -> Vec<Value> {
-    let Some(repository) = entry["full_name"].as_str() else {
-        return Vec::new();
-    };
-    let Some(url) = project_github_url(repository) else {
-        return Vec::new();
-    };
-    let rank = entry["rank"].as_u64().unwrap_or_default();
-    let title_prefix = format!("🔎 ПРОЕКТ {rank}/10\n");
-    vec![json!({
-        "type": "text_link",
-        "offset": title_prefix.encode_utf16().count(),
-        "length": repository.encode_utf16().count(),
-        "url": url,
-    })]
-}
-
 fn render_project_markdown(entry: &Value) -> String {
-    let message = render_project(entry);
-    let Some(repository) = entry["full_name"].as_str() else {
-        return message;
-    };
-    let Some(url) = project_github_url(repository) else {
-        return message;
-    };
-    let title_prefix = format!(
-        "🔎 ПРОЕКТ {}/10\n",
-        entry["rank"].as_u64().unwrap_or_default()
-    );
-    message.replacen(
-        &format!("{title_prefix}{repository}"),
-        &format!("{title_prefix}[{repository}]({url})"),
-        1,
-    )
+    render_project(entry)
 }
 
 fn telegram_message_link(configured_chat: &str, message_id: i64) -> Result<String> {
@@ -1231,25 +1272,43 @@ fn telegram_message_link(configured_chat: &str, message_id: i64) -> Result<Strin
 
 fn render_overview(digest: &Value, links: &[String]) -> String {
     let mut lines = vec![
-        "🚀 GitHub Weekly Digest — обзор недели".to_string(),
-        format!("Срез: {}", digest["generated_at"].as_str().unwrap_or("")),
-        "10 проектов из недельного GitHub Trending; это срез внимания, не рейтинг качества и не весь GitHub.".to_string(),
+        "*🚀 GitHub Weekly Digest — обзор недели*".to_string(),
+        format!(
+            "Срез: {}",
+            markdown_v2_escape(digest["generated_at"].as_str().unwrap_or(""))
+        ),
+        markdown_v2_escape(
+            "10 проектов из недельного GitHub Trending; это срез внимания, не рейтинг качества и не весь GitHub.",
+        ),
         String::new(),
-        format!("Тренды: {}", safe_public_text(digest["trend_summary"].as_str().unwrap_or(""))),
+        format!(
+            "*Тренды:* {}",
+            markdown_v2_escape(&safe_public_text(
+                digest["trend_summary"].as_str().unwrap_or("")
+            ))
+        ),
     ];
     if let Some(joke) = digest["joke"]
         .as_str()
         .filter(|joke| !joke.trim().is_empty())
     {
-        lines.push(format!("На полях: {}", safe_public_text(joke)));
+        lines.push(format!(
+            "*На полях:* {}",
+            markdown_v2_escape(&safe_public_text(joke))
+        ));
     }
     lines.push(String::new());
-    lines.push("Разборы по проектам:".into());
+    lines.push("*Разборы по проектам:*".into());
     lines.extend(links.iter().enumerate().map(|(i, link)| {
         let name = digest["entries"][i]["full_name"]
             .as_str()
             .unwrap_or("проект");
-        format!("{}. {} — {}", i + 1, name, link)
+        format!(
+            "{}. [{}]({})",
+            i + 1,
+            markdown_v2_escape(name),
+            markdown_v2_url_escape(link)
+        )
     }));
     lines.join("\n")
 }
@@ -1282,10 +1341,6 @@ fn render(d: &Value, joke: &str) -> String {
 }
 
 fn telegram_send_to(chat: &str, text: &str) -> Result<i64> {
-    telegram_send_to_with_entities(chat, text, &[])
-}
-
-fn telegram_send_to_with_entities(chat: &str, text: &str, entities: &[Value]) -> Result<i64> {
     let token = env::var("TELEGRAM_BOT_TOKEN").context("TELEGRAM_BOT_TOKEN missing")?;
     if text.chars().count() > 3800 {
         return Err(anyhow!(
@@ -1293,10 +1348,7 @@ fn telegram_send_to_with_entities(chat: &str, text: &str, entities: &[Value]) ->
         ));
     }
     let http = client()?;
-    let mut body = json!({"chat_id":chat,"text":text,"disable_web_page_preview":true});
-    if !entities.is_empty() {
-        body["entities"] = json!(entities);
-    }
+    let body = json!({"chat_id":chat,"text":text,"parse_mode":"MarkdownV2","disable_web_page_preview":true});
     let resp: Value = http
         .post(format!("https://api.telegram.org/bot{token}/sendMessage"))
         .json(&body)
@@ -1312,11 +1364,7 @@ fn telegram_send_to_with_entities(chat: &str, text: &str, entities: &[Value]) ->
 }
 
 fn telegram_send_project_to(chat: &str, entry: &Value) -> Result<i64> {
-    telegram_send_to_with_entities(
-        chat,
-        &render_project(entry),
-        &project_message_entities(entry),
-    )
+    telegram_send_to(chat, &render_project(entry))
 }
 
 fn telegram_pin(message_id: i64) -> Result<()> {
@@ -1522,21 +1570,10 @@ fn release_audit(digest: &Value, state: &mut State) -> Result<Value> {
 
 fn render_debug_overview(digest: &Value, week: &str) -> String {
     format!(
-        "🧪 DEBUG · GitHub Weekly Digest\nНеделя: {week}\nСрез: {}\n10 проектных карточек опубликованы выше. Это закрытый предпросмотр; основной канал не затронут.\n\nПредрелизный аудит: см. следующее сообщение.",
-        digest["generated_at"].as_str().unwrap_or("дата не указана")
+        "*🧪 DEBUG · GitHub Weekly Digest*\nНеделя: {}\nСрез: {}\n10/10 карточек приняты Telegram API с MarkdownV2. Предпросмотр опубликован в технический чат; основной канал не затронут.",
+        markdown_v2_escape(week),
+        markdown_v2_escape(digest["generated_at"].as_str().unwrap_or("дата не указана"))
     )
-}
-
-fn render_audit_status(audit: &Value, week: &str) -> String {
-    let status = if audit["approved"] == true {
-        "✅ AI-аудит: OK"
-    } else {
-        "⛔ AI-аудит: публикация заблокирована"
-    };
-    let summary = audit["review"]["summary"].as_str().unwrap_or(
-        "Детерминированная проверка остановила релиз; значения возможных секретов не сохранены.",
-    );
-    format!("{status}\nНеделя: {week}\n{}", safe_public_text(summary))
 }
 
 fn telegram_deliver_debug_digest(
@@ -1816,7 +1853,9 @@ fn main() -> Result<()> {
                 env::var("TELEGRAM_TECH_CHAT_ID").context("TELEGRAM_TECH_CHAT_ID missing")?;
             telegram_send_to(
                 &debug_chat,
-                "⛔ Debug digest held before delivery: a credential-like pattern was detected. No project text was sent.",
+                &markdown_v2_escape(
+                    "⛔ Debug digest held before delivery: a credential-like pattern was detected. No project text was sent.",
+                ),
             )?;
             return Err(anyhow!(
                 "debug delivery blocked by deterministic credential scan"
@@ -1834,9 +1873,6 @@ fn main() -> Result<()> {
             }),
         };
         write_json(&run_dir.join("release-audit.json"), &audit)?;
-        let debug_chat =
-            env::var("TELEGRAM_TECH_CHAT_ID").context("TELEGRAM_TECH_CHAT_ID missing")?;
-        telegram_send_to(&debug_chat, &render_audit_status(&audit, &week))?;
         write_json(&state_path(), &state)?;
         println!(
             "Debug digest delivered to the technical chat; release audit status: {}",
@@ -1948,20 +1984,12 @@ mod tests {
             "latest": {"html_url":"https://github.com/org/repo","language":"Rust","stars":500}
         });
         let post = render_project(&project);
-        assert!(post.contains("🔎 ПРОЕКТ 1/10\norg/repo"));
-        assert!(post.contains("Что делает: инструмент\nКак попробовать: см. README"));
-        assert!(!post.contains("https://github.com/org/repo"));
+        assert!(post.contains("*🔎 ПРОЕКТ 1/10*\n[org/repo](https://github.com/org/repo)"));
+        assert!(post.contains("*Что делает:* инструмент\n*Как попробовать:* см\\. README"));
         assert!(!post.contains("Сатира:"));
         assert!(!post.contains("Основание:"));
-        let entities = project_message_entities(&project);
-        let title_prefix = "🔎 ПРОЕКТ 1/10\n";
-        assert_eq!(entities[0]["type"], "text_link");
-        assert_eq!(entities[0]["offset"], title_prefix.encode_utf16().count());
-        assert_eq!(entities[0]["length"], "org/repo".encode_utf16().count());
-        assert_eq!(entities[0]["url"], "https://github.com/org/repo");
-        assert!(
-            render_project_markdown(&project).contains("[org/repo](https://github.com/org/repo)")
-        );
+        assert!(post.contains("[org/repo](https://github.com/org/repo)"));
+        assert_eq!(markdown_v2_escape("a_b.c"), "a\\_b\\.c");
         assert!(project_github_url("org/repo/extra").is_none());
 
         let digest = json!({
@@ -1971,8 +1999,8 @@ mod tests {
             "entries":[{"full_name":"org/repo"}]
         });
         let overview = render_overview(&digest, &["https://t.me/c/123/456".into()]);
-        assert!(overview.starts_with("🚀 GitHub Weekly Digest — обзор недели"));
-        assert!(overview.contains("org/repo — https://t.me/c/123/456"));
+        assert!(overview.starts_with("*🚀 GitHub Weekly Digest — обзор недели*"));
+        assert!(overview.contains("[org/repo](https://t.me/c/123/456)"));
     }
 
     #[test]
