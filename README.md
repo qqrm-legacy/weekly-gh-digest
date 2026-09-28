@@ -22,6 +22,7 @@ Add these repository Actions secrets:
 
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
+- `TELEGRAM_TECH_CHAT_ID` (optional private technical group for manual live runs)
 - `GEMINI_API_KEY`
 - `GROQ_API_KEY`
 
@@ -29,7 +30,7 @@ The defaults are Gemini `gemini-3.8-flash` and Groq `openai/gpt-oss-120b`; optio
 
 The Groq free-plan table currently lists 1,000 requests/day for `openai/gpt-oss-120b`; one normal weekly run uses at most ten Groq calls. Provider limits and model availability can change, and Gemini quotas are project-specific: check the active limits in Google AI Studio before enabling the secrets.
 
-On Mondays, scheduled runs send automatically when both `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` secrets are configured; otherwise they create a preview and do not send. No separate delivery variable is needed. A manual run with `dry_run=false` sends immediately, so use the default dry run for review.
+On Mondays, scheduled runs send automatically to the curated channel when `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` are configured; otherwise they create a preview and do not send. Manual runs default to `dry_run=true` and the curated destination. For an intentional live manual run, set `dry_run=false` and choose `technical` to send that run's digest to `TELEGRAM_TECH_CHAT_ID`; choosing `curated` sends it to `TELEGRAM_CHAT_ID`.
 
 The workflow needs repository `contents: write` permission to update `bot-state`. It serializes updates to that branch. Telegram does not provide an idempotency key for `sendMessage`, so a retry after an ambiguous network result can duplicate a message.
 
