@@ -10,7 +10,7 @@ on:
         type: boolean
         default: true
       retry_delivery_run_id:
-        description: Reuse a Run Bot analysis artifact without repeating Groq requests; Gemini audit may rerun
+        description: Reuse project analyses; Groq may create a missing overview and Gemini may rerun the audit
         type: string
         required: false
 

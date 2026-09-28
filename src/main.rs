@@ -810,7 +810,7 @@ fn make_digest(
     }
     let complete = descriptions.len() == entries.len() && entries.len() == 10;
     let expected_requests = if do_llm && configured && entries.len() == 10 {
-        entries.len()
+        entries.len() + 1
     } else {
         0
     };
