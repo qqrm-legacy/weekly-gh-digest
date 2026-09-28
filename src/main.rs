@@ -933,11 +933,14 @@ fn parse_project_description(text: &str) -> Result<String> {
         .as_str()
         .filter(|value| !value.trim().is_empty())
         .ok_or_else(|| anyhow!("Groq description omitted its description"))?;
-    let description = description.trim();
-    if !(200..=700).contains(&description.chars().count()) || description.contains(['\n', '\r']) {
-        return Err(anyhow!("Groq description exceeds the allowed shape"));
+    let description = description.split_whitespace().collect::<Vec<_>>().join(" ");
+    let length = description.chars().count();
+    if !(200..=1200).contains(&length) {
+        return Err(anyhow!(
+            "Groq description length {length} is outside 200..=1200"
+        ));
     }
-    Ok(description.to_string())
+    Ok(description)
 }
 
 fn provider_json_with_retry<F>(state: &mut State, calls: &mut usize, mut send: F) -> Result<Value>
