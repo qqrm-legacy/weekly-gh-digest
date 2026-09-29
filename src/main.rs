@@ -151,11 +151,24 @@ fn write_json(path: &Path, value: &impl Serialize) -> Result<()> {
     Ok(())
 }
 
+/// Lenient read for places where an empty state is acceptable (README pick).
 fn read_state() -> State {
     fs::read(state_path())
         .ok()
         .and_then(|b| serde_json::from_slice(&b).ok())
         .unwrap_or_default()
+}
+
+/// Strict read for anything that feeds deduplication: a state file that
+/// exists but cannot be parsed must abort the run instead of silently
+/// starting from empty memory and reposting already published projects.
+fn read_state_strict() -> Result<State> {
+    let bytes = match fs::read(state_path()) {
+        Ok(bytes) => bytes,
+        Err(_) => return Ok(State::default()),
+    };
+    serde_json::from_slice(&bytes)
+        .with_context(|| "stored bot state is unreadable; refusing to run with empty dedup memory")
 }
 
 fn client() -> Result<Client> {
@@ -556,7 +569,7 @@ fn safe_name(s: &str) -> String {
 }
 
 fn update_state(new: &[Snapshot], now: DateTime<Utc>) -> Result<State> {
-    let mut state = read_state();
+    let mut state = read_state_strict()?;
     let day = now.format("%Y-%m-%d").to_string();
     let mut rows: HashMap<(String, String), Snapshot> = HashMap::new();
     for s in state.snapshots.drain(..) {
@@ -1972,6 +1985,27 @@ fn tech_notice(text: &str) {
     let _ = telegram_send_to(&chat, &markdown_v2_escape(text));
 }
 
+/// Drops entries that are already covered (published by an earlier digest,
+/// manually released, or seeded from prior channel content) so no delivery
+/// path can ever repost them, then reindexes rank/total.
+fn trim_covered_entries(digest: &mut Value, state: &State) -> usize {
+    let Some(entries) = digest["entries"].as_array_mut() else {
+        return 0;
+    };
+    let before = entries.len();
+    entries.retain(|entry| {
+        entry["full_name"]
+            .as_str()
+            .is_none_or(|name| !state.covered.contains_key(name))
+    });
+    let total = entries.len();
+    for (index, entry) in entries.iter_mut().enumerate() {
+        entry["rank"] = json!(index + 1);
+        entry["total"] = json!(total);
+    }
+    before - total
+}
+
 /// Sends the reviewed digest posts to the main chat and pins the linked
 /// overview. Per-message progress is keyed by the digest id (run stamp), so
 /// several digests can be delivered per day and a workflow retry resumes
@@ -2072,6 +2106,18 @@ fn deliver_pending_digests(state: &mut State, today: &str) -> Result<()> {
         if digest["audit"]["approved"] != true {
             continue;
         }
+        let dropped = trim_covered_entries(&mut digest, state);
+        if digest["entries"]
+            .as_array()
+            .is_none_or(|entries| entries.is_empty())
+        {
+            state.pending_digests.remove(&id);
+            write_json(&state_path(), state)?;
+            continue;
+        }
+        if dropped > 0 {
+            write_json(&state_path(), state)?;
+        }
         let day = digest["generated_at"]
             .as_str()
             .and_then(|value| DateTime::parse_from_rfc3339(value).ok())
@@ -2127,7 +2173,7 @@ fn main() -> Result<()> {
                 "refusing debug delivery without completed project analyses"
             ));
         }
-        let mut state = read_state();
+        let mut state = read_state_strict()?;
         let overview_changed = ensure_overview_content(&mut digest, &mut state, &run_dir)?;
         if overview_changed {
             write_json(&run_dir.join("ranking-input.json"), &digest)?;
@@ -2295,6 +2341,11 @@ fn deliver_new_digest(
     if state.sent_digests.contains_key(digest_id) {
         println!("Digest {digest_id} was already sent to the main chat; skipping");
         return Ok(());
+    }
+    let dropped = trim_covered_entries(digest, state);
+    if dropped > 0 {
+        println!("{dropped} entries are already covered; trimmed before delivery");
+        write_json(&run_dir.join("ranking-input.json"), digest)?;
     }
     if digest["entries"]
         .as_array()

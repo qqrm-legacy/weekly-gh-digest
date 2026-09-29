@@ -53,9 +53,24 @@ jobs:
       - name: Restore persistent state
         shell: bash
         run: |
-          if git fetch origin bot-state:refs/remotes/origin/bot-state 2>/dev/null; then
+          set -euo pipefail
+          ok=0
+          for attempt in 1 2 3; do
+            if git fetch origin bot-state:refs/remotes/origin/bot-state 2>/dev/null; then
+              ok=1
+              break
+            fi
+            echo "fetch attempt $attempt failed; retrying in 10s" >&2
+            sleep 10
+          done
+          if [[ "$ok" == "1" ]]; then
             mkdir -p data
             git archive origin/bot-state data | tar -x
+          elif git ls-remote --exit-code origin refs/heads/bot-state >/dev/null 2>&1; then
+            echo "bot-state exists but could not be fetched; refusing to run with empty dedup state" >&2
+            exit 1
+          else
+            echo "No bot-state branch yet; starting with empty state."
           fi
 
       - name: Collect, preview, or deliver digest
