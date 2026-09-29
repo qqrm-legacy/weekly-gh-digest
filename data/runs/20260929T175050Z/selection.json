@@ -1,0 +1,147 @@
+{
+  "covered_repositories_tracked": 10,
+  "excluded": [
+    {
+      "full_name": "vectorize-io/hindsight",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "paperclipai/paperclip",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "debpalash/VoiceStudio",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "stablyai/orca",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "rohitg00/ai-engineering-from-scratch",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "pbakaus/impeccable",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "Tencent/WeKnora",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "anthropics/financial-services",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "trycua/cua",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "mvschwarz/openrig",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "dream-num/univer",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "cs341-illinois/coursebook",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "oblien/openship",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "t8y2/dbx",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "willfaust/Madeira",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "averygan/reclip",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "rakyll/hey",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Contrastive-LM/CLM",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "852wa/JIZURA",
+      "reason": "digest cap after stable source priority"
+    }
+  ],
+  "pool": [
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "ordering_metric": 1227,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "davila7/claude-code-templates",
+      "ordering_metric": 1200,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "TencentCloud/Octop",
+      "ordering_metric": 970,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "vercel/next.js",
+      "ordering_metric": 544,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "FxEmbed/FxEmbed",
+      "ordering_metric": 465,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "pytorch/pytorch",
+      "ordering_metric": 340,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "PrismML-Eng/Bonsai-demo",
+      "ordering_metric": 243,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "elastic/elasticsearch",
+      "ordering_metric": 97,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "NVIDIA/OpenShell",
+      "ordering_metric": 978,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "VectifyAI/PageIndex",
+      "ordering_metric": 822,
+      "source_kind": "trending_daily"
+    }
+  ]
+}
