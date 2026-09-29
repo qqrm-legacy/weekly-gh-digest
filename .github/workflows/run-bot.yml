@@ -9,6 +9,10 @@ on:
         description: Build and upload a preview without sending to the technical chat
         type: boolean
         default: true
+      deliver_to_main_chat:
+        description: Send the daily digest to the main chat right now (overrides dry_run)
+        type: boolean
+        default: false
       retry_delivery_run_id:
         description: Reuse project analyses; Groq may create a missing overview and Gemini may rerun the audit
         type: string
@@ -49,10 +53,11 @@ jobs:
             git archive origin/bot-state data | tar -x
           fi
 
-      - name: Collect, preview, or send debug digest
+      - name: Collect, preview, or deliver digest
         env:
           GITHUB_TOKEN: ${{ github.token }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_TECH_CHAT_ID: ${{ secrets.TELEGRAM_TECH_CHAT_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
@@ -63,6 +68,7 @@ jobs:
           RETRY_DELIVERY_RUN_ID: ${{ inputs.retry_delivery_run_id }}
           IS_MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
           MANUAL_DRY_RUN: ${{ inputs.dry_run }}
+          DELIVER_TO_MAIN_CHAT: ${{ inputs.deliver_to_main_chat }}
         shell: bash
         run: |
           set -euo pipefail
@@ -79,7 +85,7 @@ jobs:
                 --name "weekly-gh-digest-$RETRY_DELIVERY_RUN_ID" --dir "$source_dir"
               source_input=""
               while IFS= read -r candidate; do
-                if jq -e '.format_version == 2 and .llm_used == true and (.entries | length == 10) and all(.entries[]; .llm_used == true and (.description | type == "string") and (.description | length > 0))' "$candidate" >/dev/null; then
+                if jq -e '.format_version == 3 and .llm_used == true and (.entries | length >= 1) and all(.entries[]; .llm_used == true and (.description | type == "string") and (.description | length > 0))' "$candidate" >/dev/null; then
                   source_input="$candidate"
                   break
                 fi
@@ -89,19 +95,17 @@ jobs:
               mkdir -p "$delivery_dir"
               cp -a "$(dirname "$source_input")/." "$delivery_dir/"
               "$bot" debug-delivery "$delivery_dir"
+            elif [[ "$DELIVER_TO_MAIN_CHAT" == "true" ]]; then
+              "$bot" digest --llm
             elif [[ "$MANUAL_DRY_RUN" == "true" ]]; then
               "$bot" preview --dry-run --llm
             else
               "$bot" debug --llm
             fi
-          elif [[ "$(date -u +%u)" == "1" ]]; then
-            if [[ -n "${TELEGRAM_BOT_TOKEN:-}" && -n "${TELEGRAM_TECH_CHAT_ID:-}" ]]; then
-              "$bot" debug --llm
-            else
-              "$bot" preview --dry-run --llm
-            fi
+          elif [[ -n "${TELEGRAM_BOT_TOKEN:-}" && -n "${TELEGRAM_CHAT_ID:-}" ]]; then
+            "$bot" digest --llm
           else
-            "$bot" collect
+            "$bot" preview --dry-run --llm
           fi
 
       - name: Save state and source provenance
