@@ -2351,7 +2351,10 @@ fn deliver_new_digest(
         .as_array()
         .is_none_or(|entries| entries.is_empty())
     {
-        println!("No fresh candidates after deduplication; nothing to send");
+        println!("No fresh candidates after deduplication; sending the empty-slot notice");
+        let _ = telegram_send(&markdown_v2_escape(
+            "🤖 GitHub Digest: новых проектов с прошлого выпуска не появилось.",
+        ));
         return Ok(());
     }
     if digest["llm_used"] != true {

@@ -1,0 +1,46 @@
+name: Probe Trigger
+
+# Safety net for GitHub's best-effort scheduler: fires four times inside
+# each delivery window (10:00 and 22:00 Moscow time) and dispatches Run Bot
+# only when nothing has started in that window yet. A redundant dispatch is
+# harmless: digest selection is deduplicated against bot-state, so an extra
+# run exits quietly when everything is already covered.
+
+on:
+  schedule:
+    - cron: '10,40 7,8,19,20 * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+concurrency:
+  group: probe-trigger
+  cancel-in-progress: false
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Dispatch Run Bot when the slot has no run yet
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          hour="$(date -u +%H)"
+          case "$hour" in
+            07|08) window_start="$(date -u +%Y-%m-%dT)07:00" ;;
+            19|20) window_start="$(date -u +%Y-%m-%dT)19:00" ;;
+            *) echo "Outside slot windows; nothing to do"; exit 0 ;;
+          esac
+          started=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow run-bot.yml \
+            --json createdAt --limit 15 \
+            --jq "[.[] | select(.createdAt >= \"$window_start\")] | length")
+          if [[ "$started" -gt 0 ]]; then
+            echo "Run Bot already started in this window ($started run(s)); nothing to do"
+            exit 0
+          fi
+          gh workflow run run-bot.yml --repo "$GITHUB_REPOSITORY" -f deliver_to_main_chat=true
+          echo "Dispatched Run Bot for the $window_start slot"
