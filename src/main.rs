@@ -2344,17 +2344,35 @@ fn deliver_new_digest(
                     .collect::<Vec<_>>()
             })
             .unwrap_or_default();
-        let audit = match release_audit(digest, &placeholder_links, state) {
-            Ok(audit) => audit,
-            Err(error) => json!({
+        // The audit is one provider call; a transient 5xx must not postpone
+        // the digest to the next probe, so retry the whole audit a few
+        // times with a pause before treating it as unavailable.
+        let mut audit = None;
+        let mut audit_error = String::new();
+        for attempt in 0..3 {
+            match release_audit(digest, &placeholder_links, state) {
+                Ok(result) => {
+                    audit = Some(result);
+                    break;
+                }
+                Err(error) => {
+                    audit_error = format!("{error:#}");
+                    if attempt + 1 < 3 {
+                        thread::sleep(StdDuration::from_secs(30));
+                    }
+                }
+            }
+        }
+        let audit = audit.unwrap_or_else(|| {
+            json!({
                 "approved": false,
                 "status": "review-unavailable",
                 "deterministic_scan": "passed",
                 "blocking_findings": ["AI review could not be completed; publication is blocked."],
-                "review_error": format!("{error:#}"),
+                "review_error": audit_error,
                 "review": null,
-            }),
-        };
+            })
+        });
         digest["audit"] = audit.clone();
         write_json(&run_dir.join("release-audit.json"), &audit)?;
         write_json(&run_dir.join("ranking-input.json"), digest)?;
