@@ -1,0 +1,137 @@
+{
+  "covered_repositories_tracked": 0,
+  "excluded": [
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "davila7/claude-code-templates",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "TencentCloud/Octop",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "vercel/next.js",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "FxEmbed/FxEmbed",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "pytorch/pytorch",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "PrismML-Eng/Bonsai-demo",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "elastic/elasticsearch",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "NVIDIA/OpenShell",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "VectifyAI/PageIndex",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "mvschwarz/openrig",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "dream-num/univer",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "cs341-illinois/coursebook",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "oblien/openship",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "t8y2/dbx",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "willfaust/Madeira",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "averygan/reclip",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "rakyll/hey",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Contrastive-LM/CLM",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "852wa/JIZURA",
+      "reason": "digest cap after stable source priority"
+    }
+  ],
+  "pool": [
+    {
+      "full_name": "vectorize-io/hindsight",
+      "ordering_metric": 15537,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "paperclipai/paperclip",
+      "ordering_metric": 10518,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "debpalash/VoiceStudio",
+      "ordering_metric": 7972,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "stablyai/orca",
+      "ordering_metric": 6151,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "rohitg00/ai-engineering-from-scratch",
+      "ordering_metric": 5004,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "ordering_metric": 3962,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "pbakaus/impeccable",
+      "ordering_metric": 2547,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "Tencent/WeKnora",
+      "ordering_metric": 2509,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "anthropics/financial-services",
+      "ordering_metric": 2381,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "trycua/cua",
+      "ordering_metric": 1293,
+      "source_kind": "trending_weekly"
+    }
+  ]
+}
