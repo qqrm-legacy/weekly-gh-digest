@@ -2102,7 +2102,7 @@ fn deliver_pending_digests(state: &mut State, today: &str) -> Result<()> {
         .iter()
         .map(|(id, digest)| (id.clone(), digest.clone()))
         .collect();
-    for (id, digest) in pending {
+    for (id, mut digest) in pending {
         if digest["audit"]["approved"] != true {
             continue;
         }
