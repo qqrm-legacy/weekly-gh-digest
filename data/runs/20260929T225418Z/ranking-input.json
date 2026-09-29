@@ -1,0 +1,826 @@
+{
+  "dedup_excluded": [
+    {
+      "full_name": "vectorize-io/hindsight",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "paperclipai/paperclip",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "debpalash/VoiceStudio",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "stablyai/orca",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "rohitg00/ai-engineering-from-scratch",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "pbakaus/impeccable",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "Tencent/WeKnora",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "anthropics/financial-services",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "trycua/cua",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "davila7/claude-code-templates",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "TencentCloud/Octop",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "vercel/next.js",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "FxEmbed/FxEmbed",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "pytorch/pytorch",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "PrismML-Eng/Bonsai-demo",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "elastic/elasticsearch",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "NVIDIA/OpenShell",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "VectifyAI/PageIndex",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "mvschwarz/openrig",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "dream-num/univer",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "cs341-illinois/coursebook",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "oblien/openship",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "t8y2/dbx",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "averygan/reclip",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "willfaust/Madeira",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "rakyll/hey",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "852wa/JIZURA",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "Contrastive-LM/CLM",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "new_repo"
+    }
+  ],
+  "entries": [],
+  "format_version": 3,
+  "generated_at": "2026-09-29T22:54:18Z",
+  "joke": "",
+  "llm_budget": {
+    "actual_requests": 0,
+    "all_descriptions_complete": false,
+    "expected_requests": 0,
+    "local_inference": false,
+    "max_requests_per_run": 40,
+    "max_requests_per_utc_day": 100,
+    "max_requests_with_retries": 0,
+    "paid_fallback": false,
+    "providers": [
+      {
+        "model": "openai/gpt-oss-120b",
+        "name": "Groq"
+      }
+    ],
+    "reason": "no fresh candidates after deduplication; descriptions skipped"
+  },
+  "llm_used": false,
+  "manifest": {
+    "api_repositories": [
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:21Z",
+        "forks": 5763,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 42781,
+        "status": "included",
+        "url": "https://api.github.com/repos/vectorize-io/hindsight"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:21Z",
+        "forks": 16046,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 94399,
+        "status": "included",
+        "url": "https://api.github.com/repos/paperclipai/paperclip"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:22Z",
+        "forks": 5382,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 47957,
+        "status": "included",
+        "url": "https://api.github.com/repos/debpalash/VoiceStudio"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:22Z",
+        "forks": 5291,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 81595,
+        "status": "included",
+        "url": "https://api.github.com/repos/stablyai/orca"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:22Z",
+        "forks": 10526,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 61284,
+        "status": "included",
+        "url": "https://api.github.com/repos/rohitg00/ai-engineering-from-scratch"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:23Z",
+        "forks": 1356,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 23141,
+        "status": "included",
+        "url": "https://api.github.com/repos/cloudflare/security-audit-skill"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:23Z",
+        "forks": 4380,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 72541,
+        "status": "included",
+        "url": "https://api.github.com/repos/pbakaus/impeccable"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:23Z",
+        "forks": 4172,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 31230,
+        "status": "included",
+        "url": "https://api.github.com/repos/Tencent/WeKnora"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:24Z",
+        "forks": 5502,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 38229,
+        "status": "included",
+        "url": "https://api.github.com/repos/anthropics/financial-services"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:24Z",
+        "forks": 1901,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 27275,
+        "status": "included",
+        "url": "https://api.github.com/repos/trycua/cua"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:24Z",
+        "forks": 4655,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 51008,
+        "status": "included",
+        "url": "https://api.github.com/repos/HKUDS/CLI-Anything"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:24Z",
+        "forks": 3650,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 32166,
+        "status": "included",
+        "url": "https://api.github.com/repos/davila7/claude-code-templates"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:25Z",
+        "forks": 718,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 5784,
+        "status": "included",
+        "url": "https://api.github.com/repos/TencentCloud/Octop"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:25Z",
+        "forks": 33525,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 142896,
+        "status": "included",
+        "url": "https://api.github.com/repos/vercel/next.js"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:25Z",
+        "forks": 263,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 5581,
+        "status": "included",
+        "url": "https://api.github.com/repos/FxEmbed/FxEmbed"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:26Z",
+        "forks": 31002,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 103527,
+        "status": "included",
+        "url": "https://api.github.com/repos/pytorch/pytorch"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:26Z",
+        "forks": 348,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 3212,
+        "status": "included",
+        "url": "https://api.github.com/repos/PrismML-Eng/Bonsai-demo"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:26Z",
+        "forks": 26095,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 78115,
+        "status": "included",
+        "url": "https://api.github.com/repos/elastic/elasticsearch"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:26Z",
+        "forks": 1414,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 10522,
+        "status": "included",
+        "url": "https://api.github.com/repos/NVIDIA/OpenShell"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:27Z",
+        "forks": 3259,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 37278,
+        "status": "included",
+        "url": "https://api.github.com/repos/VectifyAI/PageIndex"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:27Z",
+        "forks": 170,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2388,
+        "status": "included",
+        "url": "https://api.github.com/repos/mvschwarz/openrig"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:27Z",
+        "forks": 1841,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 21824,
+        "status": "included",
+        "url": "https://api.github.com/repos/dream-num/univer"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:28Z",
+        "forks": 274,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 3062,
+        "status": "included",
+        "url": "https://api.github.com/repos/cs341-illinois/coursebook"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:28Z",
+        "forks": 1233,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 13791,
+        "status": "included",
+        "url": "https://api.github.com/repos/oblien/openship"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:28Z",
+        "forks": 2084,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 21938,
+        "status": "included",
+        "url": "https://api.github.com/repos/t8y2/dbx"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:29Z",
+        "forks": 1529,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 10056,
+        "status": "included",
+        "url": "https://api.github.com/repos/averygan/reclip"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:29Z",
+        "forks": 187,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1080,
+        "status": "included",
+        "url": "https://api.github.com/repos/willfaust/Madeira"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:29Z",
+        "forks": 1310,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 20459,
+        "status": "included",
+        "url": "https://api.github.com/repos/rakyll/hey"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:30Z",
+        "forks": 157,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1098,
+        "status": "included",
+        "url": "https://api.github.com/repos/852wa/JIZURA"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:30Z",
+        "forks": 218,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2507,
+        "status": "included",
+        "url": "https://api.github.com/repos/Contrastive-LM/CLM"
+      }
+    ],
+    "candidate_count": 30,
+    "candidate_policy": "Weekly Trending, daily Trending, then Search; stable order; max 30; not a global GitHub census.",
+    "captured_at": "2026-09-29T22:54:18Z",
+    "excluded_candidates": [
+      {
+        "full_name": "JohnHeibel/ClaudeAnimationBase",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "JohnHeibel/PDoomVideo",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "KKKKhazix/AIHOT",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "Liuziyu77/Valen",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "Niko1221/Strata",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "alexgreensh/anidoodle",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "angusdevgo/Seep-Reverse-Lab",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "anishfn/shapeshift",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "dgreenheck/tidewater",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "dzhng/jevgrep",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "feitangyuan/onetake",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "firelex/jeff",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "glanderness/BeefTV",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "kaankiziltug/logo-design-skill",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "kryvora-network/kryvora-node",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "kydlikebtc/awesome-jev",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "lemomo-ai/lemo-opuscar",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "mexicat/pdoom-video",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "mikehasa/golive-skill",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "ollaya-dev/ollaya",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "rgem227/knoweldge-base",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "riba2534/claude-opus-5-5-demo",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "samyost1/3dicon",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "shihabal3amri/DiPlay",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "supermemoryai/company-brain",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "tobi/disktree",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "yetone/magpie",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "yihui-dev/awesome-opus5-5-videos",
+        "reason": "candidate cap after stable source priority"
+      }
+    ],
+    "sources": [
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:19Z",
+        "pagination": "HTML first page as returned; no pagination",
+        "parsed_candidates": 18,
+        "reason": "repository rows parsed from first page",
+        "source": "GitHub Trending weekly",
+        "status": "included",
+        "url": "https://github.com/trending?since=weekly"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-09-29T22:54:20Z",
+        "pagination": "HTML first page as returned; no pagination",
+        "parsed_candidates": 14,
+        "reason": "repository rows parsed from first page",
+        "source": "GitHub Trending daily",
+        "status": "included",
+        "url": "https://github.com/trending?since=daily"
+      },
+      {
+        "complete": false,
+        "fetched_at": "2026-09-29T22:54:21Z",
+        "pagination": "per_page=30; first page only; Search API result cap applies",
+        "query": "created:>=2026-09-22 stars:>10",
+        "reason": "first page ingested as candidate source only",
+        "returned": 30,
+        "source": "GitHub REST Search repositories created in last 7 days",
+        "status": "included",
+        "total_count": 1782,
+        "url": "https://api.github.com/search/repositories?q=created%3A%3E%3D2026-09-22+stars%3A%3E10&sort=stars&order=desc&per_page=30"
+      }
+    ],
+    "validation_notes": []
+  },
+  "new_repositories_by_total_stars": [
+    {
+      "created_at": "2026-09-23T19:29:56Z",
+      "full_name": "Contrastive-LM/CLM",
+      "stars": 2507,
+      "url": "https://github.com/Contrastive-LM/CLM"
+    },
+    {
+      "created_at": "2026-09-23T04:04:13Z",
+      "full_name": "852wa/JIZURA",
+      "stars": 1098,
+      "url": "https://github.com/852wa/JIZURA"
+    }
+  ],
+  "official_github_trending_weekly": [
+    {
+      "full_name": "vectorize-io/hindsight",
+      "stars": 42781,
+      "url": "https://github.com/vectorize-io/hindsight",
+      "weekly_trending_stars": 15537
+    },
+    {
+      "full_name": "paperclipai/paperclip",
+      "stars": 94399,
+      "url": "https://github.com/paperclipai/paperclip",
+      "weekly_trending_stars": 10518
+    },
+    {
+      "full_name": "debpalash/VoiceStudio",
+      "stars": 47957,
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "weekly_trending_stars": 7972
+    },
+    {
+      "full_name": "stablyai/orca",
+      "stars": 81595,
+      "url": "https://github.com/stablyai/orca",
+      "weekly_trending_stars": 6151
+    },
+    {
+      "full_name": "rohitg00/ai-engineering-from-scratch",
+      "stars": 61284,
+      "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "weekly_trending_stars": 5004
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "stars": 23141,
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "weekly_trending_stars": 3962
+    },
+    {
+      "full_name": "pbakaus/impeccable",
+      "stars": 72541,
+      "url": "https://github.com/pbakaus/impeccable",
+      "weekly_trending_stars": 2547
+    },
+    {
+      "full_name": "Tencent/WeKnora",
+      "stars": 31230,
+      "url": "https://github.com/Tencent/WeKnora",
+      "weekly_trending_stars": 2509
+    },
+    {
+      "full_name": "anthropics/financial-services",
+      "stars": 38229,
+      "url": "https://github.com/anthropics/financial-services",
+      "weekly_trending_stars": 2381
+    },
+    {
+      "full_name": "trycua/cua",
+      "stars": 27275,
+      "url": "https://github.com/trycua/cua",
+      "weekly_trending_stars": 1293
+    }
+  ],
+  "ranking": "fresh candidates from the latest captured GitHub Trending weekly and daily pages and the new-repository search; repositories already reviewed in an earlier digest are excluded; weekly Trending +N first, then daily Trending +N, then new repositories by total stars; current total stars are shown separately and do not determine order; not a global GitHub census",
+  "trend_summary": "Подборка свежих репозиториев дня из GitHub Trending и поиска новых репозиториев, отсортированных по недельному приросту звёзд, дневному приросту и числу звёзд у новых репозиториев. Это срез внимания, не рейтинг качества и не весь GitHub.",
+  "trends": {
+    "forks": [
+      {
+        "delta": 935,
+        "full_name": "vectorize-io/hindsight"
+      },
+      {
+        "delta": 639,
+        "full_name": "debpalash/VoiceStudio"
+      },
+      {
+        "delta": 405,
+        "full_name": "paperclipai/paperclip"
+      },
+      {
+        "delta": 304,
+        "full_name": "rohitg00/ai-engineering-from-scratch"
+      },
+      {
+        "delta": 253,
+        "full_name": "pytorch/pytorch"
+      },
+      {
+        "delta": 239,
+        "full_name": "vercel/next.js"
+      },
+      {
+        "delta": 215,
+        "full_name": "dream-num/univer"
+      },
+      {
+        "delta": 173,
+        "full_name": "anthropics/claude-code"
+      },
+      {
+        "delta": 117,
+        "full_name": "TencentCloud/Octop"
+      },
+      {
+        "delta": 108,
+        "full_name": "Tencent/WeKnora"
+      }
+    ],
+    "percent": [
+      {
+        "delta": 8031,
+        "full_name": "debpalash/VoiceStudio"
+      },
+      {
+        "delta": 5619,
+        "full_name": "vectorize-io/hindsight"
+      },
+      {
+        "delta": 4709,
+        "full_name": "paperclipai/paperclip"
+      },
+      {
+        "delta": 2708,
+        "full_name": "dream-num/univer"
+      },
+      {
+        "delta": 2086,
+        "full_name": "stablyai/orca"
+      },
+      {
+        "delta": 2076,
+        "full_name": "rohitg00/ai-engineering-from-scratch"
+      },
+      {
+        "delta": 1473,
+        "full_name": "mvschwarz/openrig"
+      },
+      {
+        "delta": 1182,
+        "full_name": "cloudflare/security-audit-skill"
+      },
+      {
+        "delta": 997,
+        "full_name": "Contrastive-LM/CLM"
+      },
+      {
+        "delta": 931,
+        "full_name": "Tencent/WeKnora"
+      }
+    ]
+  }
+}
