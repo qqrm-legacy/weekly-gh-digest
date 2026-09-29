@@ -53,7 +53,7 @@ struct State {
     #[serde(default)]
     covered: BTreeMap<String, String>,
     #[serde(default)]
-    sent_days: BTreeMap<String, i64>,
+    sent_digests: BTreeMap<String, i64>,
     #[serde(default)]
     pending_digests: BTreeMap<String, Value>,
     #[serde(default)]
@@ -1973,10 +1973,16 @@ fn tech_notice(text: &str) {
 }
 
 /// Sends the reviewed digest posts to the main chat and pins the linked
-/// overview. Per-message progress is keyed by day so a workflow retry
-/// resumes instead of duplicating posts. On completion every reviewed
-/// repository is added to `covered`, which keeps it out of future digests.
-fn telegram_deliver_digest(digest: &Value, day: &str, state: &mut State) -> Result<()> {
+/// overview. Per-message progress is keyed by the digest id (run stamp), so
+/// several digests can be delivered per day and a workflow retry resumes
+/// instead of duplicating posts. On completion every reviewed repository is
+/// added to `covered`, which keeps it out of future digests.
+fn telegram_deliver_digest(
+    digest: &Value,
+    digest_id: &str,
+    day: &str,
+    state: &mut State,
+) -> Result<()> {
     let entries = digest["entries"]
         .as_array()
         .ok_or_else(|| anyhow!("digest has no project entries"))?;
@@ -1992,7 +1998,7 @@ fn telegram_deliver_digest(digest: &Value, day: &str, state: &mut State) -> Resu
             .ok_or_else(|| anyhow!("digest entry has no repository name"))?;
         let already_sent = state
             .delivery_progress
-            .get(day)
+            .get(digest_id)
             .is_some_and(|progress| progress.project_message_ids.contains_key(name));
         if already_sent {
             continue;
@@ -2000,7 +2006,7 @@ fn telegram_deliver_digest(digest: &Value, day: &str, state: &mut State) -> Resu
         let message_id = telegram_send_project_to(&chat, entry)?;
         state
             .delivery_progress
-            .entry(day.to_string())
+            .entry(digest_id.to_string())
             .or_default()
             .project_message_ids
             .insert(name.to_string(), message_id);
@@ -2009,7 +2015,7 @@ fn telegram_deliver_digest(digest: &Value, day: &str, state: &mut State) -> Resu
 
     let progress = state
         .delivery_progress
-        .get(day)
+        .get(digest_id)
         .ok_or_else(|| anyhow!("Telegram delivery state disappeared"))?;
     let links = entries
         .iter()
@@ -2028,7 +2034,7 @@ fn telegram_deliver_digest(digest: &Value, day: &str, state: &mut State) -> Resu
             let id = telegram_send(&render_overview(digest, &links))?;
             state
                 .delivery_progress
-                .entry(day.to_string())
+                .entry(digest_id.to_string())
                 .or_default()
                 .overview_message_id = Some(id);
             write_json(&state_path(), state)?;
@@ -2044,9 +2050,11 @@ fn telegram_deliver_digest(digest: &Value, day: &str, state: &mut State) -> Resu
                 .or_insert_with(|| day.to_string());
         }
     }
-    state.sent_days.insert(day.to_string(), overview_id);
-    state.delivery_progress.remove(day);
-    state.pending_digests.remove(day);
+    state
+        .sent_digests
+        .insert(digest_id.to_string(), overview_id);
+    state.delivery_progress.remove(digest_id);
+    state.pending_digests.remove(digest_id);
     write_json(&state_path(), state)?;
     Ok(())
 }
@@ -2058,15 +2066,19 @@ fn deliver_pending_digests(state: &mut State, today: &str) -> Result<()> {
     let pending: Vec<(String, Value)> = state
         .pending_digests
         .iter()
-        .filter(|(day, _)| *day != today)
-        .map(|(day, digest)| (day.clone(), digest.clone()))
+        .map(|(id, digest)| (id.clone(), digest.clone()))
         .collect();
-    for (day, digest) in pending {
+    for (id, digest) in pending {
         if digest["audit"]["approved"] != true {
             continue;
         }
-        telegram_deliver_digest(&digest, &day, state)?;
-        println!("Completed delayed delivery of the {day} digest to the main chat.");
+        let day = digest["generated_at"]
+            .as_str()
+            .and_then(|value| DateTime::parse_from_rfc3339(value).ok())
+            .map(|generated| generated.format("%Y-%m-%d").to_string())
+            .unwrap_or_else(|| today.to_string());
+        telegram_deliver_digest(&digest, &id, &day, state)?;
+        println!("Completed delayed delivery of digest {id} to the main chat.");
     }
     let cutoff = chrono::NaiveDate::parse_from_str(today, "%Y-%m-%d")
         .ok()
@@ -2075,12 +2087,20 @@ fn deliver_pending_digests(state: &mut State, today: &str) -> Result<()> {
         let stale: Vec<String> = state
             .pending_digests
             .keys()
-            .filter_map(|day| chrono::NaiveDate::parse_from_str(day, "%Y-%m-%d").ok())
+            .filter_map(|id| chrono::NaiveDate::parse_from_str(id.get(0..8)?, "%Y%m%d").ok())
             .filter(|date| *date < cutoff)
-            .map(|date| date.format("%Y-%m-%d").to_string())
+            .map(|date| date.format("%Y%m%d").to_string())
             .collect();
-        for day in stale {
-            state.pending_digests.remove(&day);
+        for prefix in stale {
+            let doomed: Vec<String> = state
+                .pending_digests
+                .keys()
+                .filter(|id| id.starts_with(&prefix))
+                .cloned()
+                .collect();
+            for id in doomed {
+                state.pending_digests.remove(&id);
+            }
         }
     }
     Ok(())
@@ -2172,6 +2192,7 @@ fn main() -> Result<()> {
     let gathered = collect(now)?;
     let mut state = update_state(&gathered.snapshots, now)?;
     let day = now.format("%Y-%m-%d").to_string();
+    let digest_id = stamp(now);
     if command == "digest" && !dry {
         deliver_pending_digests(&mut state, &day)?;
     }
@@ -2202,7 +2223,7 @@ fn main() -> Result<()> {
         println!("{output}\n\nRaw run: {}", gathered.dir.display());
     }
     if command == "digest" && !dry {
-        deliver_daily_digest(&mut state, &mut digest, &gathered.dir, &day)?;
+        deliver_new_digest(&mut state, &mut digest, &gathered.dir, &digest_id, &day)?;
     }
     if command == "debug" && !dry {
         if digest["llm_used"] != true {
@@ -2259,32 +2280,27 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-/// Scheduled daily delivery into the main chat: idempotent per day, gated by
-/// the deterministic credential scan and the Gemini publication audit. On
+/// Delivery of one fresh digest into the main chat: gated by the
+/// deterministic credential scan and the Gemini publication audit. On
 /// success every reviewed repository is marked covered and stays out of all
-/// future digests. Every refusal is reported to the technical chat.
-fn deliver_daily_digest(
+/// future digests. Refusals other than "nothing new" are reported to the
+/// technical chat; "nothing new" is the quiet expected outcome of a probe.
+fn deliver_new_digest(
     state: &mut State,
     digest: &mut Value,
     run_dir: &Path,
+    digest_id: &str,
     day: &str,
 ) -> Result<()> {
-    if state.sent_days.contains_key(day) {
-        println!("Digest for {day} was already sent to the main chat; skipping");
+    if state.sent_digests.contains_key(digest_id) {
+        println!("Digest {digest_id} was already sent to the main chat; skipping");
         return Ok(());
-    }
-    if let Some(pending) = state.pending_digests.get(day).cloned() {
-        *digest = pending;
-        write_json(&run_dir.join("ranking-input.json"), digest)?;
     }
     if digest["entries"]
         .as_array()
         .is_none_or(|entries| entries.is_empty())
     {
-        tech_notice(&format!(
-            "GitHub Digest {day}: свежих кандидатов нет — вся выборка уже была в прошлых дайджестах. Пост в основной чат не отправлялся."
-        ));
-        println!("No fresh candidates after deduplication; nothing sent");
+        println!("No fresh candidates after deduplication; nothing to send");
         return Ok(());
     }
     if digest["llm_used"] != true {
@@ -2364,14 +2380,14 @@ fn deliver_daily_digest(
     }
     state
         .pending_digests
-        .insert(day.to_string(), digest.clone());
+        .insert(digest_id.to_string(), digest.clone());
     write_json(&state_path(), state)?;
-    telegram_deliver_digest(digest, day, state)?;
+    telegram_deliver_digest(digest, digest_id, day, state)?;
     let sent = digest["entries"]
         .as_array()
         .map(|entries| entries.len())
         .unwrap_or(0);
-    println!("Digest sent to the main chat; {sent} repositories marked covered.");
+    println!("Digest {digest_id} sent to the main chat; {sent} repositories marked covered.");
     Ok(())
 }
 

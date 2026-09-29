@@ -4,17 +4,21 @@ Rust Telegram bot derived from [`qqrm/template-tg-bot-rs`](https://github.com/qq
 
 ## What the workflow does
 
-- Runs every day at 07:17 UTC and captures candidate metrics from the first pages of GitHub Trending (daily and weekly) and GitHub Search for repositories created in the previous seven days. This is a bounded candidate sample, not a global GitHub ranking.
-- Every day, prepares a Russian digest of the freshest candidates and sends it to the main Telegram chat automatically. Repositories that were reviewed in any earlier digest are excluded permanently, so the digest keeps rotating: once a project has been covered, it never appears again.
+- Probes every two hours (07:17-style cron, every even UTC hour) and captures candidate metrics from the first pages of GitHub Trending (daily and weekly) and GitHub Search for repositories created in the previous seven days. This is a bounded candidate sample, not a global GitHub ranking.
+- After each probe, prepares a Russian digest of the freshest candidates and sends it to the main Telegram chat automatically — but only when at least one uncovered candidate exists. Repositories that were reviewed in any earlier digest are excluded permanently, so each post contains only projects the reader has never seen; days with no rotation produce no posts.
 - Groq writes one Russian technical description per project from GitHub metadata and the README excerpt; one more Groq request produces the overview intro and per-project teasers. Gemini runs an independent publication audit. The digest is sent only when every description is complete, the deterministic credential scan is clean, and the audit approves; otherwise the reason is reported to the technical chat and nothing is published.
 - Stores source responses, manifests, selection traces, and star history on the `bot-state` branch. Each run also uploads a 90-day artifact with the digest preview and provenance.
-- Manual `workflow_dispatch` defaults to `dry_run=true` and uploads a preview artifact; `dry_run=false` delivers a full debug preview (project posts, linked overview, audit) to the private technical chat; `deliver_to_main_chat=true` performs the scheduled delivery immediately.
+- Manual `workflow_dispatch` defaults to `dry_run=true` and uploads a preview artifact; `dry_run=false` delivers a full debug preview (project posts, linked overview, audit) to the private technical chat; `deliver_to_main_chat=true` performs a scheduled delivery immediately.
 
-The daily digest takes at most ten projects, ordered deterministically: weekly Trending by displayed weekly star count (`+N`) first, then daily Trending by daily `+N`, then new repositories by total stars. Current total stars are shown separately and do not determine order. A `selection.json` pool trace is stored with each run, and a retry re-validates a stored digest against it.
+Every probe takes at most ten projects, ordered deterministically: weekly Trending by displayed weekly star count (`+N`) first, then daily Trending by daily `+N`, then new repositories by total stars. Current total stars are shown separately and do not determine order. A `selection.json` pool trace is stored with each run, and a retry re-validates a stored digest against it.
+
+## Cadence and Actions minutes
+
+Trending pages rotate several times per day, so a single daily snapshot misses projects that flash through the top. Probing every two hours keeps the sample fresh while staying inside the free Actions allowance: a private repo gets 2,000 runner minutes per month, a probe with the Rust build cache takes roughly two to four minutes, and ~12 probes per day lands around 500–900 minutes per month together with CI. A 30-minute probe would triple that and risk the billing lock again; if it is ever needed, the cheapest lever is making the repository public (unlimited Actions) or trimming collect().
 
 ## Deduplication
 
-The `bot-state` branch keeps a `covered` map of every repository ever published. It is written only after a digest has fully reached the main chat, so an interrupted send resumes on the next run (per-message progress is keyed by UTC day) instead of duplicating messages, and covered repositories are not lost. A digest whose descriptions, credential scan, or audit fail is not delivered and does not mark its candidates covered — they re-enter the next day's selection.
+The `bot-state` branch keeps a `covered` map of every repository ever published, keyed by the UTC date of its first appearance. It is written only after a digest has fully reached the main chat, so an interrupted send resumes on the next run (per-message progress is keyed by digest id) instead of duplicating messages, and covered repositories are not lost. A digest whose descriptions, credential scan, or audit fail is not delivered and does not mark its candidates covered — they re-enter the next probe's selection. Several digests can be delivered per day; each gets its own posts, linked pinned overview, and pending state.
 
 ## Evidence-based project analysis
 

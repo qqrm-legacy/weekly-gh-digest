@@ -2,7 +2,9 @@ name: Run Bot
 
 on:
   schedule:
-    - cron: '17 7 * * *'
+    # Probe every two hours: trending pages rotate several times per day,
+    # and each probe posts a digest only when uncovered candidates appear.
+    - cron: '17 */2 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -41,6 +43,9 @@ jobs:
 
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@6bed0761d98439e5a578e2877258200ad565ba87 # stable
+
+      - name: Cache build
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
 
       - name: Build bot
         run: cargo build --release --locked
