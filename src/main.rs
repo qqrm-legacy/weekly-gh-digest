@@ -1530,7 +1530,7 @@ fn render_overview(digest: &Value, links: &[String]) -> String {
         .collect::<Vec<_>>()
         .join(" · ");
     let mut lines = vec![
-        "*🚀 GitHub Digest — обзор дня*".to_string(),
+        "*🚀 GitHub Digest*".to_string(),
         format!(
             "Срез: {}",
             markdown_v2_escape(digest["generated_at"].as_str().unwrap_or(""))
@@ -2576,7 +2576,7 @@ mod tests {
             "entries":[{"full_name":"org/repo"}]
         });
         let overview = render_overview(&digest, &["https://t.me/c/123/456".into()]);
-        assert!(overview.starts_with("*🚀 GitHub Digest — обзор дня*"));
+        assert!(overview.starts_with("*🚀 GitHub Digest*"));
         assert!(overview.contains("1\\. [org/repo](https://t.me/c/123/456)"));
     }
 

@@ -1,6 +1,6 @@
-# Weekly GitHub Digest
+# GitHub Digest
 
-Rust Telegram bot derived from [`qqrm/template-tg-bot-rs`](https://github.com/qqrm/template-tg-bot-rs). It runs on hosted GitHub Actions; there is no local or always-on bot process.
+Twice-daily Russian digest of fresh GitHub projects, delivered to Telegram. Rust bot derived from [`qqrm/template-tg-bot-rs`](https://github.com/qqrm/template-tg-bot-rs). It runs on hosted GitHub Actions; there is no local or always-on bot process.
 
 ## What the workflow does
 
