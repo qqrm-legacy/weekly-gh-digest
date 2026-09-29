@@ -6,11 +6,20 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: Build and upload a preview without Telegram delivery
+        description: Build and upload a preview without sending to the technical chat
         type: boolean
         default: true
+      deliver_to_main_chat:
+        description: Send the daily digest to the main chat right now (overrides dry_run)
+        type: boolean
+        default: false
+      retry_delivery_run_id:
+        description: Reuse project analyses; Groq may create a missing overview and Gemini may rerun the audit
+        type: string
+        required: false
 
 permissions:
+  actions: read
   contents: write
 
 concurrency:
@@ -44,34 +53,59 @@ jobs:
             git archive origin/bot-state data | tar -x
           fi
 
-      - name: Collect, preview, or send digest
+      - name: Collect, preview, or deliver digest
         env:
           GITHUB_TOKEN: ${{ github.token }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_FREE_TIER_CONFIRMED: ${{ vars.CLOUDFLARE_FREE_TIER_CONFIRMED }}
+          TELEGRAM_TECH_CHAT_ID: ${{ secrets.TELEGRAM_TECH_CHAT_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          GROQ_MODEL: ${{ vars.GROQ_MODEL }}
+          LLM_FREE_TIER_CONFIRMED: ${{ vars.LLM_FREE_TIER_CONFIRMED }}
+          GH_TOKEN: ${{ github.token }}
+          RETRY_DELIVERY_RUN_ID: ${{ inputs.retry_delivery_run_id }}
           IS_MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
           MANUAL_DRY_RUN: ${{ inputs.dry_run }}
+          DELIVER_TO_MAIN_CHAT: ${{ inputs.deliver_to_main_chat }}
         shell: bash
         run: |
           set -euo pipefail
           bot=./target/release/weekly-gh-digest
           if [[ "$IS_MANUAL" == "true" ]]; then
-            if [[ "$MANUAL_DRY_RUN" == "true" ]]; then
+            if [[ -n "${RETRY_DELIVERY_RUN_ID:-}" ]]; then
+              [[ "$RETRY_DELIVERY_RUN_ID" =~ ^[0-9]+$ ]] || { echo "retry_delivery_run_id must contain digits only" >&2; exit 1; }
+              source=$(gh run view "$RETRY_DELIVERY_RUN_ID" --repo "$GITHUB_REPOSITORY" --json workflowName,headBranch)
+              [[ "$(jq -r .workflowName <<<"$source")" == "Run Bot" ]] || { echo "Source run is not Run Bot" >&2; exit 1; }
+              [[ "$(jq -r .headBranch <<<"$source")" == "$GITHUB_REF_NAME" ]] || { echo "Source run belongs to a different branch" >&2; exit 1; }
+              source_dir="$RUNNER_TEMP/weekly-gh-digest-source-$RETRY_DELIVERY_RUN_ID"
+              mkdir -p "$source_dir"
+              gh run download "$RETRY_DELIVERY_RUN_ID" --repo "$GITHUB_REPOSITORY" \
+                --name "weekly-gh-digest-$RETRY_DELIVERY_RUN_ID" --dir "$source_dir"
+              source_input=""
+              while IFS= read -r candidate; do
+                if jq -e '.format_version == 3 and .llm_used == true and (.entries | length >= 1) and all(.entries[]; .llm_used == true and (.description | type == "string") and (.description | length > 0))' "$candidate" >/dev/null; then
+                  source_input="$candidate"
+                  break
+                fi
+              done < <(find "$source_dir" -name ranking-input.json -print | sort -r)
+              test -n "$source_input"
+              delivery_dir="data/runs/retry-$GITHUB_RUN_ID"
+              mkdir -p "$delivery_dir"
+              cp -a "$(dirname "$source_input")/." "$delivery_dir/"
+              "$bot" debug-delivery "$delivery_dir"
+            elif [[ "$DELIVER_TO_MAIN_CHAT" == "true" ]]; then
+              "$bot" digest --llm
+            elif [[ "$MANUAL_DRY_RUN" == "true" ]]; then
               "$bot" preview --dry-run --llm
             else
-              "$bot" digest --llm
+              "$bot" debug --llm
             fi
-          elif [[ "$(date -u +%u)" == "1" ]]; then
-            if [[ -n "${TELEGRAM_BOT_TOKEN:-}" && -n "${TELEGRAM_CHAT_ID:-}" ]]; then
-              "$bot" digest --llm
-            else
-              "$bot" preview --dry-run --llm
-            fi
+          elif [[ -n "${TELEGRAM_BOT_TOKEN:-}" && -n "${TELEGRAM_CHAT_ID:-}" ]]; then
+            "$bot" digest --llm
           else
-            "$bot" collect
+            "$bot" preview --dry-run --llm
           fi
 
       - name: Save state and source provenance
