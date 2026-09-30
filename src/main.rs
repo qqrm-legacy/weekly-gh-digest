@@ -17,6 +17,24 @@ const API: &str = "https://api.github.com";
 /// repositories do not consume cap slots, so the top-30 fresh pool always
 /// reaches the digest.
 const MAX_CANDIDATES: usize = 30;
+
+/// Repositories below this total-star floor are not interesting and never
+/// enter the pool or an issue.
+const MIN_TOTAL_STARS: i64 = 5_000;
+
+/// Best total-star estimate available before repository metadata is
+/// fetched: the number printed on the trending page or the search item.
+fn candidate_observed_stars(candidate: &Candidate) -> Option<i64> {
+    candidate.sources.iter().find_map(|source| {
+        if source["type"] == "trending_weekly" || source["type"] == "trending_daily" {
+            source["trending_total_stars"].as_i64()
+        } else if source["type"] == "new_repo_search" {
+            source["stars"].as_i64()
+        } else {
+            None
+        }
+    })
+}
 /// A digest is not a fixed-size top: it publishes the whole fresh
 /// difference — every uncovered candidate from the current pool. This
 /// ceiling equals the pool cap and exists only to bound the worst case.
@@ -371,7 +389,10 @@ fn collect(now: DateTime<Utc>) -> Result<RunData> {
                             name: name.to_string(),
                             sources: vec![],
                         });
-                    c.sources.push(json!({"type":"new_repo_search"}));
+                    c.sources.push(json!({
+                        "type":"new_repo_search",
+                        "stars": item["stargazers_count"].as_i64(),
+                    }));
                 }
             }
         }
@@ -405,23 +426,35 @@ fn collect(now: DateTime<Utc>) -> Result<RunData> {
         };
         candidate_key(a).cmp(&candidate_key(b))
     });
-    // Covered repositories never consume cap slots: they are dropped before
-    // the top-30 cut, so newcomers to the trending pages always make the
-    // fresh pool no matter how many historical reviews are already stored.
+    // Covered repositories never consume cap slots, and repositories below
+    // the star floor are dropped outright: they are dropped before the
+    // top-30 cut, so the fresh pool holds only interesting newcomers.
     let covered = read_state_strict()?.covered;
-    let (fresh, already_covered): (Vec<&Candidate>, Vec<&Candidate>) = all
+    let (fresh, rejected): (Vec<&Candidate>, Vec<&Candidate>) = all.iter().partition(|candidate| {
+        !covered.contains_key(&candidate.name)
+            && candidate_observed_stars(candidate).is_some_and(|stars| stars >= MIN_TOTAL_STARS)
+    });
+    let mut excluded: Vec<Value> = rejected
         .iter()
-        .partition(|candidate| !covered.contains_key(&candidate.name));
+        .map(|x| {
+            let reason = if covered.contains_key(&x.name) {
+                format!(
+                    "already reviewed in the digest on {}",
+                    covered.get(&x.name).cloned().unwrap_or_default()
+                )
+            } else {
+                format!(
+                    "below the {MIN_TOTAL_STARS}-star floor ({} observed)",
+                    candidate_observed_stars(x).unwrap_or_default()
+                )
+            };
+            json!({"full_name":x.name,"reason":reason})
+        })
+        .collect();
     let selected: Vec<Candidate> = fresh
         .iter()
         .take(MAX_CANDIDATES)
         .map(|candidate| (*candidate).clone())
-        .collect();
-    let mut excluded: Vec<Value> = already_covered
-        .iter()
-        .map(|x| {
-            json!({"full_name":x.name,"reason":format!("already reviewed in the digest on {}", covered.get(&x.name).cloned().unwrap_or_default())})
-        })
         .collect();
     excluded.extend(fresh.iter().skip(MAX_CANDIDATES).map(
         |x| json!({"full_name":x.name,"reason":"candidate cap after stable source priority"}),
@@ -703,10 +736,11 @@ fn source_period(kind: &str) -> String {
     }
 }
 
-/// Picks today's digest candidates from the current run's snapshots.
-/// Repositories listed in `covered` were reviewed in an earlier digest and
-/// never reappear. Ordering is stable: weekly Trending +N desc, then daily
-/// Trending +N desc, then new repositories by total stars.
+/// Picks the issue candidates from the current run's snapshots.
+/// Repositories listed in `covered` were reviewed in an earlier issue and
+/// never reappear; repositories under the total-star floor are dropped.
+/// Ordering is stable: weekly Trending +N desc, then daily Trending +N
+/// desc, then new repositories by total stars.
 fn select_candidates(
     current: &[Snapshot],
     covered: &BTreeMap<String, String>,
@@ -719,6 +753,14 @@ fn select_candidates(
             excluded.push(
                 json!({"full_name":snapshot.full_name,"source_kind":kind,"reason":format!("already reviewed in the digest on {day}")}),
             );
+            continue;
+        }
+        if snapshot.stars.is_none_or(|stars| stars < MIN_TOTAL_STARS) {
+            excluded.push(json!({
+                "full_name":snapshot.full_name,
+                "source_kind":kind,
+                "reason":format!("below the {MIN_TOTAL_STARS}-star floor ({} total)", snapshot.stars.unwrap_or_default()),
+            }));
             continue;
         }
         pool.push(snapshot);
@@ -2325,26 +2367,39 @@ mod tests {
                     json!({"type":"trending_weekly","trending_stars_period":n*100}),
                 )
             })
+            .map(|mut s| {
+                s.stars = Some(20_000);
+                s
+            })
             .collect::<Vec<_>>();
         snapshots.push(snapshot(
             "org/daily-hot",
             &captured,
             json!({"type":"trending_daily","trending_stars_period":100_000}),
         ));
+        snapshots.last_mut().unwrap().stars = Some(30_000);
         snapshots.push(snapshot(
             "org/new-but-big",
             &captured,
-            json!({"type":"new_repo_search"}),
+            json!({"type":"new_repo_search","stars":9_000}),
         ));
+        snapshots.last_mut().unwrap().stars = Some(9_000);
+        // Viral in Trending but small overall: the floor drops it.
+        snapshots.push(snapshot(
+            "org/small-hype",
+            &captured,
+            json!({"type":"trending_weekly","trending_stars_period":50_000}),
+        ));
+        snapshots.last_mut().unwrap().stars = Some(400);
         let mut covered = BTreeMap::new();
         covered.insert("org/week-10".to_string(), "2026-09-20".to_string());
         covered.insert("org/week-09".to_string(), "2026-09-20".to_string());
 
         let (selected, excluded) = select_candidates(&snapshots, &covered);
 
-        // The digest is the whole fresh difference: nine uncovered weekly
+        // The issue is the whole fresh difference: nine uncovered weekly
         // candidates by +N desc, then the daily one, then the new one.
-        // Covered repositories do not consume cap slots.
+        // Covered repositories and sub-5000-star ones do not consume slots.
         assert_eq!(selected.len(), 11);
         assert_eq!(selected[0].snapshot.full_name, "org/week-08");
         assert_eq!(selected[1].snapshot.full_name, "org/week-07");
@@ -2365,6 +2420,12 @@ mod tests {
         assert!(excluded.iter().any(
             |row| row["full_name"] == "org/week-09" && row["source_kind"] == "trending_weekly"
         ));
+        assert!(excluded.iter().any(|row| {
+            row["full_name"] == "org/small-hype"
+                && row["reason"]
+                    .as_str()
+                    .is_some_and(|reason| reason.contains("star floor"))
+        }));
         assert!(
             !excluded
                 .iter()
