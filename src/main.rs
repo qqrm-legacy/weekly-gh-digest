@@ -1826,7 +1826,10 @@ fn telegram_deliver_digest(
     let first_id = *ids
         .first()
         .ok_or_else(|| anyhow!("issue delivery produced no messages"))?;
-    telegram_pin(first_id)?;
+    if let Err(error) = telegram_pin(first_id) {
+        // Pinning is cosmetic; the issue is delivered regardless.
+        println!("Pin skipped: {error:#}");
+    }
     fs::write(
         runs_dir().join(digest_id).join("issue.md"),
         chunks.join("\n\n"),
@@ -1946,7 +1949,9 @@ fn main() -> Result<()> {
         let audit = advisory_audit(&mut digest, &mut state, &run_dir)?;
         let delivery = telegram_deliver_debug_digest(&digest, &digest_id, &run_dir, &mut state)?;
         write_json(&state_path(), &state)?;
-        telegram_pin_in(&delivery.chat_id, delivery.overview_message_id)?;
+        if let Err(error) = telegram_pin_in(&delivery.chat_id, delivery.overview_message_id) {
+            println!("Pin skipped: {error:#}");
+        }
         println!(
             "Technical preview delivered as {} message(s); review status: {}",
             delivery.posts.len(),
@@ -2008,7 +2013,9 @@ fn main() -> Result<()> {
         let audit = advisory_audit(&mut digest, &mut state, run_dir)?;
         let delivery = telegram_deliver_debug_digest(&digest, &digest_id, run_dir, &mut state)?;
         write_json(&state_path(), &state)?;
-        telegram_pin_in(&delivery.chat_id, delivery.overview_message_id)?;
+        if let Err(error) = telegram_pin_in(&delivery.chat_id, delivery.overview_message_id) {
+            println!("Pin skipped: {error:#}");
+        }
         println!(
             "Debug digest delivered to the technical chat; review status: {}",
             audit["status"]
