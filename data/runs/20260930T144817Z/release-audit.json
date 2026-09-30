@@ -1,0 +1,14 @@
+{
+  "approved": true,
+  "blocking_findings": [],
+  "deterministic_scan": "passed",
+  "review": {
+    "approved": true,
+    "blocking_findings": [],
+    "claims_supported": true,
+    "format_review": true,
+    "privacy_review": true,
+    "summary": "Дайджест составлен корректно, структура соблюдена. Описания соответствуют GitHub-репозиториям. Секретов и персональных данных не обнаружено. Форматирование в порядке."
+  },
+  "status": "approved"
+}
