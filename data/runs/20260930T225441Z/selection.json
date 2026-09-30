@@ -1,0 +1,76 @@
+{
+  "covered_repositories_tracked": 40,
+  "excluded": [],
+  "pool": [
+    {
+      "full_name": "alirezarezvani/claude-skills",
+      "ordering_metric": 707,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "anthropics/claude-code-action",
+      "ordering_metric": 319,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "mattpocock/skills",
+      "ordering_metric": 908,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "DietrichGebert/ponytail",
+      "ordering_metric": 865,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "byoungd/up",
+      "ordering_metric": 714,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "NawfalMotii79/PLFM_RADAR",
+      "ordering_metric": 466,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "harry0703/MoneyPrinterTurbo",
+      "ordering_metric": 464,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "heygen-com/hyperframes",
+      "ordering_metric": 352,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "colbymchenry/codegraph",
+      "ordering_metric": 159,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "openclaw/openclaw",
+      "ordering_metric": 136,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "ComposioHQ/awesome-claude-skills",
+      "ordering_metric": 118,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "mksglu/context-mode",
+      "ordering_metric": 88,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "modelcontextprotocol/servers",
+      "ordering_metric": 48,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "firebase/firebase-ios-sdk",
+      "ordering_metric": 4,
+      "source_kind": "trending_daily"
+    }
+  ]
+}

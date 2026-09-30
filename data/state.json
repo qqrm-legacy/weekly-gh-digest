@@ -6000,9 +6000,9 @@
     },
     {
       "full_name": "ComposioHQ/awesome-claude-skills",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 76006,
-      "forks": 8867,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 76111,
+      "forks": 8879,
       "language": "Python",
       "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
       "html_url": "https://github.com/ComposioHQ/awesome-claude-skills",
@@ -6026,10 +6026,10 @@
         "workflow-automation"
       ],
       "created_at": "2025-10-17T07:15:01Z",
-      "updated_at": "2026-09-30T15:18:04Z",
+      "updated_at": "2026-09-30T22:54:37Z",
       "pushed_at": "2026-09-18T07:16:11Z",
       "license": null,
-      "open_issues": 1581,
+      "open_issues": 1585,
       "default_branch": "master",
       "sources": [
         {
@@ -6038,7 +6038,7 @@
           "language": "Python",
           "trending_stars_period": 118,
           "trending_total_forks": null,
-          "trending_total_stars": 76006,
+          "trending_total_stars": 76111,
           "type": "trending_daily"
         }
       ],
@@ -6046,9 +6046,9 @@
     },
     {
       "full_name": "DietrichGebert/ponytail",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 148771,
-      "forks": 8003,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 149129,
+      "forks": 8016,
       "language": "JavaScript",
       "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
       "html_url": "https://github.com/DietrichGebert/ponytail",
@@ -6065,19 +6065,19 @@
         "yagni"
       ],
       "created_at": "2026-06-12T00:52:37Z",
-      "updated_at": "2026-09-30T15:20:02Z",
+      "updated_at": "2026-09-30T22:53:52Z",
       "pushed_at": "2026-09-14T14:34:56Z",
       "license": "MIT",
-      "open_issues": 318,
+      "open_issues": 319,
       "default_branch": "main",
       "sources": [
         {
           "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
           "full_name": "DietrichGebert/ponytail",
           "language": "JavaScript",
-          "trending_stars_period": 675,
+          "trending_stars_period": 865,
           "trending_total_forks": null,
-          "trending_total_stars": 148771,
+          "trending_total_stars": 149129,
           "type": "trending_daily"
         }
       ],
@@ -6085,15 +6085,15 @@
     },
     {
       "full_name": "NawfalMotii79/PLFM_RADAR",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 26338,
-      "forks": 5963,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 26408,
+      "forks": 5969,
       "language": "PLSQL",
       "description": "Open-source, low-cost 10.5 GHz PLFM phased array RADAR system",
       "html_url": "https://github.com/NawfalMotii79/PLFM_RADAR",
       "topics": [],
       "created_at": "2026-03-08T23:20:58Z",
-      "updated_at": "2026-09-30T15:19:17Z",
+      "updated_at": "2026-09-30T22:28:07Z",
       "pushed_at": "2026-06-17T02:44:52Z",
       "license": "Other",
       "open_issues": 19,
@@ -6105,7 +6105,7 @@
           "language": "PLSQL",
           "trending_stars_period": 466,
           "trending_total_forks": null,
-          "trending_total_stars": 26338,
+          "trending_total_stars": 26408,
           "type": "trending_daily"
         }
       ],
@@ -6113,9 +6113,9 @@
     },
     {
       "full_name": "alirezarezvani/claude-skills",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 26993,
-      "forks": 3816,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 27043,
+      "forks": 3824,
       "language": "Python",
       "description": "380 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 380+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents — engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills.",
       "html_url": "https://github.com/alirezarezvani/claude-skills",
@@ -6142,7 +6142,7 @@
         "prompt-engineering"
       ],
       "created_at": "2025-10-19T04:04:05Z",
-      "updated_at": "2026-09-30T15:09:27Z",
+      "updated_at": "2026-09-30T22:29:59Z",
       "pushed_at": "2026-08-30T09:46:16Z",
       "license": "MIT",
       "open_issues": 27,
@@ -6154,7 +6154,7 @@
           "language": "Python",
           "trending_stars_period": 707,
           "trending_total_forks": null,
-          "trending_total_stars": 26993,
+          "trending_total_stars": 27043,
           "type": "trending_weekly"
         }
       ],
@@ -6162,18 +6162,18 @@
     },
     {
       "full_name": "anthropics/claude-code-action",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 9255,
-      "forks": 2176,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 9277,
+      "forks": 2179,
       "language": "TypeScript",
       "description": null,
       "html_url": "https://github.com/anthropics/claude-code-action",
       "topics": [],
       "created_at": "2025-05-19T15:26:50Z",
-      "updated_at": "2026-09-30T14:39:20Z",
-      "pushed_at": "2026-09-30T06:33:52Z",
+      "updated_at": "2026-09-30T22:40:30Z",
+      "pushed_at": "2026-09-30T19:17:46Z",
       "license": "MIT",
-      "open_issues": 814,
+      "open_issues": 815,
       "default_branch": "main",
       "sources": [
         {
@@ -6182,7 +6182,7 @@
           "language": "TypeScript",
           "trending_stars_period": 319,
           "trending_total_forks": null,
-          "trending_total_stars": 9255,
+          "trending_total_stars": 9277,
           "type": "trending_weekly"
         }
       ],
@@ -6190,9 +6190,9 @@
     },
     {
       "full_name": "byoungd/up",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 66223,
-      "forks": 6628,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 66370,
+      "forks": 6635,
       "language": "JavaScript",
       "description": "An advanced guide which might benefit you a lot 🎉 . 韩先凯的人生进阶指南 人生进阶指南 离谱的人生 人生进阶 AI学习 AI指南 韩先凯的AI学习指南 英语学习指南/英语学习教程/英语学习/学英语",
       "html_url": "https://github.com/byoungd/up",
@@ -6202,7 +6202,7 @@
         "tutorial"
       ],
       "created_at": "2017-05-30T07:18:52Z",
-      "updated_at": "2026-09-30T15:16:45Z",
+      "updated_at": "2026-09-30T22:50:42Z",
       "pushed_at": "2026-09-20T04:50:30Z",
       "license": "Other",
       "open_issues": 33,
@@ -6212,9 +6212,9 @@
           "description": "An advanced guide which might benefit you a lot 🎉 . 韩先凯的人生进阶指南 人生进阶指南 离谱的人生 人生进阶 AI学习 AI指南 韩先凯的AI学习指南 英语学习指南/英语学习教程/英语学习/学英语",
           "full_name": "byoungd/up",
           "language": "JavaScript",
-          "trending_stars_period": 1102,
+          "trending_stars_period": 714,
           "trending_total_forks": null,
-          "trending_total_stars": 66223,
+          "trending_total_stars": 66370,
           "type": "trending_daily"
         }
       ],
@@ -6222,27 +6222,27 @@
     },
     {
       "full_name": "colbymchenry/codegraph",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 72491,
-      "forks": 4656,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 72576,
+      "forks": 4662,
       "language": "C",
       "description": "Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, CoPilot, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
       "html_url": "https://github.com/colbymchenry/codegraph",
       "topics": [],
       "created_at": "2026-01-18T21:45:37Z",
-      "updated_at": "2026-09-30T15:20:50Z",
-      "pushed_at": "2026-09-30T15:20:25Z",
+      "updated_at": "2026-09-30T22:54:21Z",
+      "pushed_at": "2026-09-30T22:54:10Z",
       "license": "MIT",
-      "open_issues": 511,
+      "open_issues": 514,
       "default_branch": "main",
       "sources": [
         {
           "description": "Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, CoPilot, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
           "full_name": "colbymchenry/codegraph",
           "language": "C",
-          "trending_stars_period": 116,
+          "trending_stars_period": 159,
           "trending_total_forks": null,
-          "trending_total_stars": 72491,
+          "trending_total_stars": 72576,
           "type": "trending_daily"
         }
       ],
@@ -6250,9 +6250,9 @@
     },
     {
       "full_name": "firebase/firebase-ios-sdk",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 6721,
-      "forks": 1798,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 6754,
+      "forks": 1799,
       "language": "C++",
       "description": "Firebase SDK for Apple App Development",
       "html_url": "https://github.com/firebase/firebase-ios-sdk",
@@ -6276,10 +6276,10 @@
         "storage-service"
       ],
       "created_at": "2017-04-22T00:26:50Z",
-      "updated_at": "2026-09-30T15:13:44Z",
-      "pushed_at": "2026-09-29T23:53:37Z",
+      "updated_at": "2026-09-30T22:54:06Z",
+      "pushed_at": "2026-09-30T18:18:55Z",
       "license": "Apache-2.0",
-      "open_issues": 440,
+      "open_issues": 439,
       "default_branch": "main",
       "sources": [
         {
@@ -6288,7 +6288,7 @@
           "language": "C++",
           "trending_stars_period": 4,
           "trending_total_forks": null,
-          "trending_total_stars": 6721,
+          "trending_total_stars": 6754,
           "type": "trending_daily"
         }
       ],
@@ -6296,9 +6296,9 @@
     },
     {
       "full_name": "harry0703/MoneyPrinterTurbo",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 127347,
-      "forks": 19921,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 127520,
+      "forks": 19951,
       "language": "Python",
       "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
       "html_url": "https://github.com/harry0703/MoneyPrinterTurbo",
@@ -6319,7 +6319,7 @@
         "youtube-shorts"
       ],
       "created_at": "2024-03-11T02:57:34Z",
-      "updated_at": "2026-09-30T15:18:25Z",
+      "updated_at": "2026-09-30T22:53:31Z",
       "pushed_at": "2026-09-30T12:59:35Z",
       "license": "MIT",
       "open_issues": 40,
@@ -6329,9 +6329,9 @@
           "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
           "full_name": "harry0703/MoneyPrinterTurbo",
           "language": "Python",
-          "trending_stars_period": 338,
+          "trending_stars_period": 464,
           "trending_total_forks": null,
-          "trending_total_stars": 127347,
+          "trending_total_stars": 127520,
           "type": "trending_daily"
         }
       ],
@@ -6339,9 +6339,9 @@
     },
     {
       "full_name": "heygen-com/hyperframes",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 54507,
-      "forks": 4953,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 54692,
+      "forks": 4971,
       "language": "TypeScript",
       "description": "Write HTML. Render video. Built for agents.",
       "html_url": "https://github.com/heygen-com/hyperframes",
@@ -6359,10 +6359,10 @@
         "video"
       ],
       "created_at": "2026-03-10T01:51:06Z",
-      "updated_at": "2026-09-30T15:20:49Z",
-      "pushed_at": "2026-09-30T15:20:08Z",
+      "updated_at": "2026-09-30T22:54:31Z",
+      "pushed_at": "2026-09-30T22:54:39Z",
       "license": "Apache-2.0",
-      "open_issues": 194,
+      "open_issues": 201,
       "default_branch": "main",
       "sources": [
         {
@@ -6371,7 +6371,7 @@
           "language": "TypeScript",
           "trending_stars_period": 352,
           "trending_total_forks": null,
-          "trending_total_stars": 54507,
+          "trending_total_stars": 54692,
           "type": "trending_daily"
         }
       ],
@@ -6379,27 +6379,27 @@
     },
     {
       "full_name": "mattpocock/skills",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 272709,
-      "forks": 22945,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 272963,
+      "forks": 22957,
       "language": "Shell",
       "description": "Skills for Real Engineers. Straight from my .agents directory.",
       "html_url": "https://github.com/mattpocock/skills",
       "topics": [],
       "created_at": "2026-02-03T11:15:53Z",
-      "updated_at": "2026-09-30T15:19:33Z",
+      "updated_at": "2026-09-30T22:53:50Z",
       "pushed_at": "2026-09-29T12:38:37Z",
       "license": "MIT",
-      "open_issues": 537,
+      "open_issues": 539,
       "default_branch": "main",
       "sources": [
         {
           "description": "Skills for Real Engineers. Straight from my .agents directory.",
           "full_name": "mattpocock/skills",
           "language": "Shell",
-          "trending_stars_period": 736,
+          "trending_stars_period": 908,
           "trending_total_forks": null,
-          "trending_total_stars": 272709,
+          "trending_total_stars": 272963,
           "type": "trending_daily"
         }
       ],
@@ -6407,9 +6407,9 @@
     },
     {
       "full_name": "mksglu/context-mode",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 24351,
-      "forks": 1758,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 24471,
+      "forks": 1768,
       "language": "TypeScript",
       "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and   enforces routing across 17 platforms via MCP + hooks.",
       "html_url": "https://github.com/mksglu/context-mode",
@@ -6436,10 +6436,10 @@
         "zed-extension"
       ],
       "created_at": "2026-02-23T05:56:28Z",
-      "updated_at": "2026-09-30T15:20:34Z",
+      "updated_at": "2026-09-30T22:52:24Z",
       "pushed_at": "2026-09-30T12:07:33Z",
       "license": "Other",
-      "open_issues": 302,
+      "open_issues": 303,
       "default_branch": "main",
       "sources": [
         {
@@ -6448,7 +6448,7 @@
           "language": "TypeScript",
           "trending_stars_period": 88,
           "trending_total_forks": null,
-          "trending_total_stars": 24351,
+          "trending_total_stars": 24471,
           "type": "trending_daily"
         }
       ],
@@ -6456,18 +6456,18 @@
     },
     {
       "full_name": "modelcontextprotocol/servers",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 90740,
-      "forks": 11718,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 90798,
+      "forks": 11723,
       "language": "TypeScript",
       "description": "Model Context Protocol Servers",
       "html_url": "https://github.com/modelcontextprotocol/servers",
       "topics": [],
       "created_at": "2024-11-19T01:10:17Z",
-      "updated_at": "2026-09-30T15:18:26Z",
+      "updated_at": "2026-09-30T22:54:03Z",
       "pushed_at": "2026-09-30T10:02:11Z",
       "license": "Other",
-      "open_issues": 562,
+      "open_issues": 563,
       "default_branch": "main",
       "sources": [
         {
@@ -6476,7 +6476,7 @@
           "language": "TypeScript",
           "trending_stars_period": 48,
           "trending_total_forks": null,
-          "trending_total_stars": 90740,
+          "trending_total_stars": 90798,
           "type": "trending_daily"
         }
       ],
@@ -6484,9 +6484,9 @@
     },
     {
       "full_name": "openclaw/openclaw",
-      "captured_at": "2026-09-30T15:20:48Z",
-      "stars": 390872,
-      "forks": 82208,
+      "captured_at": "2026-09-30T22:54:41Z",
+      "stars": 390974,
+      "forks": 82215,
       "language": "TypeScript",
       "description": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 ",
       "html_url": "https://github.com/openclaw/openclaw",
@@ -6500,10 +6500,10 @@
         "personal"
       ],
       "created_at": "2025-11-24T10:16:47Z",
-      "updated_at": "2026-09-30T15:17:50Z",
-      "pushed_at": "2026-09-30T15:20:45Z",
+      "updated_at": "2026-09-30T22:54:44Z",
+      "pushed_at": "2026-09-30T22:54:35Z",
       "license": "Other",
-      "open_issues": 9095,
+      "open_issues": 9177,
       "default_branch": "main",
       "sources": [
         {
@@ -6512,7 +6512,7 @@
           "language": "TypeScript",
           "trending_stars_period": 136,
           "trending_total_forks": null,
-          "trending_total_stars": 390872,
+          "trending_total_stars": 390973,
           "type": "trending_daily"
         }
       ],
@@ -6521,19 +6521,26 @@
   ],
   "covered": {
     "852wa/JIZURA": "2026-09-29",
+    "ComposioHQ/awesome-claude-skills": "2026-09-30",
     "Contrastive-LM/CLM": "2026-09-29",
+    "DietrichGebert/ponytail": "2026-09-30",
     "FxEmbed/FxEmbed": "2026-09-29",
     "HKUDS/CLI-Anything": "2026-09-29",
     "KKKKhazix/AIHOT": "2026-09-30",
     "NVIDIA/OpenShell": "2026-09-29",
+    "NawfalMotii79/PLFM_RADAR": "2026-09-30",
     "Niko1221/Strata": "2026-09-30",
     "PrismML-Eng/Bonsai-demo": "2026-09-29",
     "Tencent/WeKnora": "2026-09-29",
     "TencentCloud/Octop": "2026-09-29",
     "VectifyAI/PageIndex": "2026-09-29",
+    "alirezarezvani/claude-skills": "2026-09-30",
+    "anthropics/claude-code-action": "2026-09-30",
     "anthropics/financial-services": "2026-09-29",
     "averygan/reclip": "2026-09-29",
+    "byoungd/up": "2026-09-30",
     "cloudflare/security-audit-skill": "2026-09-29",
+    "colbymchenry/codegraph": "2026-09-30",
     "cs341-illinois/coursebook": "2026-09-29",
     "davila7/claude-code-templates": "2026-09-29",
     "debpalash/VoiceStudio": "2026-09-29",
@@ -6541,11 +6548,18 @@
     "dzhng/jevgrep": "2026-09-30",
     "elastic/elasticsearch": "2026-09-29",
     "feitangyuan/onetake": "2026-09-30",
+    "firebase/firebase-ios-sdk": "2026-09-30",
     "firelex/jeff": "2026-09-30",
+    "harry0703/MoneyPrinterTurbo": "2026-09-30",
+    "heygen-com/hyperframes": "2026-09-30",
+    "mattpocock/skills": "2026-09-30",
     "mexicat/pdoom-video": "2026-09-30",
     "mikehasa/golive-skill": "2026-09-30",
+    "mksglu/context-mode": "2026-09-30",
+    "modelcontextprotocol/servers": "2026-09-30",
     "mvschwarz/openrig": "2026-09-29",
     "oblien/openship": "2026-09-29",
+    "openclaw/openclaw": "2026-09-30",
     "paperclipai/paperclip": "2026-09-29",
     "pbakaus/impeccable": "2026-09-29",
     "pytorch/pytorch": "2026-09-29",
@@ -6564,14 +6578,17 @@
   "sent_digests": {
     "20260929T175050Z": 35,
     "20260929T192036Z": 47,
-    "20260930T112141Z": 59
+    "20260930T112141Z": 59,
+    "20260930T225441Z": 61
   },
-  "sent_slots": {},
+  "sent_slots": {
+    "2026-09-30-pm": 61
+  },
   "pending_digests": {},
   "llm_daily_requests": {
     "2026-09-28": 21,
     "2026-09-29": 65,
-    "2026-09-30": 63
+    "2026-09-30": 66
   },
   "delivery_progress": {
     "20260930T143510Z": {
