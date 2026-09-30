@@ -1329,7 +1329,12 @@ fn render_issue_chunks(digest: &Value) -> Vec<String> {
         "*🚀 GitHub Digest*\nСрез: {when}\n{} с прошлого выпуска — всё опубликованное ранее не повторяется\n",
         markdown_v2_escape(&counted)
     );
-    let footer = "_Порядок: недельный Trending, затем дневный Trending, затем новые репозитории. Полные данные — в артефакте прогона._";
+    let footer = format!(
+        "_{}_",
+        markdown_v2_escape(
+            "Порядок: недельный Trending, затем дневный Trending, затем новые репозитории. Полные данные — в артефакте прогона."
+        )
+    );
     let mut chunks = Vec::new();
     let mut current = header.clone();
     for entry in entries {
@@ -1344,13 +1349,13 @@ fn render_issue_chunks(digest: &Value) -> Vec<String> {
         current.push('\n');
         current.push_str(&item);
     }
-    if !footer.chars().all(|c| c.is_whitespace()) {
+    if !footer.trim().is_empty() {
         if current.chars().count() + footer.chars().count() + 2 > ISSUE_CHUNK_LIMIT {
             chunks.push(current.trim_end().to_string());
             current = "*🚀 GitHub Digest — продолжение*\n".to_string();
         }
         current.push('\n');
-        current.push_str(footer);
+        current.push_str(&footer);
     }
     chunks.push(current.trim_end().to_string());
     chunks
@@ -2270,6 +2275,9 @@ mod tests {
         assert!(chunks[0].starts_with("*🚀 GitHub Digest*"));
         assert!(chunks[0].contains("10 новых проектов"));
         assert!(chunks[0].contains("[org/repo\\-1](https://github.com/org/repo-1)"));
+        // MarkdownV2 reserves '.', so every literal dot outside URLs must be
+        // escaped — an unescaped one makes Telegram reject the whole issue.
+        assert!(chunks[0].contains("новые репозитории\\. Полные"));
         for chunk in &chunks {
             assert!(chunk.chars().count() <= 3_800);
         }
