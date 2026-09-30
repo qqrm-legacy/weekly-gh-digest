@@ -13,6 +13,9 @@ use std::thread;
 use std::time::Duration as StdDuration;
 
 const API: &str = "https://api.github.com";
+/// Cap on freshly selectable candidates per run; already covered
+/// repositories do not consume cap slots, so the top-30 fresh pool always
+/// reaches the digest.
 const MAX_CANDIDATES: usize = 30;
 const MAX_DIGEST_ENTRIES: usize = 10;
 const README_LIMIT: usize = 5_000;
@@ -151,17 +154,9 @@ fn write_json(path: &Path, value: &impl Serialize) -> Result<()> {
     Ok(())
 }
 
-/// Lenient read for places where an empty state is acceptable (README pick).
-fn read_state() -> State {
-    fs::read(state_path())
-        .ok()
-        .and_then(|b| serde_json::from_slice(&b).ok())
-        .unwrap_or_default()
-}
-
-/// Strict read for anything that feeds deduplication: a state file that
-/// exists but cannot be parsed must abort the run instead of silently
-/// starting from empty memory and reposting already published projects.
+/// Strict read: a state file that exists but cannot be parsed must abort
+/// the run instead of silently starting from empty memory and reposting
+/// already published projects.
 fn read_state_strict() -> Result<State> {
     let bytes = match fs::read(state_path()) {
         Ok(bytes) => bytes,
@@ -402,12 +397,27 @@ fn collect(now: DateTime<Utc>) -> Result<RunData> {
         };
         candidate_key(a).cmp(&candidate_key(b))
     });
-    let selected: Vec<Candidate> = all.iter().take(MAX_CANDIDATES).cloned().collect();
-    let excluded: Vec<Value> = all
+    // Covered repositories never consume cap slots: they are dropped before
+    // the top-30 cut, so newcomers to the trending pages always make the
+    // fresh pool no matter how many historical reviews are already stored.
+    let covered = read_state_strict()?.covered;
+    let (fresh, already_covered): (Vec<&Candidate>, Vec<&Candidate>) = all
         .iter()
-        .skip(MAX_CANDIDATES)
-        .map(|x| json!({"full_name":x.name,"reason":"candidate cap after stable source priority"}))
+        .partition(|candidate| !covered.contains_key(&candidate.name));
+    let selected: Vec<Candidate> = fresh
+        .iter()
+        .take(MAX_CANDIDATES)
+        .map(|candidate| (*candidate).clone())
         .collect();
+    let mut excluded: Vec<Value> = already_covered
+        .iter()
+        .map(|x| {
+            json!({"full_name":x.name,"reason":format!("already reviewed in the digest on {}", covered.get(&x.name).cloned().unwrap_or_default())})
+        })
+        .collect();
+    excluded.extend(fresh.iter().skip(MAX_CANDIDATES).map(
+        |x| json!({"full_name":x.name,"reason":"candidate cap after stable source priority"}),
+    ));
     let mut api_records = Vec::new();
     let mut snapshots = Vec::new();
     for candidate in &selected {
@@ -481,7 +491,6 @@ fn collect(now: DateTime<Utc>) -> Result<RunData> {
         thread::sleep(StdDuration::from_millis(100));
     }
     let mut readme_names = Vec::<String>::new();
-    let covered = read_state().covered;
     let mut readme_candidates: Vec<&Snapshot> = snapshots
         .iter()
         .filter(|snapshot| !covered.contains_key(&snapshot.full_name))
@@ -2351,6 +2360,15 @@ fn deliver_new_digest(
         .as_array()
         .is_none_or(|entries| entries.is_empty())
     {
+        let sources = digest["manifest"]["sources"].as_array();
+        let all_failed = sources.is_some_and(|sources| {
+            !sources.is_empty() && sources.iter().all(|source| source["status"] != "included")
+        });
+        if all_failed {
+            return Err(anyhow!(
+                "every candidate source failed; refusing to report a quiet day"
+            ));
+        }
         println!("No fresh candidates after deduplication; reporting to the technical chat");
         tech_notice(
             "🤖 GitHub Digest: новых проектов с прошлого выпуска не появилось. Основной чат не тревожу.",
