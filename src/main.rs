@@ -17,7 +17,10 @@ const API: &str = "https://api.github.com";
 /// repositories do not consume cap slots, so the top-30 fresh pool always
 /// reaches the digest.
 const MAX_CANDIDATES: usize = 30;
-const MAX_DIGEST_ENTRIES: usize = 10;
+/// A digest is not a fixed-size top: it publishes the whole fresh
+/// difference — every uncovered candidate from the current pool. This
+/// ceiling equals the pool cap and exists only to bound the worst case.
+const MAX_DIGEST_ENTRIES: usize = 30;
 const README_LIMIT: usize = 5_000;
 const MAX_LLM_REQUESTS: usize = 40;
 const DAILY_LLM_REQUEST_CAP: usize = 100;
@@ -2672,13 +2675,15 @@ mod tests {
 
         let (selected, excluded) = select_candidates(&snapshots, &covered);
 
-        // Nine uncovered weekly candidates by +N desc, then the daily one;
-        // the new repository falls out of the ten-entry cap.
-        assert_eq!(selected.len(), MAX_DIGEST_ENTRIES);
+        // The digest is the whole fresh difference: nine uncovered weekly
+        // candidates by +N desc, then the daily one, then the new one.
+        // Covered repositories do not consume cap slots.
+        assert_eq!(selected.len(), 11);
         assert_eq!(selected[0].snapshot.full_name, "org/week-08");
         assert_eq!(selected[1].snapshot.full_name, "org/week-07");
         assert_eq!(selected[8].snapshot.full_name, "org/week-00");
         assert_eq!(selected[9].snapshot.full_name, "org/daily-hot");
+        assert_eq!(selected[10].snapshot.full_name, "org/new-but-big");
         assert_eq!(
             selected[0].period,
             "GitHub Trending: звёзды за неделю".to_string()
@@ -2690,11 +2695,13 @@ mod tests {
         assert!(excluded.iter().any(
             |row| row["full_name"] == "org/week-10" && row["source_kind"] == "trending_weekly"
         ));
-        assert!(excluded.iter().any(|row| {
-            row["full_name"] == "org/new-but-big"
-                && row["reason"]
-                    .as_str()
-                    .is_some_and(|reason| reason.contains("cap"))
-        }));
+        assert!(excluded.iter().any(
+            |row| row["full_name"] == "org/week-09" && row["source_kind"] == "trending_weekly"
+        ));
+        assert!(
+            !excluded
+                .iter()
+                .any(|row| row["full_name"] == "org/new-but-big")
+        );
     }
 }

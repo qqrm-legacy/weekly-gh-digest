@@ -11,7 +11,7 @@ Twice-daily Russian digest of fresh GitHub projects, delivered to Telegram. Rust
 - Stores source responses, manifests, selection traces, and star history on the `bot-state` branch. Each run also uploads a 90-day artifact with the digest preview and provenance.
 - Manual `workflow_dispatch` defaults to `dry_run=true` and uploads a preview artifact; `dry_run=false` delivers a full debug preview (project posts, linked overview, audit) to the private technical chat; `deliver_to_main_chat=true` performs a scheduled delivery immediately.
 
-Every probe takes at most ten projects, ordered deterministically: weekly Trending by displayed weekly star count (`+N`) first, then daily Trending by daily `+N`, then new repositories by total stars. Repositories that were covered but rotated out of the top wait for the next slot's cap rather than displacing fresher candidates. Current total stars are shown separately and do not determine order. A `selection.json` pool trace is stored with each run, and a retry re-validates a stored digest against it.
+A digest is not a fixed-size top: it publishes the whole fresh difference between the current pool and everything already reviewed. The pool is the union of the top-30 per source, ordered deterministically: weekly Trending by displayed weekly star count (`+N`) first, then daily Trending by daily `+N`, then new repositories by total stars — three newcomers means a three-card issue, twenty-five means twenty-five. Covered repositories do not consume pool slots, so newcomers always reach the issue. Current total stars are shown separately and do not determine order. A `selection.json` pool trace is stored with each run, and a retry re-validates a stored digest against it.
 
 ## Cadence and Actions minutes
 
