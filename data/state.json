@@ -5199,6 +5199,782 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "Aureliengmz/clearwater",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 490,
+      "forks": 94,
+      "language": "HTML",
+      "description": "Real-time, photoreal shallow water in a single HTML file. WebGL2, no libraries, no build step.",
+      "html_url": "https://github.com/Aureliengmz/clearwater",
+      "topics": [
+        "caustics",
+        "fft",
+        "realtime-rendering",
+        "shaders",
+        "single-file",
+        "water",
+        "webgl2"
+      ],
+      "created_at": "2026-09-23T13:20:08Z",
+      "updated_at": "2026-09-30T07:00:15Z",
+      "pushed_at": "2026-09-23T13:20:28Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JohnHeibel/ClaudeAnimationBase",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 604,
+      "forks": 63,
+      "language": "JavaScript",
+      "description": "A starter kit for animating hand-painted cartoons with Claude: p5.js + p5.brush, the Clawd character, 31 acted emotions and a guide for the model",
+      "html_url": "https://github.com/JohnHeibel/ClaudeAnimationBase",
+      "topics": [],
+      "created_at": "2026-09-23T20:27:00Z",
+      "updated_at": "2026-09-30T10:11:37Z",
+      "pushed_at": "2026-09-24T07:41:21Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "KKKKhazix/AIHOT",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 3832,
+      "forks": 1100,
+      "language": "TypeScript",
+      "description": "一个自己找热点、自己写日报的网站框架。把信源和精选标准换成你的，它就是你的行业热点站。",
+      "html_url": "https://github.com/KKKKhazix/AIHOT",
+      "topics": [
+        "ai",
+        "content-curation",
+        "llm",
+        "mcp",
+        "news-aggregator",
+        "rss",
+        "self-hosted",
+        "typescript"
+      ],
+      "created_at": "2026-09-28T23:40:05Z",
+      "updated_at": "2026-09-30T11:19:30Z",
+      "pushed_at": "2026-09-30T09:31:24Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "<p align=\"center\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/banner-dark.png\">\n    <img src=\"docs/assets/banner-light.png\" alt=\"AIHOT：每个行业，都可以有自己的 AIHOT。很多条信源流进中间的精选，再分给法律、人力资源、金融等各个行业\" width=\"100%\">\n  </picture>\n</p>\n\n<p align=\"center\">\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-176b75?style=flat-square\" alt=\"MIT License\"></a>\n  <img src=\"https://img.shields.io/badge/Node.js-24-176b75?style=flat-square&logo=nodedotjs&logoColor=white\" alt=\"Node.js 24\">\n  <img src=\"https://img.shields.io/badge/PostgreSQL-17-176b75?style=flat-square&logo=postgresql&logoColor=white\" alt=\"PostgreSQL 17\">\n  <img src=\"https://img.shields.io/badge/Docker-Compose-176b75?style=flat-square&logo=docker&logoColor=white\" alt=\"Docker Compose\">\n  <a href=\"https://aihot.news\"><img src=\"https://img.shields.io/badge/demo-aihot.news-202a30?style=flat-square\" alt=\"aihot.news\"></a>\n</p>\n\n<p align=\"center\">\n  <b>一个自己找热点、自己写日报的网站框架。</b><br>\n  把信源换成你的，把精选标准换成你的 KnowHow，它就是你的行业热点站。\n</p>\n\n<p align=\"center\">\n  <a href=\"#跑起来\">跑起来</a> ·\n  <a href=\"docs/customize.md\">改成你的行业</a> ·\n  <a href=\"#它是怎么工作的\">它是怎么工作的</a> ·\n  <a href=\"#文档\">文档</a> ·\n  <a href=\"https://github.com/KKKKhazix/AIHOT/discussions\">社区交流</a>\n</p>\n\n<br>\n\n## 这是什么\n\n[AIHOT](https://aihot.news) 是我做的一个 AI 热点网站。它每天从一批信源里收资料，用大模型先筛一遍、再独立打两次分，挑出真正值得看的，写成中文标题和摘要；把不同来源说的同一件事聚成一个事件，按有多少人在说排出热点；每天早上出一份日报。\n\n这个仓库是它的完整框架：网站、后台、精选流程、聚簇和热度算法，**所有提示词的原文和入选门槛**，都在这里。\n\n## 为什么开源\n\n这半年，很多做法律、做 HR、做金融、做贵金属的朋友问我，能不能也给他们的行业做一个。\n\n我做不了。我不懂你们的行业，不知道哪些信源有用，也不知道什么样的消息，对你们来说才叫热点。\n\n但你们懂。\n\n既然我没办法满足所有人，那就把火种交到大家自己手上。\n\n## 说在前面\n\n- **我不是专业的开发者。** 我是设计师出身，半年前还看不太懂代码。这套代码是我和 AI 一起重写的，比以前干净了很多，但一定还有写得不好的地方。发现问题欢迎提 Issue，我不一定能很快回复，先说声抱歉。\n- **这是一份快照。** 它来自 AIHOT 正在线上跑的代码，不是精心打磨的通用框架。以后 AIHOT 的更新，我会尽量同步过来，但没法保证每一次都同步。\n- **里面没有 AIHOT 的信源名单和运营数据。** 仓库带了 18 个公开的海外 AI 资讯源做示范，够你跑起来看效果；真正的信源，要换成你自己行业的。\n- **请不要用 AIHOT 的名字和 Logo。** 换上你自己的名字，它就是你的站。\n\n## 它是怎么工作的\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/how-dark.png\">\n  <img src=\"docs/assets/how-light.png\" alt=\"六步：采集、预筛、两次评分、写作、聚簇、热点与成刊\" width=\"100%\">\n</picture>\n\n一条资料从信源进来，先判重，再预筛；可能重要的独立打两次分，过了门槛才进精选；然后写中文标题和摘要，和别的报道聚成事件，算进热度，最后进日报。每一步的提示词都在 [`industry/prompts/`](industry/prompts/)，改标准不用改代码。详见 [精选与校准](docs/selection.md)。\n\n### 聚簇与热点\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/cluster-dark.png\">\n  <img src=\"docs/assets/cluster-light.png\" alt=\"五个来源的报道聚成一个事件，事件进入当前热点榜\" width=\"100%\">\n</picture>\n\n同一件事，官网发一篇、媒体转十篇、X 上吵一天，读者只需要看到一次。AIHOT 把它们聚成一个**事件**：先用标题摘要的向量在最近两周里找候选，再让模型判断是同一件事、后续进展，还是两件事；拿不准的合并，换一家模型再确认一遍。\n\n**热度**按事件算，不按文章算：48 小时内，每个独立来源只算一次，24 小时减半。重复抓取不会多算，一家媒体发十篇也只算一次，所以排在前面的，是真正有很多人在说的事。\n\n### 速度\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/perf-dark.png\">\n  <img src=\"docs/assets/perf-light.png\" alt=\"AIHOT 线上实测：页面中位数 10 毫秒，95% 在 50 毫秒内；接口中位数 6 毫秒，95% 在 12 毫秒内；文章页 95% 在 14 毫秒内\" width=\"100%\">\n</picture>\n\n## 你会得到什么\n\n| | |\n|---|---|\n| **六种信源** | RSS、网页列表、JSON 接口、X 账号、微信公众号，以及你自己脚本推送进来的内容。信源分级（官方一手 / 媒体个人），抓取频率按产出自动调整 |\n| **精选** | 预筛，同一份评分标准独立打两次分，再按信源分级的门槛决定入选。提示词和门槛全部公开，全部可以改；用你自己标注的样本在 SelectBench 里校准 |\n| **写作** | 中文标题、答案先行的摘要、推荐理由、标签，外文全文翻译；防止模型把原文没提到的公司写进标题 |\n| **聚簇** | 不同来源报道的同一件事聚成一个事件，后续进展挂在同一个事件下，事件页有综述；人工改过的归属不会被覆盖 |\n| **热点** | 按事件算热度：独立来源越多越靠前，X 上的讨论也算进来；和 6 小时前比，涨得快的标上升，新出现的标“新” |\n| **日报、周报、月报** | 每天 08:00 出日报，每周一出周报，每月 1 日出月报，按分类分节，带导语 |\n| **主题与搜索** | 公司、方向、内容形态三类主题页；标题摘要搜索和全文相关搜索 |\n| **给 Agent 用** | RSS（精选、全部、全文、日报）、公开 API、MCP、`llms.txt`，同一份内容给人看也给 Agent 用 |\n| **后台** | 信源管理与试抓、内容诊断、精选评测、每一步单独换模型、付费服务的预算熔断、运行记录与告警 |\n| **AI 专属模块** | 模型榜（汇总多家公开评测，方法公开）和 Codex 重置监控。别的行业一个开关关掉 |\n\n## 看一眼\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/shots-dark.png\">\n  <img src=\"docs/assets/shots-light.png\" alt=\"首页的当前热点与精选，关于页的信源河\" width=\"100%\">\n</picture>\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/board-dark.png\">\n  <img src=\"docs/assets/board-light.png\" alt=\"模型榜\" width=\"100%\">\n</picture>\n\n<p align=\"center\"><sub>截图来自用示范信源跑起来的本地站，站名是默认的 MyHOT。</sub></p>\n\n## 跑起来\n\n想创建自己的独立站点，可以先点 [Use this template](https://github.com/KKKKhazix/AIHOT/generate)，再克隆你生成的仓库。想持续合并上游更新或贡献代码，建议先 Fork。下面的命令适合直接试用。\n\n需要 [Docker](https://docs.docker.com/get-docker/)，和一个 OpenAI 兼容的模型 API Key（DeepSeek、千问、智谱都可以）。\n\n```bash\ngit clone https://github.com/KKKKhazix/AIHOT.git myhot\ncd myhot\nnode scripts/init-env.ts --llm-key <你的模型 API Key>\ndocker compose up -d --build\n```\n\n打开 <http://localhost:3000>。后台在 `/admin`，管理员密码在 `.env` 的 `ADMIN_PASSWORD` 里。一两分钟后开始有内容，第一次导入的资料大约半小时处理完。\n\n机器上没有 Node、服务器在中国大陆、要配域名和 HTTPS，见 [部署](docs/deploy.md)。\n\n## 把它改成你的行业\n\n最省事的办法：打开你的 Agent（Claude Code、Codex 都可以），把这个仓库交给它，然后说：\n\n```text\n请读 AGENTS.md 和 docs/customize.md，把这个站改成「法律」行业的热点站。\n我关心的是：……（你想盯哪些信源，你觉得什么消息重要、什么不重要，越具体越好）。\n```\n\n要改的东西几乎都在 [`industry/`](industry/) 这一个文件夹里，代码基本不用动：\n\n| 文件 | 改什么 |\n|---|---|\n| `site.ts` | 站名、行业词、首页文案、关于页 |\n| `taxonomy.ts`、`topics.json` | 分类、标签、主题 |\n| `sources.json` | 首次启动时导入的信源 |\n| `prompts/` | 精选标准和写作要求。**你的行业"
+    },
+    {
+      "full_name": "Liuziyu77/Valen",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 550,
+      "forks": 57,
+      "language": "Python",
+      "description": "Train a Jev-like multimodal model by yourself. System One Model, now with vision.",
+      "html_url": "https://github.com/Liuziyu77/Valen",
+      "topics": [],
+      "created_at": "2026-09-23T02:48:02Z",
+      "updated_at": "2026-09-30T11:11:29Z",
+      "pushed_at": "2026-09-30T07:34:14Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Niko1221/Strata",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 2147,
+      "forks": 242,
+      "language": "C++",
+      "description": "Qwen3.8-Flash-Next (125B MoE) on a 8GB+ NVIDIA GPU: one-click install for Windows / Linux. Strata inference engine, OpenAI/Anthropic API on localhost, optional image input.",
+      "html_url": "https://github.com/Niko1221/Strata",
+      "topics": [],
+      "created_at": "2026-09-24T16:40:20Z",
+      "updated_at": "2026-09-30T11:14:39Z",
+      "pushed_at": "2026-09-30T09:45:27Z",
+      "license": "MIT",
+      "open_issues": 64,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "<h1 align=\"center\">Strata</h1>\n\n<p align=\"center\"><b>Run a 125-billion-parameter AI model on a normal gaming PC</b><br>\none NVIDIA card (12-24 GB) + 64 GB of RAM · Windows or Linux · one click to install</p>\n\n<p align=\"center\"><a href=\"https://github.com/Niko1221/Strata/releases/download/v0.1.10/Pagoda.mp4\"><img src=\"docs/media/pagoda-preview.webp\" width=\"720\" alt=\"A voxel pagoda garden that Strata's model wrote, running in the browser\"></a><br>\n<sub>A voxel pagoda garden, 1 shot prompt running on an RTX 5070 with Strata (IQ3_S, 128K context) ·\n<a href=\"https://github.com/Niko1221/Strata/releases/download/v0.1.10/Pagoda.mp4\">full video (49 s)</a></sub></p>\n\nStrata runs **[Qwen3.8-Flash-Next](https://huggingface.co/Qwen/Qwen3.8-Flash-Next)** - a large, smart AI model that\nnormally needs a server - on your own PC. It writes its answers at **60-95 tokens per second** (a token is about ¾\nof a word): faster than you can read.\n\n- **Free and open source.**\n\n> **Jump to:** [How fast?](#how-fast-is-it) · [Which model?](#which-model-should-i-pick) · [Install](#install) ·\n> [Using it](#using-it) · [Problems?](#something-went-wrong) · [How it works](#how-does-it-work) ·\n> [All the details](docs/DETAILS.md)\n\n---\n\n## How fast is it?\n\nMeasured on an RTX 5070 (12 GB), a Ryzen 5 7600 and 64 GB of RAM:\n\n| Size | Writes answers (short chat) | Writes answers (128K context) | Reads your prompt |\n| --- | ---: | ---: | ---: |\n| **Q2_0** | 93 tokens/s | 74 tokens/s | 2,170 tokens/s |\n| **IQ2_XS** | 79 tokens/s | 63 tokens/s | 2,090 tokens/s |\n| **IQ3_XXS** | 62 tokens/s | 49 tokens/s | 1,750 tokens/s |\n| **IQ3_S** | 53 tokens/s | 46 tokens/s | 1,620 tokens/s |\n| **Coder** (IQ1_M) | 55 tokens/s | 43 tokens/s | 2,180 tokens/s |\n\n- **Writes answers** = how fast the reply appears (tokens per second).\n- **Reads your prompt** = how fast it takes in what you send (long documents, code, chat history), measured on a\n  32K-token prompt; a 4K prompt reads at 910-1,580 tokens/s. A 32K prompt takes about 15 seconds with Q2_0.\n\nA card with more VRAM is faster, because more of the model fits on the GPU: an RTX 3090 (24 GB) should do roughly\n100-140 tokens per second. All measurements, long-context numbers and estimates for other cards are in the\n[details](docs/DETAILS.md#speed-measured).\n\nEvery PC is different: `START-HERE.bat --calibrate` measures a few engine settings on yours and keeps the fastest\n(about 5-10 minutes; on the PC above it made the Coder 7% faster).\n\n**Two or three NVIDIA cards?** Just run `START-HERE.bat`: it lists your cards, says which ones Strata can use, and\nasks whether to share the model across them (recommended when two can). An install made on one card asks once at\nits next start. Or choose yourself: `START-HERE.bat --gpus 0,2` (both, remembered), `--gpus all`, or `--gpu 0` (one\ncard, this start only). Each card keeps the experts of its own layers, and prompts flow through the cards in a\npipeline: on an RTX 5080 + RTX 3090 prompts were read 18-20% faster than on the 5080 alone, decoding on par.\nEvery card must be an RTX 20 series or newer with 8 GB or more. See [docs/MULTI_GPU.md](docs/MULTI_GPU.md).\n\n## Which model should I pick?\n\n**The size** (the same model, compressed more or less):\n\n| Model | RAM+VRAM Requirements | Speed | Quality |\n| --- | ---: | --- | --- |\n| **Q2_0** | 37.6 GB | fastest | good |\n| **IQ2_XS** | 39.2 GB | fast | better (**recommended**) |\n| **IQ3_XXS** | 47.0 GB | slower | great |\n| **IQ3_S** | 54.8 GB | slowest | best: matches the full model on the published tests (original model only) |\n\n**Will it fit?** Shard 1 is the part of the model that gets loaded when it starts: its experts go into your **RAM**,\nthe rest onto your graphics card (the second shard, a 29 GB lookup table, stays on the SSD). So it fits when your\n**RAM is at least shard 1 + about 10 GB** for Windows and your other programs. With 64 GB of RAM every size fits\n(IQ3_S with little else open); with 48 GB, Q2_0 and IQ2_XS. A bigger graphics card makes it faster, but it doesn't\nlower the RAM needed.\n\n**The version:**\n\n- **Qwen3.8-Flash-Next** - the original.\n- **[Coder](https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF)** - ISTA-DASLab's coding\n  version: half of the experts removed, keeping the ones that code, tool use and images need (91% of the full model's\n  SWE-bench Verified score, 99% of LiveCodeBench, by its authors). One size (IQ1_M: its experts stored like IQ3_S):\n  shard 1 is **29.6 GB**, so it fits a PC with **32 GB of RAM**, runs 262K context on 64 GB, and reads long prompts\n  the fastest of all. Weaker outside coding.\n- **[Swift 1.5](https://huggingface.co/ukisai/Swift-1.5-Qwen3.8-Flash-Next-GSQ-RCO-GGUF)** - a fine-tune by UkisAI\n  that thinks much shorter before answering, so you get the answer sooner, with about the same quality. Same speed per\n  token, and about the same RAM as the same size of the original (no IQ3_S). Its own license applies (see its page).\n\nNot sure? Take **IQ2_XS** - or the "
+    },
+    {
+      "full_name": "OpSafari/hypoarena",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 545,
+      "forks": 27,
+      "language": "Python",
+      "description": "Scientific hypothesis-discovery workbench: grounded hypothesis-evidence graphs, synthetic literature with planted causal chains, generate-debate-evolve loops over pluggable offline adapters, Elo tournaments recovering planted skill order, paraphrase dedup, Bayesian evidence accumulation, reproducible reports. NumPy core, CPU-only torch extra.",
+      "html_url": "https://github.com/OpSafari/hypoarena",
+      "topics": [],
+      "created_at": "2026-09-30T03:35:45Z",
+      "updated_at": "2026-09-30T10:40:31Z",
+      "pushed_at": "2026-09-30T03:39:30Z",
+      "license": "MIT",
+      "open_issues": 15,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "amitshekhariitbhu/ai-system-design",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 472,
+      "forks": 57,
+      "language": "Markdown",
+      "description": "AI System Design - Learn how to design AI systems built on LLMs, RAG, and AI Agents step by step.",
+      "html_url": "https://github.com/amitshekhariitbhu/ai-system-design",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-engineering",
+        "ai-system",
+        "ai-system-design",
+        "ai-systems",
+        "ai-systems-design",
+        "llm",
+        "system-design",
+        "system-design-interview"
+      ],
+      "created_at": "2026-09-25T04:50:06Z",
+      "updated_at": "2026-09-30T09:53:46Z",
+      "pushed_at": "2026-09-25T04:53:31Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "angusdevgo/Seep-Reverse-Lab",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 594,
+      "forks": 173,
+      "language": "Lua",
+      "description": "Agent-Native multi-platform reverse engineering and CWE-602 client-side authorization audit workbench.",
+      "html_url": "https://github.com/angusdevgo/Seep-Reverse-Lab",
+      "topics": [],
+      "created_at": "2026-09-23T18:05:31Z",
+      "updated_at": "2026-09-30T10:59:50Z",
+      "pushed_at": "2026-09-30T09:09:35Z",
+      "license": null,
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dgreenheck/tidewater",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 988,
+      "forks": 225,
+      "language": "JavaScript",
+      "description": "Coastal town built with Opus 5.5",
+      "html_url": "https://github.com/dgreenheck/tidewater",
+      "topics": [],
+      "created_at": "2026-09-23T21:40:29Z",
+      "updated_at": "2026-09-30T11:01:15Z",
+      "pushed_at": "2026-09-25T04:02:40Z",
+      "license": "MIT",
+      "open_issues": 13,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# Tidewater\n\nAn island fishing game for the browser. Cast from the pier, the beach or your own boat, fight the fish,\nsell your catch to Joe at the fish stand, and spend it on better gear at Marta's chandlery. Around it is a\nreal-time tropical island and ocean: swim the reef, drive the boat out to deep water, and watch a humpback\nbreach. It runs directly on WebGPU and WGSL with its own small rendering engine, no framework.\n\n**Play it:** https://dgreenheck.github.io/tidewater/\n\n![Fishing off the pier at golden hour](docs/screenshot.jpg)\n\n![The beach in the late afternoon](docs/screenshot-beach.jpg)\n\n## Requirements\n\n- A browser with WebGPU: a recent Chrome, Edge or Safari.\n- A capable GPU. It targets 60 fps at 2560×1267 on an Apple M5 Pro, and dynamic resolution scales\n  the render down on slower machines.\n- The first load compiles several hundred shaders, which can take a minute or more. Later visits are\n  faster because the browser caches them.\n\n## Features\n\n**Fishing**\n- A spinning rod and reel that cast, reel and bend under load, with the bail, rotor and crank animated.\n- Bites that depend on the water (shallows, pier, reef, bay, deep water), depth and time of day, across\n  18 Caribbean species.\n- A line-tension fight: keep the tension in the green band, ease off when the fish runs.\n- A full-screen catch card with the fish's length and weight, a fish log with records, and a cooler.\n- Joe's fish stand buys your catch; Marta's chandlery sells line, reels, rods, a bigger hold, fuel, a rebuilt\n  engine, a fish finder and deck floodlights for night fishing.\n- Walk the deck and the wheelhouse while the boat drifts; the boat burns fuel.\n- A first-play guide, contextual tips and a minimap. Progress is saved in the browser.\n\n**Ocean**\n- Four-cascade FFT ocean (Tessendorf spectra) with foam, whitecaps, wind streaks and swell.\n- Depth-aware breaking waves with peeling shoulders, whitewater, spray and foam lace.\n- A shallow-water simulation for swash running up and down the sand.\n- Boat wake and bow spray, and a whale wake.\n- Caustics on the seabed and in the water, with light shafts.\n- A split underwater/above-water view at the waterline, with water droplets on the lens after surfacing.\n- Refraction of the seabed through the surface, including behind the pier and boats.\n\n**Sky**\n- Physically based atmosphere (Hillaire 2020) with a sun, moon and stars.\n- Volumetric cumulus and wispy cirrus with cloud shadows on the land.\n- Aerial perspective and sea haze.\n- God rays, and a lens flare with occlusion.\n\n**World**\n- An island with a beach, hills, headlands and rocks.\n- A fishing village, a pier, and the vendors' stalls built from Poly Haven scans.\n- Realistic vendor characters (Microsoft Rocketbox) with skinned animation.\n- A coral reef with fish.\n- Palms, bananas, monstera, elephant ear, heliconia, bird of paradise, broadleaf trees, shrubs and dune\n  grass, with impostors and dithered LOD fades.\n- Beach debris.\n- Birds, crabs and marine snow.\n- A humpback whale with an escort of fish, blows, fluke dives and breaches.\n\n**Lighting and post**\n- Cascaded shadows with contact-hardening penumbrae, and screen-space contact shadows.\n- Ground bounce light.\n- GTAO ambient occlusion.\n- Temporal upscaling and sharpening.\n- Bloom, auto exposure and motion blur.\n- Night lighting from lanterns, windows and the boat, plus a flashlight that also works underwater.\n\n**Audio**\n- Positional audio from real CC0 field recordings: surf timed to each breaking wave, wind, birds, the boat\n  engine, footsteps by surface, underwater ambience, whale song, and the rod and reel (casts, the bail,\n  reeling, the drag, line snaps, splashes).\n\n## Controls\n\n| Key | Action |\n|---|---|\n| W A S D | Move |\n| Mouse | Look (click to capture the mouse, Esc to release) |\n| Shift | Sprint / boat boost |\n| Space | Jump / swim up |\n| C | Crouch / dive |\n| E | Interact: board the boat, take or leave the helm, step ashore, trade with the fish buyer or the chandlery |\n| V | Boat camera at the helm (1st / 3rd person) |\n| R | Take out / put away the fishing rod |\n| Left mouse | Hold to wind up, release to cast · strike when a fish takes the bait · hold to reel |\n| Right mouse | Reel an empty line in |\n| I or Tab | Cooler / fish hold and the fish log |\n| F | Free camera |\n| L | Flashlight |\n| T | Pause time |\n| M | Mute |\n| H | Settings panel |\n| P | Photo mode |\n| F1 or ? | All controls |\n\n### Fishing\n\nWalk the deck of the boat while it drifts, or fish from the pier and the beach. Cast, wait for the bobber\nto dip and strike when it's pulled under, then play the fish: keep the line tension in the green band,\nease off when it runs. Different water holds different fish (the shallows, the pier, the reef, the bay and\ndeep water offshore), and some bite best at dawn, dusk or night. Sell your catch to Joe at the fish stand\non the beach by the pier, and spend it at Marta's chandlery by the boathouse: stronger line, a faster reel,\na longer rod, a bigger fish hold, a larger fuel ta"
+    },
+    {
+      "full_name": "dzhng/jevgrep",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 1848,
+      "forks": 122,
+      "language": "TypeScript",
+      "description": "Find code by asking what it does. A CLI for coding agents that uses Jev to discover relevant files and source context.",
+      "html_url": "https://github.com/dzhng/jevgrep",
+      "topics": [
+        "ai-sdk",
+        "claude-code",
+        "cli",
+        "code-search",
+        "codex",
+        "coding-agents",
+        "context-retrieval",
+        "developer-tools",
+        "jev",
+        "semantic-search",
+        "typescript",
+        "vercel-ai-gateway"
+      ],
+      "created_at": "2026-09-26T04:06:56Z",
+      "updated_at": "2026-09-30T11:01:22Z",
+      "pushed_at": "2026-09-29T07:30:22Z",
+      "license": "MIT",
+      "open_issues": 25,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "![jevgrep — Same intelligence. About 30% lower cost.](assets/cover.png)\n\n# jevgrep\n\n[![npm](https://img.shields.io/npm/v/@dzhng/jevgrep?style=flat-square&color=ef5638)](https://www.npmjs.com/package/@dzhng/jevgrep)\n[![MIT license](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)\n[![Node.js 22+](https://img.shields.io/badge/Node.js-22%2B-339933?style=flat-square)](apps/cli/README.md)\n[![Release](https://img.shields.io/github/actions/workflow/status/dzhng/jevgrep/publish.yml?style=flat-square&label=release)](https://github.com/dzhng/jevgrep/actions/workflows/publish.yml)\n\n**Same intelligence. ~30% lower cost.**\n\nFind code by asking what it does. In our ten-task SWE-bench comparison, Jevgrep\nsuccessfully completed the same 8 of 10 tasks as the baseline, at lower cost.\n\nCoding agents spend part of every unfamiliar task finding the right files.\nJevgrep gives them a place to start: ask a repository question, and `jg` returns\nrelevant files, reading leads, and verbatim source excerpts in one stdout response.\nIt uses [Jev](https://vercel.com/ai-gateway/models/jev) to judge relevance across\nfolders, files, and declarations. Your coding agent then implements and tests the change.\n\n```sh\nnpm install -g @dzhng/jevgrep\njg auth\njg skill\njg \"How are telemetry events recorded and sent?\" ./my-project\n```\n\nRequires **Node.js 22+**, **macOS or Linux**, and a key for **Vercel AI Gateway, TypeSafe, OpenRouter, OpenCode Zen, or a custom TypeSafe-compatible endpoint**.\nNo separate Python, Bun, or ripgrep installation is required to use `jg`.\n\nProvider selection requires **0.3.0 or newer**. Upgrade an older installation with\n`npm install --global @dzhng/jevgrep@latest`.\n\n## Install the agent skill — required for agent setup\n\nInstalling the CLI alone does not teach your coding agent to use it. **Install\nthe skill as well**, from the project where your agent works:\n\n```sh\njg skill\n```\n\nThe installer detects your coding agents (Claude Code, Codex, OpenCode and\nothers) and asks where to install. Add `--global` for a user-wide install, or\n`--yes` for unattended installation. The\n[skill](skills/jevgrep/SKILL.md) explains installation, invocation and the meaning of returned context.\nIt leaves research and implementation decisions to the calling agent. The current repository skill\nchecks for `jg` and installs the CLI if it is missing; authentication still needs\nyour selected provider’s key. The skill installer itself does not configure credentials.\n\n`jg skill` delegates to the [skills CLI](https://github.com/vercel-labs/skills)\nand needs npm/npx plus network access. You can also run that installer directly,\nwithout the CLI installed:\n\n```sh\nnpx skills add dzhng/jevgrep --skill jevgrep\n```\n\nIn 0.1.0, `jg skill` only prints the bundled skill; use `npx skills` with that version.\n\n### Upgrade\n\nThere is currently no `jg upgrade` command. Upgrade the CLI with npm:\n\n```sh\nnpm install -g @dzhng/jevgrep@latest\njg --version\n```\n\nUpdate the installed skill separately by rerunning `jg skill`. Updating the npm package does not\noverwrite skill files in your projects. See the [package guide](apps/cli/README.md)\nfor authentication details.\n\n## Start with a question, leave with source\n\nUse `jg` when you know the behavior you need to understand but not where it lives:\n\n```sh\njg \"Where is authentication checked before a request reaches a handler?\" .\njg \"How are database connections created, pooled, and closed?\" ./src\njg \"Which tests cover retry behavior when a request times out?\" .\n```\n\nJevgrep explores the repository hierarchy and follows qualifying branches. It\nselects files using content previews, then identifies useful source units and\nsurrounding context. It keeps qualifying file locations even when it cannot\nconfidently return an excerpt; it does not force every search into a fixed top-two\nlist.\n\nThe summary and compact file list come first, followed by selected source with\nline references, then detailed declaration and call locations. Python, TypeScript/JavaScript, Go and Rust support declaration\nparsing; other text uses a fallback. The output is evidence for the agent to use,\nnot a generated answer or a guarantee that every relevant file was found.\n[See a recorded output example](specs/done/jevgrep/assets/stdout-example.txt).\n\nWhen you already know an exact symbol or path, a direct read or `rg` search may be\nall you need. Jevgrep is most useful for questions that span unfamiliar files.\n\n## What we measured\n\n**Same intelligence, ~30% lower coding-agent cost.** Both\nJevgrep and the no-Jev baseline solved **8/10 tasks**. Full Sol cost fell from\n**$7.62 to $5.44**—a measured **28.6% reduction**, rounded to ~30%—including failed\nattempts and excluding Jev cost.\n\n![Jevgrep workflow: about 30% lower coding-agent cost, with 8 of 10 tasks solved both with and without Jevgrep.](assets/how-it-works.png)\n\nThis comparison uses ten tuned Python SWE-bench tasks, one frozen installed\npackage and the exact public skill in this repository. I"
+    },
+    {
+      "full_name": "feder-cr/dots",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 894,
+      "forks": 108,
+      "language": "Python",
+      "description": "Open-source dots for the web: an AI agent with its own browser, one that does not get blocked.",
+      "html_url": "https://github.com/feder-cr/dots",
+      "topics": [
+        "ai-agent",
+        "ai-agents",
+        "ai-browser",
+        "anti-detect-browser",
+        "browser-agent",
+        "browser-automation",
+        "chatgpt",
+        "dotfiles",
+        "dots",
+        "firefox",
+        "llm-agent",
+        "mcp",
+        "open-source-alternative",
+        "openai",
+        "openai-dots",
+        "openrouter",
+        "playwright",
+        "stealth-browser",
+        "web-agent",
+        "web-automation"
+      ],
+      "created_at": "2026-09-29T23:06:00Z",
+      "updated_at": "2026-09-30T11:05:52Z",
+      "pushed_at": "2026-09-29T23:24:01Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "feitangyuan/onetake",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 1028,
+      "forks": 65,
+      "language": "Python",
+      "description": "Motion films that never cut to the next slide: every beat grows out of the one before, one continuous camera, continuity measured by an oracle. A Claude Agent Skill for product launch films and feature demos.",
+      "html_url": "https://github.com/feitangyuan/onetake",
+      "topics": [
+        "agent-skill",
+        "animation",
+        "canvas",
+        "claude-skill",
+        "launch-video",
+        "motion-graphics",
+        "video"
+      ],
+      "created_at": "2026-09-26T05:35:17Z",
+      "updated_at": "2026-09-30T11:21:16Z",
+      "pushed_at": "2026-09-29T01:53:46Z",
+      "license": "Other",
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "<p align=\"center\">\n  <img src=\"assets/logo/onetake-icon.svg\" alt=\"onetake icon\" width=\"120\">\n</p>\n\n<h1 align=\"center\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/logo/onetake-wordmark-on-cream.svg\">\n    <img src=\"assets/logo/onetake-wordmark.svg\" alt=\"onetake\" height=\"90\">\n  </picture>\n</h1>\n\n> **Motion films that never cut to the next slide.** A Claude Agent Skill that makes product launch films, teasers and feature demos where every beat grows out of the one before — one continuous take, not a stack of scenes.\n> **一镜到底的连贯动效。** 做产品发布片、预告片、功能演示：每一个画面都从上一个画面里长出来，是一整条连续的镜头，而不是一张张轮流出场的\"PPT\"。\n\n[![License: PolyForm Noncommercial](https://img.shields.io/badge/License-PolyForm%20Noncommercial%201.0.0-lightgrey.svg)](LICENSE)\n[![Type](https://img.shields.io/badge/Type-Agent%20Skill-333.svg)](SKILL.md)\n[![Cases](https://img.shields.io/badge/Cases-10%20films-orange.svg)](cases/)\n[![Continuity](https://img.shields.io/badge/Continuity-measured%20per%20boundary-brightgreen.svg)](scripts/verify_promo.py)\n\n![onetake launch](assets/hero.gif)\n\n<sub>From onetake's own launch film. A prompt bar opens into the ad it asked for; the next prompt collapses into a line that shoots across the desk and opens into a festival screen. No cut. [Full film with sound →](cases/onetake-launch-30s/onetake-launch.mp4)</sub>\n\n---\n\n[English](#english) | [中文说明](#chinese)\n\n---\n\n<a name=\"english\"></a>\n## English\n\n### The problem: motion that falls apart\n\nMost motion videos an AI makes today — and most template tools — come out **loose**. Title card, fade, UI shot, fade,\nfeature card, fade, logo. Each shot can look fine and the whole still reads like a slideshow, because nothing\nconnects one beat to the next: scenes *replace* each other.\n\n### What onetake does differently: every beat is carried\n\nonetake treats the boundary between two beats as the thing to design. At every boundary, **something on screen\nsurvives and visibly becomes the next beat**:\n\n- the prompt bar **opens into** the app window; the window **reflows into** the phone;\n- a bar **collapses into a line**, the line **shoots across** the desk and **becomes the first grid line** of the next film;\n- a card **grows into** the page; a stage **opens from** the character; the camera **pushes through** a card until it *is* the next scene;\n- at the end, the cast **folds into** the lockup — in the launch film, the block cursor **writes the name** in one stroke.\n\nAnd **one camera holds it all together**. It never cuts: it follows the subject a beat ahead, whips to where the next\nthing will land, floats like a hand-held operator and shakes when something hits — then holds dead still, because rests\nare what make the moves land.\n\n### Continuity is measured, not hoped for\n\nEvery film is checked by an oracle before a human watches it. `probe.py` records what is on screen in every frame, finds\neach boundary, and asks what carried across it. A film whose beats replace each other fails.\n\n| film | verdict | continuity (carry score) |\n|---|---|---|\n| an earlier launch film, v1 — perfect rhythm, still a slideshow | rejected | **0.00** |\n| the same film, v2 | rejected | **0.40** |\n| the same film, v3 — every beat grows out of the last | accepted | **0.75** |\n| onetake launch film | accepted | **0.83** |\n\nThe same oracle fails uniform cadence (shots all the same length), no stillness, clipped audio, fast moves without\nmotion blur, and a subject that leaves the frame.\n\n### What makes it look finished\n\n- **Real UI, rebuilt.** The product's interface is rebuilt in HTML from screenshots and sits on the camera's plane, so the camera can fly into it at any zoom. No screen recording.\n- **Measured moves.** ~38 moves (springs, entrances, carries, contact, sims, camera, fluid grounds), each a pure function of time with its speed curve measured — never a hand-rolled ease.\n- **Real motion blur.** Every moving frame is several captures across an open 180° shutter, averaged in linear light. Fast moves smear instead of strobing.\n- **Sound in one room.** Foley and synthesis placed from the film's own events, in one reverb, ducking the music under the hits.\n- **Deterministic.** Seek to any time, get the same frame. Drafts at 1080p30, finals at 4K60.\n\n### 🌟 Films made with it\n\nEvery case ships the finished film and a breakdown (concept, beat sheet, numbers, what was rejected and why). The\nfilms' source code is not included.\n\n<table>\n  <tr>\n    <td width=\"50%\" align=\"center\"><b>onetake launch</b><br/><img src=\"assets/cases/onetake-launch.gif\" width=\"100%\"/><br/>\n      <sub>Three prompts, three films, one take — each prompt visibly becomes its film</sub><br/>\n      <a href=\"cases/onetake-launch-30s/onetake-launch.mp4\">▶ Film</a> | <a href=\"cases/onetake-launch-30s/README.md\">📖 Breakdown</a></td>\n    <td width=\"50%\" align=\"center\"><b>one-dot</b><br/><img src=\"assets/cases/one-dot.gif\" width=\"100%\"/><br/>\n      <sub>One dot is the whole film: caret → menu → loading ring → spring curve → the dot on "
+    },
+    {
+      "full_name": "firelex/jeff",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 1140,
+      "forks": 47,
+      "language": "Python",
+      "description": "Fine-tunes of Qwen3.5 and Gemma 4 for zero-shot classification",
+      "html_url": "https://github.com/firelex/jeff",
+      "topics": [],
+      "created_at": "2026-09-28T16:18:39Z",
+      "updated_at": "2026-09-30T11:19:39Z",
+      "pushed_at": "2026-09-29T18:28:39Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# Jeff\n\n> **New: v1.1 (29 September 2026).** Jeff-Qwen3.5-0.8B and Jeff-Qwen3.5-2B now choose among up to **254 options**\n> (v1.0: 26), with better calibration. On our long-list test the 0.8B goes from 40% to 95%. The 2B's benchmark score\n> dips from 83.1% to 82.0%. Details in the [changelog](#changelog); v1.0 stays available on Hugging Face as\n> revision `v1.0`.\n\n**Fine-tunes of Qwen3.5 and Gemma 4 for zero-shot classification: small, fast decision models you slot into your\ncode, with the same request format as Jev.** You describe a situation and list the options in plain words; Jeff returns a\ncalibrated probability for each option from a single forward pass. No generated text, no parsing: about **22 ms** per\ndecision on an RTX PRO 6000 and **28 ms** on an Apple M4 Max (MLX).\n\nZero-shot means the options can be anything: support queues, user intents, moderation labels, voice commands, game\nmoves. Your categories don't need to appear in the training data; you describe them, and Jeff picks.\n\n**What it is, and what it isn't.** These are very small models. They make extremely fast, well-calibrated judgement\ncalls between options, and they slot easily into your local code. On benchmarks they approach, and sometimes beat, Jev;\nbut at this size their reasoning won't match Jev's, which runs on a much larger model. If zero-shot accuracy isn't\ngood enough for your purposes, a short fine-tune on your own examples takes you much further: our\nvoice-navigation fine-tune moved held-out accuracy from 31.7% to 95.8% in under half an hour on one GPU.\n\n**Built entirely on local hardware.** Training on one RTX PRO 6000 workstation GPU (the 0.8B trains in about 2 hours,\nthe 2B in about 3.5), all synthetic training data written by an open model (Qwen3.8-Flash-Next) on two DGX Sparks,\ntesting on a MacBook. No cloud GPUs, and no closed-model output in the training data; a closed model was used only to\nspot-check the quality of a sample of the synthetic data.\n\n**Independent project.** Jeff uses the same request format as Jev, but it is not affiliated with or endorsed by TypeSafe, the\nmakers of Jev. Our training code starts from the open-source [AutoJev](https://github.com/denis-pplx/autojev) recipe.\n\n**Models on Hugging Face:** [Jeff-Qwen3.5-0.8B](https://huggingface.co/mstrasser/Jeff-Qwen3.5-0.8B) · [Jeff-Qwen3.5-2B](https://huggingface.co/mstrasser/Jeff-Qwen3.5-2B) · [Jeff-Gemma4-E2B](https://huggingface.co/mstrasser/Jeff-Gemma4-E2B) · chess fine-tune: [Jeff-Qwen3.5-0.8B-Chess](https://huggingface.co/mstrasser/Jeff-Qwen3.5-0.8B-Chess)\n\n## Quick start\n\nTo serve a model you only need the serving install (`--no-default-groups` leaves out the training, data and\nevaluation packages; plain `uv sync` installs everything):\n\n```bash\nuv sync --no-default-groups                 # CPU\nuv sync --no-default-groups --extra cuda    # NVIDIA GPU: adds the fast kernels (much slower without them)\nuv sync --no-default-groups --extra mac     # Apple silicon: adds MLX\nuv run --no-default-groups hf download mstrasser/Jeff-Qwen3.5-0.8B --local-dir checkpoints/jeff-0.8b\n\n# NVIDIA GPU or CPU (PyTorch)\nJEFF_CHECKPOINT=checkpoints/jeff-0.8b PORT=8765 uv run --no-default-groups jeff-serve\n# Apple silicon (MLX, much faster on a Mac; Qwen models only)\nJEFF_BACKEND=mlx JEFF_CHECKPOINT=checkpoints/jeff-0.8b PORT=8765 uv run --no-default-groups --extra mac jeff-serve\n```\n\n```bash\ncurl -s localhost:8765/v1/systemone -H 'content-type: application/json' -d '{\n  \"model\": \"jeff-latest\",\n  \"state\": \"Refund request: the customer says the parcel arrived crushed and wants their money back.\",\n  \"questions\": {\n    \"route\": {\"type\": \"choice\", \"instructions\": \"Which team should handle this?\",\n              \"criteria\": {\"1\": \"Refunds and payments\", \"2\": \"Damaged or lost parcels\", \"3\": \"Account and login problems\"}},\n    \"angry\": {\"type\": \"noul\", \"instructions\": \"Is the customer angry?\"}\n  }\n}'\n```\n\nEach answer has a probability per option, the chosen option and a confidence. Three question types: `choice` (pick one\nof up to 254 options with the v1.1 Qwen models, 26 with Jeff-Gemma4-E2B), `noul` (yes/no, returned as a probability) and `score` (a point on a scale you describe).\nSeveral independent questions in one request are answered together.\n\n## Benchmarks\n\n4,599 questions from five public benchmarks, plus JevBench's public hard tier (105 items, scored separately):\n\n![Accuracy of Jeff-Qwen3.5-0.8B, Jeff-Qwen3.5-2B and Jeff-Gemma4-E2B against Jev's published figures, per benchmark](assets/benchmarks.png)\n\n| Benchmark | Qwen3.5-0.8B untrained | Jeff-Qwen3.5-0.8B | Qwen3.5-2B untrained | Jeff-Qwen3.5-2B | Gemma 4 E2B untrained | Jeff-Gemma4-E2B | Jev (published) | AutoJev-27B (published) |\n|---|---|---|---|---|---|---|---|---|\n| **Overall (5 benchmarks)** | 45.3 | 79.1 | 46.5 | 82.0 | 62.5 | 81.6 | **83.0** | ***84.9*** |\n| BBH | 39.5 | 64.9 | 46.0 | 68.7 | 51.3 | 66.4 | **94.3** | 82.8 |\n| Financial PhraseBank | 36.0 | **95.7** | 53.4 | **94.7** | 86.0 | **96.1** | 77.0 | 84.2"
+    },
+    {
+      "full_name": "glanderness/BeefTV",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 595,
+      "forks": 116,
+      "language": "TypeScript",
+      "description": "Local-first, lightweight, AI-native video workspace.",
+      "html_url": "https://github.com/glanderness/BeefTV",
+      "topics": [],
+      "created_at": "2026-09-24T05:20:03Z",
+      "updated_at": "2026-09-30T11:08:48Z",
+      "pushed_at": "2026-09-30T05:46:34Z",
+      "license": "MIT",
+      "open_issues": 16,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kaankiziltug/logo-design-skill",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 962,
+      "forks": 48,
+      "language": "HTML",
+      "description": "A comprehensive logo-design skill for Claude, Gemini CLI, Codex and other AI agents: principles, process, SVG craft, testing tools and a 1,400+ logo reference library.",
+      "html_url": "https://github.com/kaankiziltug/logo-design-skill",
+      "topics": [
+        "agent-skills",
+        "branding",
+        "claude",
+        "claude-skills",
+        "codex",
+        "gemini-cli",
+        "logo-design",
+        "svg"
+      ],
+      "created_at": "2026-09-26T08:23:34Z",
+      "updated_at": "2026-09-30T11:19:54Z",
+      "pushed_at": "2026-09-30T09:23:15Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# Logo Design Skill for Claude & AI Agents\n\n[![Tests](https://github.com/kaankiziltug/logo-design-skill/actions/workflows/test.yml/badge.svg)](https://github.com/kaankiziltug/logo-design-skill/actions/workflows/test.yml) [![The New 100: #14](https://www.theagenticleaderboard.com/badges/new/logo-design-skill.svg)](#)\n\n![Twenty-eight example runs of the logo-design skill](docs/images/hero.png)\n\nA comprehensive **logo-design skill** that turns Claude — or any agent that supports Agent Skills, such as Gemini\nCLI, Codex CLI, Cursor or GitHub Copilot — into a disciplined identity designer, from the first brief to\nproduction-ready SVG files and brand guidelines.\n\n- **Principles & process** — discovery and briefs, word mapping, choosing the right mark type, concepting,\n  geometric construction, optical corrections (overshoot, bone effect, irradiation…), colour, typography, lockups,\n  testing, presentation, delivery, redesigns and identity systems.\n- **A reference library of 1,400+ real-world SVG logos**, each visually classified by mark type, technique,\n  geometry, subject, typography, mood and industry — searchable from the command line and browsable in a local\n  gallery. Used to study construction, map category conventions and avoid look-alikes (never to copy).\n- **Dependency-free Python tools** — audit an SVG against logo principles, build concept overview sheets and test\n  sheets (16 px pixel test, one-colour, reversed, squint, mirror, contexts, competitor shelf test), create client\n  presentation boards with industry-specific mockups, render PNGs, and export a complete favicon / app-icon /\n  web-manifest set.\n\n**Contents:** [How it works](#how-it-works) · [Examples](#examples) · [Tests](#what-the-tests-catch) ·\n[Install](#install) · [Use](#use) · [What's inside](#whats-inside) · [Library](#library-at-a-glance)\n\n---\n\n## How it works\n\n```mermaid\nflowchart LR\n    A[Brief<br/>questions or stated assumptions] --> B[Research<br/>category conventions in the library]\n    B --> C[Concepts<br/>8–12 one-liners → build 3 in SVG]\n    C --> D[Test & refine<br/>audit · 16 px · one-colour · shelf test]\n    D --> E{{Checkpoint<br/>show concepts, recommend, stop}}\n    E -- \"you pick a direction<br/>and ask for the kit\" --> F[Kit<br/>colour · lockups · board · icons · guidelines]\n    E -- \"you want changes\" --> C\n```\n\nThe skill always **stops at the checkpoint**: it shows the concepts as one overview image with a recommendation and\noffers the full kit. Nothing else is produced until you choose a direction — the kit is most of the work and only\nmakes sense for an approved idea.\n\n---\n\n## Examples\n\nTwenty-eight fictional briefs, from quiet luxury and neon festivals to B2B SaaS, fintech and health — each run end to\nend with the skill. For every brand you see exactly what the skill shows at the checkpoint (greyscale concepts with\ntrue 64/32/16 px sizes and a recommendation), followed by a colour preview of the chosen direction on mockups picked\nfor that industry. Later batches deliberately push **vivid, saturated palettes** while still passing the one-colour\nand 3 : 1 contrast checks. The newest batch takes on three crowded categories: **SaaS** (no chat bubbles, charts or\npadlocks), **finance** (no coins, piggy banks or bank blue) and **health** (no crosses, pills or heartbeat lines).\nThe latest ten add another ten sectors. In four of them the client picked a different concept at the checkpoint than\nthe one the skill recommended, and the skill refined that choice before colouring it: exactly what the checkpoint is\nfor.\n\n| Brand | Sector | Style | Chosen mark |\n|---|---|---|---|\n| <img src=\"docs/images/tiles/kiln.png\" width=\"24\" height=\"24\" alt=\"\"> [Kiln](#kiln--specialty-coffee-roaster) | Specialty coffee | Warm, crafted, modern | Letterform + custom wordmark |\n| <img src=\"docs/images/tiles/zestly.png\" width=\"24\" height=\"24\" alt=\"\"> [Zestly](#zestly--food-delivery-app) | Food delivery | Juicy, cheeky, tomato & lime | Mascot |\n| <img src=\"docs/images/tiles/maison-orvelle.png\" width=\"24\" height=\"24\" alt=\"\"> [Maison Orvelle](#maison-orvelle--luxury-fashion-atelier) | Luxury fashion | High-contrast Didone | Monogram |\n| <img src=\"docs/images/tiles/pulsewave.png\" width=\"24\" height=\"24\" alt=\"\"> [Pulsewave](#pulsewave--music--arts-festival) | Music festival | Neon on night, kinetic | Abstract letterform |\n| <img src=\"docs/images/tiles/tinkertrail.png\" width=\"24\" height=\"24\" alt=\"\"> [Tinkertrail](#tinkertrail--kids-stem-workshops) | Kids' STEM education | Playful, rounded, multi-colour | Letterform |\n| <img src=\"docs/images/tiles/ralli.png\" width=\"24\" height=\"24\" alt=\"\"> [Ralli](#ralli--padel--tennis-app) | Sports app | Dynamic italic, electric coral | Letterform |\n| <img src=\"docs/images/tiles/alderpeak.png\" width=\"24\" height=\"24\" alt=\"\"> [Alderpeak](#alderpeak--outdoor-gear) | Outdoor gear | Rugged, slab, earthy | Pictorial symbol |\n| <img src=\"docs/images/tiles/driftwell.png\" width=\"24\" height=\"24\" alt=\"\"> [Driftwell](#driftwell--surf-hos"
+    },
+    {
+      "full_name": "lemomo-ai/lemo-opuscar",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 646,
+      "forks": 84,
+      "language": "JavaScript",
+      "description": "43 film styles, each a reusable style prompt plus a short film made entirely in code by Claude Opus 5.5. Pick a style, bring your own story, and let your agent direct. | Opus5.5 x 43 种影片风格：风格提示词 + 纯代码样片 + 导演与技术指南",
+      "html_url": "https://github.com/lemomo-ai/lemo-opuscar",
+      "topics": [
+        "ai-agents",
+        "ai-video",
+        "animation",
+        "canvas",
+        "claude",
+        "claude-code",
+        "creative-coding",
+        "ffmpeg",
+        "filmmaking",
+        "motion-graphics",
+        "prompt-library",
+        "text-to-speech",
+        "threejs",
+        "video-production",
+        "webgl"
+      ],
+      "created_at": "2026-09-26T10:10:41Z",
+      "updated_at": "2026-09-30T10:49:38Z",
+      "pushed_at": "2026-09-30T00:32:28Z",
+      "license": "Other",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mexicat/pdoom-video",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 2048,
+      "forks": 214,
+      "language": "TypeScript",
+      "description": "Code-rendered music video for \"I'm Upping My P(doom)\"",
+      "html_url": "https://github.com/mexicat/pdoom-video",
+      "topics": [],
+      "created_at": "2026-09-24T21:33:53Z",
+      "updated_at": "2026-09-30T11:03:29Z",
+      "pushed_at": "2026-09-28T06:53:29Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# I'm Upping My P(doom) — music video\n\nA generative, code-rendered music video with word-synced karaoke typography. Every frame is a deterministic function of song time, so the live preview in the browser and the offline 1080p60 (or 4K60) export are identical.\n\n**Watch it in 4K on YouTube:** https://www.youtube.com/watch?v=5EoO5413dBY\n\nThe YouTube upload is an earlier render: it averages only 4 sub-frames per frame for motion blur, so fast motion shows stepped copies, and YouTube's compression smears the film grain. For the best version, render it locally (see [Render the video](#render-the-video)): the current code picks up to 324 sub-frames per frame where the motion needs them.\n\nThe video was made with Claude (Opus 5.5) in Claude Code: the concept and treatment, the lyric alignment and audio analysis, the renderer, every scene and the renders were all worked out in conversation with Claude.\n\nThe song is not ours: see [Credits](#credits) for who wrote and made it.\n\nThe concept, style bible and plate-by-plate treatment are in [`docs/TREATMENT.md`](docs/TREATMENT.md). The engine and scene API are documented in [`docs/ENGINE.md`](docs/ENGINE.md).\n\n## Layout\n\n- `audio/pdoom.mp3` — the song (the Claude-Pop version, see Credits).\n- `lyrics/lyrics.src.js` — the original line-level lyrics (approximate timings).\n- `analysis/` — Python (uv) tools that produced the timing data: Demucs stem separation, CTC forced alignment cross-checked with Whisper, beat/downbeat/onset analysis. See `analysis/align.py` and `analysis/analyze.py`.\n- `data/lyrics.json` — word-level (and some syllable-level) lyric timings.\n- `data/audio.json` — tempo (132.007 BPM), beats, downbeats, sections, drum/vocal onsets and loudness envelopes.\n- `app/` — the renderer: TypeScript + three.js, bun + Vite.\n  - `src/engine/` — renderer core: timeline playback, post-processing (bloom, halation, grain), typography (Archivo, IBM Plex Mono, Cormorant Garamond, single-stroke plotter fonts), GPU line batches, HUD.\n  - `src/scenes/` — one module per plate (`open`, `loss`, `prompt`, `hook`, `room`, `shoggoth`, `spacetime`, `ascent`, `bureau`, `leftturn`, `paperclips`, `fuse`, `stack`, `dense`, `loom`, `ilya`, `outro`) plus shared motifs.\n  - `src/timeline.ts` — the edit: scene windows anchored to lyric lines and snapped to the beat grid.\n  - `scripts/render.ts` — offline renderer (headless Chrome → raw frames over WebSocket → ffmpeg).\n- `out/` — renders (not in the repo).\n\n## Requirements\n\n[bun](https://bun.sh), Google Chrome (the offline renderer drives it headless through playwright-core) and ffmpeg with libx264. The analysis tools need [uv](https://docs.astral.sh/uv/); the renderer doesn't.\n\n## Preview\n\n```sh\ncd app\nbun install\nbunx vite\n```\n\nOpen http://localhost:5173 and use the keys below. `?t=23` starts at a given time.\n\n| Key | Action |\n|---|---|\n| space | play / pause |\n| ← / → | seek ±1 s (±5 s with shift) |\n| `,` / `.` | step one frame |\n| `[` / `]` | previous / next scene |\n| `l` | loop the current scene |\n| `h` | hide the UI |\n\nThe preview renders in real time on a recent Mac. The export is not real time and is heavier.\n\n## Render the video\n\n```sh\ncd app\nbun scripts/render.ts video --samples auto --shutter 0.2 --out ../out/pdoom.mp4\n```\n\n- **Output:** 1920×1080 at 60 fps, x264 CRF 16, AAC audio.\n- **Motion blur:** every frame is the average of many sub-frames spread over a short shutter (`--shutter 0.2`, a fifth of the frame time), so fast motion leaves a continuous streak instead of a few stepped copies. `--samples auto` picks the count per frame: 12 for a still frame, 36 for ordinary camera motion, 108 or 324 for whips, slams and fast zooms. It stops once more sub-frames would no longer change the image by more than `--tol` levels of 255 (default 3). `--samples N` takes a fixed N instead (`--samples 4` makes a quick draft). How it works: \"Motion blur and sampling\" in [`docs/ENGINE.md`](docs/ENGINE.md).\n- **Other modes:** `stills`, `sheet` (contact sheets, `--cuts` for every scene boundary), `perf`, and `plates` (regenerates `public/plates/`, the stills used by the outro's rewind montage; rerun it after changing a scene).\n\n### 4K\n\n```sh\ncd app\nbun scripts/render.ts video --scale 2 --samples auto --shutter 0.2 --x264 aq-mode=3:rc-lookahead=30 --out ../out/pdoom-4k.mp4\n```\n\n- **Output:** a true 3840×2160 render (not an upscale): every layer, line and shader is rendered at the physical resolution. Scenes are laid out in 1920×1080 logical pixels, so the 4K frame looks like the 1080p one, only sharper.\n- **Cost:** GPU-bound. A frame takes from about 40 ms (a still frame) to over 10 s (the ray-marched rooms at 108–324 sub-frames). The whole song took about 2.5 hours on an M5 Pro, rendered as segments in two parallel pipelines (`--from`/`--to`, then a lossless concat). Each pipeline uses about 5 GB for headless Chrome plus about 4 GB for ffmpeg; the shorter x264 lookahead above keeps ffmpeg's memory down.\n- **Encoding:** the film grain is rendered per "
+    },
+    {
+      "full_name": "mikehasa/golive-skill",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 1134,
+      "forks": 84,
+      "language": "TypeScript",
+      "description": "Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account, backend or telemetry.",
+      "html_url": "https://github.com/mikehasa/golive-skill",
+      "topics": [
+        "agent-skill",
+        "agent-skills",
+        "ai-agents",
+        "claude-code",
+        "cloudflare",
+        "codex",
+        "database",
+        "deployment",
+        "developer-tools",
+        "devops",
+        "dns",
+        "godaddy",
+        "hosting",
+        "infrastructure",
+        "neon",
+        "netlify",
+        "porkbun",
+        "skills",
+        "supabase",
+        "vercel"
+      ],
+      "created_at": "2026-09-23T13:37:26Z",
+      "updated_at": "2026-09-30T11:19:43Z",
+      "pushed_at": "2026-09-30T10:54:27Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# GoLive\n\n[English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Português (Brasil)](README.pt-BR.md) · [Deutsch](README.de.md)\n\n**Take your agent-built product live: hosting, database, auth, domain, email, payments — on your own accounts. Then hand it over, or tear it all down.**\n\nYour coding agent can build an app in minutes. Getting it to real users still means accounts,\nhosting, databases, domains, secrets and connected services. GoLive is the open-source Agent Skill\nfor that work: it **detects what your app needs, plans the exact changes, asks for your approval,\napplies them with your own logins, and verifies what actually works** — then records what it\ncreated, re-checks it for drift on demand, and can remove it again.\n\nAutomate the parts providers expose. Guide you through the parts that need a human. Verify what\ncan be observed, and make unfinished work clear. No GoLive account, hosted backend or product telemetry.\n\n> **Early alpha · 0.1.0-alpha.7**\n> Disposable live tests now cover six journeys: **hosting** (Vercel, Netlify), **database**\n> (Supabase, Neon), **custom-domain DNS** (Porkbun, GoDaddy), **transactional email** (Resend),\n> **test-mode payments** (Stripe) and **Supabase authentication**, plus the `teardown` uninstall\n> path. The ownership document and the on-demand `golive status` drift check are implemented\n> with test coverage (`golive status` also ran read-only in a live validation), while the broader\n> [roadmap](#the-full-go-live-checklist-and-roadmap) is our direction, not a claim that it is all built.\n\n## Before you hand over production access\n\nWhether to give an agent your provider accounts comes down to four questions. These are this\nproject's answers, with the limits stated where they exist.\n\n- **You still approve every write.** Nothing reaches a real account without a plan you have seen and\n  approved: `apply` refuses without that plan's id and `--yes`, and it re-checks the plan's identity\n  before writing, so a changed release or config invalidates the old approval. DNS writes need\n  `--confirm-dns`, deletions need `--confirm-destroy`, and live-mode steps — live payments, production\n  data, a real account — need `--confirm-live`, which now includes a project's **first production\n  deploy**, because approving a plan alone used to be enough to write production for the first time.\n  Credential values are read only in-process, never printed, and never in arguments, plans, state or\n  reports; the file golive stores them in is plaintext at mode 0600 outside your repo, not a keychain.\n  One limit worth naming: those flags are arguments the agent passes on your behalf, and an agent\n  already logged in to your provider can write there with no golive plan at all.\n  [Trust, access and control](docs/TRUST.md) separates what the code enforces from what is only an\n  instruction the agent is asked to follow.\n- **A run stops rather than pushing on.** `apply` stops at the first failed check, missing\n  confirmation, missing prerequisite or provider that contradicts the plan. Later steps do not run,\n  and the next `apply` resumes at that step. [Recovery](docs/RECOVERY.md#the-run-stopped) covers\n  reading the failure, which steps resume, and the cases that need a reviewed decision first.\n- **Rollback is narrow, opt-in and never automatic.** A failed check never triggers a rollback.\n  `release.rollback: true` plans one step that re-points production at an earlier deployment golive\n  itself recorded; a deployment built by a dashboard, a Git push or a pull request is not a target,\n  and it touches no data, DNS, payment or email resource. Only Netlify supports these re-points\n  today — on Vercel you correct production in the dashboard (Vercel's adapter has no read of what\n  production serves). Promotion and rollback are implemented and mock-covered, **not live-validated**.\n- **Nothing is left behind silently — which is not the same as nothing being left behind.**\n  `golive teardown` removes only resources it can prove it created, re-reads the DNS zone and the\n  host project after deleting, and names every leftover it cannot remove — Supabase and Neon\n  projects, the Resend sending domain, a zone or host project it cannot read — as a handoff saying\n  what remains and how to remove it by hand. A removal also forgets the baseline golive recorded for\n  that resource, so `golive status` does not report golive's own teardown as drift.\n\nThose answers in full: [trust, access and control](docs/TRUST.md) and\n[recovery](docs/RECOVERY.md). The [architecture](docs/ARCHITECTURE.md) is the product contract,\n[provider scope](docs/PROVIDERS.md) says what each provider can do today, the\n[validation record](docs/VALIDATION.md) separates what has been exercised live from what is only\nmock-covered, and [distribution](docs/DISTRIBUTION.md) covers installation and updates.\n\n[Install](#install) · [Use GoLive](#use-golive) · [See the workflow](#what-a-run-looks"
+    },
+    {
+      "full_name": "ollaya-dev/ollaya",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 1009,
+      "forks": 51,
+      "language": "Rust",
+      "description": "Run open decision models locally: pull and serve Laya, decider, NLI and GLiClass behind a TypeSafe-compatible API. Ollama for decision models.",
+      "html_url": "https://github.com/ollaya-dev/ollaya",
+      "topics": [
+        "calibration",
+        "classification",
+        "decision-models",
+        "gliclass",
+        "jev",
+        "laya",
+        "llm-routing",
+        "local-inference",
+        "nli",
+        "ollama",
+        "onnx",
+        "onnxruntime",
+        "rust",
+        "typesafe",
+        "zero-shot-classification"
+      ],
+      "created_at": "2026-09-23T22:11:15Z",
+      "updated_at": "2026-09-30T11:11:48Z",
+      "pushed_at": "2026-09-29T21:21:57Z",
+      "license": "Apache-2.0",
+      "open_issues": 10,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "<p align=\"center\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"site/public/static/logo-white.svg\">\n    <img src=\"site/public/static/logo.svg\" alt=\"\" width=\"88\">\n  </picture>\n</p>\n\n<h1 align=\"center\">ollaya</h1>\n\n<p align=\"center\"><strong>Run open decision models locally, the way Ollama runs LLMs.</strong></p>\n\n<p align=\"center\">\n  <a href=\"https://ollaya.dev\">Website</a> ·\n  <a href=\"https://ollaya.dev/search\">Models</a> ·\n  <a href=\"https://ollaya.dev/docs\">Docs</a> ·\n  <a href=\"https://github.com/ollaya-dev/ollaya/releases\">Releases</a> ·\n  <a href=\"https://huggingface.co/ollaya-dev\">Hugging Face</a>\n</p>\n\nA decision model reads a *state* (a message, an email, a ticket, any JSON) plus typed questions\n(`choice`, `score`, `noul`) and returns calibrated probabilities in a single forward pass, in\nmilliseconds. It never generates text. Ollaya pulls these models by name, serves them from a\nlocal daemon, and speaks TypeSafe's `/v1/systemone` wire format, so existing Jev clients work by\nchanging one environment variable.\n\n```sh\ncurl -fsSL https://ollaya.dev/install.sh | sh\nollaya run winnow:e4b --preset triage \"Third time this year you've double-charged me. Refund it today or I'm cancelling and moving to a competitor.\"\n```\n\n```\nintent            refund                                ███████████████░ 0.91\nis_urgent         yes                                   ███████████████░ 0.92\nfrustration       2.89 / 3  very angry or using stron…  ██████████████░░ 0.86\nrefund_requested  yes                                   ████████████████ 0.99\nchurn_risk        yes                                   ████████████████ 0.99\n```\n\n`winnow:e4b` is the recommended model: 0.722 accuracy on typed decisions (TypeSafe's Jev: 0.738)\nand 89 ms for these five questions on an RTX 4090. It is a 4B-class language model, so without an\nNVIDIA GPU start with `laya`, which answers in a fraction of a second on a CPU. All models and their\nnumbers: [ollaya.dev/search](https://ollaya.dev/search).\n\n## Features\n\n- **One binary.** `ollaya serve` runs the daemon; `ollaya run`, `pull`, `list`, `ps`, `show`, `rm`,\n  `cp`, `stop` and `create` work the way they do in Ollama. If the daemon isn't running, the CLI\n  starts it.\n- **TypeSafe-compatible.** `POST /v1/systemone`, `/v1/decisions` and `GET /v1/models` are\n  wire-identical to TypeSafe. The official SDK works unchanged when you set\n  `TYPESAFE_BASE_URL=http://localhost:11435`.\n- **Native API.** `/api/decide` adds routing information and timings. `/api/pull` streams\n  NDJSON progress, and there are `/api/tags`, `/api/show`, `/api/ps` and more. See\n  [docs/api.md](docs/api.md).\n- **Weights come from their authors.** Ollaya publishes only small ONNX graphs, about 3 MB each.\n  These graphs read the original weight files (usually `model.safetensors`) from the author's\n  Hugging Face repository, pinned to a commit and verified by sha256. Models whose authors publish\n  GGUF files (`winnow`, `jevk5`) run that file itself on llama.cpp. Ollaya never re-hosts weights.\n- **For agents.** `ollaya mcp` serves the models to Claude Code, Claude Desktop, Cursor and other\n  MCP clients (`claude mcp add ollaya -- ollaya mcp`), and the\n  [`ollaya-decisions` skill](skills/ollaya-decisions/SKILL.md) teaches agents when and how to use\n  them (`npx skills add ollaya-dev/ollaya --skill ollaya-decisions`).\n- **Routers.** `laya` detects the script and language of each request, then answers with\n  `laya:en` or `laya:multilingual`.\n- **Modelfiles.** You can bake a question set into your own model:\n  ```\n  FROM laya\n  QUESTIONS ./triage.json\n  PARAMETER precision fp32\n  ```\n  Then run `ollaya create triage -f Modelfile` and `ollaya run triage \"…\"`.\n- **Fast and exact.**\n  - **Hardware:** ONNX Runtime on CPU, and CUDA on NVIDIA GPUs. GGUF models run on llama.cpp:\n    CPU, CUDA, and Metal on Apple silicon.\n  - **Precision:** fp16 on GPU and fp32 on CPU, chosen when the model loads.\n  - **Accuracy:** fp32 exports give the same decision as the PyTorch reference on 100% of 2,383\n    questions per checkpoint.\n\n## Models\n\n| Model | What it is |\n|---|---|\n| `winnow:e4b` | **Recommended.** EldanRing's Winnow-E4B, a Gemma 4 fine-tune run from the author's Q8_0 GGUF on llama.cpp: 0.722 on typed-decisions (Jev: 0.738), 89 ms for five questions on an RTX 4090 |\n| `laya` | Router: picks `laya:en` or `laya:multilingual` by language |\n| `laya:en` | English decision model (ModernBERT-large, 421M). The fastest: 8–10 ms for five questions on an RTX 4090 |\n| `laya:multilingual` | 100+ languages (mmBERT-base, 322M) |\n| `laya:typed-decisions` | Fine-tuned on the typed-decisions workflows |\n| `decider`, `decider:4b`, `decider:0.8b` | Mapika's Qwen3.5 decoders, 2B (the default), 4B and 0.8B: 0.680 on typed-decisions for 4B, 0.591 for 2B |\n| `decider:2b-vision` | Mapika's Qwen3.5-2B vision-language decider: questions about an image (`--image`, `images` on `/api/decide`) as well as the state |\n| `kev`, `kev:0.8b`, `kev:9b` | Jared P"
+    },
+    {
+      "full_name": "riba2534/claude-opus-5-5-demo",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 936,
+      "forks": 132,
+      "language": "JavaScript",
+      "description": "claude-opus-5-5-demo",
+      "html_url": "https://github.com/riba2534/claude-opus-5-5-demo",
+      "topics": [],
+      "created_at": "2026-09-23T06:31:00Z",
+      "updated_at": "2026-09-30T10:22:28Z",
+      "pushed_at": "2026-09-23T07:54:16Z",
+      "license": null,
+      "open_issues": 6,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "<h1 align=\"center\">claude-opus-5-5-demo</h1>\n\n<p align=\"center\">\n  <b>一句话提示词 · One Shot —— Claude Opus 5.5 代码生成能力实测</b>\n  <br />\n  三个可玩的 3D 网页游戏，每个游戏只给一句提示词，单会话生成，代码零人工改动，直接部署上线。\n</p>\n\n<p align=\"center\">\n  <a href=\"https://www.anthropic.com/claude/opus\"><img src=\"https://img.shields.io/badge/Claude-Opus%205.5-D97757?style=for-the-badge\" alt=\"Claude Opus 5.5\" /></a>\n  <img src=\"https://img.shields.io/badge/Three.js-r186-049EF4?style=for-the-badge&logo=threedotjs&logoColor=white\" alt=\"Three.js r186\" />\n  <img src=\"https://img.shields.io/badge/esbuild-%E2%89%A50.28-FFCF00?style=for-the-badge&logo=esbuild&logoColor=black\" alt=\"esbuild\" />\n  <a href=\"https://pages.cloudflare.com/\"><img src=\"https://img.shields.io/badge/部署-Cloudflare%20Pages-F38020?style=for-the-badge&logo=cloudflare&logoColor=white\" alt=\"Cloudflare Pages\" /></a>\n  <img src=\"https://img.shields.io/badge/提示词-每游戏%201%20句-8A2BE2?style=for-the-badge\" alt=\"One-shot\" />\n</p>\n\n<p align=\"center\">\n  <a href=\"#这个仓库是什么\">介绍</a> ·\n  <a href=\"#三个游戏\">三个游戏</a> ·\n  <a href=\"#提示词原文\">提示词原文</a> ·\n  <a href=\"#在线体验\">在线体验</a> ·\n  <a href=\"#本地构建\">本地构建</a> ·\n  <a href=\"#仓库结构\">仓库结构</a> ·\n  <a href=\"#生成过程与验证\">生成过程与验证</a>\n</p>\n\n---\n\n## 这个仓库是什么\n\n用 [Claude Opus 5.5](https://www.anthropic.com/claude/opus)（Claude Code CLI，1M 上下文，xhigh 推理强度）做的一次代码生成能力实测：**每个游戏只给一句话提示词，单会话 one-shot 生成，全程零人工改动代码，生成后直接部署上线可玩。**\n\n规则很简单：\n\n- **一句话提示词** — 每个游戏的需求描述只有一句话，不写需求文档、不给参考代码、不做多轮追问\n- **单会话生成** — 每个游戏在一个会话内完成：查资料、搭工程、写代码、构建、测试、部署全部由模型自主进行\n- **零人工改动** — 仓库里的源码就是模型写出的原样，人工没有改过一行；连本 README 也是模型写的\n- **真实部署** — 三个游戏都部署在 Cloudflare Pages 上，点开链接即可玩\n\n三个游戏全部是单文件 HTML（esbuild 打包内联，无外部资源依赖）：模型、纹理、动画、音效全部由代码程序化生成，不引用任何图片、音频或第三方素材。\n\n## 三个游戏\n\n| 游戏 | 类型 | 源码目录 | 模块数 | 构建产物 | 在线体验 |\n| --- | --- | --- | --- | --- | --- |\n| 🚲 鹈鹕骑自行车 | 海岸公路休闲骑行 | `pelican-bike/` | 11 个 JS 模块 | ~800 KB | [claude-opus-5-5.riba2534.cn](https://claude-opus-5-5.riba2534.cn/) |\n| 🔫 穿越火线·运输船 | FPS 团队枪战 | `cf-transport-ship/` | 18 个 JS 模块 + HTML/CSS | ~840 KB | [claude-opus-5-5-cf-transport-ship.pages.dev](https://claude-opus-5-5-cf-transport-ship.pages.dev) |\n| 🏎️ QQ 飞车 | 竞速漂移 racing | `qq-speed/` | 15 个 JS 模块 + HTML | ~700 KB | [claude-opus-5-5-qqfeiche3d.pages.dev](https://claude-opus-5-5-qqfeiche3d.pages.dev/) |\n\n### 🚲 鹈鹕骑自行车\n\n戴头盔墨镜、脖子系红围巾的鹈鹕在海岸公路上骑车抓鱼。围巾是布料物理模拟，昼夜循环从黄昏到星空月夜，海面有波浪与岸边碎浪。W/S 加减速、A/D 变道抓鱼、空格跳跃、T 展翅抬前轮；14 个成就、5 种镜头（含电影运镜和鹈鹕视角）、浏览器实时合成的音效音乐（节奏跟随踏频）、触屏按钮与按帧率自适应画质。不操作时它会自动驾驶去追鱼。\n\n### 🔫 穿越火线·运输船\n\n还原《穿越火线》经典地图「运输船」：模型先检索了官方布局图与攻略核对地图结构（长条形甲板、两端船舱出生点、中部 V 形斜放集装箱、两侧单向管道），再按考据结果搭建。完整的 FPS 玩法：枪械弹道与后坐力、 bots AI 对战、命中反馈与击杀播报、程序化合成的枪声与音效、触屏支持。\n\n### 🏎️ QQ 飞车\n\n还原《QQ 飞车》的键位与漂移玩法（Shift 漂移、Ctrl 氮气、小喷与双喷、复位键），内置四张按官方地图风格设计的赛道：十一城（城市夜景 11 处弯 + 发卡弯）、情迷爱琴海（爬坡连续弯）、法老金字塔（直道末端跳台）、雪地大冒险（8 字形立交）。赛道形状先用脚本生成俯视图检查弯道与交叉点，再进入正式开发。\n\n## 提示词原文\n\n每个游戏的完整输入就下面这一句话，一字未改：\n\n### 🚲 鹈鹕骑自行车\n\n> 生成一个鹈鹕骑自行车的 3D 页面，尽可能把你所有的能力全部都用上. 然后上传到 CDN 上, 把访问链接给我\n\n### 🔫 穿越火线·运输船\n\n> 尽可能真实的还原穿越火线中的运输船地图，我需要一个真实的枪战游戏，生成一个3d页面，尽可能发挥你的所有能力\n> 做完之后上传到 CDN 上 把链接发给我\n\n### 🏎️ QQ 飞车\n\n> 尽可能真实地还原 QQ 飞车中的游戏地图。我需要一个真实的 QQ 飞车游戏，包括游戏的各种键位以及漂移玩法,生成一个3D 页面，尽可能发挥你的所有能力。\n> 做完之后上传到 CDN 上 把链接发给我\n\n## 在线体验\n\n| 游戏 | 地址 |\n| --- | --- |\n| 鹈鹕骑自行车 | <https://claude-opus-5-5.riba2534.cn/> |\n| 穿越火线·运输船 | <https://claude-opus-5-5-cf-transport-ship.pages.dev> |\n| QQ 飞车 | <https://claude-opus-5-5-qqfeiche3d.pages.dev/> |\n\n## 本地构建\n\n三个工程结构相同：`src/` 源码经 esbuild 打包内联进单个 HTML，无运行时外部依赖。\n\n```bash\n# 任选一个游戏目录\ncd pelican-bike   # 或 cf-transport-ship / qq-speed\n\nnpm install       # 安装依赖（three、esbuild 等）\nnode build.mjs    # 构建产物输出到 dist/index.html\n\n# 直接用浏览器打开 dist/index.html 即可游玩\n```\n\n## 仓库结构\n\n```\n├── pelican-bike/          # 鹈鹕骑自行车\n│   ├── src/               # 11 个模块：pelican / bicycle / ocean / fish / sky / effects / audio ...\n│   ├── index.template.html# 页面模板（构建时注入 og:image 与打包后的 JS）\n│   ├── build.mjs          # esbuild 构建脚本\n│   └── package.json\n├── cf-transport-ship/     # 穿越火线·运输船\n│   ├── src/               # 18 个模块：map / guns / weapons / bots / player / physics / viewmodel ...\n│   ├── build.mjs\n│   └── package.json\n├── qq-speed/              # QQ 飞车\n│   ├── src/               # 15 个模块：vehicle / track / layouts / ai / maps / items ...\n│   ├── build.mjs\n│   ├── wrangler.jsonc     # Cloudflare Pages 部署配置\n│   └── package.json\n└── README.md\n```\n\n仓库只保存源码；`node_modules/`、`dist/` 构建产物不入库，克隆后执行上面的构建命令即可完整还原。\n\n## 生成过程与验证\n\n生成过程中模型自主完成的事情（摘录自各会话记录）：\n\n- **资料考据** — 穿越火线与 QQ 飞车在动手前先联网检索官方地图布局图、键位表与攻略核对细节（运输船的集装箱摆位、QQ 飞车的 Shift 漂移 / Ctrl 氮气键位），不是凭印象瞎写\n- **自测** — 全部用无头浏览器实测：加载运行无报错、模拟按键跑完整对局；鹈鹕骑车做了 320 秒快进浸泡测试（跑完一整个昼夜循环，几何体 / 纹理数量恒定，JS 堆 16–26 MB 平稳无泄漏），并专门跨过 36 km 里程取模边界验证\n- **自我审查** — 鹈鹕工程在交付前派子代理独立审查代码，找出 12 个问题并全部修复（如长时间骑行后海面跳变、切换画质漏显存）\n- **线上修复** — 鹈鹕上线后偶发黑屏，模型通过人为注入 NaN 复现定位（Bloom 遇无效像素扩散成黑块），加了泛光前清理 pass 并修了海面菲涅尔等两处源头，重新部署\n- **部署运维** — 三个游戏分别完成 CDN 上传与缓存刷新、Cloudflare Pages 项目创建、域名绑定与证书等待、旧项目清理核对\n\n## 说明\n\n- 本仓库由 Claude Opus 5.5 在 Claude Code 中生成（2026-09）；三个游戏的源码、README 均为模型输出原样，人工未做改动\n- 游戏为能力测试用途的致敬作品，与《穿越火线》《QQ 飞车》原厂无关\n"
+    },
+    {
+      "full_name": "samyost1/3dicon",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 514,
+      "forks": 44,
+      "language": "Python",
+      "description": "One prompt in, a looping animated 3D icon out — with real transparency. A Claude Code skill.",
+      "html_url": "https://github.com/samyost1/3dicon",
+      "topics": [],
+      "created_at": "2026-09-23T18:04:25Z",
+      "updated_at": "2026-09-30T08:51:19Z",
+      "pushed_at": "2026-09-23T18:15:55Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "shihabal3amri/DiPlay",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 1246,
+      "forks": 195,
+      "language": "Kotlin",
+      "description": "Independent CarPlay receiver for compatible Android head units. Wired and wireless public preview.",
+      "html_url": "https://github.com/shihabal3amri/DiPlay",
+      "topics": [],
+      "created_at": "2026-09-24T15:36:38Z",
+      "updated_at": "2026-09-30T11:21:14Z",
+      "pushed_at": "2026-09-30T11:19:25Z",
+      "license": "GPL-3.0",
+      "open_issues": 40,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# DiPlay\n\n**CarPlay for compatible BYD Android head units.** Wired and wireless, with the familiar DiAuto interface. Independent app: `com.shihab.diplay`.\n\n> **BYD support scope:** These projects focus on BYD cars. They may work on other brands, but other brands are unsupported and there are no plans to add support or fix brand-specific incompatibilities.\n\n[Download & website](https://shihabal3amri.github.io/DiPlay/) · [Release](https://github.com/shihabal3amri/DiPlay/releases/tag/v0.2.7) · [Report a problem](https://github.com/shihabal3amri/DiPlay/issues/new/choose)\n\n![DiPlay home](site/assets/home.png)\n\n## 0.2.7 — public preview\n\nInstall on the **car**, not the iPhone. No jailbreak, dongle, Mac, account or authentication server is required for use. Core CarPlay does not require ADB; the optional dashboard-mode and battery features do. Your head unit must permit APK installation. Wireless supports Wi-Fi Direct or the car’s existing hotspot; Wi-Fi Direct requires Android 10+; the APK supports Android 9+ for wired use.\n\n- Wired USB and wireless CarPlay with local authentication.\n- BYD HUD navigation with arrows, distance and street names on verified firmware.\n- Car hotspot support, improved audio buffering and saved receive diagnostics.\n- Automatic address discovery, fixed-channel Wi-Fi fallbacks and successful-configuration memory.\n- Icon/text size, resolution and frame rate; applying a display change reconnects CarPlay.\n- Local diagnostic export. Reports are sent only if you choose to share them.\n- Separate installation alongside DiAuto. Run one projection app at a time.\n\nThis is **not an Apple-certified product**. The APK bundles an experimental accessory identity recovered from public Carlinkit firmware, not a newly provisioned MFi identity for DiPlay. A bundled private key is extractable. Acceptance after future iOS updates, reliability across head units and suitability of that identity for general distribution are unresolved. This release invites community testing; it is not a guarantee of universal compatibility.\n\nEarlier releases were tested on the development DiLink5.1 car: live windshield guidance and street names work, Car hotspot now starts CarPlay, and Wi-Fi Direct performance is substantially improved. Occasional audio cutouts remain and are deferred to a later update. The newly packaged 0.2.7 APK has not had a separate on-car test. Broader head-unit and iOS compatibility is not guaranteed. The HUD firmware scope and cleanup limits are documented in [BYD navigation](docs/BYD_NAVIGATION.md).\n\n## What’s new in 0.2.7\n\n- App interface in English, Simplified Chinese, Arabic, Russian and Spanish; synchronized Android app-language settings.\n- Steering-wheel media controls and long-press Siri on supported BYD firmware while CarPlay is on screen.\n- Dashboard display choices: map, turn card, or both; corrected dashboard keyframe recovery.\n- Optional ADB feature on supported DiLink 5.0: pause the dashboard map stream when its display mode hides the map.\n- Optional ADB battery reporting for Apple Maps, with warning threshold, charging-connector selection and a checked reconnect action.\n- Audio playback reliability fixes and clearer dashboard settings.\n\n## Documentation\n\n- [Install and connect](docs/INSTALL.md)\n- [Compatibility and troubleshooting](docs/COMPATIBILITY.md)\n- [Privacy and diagnostic reports](docs/PRIVACY.md)\n- [Build from source](docs/BUILD.md)\n- [Validation](docs/VALIDATION.md)\n- [Release notes](CHANGELOG.md)\n- [Credits and licenses](docs/THIRD_PARTY_NOTICES.md)\n\nThe website is available in English, Arabic, Russian, Spanish and Simplified Chinese. The app interface supports those same five languages. Choose the app language in Settings; on Android 13+, it stays synchronized with Android’s per-app language setting.\n\n## Source and credits\n\nBased on [xcertplay](https://github.com/shilapi/xcertplay), GPL-3.0. The home/settings UI and website adapt [DiAuto](https://github.com/shihabal3amri/DiAuto), AGPL-3.0; that license is included in `docs/licenses`. Preserve those notices when distributing modifications. CarPlay and its icon belong to Apple Inc.; no Apple or BYD affiliation or endorsement is implied.\n\nThis repository starts with a clean public source snapshot. Local research, tester reports and release-signing secrets are excluded. The complete source corresponding to the APK is provided with every release; experimental runtime identity assets are described separately in the build instructions and notices.\n\n## Local release packaging\n\nThe release APK intentionally contains the experimental accessory identity. The Git repository and source archive exclude all accessory and Android signing keys; tests generate synthetic identities at runtime. Source/CI builds omit runtime identity assets by default. Local release builds explicitly select an external asset directory. Publishing the APK makes its bundled identity extractable; building locally does not preserve that identity's confidentiality.\n"
+    },
+    {
+      "full_name": "supermemoryai/company-brain",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 863,
+      "forks": 121,
+      "language": "TypeScript",
+      "description": "Open-sourcing our company brain - A teammate in your Slack that remembers everything your team says, and can go do the work.",
+      "html_url": "https://github.com/supermemoryai/company-brain",
+      "topics": [],
+      "created_at": "2026-09-25T22:48:14Z",
+      "updated_at": "2026-09-30T11:09:37Z",
+      "pushed_at": "2026-09-28T05:50:41Z",
+      "license": "Apache-2.0",
+      "open_issues": 14,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tobi/disktree",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 1947,
+      "forks": 123,
+      "language": "Rust",
+      "description": "A treemap for finding and removing what fills your disk, for Omarchy. Rust + GPUI.",
+      "html_url": "https://github.com/tobi/disktree",
+      "topics": [],
+      "created_at": "2026-09-24T20:56:29Z",
+      "updated_at": "2026-09-30T11:15:42Z",
+      "pushed_at": "2026-09-27T02:04:35Z",
+      "license": "MIT",
+      "open_issues": 27,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# disktree\n\n![disktree: a home directory as a treemap, coloured by kind of data, with reclaimable space hatched and the selection, findings and free space in the side panel](assets/screenshot.png)\n\nFind what is filling a disk, mark what should go, and remove it — with the\nvolume's free space in view the whole time.\n\ndisktree is a treemap for Omarchy. It scans your home directory by default,\ndraws every directory as a nested mosaic sized by what it really costs on disk,\nand lets you walk into it with the keyboard or the mouse. Mark as much as you\nlike; nothing happens until you review the list and commit, and the permanent\npath always asks first.\n\nBuilt with [GPUI](https://gpui-kit.com/) through\n[gpui-omarchy](https://github.com/huacnlee/gpui-omarchy), so it follows your\nOmarchy theme and behaves like the rest of the desktop.\n\n## Install\n\nDownload `disktree-*-x86_64-linux.tar.gz` (`aarch64-linux` on ARM) from the\n[latest release](https://github.com/tobi/disktree/releases/latest), unpack\nit, and run `./install.sh` inside (or just copy `disktree` onto your\n`PATH`). Or build it:\n\n```sh\ngit clone https://github.com/tobi/disktree\ncd disktree\nmake install\n```\n\n`make install` builds a release binary and puts three things under `~/.local`\n(no root needed):\n\n- `~/.local/bin/disktree`\n- a desktop entry, so disktree is in the launcher and in a file manager's\n  **Open with** for a directory (it adds a handler; it never becomes the\n  default)\n- an icon\n\n`sudo make install PREFIX=/usr/local` installs system-wide; `make uninstall`\nremoves exactly what was installed.\n\nOn Arch, including Omarchy, disktree is in the AUR:\n[`disktree`](https://aur.archlinux.org/packages/disktree) builds each release\nfrom source, and\n[`disktree-bin`](https://aur.archlinux.org/packages/disktree-bin) installs\nthe release binary:\n\n```sh\nyay -S disktree-bin\n```\n\nYou need Rust 1.97 or newer and a Wayland or X11 session with a GPU that GPUI\ncan drive (Vulkan). Distributions often package an older Rust;\n[rustup](https://rustup.rs) installs a current one. The repo pins 1.97 in\n`rust-toolchain.toml`, so with rustup the right toolchain is fetched on the\nfirst build even if `rustup default` points at something older.\n\n### macOS\n\nDownload `disktree-*-aarch64-macos.zip` (`x86_64-macos` for an Intel Mac)\nfrom the [latest release](https://github.com/tobi/disktree/releases/latest),\nunzip it, and drag `disktree.app` into Applications. macOS 11 or newer.\n\nA release that was not signed and notarized is stopped by Gatekeeper: macOS\nsays it \"is damaged and can't be opened\" or \"cannot be verified\". The app is\nfine; the browser marked the download as quarantined. Clear the mark once:\n\n```sh\nxattr -dr com.apple.quarantine /Applications/disktree.app\n```\n\n(Or open it once, then choose **Open Anyway** in System Settings › Privacy &\nSecurity.)\n\nOr build it, with Rust 1.97 or newer and Xcode or its Command Line Tools.\nmacOS does not come with Rust; install it with [rustup](https://rustup.rs).\n\n```sh\nmake install     # ~/Applications/disktree.app, and ~/.local/bin/disktree\nmake uninstall\n```\n\nTo see everything, give disktree **Full Disk Access** in System Settings ›\nPrivacy & Security (the panel offers a button when it is missing), then\nreopen it. Without it macOS hides Mail, Messages, Safari, other apps' data\nand the Trash, and disktree counts them as unreadable. Started from a\nterminal, it is the terminal that needs the access. macOS also asks once\neach for Desktop, Documents and Downloads.\n\nWhat is different from Linux:\n\n- **Free space** is what `df` reports. Finder's figure is larger: it counts\n  purgeable space (caches and local snapshots macOS will clear on its own).\n- **Cloned files** (copies APFS shares blocks between, as Finder's Duplicate\n  makes) are each counted in full, so a total can exceed what deleting them\n  frees.\n- **Time Machine's local snapshots** are not files and do not appear; they\n  are part of the gap between the scan and the disk's used space.\n- **Cloud-only folders** (iCloud Drive, Dropbox and the like, evicted to the\n  server) are not opened, so a scan never downloads them.\n\nTo sign and notarize a build for others, with a Developer ID certificate in\nthe keychain and credentials saved by `xcrun notarytool store-credentials`:\n\n```sh\nNOTARY_PROFILE=<profile> cargo xtask bundle \\\n  --sign \"Developer ID Application: Name (TEAMID)\" --notarize\n```\n\n### Windows\n\nOn Windows 10 or 11, download `disktree-*-x86_64-windows.zip`\n(`aarch64-windows` on ARM) from the same release, unpack it anywhere and run\n`disktree.exe`. Or build it with Rust 1.97 or newer, from\n[rustup](https://rustup.rs), and the MSVC toolchain (Visual Studio Build\nTools, C++ workload):\n\n```powershell\ngit clone https://github.com/tobi/disktree\ncd disktree\ncargo build --release    # target\\release\\disktree.exe\n```\n\nSee [On Windows](#on-windows) for what differs there.\n\n## Use\n\n```sh\ndisktree            # scan the home directory\ndisktree --disk     # the whole disk it lives on\ndisktree ~/src   "
+    },
+    {
+      "full_name": "wy51ai/floorplan-3d",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 777,
+      "forks": 179,
+      "language": "HTML",
+      "description": null,
+      "html_url": "https://github.com/wy51ai/floorplan-3d",
+      "topics": [],
+      "created_at": "2026-09-29T02:57:30Z",
+      "updated_at": "2026-09-30T11:16:05Z",
+      "pushed_at": "2026-09-29T08:13:14Z",
+      "license": null,
+      "open_issues": 3,
+      "default_branch": "master",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "yetone/magpie",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 3462,
+      "forks": 203,
+      "language": "Go",
+      "description": "Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
+      "html_url": "https://github.com/yetone/magpie",
+      "topics": [
+        "claude-code",
+        "codex",
+        "deepseek",
+        "gemini-cli",
+        "llm",
+        "macos"
+      ],
+      "created_at": "2026-09-23T16:22:35Z",
+      "updated_at": "2026-09-30T11:21:25Z",
+      "pushed_at": "2026-09-30T11:14:55Z",
+      "license": "MIT",
+      "open_issues": 39,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# magpie\n\nOne place to pick every agent's model: Codex on DeepSeek, Claude Code\non Kimi, Gemini CLI on GLM, from the menu bar. [usemagpie.ai](https://usemagpie.ai)\n\n[![Discord](https://img.shields.io/badge/Discord-join%20the%20community-5865F2?logo=discord&logoColor=white)](https://discord.gg/vGSnD3ZKQF)\n\n`magpie` is a single screen that lists each AI agent on your machine and\nthe model it is set to. Click a value, pick a model. That is the whole app.\n\nIt lives in the menu bar: click the icon and a panel drops down; the same\nscreen also opens as a normal window (`magpie`, or *Open magpie* in the tray menu),\nand there is a terminal version (`magpie tui`) and a plain CLI.\n\n```\n  ◉ magpie\n\n  ▸ Claude Code   claude-fable-5-1[1m]                        ~/.claude/settings.json\n    Codex         gpt-6-astra   effort medium\n    Gemini CLI    gemini-3.1-pro\n    OpenCode      anthropic/claude-sonnet-5   small anthropic/claude-haiku-4-5\n    MiMo Code     anthropic/claude-sonnet-5\n    Pi            openrouter/z-ai/glm-5.2:batch\n    Goose         anthropic/claude-sonnet-5\n    Cursor        auto\n    Copilot CLI   claude-fable-5\n\n  ↑↓ agent  ·  ←→ field  ·  ↵ change  ·  s save profile  ·  p profiles  ·  q quit\n```\n\n- **One small binary.** Under 15 MB with the desktop app (it uses the system\n  webview through [Wails](https://wails.io), nothing bundled), 7 MB for the\n  terminal-only build. macOS, Linux and Windows.\n- **Edits config files surgically.** Only the one key you change is touched;\n  comments, ordering and indentation in your `settings.json`, `config.toml`,\n  `opencode.jsonc` or `config.yaml` survive intact. Writes are atomic.\n- **One endpoint for every agent.** magpie runs a local gateway that speaks\n  OpenAI chat completions, OpenAI Responses and the Anthropic Messages API,\n  and forwards to whichever vendor serves the model. Codex, Claude Code,\n  OpenCode and the rest all point at `http://127.0.0.1:3425/v1` and pick\n  from one catalog; the translation between APIs happens in magpie, streaming\n  and tool calls included.\n- **Your subscriptions, shared.** Sign in to Claude Code, Codex (ChatGPT)\n  or Copilot and that login shows up as a provider: every other agent can\n  use its models through the gateway, with nothing copied and no key to\n  paste.\n- **Providers with one field.** Pick a preset (Anthropic, OpenAI, Gemini,\n  DeepSeek, Kimi, GLM, MiniMax, StepFun, Qwen, Baidu Qianfan, Tencent Cloud Token Plan,\n  Huawei Cloud MaaS, Volcengine Ark, Mistral, Groq, xAI, OpenRouter, Together,\n  Fireworks, SiliconFlow, NVIDIA NIM, ModelScope, AiHubMix, 302.AI, Ollama, LM Studio…),\n  paste a key, done. Custom vendors need a name and a base URL. magpie never\n  reads keys from your shell environment.\n- **Real model lists, nothing compiled in.** With a key in hand magpie asks\n  the vendor which models it serves and offers exactly those; the\n  [models.dev](https://models.dev) catalog fills in names, reasoning efforts\n  and the list for vendors that have none, and refreshes itself in the\n  background once it goes stale. Choose which models each provider exposes,\n  or expose them all — a model released this morning is in the picker on\n  the next refresh.\n- **Each agent's own model list.** Under an agent's name on the Agents page,\n  \"Showing 5 / 32 models\" opens its list: click a model to take it out of\n  that agent's picker (Codex's `/model` included, its ChatGPT models too) or\n  put it back; other agents still use it, and a new model is shown.\n- **Profiles.** Snapshot every agent's settings under a name and switch all of\n  them back in one move.\n- **Real logos, no framework.** Plain HTML over the system webview; brand\n  icons from [lobehub/icons](https://github.com/lobehub/lobe-icons).\n\n## Agents\n\n| Agent        | File                              | Fields          |\n| ------------ | --------------------------------- | --------------- |\n| Claude Code  | `~/.claude/settings.json`         | provider, model, opus/sonnet/haiku/fable (through magpie) |\n| Claude Desktop | `Claude/` + `Claude-3p/configLibrary/` in `~/Library/Application Support` (`%LOCALAPPDATA%` on Windows, `~/.config` on Linux) | provider (its third-party gateway mode: Code and Cowork on magpie, no Anthropic sign-in; restart Desktop) |\n| Codex        | `~/.codex/config.toml`            | provider, model, effort |\n| Gemini CLI   | `~/.gemini/settings.json`, `~/.gemini/.env` | auth, model |\n| OpenCode     | `~/.config/opencode/opencode.json(c)` | model, small |\n| MiMo Code    | `~/.config/mimocode/mimocode.json(c)` | model, small |\n| Pi           | `~/.pi/agent/settings.json`       | model           |\n| OmO (omo-ai) | `~/.omo/agent/settings.json` (+ `models.json`; `$OMO_CODING_AGENT_DIR`, `$SENPI_CODING_AGENT_DIR`) | model |\n| Goose        | `~/.config/goose/config.yaml`     | model           |\n| Cursor CLI   | `~/.cursor/cli-config.json`       | model           |\n| Copilot CLI  | `~/.copilot/settings.json`        | model           |\n| Crush        | `~/.config/crush/crus"
+    },
+    {
+      "full_name": "yihui-dev/awesome-opus5-5-videos",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 1008,
+      "forks": 116,
+      "language": null,
+      "description": "A growing collection of viral videos made with Claude Opus 5.5 and the prompts behind them. Watch each original next to a live remake on Skillry. Updated regularly.",
+      "html_url": "https://github.com/yihui-dev/awesome-opus5-5-videos",
+      "topics": [
+        "ai-video",
+        "awesome",
+        "awesome-list",
+        "claude",
+        "claude-opus",
+        "creative-coding",
+        "motion-graphics",
+        "prompts",
+        "threejs"
+      ],
+      "created_at": "2026-09-27T06:19:36Z",
+      "updated_at": "2026-09-30T11:12:37Z",
+      "pushed_at": "2026-09-30T02:09:22Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": "# Awesome Opus 5.5 Videos\n\n<a href=\"https://skillry.dev/ai-videos/opus-5-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/_readme/mosaic.fc36404ce3.webp\" alt=\"A wall of videos made with Claude Opus 5.5: games, 3D scenes, explainers and motion graphics\" width=\"100%\"></a>\n\nViral videos people made with **Claude Opus 5.5**, each with the prompt the creator shared (or, where no prompt was published, their original post).\n\nEvery video here was made by asking Claude Opus 5.5 to write the animation as code (HTML, Canvas, SVG, Three.js and friends). Pick one, copy its prompt, and try it with your own agent.\n\n**[▶ Watch all 475 side by side with live remakes on Skillry](https://skillry.dev/ai-videos/opus-5-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos)**\n\n<a href=\"https://skillry.dev/ai-videos/opus-5-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/_readme/site-compare.592de731e6.webp\" alt=\"The Opus 5.5 videos page on Skillry, showing each original next to its live remake\" width=\"100%\"></a>\n\n- 475 prompts in [`prompts/`](prompts/) and [`data/videos.json`](data/videos.json)\n- 100 highlighted below, one per distinct prompt\n- Every entry links to the creator's original post\n- Latest update (2026-09-29): 86 videos added, mostly motion graphics and explainers\n\n## Contents\n\n- [Motion graphics](#motion-graphics) (58)\n- [Explainers](#explainers) (16)\n- [3D scenes](#3d-scenes) (14)\n- [Games & interactive](#games--interactive) (12)\n- [How to use a prompt](#how-to-use-a-prompt)\n- [Credits](#credits)\n\n## Motion graphics\n\n<table>\n<tr><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/himanshutwtxs-882858?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/himanshutwtxs-882858/preview.webp\" alt=\"Opus 5.5 video by @himanshutwtxs\" width=\"100%\"></a><br><a href=\"https://x.com/himanshutwtxs/status/2103495232637882858\"><b>@himanshutwtxs</b></a> · <a href=\"prompts/himanshutwtxs-882858.md\">Prompt</a><br><sub>Canvas</sub></td><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/anabology-491441?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/anabology-491441/preview.webp\" alt=\"Opus 5.5 video by @anabology\" width=\"100%\"></a><br><a href=\"https://x.com/anabology/status/2103534482930491441\"><b>@anabology</b></a> · <a href=\"prompts/anabology-491441.md\">Prompt</a><br><sub>Canvas · AI image</sub></td><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/moritzkremb-466494?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/moritzkremb-466494/preview.webp\" alt=\"Opus 5.5 video by @moritzkremb\" width=\"100%\"></a><br><a href=\"https://x.com/moritzkremb/status/2103066071838466494\"><b>@moritzkremb</b></a> · <a href=\"prompts/moritzkremb-466494.md\">Prompt</a><br><sub>SVG · GSAP</sub></td></tr>\n<tr><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/melvynx-638493?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/melvynx-638493/preview.webp\" alt=\"Opus 5.5 video by @melvynx\" width=\"100%\"></a><br><a href=\"https://x.com/melvynx/status/2103714680577638493\"><b>@melvynx</b></a> · <a href=\"prompts/melvynx-638493.md\">Prompt</a><br><sub>Canvas · SVG · GSAP</sub></td><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/ajith-io-208546?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/ajith-io-208546/preview.webp\" alt=\"Opus 5.5 video by @ajith_io\" width=\"100%\"></a><br><a href=\"https://x.com/ajith_io/status/2103469807375208546\"><b>@ajith_io</b></a> · <a href=\"prompts/ajith-io-208546.md\">Prompt</a><br><sub>Canvas · SVG · GSAP</sub></td><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/daniel-mac8-306214?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/daniel-mac8-306214/preview.webp\" alt=\"Opus 5.5 video by @daniel_mac8\" width=\"100%\"></a><br><a href=\"https://x.com/daniel_mac8/status/2103824976713306214\"><b>@daniel_mac8</b></a> · <a href=\"prompts/daniel-mac8-306214.md\">Prompt</a><br><sub>SVG · GSAP</sub></td></tr>\n<tr><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/prasad-pilla-496049?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/prasad-pilla-496049/preview.webp\" alt=\"Opus 5.5 video by @prasad_pilla\" width=\"100%\"></a><br><a href=\"https://x.com/prasad_pilla/status/2103728953785496049\"><b>@prasad_pilla</b></a> · <a href=\"prompts/prasad-pilla-496049.md\">Prompt</a"
+    },
+    {
+      "full_name": "zouyuxuan122/dsh-our-free-model",
+      "captured_at": "2026-09-30T11:21:41Z",
+      "stars": 475,
+      "forks": 22,
+      "language": "JavaScript",
+      "description": "在 dsh 里装上这个插件即可，无需登录、注册或填 API Key，就能使用包括 Muse Spark 1.3、MiMo V2.6 在内的前沿模型——完全免费，不限量。 All you do is install this plugin in dsh: no login, no sign-up, no API key — the frontier models are just there, Muse Spark 1.3 and MiMo V2.6 among them. Completely free, with no usage cap.",
+      "html_url": "https://github.com/zouyuxuan122/dsh-our-free-model",
+      "topics": [
+        "ai-agents",
+        "deepseek",
+        "deepseek-harness",
+        "developer-tools",
+        "dsh",
+        "dsh-plugin",
+        "free-model",
+        "llm",
+        "model-provider",
+        "openai-compatible"
+      ],
+      "created_at": "2026-09-24T16:17:19Z",
+      "updated_at": "2026-09-30T11:16:43Z",
+      "pushed_at": "2026-09-27T09:32:50Z",
+      "license": "MIT",
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
@@ -5206,7 +5982,9 @@
     "Contrastive-LM/CLM": "2026-09-29",
     "FxEmbed/FxEmbed": "2026-09-29",
     "HKUDS/CLI-Anything": "2026-09-29",
+    "KKKKhazix/AIHOT": "2026-09-30",
     "NVIDIA/OpenShell": "2026-09-29",
+    "Niko1221/Strata": "2026-09-30",
     "PrismML-Eng/Bonsai-demo": "2026-09-29",
     "Tencent/WeKnora": "2026-09-29",
     "TencentCloud/Octop": "2026-09-29",
@@ -5218,7 +5996,12 @@
     "davila7/claude-code-templates": "2026-09-29",
     "debpalash/VoiceStudio": "2026-09-29",
     "dream-num/univer": "2026-09-29",
+    "dzhng/jevgrep": "2026-09-30",
     "elastic/elasticsearch": "2026-09-29",
+    "feitangyuan/onetake": "2026-09-30",
+    "firelex/jeff": "2026-09-30",
+    "mexicat/pdoom-video": "2026-09-30",
+    "mikehasa/golive-skill": "2026-09-30",
     "mvschwarz/openrig": "2026-09-29",
     "oblien/openship": "2026-09-29",
     "paperclipai/paperclip": "2026-09-29",
@@ -5226,21 +6009,26 @@
     "pytorch/pytorch": "2026-09-29",
     "rakyll/hey": "2026-09-29",
     "rohitg00/ai-engineering-from-scratch": "2026-09-29",
+    "shihabal3amri/DiPlay": "2026-09-30",
     "stablyai/orca": "2026-09-29",
     "t8y2/dbx": "2026-09-29",
+    "tobi/disktree": "2026-09-30",
     "trycua/cua": "2026-09-29",
     "vectorize-io/hindsight": "2026-09-29",
     "vercel/next.js": "2026-09-29",
-    "willfaust/Madeira": "2026-09-29"
+    "willfaust/Madeira": "2026-09-29",
+    "yetone/magpie": "2026-09-30"
   },
   "sent_digests": {
     "20260929T175050Z": 35,
-    "20260929T192036Z": 47
+    "20260929T192036Z": 47,
+    "20260930T112141Z": 59
   },
   "pending_digests": {},
   "llm_daily_requests": {
     "2026-09-28": 21,
-    "2026-09-29": 65
+    "2026-09-29": 65,
+    "2026-09-30": 15
   },
   "delivery_progress": {}
 }

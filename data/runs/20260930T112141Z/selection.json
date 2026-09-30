@@ -1,0 +1,129 @@
+{
+  "covered_repositories_tracked": 30,
+  "excluded": [
+    {
+      "full_name": "ollaya-dev/ollaya",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "yihui-dev/awesome-opus5-5-videos",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "dgreenheck/tidewater",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "kaankiziltug/logo-design-skill",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "riba2534/claude-opus-5-5-demo",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "feder-cr/dots",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "supermemoryai/company-brain",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "wy51ai/floorplan-3d",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "lemomo-ai/lemo-opuscar",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "JohnHeibel/ClaudeAnimationBase",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "glanderness/BeefTV",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "angusdevgo/Seep-Reverse-Lab",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Liuziyu77/Valen",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "OpSafari/hypoarena",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "samyost1/3dicon",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Aureliengmz/clearwater",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "zouyuxuan122/dsh-our-free-model",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "amitshekhariitbhu/ai-system-design",
+      "reason": "digest cap after stable source priority"
+    }
+  ],
+  "pool": [
+    {
+      "full_name": "KKKKhazix/AIHOT",
+      "ordering_metric": 3832,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "yetone/magpie",
+      "ordering_metric": 3462,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "Niko1221/Strata",
+      "ordering_metric": 2147,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "mexicat/pdoom-video",
+      "ordering_metric": 2048,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "tobi/disktree",
+      "ordering_metric": 1947,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "dzhng/jevgrep",
+      "ordering_metric": 1848,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "shihabal3amri/DiPlay",
+      "ordering_metric": 1246,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "firelex/jeff",
+      "ordering_metric": 1140,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "mikehasa/golive-skill",
+      "ordering_metric": 1134,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "feitangyuan/onetake",
+      "ordering_metric": 1028,
+      "source_kind": "new_repo"
+    }
+  ]
+}
