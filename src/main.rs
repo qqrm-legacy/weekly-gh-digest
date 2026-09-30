@@ -427,12 +427,14 @@ fn collect(now: DateTime<Utc>) -> Result<RunData> {
         candidate_key(a).cmp(&candidate_key(b))
     });
     // Covered repositories never consume cap slots, and repositories below
-    // the star floor are dropped outright: they are dropped before the
-    // top-30 cut, so the fresh pool holds only interesting newcomers.
+    // the star floor are dropped for this run only — nothing is persisted,
+    // so one that grows past the floor enters the next pool normally. An
+    // unparseable star count is not a floor miss: it passes through to the
+    // metadata-stage check in select_candidates.
     let covered = read_state_strict()?.covered;
     let (fresh, rejected): (Vec<&Candidate>, Vec<&Candidate>) = all.iter().partition(|candidate| {
         !covered.contains_key(&candidate.name)
-            && candidate_observed_stars(candidate).is_some_and(|stars| stars >= MIN_TOTAL_STARS)
+            && candidate_observed_stars(candidate).is_none_or(|stars| stars >= MIN_TOTAL_STARS)
     });
     let mut excluded: Vec<Value> = rejected
         .iter()
@@ -444,7 +446,7 @@ fn collect(now: DateTime<Utc>) -> Result<RunData> {
                 )
             } else {
                 format!(
-                    "below the {MIN_TOTAL_STARS}-star floor ({} observed)",
+                    "below the {MIN_TOTAL_STARS}-star floor this run ({} observed); re-evaluated next run",
                     candidate_observed_stars(x).unwrap_or_default()
                 )
             };
@@ -759,7 +761,7 @@ fn select_candidates(
             excluded.push(json!({
                 "full_name":snapshot.full_name,
                 "source_kind":kind,
-                "reason":format!("below the {MIN_TOTAL_STARS}-star floor ({} total)", snapshot.stars.unwrap_or_default()),
+                "reason":format!("below the {MIN_TOTAL_STARS}-star floor this run ({} total); re-evaluated next run", snapshot.stars.unwrap_or_default()),
             }));
             continue;
         }
