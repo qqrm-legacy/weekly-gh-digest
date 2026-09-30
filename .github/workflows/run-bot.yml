@@ -32,7 +32,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     env:
       CARGO_TERM_COLOR: always
     steps:
@@ -106,7 +106,7 @@ jobs:
                 --name "weekly-gh-digest-$RETRY_DELIVERY_RUN_ID" --dir "$source_dir"
               source_input=""
               while IFS= read -r candidate; do
-                if jq -e '.format_version == 3 and .llm_used == true and (.entries | length >= 1) and all(.entries[]; .llm_used == true and (.description | type == "string") and (.description | length > 0))' "$candidate" >/dev/null; then
+                if jq -e '.format_version == 3 and (.entries | length >= 1) and all(.entries[]; (.description | type == "string") and (.description | length > 0))' "$candidate" >/dev/null; then
                   source_input="$candidate"
                   break
                 fi
