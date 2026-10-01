@@ -2,13 +2,12 @@ name: Run Bot
 
 on:
   schedule:
-    # Every 3 hours UTC (00/03/06/09/12/15/18/21): several checks a day.
-    # A check with fresh top-20 Trending candidates (>=5000 stars) posts one
-    # compressed batch to the main chat; a quiet check stays silent in the
-    # main chat and notifies the tech chat at most once per day.
-    # Probe Trigger still acts as the safety net around the morning and
-    # evening windows if GitHub drops or delays a slot.
-    - cron: '0 */3 * * *'
+    # 07:00 and 19:00 UTC = 10:00 and 22:00 Moscow time: a couple of checks
+    # a day, This-Week-in-Rust style but daily. A check posts one compressed
+    # batch of fresh top-30 Trending repositories (>=5000 stars) when there
+    # are new ones; Probe Trigger remains the safety net for dropped slots.
+    - cron: '0 7 * * *'
+    - cron: '0 19 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
