@@ -1,0 +1,22 @@
+{
+  "budget": {
+    "actual_requests": 0,
+    "all_descriptions_complete": false,
+    "expected_requests": 0,
+    "local_inference": false,
+    "max_requests_per_run": 40,
+    "max_requests_per_utc_day": 100,
+    "max_requests_with_retries": 0,
+    "paid_fallback": false,
+    "providers": [
+      {
+        "model": "openai/gpt-oss-120b",
+        "name": "Groq"
+      }
+    ],
+    "reason": "no fresh candidates after deduplication; descriptions skipped"
+  },
+  "items": [],
+  "prompts": [],
+  "provider_reviews": []
+}

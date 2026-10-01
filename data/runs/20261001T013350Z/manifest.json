@@ -1,0 +1,299 @@
+{
+  "api_repositories": [],
+  "candidate_count": 0,
+  "candidate_policy": "Weekly Trending, daily Trending, then Search; stable order; max 20; not a global GitHub census.",
+  "captured_at": "2026-10-01T01:33:50Z",
+  "excluded_candidates": [
+    {
+      "full_name": "vectorize-io/hindsight",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "debpalash/VoiceStudio",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "paperclipai/paperclip",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "rohitg00/ai-engineering-from-scratch",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "dream-num/univer",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "stablyai/orca",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "pbakaus/impeccable",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "Tencent/WeKnora",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "anthropics/financial-services",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "TencentCloud/Octop",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "davila7/claude-code-templates",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "alirezarezvani/claude-skills",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "vercel/next.js",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "FxEmbed/FxEmbed",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "pytorch/pytorch",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "anthropics/claude-code-action",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "elastic/elasticsearch",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "NVIDIA/OpenShell",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "t8y2/dbx",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "VectifyAI/PageIndex",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "mattpocock/skills",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "DietrichGebert/ponytail",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "byoungd/up",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "mvschwarz/openrig",
+      "reason": "already reviewed in the digest on 2026-09-29"
+    },
+    {
+      "full_name": "harry0703/MoneyPrinterTurbo",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "heygen-com/hyperframes",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "NawfalMotii79/PLFM_RADAR",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "openclaw/openclaw",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "ComposioHQ/awesome-claude-skills",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "colbymchenry/codegraph",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "mksglu/context-mode",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "modelcontextprotocol/servers",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "firebase/firebase-ios-sdk",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "AgentSystemLabs/agent-office",
+      "reason": "below the 5000-star floor this run (440 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "JoasASantos/Offensive-Security-AI-Models",
+      "reason": "below the 5000-star floor this run (483 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "KKKKhazix/AIHOT",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "Louis-CFM/coucou",
+      "reason": "below the 5000-star floor this run (1331 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "LuwuDynamics/xgoduck_hardware",
+      "reason": "below the 5000-star floor this run (430 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "Niko1221/Strata",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "OpSafari/hypoarena",
+      "reason": "below the 5000-star floor this run (545 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "SpecterLouse/CapCut-Pro-macOS-Windows",
+      "reason": "below the 5000-star floor this run (458 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "amitshekhariitbhu/ai-system-design",
+      "reason": "below the 5000-star floor this run (476 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "chasmlol/2010-rust-rewrite-mashup",
+      "reason": "below the 5000-star floor this run (431 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "dzhng/jevgrep",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "echris6/motion-video-kit",
+      "reason": "below the 5000-star floor this run (584 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "feder-cr/dots",
+      "reason": "below the 5000-star floor this run (1934 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "feitangyuan/onetake",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "firelex/jeff",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "fsiaonma/elpis",
+      "reason": "below the 5000-star floor this run (428 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "glanderness/BeefTV",
+      "reason": "below the 5000-star floor this run (635 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "kaankiziltug/logo-design-skill",
+      "reason": "below the 5000-star floor this run (1114 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "lemomo-ai/lemo-opuscar",
+      "reason": "below the 5000-star floor this run (683 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "mexicat/pdoom-video",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "openai/mcp-extensions",
+      "reason": "below the 5000-star floor this run (475 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "rehan-remade/universal-modder",
+      "reason": "below the 5000-star floor this run (854 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "shihabal3amri/DiPlay",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "supermemoryai/company-brain",
+      "reason": "below the 5000-star floor this run (873 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "tobi/disktree",
+      "reason": "already reviewed in the digest on 2026-09-30"
+    },
+    {
+      "full_name": "wangmingxuan666/Tiersense",
+      "reason": "below the 5000-star floor this run (515 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "wy51ai/floorplan-3d",
+      "reason": "below the 5000-star floor this run (957 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "xikhar/spiderbench",
+      "reason": "below the 5000-star floor this run (451 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "yihui-dev/awesome-opus5-5-videos",
+      "reason": "below the 5000-star floor this run (1094 observed); re-evaluated next run"
+    },
+    {
+      "full_name": "zouyuxuan122/dsh-our-free-model",
+      "reason": "below the 5000-star floor this run (512 observed); re-evaluated next run"
+    }
+  ],
+  "sources": [
+    {
+      "complete": true,
+      "fetched_at": "2026-10-01T01:33:51Z",
+      "pagination": "HTML first page as returned; no pagination",
+      "parsed_candidates": 18,
+      "reason": "repository rows parsed from first page",
+      "source": "GitHub Trending weekly",
+      "status": "included",
+      "url": "https://github.com/trending?since=weekly"
+    },
+    {
+      "complete": true,
+      "fetched_at": "2026-10-01T01:33:53Z",
+      "pagination": "HTML first page as returned; no pagination",
+      "parsed_candidates": 17,
+      "reason": "repository rows parsed from first page",
+      "source": "GitHub Trending daily",
+      "status": "included",
+      "url": "https://github.com/trending?since=daily"
+    },
+    {
+      "complete": false,
+      "fetched_at": "2026-10-01T01:33:53Z",
+      "pagination": "per_page=30; first page only; Search API result cap applies",
+      "query": "created:>=2026-09-24 stars:>10",
+      "reason": "first page ingested as candidate source only",
+      "returned": 30,
+      "source": "GitHub REST Search repositories created in last 7 days",
+      "status": "included",
+      "total_count": 1484,
+      "url": "https://api.github.com/search/repositories?q=created%3A%3E%3D2026-09-24+stars%3A%3E10&sort=stars&order=desc&per_page=30"
+    }
+  ],
+  "validation_notes": []
+}
