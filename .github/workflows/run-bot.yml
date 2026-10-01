@@ -2,10 +2,13 @@ name: Run Bot
 
 on:
   schedule:
-    # 07:00 and 19:00 UTC = 10:00 and 22:00 Moscow time: two probes per day.
-    # Probe Trigger acts as the safety net if GitHub drops a slot.
-    - cron: '0 7 * * *'
-    - cron: '0 19 * * *'
+    # Every 3 hours UTC (00/03/06/09/12/15/18/21): several checks a day.
+    # A check with fresh top-20 Trending candidates (>=5000 stars) posts one
+    # compressed batch to the main chat; a quiet check stays silent in the
+    # main chat and notifies the tech chat at most once per day.
+    # Probe Trigger still acts as the safety net around the morning and
+    # evening windows if GitHub drops or delays a slot.
+    - cron: '0 */3 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -119,14 +122,16 @@ jobs:
             elif [[ "$DELIVER_TO_MAIN_CHAT" == "true" ]]; then
               "$bot" digest --llm
             elif [[ "$MANUAL_DRY_RUN" == "true" ]]; then
-              "$bot" preview --dry-run --llm
+              # Dry runs never spend the daily LLM budget: previews are for
+              # pipeline sanity, not for burning Groq requests.
+              "$bot" preview --dry-run
             else
               "$bot" debug --llm
             fi
           elif [[ -n "${TELEGRAM_BOT_TOKEN:-}" && -n "${TELEGRAM_CHAT_ID:-}" ]]; then
             "$bot" digest --llm
           else
-            "$bot" preview --dry-run --llm
+            "$bot" preview --dry-run
           fi
 
       - name: Save state and source provenance
