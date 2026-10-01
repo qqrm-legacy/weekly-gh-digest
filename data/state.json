@@ -6517,6 +6517,232 @@
         }
       ],
       "readme_excerpt": "# OpenClaw 🦞 — Your assistant, on your devices, in your chats\n\n<p align=\"center\">\n  <picture>\n    <source media=\"(prefers-color-scheme: light)\" srcset=\"https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-banner-light.png\">\n    <img src=\"https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-banner-dark.png\" alt=\"OpenClaw — EXFOLIATE! EXFOLIATE! Your AI assistant, running on your own devices.\">\n  </picture>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/openclaw/openclaw/actions/workflows/ci.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/openclaw/openclaw/ci.yml?branch=main&style=flat-square&label=ci\" alt=\"CI status\"></a>\n  <a href=\"https://www.npmjs.com/package/openclaw\"><img src=\"https://img.shields.io/npm/v/openclaw?style=flat-square&label=npm\" alt=\"npm version\"></a>\n  <a href=\"https://nodejs.org\"><img src=\"https://img.shields.io/node/v/openclaw?style=flat-square\" alt=\"Node.js version\"></a>\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-green?style=flat-square\" alt=\"License: MIT\"></a>\n  <a href=\"https://discord.gg/clawd\"><img src=\"https://img.shields.io/discord/1456350064065904867?label=discord&logo=discord&logoColor=white&color=5865F2&style=flat-square\" alt=\"Discord\"></a>\n</p>\n\nOpenClaw is an open-source AI assistant that runs on your own computer and meets you in the channels you already use: Discord, iMessage, Slack, Teams, Telegram, WhatsApp, and 20+ more, plus native apps for macOS, iOS, Android, Windows, and Linux. One Gateway runs it as a personal assistant on a laptop or as a shared [team deployment](https://docs.openclaw.ai/start/teams); configuration is the only difference.\n\n**Yours, with no catch.** State, memory, and credentials live on your hardware. Models and agent harnesses (Claude, Codex, local models) are plugins you can swap without changing anything else. Your prompts go to the model provider and chat platforms you configure, plus any diagnostics export you enable yourself; by default OpenClaw itself phones home for nothing but a daily version check, anonymous feature statistics are opt-in, and `update.checkOnStart: false` disables both ([what OpenClaw sends](https://docs.openclaw.ai/gateway/telemetry)). OpenClaw is stewarded by the [OpenClaw Foundation](https://openclaw.org), an independent 501(c)(3), and has no paid tier, hosted service, or token. The architecture case — trusted gateway, untrusted execution, deterministic policy — is in [Why OpenClaw](https://docs.openclaw.ai/start/why-openclaw).\n\n[Website](https://openclaw.ai) · [Docs](https://docs.openclaw.ai) · [Getting started](https://docs.openclaw.ai/start/getting-started) · [Why OpenClaw](https://docs.openclaw.ai/start/why-openclaw) · [FAQ](https://docs.openclaw.ai/help/faq) · [Vision](VISION.md) · [DeepWiki](https://deepwiki.com/openclaw/openclaw)\n\n## Install\n\nThe installer supports macOS, Linux, and Windows. It provisions a supported Node.js runtime when needed.\n\n```bash\n# macOS / Linux / WSL2\ncurl -fsSL https://openclaw.ai/install.sh | bash\n```\n\n```powershell\n# Windows PowerShell\niwr -useb https://openclaw.ai/install.ps1 | iex\n```\n\nAlready manage Node.js? Install the published package instead (Node 24.16+ or 26.1+; Node 26 recommended):\n\n```bash\nnpm install -g openclaw@latest --allow-scripts=openclaw\n```\n\nThat command is for npm 12 or npm 11.16+. On npm 11.15 and earlier, omit\n`--allow-scripts=openclaw`. See the\n[installation guide](https://docs.openclaw.ai/install) for the lifecycle script\ncontract, Docker, Nix, and other deployment paths.\n\n## Quick start\n\nOn a fresh install, the installer scripts start onboarding automatically.\nComplete the wizard they open. If you installed the package directly with npm,\npnpm, or Bun, run:\n\n```bash\nopenclaw onboard --install-daemon\n```\n\nAfter onboarding:\n\n```bash\nopenclaw gateway status\nopenclaw dashboard\n```\n\nOnboarding verifies model access, creates the workspace, and configures the Gateway. The last command opens the Control UI; send a message there to confirm the assistant is working. See the [getting started guide](https://docs.openclaw.ai/start/getting-started) for channel setup and troubleshooting.\n\n## How it fits together\n\n- The [Gateway](https://docs.openclaw.ai/gateway) is the local control plane for sessions, tools, events, and channel connections.\n- The [Control UI](https://docs.openclaw.ai/web/control-ui), CLI, and [TUI](https://docs.openclaw.ai/web/tui) connect to the Gateway.\n- [Channels](https://docs.openclaw.ai/channels) bring the assistant to WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage, and other messaging services.\n- [Companion apps and nodes](https://docs.openclaw.ai/platforms) add voice, Canvas, camera, screen, and device-local actions on supported platforms.\n\nOpenClaw works with hosted and local [model providers](https://docs.openclaw.ai/concepts/model-providers). Its [tools](https://docs.openclaw.ai/tools), [skills](https://docs.openclaw.ai/t"
+    },
+    {
+      "full_name": "HunxByts/GhostTrack",
+      "captured_at": "2026-10-01T14:03:50Z",
+      "stars": 16193,
+      "forks": 2235,
+      "language": "Python",
+      "description": "Useful tool to track location or mobile number",
+      "html_url": "https://github.com/HunxByts/GhostTrack",
+      "topics": [
+        "cybersecurity",
+        "fyp",
+        "hacking",
+        "hacking-tool",
+        "indonesia",
+        "information",
+        "information-gathering",
+        "ip-geolocation",
+        "linux",
+        "osint",
+        "osint-python",
+        "osint-tool",
+        "pentesting",
+        "phone-number",
+        "python",
+        "python-hacking",
+        "termux",
+        "termux-hacks",
+        "termux-tool"
+      ],
+      "created_at": "2023-04-15T07:20:47Z",
+      "updated_at": "2026-10-01T14:03:07Z",
+      "pushed_at": "2024-01-11T15:36:46Z",
+      "license": null,
+      "open_issues": 124,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Useful tool to track location or mobile number",
+          "full_name": "HunxByts/GhostTrack",
+          "language": "Python",
+          "trending_stars_period": 635,
+          "trending_total_forks": null,
+          "trending_total_stars": 16193,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": "# GhostTrack\nUseful tool to track location or mobile number, so this tool can be called osint or also information gathering\n\n<img src=\"https://github.com/HunxByts/GhostTrack/blob/main/asset/bn.png\"/>\n\nNew update :\n```Version 2.2```\n\n### Instalation on Linux (deb)\n```\nsudo apt-get install git\nsudo apt-get install python3\n```\n\n### Instalation on Termux\n```\npkg install git\npkg install python3\n```\n\n### Usage Tool\n```\ngit clone https://github.com/HunxByts/GhostTrack.git\ncd GhostTrack\npip3 install -r requirements.txt\npython3 GhostTR.py\n```\n\nDisplay on the menu ```IP Tracker```\n\n<img src=\"https://github.com/HunxByts/GhostTrack/blob/main/asset/ip.png \" />\n\non the IP Track menu, you can combo with the seeker tool to get the target IP\n<details>\n<summary>:zap: Install Seeker :</summary>\n- <strong><a href=\"https://github.com/thewhiteh4t/seeker\">Get Seeker</a></strong>\n</details>\n\nDisplay on the menu ```Phone Tracker```\n\n<img src=\"https://github.com/HunxByts/GhostTrack/blob/main/asset/phone.png\" />\n\non this menu you can search for information from the target phone number\n\nDisplay on the menu ```Username Tracker```\n\n<img src=\"https://github.com/HunxByts/GhostTrack/blob/main/asset/User.png\"/>\non this menu you can search for information from the target username on social media\n\n<details>\n<summary>:zap: Author :</summary>\n- <strong><a href=\"https://github.com/HunxByts\">HunxByts</a></strong>\n</details>\n"
+    },
+    {
+      "full_name": "cursor/plugins",
+      "captured_at": "2026-10-01T14:03:50Z",
+      "stars": 9257,
+      "forks": 873,
+      "language": "TypeScript",
+      "description": "Cursor plugin specification and official plugins",
+      "html_url": "https://github.com/cursor/plugins",
+      "topics": [],
+      "created_at": "2026-01-23T01:57:42Z",
+      "updated_at": "2026-10-01T14:02:44Z",
+      "pushed_at": "2026-09-30T18:08:30Z",
+      "license": null,
+      "open_issues": 174,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Cursor plugin specification and official plugins",
+          "full_name": "cursor/plugins",
+          "language": "TypeScript",
+          "trending_stars_period": 157,
+          "trending_total_forks": null,
+          "trending_total_stars": 9257,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": "# Cursor plugins\n\nOfficial Cursor plugins for popular developer tools, frameworks, and SaaS products. Each plugin is a standalone directory at the repository root with its own `.cursor-plugin/plugin.json` manifest.\n\n## Plugins\n\n| `name` | Plugin | Author | Category | `description` (from marketplace) |\n|:-------|:-------|:-------|:---------|:-------------------------------------|\n| `teaching` | [Teaching](teaching/) | Cursor | Utilities | Skill mapping, practice plans, and learning retrospectives. |\n| `continual-learning` | [Continual Learning](continual-learning/) | Eric Zakariasson | Developer Tools | Incremental transcript-driven memory updates for AGENTS.md using high-signal bullet points only. |\n| `cursor-team-kit` | [Cursor Team Kit](cursor-team-kit/) | Eric Zakariasson | Developer Tools | Internal team workflows for CI, code review, shipping, local automation, and verification. |\n| `thermos` | [Thermos](thermos/) | Cursor | Developer Tools | Thermo-nuclear branch review: deep security/correctness audits, harsh code-quality rubrics, parallel subagents, thermos orchestration, and optional merge-ready PR flows. |\n| `create-plugin` | [Create Plugin](create-plugin/) | Cursor | Developer Tools | Scaffold and validate new agent plugins. |\n| `ralph-loop` | [Ralph Loop](ralph-loop/) | Cursor | Developer Tools | Iterative self-referential AI loops using the Ralph Wiggum technique. |\n| `agent-compatibility` | [Agent Compatibility](agent-compatibility/) | Cursor | Developer Tools | CLI-backed repo compatibility scans plus agents that audit startup, validation, and docs against reality. |\n| `cli-for-agent` | [CLI for Agents](cli-for-agent/) | Eric Zakariasson | Developer Tools | Patterns for designing CLIs that coding agents can run reliably: flags, help with examples, pipelines, errors, idempotency, dry-run. |\n| `pr-review-canvas` | [PR Review Canvas](pr-review-canvas/) | Cursor | Developer Tools | Render PR diffs as review canvases grouped by importance. |\n| `docs-canvas` | [Docs Canvas](docs-canvas/) | Cursor | Developer Tools | Render documentation as a navigable canvas. |\n| `cursor-sdk` | [Cursor SDK](cursor-sdk/) | Cursor | Developer Tools | Build apps, scripts, and automations with the TypeScript SDK. |\n| `orchestrate` | [Orchestrate](orchestrate/) | Cursor | Developer Tools | Fan large tasks out across parallel cloud agents with planners, workers, verifiers, and structured handoffs. |\n| `pstack` | [pstack](pstack/) | Lauren Tan | Developer Tools | if you want to go fast, go deep first. pstack helps you write less, but higher quality code. rigorous agent workflows you can parallelize with confidence. |\n| `dyl-stack` | [dyl-stack](dyl-stack/) | Dylan Gattey | Developer Tools | Dylan's agent style on top of pstack: root causes over symptom patches, The Algorithm before design, terse verified delivery, a PR review that fits in a paste, and Figma-to-UI with a visual judge. |\n| `advisor` | [Advisor](advisor/) | Cursor | Developer Tools | Consult a stronger model before major decisions, when stuck, and before declaring done. |\n| `grok-voice` | [Grok Voice](grok-voice/) | Eric Zakariasson | Developer Tools | Add Grok voice to an app: realtime speech-to-speech, speech-to-text dictation, text-to-speech read-aloud, and a log-driven fix loop for voice sessions. |\n| `gmail` | [Gmail](third_party/gmail/) | Cursor | Productivity | Search, read, draft, and manage email. |\n| `google-drive` | [Google Drive](third_party/google-drive/) | Cursor | Productivity | Search, read, create, and share files. |\n| `google-calendar` | [Google Calendar](third_party/google-calendar/) | Cursor | Productivity | Search events and schedule meetings. |\n| `google-docs` | [Google Docs](third_party/google-docs/) | Cursor | Productivity | Read, create, and edit documents. |\n| `google-sheets` | [Google Sheets](third_party/google-sheets/) | Cursor | Productivity | Read, write, and append spreadsheet data. |\n| `google-slides` | [Google Slides](third_party/google-slides/) | Cursor | Productivity | Create, edit, and render presentations. |\n| `gong` | [Gong](third_party/gong/) | Cursor | Integrations | Pull account summaries, deal insights, and call briefs. |\n| `salesforce` | [Salesforce](third_party/salesforce/) | Cursor | Integrations | Query, create, and update records in your org. |\n| `playwright` | [Playwright](third_party/playwright/) | Cursor | Integrations | Navigate, click, screenshot, and test in a real browser. |\n| `github` | [GitHub](third_party/github/) | Cursor | Integrations | Manage repos, issues, pull requests, and Actions. |\n| `ashby` | [Ashby](third_party/ashby/) | Cursor | Integrations | Search candidates, prep interviews, and manage pipeline tasks. |\n| `hubspot` | [HubSpot](third_party/hubspot/) | Cursor | Integrations | Search and update contacts, companies, deals, and tickets. |\n| `intercom` | [Intercom](third_party/intercom/) | Cursor | Integrations | Search conversations, contacts, and Help Center articles. |\n| `zoom` | [Zoom](th"
+    },
+    {
+      "full_name": "earendil-works/pi",
+      "captured_at": "2026-10-01T14:03:50Z",
+      "stars": 110961,
+      "forks": 14112,
+      "language": "TypeScript",
+      "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
+      "html_url": "https://github.com/earendil-works/pi",
+      "topics": [],
+      "created_at": "2025-08-09T14:03:50Z",
+      "updated_at": "2026-10-01T14:03:02Z",
+      "pushed_at": "2026-10-01T13:12:36Z",
+      "license": "MIT",
+      "open_issues": 245,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
+          "full_name": "earendil-works/pi",
+          "language": "TypeScript",
+          "trending_stars_period": 294,
+          "trending_total_forks": null,
+          "trending_total_stars": 110961,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": "<p align=\"center\">\n  <a href=\"https://pi.dev\">\n    <img alt=\"pi logo\" src=\"https://pi.dev/logo-auto.svg\" width=\"128\">\n  </a>\n</p>\n<p align=\"center\">\n  <a href=\"https://discord.com/invite/3cU7Bz4UPx\"><img alt=\"Discord\" src=\"https://img.shields.io/badge/discord-community-5865F2?style=flat-square&logo=discord&logoColor=white\" /></a>\n  <a href=\"https://www.npmjs.com/package/@earendil-works/pi-coding-agent\"><img alt=\"npm\" src=\"https://img.shields.io/npm/v/@earendil-works/pi-coding-agent?style=flat-square\" /></a>\n</p>\n\n> New issues and PRs from new contributors are auto-closed by default. Maintainers review auto-closed issues daily. See [CONTRIBUTING.md](CONTRIBUTING.md).\n\n# Pi Agent Harness\n\nThis is the home of the Pi agent harness project including our self extensible coding agent.\n\n* **[@earendil-works/pi-coding-agent](packages/coding-agent)**: Interactive coding agent CLI\n* **[@earendil-works/pi-agent-core](packages/agent)**: Agent runtime with tool calling and state management\n* **[@earendil-works/pi-ai](packages/ai)**: Unified multi-provider LLM API (OpenAI, Anthropic, Google, …)\n\nTo learn more about Pi:\n\n* [Visit pi.dev](https://pi.dev), the project website with demos\n* [Read the documentation](https://pi.dev/docs/latest), but you can also ask the agent to explain itself\n\n## All Packages\n\n| Package | Description |\n|---------|-------------|\n| **[@earendil-works/chord](packages/chord)** | Standalone application-composition runtime for services, replicated state, RPC, and plugins |\n| **[@earendil-works/pi-telemetry](packages/telemetry)** | Vendor-neutral telemetry contracts, reference adapter, conformance tests, and typed schemas |\n| **[@earendil-works/pi-ai](packages/ai)** | Unified multi-provider LLM API (OpenAI, Anthropic, Google, etc.) |\n| **[@earendil-works/pi-durable](packages/durable)** | Durable conversation, task, and document runtime |\n| **[@earendil-works/pi-agent-core](packages/agent)** | Agent runtime with tool calling and state management |\n| **[@earendil-works/pi-coding-agent](packages/coding-agent)** | Interactive coding agent CLI |\n| **[@earendil-works/pi-tui](packages/tui)** | Terminal UI library with differential rendering |\n\nFor Slack/chat automation and workflows see [earendil-works/pi-chat](https://github.com/earendil-works/pi-chat).\n\n## Permissions & Containerization\n\nPi does not include a built-in permission system for restricting filesystem, process, network, or credential access. By default, it runs with the permissions of the user and process that launched it.\n\nIf you need stronger boundaries, containerize or sandbox Pi. See [packages/coding-agent/docs/containerization.md](packages/coding-agent/docs/containerization.md) for three patterns:\n\n- **Gondolin extension**: keep `pi` and provider auth on the host while routing built-in tools and `!` commands into a local Linux micro-VM.\n- **Plain Docker**: run the whole `pi` process in a local container for simple isolation.\n- **OpenShell**: run the whole `pi` process in a policy-controlled sandbox.\n\n## Contributing\n\nSee [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines and [AGENTS.md](AGENTS.md) for project-specific rules (for both humans and agents).  Longer term plans for Pi can also be found in [RFCs](https://rfc.earendil.com/keyword/pi/).\n\n## Development\n\n```bash\nnpm install --ignore-scripts  # Install all dependencies without running lifecycle scripts\nnpm run build         # Refresh model data, then build all packages\nnpm run build:offline # Rebuild using existing model data without network access\nnpm run check         # Lint, format, and type check\n./test.sh            # Run tests (skips LLM-dependent tests without API keys)\n./pi-test.sh         # Run pi from sources (can be run from any directory)\n```\n\n## Building standalone binaries from release source\n\nGitHub releases include a versioned source archive covered by the release's `SHA256SUMS` file. Extract it and run the same build script used for the official standalone binaries:\n\n```bash\nVERSION=\"<release-version>\"\ntar -xzf \"pi-${VERSION}-source.tar.gz\"\ncd \"pi-${VERSION}\"\n./scripts/build-binaries.sh --offline-model-data --platform linux-x64 --out \"$PWD/out\"\n```\n\nThe archive includes release model data and native prebuilds. `--offline-model-data` uses that model data without refreshing provider catalogs. The script installs dependencies and builds the executable with its runtime assets; pass `--skip-install` if dependencies are already provided.\n\n## Supply-chain hardening\n\nWe treat npm dependency changes as reviewed code changes.\n\n- Direct external dependencies are pinned to exact versions. Internal workspace packages remain version-ranged.\n- `.npmrc` sets `save-exact=true` and `min-release-age=2` to avoid same-day dependency releases during npm resolution.\n- `package-lock.json` is the dependency ground truth. Pre-commit blocks accidental lockfile commits unless `PI_ALLOW_LOCKFILE_CHANGE=1` is set.\n- `npm run check` verifies pinned direct deps, native TypeScript import "
+    },
+    {
+      "full_name": "flutter/flutter",
+      "captured_at": "2026-10-01T14:03:50Z",
+      "stars": 179177,
+      "forks": 32734,
+      "language": "Dart",
+      "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "html_url": "https://github.com/flutter/flutter",
+      "topics": [
+        "android",
+        "app-framework",
+        "cross-platform",
+        "dart",
+        "dart-platform",
+        "desktop",
+        "flutter",
+        "flutter-package",
+        "fuchsia",
+        "ios",
+        "linux-desktop",
+        "macos",
+        "material-design",
+        "mobile",
+        "mobile-development",
+        "skia",
+        "web",
+        "web-framework",
+        "windows"
+      ],
+      "created_at": "2015-03-06T22:54:58Z",
+      "updated_at": "2026-10-01T13:55:32Z",
+      "pushed_at": "2026-10-01T02:22:21Z",
+      "license": "BSD-3-Clause",
+      "open_issues": 13279,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+          "full_name": "flutter/flutter",
+          "language": "Dart",
+          "trending_stars_period": 150,
+          "trending_total_forks": null,
+          "trending_total_stars": 179177,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": "<a href=\"https://flutter.dev/\">\n  <h1 align=\"center\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://docs.flutter.dev/logo_dark.png\">\n      <img alt=\"Flutter\" src=\"https://docs.flutter.dev/logo.png\">\n    </picture>\n  </h1>\n</a>\n\n[![Flutter CI Status](https://flutter-dashboard.appspot.com/api/public/build-status-badge?repo=flutter)](https://flutter-dashboard.appspot.com/#/build?repo=flutter)\n[![Discord badge][]][Discord instructions]\n[![Twitter handle][]][Twitter badge]\n[![BlueSky badge][]][BlueSky handle]\n[![LFX Health Score](https://insights.linuxfoundation.org/api/badge/health-score?project=flutter)](https://insights.linuxfoundation.org/project/flutter)\n[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5631/badge)](https://bestpractices.coreinfrastructure.org/projects/5631)\n[![SLSA 1](https://slsa.dev/images/gh-badge-level1.svg)](https://slsa.dev)\n\nFlutter is Google's SDK for crafting beautiful, fast user experiences for\nmobile, web, and desktop from a single codebase. Flutter works with existing\ncode, is used by developers and organizations around the world, and is free and\nopen source.\n\n## Documentation\n\n* [Install Flutter](https://docs.flutter.dev/get-started)\n* [Flutter documentation](https://docs.flutter.dev)\n* [Development wiki](./docs/README.md)\n* [Contributing to Flutter](https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md)\n\nFor release and other announcements, join the\n[flutter-announce](https://groups.google.com/g/flutter-announce)\nmailing list. Our documentation also tracks [breaking\nchanges](https://docs.flutter.dev/release/breaking-changes) across releases.\n\n## Terms of service\n\nThe Flutter tool may occasionally download resources from Google servers. By\ndownloading or using the Flutter SDK, you agree to the Google Terms of Service:\nhttps://policies.google.com/terms\n\nFor example, when installed from GitHub (as opposed to from a prepackaged\narchive), the Flutter tool will download the Dart SDK from Google servers\nimmediately when first run, as it is used to execute the `flutter` tool itself.\nThis will also occur when Flutter is upgraded (e.g. by running the `flutter\nupgrade` command).\n\n## About Flutter\n\nWe think Flutter will help you create beautiful, fast apps, with a productive,\nextensible and open development model, whether you're targeting iOS or Android,\nweb, Windows, macOS, Linux or embedding it as the UI toolkit for a platform of\nyour choice.\n\n### Beautiful user experiences\n\nWe want to enable designers to deliver their full creative vision without being\nforced to water it down due to limitations of the underlying framework.\nFlutter's [layered architecture] gives you control over every pixel on the\nscreen and its powerful compositing capabilities let you overlay and animate\ngraphics, video, text, and controls without limitation. Flutter includes a full\n[set of widgets][widget catalog] that deliver pixel-perfect experiences whether\nyou're building for iOS ([Cupertino]) or other platforms ([Material]), along with\nsupport for customizing or creating entirely new visual components.\n\n<p align=\"center\"><img src=\"https://github.com/flutter/website/blob/main/sites/docs/web/assets/images/docs/homepage/reflectly-hero-600px.png?raw=true\" alt=\"Reflectly hero image\"></p>\n\n### Fast results\n\nFlutter is fast. It's powered by hardware-accelerated 2D graphics\nlibraries like [Skia] (which underpins Chrome and Android) and\n[Impeller]. We architected Flutter to\nsupport glitch-free, jank-free graphics at the native speed of your device.\n\nFlutter code is powered by the world-class [Dart programming language], which enables\ncompilation to 32-bit and 64-bit ARM machine code for iOS and Android,\nJavaScript and WebAssembly for the web, as well as Intel x64 and ARM\nfor desktop devices.\n\n<p align=\"center\"><img src=\"https://github.com/flutter/website/blob/main/sites/docs/web/assets/images/docs/homepage/dart-diagram-small.png?raw=true\" alt=\"Dart diagram\"></p>\n\n### Productive development\n\nFlutter offers [stateful hot reload][Hot reload], allowing you to make changes to your code\nand see the results instantly without restarting your app or losing its state.\n\n[![Hot reload animation][]][Hot reload]\n\n### Extensible and open model\n\nFlutter works with any development tool (or none at all), and also includes\neditor plug-ins for both [Visual Studio Code] and [IntelliJ / Android Studio].\nFlutter provides [tens of thousands of packages][Flutter packages] to speed your\ndevelopment, regardless of your target platform. And accessing other native code\nis easy, with support for both FFI ([on Android][Android FFI], [on iOS][iOS FFI],\n[on macOS][macOS FFI], [on Linux][Linux FFI], and [on Windows][Windows FFI]) as well as\n[platform-specific APIs][platform channels].\n\nFlutter is a fully open-source project, and we welcome contributions.\nInformation on how to get started can be found in our\n[contributor guide](CONTRIBUTING.md).\n\n[flutter.dev]: https://flutter.dev\n[Disc"
+    },
+    {
+      "full_name": "obra/superpowers",
+      "captured_at": "2026-10-01T14:03:50Z",
+      "stars": 293724,
+      "forks": 26272,
+      "language": "Shell",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "html_url": "https://github.com/obra/superpowers",
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
+      ],
+      "created_at": "2025-10-09T19:45:18Z",
+      "updated_at": "2026-10-01T14:03:52Z",
+      "pushed_at": "2026-09-27T02:37:47Z",
+      "license": "MIT",
+      "open_issues": 288,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An agentic skills framework & software development methodology that works.",
+          "full_name": "obra/superpowers",
+          "language": "Shell",
+          "trending_stars_period": 594,
+          "trending_total_forks": null,
+          "trending_total_stars": 293723,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": "# Superpowers\n\nSuperpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them.\n\n## Table of Contents\n\n- [How it works](#how-it-works)\n- [Commercial Services](#commercial-services)\n- [Getting Started](#installation)\n  - [Claude Code](#claude-code)\n  - [Antigravity](#antigravity)\n  - [Codex App](#codex-app)\n  - [Codex CLI](#codex-cli)\n  - [Cursor](#cursor)\n  - [Devin CLI](#devin-cli)\n  - [Factory Droid](#factory-droid)\n  - [Gemini CLI](#gemini-cli)\n  - [GitHub Copilot CLI](#github-copilot-cli)\n  - [Grok Build CLI](#grok-build-cli)\n  - [Kimi Code](#kimi-code)\n  - [OpenCode](#opencode)\n  - [Pi](#pi)\n  - [Qwen Code](#qwen-code)\n  - [Hermes Agent](#hermes-agent)\n  - [Muse](#muse)\n- [The Basic Workflow](#the-basic-workflow)\n- [When Something Goes Wrong](#when-something-goes-wrong)\n- [Community](#community)\n- [What's Inside](#whats-inside)\n- [Philosophy](#philosophy)\n- [Contributing](#contributing)\n- [Updating](#updating)\n- [License](#license)\n- [Visual companion telemetry](#visual-companion-telemetry)\n\n## How it works\n\nIt starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it *doesn't* just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do. \n\nOnce it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest. \n\nAfter you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY. \n\nNext up, once you say \"go\", it launches a *subagent-driven-development* process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for your agent to work autonomously for a couple hours at a time without deviating from the plan you put together.\n\nThere's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.\n\n## Commercial Services\n\nIf you're using Superpowers in enterprise and could benefit from commercial support, additional tooling, or managed spending, please don't hesitate to drop us a line at sales@primeradiant.com.\n\n## Installation\n\nInstallation differs by harness. If you use more than one, install Superpowers separately for each one.\n\n### Claude Code\n\nSuperpowers is available via the [official Claude plugin marketplace](https://claude.com/plugins/superpowers)\n\n#### Official Marketplace\n\n- Install the plugin from Anthropic's official marketplace:\n\n  ```bash\n  /plugin install superpowers@claude-plugins-official\n  ```\n\n#### Superpowers Marketplace\n\nThe Superpowers marketplace provides Superpowers and some other related plugins for Claude Code.\n\n- Register the marketplace:\n\n  ```bash\n  /plugin marketplace add obra/superpowers-marketplace\n  ```\n\n- Install the plugin from this marketplace:\n\n  ```bash\n  /plugin install superpowers@superpowers-marketplace\n  ```\n\n### Antigravity\n\nInstall Superpowers as a plugin from this repository:\n\n```bash\nagy plugin install https://github.com/obra/superpowers\n```\n\nAntigravity runs the plugin's session-start hook, so Superpowers is active from\nthe first message. Reinstall with the same command to update.\n\n### Codex App\n\nSuperpowers is available via the [official Codex plugin marketplace](https://github.com/openai/plugins).\n\n- In the Codex app, click on Plugins in the sidebar.\n- You should see `Superpowers` in the Coding section.\n- Click the `+` next to Superpowers and follow the prompts.\n\n### Codex CLI\n\nSuperpowers is available via the [official Codex plugin marketplace](https://github.com/openai/plugins).\n\n- Open the plugin search interface:\n\n  ```bash\n  /plugins\n  ```\n\n- Search for Superpowers:\n\n  ```bash\n  superpowers\n  ```\n\n- Select `Install Plugin`.\n\n### Cursor\n\n- In Cursor Agent chat, install from marketplace:\n\n  ```text\n  /add-plugin superpowers\n  ```\n\n- Or search for \"superpowers\" in the plugin marketplace.\n\n### Devin CLI\n\n- Install the plugin from this repository:\n\n  ```bash\n  devin plugins install obra/superpowers\n  ```\n\n- Update to the latest version with:\n\n  ```bash\n  devin plugins update superpowers\n  ```\n\n### Factory Droid\n\n- Register the marketplace:\n\n  ```bash\n  droid plugin marketplace add https://github.com/obra/superpowers\n  ```\n\n- Install the plugin:\n\n  ```bash\n  droid plugin install superpowers@superpowers\n  ```\n\n### Gemini CLI\n\n- Install the extension:\n\n  ```bash\n  gemini extensions install https://github.com/obra/superpowers\n  ```\n\n- Update later:\n\n  ```bash\n  gemini extensions update superpowers\n  ```\n\n### GitHub Copilot CLI\n\n- Register the marketplace:\n\n  ```bash\n "
+    },
+    {
+      "full_name": "tile-ai/tilelang",
+      "captured_at": "2026-10-01T14:03:50Z",
+      "stars": 7999,
+      "forks": 808,
+      "language": "Python",
+      "description": " Domain-specific language designed to streamline the development of high-performance GPU/CPU/Accelerators kernels",
+      "html_url": "https://github.com/tile-ai/tilelang",
+      "topics": [],
+      "created_at": "2024-10-03T09:25:45Z",
+      "updated_at": "2026-10-01T14:02:28Z",
+      "pushed_at": "2026-09-30T04:08:46Z",
+      "license": "Other",
+      "open_issues": 371,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Domain-specific language designed to streamline the development of high-performance GPU/CPU/Accelerators kernels",
+          "full_name": "tile-ai/tilelang",
+          "language": "Python",
+          "trending_stars_period": 480,
+          "trending_total_forks": null,
+          "trending_total_stars": 7999,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "Domain-specific language designed to streamline the development of high-performance GPU/CPU/Accelerators kernels",
+          "full_name": "tile-ai/tilelang",
+          "language": "Python",
+          "trending_stars_period": 157,
+          "trending_total_forks": null,
+          "trending_total_stars": 7999,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": "<img src=\"./images/logo-row.svg\" alt=\"TileLang logo\" />\n\n<div align=\"center\">\n\n# Tile Language\n[![PyPI version](https://badge.fury.io/py/tilelang.svg)](https://badge.fury.io/py/tilelang)\n[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/tile-ai/tilelang)\n[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?logo=discord&logoColor=white)](https://discord.gg/TUrHyJnKPG)\n[![Puzzles](https://img.shields.io/badge/🧩_Learn-TileLang_Puzzles-blueviolet)](https://github.com/tile-ai/tilelang-puzzles)\n[![LSP](https://img.shields.io/badge/LSP-TileLang_LSP-orange?logo=visualstudiocode&logoColor=white)](https://github.com/tile-ai/tilelang-lsp)\n\n[Documentation](https://tilelang.com/) ·\n[Installation](https://tilelang.com/get_started/Installation.html) ·\n[Examples](https://github.com/tile-ai/tilelang/tree/main/examples) ·\n[Releases](https://github.com/tile-ai/tilelang/releases) ·\n[Contributing](https://github.com/tile-ai/tilelang/blob/main/CONTRIBUTING.md) ·\n[TileLang (Ascend 950)](./tilelang/ascend/README.md)\n</div>\n\nTile Language (**tile-lang**) is a concise domain-specific language designed to streamline the development of high-performance GPU/CPU/NPU kernels (e.g., GEMM, Dequant GEMM, FlashAttention, LinearAttention). By employing a Pythonic syntax with an underlying compiler infrastructure on top of [TVM](https://tvm.apache.org/), tile-lang allows developers to focus on productivity without sacrificing the low-level optimizations necessary for state-of-the-art performance.\n\n<img src=\"./images/MatmulExample.png\" alt=\"TileLang tiled matrix multiplication example\" />\n\n## Latest News\n\n- **2026-09-30 — [Ascend 950 backend](./tilelang/ascend/README.md):** TileLang now officially supports Huawei Ascend 950 NPUs with native code generation, automatic scheduling and synchronization, SIMD/SIMT vector programming, etc. Explore the Ascend examples for GEMM, FlashAttention, and more.\n- **2026-08-04 — [TileLang LSP open sourced](https://github.com/tile-ai/tilelang-lsp):** published a Language Server Protocol implementation for TileLang with inlay hints for buffer shapes, dtypes, scopes, and inferred layouts, plus hover details and precise diagnostics.\n- **2026-08-03 — [TileLang v0.1.13](https://github.com/tile-ai/tilelang/releases/tag/v0.1.13):** shipped the multi-backend language dialect, source locations in compiler diagnostics, new CUDA and Metal hardware paths, and a broad set of correctness fixes. This release removes several legacy APIs; read the compatibility notes before upgrading.\n- **2026-07-30 — [SM120 NVF4 block-scaled MMA](https://github.com/tile-ai/tilelang/pull/2364):** added an optimized Blackwell path for `T.mma_gemm_blockscaled` and a corresponding SM120 example.\n- **2026-07-28 — [Metal 4 cooperative-tensor GEMM](https://github.com/tile-ai/tilelang/pull/2252):** added cooperative-tensor `T.gemm` support for Apple M5, while retaining the simdgroup fallback for unsupported shapes and systems.\n\n<details>\n<summary><strong>Earlier news (2025–2026)</strong></summary>\n\n### 2026\n\n- **2026-07-28 — [Source-aware compiler diagnostics](https://github.com/tile-ai/tilelang/pull/2751):** carried Python source locations into TIRX and surfaced them in compiler errors.\n- **2026-07-24 — [Multi-backend language dialect](https://github.com/tile-ai/tilelang/pull/2734):** reorganized the language layer around shared semantics with static CUDA, ROCm, and Metal dialects.\n- **2026-07-23 — [Block-causal attention for dLLM](https://github.com/tile-ai/tilelang/pull/2499):** added fixed-length and variable-length block-causal attention examples for diffusion language models.\n- **2026-07-22 — [IR Lower Trace](https://github.com/tile-ai/tilelang/pull/2725):** introduced a debugging tool for inspecting IR changes across every compiler pass and the final code-generation step.\n- **2026-07-22 — [DeepSeek V3.2 sparse MLA backward](https://github.com/tile-ai/tilelang/pull/2592):** selected the launch width adaptively from the head-block size.\n- **2026-07-21 — [DeepSeek V3.2 top-k optimization](https://github.com/tile-ai/tilelang/pull/2659):** improved the sparse-attention top-k selector's memory access pattern, delivering approximately 1.9× higher performance in the reported benchmark.\n- **2026-07-16 — [Compiler pass timing](https://github.com/tile-ai/tilelang/pull/2622):** added profiling for compiler passes with a configurable reporting threshold.\n- **2026-07-12 — [IKET profiler integration](https://github.com/tile-ai/tilelang/pull/2515):** added CUDA timeline instrumentation and profiling support.\n- **2026-07-08 — [TileLang v0.1.12](https://github.com/tile-ai/tilelang/releases/tag/v0.1.12):** added the LLVM backend, tile scheduler, backend registry, pass visualizer, and expanded Blackwell support.\n- **2026-07-06 — [Pass Visualizer](https://github.com/tile-ai/tilelang/pull/2449):** introduced a structure-tree browser for inspecting compiler transformations.\n- **2026-06-26 — [Cross-host CUDA binary cache](https://github.c"
     }
   ],
   "covered": {
@@ -6526,6 +6752,7 @@
     "DietrichGebert/ponytail": "2026-09-30",
     "FxEmbed/FxEmbed": "2026-09-29",
     "HKUDS/CLI-Anything": "2026-09-29",
+    "HunxByts/GhostTrack": "2026-10-01",
     "KKKKhazix/AIHOT": "2026-09-30",
     "NVIDIA/OpenShell": "2026-09-29",
     "NawfalMotii79/PLFM_RADAR": "2026-09-30",
@@ -6542,14 +6769,17 @@
     "cloudflare/security-audit-skill": "2026-09-29",
     "colbymchenry/codegraph": "2026-09-30",
     "cs341-illinois/coursebook": "2026-09-29",
+    "cursor/plugins": "2026-10-01",
     "davila7/claude-code-templates": "2026-09-29",
     "debpalash/VoiceStudio": "2026-09-29",
     "dream-num/univer": "2026-09-29",
     "dzhng/jevgrep": "2026-09-30",
+    "earendil-works/pi": "2026-10-01",
     "elastic/elasticsearch": "2026-09-29",
     "feitangyuan/onetake": "2026-09-30",
     "firebase/firebase-ios-sdk": "2026-09-30",
     "firelex/jeff": "2026-09-30",
+    "flutter/flutter": "2026-10-01",
     "harry0703/MoneyPrinterTurbo": "2026-09-30",
     "heygen-com/hyperframes": "2026-09-30",
     "mattpocock/skills": "2026-09-30",
@@ -6559,6 +6789,7 @@
     "modelcontextprotocol/servers": "2026-09-30",
     "mvschwarz/openrig": "2026-09-29",
     "oblien/openship": "2026-09-29",
+    "obra/superpowers": "2026-10-01",
     "openclaw/openclaw": "2026-09-30",
     "paperclipai/paperclip": "2026-09-29",
     "pbakaus/impeccable": "2026-09-29",
@@ -6568,6 +6799,7 @@
     "shihabal3amri/DiPlay": "2026-09-30",
     "stablyai/orca": "2026-09-29",
     "t8y2/dbx": "2026-09-29",
+    "tile-ai/tilelang": "2026-10-01",
     "tobi/disktree": "2026-09-30",
     "trycua/cua": "2026-09-29",
     "vectorize-io/hindsight": "2026-09-29",
@@ -6579,16 +6811,19 @@
     "20260929T175050Z": 35,
     "20260929T192036Z": 47,
     "20260930T112141Z": 59,
-    "20260930T225441Z": 61
+    "20260930T225441Z": 61,
+    "20261001T140350Z": 63
   },
   "sent_slots": {
-    "2026-09-30-pm": 61
+    "2026-09-30-pm": 61,
+    "2026-10-01-12": 63
   },
   "pending_digests": {},
   "llm_daily_requests": {
     "2026-09-28": 21,
     "2026-09-29": 65,
-    "2026-09-30": 66
+    "2026-09-30": 66,
+    "2026-10-01": 7
   },
   "delivery_progress": {
     "20260930T143510Z": {
@@ -6613,6 +6848,7 @@
       "overview_message_id": null
     }
   },
-  "overview_ids": {},
-  "quiet_notice_day": "2026-10-01"
+  "overview_ids": {
+    "20261001T140350Z": 65
+  }
 }

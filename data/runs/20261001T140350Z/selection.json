@@ -1,0 +1,36 @@
+{
+  "covered_repositories_tracked": 54,
+  "excluded": [],
+  "pool": [
+    {
+      "full_name": "tile-ai/tilelang",
+      "ordering_metric": 480,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "flutter/flutter",
+      "ordering_metric": 150,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "HunxByts/GhostTrack",
+      "ordering_metric": 635,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "obra/superpowers",
+      "ordering_metric": 594,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "earendil-works/pi",
+      "ordering_metric": 294,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "cursor/plugins",
+      "ordering_metric": 157,
+      "source_kind": "trending_daily"
+    }
+  ]
+}
