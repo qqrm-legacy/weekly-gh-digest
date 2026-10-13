@@ -19,7 +19,7 @@ on:
         type: boolean
         default: false
       retry_delivery_run_id:
-        description: Reuse project analyses; Groq may create a missing overview and Gemini may rerun the audit
+        description: Reuse stored analyses and run the deterministic credential scan before delivery
         type: string
         required: false
 
@@ -91,9 +91,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_TECH_CHAT_ID: ${{ secrets.TELEGRAM_TECH_CHAT_ID }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL }}
           LLM_FREE_TIER_CONFIRMED: ${{ vars.LLM_FREE_TIER_CONFIRMED }}
           GH_TOKEN: ${{ github.token }}
