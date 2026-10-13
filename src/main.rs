@@ -1,3 +1,6 @@
+mod delivery;
+mod state_store;
+
 use anyhow::{Context, Result, anyhow};
 use chrono::{DateTime, Duration, Timelike, Utc};
 use reqwest::blocking::{Client, Response};
@@ -176,23 +179,14 @@ fn reserve_llm_request(state: &mut State, calls: &mut usize) -> Result<()> {
 }
 
 fn write_json(path: &Path, value: &impl Serialize) -> Result<()> {
-    if let Some(parent) = path.parent() {
-        fs::create_dir_all(parent)?;
-    }
-    fs::write(path, serde_json::to_vec_pretty(value)?)?;
-    Ok(())
+    state_store::StateStore::new(path).save(value)
 }
 
 /// Strict read: a state file that exists but cannot be parsed must abort
 /// the run instead of silently starting from empty memory and reposting
 /// already published projects.
 fn read_state_strict() -> Result<State> {
-    let bytes = match fs::read(state_path()) {
-        Ok(bytes) => bytes,
-        Err(_) => return Ok(State::default()),
-    };
-    serde_json::from_slice(&bytes)
-        .with_context(|| "stored bot state is unreadable; refusing to run with empty dedup memory")
+    state_store::StateStore::new(&state_path()).load()
 }
 
 fn client() -> Result<Client> {
@@ -1799,30 +1793,13 @@ fn send_issue_chunks(
     progress_key: &str,
     state: &mut State,
 ) -> Result<Vec<i64>> {
-    let mut ids = Vec::with_capacity(chunks.len());
-    for (index, chunk) in chunks.iter().enumerate() {
-        let key = format!("chunk-{index:02}");
-        let already = state
-            .delivery_progress
-            .get(progress_key)
-            .and_then(|progress| progress.project_message_ids.get(&key).copied());
-        let id = match already {
-            Some(id) => id,
-            None => {
-                let id = telegram_send_to(chat, chunk)?;
-                state
-                    .delivery_progress
-                    .entry(progress_key.to_string())
-                    .or_default()
-                    .project_message_ids
-                    .insert(key, id);
-                write_json(&state_path(), state)?;
-                id
-            }
-        };
-        ids.push(id);
-    }
-    Ok(ids)
+    delivery::send_chunks(
+        chunks,
+        progress_key,
+        state,
+        |text| telegram_send_to(chat, text),
+        |state| write_json(&state_path(), state),
+    )
 }
 
 /// Delivers the issue preview to the technical chat as a few cohesive

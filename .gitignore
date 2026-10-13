@@ -2,3 +2,5 @@
 .env
 data/state.json
 data/runs/
+
+__pycache__/
