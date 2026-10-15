@@ -1,3 +1,4 @@
+mod checkpoint;
 mod clock;
 mod delivery;
 mod providers;
@@ -79,6 +80,8 @@ struct State {
     /// Final issue message (reply to the batch) per digest id.
     #[serde(default)]
     overview_ids: BTreeMap<String, i64>,
+    #[serde(default)]
+    uncertain_delivery: Option<String>,
 }
 
 #[derive(Default, Serialize, Deserialize)]
@@ -87,6 +90,8 @@ struct DeliveryProgress {
     project_message_ids: BTreeMap<String, i64>,
     #[serde(default)]
     overview_message_id: Option<i64>,
+    #[serde(default)]
+    message_texts: BTreeMap<String, String>,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -127,14 +132,23 @@ fn stamp(now: DateTime<Utc>) -> String {
 }
 
 fn write_json(path: &Path, value: &impl Serialize) -> Result<()> {
-    state_store::StateStore::new(path).save(value)
+    state_store::StateStore::new(path).save(value)?;
+    if path == state_path() {
+        checkpoint::save(path)?;
+    }
+    Ok(())
 }
 
 /// Strict read: a state file that exists but cannot be parsed must abort
 /// the run instead of silently starting from empty memory and reposting
 /// already published projects.
 fn read_state_strict() -> Result<State> {
-    state_store::StateStore::new(&state_path()).load()
+    let state: State = state_store::StateStore::new(&state_path()).load()?;
+    anyhow::ensure!(
+        state.uncertain_delivery.is_none(),
+        "unconfirmed Telegram delivery; operator reconciliation required"
+    );
+    Ok(state)
 }
 
 fn client() -> Result<Client> {
@@ -1009,9 +1023,13 @@ fn send_issue_chunks(
     progress_key: &str,
     state: &mut State,
 ) -> Result<Vec<i64>> {
+    anyhow::ensure!(
+        !state.delivery_progress.contains_key(progress_key),
+        "legacy unscoped delivery progress requires operator reconciliation"
+    );
     delivery::send_chunks(
         chunks,
-        progress_key,
+        &format!("{chat}:{progress_key}"),
         state,
         |text| telegram_send_to(chat, text),
         |state| write_json(&state_path(), state),
@@ -1020,6 +1038,23 @@ fn send_issue_chunks(
 
 /// Delivers the issue preview to the technical chat as a few cohesive
 /// messages. `digest_id` doubles as the resume key.
+fn send_overview(
+    chat: &str,
+    first_id: i64,
+    digest_id: &str,
+    digest: &Value,
+    state: &mut State,
+) -> Result<i64> {
+    delivery::send_one(
+        &final_issue_text(digest),
+        &format!("{chat}:{digest_id}"),
+        "overview",
+        state,
+        |text| telegram_send_reply_to(chat, Some(first_id), text),
+        |state| write_json(&state_path(), state),
+    )
+}
+
 fn telegram_deliver_debug_digest(
     digest: &Value,
     digest_id: &str,
@@ -1051,11 +1086,8 @@ fn telegram_deliver_debug_digest(
     for (index, id) in ids.iter().enumerate() {
         posts.insert(format!("chunk-{index:02}"), *id);
     }
-    if let Ok(overview_id) =
-        telegram_send_reply_to(&chat, Some(first_id), &final_issue_text(digest))
-    {
-        posts.insert("overview".to_string(), overview_id);
-    }
+    let overview_id = send_overview(&chat, first_id, digest_id, digest, state)?;
+    posts.insert("overview".to_string(), overview_id);
     let delivery = DebugDelivery {
         day: digest_id.to_string(),
         chat_id: chat,
@@ -1131,14 +1163,11 @@ fn telegram_deliver_digest(
     // Финальный итог — reply'ем на сообщение с батчем: он «ссылается» на
     // выпуск прямо в интерфейсе Telegram.
     let final_text = final_issue_text(digest);
-    match telegram_send_reply_to(&chat, Some(first_id), &final_text) {
-        Ok(overview_id) => {
-            state
-                .overview_ids
-                .insert(digest_id.to_string(), overview_id);
-        }
-        Err(error) => println!("Final summary skipped: {error:#}"),
-    }
+    let overview_id = send_overview(&chat, first_id, digest_id, digest, state)?;
+    state
+        .overview_ids
+        .insert(digest_id.to_string(), overview_id);
+    fs::create_dir_all(runs_dir().join(digest_id))?;
     fs::write(
         runs_dir().join(digest_id).join("issue.md"),
         format!(
@@ -1156,7 +1185,9 @@ fn telegram_deliver_digest(
     }
     state.sent_digests.insert(digest_id.to_string(), first_id);
     state.sent_slots.insert(slot_key.to_string(), first_id);
-    state.delivery_progress.remove(digest_id);
+    state
+        .delivery_progress
+        .remove(&format!("{chat}:{digest_id}"));
     state.pending_digests.remove(digest_id);
     write_json(&state_path(), state)?;
     Ok(())
@@ -1236,6 +1267,7 @@ fn deliver_pending_digests(state: &mut State, today: &str) -> Result<()> {
 }
 
 fn main() -> Result<()> {
+    checkpoint::require_hosted_configuration()?;
     let args: Vec<String> = env::args().skip(1).collect();
     let command = args.first().map(String::as_str).unwrap_or("preview");
     if command == "debug-delivery" {
