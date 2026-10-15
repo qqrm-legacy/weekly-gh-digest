@@ -28,11 +28,12 @@ permissions:
   contents: write
 
 concurrency:
-  group: weekly-gh-digest-${{ github.ref }}
+  group: weekly-gh-digest
   cancel-in-progress: false
 
 jobs:
   run:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
@@ -85,8 +86,32 @@ jobs:
             exit 1
           fi
 
+      - name: Restore authoritative delivery checkpoint
+        id: restore-delivery
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DELIVERY_STATE_KEY: weekly-gh-digest.json
+          ARCHIVE_HEAD: ${{ steps.restore-state.outputs.head }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          status=0
+          python3 .github/scripts/remote_state.py restore data/state.json || status=$?
+          if [[ "$status" == 3 ]]; then
+            if [[ ! -f data/state.json ]]; then
+              test -z "$ARCHIVE_HEAD" || { echo "Existing archive has no state; refusing empty delivery memory" >&2; exit 1; }
+              mkdir -p data
+              printf '{}\n' > data/state.json
+            fi
+            python3 .github/scripts/remote_state.py save data/state.json
+          elif [[ "$status" != 0 ]]; then
+            exit "$status"
+          fi
+
       - name: Collect, preview, or deliver digest
         env:
+          DELIVERY_CHECKPOINT: .github/scripts/remote_state.py
+          DELIVERY_STATE_KEY: weekly-gh-digest.json
           GITHUB_TOKEN: ${{ github.token }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -141,7 +166,7 @@ jobs:
           fi
 
       - name: Save state and source provenance
-        if: always() && steps.restore-state.outcome == 'success'
+        if: always() && steps.restore-state.outcome == 'success' && steps.restore-delivery.outcome == 'success'
         env:
           RESTORED_STATE_HEAD: ${{ steps.restore-state.outputs.head }}
         shell: bash

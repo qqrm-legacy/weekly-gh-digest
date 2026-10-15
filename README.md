@@ -20,7 +20,7 @@ Two probes per day keep the digest fresh. Each slot publishes the fresh pool, up
 
 ## Deduplication
 
-The `bot-state` branch keeps a `covered` map of every repository ever published, keyed by the UTC date of its first appearance. It is written only after a digest has fully reached the main chat, so an interrupted send resumes on the next run (per-message progress is keyed by digest id) instead of duplicating messages, and covered repositories are not lost. A credential-scan failure blocks delivery and leaves candidates uncovered. Missing or failed Groq descriptions use GitHub descriptions; an unavailable overview uses the deterministic fallback. Several digests can be delivered per day; each gets its own posts, linked pinned overview, and pending state.
+The authoritative `delivery-state` checkpoint keeps a `covered` map of every repository ever published, keyed by the UTC date of its first appearance. It is written only after a digest has fully reached the main chat, so confirmed progress resumes on the next run, while an unconfirmed send stops for reconciliation. Progress is keyed by destination chat and digest ID; covered repositories are not lost. A credential-scan failure blocks delivery and leaves candidates uncovered. Missing or failed Groq descriptions use GitHub descriptions; an unavailable overview uses the deterministic fallback. Several digests can be delivered per day; each gets its own posts, linked pinned overview, and pending state.
 
 ## Evidence-based project analysis
 
@@ -39,9 +39,9 @@ Groq defaults to `openai/gpt-oss-120b`; `GROQ_MODEL` overrides it. A completed e
 
 Set `LLM_FREE_TIER_CONFIRMED=yes` only after confirming the provider account and current quota settings. This is an operator assertion, not an API guarantee against charges. Without the Groq key or this assertion, enrichment is skipped and GitHub descriptions remain available. Gemini credentials and model settings are not used by the bot.
 
-No fresh candidates is a quiet outcome. Provider failures use the documented fallback; the credential scanner blocks unsafe publication text and attempts a technical notice. Telegram has no idempotency key, so an ambiguous send result can still duplicate the one message accepted before a runner stopped.
+No fresh candidates is a quiet outcome. Provider failures use the documented fallback; the credential scanner blocks unsafe publication text and attempts a technical notice. Telegram has no idempotency key; an ambiguous publication send stops for reconciliation rather than automatic retry. Cosmetic pinning and best-effort refusal notices are outside the publication checkpoint contract.
 
-The workflow needs repository `contents: write` permission to update `bot-state`; updates are serialized. It also needs `actions: read` to download artifacts for the retry input.
+The workflow needs repository `contents: write` permission to update `delivery-state` and the `bot-state` source archive; updates are serialized. It also needs `actions: read` to download artifacts for the retry input.
 
 ## Code boundaries
 
@@ -56,8 +56,27 @@ The repository template retains CI, action security checks, Dependabot, and its 
 
 ## Checkpoint and maintenance guarantees
 
-State files are atomically replaced. Only a confirmed missing file/remote state branch permits bootstrap; unreadable, corrupt, or unreachable state stops the run. The save step only follows a successful restore and refuses to overwrite a state branch that changed during the run. Delivery checkpoints are saved after each successful chunk, and remaining chunks resume without re-sending locally recorded messages.
+State files are atomically replaced. After restoring the `bot-state` archive, the workflow
+overlays the authoritative `delivery-state/weekly-gh-digest.json` checkpoint. First use migrates
+the old state; authentication, transport, corrupt state, missing restore receipts, or stale
+blob SHAs fail closed. Each intent and acknowledgement is synchronously committed through the
+GitHub Contents API. Runner loss before the final archive push no longer loses delivery progress
+or provider reservations. Source artifacts may still be absent after abrupt runner loss.
 
-Telegram has no idempotency key: a crash after Telegram accepts a message but before its checkpoint is persisted can still duplicate that message. GitHub runner loss before the final state-branch push can also lose local checkpoints. Exactly-once delivery is not claimed.
+Each publication chunk and final overview has durable intent, content, destination, and receipt.
+An interrupted or ambiguous send leaves `uncertain_delivery` and stops subsequent publication,
+including after restart. Confirmed chunks are reused; changed content and legacy progress without
+a known destination stop for reconciliation. Telegram cannot atomically commit with GitHub:
+exactly-once delivery is not claimed. Local runs without the helper have local durability only.
+
+To reconcile, stop concurrent runs and back up the checkpoint and blob SHA. Privately inspect the
+identified destination and message. For a proven absent message, clear `uncertain_delivery` only.
+For a proven delivered message, also record its actual ID under the matching
+`delivery_progress[progress_key].project_message_ids[message_key]`. Preserve stored content and
+all other state, and update using the inspected SHA. If the outcome remains unknown, keep the
+intent pending. Legacy unscoped progress must be mapped to its verified destination, never reset.
+This repository and its checkpoint branch must remain private because digest state contains
+source material and delivery destinations. The workflow runs only from `main` with one shared
+concurrency group. Enabling or disabling schedules remains an operator decision.
 
 Dependabot batches weekly maintenance updates. CI and workflow-security gates require every constituent job to succeed; verified bot commits are matched to the exact checked head before native auto-merge. Native auto-merge is currently blocked for this private repository on GitHub Free because required branch protection is unavailable; the handler fails explicitly instead of merging without protection. An eligible plan and configured branch protection are prerequisites.
