@@ -109,6 +109,7 @@ class RunModeTests(unittest.TestCase):
                         "GITHUB_REPOSITORY":"fixture/weekly"},
                     capture_output=True, text=True, timeout=10, check=False)
                 self.assertNotEqual(result.returncode, 0)
+                self.assertNotIn("command not found", result.stderr)
                 self.assertEqual(len((root / "commands").read_text().splitlines()), 1)
 
 
