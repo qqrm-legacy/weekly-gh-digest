@@ -17,7 +17,7 @@ Publication is **off by default**. Leave repository variable `DIGEST_DELIVERY_EN
 
 Run `Run Bot` manually with `dry_run=true`, `preview_with_llm=true`, and `deliver_to_main_chat=false` for a real provider-enriched artifact without sending any message. The existing `LLM_FREE_TIER_CONFIRMED=yes` assertion and persisted request budgets remain mandatory; there is no paid fallback. Default dry runs do not call the provider.
 
-Review `summary.md` (overview and full cards), `issue.md` (Telegram-formatted body), `ranking-input.json`, `selection.json`, `weekly-observations.json`, `manifest.json`, `llm-bundle.json`, and `release-audit.json` in the private run artifact. The same deterministic credential scan checks both the overview and project text before preview acceptance or publication.
+Review `summary.md` (overview and full cards), `issue.md` (Telegram-formatted body), `ranking-input.json`, `selection.json`, `weekly-observations.json`, `telegram-messages.json`, `manifest.json`, `llm-bundle.json`, and `release-audit.json` in the private run artifact. The same deterministic credential scan checks both the overview and project text before preview acceptance or publication. Each actual Telegram payload is bounded to 3,800 UTF-16 units; long issues keep separate chunks and every project link. Only the duplicate link index may be omitted from an oversized overview. Provider-enriched previews fail explicitly if synthesis is unavailable. Artifacts contain only the current run, not the restored archive.
 
 Only after approval of the preview, set `DIGEST_DELIVERY_ENABLED=true` and enable `Probe Trigger` if recovery is wanted. `Run Bot` can be enabled for collection and previews while the publication variable remains false. Real manual/technical sends and retry delivery also require the variable to be exactly `true`. Keep credentials private.
 
@@ -32,7 +32,7 @@ The authoritative `delivery-state` checkpoint keeps a `covered` map of every rep
 
 ## Evidence-based project analysis
 
-Groq returns a Russian project description and short joke grounded in GitHub metadata and the README excerpt. One exact source excerpt is stored in the run artifact. It also attempts one overview after a completed description pass. Rust supplies card titles and links, star counts, language, source labels, escaping, order and layout. Partial provider failure preserves completed descriptions and falls back to GitHub text for the remaining projects; the publication audit is a deterministic credential scan only.
+Groq returns a Russian project description and short joke grounded in GitHub metadata and the README excerpt. One exact source excerpt is stored in the run artifact. README collection covers the whole selected pool. A project without usable evidence is recorded in source_gaps and skipped before any model call; other projects continue. The overview uses available source-backed facts even when a project description is missing or fails. Rust supplies card titles and links, star counts, language, source labels, escaping, order and layout. Partial provider failure preserves completed descriptions and falls back to GitHub text for the remaining projects; the publication audit is a deterministic credential scan only.
 
 ## Configure GitHub Actions
 

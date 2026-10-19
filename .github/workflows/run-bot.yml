@@ -128,6 +128,7 @@ jobs:
           fi
 
       - name: Collect, preview, or deliver digest
+        id: prepare
         env:
           DELIVERY_CHECKPOINT: .github/scripts/remote_state.py
           DELIVERY_STATE_KEY: weekly-gh-digest.json
@@ -226,10 +227,10 @@ jobs:
           fi
 
       - name: Upload run preview and provenance
-        if: always()
+        if: always() && steps.prepare.outputs.run_directory != ''
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: weekly-gh-digest-${{ github.run_id }}
-          path: data/runs/
+          path: ${{ steps.prepare.outputs.run_directory }}
           if-no-files-found: ignore
           retention-days: 90
