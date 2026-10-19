@@ -2,8 +2,8 @@ name: Run Bot
 
 on:
   schedule:
-    # Collect daily without sending; publish Monday 07:00 UTC = 10:00 Moscow.
-    - cron: '17 6 * * *'
+    # Observe every three hours; publish Monday 07:00 UTC = 10:00 Moscow.
+    - cron: '17 */3 * * *'
     - cron: '0 7 * * 1'
   workflow_dispatch:
     inputs:

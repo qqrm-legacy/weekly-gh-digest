@@ -2,7 +2,7 @@
 #[cfg(test)]
 mod tests;
 use crate::clock::Clock;
-use crate::{MAX_CANDIDATES, Snapshot, source_priority, stamp, write_json};
+use crate::{Snapshot, stamp, write_json};
 use anyhow::{Result, anyhow};
 use chrono::{DateTime, Duration, Utc};
 use reqwest::blocking::Client;
@@ -170,7 +170,6 @@ fn source_entry(source: &str, url: &str, pagination: &str) -> Value {
 pub(super) fn collect(
     now: DateTime<Utc>,
     runs: &Path,
-    covered: &BTreeMap<String, String>,
     http: &dyn SourceHttp,
     clock: &dyn Clock,
 ) -> Result<RunData> {
@@ -266,6 +265,9 @@ pub(super) fn collect(
                     c.sources.push(json!({
                         "type":"new_repo_search",
                         "stars": item["stargazers_count"].as_i64(),
+                        "description":item["description"],
+                        "html_url":item["html_url"],
+                        "created_at":item["created_at"],
                     }));
                 }
             }
@@ -282,50 +284,15 @@ pub(super) fn collect(
         }
     }
     sources.push(search_entry);
-    let mut all: Vec<Candidate> = candidates.into_values().collect();
-    all.sort_by(|a, b| {
-        let candidate_key = |candidate: &Candidate| {
-            let weekly = candidate
-                .sources
-                .iter()
-                .find(|source| source["type"] == "trending_weekly");
-            let daily = candidate
-                .sources
-                .iter()
-                .find(|source| source["type"] == "trending_daily");
-            let (priority, metric) = if let Some(source) = weekly {
-                (0, source["trending_stars_period"].as_i64().unwrap_or(0))
-            } else if let Some(source) = daily {
-                (1, source["trending_stars_period"].as_i64().unwrap_or(0))
-            } else {
-                (2, 0)
-            };
-            (priority, -metric, candidate.name.clone())
-        };
-        candidate_key(a).cmp(&candidate_key(b))
-    });
-    // Coverage history controls deduplication; total stars never exclude a project.
-    let (fresh, rejected): (Vec<&Candidate>, Vec<&Candidate>) = all
+    let all: Vec<Candidate> = candidates.into_values().collect();
+    // Preserve every observed identity before optional metadata requests can fail.
+    let mut snapshots = all
         .iter()
-        .partition(|candidate| !covered.contains_key(&candidate.name));
-    let mut excluded: Vec<Value> = rejected
-        .iter()
-        .map(|candidate| {
-            json!({"full_name":candidate.name,"reason":format!(
-            "already reviewed in the digest on {}", covered[&candidate.name])})
-        })
-        .collect();
-    let selected: Vec<Candidate> = fresh
-        .iter()
-        .take(MAX_CANDIDATES)
-        .map(|candidate| (*candidate).clone())
-        .collect();
-    excluded.extend(fresh.iter().skip(MAX_CANDIDATES).map(
-        |x| json!({"full_name":x.name,"reason":"candidate cap after stable source priority"}),
-    ));
+        .map(|candidate| observed(candidate, now))
+        .collect::<Result<Vec<_>>>()?;
+    write_json(&dir.join("candidate-observations.json"), &snapshots)?;
     let mut api_records = Vec::new();
-    let mut snapshots = Vec::new();
-    for candidate in &selected {
+    for (candidate, observation) in all.iter().zip(&mut snapshots) {
         let url = format!("{API}/repos/{}", candidate.name);
         let mut info = source_entry(
             "GitHub REST repository metadata",
@@ -349,7 +316,15 @@ pub(super) fn collect(
                     dir.join(format!("repo-{}.json", safe_name(&candidate.name))),
                     &bytes,
                 )?;
-                let v: Value = serde_json::from_slice(&bytes)?;
+                let v: Value = match serde_json::from_slice(&bytes) {
+                    Ok(value) => value,
+                    Err(_) => {
+                        info["reason"] =
+                            json!("invalid metadata JSON; source observation retained");
+                        api_records.push(info);
+                        continue;
+                    }
+                };
                 let snap = Snapshot {
                     full_name: candidate.name.clone(),
                     captured_at: now.to_rfc3339_opts(chrono::SecondsFormat::Secs, true),
@@ -378,6 +353,7 @@ pub(super) fn collect(
                     default_branch: v["default_branch"].as_str().map(str::to_string),
                     sources: candidate.sources.clone(),
                     readme_excerpt: None,
+                    observation: None,
                 };
                 info["fetched_at"] = json!(
                     clock
@@ -389,7 +365,7 @@ pub(super) fn collect(
                 info["reason"] = json!("metadata captured");
                 info["stars"] = json!(snap.stars);
                 info["forks"] = json!(snap.forks);
-                snapshots.push(snap);
+                *observation = snap;
             }
             Err(e) => {
                 let m = format!("{e:#}");
@@ -407,24 +383,45 @@ pub(super) fn collect(
         api_records.push(info);
         clock.sleep(StdDuration::from_millis(100));
     }
-    let mut readme_names = Vec::<String>::new();
-    let mut readme_candidates: Vec<&Snapshot> = snapshots
-        .iter()
-        .filter(|snapshot| !covered.contains_key(&snapshot.full_name))
-        .collect();
-    readme_candidates.sort_by(|a, b| {
-        let ka = source_priority(a);
-        let kb = source_priority(b);
-        ka.0.cmp(&kb.0)
-            .then(kb.1.cmp(&ka.1))
-            .then(a.full_name.cmp(&b.full_name))
-    });
-    readme_names.extend(
-        readme_candidates
+    let manifest = json!({"captured_at":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),"sources":sources,"candidate_policy":"All identities returned by configured Trending pages and bounded Search page are retained, including covered repositories and metadata failures; weekly selection happens later; not a global GitHub census.","candidate_count":snapshots.len(),"excluded_candidates":[],"api_repositories":api_records,"validation_notes":[]});
+    write_json(&dir.join("candidate-observations.json"), &snapshots)?;
+    write_json(&dir.join("manifest.json"), &manifest)?;
+    Ok(RunData {
+        dir,
+        manifest,
+        snapshots,
+    })
+}
+
+fn observed(candidate: &Candidate, now: DateTime<Utc>) -> Result<Snapshot> {
+    let field = |name: &str| {
+        candidate
+            .sources
             .iter()
-            .take(MAX_CANDIDATES)
-            .map(|snapshot| snapshot.full_name.clone()),
-    );
+            .find_map(|source| source.get(name).filter(|value| !value.is_null()).cloned())
+    };
+    Ok(serde_json::from_value(json!({
+        "full_name":candidate.name,
+        "captured_at":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
+        "stars":field("stars"),"description":field("description"),
+        "html_url":field("html_url").unwrap_or_else(|| json!(format!("https://github.com/{}", candidate.name))),
+        "created_at":field("created_at"),"language":field("language"),
+        "sources":candidate.sources
+    }))?)
+}
+
+/// Fetch evidence only for the final weekly selection, never for each observation.
+pub(super) fn enrich_readmes(
+    snapshots: &mut [Snapshot],
+    dir: &Path,
+    http: &dyn SourceHttp,
+    clock: &dyn Clock,
+) -> Result<Vec<Value>> {
+    let mut sources = Vec::new();
+    let readme_names = snapshots
+        .iter()
+        .map(|snapshot| snapshot.full_name.clone())
+        .collect::<Vec<_>>();
     for name in readme_names {
         if let Some(snap) = snapshots.iter_mut().find(|s| s.full_name == name) {
             let branch = snap
@@ -481,13 +478,7 @@ pub(super) fn collect(
             sources.push(info);
         }
     }
-    let manifest = json!({"captured_at":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),"sources":sources,"candidate_policy":format!("Weekly Trending, daily Trending, then Search; stable order; max {MAX_CANDIDATES}; not a global GitHub census."),"candidate_count":selected.len(),"excluded_candidates":excluded,"api_repositories":api_records,"validation_notes":[]});
-    write_json(&dir.join("manifest.json"), &manifest)?;
-    Ok(RunData {
-        dir,
-        manifest,
-        snapshots,
-    })
+    Ok(sources)
 }
 
 fn safe_name(s: &str) -> String {

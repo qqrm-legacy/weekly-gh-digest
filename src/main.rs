@@ -13,20 +13,13 @@ use chrono::{DateTime, Duration, Utc};
 use reqwest::blocking::Client;
 use serde::{Deserialize, Serialize};
 use serde_json::{Value, json};
-use std::collections::{BTreeMap, HashMap};
+use std::collections::BTreeMap;
 use std::env;
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::time::Duration as StdDuration;
 
-/// Cap on freshly selectable candidates per run; already covered
-/// repositories do not consume cap slots, so the top-30 fresh pool always
-/// reaches the digest.
-const MAX_CANDIDATES: usize = 30;
-
-/// A digest is not a fixed-size top: it publishes the whole fresh
-/// difference — every uncovered candidate from the current pool. This
-/// ceiling equals the pool cap and exists only to bound the worst case.
+/// Selection is bounded only after the whole weekly observation union is built.
 const MAX_DIGEST_ENTRIES: usize = 30;
 const ROOT: &str = env!("CARGO_MANIFEST_DIR");
 
@@ -51,6 +44,8 @@ struct Snapshot {
     sources: Vec<Value>,
     #[serde(default)]
     readme_excerpt: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    observation: Option<schedule::ObservationWindow>,
 }
 
 #[derive(Default, Serialize, Deserialize)]
@@ -162,28 +157,9 @@ fn client() -> Result<Client> {
         .build()?)
 }
 
-fn update_state(new: &[Snapshot], now: DateTime<Utc>) -> Result<State> {
+fn update_state(new: &[Snapshot]) -> Result<State> {
     let mut state = read_state_strict()?;
-    let day = now.format("%Y-%m-%d").to_string();
-    let mut rows: HashMap<(String, String), Snapshot> = HashMap::new();
-    for s in state.snapshots.drain(..) {
-        rows.insert(
-            (
-                s.full_name.clone(),
-                s.captured_at.chars().take(10).collect(),
-            ),
-            s,
-        );
-    }
-    for s in new {
-        rows.insert((s.full_name.clone(), day.clone()), s.clone());
-    }
-    state.snapshots = rows.into_values().collect();
-    state.snapshots.sort_by(|a, b| {
-        a.captured_at
-            .cmp(&b.captured_at)
-            .then(a.full_name.cmp(&b.full_name))
-    });
+    schedule::record(&mut state, new);
     write_json(&state_path(), &state)?;
     Ok(state)
 }
@@ -274,8 +250,8 @@ fn source_priority(snapshot: &Snapshot) -> (u8, i64, &'static str) {
 
 fn source_period(kind: &str) -> String {
     match kind {
-        "trending_weekly" => "GitHub Trending: звёзды за неделю".into(),
-        "trending_daily" => "GitHub Trending: звёзды за день".into(),
+        "trending_weekly" => "GitHub Trending: максимум наблюдавшихся звёзд за неделю".into(),
+        "trending_daily" => "GitHub Trending: максимум наблюдавшихся звёзд за день".into(),
         _ => "новый репозиторий: звёзды на момент среза".into(),
     }
 }
@@ -393,7 +369,33 @@ fn make_digest(
     now: DateTime<Utc>,
     do_llm: bool,
 ) -> Result<(Value, String)> {
-    let (entries, selection_excluded) = select_candidates(current, &state.covered);
+    let (mut entries, selection_excluded) = select_candidates(current, &state.covered);
+    let mut selected = entries
+        .iter()
+        .map(|entry| entry.snapshot.clone())
+        .collect::<Vec<_>>();
+    let source_clock = clock::SystemClock;
+    let source_http = sources::GitHubHttp::from_env(&source_clock)?;
+    let evidence_sources = sources::enrich_readmes(
+        &mut selected,
+        &runs_dir().join(stamp(now)),
+        &source_http,
+        &source_clock,
+    )?;
+    for (entry, snapshot) in entries.iter_mut().zip(selected) {
+        entry.snapshot = snapshot;
+    }
+    let mut manifest = manifest.clone();
+    manifest["sources"]
+        .as_array_mut()
+        .context("source manifest has no source list")?
+        .extend(evidence_sources);
+    manifest["weekly_observed_repositories"] = json!(current.len());
+    manifest["weekly_selected_repositories"] = json!(entries.len());
+    write_json(
+        &runs_dir().join(stamp(now)).join("manifest.json"),
+        &manifest,
+    )?;
     let pool_rows: Vec<Value> = entries
         .iter()
         .map(|entry| {
@@ -443,7 +445,9 @@ fn make_digest(
                 "delta": entry.delta,
                 "period": entry.period,
                 "source_kind": source_priority(&entry.snapshot).2,
+                "metric_captured_at": entry.snapshot.sources.iter().find(|source| source["type"].as_str() == Some(source_priority(&entry.snapshot).2)).and_then(|source| source["captured_at"].as_str()).unwrap_or(&entry.snapshot.captured_at),
                 "trending_source": entry.trending_source,
+                "metric_captured_at": entry.snapshot.sources.iter().find(|source| source["type"].as_str() == Some(source_priority(&entry.snapshot).2)).and_then(|source| source["captured_at"].as_str()).unwrap_or(&entry.snapshot.captured_at),
                 "description": description,
                 "joke": jokes.get(id).cloned().unwrap_or_default(),
                 "evidence_quote": evidence_quote,
@@ -477,14 +481,14 @@ fn make_digest(
     official.truncate(10);
     newrepos.sort_by_key(|entry| -entry["stars"].as_i64().unwrap_or(0));
     newrepos.truncate(10);
-    let trend_summary = "Недельная подборка новых для дайджеста проектов из ежедневных наблюдений GitHub Trending и поиска репозиториев. Порядок: недельный Trending, дневный Trending, новые репозитории. Метрики относятся к своим датам среза и не суммируются. Это выборка внимания, не рейтинг качества всего GitHub.";
+    let trend_summary = "Недельная подборка из наблюдений GitHub Trending и поиска каждые три часа. Сначала проекты из недельного Trending, затем дневного, затем найденные новые репозитории. Для Trending показан максимальный наблюдавшийся +N своего периода, а не сумма срезов и не измеренный прирост за календарную неделю. Это ограниченная выборка, не рейтинг качества всего GitHub и не список новых релизов.";
     let digest = json!({
         "format_version":3,
         "generated_at":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
         "delivery_slot":slot_key_of(now),
         "period_start":(now - Duration::days(7)).to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
         "period_end":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
-        "ranking":"latest observed candidates per repository within the preceding seven days from GitHub Trending weekly/daily and new-repository search; repositories already reviewed in an earlier digest are excluded; weekly Trending +N first, then daily Trending +N, then new repositories by total stars; current total stars are shown separately and do not determine order; not a global GitHub census",
+        "ranking":"Union of all retained observations within seven days; latest metadata and maximum observed rolling Trending metric with its original timestamp; first/last appearance retained. Only weekly selection excludes covered repositories and caps at 30. Weekly Trending peak +N first, daily peak +N next, then Search by latest total stars. Never sum overlapping rolling metrics; not a global census or a release feed.",
         "dedup_excluded":selection_excluded,
         "entries":entries_json,
         "llm_used":complete,
@@ -581,12 +585,13 @@ fn issue_item(entry: &Value, description_limit: usize) -> String {
         })
         .unwrap_or_else(|| markdown_v2_escape(id));
     let metric = match entry["source_kind"].as_str() {
-        Some("trending_daily") => format!("\\+{delta} за день в Trending"),
+        Some("trending_daily") => format!("макс\\. \\+{delta} за день в Trending"),
         Some("new_repo") => "новый репозиторий".to_string(),
-        _ => format!("\\+{delta} за неделю в Trending"),
+        _ => format!("макс\\. \\+{delta} за неделю в Trending"),
     };
-    let observed = snapshot["captured_at"]
+    let observed = entry["metric_captured_at"]
         .as_str()
+        .or_else(|| snapshot["captured_at"].as_str())
         .and_then(parse_time)
         .map(|time| format!(" · срез {}", time.format("%d.%m")))
         .unwrap_or_default();
@@ -848,13 +853,22 @@ fn render_summary(digest: &Value) -> String {
             let name = entry["full_name"].as_str().unwrap_or("?");
             if let Some(url) = project_github_url(name) {
                 text.push_str(&format!(
-                    "\n## [{name}]({url})\n\n{}\n\nМетрика: {} — {}; всего звёзд: {}; срез: {}.\n",
+                    "\n## [{name}]({url})\n\n{}\n\nМетрика: {} — {}; всего звёзд: {}; срез метаданных: {}; срез метрики: {}.\n",
                     entry["description"].as_str().unwrap_or(""),
                     entry["period"].as_str().unwrap_or(""),
                     entry["delta"],
                     entry["latest"]["stars"],
-                    entry["latest"]["captured_at"].as_str().unwrap_or("?")
+                    entry["latest"]["captured_at"].as_str().unwrap_or("?"),
+                    entry["metric_captured_at"].as_str().or_else(|| entry["latest"]["captured_at"].as_str()).unwrap_or("?")
                 ));
+                if let Some(observation) = entry["latest"].get("observation") {
+                    text.push_str(&format!(
+                        "\nВпервые замечен: {}; последнее наблюдение: {}; срезов: {}.\n",
+                        observation["first_seen"].as_str().unwrap_or("?"),
+                        observation["last_seen"].as_str().unwrap_or("?"),
+                        observation["observations"]
+                    ));
+                }
             }
         }
     }
@@ -1392,12 +1406,11 @@ fn main() -> Result<()> {
     let now = Utc::now();
     let source_clock = clock::SystemClock;
     let source_http = sources::GitHubHttp::from_env(&source_clock)?;
-    let covered = read_state_strict()?.covered;
-    let gathered = sources::collect(now, &runs_dir(), &covered, &source_http, &source_clock)?;
+    let gathered = sources::collect(now, &runs_dir(), &source_http, &source_clock)?;
     record_run_directory(&gathered.dir)?;
-    let mut state = update_state(&gathered.snapshots, now)?;
+    let mut state = update_state(&gathered.snapshots)?;
     if command == "collect" {
-        println!("Daily collection saved without provider calls or Telegram delivery.");
+        println!("Three-hour observation saved without provider calls or Telegram delivery.");
         return Ok(());
     }
     let day = now.format("%Y-%m-%d").to_string();
@@ -1408,6 +1421,24 @@ fn main() -> Result<()> {
     }
     let weekly = schedule::candidates(&state, now);
     write_json(&gathered.dir.join("weekly-observations.json"), &weekly)?;
+    let captured_instants = state
+        .snapshots
+        .iter()
+        .filter_map(|snapshot| parse_time(&snapshot.captured_at))
+        .filter(|time| *time >= now - Duration::days(7) && *time <= now)
+        .collect::<std::collections::BTreeSet<_>>();
+    let provenance = captured_instants.iter().map(|time| {
+        let run = stamp(*time);
+        let path = runs_dir().join(&run).join("manifest.json");
+        match fs::read(&path).ok().and_then(|bytes| serde_json::from_slice::<Value>(&bytes).ok()) {
+            Some(manifest) => json!({"captured_at":time.to_rfc3339(),"run":run,"status":"included","manifest":manifest}),
+            None => json!({"captured_at":time.to_rfc3339(),"run":run,"status":"gap","reason":"Retained observations exist but the source manifest is unavailable; complete source coverage cannot be asserted."})
+        }
+    }).collect::<Vec<_>>();
+    write_json(
+        &gathered.dir.join("weekly-source-manifest.json"),
+        &json!({"captures":provenance,"note":"Every discovered capture is included or explicitly marked as a gap. Legacy per-run caps and source limits remain visible in original manifests; no history is backfilled."}),
+    )?;
     let observed_dates = state
         .snapshots
         .iter()
@@ -1421,6 +1452,8 @@ fn main() -> Result<()> {
             "window_start":(now - Duration::days(7)).to_rfc3339(),
             "window_end":now.to_rfc3339(),
             "observed_repository_dates":observed_dates,
+            "observed_capture_count":captured_instants.len(),
+            "weekly_observed_repositories":weekly.len(),
             "note":"Historical observations are not backfilled; source failures/caps remain in each run manifest."
         }),
     )?;
@@ -1614,6 +1647,7 @@ mod tests {
             default_branch: None,
             sources: vec![source],
             readme_excerpt: None,
+            observation: None,
         }
     }
 
@@ -1974,11 +2008,11 @@ mod tests {
         assert_eq!(selected[11].snapshot.full_name, "org/new-but-big");
         assert_eq!(
             selected[0].period,
-            "GitHub Trending: звёзды за неделю".to_string()
+            "GitHub Trending: максимум наблюдавшихся звёзд за неделю".to_string()
         );
         assert_eq!(
             selected[10].period,
-            "GitHub Trending: звёзды за день".to_string()
+            "GitHub Trending: максимум наблюдавшихся звёзд за день".to_string()
         );
         assert!(excluded.iter().any(
             |row| row["full_name"] == "org/week-10" && row["source_kind"] == "trending_weekly"

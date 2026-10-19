@@ -1,14 +1,14 @@
 # GitHub Digest
 
-Weekly Russian GitHub summary delivered to Telegram, with daily source collection on hosted GitHub Actions.
+Weekly Russian GitHub summary delivered to Telegram, with source observation every three hours on hosted GitHub Actions.
 
 ## Weekly issue and candidate selection
 
-- Collect candidate metadata daily at 06:17 UTC (09:17 Moscow), without LLM calls or Telegram credentials.
+- Collect candidate metadata at minute 17 every three hours (00:17, 03:17, …, 21:17 UTC), without LLM calls or Telegram credentials.
 - Prepare one issue on Monday at 07:00 UTC (10:00 Moscow). GitHub scheduling is best effort: a delayed run retains the same weekly issue identity. The Monday-only Probe Trigger can recover a missed run after publication is enabled.
 - Sources remain the first returned pages of weekly Trending, daily Trending, and GitHub Search for repositories created in the past seven days. This is a bounded sample, not a global ranking or a code/security audit.
-- Keep the latest real observation per repository from the preceding seven days. A candidate seen earlier in the week remains available even if absent from Monday's Trending page. Retained observation timestamps and raw source archives preserve provenance; daily and weekly star counts are never added together.
-- There is no minimum total-star threshold, including in the Search query. Deduplication still excludes previously published repositories. The bounded collection pool and issue each contain up to 30 candidates, with stable priority: weekly Trending +N, daily Trending +N, then new repositories by total stars. Every cap/exclusion remains recorded.
+- Retain every real observation with its full timestamp, including multiple captures on one day and already published repositories. Build the union over the preceding seven days, keep first/last appearance and observation count, and use latest metadata plus the maximum observed rolling Trending metric per source with its original timestamp. A candidate seen earlier in the week remains available even if absent from Monday's Trending page. Retained observation timestamps and raw source archives preserve provenance; daily and weekly star counts are never added together.
+- There is no minimum total-star threshold, including in the Search query. Deduplication still excludes previously published repositories. Collection has no candidate cap or covered-repository filter. Only the weekly issue selection excludes published repositories and caps output at 30, with stable priority: peak observed weekly Trending +N, peak observed daily Trending +N, then Search by latest total stars. Every weekly cap/exclusion remains recorded.
 - The issue includes a Russian synthesis of the week's observed projects and compact source-backed cards. Metrics retain their capture dates. Model output does not establish project quality, safety, or actual runtime behavior.
 
 ## Preview before publication
@@ -17,7 +17,7 @@ Publication is **off by default**. Leave repository variable `DIGEST_DELIVERY_EN
 
 Run `Run Bot` manually with `dry_run=true`, `preview_with_llm=true`, and `deliver_to_main_chat=false` for a real provider-enriched artifact without sending any message. The existing `LLM_FREE_TIER_CONFIRMED=yes` assertion and persisted request budgets remain mandatory; there is no paid fallback. Default dry runs do not call the provider.
 
-Review `summary.md` (overview and full cards), `issue.md` (Telegram-formatted body), `ranking-input.json`, `selection.json`, `weekly-observations.json`, `telegram-messages.json`, `manifest.json`, `llm-bundle.json`, and `release-audit.json` in the private run artifact. The same deterministic credential scan checks both the overview and project text before preview acceptance or publication. Each actual Telegram payload is bounded to 3,800 UTF-16 units; long issues keep separate chunks and every project link. Only the duplicate link index may be omitted from an oversized overview. Provider-enriched previews fail explicitly if synthesis is unavailable. Artifacts contain only the current run, not the restored archive.
+Review `summary.md` (overview and full cards), `issue.md` (Telegram-formatted body), `ranking-input.json`, `selection.json`, `candidate-observations.json`, `weekly-observations.json`, `weekly-window.json`, `weekly-source-manifest.json`, `telegram-messages.json`, `manifest.json`, `llm-bundle.json`, and `release-audit.json` in the private run artifact. The same deterministic credential scan checks both the overview and project text before preview acceptance or publication. Each actual Telegram payload is bounded to 3,800 UTF-16 units; long issues keep separate chunks and every project link. Only the duplicate link index may be omitted from an oversized overview. Provider-enriched previews fail explicitly if synthesis is unavailable. Artifacts contain only the current run, not the restored archive.
 
 Only after approval of the preview, set `DIGEST_DELIVERY_ENABLED=true` and enable `Probe Trigger` if recovery is wanted. `Run Bot` can be enabled for collection and previews while the publication variable remains false. Real manual/technical sends and retry delivery also require the variable to be exactly `true`. Keep credentials private.
 
@@ -25,7 +25,7 @@ Only after approval of the preview, set `DIGEST_DELIVERY_ENABLED=true` and enabl
 
 A weekly period opens Monday at 10:00 Moscow. Retries, late runs and manual sends share one durable slot, preventing a second issue that week. Pending legacy or earlier-week deliveries stop for reconciliation rather than being replayed into the new period. Old checkpoint fields and published-project history are preserved.
 
-Daily collection uses no provider calls. Weekly enrichment uses the existing per-run/per-day caps and source-description fallback. Runner and provider usage still depend on collection/build time and paced requests; no promise of unlimited free capacity is made.
+Three-hour observation uses no provider calls and does not fetch README files. README evidence is fetched only for the final weekly selection. Weekly enrichment uses the existing per-run/per-day caps and source-description fallback. Runner and provider usage still depend on collection/build time and paced requests; no promise of unlimited free capacity is made.
 ## Deduplication
 
 The authoritative `delivery-state` checkpoint keeps a `covered` map of every repository ever published, keyed by the UTC date of its first appearance. It is written only after a digest has fully reached the main chat, so confirmed progress resumes on the next run, while an unconfirmed send stops for reconciliation. Progress is keyed by destination chat and digest ID; covered repositories are not lost. A credential-scan failure blocks delivery and leaves candidates uncovered. Missing or failed Groq descriptions use GitHub descriptions; an unavailable overview uses the deterministic fallback. At most one issue can be delivered per weekly period; its chunks, overview and pending state retain durable receipts.
@@ -104,3 +104,9 @@ subsequent runs always restore the authoritative checkpoint over that archive.
 
 After migration, use the current workflow from `main`; do not rerun historical jobs from before
 the checkpoint migration, because their old code does not implement this delivery contract.
+
+## Editorial and coverage boundaries
+
+The overview uses primary repository descriptions and exact source excerpts rather than model-generated project analyses. Prompts distinguish this bounded selection from a global ranking or release feed and forbid unverified safety, quality, legal, and financial guarantees. The text describes author-stated capabilities; it is not runtime, legal, or security validation. A human preview remains required before publication is enabled.
+
+Every collection retains all parsed identities from both Trending pages and the first 30 Search results, including metadata failures; raw responses, per-candidate errors, and complete observation identities are archived. This does not mean every repository matching Search was fetched. Weekly provenance lists every retained capture and explicitly marks missing manifests. Historical early caps and missing captures cannot be reconstructed. An appearance entirely between three-hour observations can still be missed.
