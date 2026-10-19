@@ -447,7 +447,6 @@ fn make_digest(
                 "source_kind": source_priority(&entry.snapshot).2,
                 "metric_captured_at": entry.snapshot.sources.iter().find(|source| source["type"].as_str() == Some(source_priority(&entry.snapshot).2)).and_then(|source| source["captured_at"].as_str()).unwrap_or(&entry.snapshot.captured_at),
                 "trending_source": entry.trending_source,
-                "metric_captured_at": entry.snapshot.sources.iter().find(|source| source["type"].as_str() == Some(source_priority(&entry.snapshot).2)).and_then(|source| source["captured_at"].as_str()).unwrap_or(&entry.snapshot.captured_at),
                 "description": description,
                 "joke": jokes.get(id).cloned().unwrap_or_default(),
                 "evidence_quote": evidence_quote,

@@ -249,7 +249,15 @@ pub(super) fn collect(
                     .now()
                     .to_rfc3339_opts(chrono::SecondsFormat::Secs, true)
             );
-            search_entry["complete"] = json!(items.len() < 30);
+            search_entry["complete"] = json!(
+                items.len() < 30
+                    && val["incomplete_results"] != true
+                    && val["total_count"].as_u64() == Some(items.len() as u64)
+            );
+            search_entry["incomplete_results"] = val
+                .get("incomplete_results")
+                .cloned()
+                .unwrap_or(Value::Null);
             search_entry["status"] = json!("included");
             search_entry["reason"] = json!("first page ingested as candidate source only");
             search_entry["total_count"] = val.get("total_count").cloned().unwrap_or(Value::Null);
