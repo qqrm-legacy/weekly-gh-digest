@@ -1,14 +1,11 @@
 name: Probe Trigger
 
-# Safety net for GitHub's best-effort scheduler: fires four times inside
-# each delivery window (10:00 and 22:00 Moscow time) and dispatches Run Bot
-# only when nothing has started in that window yet. A redundant dispatch is
-# harmless: digest selection is deduplicated against bot-state, so an extra
-# run exits quietly when everything is already covered.
+# Monday-only fallback for the 10:00 Moscow weekly issue.
+# The publication gate and durable weekly slot prevent unapproved sends/repeats.
 
 on:
   schedule:
-    - cron: '10,40 7,8,19,20 * * *'
+    - cron: '10,40 7,8 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -20,6 +17,7 @@ concurrency:
 
 jobs:
   trigger:
+    if: vars.DIGEST_DELIVERY_ENABLED == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -29,10 +27,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          [[ "$(date -u +%u)" == 1 ]] || exit 0
           hour="$(date -u +%H)"
           case "$hour" in
             07|08) window_start="$(date -u +%Y-%m-%dT)07:00" ;;
-            19|20) window_start="$(date -u +%Y-%m-%dT)19:00" ;;
+
             *) echo "Outside slot windows; nothing to do"; exit 0 ;;
           esac
           started=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow run-bot.yml \

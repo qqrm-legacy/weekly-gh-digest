@@ -22,32 +22,34 @@ fn trending(names: &[(&str, i64)]) -> Vec<u8> {
 }
 
 #[test]
-fn collection_keeps_coverage_floor_order_and_provenance_without_external_http() {
+fn collection_keeps_young_projects_and_source_provenance_without_external_http() {
     let clock = FakeClock::at("2026-10-14T07:00:00Z");
     let dir = tempfile::tempdir().unwrap();
     let fixtures = Fixtures { replies: BTreeMap::from([
-        ("https://github.com/trending?since=weekly".into(), trending(&[("a/covered", 9000), ("b/small", 4999), ("c/fresh", 6000)])),
+        ("https://github.com/trending?since=weekly".into(), trending(&[("a/covered", 9000), ("b/small", 0), ("c/fresh", 6000)])),
         ("https://github.com/trending?since=daily".into(), trending(&[("c/fresh", 6000)])),
-        ("https://api.github.com/search/repositories?q=created%3A%3E%3D2026-10-07+stars%3A%3E10&sort=stars&order=desc&per_page=30".into(), br#"{"items":[],"total_count":0}"#.to_vec()),
+        ("https://api.github.com/search/repositories?q=created%3A%3E%3D2026-10-07&sort=stars&order=desc&per_page=30".into(), br#"{"items":[],"total_count":0}"#.to_vec()),
+        ("https://api.github.com/repos/b/small".into(), br#"{"stargazers_count":0,"default_branch":"main","description":"Young documented project"}"#.to_vec()),
+        ("https://raw.githubusercontent.com/b/small/main/README.md".into(), b"# Young project".to_vec()),
         ("https://api.github.com/repos/c/fresh".into(), br#"{"stargazers_count":6000,"default_branch":"main","description":"Useful project"}"#.to_vec()),
         ("https://raw.githubusercontent.com/c/fresh/main/README.md".into(), b"# Fresh\nDocumented implementation".to_vec()),
     ]), requests: RefCell::new(vec![]) };
     let covered = BTreeMap::from([("a/covered".into(), "2026-10-13".into())]);
     let run = collect(clock.now(), dir.path(), &covered, &fixtures, &clock).unwrap();
-    assert_eq!(run.snapshots.len(), 1);
-    assert_eq!(run.snapshots[0].full_name, "c/fresh");
-    assert_eq!(run.snapshots[0].sources.len(), 2);
+    assert_eq!(run.snapshots.len(), 2);
+    assert_eq!(run.snapshots[1].full_name, "c/fresh");
+    assert_eq!(run.snapshots[1].sources.len(), 2);
     assert_eq!(
-        run.snapshots[0].readme_excerpt.as_deref(),
+        run.snapshots[1].readme_excerpt.as_deref(),
         Some("# Fresh\nDocumented implementation")
     );
-    assert_eq!(run.manifest["candidate_count"], 1);
+    assert_eq!(run.manifest["candidate_count"], 2);
     assert_eq!(
         run.manifest["excluded_candidates"]
             .as_array()
             .unwrap()
             .len(),
-        2
+        1
     );
     assert_eq!(
         run.manifest["sources"][0]["fetched_at"],
@@ -55,8 +57,8 @@ fn collection_keeps_coverage_floor_order_and_provenance_without_external_http() 
     );
     assert_eq!(run.manifest["sources"][2]["status"], "included");
     assert!(run.dir.join("repo-c_fresh.json").exists());
-    assert_eq!(fixtures.requests.borrow().len(), 5);
-    assert_eq!(*clock.sleeps.borrow(), [StdDuration::from_millis(100)]);
+    assert_eq!(fixtures.requests.borrow().len(), 7);
+    assert_eq!(*clock.sleeps.borrow(), [StdDuration::from_millis(100); 2]);
 }
 
 #[test]

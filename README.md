@@ -1,26 +1,34 @@
 # GitHub Digest
 
-Twice-daily Russian digest of fresh GitHub projects in a single cohesive message, This-Week-in-Rust style, delivered to Telegram. Rust bot derived from [`qqrm/template-tg-bot-rs`](https://github.com/qqrm/template-tg-bot-rs). It runs on hosted GitHub Actions; there is no local or always-on bot process.
+Weekly Russian GitHub summary delivered to Telegram, with daily source collection on hosted GitHub Actions.
 
-## What the workflow does
+## Weekly issue and candidate selection
 
-- Probes twice a day — 07:00 and 19:00 UTC (10:00 and 22:00 Moscow time) — and captures candidate metrics from the first pages of GitHub Trending (daily and weekly) and GitHub Search for repositories created in the previous seven days. This is a bounded candidate sample, not a global GitHub ranking.
-- Each three-hour UTC slot delivers at most one issue, no matter how many runs, retries, or manual dispatches hit it: the issue is a single cohesive message (split into continuation chunks only when large), with a compact block per fresh project — link, star movement, language, a one-line description. At most one issue per slot is recorded in `sent_slots` on `bot-state`.
-- The issue contains only projects that never appeared in any earlier issue. Days with no rotation keep both chats silent; the run log records that there are no fresh candidates.
-- The `Probe Trigger` workflow acts as a safety net for GitHub's best-effort scheduler: inside each delivery window it dispatches `Run Bot` when nothing has started yet. Redundant dispatches are harmless: the slot guard keeps them quiet.
-- Groq descriptions are best effort: a partial or failed pass falls back to the repository's GitHub description instead of skipping the issue. The deterministic credential scan blocks delivery and records its result in release-audit.json. There is no Gemini review or other model-based publication audit.
-- Stores source responses, manifests, selection traces, and star history on the `bot-state` branch. Each run also uploads a 90-day artifact with the issue text (`issue.md`) and provenance.
-- Manual `workflow_dispatch` defaults to `dry_run=true` (preview artifact); `dry_run=false` sends the issue preview to the technical chat; `deliver_to_main_chat=true` performs the slot delivery (one per slot).
+- Collect candidate metadata daily at 06:17 UTC (09:17 Moscow), without LLM calls or Telegram credentials.
+- Prepare one issue on Monday at 07:00 UTC (10:00 Moscow). GitHub scheduling is best effort: a delayed run retains the same weekly issue identity. The Monday-only Probe Trigger can recover a missed run after publication is enabled.
+- Sources remain the first returned pages of weekly Trending, daily Trending, and GitHub Search for repositories created in the past seven days. This is a bounded sample, not a global ranking or a code/security audit.
+- Keep the latest real observation per repository from the preceding seven days. A candidate seen earlier in the week remains available even if absent from Monday's Trending page. Retained observation timestamps and raw source archives preserve provenance; daily and weekly star counts are never added together.
+- There is no minimum total-star threshold, including in the Search query. Deduplication still excludes previously published repositories. The bounded collection pool and issue each contain up to 30 candidates, with stable priority: weekly Trending +N, daily Trending +N, then new repositories by total stars. Every cap/exclusion remains recorded.
+- The issue includes a Russian synthesis of the week's observed projects and compact source-backed cards. Metrics retain their capture dates. Model output does not establish project quality, safety, or actual runtime behavior.
 
-A digest is not a fixed-size top: it publishes the whole fresh difference between the current pool and everything already reviewed. Only repositories with at least 5,000 total stars are interesting; anything smaller is dropped before the pool cut and never reaches an issue. The pool contains up to 30 fresh candidates across the sources, ordered deterministically: weekly Trending by displayed weekly star count (`+N`) first, then daily Trending by daily `+N`, then new repositories by total stars — three newcomers means a three-item issue, twenty-five means twenty-five. Covered repositories do not consume pool slots, so newcomers always reach the issue. A `selection.json` pool trace is stored with each run, and a retry re-validates a stored digest against it.
+## Preview before publication
+
+Publication is **off by default**. Leave repository variable `DIGEST_DELIVERY_ENABLED=false` until the generated preview has been reviewed. Both workflow routing and every sending CLI entry point enforce the gate. Preview/collection receive no Telegram token or destination.
+
+Run `Run Bot` manually with `dry_run=true`, `preview_with_llm=true`, and `deliver_to_main_chat=false` for a real provider-enriched artifact without sending any message. The existing `LLM_FREE_TIER_CONFIRMED=yes` assertion and persisted request budgets remain mandatory; there is no paid fallback. Default dry runs do not call the provider.
+
+Review `summary.md` (overview and full cards), `issue.md` (Telegram-formatted body), `ranking-input.json`, `selection.json`, `weekly-observations.json`, `manifest.json`, `llm-bundle.json`, and `release-audit.json` in the private run artifact. The same deterministic credential scan checks both the overview and project text before preview acceptance or publication.
+
+Only after approval of the preview, set `DIGEST_DELIVERY_ENABLED=true` and enable `Probe Trigger` if recovery is wanted. `Run Bot` can be enabled for collection and previews while the publication variable remains false. Real manual/technical sends and retry delivery also require the variable to be exactly `true`. Keep credentials private.
 
 ## Cadence and Actions minutes
 
-Two probes per day keep the digest fresh. Each slot publishes the fresh pool, up to 30 projects, and already covered repositories do not consume pool slots. Workflow duration depends on collection, builds and paced provider requests; inspect Actions usage for actual runner cost.
+A weekly period opens Monday at 10:00 Moscow. Retries, late runs and manual sends share one durable slot, preventing a second issue that week. Pending legacy or earlier-week deliveries stop for reconciliation rather than being replayed into the new period. Old checkpoint fields and published-project history are preserved.
 
+Daily collection uses no provider calls. Weekly enrichment uses the existing per-run/per-day caps and source-description fallback. Runner and provider usage still depend on collection/build time and paced requests; no promise of unlimited free capacity is made.
 ## Deduplication
 
-The authoritative `delivery-state` checkpoint keeps a `covered` map of every repository ever published, keyed by the UTC date of its first appearance. It is written only after a digest has fully reached the main chat, so confirmed progress resumes on the next run, while an unconfirmed send stops for reconciliation. Progress is keyed by destination chat and digest ID; covered repositories are not lost. A credential-scan failure blocks delivery and leaves candidates uncovered. Missing or failed Groq descriptions use GitHub descriptions; an unavailable overview uses the deterministic fallback. Several digests can be delivered per day; each gets its own posts, linked pinned overview, and pending state.
+The authoritative `delivery-state` checkpoint keeps a `covered` map of every repository ever published, keyed by the UTC date of its first appearance. It is written only after a digest has fully reached the main chat, so confirmed progress resumes on the next run, while an unconfirmed send stops for reconciliation. Progress is keyed by destination chat and digest ID; covered repositories are not lost. A credential-scan failure blocks delivery and leaves candidates uncovered. Missing or failed Groq descriptions use GitHub descriptions; an unavailable overview uses the deterministic fallback. At most one issue can be delivered per weekly period; its chunks, overview and pending state retain durable receipts.
 
 ## Evidence-based project analysis
 
@@ -31,7 +39,7 @@ Groq returns a Russian project description and short joke grounded in GitHub met
 Add these repository Actions secrets:
 
 - `TELEGRAM_BOT_TOKEN`
-- `TELEGRAM_CHAT_ID` (main chat: the daily digest is posted here automatically)
+- `TELEGRAM_CHAT_ID` (main chat: the weekly digest is posted here after publication is enabled)
 - `TELEGRAM_TECH_CHAT_ID` (private debug supergroup for manual previews and refusal notices)
 - `GROQ_API_KEY`
 
