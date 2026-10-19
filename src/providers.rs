@@ -202,7 +202,7 @@ impl<'a> Groq<'a> {
                 }).collect::<Vec<_>>(),
             });
             prompts.push(json!({"stage":"issue_overview","provider":"groq","user_json":serde_json::to_string(&overview_payload).unwrap_or_default()}));
-            let overview_system = "Ты редактор Telegram-дайджеста опенсорса в духе This Week in Rust. Тебе дан список репозиториев выпуска с краткими разборами и числом звёзд. Напиши финальный итог выпуска на русском: 2-3 предложения — общая тема дня, какой проект главный и почему, кого ещё выделить. Без markdown, без списков, только подтверждённые списком факты. Ответ только JSON: {\"overview\":строка}.";
+            let overview_system = "Ты редактор Telegram-дайджеста опенсорса в духе This Week in Rust. Тебе дан список репозиториев выпуска с краткими разборами и числом звёзд. Напиши финальный итог выпуска на русском: 4-6 предложений — общие направления недели, какие практические задачи решают проекты и кому они пригодятся. Не объявляй проекты лучшими или безопасными без доказательств. Без markdown, без списков, только подтверждённые списком факты. Ответ только JSON: {\"overview\":строка}.";
             let overview_schema = json!({"type":"object","properties":{"overview":{"type":"string"}},"required":["overview"],"additionalProperties":false});
             if let Ok(response) = self.complete(
                 Completion {

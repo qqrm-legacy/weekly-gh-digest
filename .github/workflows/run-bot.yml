@@ -2,20 +2,21 @@ name: Run Bot
 
 on:
   schedule:
-    # 07:00 and 19:00 UTC = 10:00 and 22:00 Moscow time: a couple of checks
-    # a day, This-Week-in-Rust style but daily. A check posts one compressed
-    # batch of fresh top-30 Trending repositories (>=5000 stars) when there
-    # are new ones; Probe Trigger remains the safety net for dropped slots.
-    - cron: '0 7 * * *'
-    - cron: '0 19 * * *'
+    # Collect daily without sending; publish Monday 07:00 UTC = 10:00 Moscow.
+    - cron: '17 6 * * *'
+    - cron: '0 7 * * 1'
   workflow_dispatch:
     inputs:
       dry_run:
         description: Build and upload a preview without sending to the technical chat
         type: boolean
         default: true
+      preview_with_llm:
+        description: Enrich the dry-run artifact using the confirmed free provider; never send
+        type: boolean
+        default: false
       deliver_to_main_chat:
-        description: Send the daily digest to the main chat right now (overrides dry_run)
+        description: Send the weekly digest now (requires DIGEST_DELIVERY_ENABLED=true)
         type: boolean
         default: false
       retry_delivery_run_id:
@@ -35,7 +36,7 @@ jobs:
   run:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     env:
       CARGO_TERM_COLOR: always
     steps:
@@ -45,6 +46,17 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
+      - name: Select collection, preview, or enabled publication
+        id: mode
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+          DIGEST_DELIVERY_ENABLED: ${{ vars.DIGEST_DELIVERY_ENABLED }}
+          MANUAL_DRY_RUN: ${{ inputs.dry_run }}
+          PREVIEW_WITH_LLM: ${{ inputs.preview_with_llm }}
+          DELIVER_TO_MAIN_CHAT: ${{ inputs.deliver_to_main_chat }}
+          RETRY_DELIVERY_RUN_ID: ${{ inputs.retry_delivery_run_id }}
+        run: python3 .github/scripts/run_mode.py
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8 # master
         with:
@@ -120,58 +132,56 @@ jobs:
           DELIVERY_CHECKPOINT: .github/scripts/remote_state.py
           DELIVERY_STATE_KEY: weekly-gh-digest.json
           GITHUB_TOKEN: ${{ github.token }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_TECH_CHAT_ID: ${{ secrets.TELEGRAM_TECH_CHAT_ID }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ steps.mode.outputs.send == 'true' && secrets.TELEGRAM_BOT_TOKEN || '' }}
+          TELEGRAM_CHAT_ID: ${{ steps.mode.outputs.send == 'true' && secrets.TELEGRAM_CHAT_ID || '' }}
+          TELEGRAM_TECH_CHAT_ID: ${{ steps.mode.outputs.send == 'true' && secrets.TELEGRAM_TECH_CHAT_ID || '' }}
+          GROQ_API_KEY: ${{ steps.mode.outputs.llm == 'true' && secrets.GROQ_API_KEY || '' }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL }}
           LLM_FREE_TIER_CONFIRMED: ${{ vars.LLM_FREE_TIER_CONFIRMED }}
           GH_TOKEN: ${{ github.token }}
           RETRY_DELIVERY_RUN_ID: ${{ inputs.retry_delivery_run_id }}
-          IS_MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
-          MANUAL_DRY_RUN: ${{ inputs.dry_run }}
-          DELIVER_TO_MAIN_CHAT: ${{ inputs.deliver_to_main_chat }}
+          RUN_MODE: ${{ steps.mode.outputs.mode }}
+          USE_LLM: ${{ steps.mode.outputs.llm }}
+          DIGEST_DELIVERY_ENABLED: ${{ vars.DIGEST_DELIVERY_ENABLED }}
         shell: bash
         run: |
           set -euo pipefail
           bot=./target/release/weekly-gh-digest
-          if [[ "$IS_MANUAL" == "true" ]]; then
-            if [[ -n "${RETRY_DELIVERY_RUN_ID:-}" ]]; then
-              [[ "$RETRY_DELIVERY_RUN_ID" =~ ^[0-9]+$ ]] || { echo "retry_delivery_run_id must contain digits only" >&2; exit 1; }
-              source=$(gh run view "$RETRY_DELIVERY_RUN_ID" --repo "$GITHUB_REPOSITORY" --json workflowName,headBranch)
-              [[ "$(jq -r .workflowName <<<"$source")" == "Run Bot" ]] || { echo "Source run is not Run Bot" >&2; exit 1; }
-              [[ "$(jq -r .headBranch <<<"$source")" == "$GITHUB_REF_NAME" ]] || { echo "Source run belongs to a different branch" >&2; exit 1; }
-              source_dir="$RUNNER_TEMP/weekly-gh-digest-source-$RETRY_DELIVERY_RUN_ID"
-              mkdir -p "$source_dir"
-              gh run download "$RETRY_DELIVERY_RUN_ID" --repo "$GITHUB_REPOSITORY" \
-                --name "weekly-gh-digest-$RETRY_DELIVERY_RUN_ID" --dir "$source_dir"
-              source_input=""
-              while IFS= read -r candidate; do
-                if jq -e '.format_version == 3 and (.entries | length >= 1) and all(.entries[]; (.description | type == "string") and (.description | length > 0))' "$candidate" >/dev/null; then
-                  source_input="$candidate"
-                  break
-                fi
-              done < <(find "$source_dir" -name ranking-input.json -print | sort -r)
-              test -n "$source_input"
-              delivery_dir="data/runs/retry-$GITHUB_RUN_ID"
-              mkdir -p "$delivery_dir"
-              cp -a "$(dirname "$source_input")/." "$delivery_dir/"
-              "$bot" debug-delivery "$delivery_dir"
-            elif [[ "$DELIVER_TO_MAIN_CHAT" == "true" ]]; then
-              "$bot" digest --llm
-            elif [[ "$MANUAL_DRY_RUN" == "true" ]]; then
-              # Dry runs never spend the daily LLM budget: previews are for
-              # pipeline sanity, not for burning Groq requests.
-              "$bot" preview --dry-run
-            else
-              "$bot" debug --llm
-            fi
-          elif [[ -n "${TELEGRAM_BOT_TOKEN:-}" && -n "${TELEGRAM_CHAT_ID:-}" ]]; then
+          if [[ "$RUN_MODE" == "retry" ]]; then
+            [[ "$RETRY_DELIVERY_RUN_ID" =~ ^[0-9]+$ ]]
+            source=$(gh run view "$RETRY_DELIVERY_RUN_ID" --repo "$GITHUB_REPOSITORY" --json workflowName,headBranch)
+            [[ "$(jq -r .workflowName <<<"$source")" == "Run Bot" ]] || { echo "Source run is not Run Bot" >&2; exit 1; }
+            [[ "$(jq -r .headBranch <<<"$source")" == "$GITHUB_REF_NAME" ]] || { echo "Source run belongs to a different branch" >&2; exit 1; }
+            source_dir="$RUNNER_TEMP/weekly-gh-digest-source-$RETRY_DELIVERY_RUN_ID"
+            mkdir -p "$source_dir"
+            gh run download "$RETRY_DELIVERY_RUN_ID" --repo "$GITHUB_REPOSITORY" \
+              --name "weekly-gh-digest-$RETRY_DELIVERY_RUN_ID" --dir "$source_dir"
+            source_input=""
+            while IFS= read -r candidate; do
+              if jq -e '.format_version == 3 and (.entries | length >= 1) and all(.entries[]; (.description | type == "string") and (.description | length > 0))' "$candidate" >/dev/null; then
+                source_input="$candidate"
+                break
+              fi
+            done < <(find "$source_dir" -name ranking-input.json -print | sort -r)
+            test -n "$source_input"
+            delivery_dir="data/runs/retry-$GITHUB_RUN_ID"
+            mkdir -p "$delivery_dir"
+            cp -a "$(dirname "$source_input")/." "$delivery_dir/"
+            "$bot" debug-delivery "$delivery_dir"
+          elif [[ "$RUN_MODE" == "digest" ]]; then
             "$bot" digest --llm
+          elif [[ "$RUN_MODE" == "debug" ]]; then
+            "$bot" debug --llm
+          elif [[ "$RUN_MODE" == "collect" ]]; then
+            "$bot" collect --dry-run
+          elif [[ "$RUN_MODE" == "preview" ]]; then
+            args=(preview --dry-run)
+            if [[ "$USE_LLM" == "true" ]]; then args+=(--llm); fi
+            "$bot" "${args[@]}"
           else
-            "$bot" preview --dry-run
+            echo 'Unknown run mode; refusing execution' >&2
+            exit 1
           fi
-
       - name: Save state and source provenance
         if: always() && steps.restore-state.outcome == 'success' && steps.restore-delivery.outcome == 'success'
         env:

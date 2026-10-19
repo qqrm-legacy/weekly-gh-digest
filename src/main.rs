@@ -2,13 +2,14 @@ mod checkpoint;
 mod clock;
 mod delivery;
 mod providers;
+mod schedule;
 mod sources;
 mod state_store;
 #[cfg(test)]
 mod test_support;
 
 use anyhow::{Context, Result, anyhow};
-use chrono::{DateTime, Duration, Timelike, Utc};
+use chrono::{DateTime, Duration, Utc};
 use reqwest::blocking::Client;
 use serde::{Deserialize, Serialize};
 use serde_json::{Value, json};
@@ -22,10 +23,6 @@ use std::time::Duration as StdDuration;
 /// repositories do not consume cap slots, so the top-30 fresh pool always
 /// reaches the digest.
 const MAX_CANDIDATES: usize = 30;
-
-/// Repositories below this total-star floor are not interesting and never
-/// enter the pool or an issue.
-const MIN_TOTAL_STARS: i64 = 5_000;
 
 /// A digest is not a fixed-size top: it publishes the whole fresh
 /// difference — every uncovered candidate from the current pool. This
@@ -66,9 +63,7 @@ struct State {
     covered: BTreeMap<String, String>,
     #[serde(default)]
     sent_digests: BTreeMap<String, i64>,
-    /// One issue per delivery slot (UTC date + three-hour bucket): no matter how many
-    /// runs, retries, or manual dispatches hit the same slot, the main chat
-    /// gets at most one issue from it.
+    /// One issue per weekly publication period. Legacy slot keys are preserved.
     #[serde(default)]
     sent_slots: BTreeMap<String, i64>,
     #[serde(default)]
@@ -278,7 +273,7 @@ fn source_period(kind: &str) -> String {
 
 /// Picks the issue candidates from the current run's snapshots.
 /// Repositories listed in `covered` were reviewed in an earlier issue and
-/// never reappear; repositories under the total-star floor are dropped.
+/// never reappear. Total stars do not determine eligibility.
 /// Ordering is stable: weekly Trending +N desc, then daily Trending +N
 /// desc, then new repositories by total stars.
 fn select_candidates(
@@ -293,14 +288,6 @@ fn select_candidates(
             excluded.push(
                 json!({"full_name":snapshot.full_name,"source_kind":kind,"reason":format!("already reviewed in the digest on {day}")}),
             );
-            continue;
-        }
-        if snapshot.stars.is_none_or(|stars| stars < MIN_TOTAL_STARS) {
-            excluded.push(json!({
-                "full_name":snapshot.full_name,
-                "source_kind":kind,
-                "reason":format!("below the {MIN_TOTAL_STARS}-star floor this run ({} total); re-evaluated next run", snapshot.stars.unwrap_or_default()),
-            }));
             continue;
         }
         pool.push(snapshot);
@@ -340,8 +327,13 @@ fn select_candidates(
 /// recorded from the raw captured pages, so a delivered artifact can never
 /// contain candidates that the deterministic selection did not choose.
 fn validate_digest_selection(run_dir: &Path, digest: &Value) -> Result<()> {
-    let pool: Vec<Value> = serde_json::from_slice(&fs::read(run_dir.join("selection.json"))?)
+    let selection: Value = serde_json::from_slice(&fs::read(run_dir.join("selection.json"))?)
         .context("run directory has no recorded selection pool")?;
+    let pool = selection
+        .get("pool")
+        .unwrap_or(&selection)
+        .as_array()
+        .ok_or_else(|| anyhow!("invalid recorded selection pool"))?;
     let entries = digest["entries"]
         .as_array()
         .ok_or_else(|| anyhow!("digest has no ranked entries"))?;
@@ -475,11 +467,14 @@ fn make_digest(
     official.truncate(10);
     newrepos.sort_by_key(|entry| -entry["stars"].as_i64().unwrap_or(0));
     newrepos.truncate(10);
-    let trend_summary = "Подборка свежих репозиториев дня из GitHub Trending и поиска новых репозиториев, отсортированных по недельному приросту звёзд, дневному приросту и числу звёзд у новых репозиториев. Это срез внимания, не рейтинг качества и не весь GitHub.";
+    let trend_summary = "Недельная подборка новых для дайджеста проектов из ежедневных наблюдений GitHub Trending и поиска репозиториев. Порядок: недельный Trending, дневный Trending, новые репозитории. Метрики относятся к своим датам среза и не суммируются. Это выборка внимания, не рейтинг качества всего GitHub.";
     let digest = json!({
         "format_version":3,
         "generated_at":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
-        "ranking":"fresh candidates from the latest captured GitHub Trending weekly and daily pages and the new-repository search; repositories already reviewed in an earlier digest are excluded; weekly Trending +N first, then daily Trending +N, then new repositories by total stars; current total stars are shown separately and do not determine order; not a global GitHub census",
+        "delivery_slot":slot_key_of(now),
+        "period_start":(now - Duration::days(7)).to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
+        "period_end":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
+        "ranking":"latest observed candidates per repository within the preceding seven days from GitHub Trending weekly/daily and new-repository search; repositories already reviewed in an earlier digest are excluded; weekly Trending +N first, then daily Trending +N, then new repositories by total stars; current total stars are shown separately and do not determine order; not a global GitHub census",
         "dedup_excluded":selection_excluded,
         "entries":entries_json,
         "llm_used":complete,
@@ -577,11 +572,17 @@ fn issue_item(entry: &Value, description_limit: usize) -> String {
         Some("new_repo") => "новый репозиторий".to_string(),
         _ => format!("\\+{delta} за неделю в Trending"),
     };
+    let observed = snapshot["captured_at"]
+        .as_str()
+        .and_then(parse_time)
+        .map(|time| format!(" · срез {}", time.format("%d.%m")))
+        .unwrap_or_default();
     let stats = format!(
-        "⭐ {} · {} · {}",
+        "⭐ {} · {} · {}{}",
         markdown_v2_escape(&stars.to_string()),
         metric,
-        markdown_v2_escape(language)
+        markdown_v2_escape(language),
+        markdown_v2_escape(&observed)
     );
     if description_limit == 0 {
         return format!("{title}\n{stats}");
@@ -631,9 +632,8 @@ fn render_issue_with_description_limit(digest: &Value, description_limit: usize)
         .ok()
         .map(|time| {
             markdown_v2_escape(
-                &time
-                    .with_timezone(&Utc)
-                    .format("%d.%m %H:%M UTC")
+                &(time.with_timezone(&Utc) + Duration::hours(3))
+                    .format("%d.%m %H:%M МСК")
                     .to_string(),
             )
         })
@@ -645,7 +645,7 @@ fn render_issue_with_description_limit(digest: &Value, description_limit: usize)
         "новых проектов",
     );
     let header = format!(
-        "*🚀 GitHub Digest*\nСрез: {when}\n{} с прошлого выпуска — всё опубликованное ранее не повторяется\n",
+        "*🚀 GitHub — итоги недели*\nСрез: {when}\n{} с прошлого выпуска — всё опубликованное ранее не повторяется\n",
         markdown_v2_escape(&counted)
     );
     let footer = format!(
@@ -807,6 +807,40 @@ fn render(d: &Value) -> String {
     }
     lines.push("Формат выпуска: одно цельное сообщение (см. issue.md).".into());
     lines.join("\n")
+}
+
+/// Human-readable artifact containing the actual overview and source-backed cards.
+fn render_summary(digest: &Value) -> String {
+    let overview = digest["overview"]
+        .as_str()
+        .filter(|text| !text.trim().is_empty())
+        .unwrap_or_else(|| {
+            digest["trend_summary"]
+                .as_str()
+                .unwrap_or("Нет новых проектов.")
+        });
+    let mut text = format!(
+        "# GitHub — итоги недели\n\nПериод наблюдений: {} — {}\n\n{}\n",
+        digest["period_start"].as_str().unwrap_or("?"),
+        digest["period_end"].as_str().unwrap_or("?"),
+        overview
+    );
+    if let Some(entries) = digest["entries"].as_array() {
+        for entry in entries {
+            let name = entry["full_name"].as_str().unwrap_or("?");
+            if let Some(url) = project_github_url(name) {
+                text.push_str(&format!(
+                    "\n## [{name}]({url})\n\n{}\n\nМетрика: {} — {}; всего звёзд: {}; срез: {}.\n",
+                    entry["description"].as_str().unwrap_or(""),
+                    entry["period"].as_str().unwrap_or(""),
+                    entry["delta"],
+                    entry["latest"]["stars"],
+                    entry["latest"]["captured_at"].as_str().unwrap_or("?")
+                ));
+            }
+        }
+    }
+    text
 }
 
 fn telegram_send_to(chat: &str, text: &str) -> Result<i64> {
@@ -1193,18 +1227,16 @@ fn telegram_deliver_digest(
     Ok(())
 }
 
-/// The slot a timestamp belongs to: UTC date plus a 3-hour bucket (00..21).
-/// The bot checks several times a day; no matter how many runs fire in the
-/// same bucket, the main chat gets at most one issue from it.
+/// Retries and delayed schedule events share one weekly publication identity.
 fn slot_key_of(moment: DateTime<Utc>) -> String {
-    let bucket = (moment.hour() / 3) * 3;
-    format!("{}-{bucket:02}", moment.format("%Y-%m-%d"))
+    schedule::slot(moment)
 }
 
 /// Completes delivery of earlier issues that passed the credential gate but
 /// were interrupted before reaching the main chat, then drops pending
 /// digests that have stayed unfinished for two weeks.
-fn deliver_pending_digests(state: &mut State, today: &str) -> Result<()> {
+fn deliver_pending_digests(state: &mut State, now: DateTime<Utc>) -> Result<()> {
+    let today = now.format("%Y-%m-%d").to_string();
     let pending: Vec<(String, Value)> = state
         .pending_digests
         .iter()
@@ -1231,6 +1263,11 @@ fn deliver_pending_digests(state: &mut State, today: &str) -> Result<()> {
             .map(|time| time.format("%Y-%m-%d").to_string())
             .unwrap_or_else(|| today.to_string());
         let slot_key = generated.map(slot_key_of).unwrap_or_else(|| day.clone());
+        anyhow::ensure!(
+            digest["delivery_slot"].as_str() == Some(slot_key.as_str())
+                && slot_key == slot_key_of(now),
+            "pending digest belongs to a legacy or earlier week; reconciliation required"
+        );
         if state.sent_slots.contains_key(&slot_key) {
             println!("Slot {slot_key} already delivered an issue; dropping pending {id}");
             state.pending_digests.remove(&id);
@@ -1240,7 +1277,7 @@ fn deliver_pending_digests(state: &mut State, today: &str) -> Result<()> {
         telegram_deliver_digest(&digest, &id, &day, &slot_key, state)?;
         println!("Completed delayed delivery of digest {id} to the main chat.");
     }
-    let cutoff = chrono::NaiveDate::parse_from_str(today, "%Y-%m-%d")
+    let cutoff = chrono::NaiveDate::parse_from_str(&today, "%Y-%m-%d")
         .ok()
         .and_then(|date| date.checked_sub_days(chrono::Days::new(14)));
     if let Some(cutoff) = cutoff {
@@ -1270,6 +1307,13 @@ fn main() -> Result<()> {
     checkpoint::require_hosted_configuration()?;
     let args: Vec<String> = env::args().skip(1).collect();
     let command = args.first().map(String::as_str).unwrap_or("preview");
+    let dry = args.iter().any(|x| x == "--dry-run");
+    if command == "debug-delivery" || (matches!(command, "digest" | "debug") && !dry) {
+        anyhow::ensure!(
+            schedule::delivery_enabled(env::var("DIGEST_DELIVERY_ENABLED").ok().as_deref()),
+            "publication is disabled pending preview review"
+        );
+    }
     if command == "debug-delivery" {
         let run_dir = args
             .get(1)
@@ -1310,33 +1354,55 @@ fn main() -> Result<()> {
         ));
     }
     let llm = args.iter().any(|x| x == "--llm");
-    let dry = args.iter().any(|x| x == "--dry-run");
     let now = Utc::now();
     let source_clock = clock::SystemClock;
     let source_http = sources::GitHubHttp::from_env(&source_clock)?;
     let covered = read_state_strict()?.covered;
     let gathered = sources::collect(now, &runs_dir(), &covered, &source_http, &source_clock)?;
     let mut state = update_state(&gathered.snapshots, now)?;
+    if command == "collect" {
+        println!("Daily collection saved without provider calls or Telegram delivery.");
+        return Ok(());
+    }
     let day = now.format("%Y-%m-%d").to_string();
     let digest_id = stamp(now);
     let slot_key = slot_key_of(now);
     if command == "digest" && !dry {
-        deliver_pending_digests(&mut state, &day)?;
+        deliver_pending_digests(&mut state, now)?;
     }
-    let (mut digest, output) = make_digest(
-        &mut state,
-        &gathered.snapshots,
-        &gathered.manifest,
-        now,
-        llm,
+    let weekly = schedule::candidates(&state, now);
+    write_json(&gathered.dir.join("weekly-observations.json"), &weekly)?;
+    let observed_dates = state
+        .snapshots
+        .iter()
+        .filter_map(|snapshot| parse_time(&snapshot.captured_at))
+        .filter(|time| *time >= now - Duration::days(7) && *time <= now)
+        .map(|time| time.date_naive().to_string())
+        .collect::<std::collections::BTreeSet<_>>();
+    write_json(
+        &gathered.dir.join("weekly-window.json"),
+        &json!({
+            "window_start":(now - Duration::days(7)).to_rfc3339(),
+            "window_end":now.to_rfc3339(),
+            "observed_repository_dates":observed_dates,
+            "note":"Historical observations are not backfilled; source failures/caps remain in each run manifest."
+        }),
     )?;
+    let (mut digest, output) = make_digest(&mut state, &weekly, &gathered.manifest, now, llm)?;
     write_json(&gathered.dir.join("ranking-input.json"), &digest)?;
     fs::write(gathered.dir.join("digest.md"), format!("{output}\n"))?;
+    fs::write(gathered.dir.join("summary.md"), render_summary(&digest))?;
     if !digest_publication_text(&digest)
         .unwrap_or_default()
         .is_empty()
     {
         fs::write(gathered.dir.join("issue.md"), render_issue_message(&digest))?;
+        let audit = publication_audit(&digest)?;
+        write_json(&gathered.dir.join("release-audit.json"), &audit)?;
+        anyhow::ensure!(
+            audit["approved"] == true,
+            "preview blocked by credential scan"
+        );
     }
     if matches!(command, "digest" | "debug") && !dry {
         println!("Prepared digest preview: {}", gathered.dir.display());
@@ -1373,43 +1439,48 @@ fn main() -> Result<()> {
 /// The former Gemini release review burned LLM requests on every issue and
 /// produced tech-chat noise; verdicts live in git history if ever needed.
 fn advisory_audit(digest: &mut Value, state: &mut State, run_dir: &Path) -> Result<Value> {
-    let chunks = digest_publication_text(digest)?;
-    let matches = chunks
-        .iter()
-        .flat_map(|chunk| credential_markers(chunk))
-        .collect::<Vec<_>>();
-    if !matches.is_empty() {
-        write_json(
-            &run_dir.join("release-audit.json"),
-            &json!({
-                "approved": false,
-                "status": "blocked",
-                "deterministic_scan": "failed",
-                "blocking_findings": ["Credential-like text detected; values are intentionally omitted."],
-                "matched_pattern_classes": matches,
-                "review": null,
-            }),
-        )?;
+    let audit = publication_audit(digest)?;
+    write_json(&run_dir.join("release-audit.json"), &audit)?;
+    if audit["approved"] != true {
         tech_notice(
             "⛔ GitHub Digest: выпуск остановлен — детектор нашёл похожий на секрет текст. Кандидаты не помечены покрытыми.",
         );
         return Err(anyhow!("delivery blocked by deterministic credential scan"));
     }
-    let audit = json!({
-        "approved": true,
-        "status": "deterministic-only",
-        "deterministic_scan": "passed",
-        "blocking_findings": [],
-        "review": null,
-    });
     digest["audit"] = audit.clone();
     write_json(&run_dir.join("release-audit.json"), &audit)?;
     write_json(&state_path(), state)?;
     Ok(audit)
 }
 
+/// The preview and publication inspect the same complete public text.
+/// This function never contacts Telegram, including when the scan fails.
+fn publication_audit(digest: &Value) -> Result<Value> {
+    let mut chunks = digest_publication_text(digest)?;
+    chunks.push(final_issue_text(digest));
+    chunks.push(digest["overview"].as_str().unwrap_or("").to_string());
+    if let Some(entries) = digest["entries"].as_array() {
+        for entry in entries {
+            for field in ["description", "joke"] {
+                chunks.push(entry[field].as_str().unwrap_or("").to_string());
+            }
+        }
+    }
+    let matches = chunks
+        .iter()
+        .flat_map(|chunk| credential_markers(chunk))
+        .collect::<Vec<_>>();
+    Ok(json!({
+        "approved":matches.is_empty(),
+        "status":if matches.is_empty() { "deterministic-only" } else { "blocked" },
+        "deterministic_scan":if matches.is_empty() { "passed" } else { "failed" },
+        "matched_pattern_classes":matches,
+        "review":null
+    }))
+}
+
 /// Delivery of one fresh issue into the main chat. The slot guard runs
-/// first: at most one issue per three-hour slot no matter how many runs fire.
+/// first: at most one issue per week no matter how many runs fire.
 /// The deterministic credential scan is the only publication reviewer.
 /// On success every reviewed repository is marked covered and stays out of
 /// all future issues. "Nothing new" stays silent in both chats.
@@ -1678,18 +1749,12 @@ mod tests {
     }
 
     #[test]
-    fn slots_are_three_hour_buckets() {
-        let parse = |iso: &str| {
-            DateTime::parse_from_rfc3339(iso)
-                .unwrap()
-                .with_timezone(&Utc)
-        };
-        assert_eq!(slot_key_of(parse("2026-10-01T00:14:00Z")), "2026-10-01-00");
-        assert_eq!(slot_key_of(parse("2026-10-01T07:15:00Z")), "2026-10-01-06");
-        assert_eq!(slot_key_of(parse("2026-10-01T19:40:00Z")), "2026-10-01-18");
-        assert_eq!(slot_key_of(parse("2026-10-01T23:59:00Z")), "2026-10-01-21");
+    fn delayed_and_manual_runs_share_the_same_weekly_slot() {
+        let monday = parse_time("2026-10-19T07:00:00Z").unwrap();
+        let friday = parse_time("2026-10-23T22:00:00Z").unwrap();
+        assert_eq!(slot_key_of(monday), slot_key_of(friday));
+        assert_ne!(slot_key_of(monday), slot_key_of(monday + Duration::days(7)));
     }
-
     #[test]
     fn final_issue_text_prefers_llm_overview_and_falls_back_deterministically() {
         let with_overview = json!({
@@ -1717,6 +1782,45 @@ mod tests {
         assert!(text.contains("org/a (\\+50)"));
         assert!(text.contains("org/b (\\+20)"));
         assert!(text.contains("[org/b](https://github.com/org/b)"));
+    }
+
+    #[test]
+    fn zero_and_unknown_star_counts_do_not_exclude_projects() {
+        let mut young = snapshot(
+            "org/young",
+            "2026-10-19T07:00:00Z",
+            json!({"type":"trending_weekly","trending_stars_period":12}),
+        );
+        young.stars = Some(0);
+        let mut unknown = young.clone();
+        unknown.full_name = "org/unknown".into();
+        unknown.stars = None;
+        let (selected, excluded) = select_candidates(&[young, unknown], &BTreeMap::new());
+        assert_eq!(selected.len(), 2);
+        assert!(excluded.is_empty());
+    }
+
+    #[test]
+    fn preview_contains_the_real_overview_and_checks_its_unescaped_credentials() {
+        let mut digest = json!({
+            "overview":"На этой неделе появились инструменты для разбора данных.",
+            "period_start":"2026-10-12T07:00:00Z",
+            "period_end":"2026-10-19T07:00:00Z",
+            "entries":[{
+                "full_name":"org/young","description":"Documented data parser.",
+                "period":"GitHub Trending: звёзды за неделю","delta":12,
+                "latest":{"stars":12,"captured_at":"2026-10-18T07:00:00Z"}
+            }]
+        });
+        let preview = render_summary(&digest);
+        assert!(preview.contains(digest["overview"].as_str().unwrap()));
+        assert!(preview.contains("[org/young](https://github.com/org/young)"));
+        assert!(preview.contains("2026-10-18T07:00:00Z"));
+        assert_eq!(publication_audit(&digest).unwrap()["approved"], true);
+        digest["overview"] = json!(format!("Example ghp_{}", "a".repeat(40)));
+        let audit = publication_audit(&digest).unwrap();
+        assert_eq!(audit["approved"], false);
+        assert!(!audit.to_string().contains(&"a".repeat(40)));
     }
 
     #[test]
@@ -1748,7 +1852,7 @@ mod tests {
             json!({"type":"new_repo_search","stars":9_000}),
         ));
         snapshots.last_mut().unwrap().stars = Some(9_000);
-        // Viral in Trending but small overall: the floor drops it.
+        // A young project remains eligible regardless of its total stars.
         snapshots.push(snapshot(
             "org/small-hype",
             &captured,
@@ -1761,21 +1865,21 @@ mod tests {
 
         let (selected, excluded) = select_candidates(&snapshots, &covered);
 
-        // The issue is the whole fresh difference: nine uncovered weekly
+        // The issue is the whole fresh difference: ten uncovered weekly
         // candidates by +N desc, then the daily one, then the new one.
-        // Covered repositories and sub-5000-star ones do not consume slots.
-        assert_eq!(selected.len(), 11);
-        assert_eq!(selected[0].snapshot.full_name, "org/week-08");
-        assert_eq!(selected[1].snapshot.full_name, "org/week-07");
-        assert_eq!(selected[8].snapshot.full_name, "org/week-00");
-        assert_eq!(selected[9].snapshot.full_name, "org/daily-hot");
-        assert_eq!(selected[10].snapshot.full_name, "org/new-but-big");
+        // Covered repositories do not consume slots; young projects remain eligible.
+        assert_eq!(selected.len(), 12);
+        assert_eq!(selected[0].snapshot.full_name, "org/small-hype");
+        assert_eq!(selected[1].snapshot.full_name, "org/week-08");
+        assert_eq!(selected[9].snapshot.full_name, "org/week-00");
+        assert_eq!(selected[10].snapshot.full_name, "org/daily-hot");
+        assert_eq!(selected[11].snapshot.full_name, "org/new-but-big");
         assert_eq!(
             selected[0].period,
             "GitHub Trending: звёзды за неделю".to_string()
         );
         assert_eq!(
-            selected[9].period,
+            selected[10].period,
             "GitHub Trending: звёзды за день".to_string()
         );
         assert!(excluded.iter().any(
@@ -1784,12 +1888,6 @@ mod tests {
         assert!(excluded.iter().any(
             |row| row["full_name"] == "org/week-09" && row["source_kind"] == "trending_weekly"
         ));
-        assert!(excluded.iter().any(|row| {
-            row["full_name"] == "org/small-hype"
-                && row["reason"]
-                    .as_str()
-                    .is_some_and(|reason| reason.contains("star floor"))
-        }));
         assert!(
             !excluded
                 .iter()

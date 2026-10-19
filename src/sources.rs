@@ -2,7 +2,7 @@
 #[cfg(test)]
 mod tests;
 use crate::clock::Clock;
-use crate::{MAX_CANDIDATES, MIN_TOTAL_STARS, Snapshot, source_priority, stamp, write_json};
+use crate::{MAX_CANDIDATES, Snapshot, source_priority, stamp, write_json};
 use anyhow::{Result, anyhow};
 use chrono::{DateTime, Duration, Utc};
 use reqwest::blocking::Client;
@@ -51,20 +51,6 @@ pub(super) struct RunData {
     pub(super) dir: PathBuf,
     pub(super) manifest: Value,
     pub(super) snapshots: Vec<Snapshot>,
-}
-
-/// Best total-star estimate available before repository metadata is
-/// fetched: the number printed on the trending page or the search item.
-fn candidate_observed_stars(candidate: &Candidate) -> Option<i64> {
-    candidate.sources.iter().find_map(|source| {
-        if source["type"] == "trending_weekly" || source["type"] == "trending_daily" {
-            source["trending_total_stars"].as_i64()
-        } else if source["type"] == "new_repo_search" {
-            source["stars"].as_i64()
-        } else {
-            None
-        }
-    })
 }
 
 impl SourceHttp for GitHubHttp<'_> {
@@ -240,7 +226,7 @@ pub(super) fn collect(
         sources.push(entry);
     }
     let from = (now - Duration::days(7)).date_naive();
-    let query = format!("created:>={} stars:>10", from.format("%Y-%m-%d"));
+    let query = format!("created:>={}", from.format("%Y-%m-%d"));
     let mut url = reqwest::Url::parse(&format!("{API}/search/repositories"))?;
     url.query_pairs_mut()
         .append_pair("q", &query)
@@ -318,30 +304,15 @@ pub(super) fn collect(
         };
         candidate_key(a).cmp(&candidate_key(b))
     });
-    // Covered repositories never consume cap slots, and repositories below
-    // the star floor are dropped for this run only — nothing is persisted,
-    // so one that grows past the floor enters the next pool normally. An
-    // unparseable star count is not a floor miss: it passes through to the
-    // metadata-stage check in select_candidates.
-    let (fresh, rejected): (Vec<&Candidate>, Vec<&Candidate>) = all.iter().partition(|candidate| {
-        !covered.contains_key(&candidate.name)
-            && candidate_observed_stars(candidate).is_none_or(|stars| stars >= MIN_TOTAL_STARS)
-    });
+    // Coverage history controls deduplication; total stars never exclude a project.
+    let (fresh, rejected): (Vec<&Candidate>, Vec<&Candidate>) = all
+        .iter()
+        .partition(|candidate| !covered.contains_key(&candidate.name));
     let mut excluded: Vec<Value> = rejected
         .iter()
-        .map(|x| {
-            let reason = if covered.contains_key(&x.name) {
-                format!(
-                    "already reviewed in the digest on {}",
-                    covered.get(&x.name).cloned().unwrap_or_default()
-                )
-            } else {
-                format!(
-                    "below the {MIN_TOTAL_STARS}-star floor this run ({} observed); re-evaluated next run",
-                    candidate_observed_stars(x).unwrap_or_default()
-                )
-            };
-            json!({"full_name":x.name,"reason":reason})
+        .map(|candidate| {
+            json!({"full_name":candidate.name,"reason":format!(
+            "already reviewed in the digest on {}", covered[&candidate.name])})
         })
         .collect();
     let selected: Vec<Candidate> = fresh
