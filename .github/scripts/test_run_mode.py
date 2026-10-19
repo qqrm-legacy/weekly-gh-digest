@@ -20,6 +20,18 @@ class RunModeTests(unittest.TestCase):
         self.assertEqual(self.manual(PREVIEW_WITH_LLM="true",
                          DIGEST_DELIVERY_ENABLED="true"), ("preview", False, True))
 
+    def test_stored_preview_never_selects_a_sender_and_rejects_conflicts(self):
+        for enabled in ["true", "false"]:
+            self.assertEqual(self.manual(PREVIEW_SOURCE_RUN_ID="123", DIGEST_DELIVERY_ENABLED=enabled),
+                             ("preview-stored", False, True))
+        for conflict in [{"RETRY_DELIVERY_RUN_ID":"123"}, {"DELIVER_TO_MAIN_CHAT":"true"},
+                         {"MANUAL_DRY_RUN":"false"}]:
+            with self.assertRaises(ValueError):
+                self.manual(PREVIEW_SOURCE_RUN_ID="123", **conflict)
+        for value in ["../123", "１２３", "1;echo bad"]:
+            with self.assertRaises(ValueError):
+                self.manual(PREVIEW_SOURCE_RUN_ID=value)
+
     def test_every_send_path_is_blocked_until_review(self):
         for values in [{"DELIVER_TO_MAIN_CHAT": "true"}, {"MANUAL_DRY_RUN": "false"},
                        {"RETRY_DELIVERY_RUN_ID": "123"}]:

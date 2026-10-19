@@ -17,6 +17,13 @@ def choose(env):
     if env.get("EVENT_NAME") != "workflow_dispatch":
         raise ValueError("Unsupported event")
     retry = env.get("RETRY_DELIVERY_RUN_ID", "")
+    preview_source = env.get("PREVIEW_SOURCE_RUN_ID", "")
+    if preview_source:
+        if not preview_source.isascii() or not preview_source.isdigit():
+            raise ValueError("preview_source_run_id must contain ASCII digits only")
+        if retry or env.get("DELIVER_TO_MAIN_CHAT") == "true" or env.get("MANUAL_DRY_RUN") == "false":
+            raise ValueError("Stored preview cannot be combined with sending inputs")
+        return "preview-stored", False, True
     if retry:
         if not retry.isascii() or not retry.isdigit():
             raise ValueError("retry_delivery_run_id must contain ASCII digits only")

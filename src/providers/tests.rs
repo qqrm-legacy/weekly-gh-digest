@@ -215,6 +215,38 @@ fn ranked(name: &str) -> Ranked {
 }
 
 #[test]
+fn stored_overview_uses_one_request_and_primary_sources_without_regenerating_cards() {
+    let clock = FakeClock::at("2026-10-19T19:00:00Z");
+    let directory = tempfile::tempdir().unwrap();
+    let path = directory.path().join("state.json");
+    let server = TestServer::start(vec![(
+        200,
+        completion(r#"{"overview":"В этой подборке есть инструменты анализа программ."}"#),
+    )]);
+    let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+    let mut state = State::default();
+    let mut entry = ranked("org/analysis");
+    entry.snapshot.description = Some("Primary description of a code analysis tool.".into());
+    let text = groq
+        .rewrite_overview(&[entry], &mut state, directory.path())
+        .unwrap();
+    assert!(text.starts_with("В этой подборке"));
+    let requests = server.finish();
+    assert_eq!(requests.len(), 1);
+    let request = body(&requests[0]);
+    let source: Value =
+        serde_json::from_str(request["messages"][1]["content"].as_str().unwrap()).unwrap();
+    assert_eq!(
+        source["entries"][0]["description"],
+        "Primary description of a code analysis tool."
+    );
+    assert!(clock.sleeps.borrow().is_empty());
+    assert_eq!(state.llm_daily_requests["2026-10-19"], 1);
+    assert!(state.covered.is_empty());
+    assert!(state.sent_digests.is_empty());
+}
+
+#[test]
 fn partial_enrichment_keeps_confirmed_descriptions_and_original_fallback_contract() {
     let clock = FakeClock::at("2026-10-14T07:00:00Z");
     let dir = tempfile::tempdir().unwrap();
