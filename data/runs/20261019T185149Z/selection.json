@@ -1,0 +1,259 @@
+{
+  "covered_repositories_tracked": 60,
+  "excluded": [
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "cursor/plugins",
+      "reason": "already reviewed in the digest on 2026-10-01",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "debpalash/VoiceStudio",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "heygen-com/hyperframes",
+      "reason": "already reviewed in the digest on 2026-09-30",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "mksglu/context-mode",
+      "reason": "already reviewed in the digest on 2026-09-30",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "stablyai/orca",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "Caho1/open-claude-ui",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "AjncSystem/ShadowOfTheColossus-PC",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "zhuyansen/new-term-radar",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "xscreensaver-official/xscreensaver",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "outcrawlai/scout",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Tencent-Hunyuan/Hy-Memory",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "aicodeking/leanrea",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "LiCinCan/blender-ai-mcp-addon",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "OpenMOSS/MOSS-Image",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "alchaincyf/huashu-motion",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "MyLuxy/overdrive",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "CoolkHz/gptibo",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "xiaoyang111222/cn-math-taxonomy",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Zfinix/eleven",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "MaryCache/imozuru",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Noniv/web-ocean",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "seedds/nxnative",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "threerocks/sweety-handdraw-video",
+      "reason": "digest cap after stable source priority"
+    }
+  ],
+  "pool": [
+    {
+      "full_name": "morluto/rea",
+      "ordering_metric": 229268,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "storytold/artcraft",
+      "ordering_metric": 16379,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "boykopovar/AnyPS5",
+      "ordering_metric": 14224,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "cathrynlavery/diagram-design",
+      "ordering_metric": 7901,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "NationalSecurityAgency/ghidra",
+      "ordering_metric": 7602,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "MadsLorentzen/ai-job-search",
+      "ordering_metric": 5742,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "anthropics/claude-plugins-official",
+      "ordering_metric": 4774,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "K-Dense-AI/scientific-agent-skills",
+      "ordering_metric": 4310,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "YuJunZhiXue/dsh-purge",
+      "ordering_metric": 2622,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "ruvnet/ruflo",
+      "ordering_metric": 2117,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "anomalyco/opencode",
+      "ordering_metric": 1310,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "Comfy-Org/ComfyUI",
+      "ordering_metric": 1011,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "akitaonrails/ai-memory",
+      "ordering_metric": 666,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "Kruk2/jasna",
+      "ordering_metric": 502,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "shiyu-coder/Kronos",
+      "ordering_metric": 355,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "headroomlabs-ai/headroom",
+      "ordering_metric": 317,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "withmarbleapp/os-taxonomy",
+      "ordering_metric": 301,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "anthropics/claude-code",
+      "ordering_metric": 167,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "Gathin23/cleanyourtv",
+      "ordering_metric": 4464,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "jhaizhou-ops/d2r-mobile",
+      "ordering_metric": 4038,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "Arekejoker/qwen21-nsfw-pose-skill",
+      "ordering_metric": 3350,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "feder-cr/git-ai",
+      "ordering_metric": 2430,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "HeyPuter/everything",
+      "ordering_metric": 2312,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "deeplethe/solid-glass",
+      "ordering_metric": 2271,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "ahwootech/BRUTAL",
+      "ordering_metric": 1971,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "chenglou/handwired",
+      "ordering_metric": 1791,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "ly05010419/MacNativeGames",
+      "ordering_metric": 1560,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "Supermedo/uncharted_pc",
+      "ordering_metric": 1543,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "Leonxlnx/earshot",
+      "ordering_metric": 1422,
+      "source_kind": "new_repo"
+    },
+    {
+      "full_name": "rohit267/net-merge",
+      "ordering_metric": 1328,
+      "source_kind": "new_repo"
+    }
+  ]
+}
