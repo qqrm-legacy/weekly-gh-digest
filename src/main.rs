@@ -557,7 +557,10 @@ fn issue_item(entry: &Value, description_limit: usize) -> String {
     let snapshot = &entry["latest"];
     let language = snapshot["language"].as_str().unwrap_or("язык не указан");
     let delta = entry["delta"].as_i64().unwrap_or_default();
-    let stars = snapshot["stars"].as_i64().unwrap_or_default();
+    let stars = snapshot["stars"]
+        .as_i64()
+        .map(|value| value.to_string())
+        .unwrap_or_else(|| "нет данных".to_string());
     let title = project_github_url(id)
         .map(|url| {
             format!(
@@ -579,7 +582,7 @@ fn issue_item(entry: &Value, description_limit: usize) -> String {
         .unwrap_or_default();
     let stats = format!(
         "⭐ {} · {} · {}{}",
-        markdown_v2_escape(&stars.to_string()),
+        markdown_v2_escape(&stars),
         metric,
         markdown_v2_escape(language),
         markdown_v2_escape(&observed)
