@@ -1694,7 +1694,7 @@ mod tests {
         });
         let chunks = digest_publication_text(&digest).unwrap();
         assert_eq!(chunks.len(), 1);
-        assert!(chunks[0].starts_with("*🚀 GitHub Digest*"));
+        assert!(chunks[0].starts_with("*🚀 GitHub — итоги недели*"));
         assert!(chunks[0].contains("10 новых проектов"));
         assert!(chunks[0].contains("[org/repo\\-1](https://github.com/org/repo-1)"));
         // MarkdownV2 reserves '.', so every literal dot outside URLs must be
