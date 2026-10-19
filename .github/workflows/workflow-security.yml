@@ -12,6 +12,11 @@ permissions:
 
 jobs:
   dependency-policy:
+    permissions:
+      contents: read
+      pull-requests: read
+      actions: read
+      checks: read
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -19,6 +24,16 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - name: Verify controller metadata access with the runner token
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          # Exercise the same API path as the write controller, without write access.
+          gh pr view "$PR_NUMBER" --repo "$REPO" --json statusCheckRollup \
+            --jq '.statusCheckRollup | length'
       - name: Test dependency policy
         run: python3 -m unittest discover -s .github/scripts -p 'test_*.py'
       - name: Verify Dependabot commit provenance
