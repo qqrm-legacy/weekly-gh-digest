@@ -422,7 +422,7 @@ pub(super) fn collect(
     readme_names.extend(
         readme_candidates
             .iter()
-            .take(15)
+            .take(MAX_CANDIDATES)
             .map(|snapshot| snapshot.full_name.clone()),
     );
     for name in readme_names {

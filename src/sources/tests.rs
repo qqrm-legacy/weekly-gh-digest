@@ -86,6 +86,55 @@ fn rate_limit_remains_an_explicit_coverage_gap_and_skips_metadata() {
 }
 
 #[test]
+fn collection_fetches_readme_evidence_after_the_fifteenth_project() {
+    let clock = FakeClock::at("2026-10-19T07:00:00Z");
+    let directory = tempfile::tempdir().unwrap();
+    let names = (0..16)
+        .map(|index| format!("org/p{index:02}"))
+        .collect::<Vec<_>>();
+    let rows = names
+        .iter()
+        .map(|name| (name.as_str(), 20))
+        .collect::<Vec<_>>();
+    let mut replies = BTreeMap::from([
+        ("https://github.com/trending?since=weekly".into(), trending(&rows)),
+        ("https://github.com/trending?since=daily".into(), trending(&rows)),
+        ("https://api.github.com/search/repositories?q=created%3A%3E%3D2026-10-12&sort=stars&order=desc&per_page=30".into(),
+            br#"{"items":[],"total_count":0}"#.to_vec()),
+    ]);
+    for name in &names {
+        replies.insert(
+            format!("https://api.github.com/repos/{name}"),
+            br#"{"default_branch":"main","description":null,"stargazers_count":20}"#.to_vec(),
+        );
+        replies.insert(
+            format!("https://raw.githubusercontent.com/{name}/main/README.md"),
+            b"# Project\n\nDocumented implementation with useful source evidence.".to_vec(),
+        );
+    }
+    let fixtures = Fixtures {
+        replies,
+        requests: RefCell::new(vec![]),
+    };
+    let result = collect(
+        clock.now(),
+        directory.path(),
+        &BTreeMap::new(),
+        &fixtures,
+        &clock,
+    )
+    .unwrap();
+    assert_eq!(result.snapshots.len(), 16);
+    assert!(
+        result
+            .snapshots
+            .iter()
+            .all(|snapshot| snapshot.readme_excerpt.is_some())
+    );
+    assert_eq!(fixtures.requests.borrow().len(), 35);
+}
+
+#[test]
 fn http_retries_server_errors_but_raw_requests_never_carry_github_token() {
     let clock = FakeClock::at("2026-10-14T07:00:00Z");
     let server = TestServer::start(vec![(500, "temporary".into()), (200, "abcdef".into())]);

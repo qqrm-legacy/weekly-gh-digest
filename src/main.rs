@@ -126,6 +126,15 @@ fn stamp(now: DateTime<Utc>) -> String {
     now.format("%Y%m%dT%H%M%SZ").to_string()
 }
 
+fn record_run_directory(directory: &Path) -> Result<()> {
+    if let Some(output) = env::var_os("GITHUB_OUTPUT") {
+        use std::io::Write;
+        let mut file = fs::OpenOptions::new().append(true).open(output)?;
+        writeln!(file, "run_directory={}", directory.display())?;
+    }
+    Ok(())
+}
+
 fn write_json(path: &Path, value: &impl Serialize) -> Result<()> {
     state_store::StateStore::new(path).save(value)?;
     if path == state_path() {
@@ -416,6 +425,7 @@ fn make_digest(
                         .snapshot
                         .description
                         .as_deref()
+                        .filter(|text| !text.trim().is_empty())
                         .unwrap_or("Описание не указано в GitHub."),
                 )
             });
@@ -685,12 +695,12 @@ fn render_issue_chunks(digest: &Value) -> Vec<String> {
         return Vec::new();
     }
     let mut chunks = Vec::new();
-    let mut current = "*🚀 GitHub Digest*\n".to_string();
+    let mut current = "*🚀 GitHub — итоги недели*\n".to_string();
     for entry in entries {
         let item = issue_item(entry, ISSUE_DESCRIPTION_LIMIT);
-        if current.chars().count() + item.chars().count() + 2 > ISSUE_CHUNK_LIMIT {
+        if current.encode_utf16().count() + item.encode_utf16().count() + 2 > ISSUE_CHUNK_LIMIT {
             chunks.push(current.trim_end().to_string());
-            current = "*🚀 GitHub Digest — продолжение*\n".to_string();
+            current = "*🚀 GitHub — продолжение*\n".to_string();
         }
         if !current.ends_with('\n') {
             current.push('\n');
@@ -702,15 +712,20 @@ fn render_issue_chunks(digest: &Value) -> Vec<String> {
     chunks
 }
 
-/// Гарантированно одно сообщение: жмём описания, пока батч не влез в лимит.
+/// Joined representation for the preview artifact; the sender uses separate chunks.
 fn render_issue_message(digest: &Value) -> String {
+    render_issue_messages(digest).join("\n\n")
+}
+
+/// The actual sender retains message boundaries instead of joining them again.
+fn render_issue_messages(digest: &Value) -> Vec<String> {
     for limit in ISSUE_DESCRIPTION_STEPS {
         let message = render_issue_with_description_limit(digest, limit);
-        if message.chars().count() <= ISSUE_CHUNK_LIMIT {
-            return message;
+        if message.encode_utf16().count() <= ISSUE_CHUNK_LIMIT {
+            return vec![message];
         }
     }
-    render_issue_chunks(digest).join("\n\n")
+    render_issue_chunks(digest)
 }
 
 fn markdown_v2_escape(text: &str) -> String {
@@ -995,7 +1010,14 @@ fn digest_publication_text(digest: &Value) -> Result<Vec<String>> {
             return Err(anyhow!("publication found a project without a description"));
         }
     }
-    Ok(vec![render_issue_message(digest)])
+    let chunks = render_issue_messages(digest);
+    anyhow::ensure!(
+        chunks
+            .iter()
+            .all(|text| text.encode_utf16().count() <= ISSUE_CHUNK_LIMIT),
+        "a publication chunk exceeds the Telegram-safe limit"
+    );
+    Ok(chunks)
 }
 
 /// Финальное сообщение выпуска: LLM-саммаризация дня плюс детерминированный
@@ -1049,7 +1071,16 @@ fn final_issue_text(digest: &Value) -> String {
             links.join("\n")
         )
     };
-    format!("*📌 Итог выпуска*\n{body}{link_block}")
+    let full = format!("*📌 Итог выпуска*\n{body}{link_block}");
+    if full.encode_utf16().count() <= ISSUE_CHUNK_LIMIT {
+        full
+    } else {
+        // The cards already contain every link; omit only the duplicate index.
+        format!(
+            "*📌 Итог выпуска*\n{body}\n\n{}",
+            markdown_v2_escape("Все ссылки — в карточках выпуска.")
+        )
+    }
 }
 
 /// Sends the issue chunks sequentially, resuming per chunk after an
@@ -1322,6 +1353,7 @@ fn main() -> Result<()> {
             .get(1)
             .map(PathBuf::from)
             .ok_or_else(|| anyhow!("usage: weekly-gh-digest debug-delivery <run-directory>"))?;
+        record_run_directory(&run_dir)?;
         let mut digest: Value =
             serde_json::from_slice(&fs::read(run_dir.join("ranking-input.json"))?)
                 .context("debug artifact has invalid ranking-input.json")?;
@@ -1362,6 +1394,7 @@ fn main() -> Result<()> {
     let source_http = sources::GitHubHttp::from_env(&source_clock)?;
     let covered = read_state_strict()?.covered;
     let gathered = sources::collect(now, &runs_dir(), &covered, &source_http, &source_clock)?;
+    record_run_directory(&gathered.dir)?;
     let mut state = update_state(&gathered.snapshots, now)?;
     if command == "collect" {
         println!("Daily collection saved without provider calls or Telegram delivery.");
@@ -1406,6 +1439,17 @@ fn main() -> Result<()> {
             audit["approved"] == true,
             "preview blocked by credential scan"
         );
+        let mut messages = digest_publication_text(&digest)?;
+        messages.push(final_issue_text(&digest));
+        write_json(&gathered.dir.join("telegram-messages.json"), &messages)?;
+        if command == "preview" && llm {
+            anyhow::ensure!(
+                digest["overview"]
+                    .as_str()
+                    .is_some_and(|text| !text.trim().is_empty()),
+                "weekly synthesis unavailable; inspect provider budget and source gaps"
+            );
+        }
     }
     if matches!(command, "digest" | "debug") && !dry {
         println!("Prepared digest preview: {}", gathered.dir.display());
@@ -1461,6 +1505,12 @@ fn advisory_audit(digest: &mut Value, state: &mut State, run_dir: &Path) -> Resu
 fn publication_audit(digest: &Value) -> Result<Value> {
     let mut chunks = digest_publication_text(digest)?;
     chunks.push(final_issue_text(digest));
+    anyhow::ensure!(
+        chunks
+            .iter()
+            .all(|text| text.encode_utf16().count() <= ISSUE_CHUNK_LIMIT),
+        "the weekly overview exceeds the Telegram-safe limit"
+    );
     chunks.push(digest["overview"].as_str().unwrap_or("").to_string());
     if let Some(entries) = digest["entries"].as_array() {
         for entry in entries {
@@ -1838,6 +1888,37 @@ mod tests {
             let changed = json!({"entries":[{"full_name":"org/other"}]});
             assert!(validate_digest_selection(directory.path(), &changed).is_err());
         }
+    }
+
+    #[test]
+    fn a_full_week_keeps_every_repository_in_bounded_telegram_messages() {
+        let entries = (0..30)
+            .map(|index| {
+                json!({
+                    "full_name":format!("org/project-{index}-{}", "w".repeat(60)),
+                    "description":"Подробное описание проекта 😀 ".repeat(60),
+                    "source_kind":"trending_weekly","delta":123,
+                    "latest":{"stars":42,"language":"Rust","captured_at":"2026-10-19T07:00:00Z"}
+                })
+            })
+            .collect::<Vec<_>>();
+        let digest = json!({"format_version":3,"entries":entries,
+            "overview":"На этой неделе появились новые инструменты разработки."});
+        let messages = digest_publication_text(&digest).unwrap();
+        assert!(messages.len() > 1);
+        assert!(
+            messages
+                .iter()
+                .all(|text| text.encode_utf16().count() <= ISSUE_CHUNK_LIMIT)
+        );
+        let text = messages.join("\n");
+        for entry in digest["entries"].as_array().unwrap() {
+            assert!(
+                text.contains(&project_github_url(entry["full_name"].as_str().unwrap()).unwrap())
+            );
+        }
+        assert!(final_issue_text(&digest).encode_utf16().count() <= ISSUE_CHUNK_LIMIT);
+        assert_eq!(publication_audit(&digest).unwrap()["approved"], true);
     }
 
     #[test]

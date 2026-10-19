@@ -223,7 +223,14 @@ fn partial_enrichment_keeps_confirmed_descriptions_and_original_fallback_contrac
     let response =
         json!({"description":description.trim(), "joke":"Шутка про открытый код и документацию."})
             .to_string();
-    let server = TestServer::start(vec![(200, completion(&response)), (400, "{}".into())]);
+    let server = TestServer::start(vec![
+        (200, completion(&response)),
+        (400, "{}".into()),
+        (
+            200,
+            completion(r#"{"overview":"Итог по доступным источникам."}"#),
+        ),
+    ]);
     let provider = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
     let result = provider
         .enrich(
@@ -233,13 +240,13 @@ fn partial_enrichment_keeps_confirmed_descriptions_and_original_fallback_contrac
             dir.path(),
         )
         .unwrap();
-    assert_eq!(server.finish().len(), 2);
+    assert_eq!(server.finish().len(), 3);
     assert_eq!(result.descriptions.len(), 1);
     assert!(result.descriptions.contains_key("a/one"));
     assert!(!result.descriptions.contains_key("b/two"));
     assert!(!result.complete);
-    assert!(result.overview.is_empty());
-    assert_eq!(result.budget["actual_requests"], 2);
+    assert_eq!(result.overview, "Итог по доступным источникам.");
+    assert_eq!(result.budget["actual_requests"], 3);
     assert_eq!(result.budget["max_requests_per_run"], 40);
     assert_eq!(*clock.sleeps.borrow(), [StdDuration::from_secs(30)]);
     assert!(dir.path().join("llm-bundle.json").exists());
@@ -280,4 +287,44 @@ fn completed_enrichment_preserves_overview_schema_and_artifact_budget() {
             .unwrap();
     assert_eq!(artifact["provider_reviews"][0]["id"], "a/one");
     assert_eq!(artifact["budget"], result.budget);
+}
+
+#[test]
+fn missing_evidence_skips_only_that_project_and_keeps_the_weekly_overview() {
+    let clock = FakeClock::at("2026-10-19T07:00:00Z");
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("state.json");
+    let response = json!({
+        "description":"Подтверждённое источниками описание полезного проекта. ".repeat(6),
+        "joke":"Шутка про открытую документацию."
+    })
+    .to_string();
+    let server = TestServer::start(vec![
+        (200, completion(&response)),
+        (200, completion(&response)),
+        (
+            200,
+            completion(r#"{"overview":"Общий итог по двум подтверждённым проектам."}"#),
+        ),
+    ]);
+    let provider = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+    let mut unknown = ranked("b/unknown");
+    unknown.snapshot.description = None;
+    unknown.snapshot.readme_excerpt = None;
+    let result = provider
+        .enrich(
+            &[ranked("a/one"), unknown, ranked("c/three")],
+            &mut State::default(),
+            true,
+            dir.path(),
+        )
+        .unwrap();
+    assert_eq!(server.finish().len(), 3);
+    assert_eq!(result.descriptions.len(), 2);
+    assert!(!result.complete);
+    assert_eq!(result.budget["source_gaps"], json!(["b/unknown"]));
+    assert_eq!(
+        result.overview,
+        "Общий итог по двум подтверждённым проектам."
+    );
 }
