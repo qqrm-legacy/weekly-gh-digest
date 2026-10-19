@@ -205,6 +205,7 @@ fn ranked(name: &str) -> Ranked {
             default_branch: None,
             sources: vec![],
             readme_excerpt: None,
+            observation: None,
         },
         baseline: None,
         delta: 10,

@@ -1,7 +1,7 @@
 """Choose collection/preview/publication without trusting implicit dispatch defaults."""
 import os
 
-COLLECTION_CRON = "17 6 * * *"
+COLLECTION_CRON = "17 */3 * * *"
 PUBLICATION_CRON = "0 7 * * 1"
 
 
