@@ -1,0 +1,2320 @@
+{
+  "dedup_excluded": [],
+  "delivery_slot": "weekly:2026-10-19",
+  "entries": [
+    {
+      "baseline": null,
+      "delta": 229268,
+      "description": "REA (Reverse Engineer Anything) – это набор MCP‑агентов, позволяющих исследовать поведение приложений и нативные бинарные файлы без доступа к исходному коду. Платформа интегрируется с популярными анализаторами (Hopper, Ghidra, IDA) и поддерживает статический разбор JavaScript/Electron, .NET‑сборок и веб‑страниц. Установка происходит через npm‑пакет rea‑agents и автоматически регистрирует сервер MCP, добавляя инструкции для выбранных LLM‑агентов (Claude, Gemini, Grok и др.). Анализ выполняется локально, а результаты включают доказательства и ограничения выводов, что делает REA полезной для разработчиков, исследователей безопасности и инженеров, которым нужно быстро понять чужие функции и воспроизвести их в собственных проектах.",
+      "evidence_quote": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "full_name": "morluto/rea",
+      "joke": "REA умеет разбирать чужие фичи, но всё равно не может понять, почему разработчики забывают ставить комментарии.",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-04-14T00:51:32Z",
+        "default_branch": "main",
+        "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+        "forks": 84483,
+        "full_name": "morluto/rea",
+        "html_url": "https://github.com/morluto/rea",
+        "language": "TypeScript",
+        "license": "MIT",
+        "open_issues": 1240,
+        "pushed_at": "2026-10-19T17:46:09Z",
+        "readme_excerpt": "<div align=\"center\">\n\n**English** · [简体中文](docs/readme/README_zh.md) · [繁體中文](docs/readme/README_zh-TW.md) · [日本語](docs/readme/README_ja.md) · [한국어](docs/readme/README_ko.md) · [Türkçe](docs/readme/README_tr.md) · [Русский](docs/readme/README_ru.md) · [Tiếng Việt](docs/readme/README_vi.md) · [ไทย](docs/readme/README_th.md) · [Deutsch](docs/readme/README_de.md) · [Español](docs/readme/README_es.md) · [Français](docs/readme/README_fr.md) · [Українська](docs/readme/README_uk.md) · [Polski](docs/readme/README_pl.md) · [Português (Brasil)](docs/readme/README_pt-BR.md) · [العربية](docs/readme/README_ar.md) · [فارسی](docs/readme/README_fa.md) · [Bahasa Indonesia](docs/readme/README_id.md) · [Italiano](docs/readme/README_it.md)\n· [Ελληνικά](docs/readme/README_el.md) · [മലയാളം](docs/readme/README_ml.md)\n\n# REA: Reverse Engineer Anything\n\n### One MCP for reverse engineering across binaries, applications, and runtime behavior.\n\n**See a feature you like. Understand how it works, down to the binary level.**\n\n[![npm version](https://img.shields.io/npm/v/rea-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/rea-agents)\n[![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](docs/mcp-contracts.md#generated-catalog)\n[![Node.js requirements](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#what-you-can-analyze)\n[![skills.sh](https://skills.sh/b/morluto/rea?style=flat-square)](https://skills.sh/morluto/rea/reverse-engineer-anything)\n[![MIT license](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](LICENSE)\n[![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)\n\n<a href=\"https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://trendshift.io/api/badge/repositories/82054\" alt=\"morluto%2Frea | Trendshift\" width=\"250\" height=\"55\"/></a>\n\n**[Website](https://rea.tools/) · [Guides](https://rea.tools/guides/) · [Showcases](https://rea.tools/showcase/)**\n\n[Quick start](#quick-start) · [How REA works](#how-rea-works) · [What you can analyze](#what-you-can-analyze) · [Showcases](#showcases) · [FAQ](#faq) · [Documentation](#documentation)\n\n<code>npx rea-agents setup</code>\n\n</div>\n\n> [!IMPORTANT]\n> Get REA from [morluto/rea](https://github.com/morluto/rea),\n> [rea.tools](https://rea.tools/), or the [rea-agents npm package](https://www.npmjs.com/package/rea-agents).\n> Follow the installation and release links from these official sources. A similar\n> repository name or copied README does not establish that a download is official.\n\n<div align=\"center\">\n\n<br />\n\n<img src=\"docs/assets/rea-hopper-analysis.png\" alt=\"REA launching its analysis bridge inside Hopper while inspecting a native binary\" width=\"1200\" />\n\n<br /><br />\n\n<table aria-label=\"REA community\">\n<tr>\n<td align=\"center\" width=\"360\">\n  <a href=\"https://discord.gg/GkcryMnJDM\">\n    <img src=\"docs/assets/discord.svg\" height=\"42\" alt=\"Discord\" /><br />\n    <strong>Join the Reverse Engineering Community</strong>\n  </a><br />\n  <sub>Discord · Q&amp;A · Show and Tell</sub>\n</td>\n</tr>\n</table>\n\n<br />\n\n</div>\n\n---\n\nSee a feature in an app that you want in your own product? Ask your agent to investigate it with REA. It can inspect the app without its source code, explain how the feature works, show the evidence, and build a version for your project.\n\nREA connects your agent to tools for inspecting native binaries, JavaScript and Electron apps, .NET assemblies, and websites. You can also use the same tools from your terminal. Analysis runs locally, and results include the evidence and limitations behind each conclusion.\n\nSetup registers REA with your agent and installs matching workflow instructions. Native analysis can use an existing Hopper, Ghidra, or IDA installation; setup can optionally install Hopper with approval. Static JavaScript analysis needs no native analysis engine.\n\n> **[Visit the REA website](https://rea.tools/)** for setup instructions, illustrated guides, and real case studies.\n\n## Quick start\n\nOn Linux, Ghidra, JADX, firmware tool launches and static JavaScript/Electron\nanalysis require a procps-compatible `ps` on REA's `PATH` for process ownership\nchecks. Recovery steps are in `docs/installation.md` under\n\"Linux owned-process prerequisite\".\n\n### Set up your agent\n\nWith Node.js and npm installed, run:\n\n```bash\nnpx rea-agents setup\n```\n\nChoose your agents, review the proposed changes, and approve them. Setup adds\nREA's MCP server and matching workflow instructions, with backups of existing\nconfiguration. Restart your agent afterward.\n\nSetup supports Claude Code, Codex, Cursor, Gemini CLI, Grok Build and\n[other agents](docs/installation.md#supported-agents). See\n[installation and setup](docs/installation.md) for ",
+        "sources": [
+          {
+            "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+            "full_name": "morluto/rea",
+            "language": "TypeScript",
+            "trending_stars_period": 229268,
+            "trending_total_forks": null,
+            "trending_total_stars": 334298,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 334298,
+        "topics": [
+          "agent-skills",
+          "ai-agents",
+          "binary-analysis",
+          "claude-code",
+          "cli",
+          "codex",
+          "cordis",
+          "decompiler",
+          "developer-tools",
+          "dsh",
+          "dsh-plugin",
+          "ghidra",
+          "hopper",
+          "llm",
+          "mcp",
+          "model-context-protocol",
+          "rea",
+          "reverse-engineering",
+          "static-analysis",
+          "touhou"
+        ],
+        "updated_at": "2026-10-19T17:57:29Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 1,
+      "source_kind": "trending_weekly",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 16379,
+      "description": "ArtCraft – это IDE, ориентированная на интерактивное создание изображений и видео с помощью ИИ. Приложение объединяет 2‑D и 3‑D рабочие пространства, позволяя художникам, дизайнерам и кинематографистам сначала построить сцену, разместить виртуальных актёров, задать позы и камеру, а затем сгенерировать результат через выбранные модели. Среди ключевых функций – «Image to Location», 3‑D и 2‑D композитинг, преобразование изображения в 3‑D‑меш, позирование персонажей и наборы «kitbashing» для быстрой сборки сцен. Подойдёт тем, кто хочет точный визуальный контроль над процессом генерации и готов работать в визуальном, а не только текстовом, режиме подсказок.",
+      "evidence_quote": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
+      "full_name": "storytold/artcraft",
+      "joke": "ArtCraft: где даже AI‑модель сначала проходит кастинг, а потом получает роль в сцене.",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2022-03-31T23:19:12Z",
+        "default_branch": "main",
+        "description": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
+        "forks": 5307,
+        "full_name": "storytold/artcraft",
+        "html_url": "https://github.com/storytold/artcraft",
+        "language": "Rust",
+        "license": "Apache-2.0",
+        "open_issues": 445,
+        "pushed_at": "2026-10-18T19:26:55Z",
+        "readme_excerpt": "<h1 align=\"center\">ArtCraft</h1>\n<p align=\"center\"><strong>The IDE for artists.</strong></p>\n\n<!-- Main video: https://www.youtube.com/watch?v=kzvQMdg66Go\n     GitHub media issue: https://github.com/storytold/artcraft/issues/1951 -->\n\nhttps://github.com/user-attachments/assets/7339bd09-3e0d-44a7-a024-af9de64e4c11\n\n<p align=\"center\">\n  <a href=\"https://www.youtube.com/watch?v=kzvQMdg66Go\">Watch the two-minute ArtCraft demo on YouTube</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://discord.gg/artcraft\"><img alt=\"Discord members online\" src=\"https://img.shields.io/discord/1359579021108842617?style=for-the-badge&amp;label=Discord&amp;color=5865F2&amp;logo=discord&amp;logoColor=white\"></a>\n  <a href=\"https://www.youtube.com/@OfficialArtCraftStudios\"><img alt=\"YouTube\" src=\"https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&amp;logo=youtube&amp;logoColor=white\"></a>\n  <a href=\"https://x.com/get_artcraft\"><img alt=\"X\" src=\"https://img.shields.io/badge/X-181717?style=for-the-badge&amp;logo=x&amp;logoColor=white\"></a>\n  <a href=\"https://www.linkedin.com/company/artcraft-ai\"><img alt=\"LinkedIn\" src=\"https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge\"></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://getartcraft.com/\">Download ArtCraft</a> ·\n  <a href=\"https://github.com/storytold/artcraft/releases\">GitHub releases</a> ·\n  <a href=\"./_docs/dev_setup.md\">Build from source</a>\n</p>\n\nArtCraft is the IDE for interactive AI image and video creation. Compose in 2D, stage scenes in 3D, and choose the models that fit your work. Turn prompting into *crafting* with visual tools for precise, repeatable results.\n\n## Show, Don't Tell: Advanced Crafting Features\n\nArtists need control over composition, character identity, and camera placement. Build the scene before you generate it. Click any preview to view it at full size.\n\n| Feature                                                                                                             | Preview                                                                                                                                                                                                                                                                                                           |\n| ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **Image to Location**<br>Place virtual actors in a consistent environment and plan multiple shots in the same room. | <a href=\"https://github.com/user-attachments/assets/21f103e3-cc19-4882-a630-9caa1b76ae31\"><img src=\"https://github.com/user-attachments/assets/21f103e3-cc19-4882-a630-9caa1b76ae31\" width=\"180\" alt=\"Image to Location demo\"></a>                                                                                |\n| **3D Image Compositing**<br>Layer backdrops, foregrounds, and props in 3D to build compositions with depth.         | <a href=\"https://github.com/user-attachments/assets/f93a616f-571d-474e-bcc0-53736de7303d\"><img src=\"https://github.com/user-attachments/assets/f93a616f-571d-474e-bcc0-53736de7303d\" width=\"180\" alt=\"3D Image Compositing demo\"></a>                                                                             |\n| **2D Image Compositing**<br>Compose a scene with image layers, background removal, and drawing tools.               | <a href=\"https://github.com/user-attachments/assets/d6f99391-e496-4c62-9e37-29734ba5f899\"><img src=\"https://github.com/user-attachments/assets/d6f99391-e496-4c62-9e37-29734ba5f899\" width=\"180\" alt=\"2D Image Compositing demo\"></a>                                                                             |\n| **Image to 3D Mesh**<br>Turn an image into a 3D object you can position, rotate, and frame precisely.               | <a href=\"https://github.com/user-attachments/assets/600a405c-e360-48c1-9b42-6e657ae6243b\"><img src=\"https://github.com/user-attachments/assets/600a405c-e360-48c1-9b42-6e657ae6243b\" width=\"180\" alt=\"Image to 3D Mesh demo\"></a>                                                                                 |\n| **Character Posing**<br>Pose characters and set your camera before generating the final shot.                       | <a href=\"https://raw.githubusercontent.com/storytold/github-media/22a27373707b13f48fc56405f1f89ca143c43d5d/character-posing.webp\"><img src=\"https://raw.githubusercontent.com/storytold/github-media/22a27373707b13f48fc56405f1f89ca143c43d5d/character-posing.webp\" width=\"180\" alt=\"Character Posing demo\"></a> |\n| **Scene Blocking with Kitbashing**<br>Combine 3D asset kits to control camera angles, object placement, and depth.  | <a href=\"https://github.co",
+        "sources": [
+          {
+            "description": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
+            "full_name": "storytold/artcraft",
+            "language": "Rust",
+            "trending_stars_period": 16379,
+            "trending_total_forks": null,
+            "trending_total_stars": 33540,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 33540,
+        "topics": [
+          "3d-graphics",
+          "ai",
+          "aivideo",
+          "filmmaking",
+          "imagegeneration"
+        ],
+        "updated_at": "2026-10-19T17:56:59Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 2,
+      "source_kind": "trending_weekly",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 14224,
+      "description": "AnyPS5 — это набор утилит, позволяющих автоматически «перепаковать» исполняемые файлы PlayStation 5 в нативные форматы Linux и Windows. В основе проекта лежит relinker, который преобразует бинарник и подменяет системные PRX‑библиотеки на совместимые реализации, без эмуляции и отдельного рантайма. Сборка relinker‑only работает даже на macOS с Apple Silicon, а веб‑конвертер обеспечивает локальную обработку файлов в браузере. Поддерживается ввод через SDL‑контроллеры, клавиатуру и мышь, а шейдеры перекомпилируются в SPIR‑V при включённом модуле Spirv‑Tools. Проект ориентирован на исследователей, архивистов и разработчиков, желающих запускать PS5‑игры на ПК для совместимости и сохранения, при условии наличия собственных образов.",
+      "evidence_quote": "Tool for automatic PS5 executables porting to Linux and Windows",
+      "full_name": "boykopovar/AnyPS5",
+      "joke": "AnyPS5 переводит PS5‑игры в Linux так же быстро, как ваш ноутбук переводит мемы в GIF‑формат.",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-08-03T21:30:25Z",
+        "default_branch": "main",
+        "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+        "forks": 4032,
+        "full_name": "boykopovar/AnyPS5",
+        "html_url": "https://github.com/boykopovar/AnyPS5",
+        "language": "C++",
+        "license": "GPL-2.0",
+        "open_issues": 885,
+        "pushed_at": "2026-10-19T17:56:36Z",
+        "readme_excerpt": "# About\n\nTool for automatic executables porting to Linux and Windows.\n\nThe relinker-only build runs on macOS, including Apple silicon.\n\n[**Web converter**](https://boykopovar.github.io/AnyPS5/) - files stay on your device.\n\n![anyps5_collage1](https://github.com/user-attachments/assets/ed2f0b2d-33d3-46d7-ab88-767ca872fc99)\n\nIncludes a [relinker](core/relinker) that converts executable to the target system's native format and implementations of [system prx libraries](core/libs/prx) suitable for dynamic linking. No emulation or separate runtime process.\n\n[**Discord**](https://discord.gg/BHFztBPUe), [Usage](docs/user/USAGE.md), [Build instructions](docs/dev/BUILD.md), [Architecture](docs/dev/ARCHITECTURE.md), [Technical debt of the project](docs/dev/TechnicalDebt.md), [code style conventions](docs/dev/CONVENTIONS.md), [contributing](CONTRIBUTING.md)\n\n## Status\n\n[![libraries](https://boykopovar.github.io/AnyPS5/badge-libraries.svg)](https://boykopovar.github.io/AnyPS5/progress.html) [![shaders](https://boykopovar.github.io/AnyPS5/badge-shaders.svg)](https://boykopovar.github.io/AnyPS5/progress.html)\n\n[![progress map](https://boykopovar.github.io/AnyPS5/progress.svg)](https://boykopovar.github.io/AnyPS5/progress.html)\n\n[Progress history](https://boykopovar.github.io/AnyPS5/history.html)\n\n<sub>* System libraries: percentage of the functions known to the project so far (declared in [core/libs/prx](core/libs/prx)), not of every PS5 system function. The total grows as more functions are declared.</sub>\n\nUnsupported or unexpected states strictly throw `std::runtime_error`. `what()` is printed to stderr and the process terminates.\n\nThe [shader recompiler](core/shader/recompiler/Recompiler.cpp) successfully produces SPIR-V (validated via [Spirv-Tools](3rdparty/SPIRV-Tools) when built with `ANYPS5_ENABLE_SPIRV_TOOLS`).\n\n## Compatibility\n\nPer-game progress (stage reached, open blockers, libraries and GPU coverage) is tracked on the [blocker map](https://alxcbtw.github.io/anyps5-roadmap/), a community project built from public GitHub data ([source](https://github.com/AlxcBTW/anyps5-roadmap)). Test reports go in the [Game bring-up](https://github.com/boykopovar/AnyPS5/discussions/categories/game-bring-up) discussions, one thread per title.\n\n## Input mapping\n\nSDL-mapped game controllers are supported, including analog sticks and triggers. Keyboard and mouse controls can be configured with an `anyps5-input.ini` file. See [input mapping](docs/user/INPUT_MAPPING.md) for the supported devices and configuration format.\n\n## Disclaimer\n\nThis project is intended for interoperability, research, preservation, and compatibility purposes. It does not include, distribute, or require copyrighted software, firmware, cryptographic keys, or proprietary libraries. Users are responsible for ensuring that any binaries used with this project are obtained and used in accordance with applicable laws and their respective license terms.\n\n## License\n\nThis project is licensed under the GNU General Public License version 2 only.\n",
+        "sources": [
+          {
+            "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+            "full_name": "boykopovar/AnyPS5",
+            "language": "C++",
+            "trending_stars_period": 14224,
+            "trending_total_forks": null,
+            "trending_total_stars": 44165,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 44165,
+        "topics": [
+          "anyps5",
+          "dynamic-library",
+          "game-porting",
+          "ps5",
+          "ps5-tools",
+          "spir-v",
+          "vulkan"
+        ],
+        "updated_at": "2026-10-19T17:57:21Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 3,
+      "source_kind": "trending_weekly",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 7901,
+      "description": "Diagram‑Design – это агент‑скилл, генерирующий архитектурные и бизнес‑диаграммы в виде единого HTML‑файла с встроенным SVG. Пользователь формулирует запрос простым языком (например, «покажи схему фронтенда‑бэкенда‑БД»), агент выбирает один из 45 предустановленных типов (квадранты, последовательности, сетевые схемы) и выдаёт готовый файл, который можно открыть двойным щелчком. Плагин работает в любой среде, поддерживающей агент‑скиллы: Claude Code, Cursor, GitHub Copilot, Gemini CLI и др., и умеет подстраиваться под бренд сайта, импортировать данные из Drawio, Mermaid и Excalidraw, а также экспортировать PNG. Подойдёт разработчикам, архитекторам и продукт‑менеджерам, которым нужны быстрые, стилистически согласованные диаграммы без лишних зависимостей.",
+      "evidence_quote": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "full_name": "cathrynlavery/diagram-design",
+      "joke": "Если ваш агент умеет рисовать, то ему точно не нужен карандаш – только HTML и SVG!",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-04-16T18:01:16Z",
+        "default_branch": "main",
+        "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+        "forks": 3745,
+        "full_name": "cathrynlavery/diagram-design",
+        "html_url": "https://github.com/cathrynlavery/diagram-design",
+        "language": "HTML",
+        "license": "MIT",
+        "open_issues": 48,
+        "pushed_at": "2026-10-16T19:42:46Z",
+        "readme_excerpt": "<div align=\"center\">\n\n<h1>\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/hero/hero-dark.webp\">\n    <img alt=\"Diagram Design. Editorial diagrams your designer won't hate.\" src=\"docs/hero/hero-light.webp\">\n  </picture>\n</h1>\n\n**An agent skill that draws diagrams as one self-contained HTML + SVG file, in your brand.<br>45 diagram types. No shadows. No Mermaid slop.**\n\n[![GitHub stars](https://img.shields.io/github/stars/cathrynlavery/diagram-design?style=flat-square&color=bf4520)](https://github.com/cathrynlavery/diagram-design/stargazers)\n[![skills.sh installs](https://skills.sh/b/cathrynlavery/diagram-design?style=flat-square)](https://skills.sh/cathrynlavery/diagram-design/diagram-design)\n[![CI](https://img.shields.io/github/actions/workflow/status/cathrynlavery/diagram-design/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/cathrynlavery/diagram-design/actions/workflows/ci.yml)\n[![Plugin version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcathrynlavery%2Fdiagram-design%2Fmain%2F.claude-plugin%2Fplugin.json&query=%24.version&label=version&style=flat-square&color=555555)](CHANGELOG.md)\n[![MIT license](https://img.shields.io/badge/license-MIT-555555?style=flat-square)](LICENSE)\n\n<a href=\"https://trendshift.io/repositories/26141\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://trendshift.io/api/badge/repositories/26141\" alt=\"cathrynlavery/diagram-design on Trendshift\" width=\"250\" height=\"55\"/></a>\n\n**[Website](https://diagramdesign.dev) · [Gallery](https://cathrynlavery.github.io/diagram-design/) · [Changelog](CHANGELOG.md)**\n\n[Install](#install) · [What it makes](#what-it-makes) · [Quickstart](#quickstart) · [Match your brand](#onboarding-make-it-look-like-your-brand) · [Import](#import-from-drawio-mermaid-or-excalidraw) · [Export](#export-to-png--svg) · [Contributing](#contributing)\n\n<code>npx skills add cathrynlavery/diagram-design</code>\n\n<br><br>\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/hero/demo.gif\">\n  <source media=\"(prefers-color-scheme: light)\" srcset=\"docs/hero/demo-light.gif\">\n  <img src=\"docs/hero/demo.gif\" alt=\"A prompt typed into an agent session becomes a finished architecture diagram, then a plain first-pass diagram is redrawn with the skill, then the gallery of diagram types\" width=\"900\">\n</picture>\n\n</div>\n\n<br>\n\nAsk your agent in plain words:\n\n- *\"Make me an architecture diagram of my app: frontend, backend, database, Redis cache.\"*\n- *\"I need a quadrant showing Q2 projects by impact vs effort.\"*\n- *\"Give me a sequence of a bearer call with token refresh on 401.\"*\n- *\"Onboard diagram-design to https://yoursite.com\"* (pulls your palette and fonts so every diagram after this one matches your site)\n\nThe agent picks the type, states its plan, and writes one `.html` file you can open by double-clicking.\n\n---\n\n## Install\n\nWorks with any host that reads Agent Skills, including Cursor, Claude Code, Codex, GitHub Copilot, Gemini CLI, Cline, Windsurf and Amp:\n\n```bash\nnpx skills add cathrynlavery/diagram-design\n```\n\nIn Claude Code, the plugin marketplace gets you updates and the slash commands:\n\n```text\n/plugin marketplace add cathrynlavery/diagram-design\n/plugin install diagram-design@diagram-design\n```\n\nOfficial builds come only from this repository. LittleMight, Cathryn Lavery's company, publishes the plugin directory listings; a listing under any other name is an unofficial copy. [PRIVACY.md](PRIVACY.md) lists what the skill sends over the network.\n\n<details>\n<summary><b>Claude Code</b>: turn on auto-update</summary>\n\nAfter installing, run `/plugin`, open **Marketplaces**, select **diagram-design**, and choose **Enable auto-update**. Claude Code disables auto-update by default for third-party marketplaces; after this toggle, it refreshes the marketplace and installed plugin in the background after startup. Run `/reload-plugins` when prompted, or let the next session load the update.\n\n</details>\n\n<details>\n<summary><b>Cursor</b>, Cline, Gemini CLI, Windsurf, Amp, Zed, Warp, Roo, Kilo and other Agent Skills hosts</summary>\n\nThe cross-agent [`skills` CLI](https://skills.sh) resolves this repository, detects `skills/diagram-design/SKILL.md`, and installs the whole skill (`references/`, `assets/`, `scripts/`) into every host root you select, including Cursor's:\n\n```bash\nnpx skills add cathrynlavery/diagram-design\n```\n\nWhen the selected roots resolve to more than one skills directory, the CLI asks for an installation method and recommends **Symlink**: one canonical copy, linked into each root, so a later update reaches all of them at once. Pass `--copy` for independent copies per host instead. A selection that resolves to a single directory is copied, because the distinction is immaterial there. Where symlinks are unavailable (Windows without Developer Mode) the CLI falls back to copies and reports which roots it copied.\n\nThis is a standalone install, separate from the ma",
+        "sources": [
+          {
+            "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+            "full_name": "cathrynlavery/diagram-design",
+            "language": "HTML",
+            "trending_stars_period": 7901,
+            "trending_total_forks": null,
+            "trending_total_stars": 58270,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 58270,
+        "topics": [
+          "agent-skills",
+          "claude-code",
+          "codex",
+          "data-visualization",
+          "diagrams",
+          "drawio",
+          "mermaid",
+          "svg"
+        ],
+        "updated_at": "2026-10-19T17:56:53Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 4,
+      "source_kind": "trending_weekly",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 7602,
+      "description": "Ghidra — это открытая платформа для обратного анализа программ, разработанная NSA. Она объединяет дизассемблер, декомпилятор, графический анализ и скриптинг, поддерживая десятки процессорных архитектур и форматов исполняемых файлов на Windows, macOS и Linux. Инструменты могут работать в интерактивном режиме или в автоматических пайплайнах, а пользователи могут расширять функциональность собственными плагинами и скриптами на Java или Python через GhidraDev для Eclipse или VS Code. Подойдёт аналитикам безопасности, исследователям вредоносного кода и разработчикам, которым нужен мощный, но бесплатный набор SRE‑инструментов, особенно в проектах, требующих масштабируемой командной работы.",
+      "evidence_quote": "Ghidra is a software reverse engineering (SRE) framework",
+      "full_name": "NationalSecurityAgency/ghidra",
+      "joke": "Если ваш декомпилятор начинает писать стихи, значит, Ghidra уже нашла вдохновение в вашем бинарнике.",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2019-03-01T03:27:48Z",
+        "default_branch": "master",
+        "description": "Ghidra is a software reverse engineering (SRE) framework",
+        "forks": 10236,
+        "full_name": "NationalSecurityAgency/ghidra",
+        "html_url": "https://github.com/NationalSecurityAgency/ghidra",
+        "language": "Java",
+        "license": "Apache-2.0",
+        "open_issues": 2130,
+        "pushed_at": "2026-10-19T16:16:41Z",
+        "readme_excerpt": "<img src=\"Ghidra/Features/Base/src/main/resources/images/GHIDRA_3.png\" width=\"400\">\n\n# Ghidra Software Reverse Engineering Framework\nGhidra is a software reverse engineering (SRE) framework created and maintained by the \n[National Security Agency][nsa] Research Directorate. This framework includes a suite of \nfull-featured, high-end software analysis tools that enable users to analyze compiled code on a \nvariety of platforms including Windows, macOS, and Linux. Capabilities include disassembly, \nassembly, decompilation, graphing, and scripting, along with hundreds of other features. Ghidra \nsupports a wide variety of processor instruction sets and executable formats and can be run in both \nuser-interactive and automated modes. Users may also develop their own Ghidra extension components \nand/or scripts using Java or Python.\n\nIn support of NSA's Cybersecurity mission, Ghidra was built to solve scaling and teaming problems \non complex SRE efforts, and to provide a customizable and extensible SRE research platform. NSA has \napplied Ghidra SRE capabilities to a variety of problems that involve analyzing malicious code and \ngenerating deep insights for SRE analysts who seek a better understanding of potential \nvulnerabilities in networks and systems.\n\nIf you are a U.S. citizen interested in projects like this, to develop Ghidra and other \ncybersecurity tools for NSA to help protect our nation and its allies, consider applying for a \n[career with us][career].\n\n## Security Warning\n**WARNING:** There are known security vulnerabilities within certain versions of Ghidra.  Before \nproceeding, please read through Ghidra's [Security Advisories][security] for a better understanding \nof how you might be impacted.\n\n## Install\nTo install an official pre-built multi-platform Ghidra release:  \n* Install [JDK 25 64-bit][jdk]\n* Download a Ghidra [release file][releases]\n  - **NOTE:** The official multi-platform release file is named \n    `ghidra_<version>_<release>_<date>.zip` which can be found under the \"Assets\" drop-down.\n    Downloading either of the files named \"Source Code\" is not correct for this step.\n* Extract the Ghidra release file\n  - **NOTE:** Do not extract on top of an existing installation\n* Launch Ghidra: `./ghidraRun` (`ghidraRun.bat` for Windows)\n  - or launch [PyGhidra][pyghidra]: `./support/pyghidraRun` (`support\\pyghidraRun.bat` for Windows)\n\nFor additional information and troubleshooting tips about installing and running a Ghidra release, \nplease refer to the [Getting Started][gettingstarted] document which can be found at the root of a \nGhidra installation directory. \n\n## Build\n[![Build Ghidra][build-ghidra-badge]][build-ghidra-action]\n\nTo create the latest development build for your platform from this source repository:\n\n##### Install build tools:\n* [JDK 25 64-bit][jdk]\n* [Gradle 9.1.0+][gradle] (or provided Gradle wrapper if Internet connection is available)\n* [Python3][python3] (version 3.9 to 3.15) with bundled pip\n* GCC or Clang, and make (Linux/macOS-only)\n* [Microsoft Visual Studio][vs] 2017+ or [Microsoft C++ Build Tools][vcbuildtools] with the\n  following components installed (Windows-only):\n  - MSVC\n  - Windows SDK\n  - C++ ATL\n\n##### Download and extract the source:\n[Download from GitHub][master]\n```\nunzip ghidra-master\ncd ghidra-master\n```\n**NOTE:** Instead of downloading the compressed source, you may instead want to clone the GitHub \nrepository: `git clone https://github.com/NationalSecurityAgency/ghidra.git`\n\n##### Download additional build dependencies into source repository:\n**NOTE:** If an Internet connection is available and you did not install Gradle, the \n`./gradlew` (or `gradlew.bat`) command may be used in place of the `gradle` command in the following\ninstructions.\n\n```\ngradle -I gradle/support/fetchDependencies.gradle\n```\n\n##### Create development build: \n```\ngradle buildGhidra\n```\nThe compressed development build will be located at `build/dist/`.\n\nFor more detailed information on building Ghidra, please read the [Developer's Guide][devguide].\n\nFor issues building, please check the [Known Issues][known-issues] section for possible solutions.\n\n## Develop\n\n### User Scripts and Extensions\nGhidra installations support users writing custom scripts and extensions via the *GhidraDev* plugin \nfor Eclipse.  The plugin and its corresponding instructions can be found within a Ghidra release at\n`Extensions/Eclipse/GhidraDev/` or at [this link][ghidradev].  Alternatively, Visual Studio Code may\nbe used to edit scripts by clicking the Visual Studio Code icon in the Script Manager.\nFully-featured Visual Studio Code projects can be created from a Ghidra CodeBrowser window at \n_Tools -> Create VSCode Module project_.\n\n**NOTE:** Both the *GhidraDev* plugin for Eclipse and Visual Studio Code integrations only support \ndeveloping against fully built Ghidra installations which can be downloaded from the\n[Releases][releases] page.\n\n### Advanced Development\nTo develop the Ghidra tool itself, it is highl",
+        "sources": [
+          {
+            "description": "Ghidra is a software reverse engineering (SRE) framework",
+            "full_name": "NationalSecurityAgency/ghidra",
+            "language": "Java",
+            "trending_stars_period": 7602,
+            "trending_total_forks": null,
+            "trending_total_stars": 91437,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 91437,
+        "topics": [
+          "disassembler",
+          "reverse-engineering",
+          "software-analysis"
+        ],
+        "updated_at": "2026-10-19T17:57:41Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 5,
+      "source_kind": "trending_weekly",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 5742,
+      "description": "AI Job Search – это локальный фреймворк, который превращает Claude Code в полностью автоматизированного помощника по поиску работы. Пользователь заполняет профиль, после чего скрипт сканирует выбранные порталы (по умолчанию датские), оценивает соответствие вакансий, генерирует LaTeX‑CV и сопроводительные письма, а также готовит ответы на интервью. Работает на Python 3.10+, требует CLI Claude Code, Bun и полноценный дистрибутив LaTeX (lualatex / xelatex). Подойдёт тем, кто хочет избавиться от рутины написания писем и хочет контролировать процесс, а не полагаться на сторонние SaaS‑сервисы.",
+      "evidence_quote": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it",
+      "full_name": "MadsLorentzen/ai-job-search",
+      "joke": "Если ваш CV компилируется быстрее, чем вы успеваете написать сопроводительное письмо, значит, вы уже победили в этой битве.",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-03-18T14:33:04Z",
+        "default_branch": "master",
+        "description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
+        "forks": 17982,
+        "full_name": "MadsLorentzen/ai-job-search",
+        "html_url": "https://github.com/MadsLorentzen/ai-job-search",
+        "language": "Python",
+        "license": "MIT",
+        "open_issues": 34,
+        "pushed_at": "2026-10-19T17:57:08Z",
+        "readme_excerpt": "<p align=\"center\">\n  <img src=\"assets/mascot/pip_flight_loop.gif\" alt=\"Pip, the courier bird\" width=\"200\">\n</p>\n\n# AI Job Search\n\n*The job search that runs on your machine.*\n\n<p align=\"center\">\n  <a href=\"https://trendshift.io/repositories/43622?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-43622\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://trendshift.io/api/badge/trendshift/repositories/43622/daily\" alt=\"MadsLorentzen%2Fai-job-search | Trendshift\" width=\"250\" height=\"55\"/></a>\n</p>\n\n[![CI](https://github.com/MadsLorentzen/ai-job-search/actions/workflows/ci.yml/badge.svg)](https://github.com/MadsLorentzen/ai-job-search/actions/workflows/ci.yml)\n\nAn AI-powered job application framework built on [Claude Code](https://claude.com/claude-code). Fork it, fill in your profile, and let Claude evaluate job postings, tailor your CV, write cover letters, and prepare you for interviews.\n\n> Note: This is an independent open-source project and is not affiliated with, endorsed by, sponsored by, or maintained by Anthropic. Anthropic and Claude Code are referenced only to describe the toolchain this workflow uses.\n>\n> This project has **no affiliated cryptocurrency, token, or paid sponsorship program**. Anything claiming otherwise is unauthorized and should be treated as a scam. The only ways to support the project are the Ko-fi link below and contributing on GitHub.\n\n## Does it actually work?\n\nI'm a geophysicist by training. When my position was cut in late 2025, I built this framework to run my own job search - the same `/scrape`, `/apply`, and `/interview` workflow in this repo, used weekly, on my own career. I was upfront about it with every employer I spoke to, and instead of counting against me, it usually sparked a genuine technical conversation.\n\nSixty-nine tailored applications, twenty first interviews, and one signed contract later, I started as an AI engineer in June 2026. People kept asking whether this actually works. It got me hired. Now it's yours.\n\n*The longer version, including the full application funnel, is on [LinkedIn](https://www.linkedin.com/in/mads-lorentzen/).*\n\n<p align=\"center\">\n  <i>Did this save you a Sunday of cover-letter writing? Consider a coffee.<br>\n  Did it land you the job? Maybe two.</i> ☕\n</p>\n\n<p align=\"center\">\n  <a href=\"https://ko-fi.com/madslorentzen\">\n    <img src=\"https://storage.ko-fi.com/cdn/kofi3.png?v=6\" alt=\"Buy me a coffee at ko-fi.com\" height=\"40\">\n  </a>\n</p>\n\n## What this is\n\nA structured workflow that turns Claude Code into a full-stack job application assistant. The core workflow (self-profiling, fit evaluation, and the drafter-reviewer application pipeline) is **language- and country-agnostic**. The job portal search skills are built for the Danish market (Jobindex, Jobnet, Akademikernes Jobbank, etc.), but the pattern is designed to be swapped for your local job boards.\n\n```\n/setup          /scrape              /apply <url>\n  |                |                     |\n  v                v                     v\nFill in        Search job           Evaluate fit\nyour profile   portals              Score & recommend\n  |                |                     |\n  v                v                     v\nProfile        Present matches      Draft CV + Cover Letter\nfiles ready    with fit ratings     (LaTeX, tailored)\n                   |                     |\n                   v                     v\n               Pick a match         Reviewer agent critiques\n               -> /apply            -> Revise -> Final output\n```\n\nThe framework encodes career guidance best practices, including structured evaluation criteria, forward-looking cover letter framing, and optional salary benchmarking.\n\n## Prerequisites\n\n- [Claude Code](https://claude.com/claude-code) (CLI). Claude Code has no free tier: you need a Claude Pro/Max/Team subscription or Anthropic API credits (pay-per-token, usually cheaper for occasional use). Using a different agent tool (Codex, Antigravity, Gemini CLI)? Start at [`AGENTS.md`](AGENTS.md) - the portal search skills work there out of the box, and [community forks](https://github.com/MadsLorentzen/ai-job-search/discussions/78) adapt the full workflow.\n- Python 3.10+\n- [Bun](https://bun.sh) (for job search CLI tools)\n- LaTeX distribution with `lualatex` and `xelatex`: [TeX Live](https://tug.org/texlive/), [MacTeX](https://tug.org/mactex/), [TinyTeX](https://yihui.org/tinytex/), or [MiKTeX](https://miktex.org/). The CV compiles with `lualatex` (pdflatex often fails on modern MiKTeX installs with `fontawesome5` font-expansion errors); the cover letter compiles with `xelatex` because `cover.cls` requires `fontspec`. If using a minimal TeX install such as TinyTeX or BasicTeX, install the extra packages listed in [SETUP.md](SETUP.md#minimal-tex-install-tinytexbasictex).\n- Optional: `pip install pypdf` for `/apply`'s ATS parseability check (BSD; no Poppler required). Poppler `pdftotext` remains a fallback (macOS: `",
+        "sources": [
+          {
+            "description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
+            "full_name": "MadsLorentzen/ai-job-search",
+            "language": "Python",
+            "trending_stars_period": 5742,
+            "trending_total_forks": null,
+            "trending_total_stars": 56382,
+            "type": "trending_weekly"
+          },
+          {
+            "description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
+            "full_name": "MadsLorentzen/ai-job-search",
+            "language": "Python",
+            "trending_stars_period": 3860,
+            "trending_total_forks": null,
+            "trending_total_stars": 56382,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 56383,
+        "topics": [
+          "ai",
+          "ai-agents",
+          "career",
+          "claude-code",
+          "cover-letter",
+          "cv",
+          "interview-preparation",
+          "job-application",
+          "job-hunting",
+          "job-search",
+          "latex",
+          "resume"
+        ],
+        "updated_at": "2026-10-19T17:57:45Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 6,
+      "source_kind": "trending_weekly",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 4774,
+      "description": "Этот репозиторий – официальная директория, управляемая Anthropic, содержащая набор проверенных плагинов для Claude Code. Плагины делятся на внутренние (разработанные командой Anthropic) и внешние (от партнёров и сообщества), каждый из которых имеет строгую структуру с метаданными в .claude-plugin/plugin.json и, при необходимости, конфигурацией MCP. Пользователи могут установить любой плагин через команду /plugin install {имя}@claude-plugins-official или через UI‑раздел Discover. Имена плагинов являются неизменяемыми slug‑ами, а при необходимости переименования предусмотрен механизм renames, позволяющий автоматически мигрировать существующие установки. Проект полезен разработчикам, желающим расширить возможности Claude Code готовыми инструментами, а также тем, кто хочет публиковать свои плагины, соблюдая стандарты качества и безопасности.",
+      "evidence_quote": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "full_name": "anthropics/claude-plugins-official",
+      "joke": "Установить плагин проще, чем убедить коллегу обновить свой IDE.",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2025-11-20T18:36:20Z",
+        "default_branch": "main",
+        "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+        "forks": 4560,
+        "full_name": "anthropics/claude-plugins-official",
+        "html_url": "https://github.com/anthropics/claude-plugins-official",
+        "language": "Python",
+        "license": "Apache-2.0",
+        "open_issues": 1180,
+        "pushed_at": "2026-10-19T17:40:33Z",
+        "readme_excerpt": "# Claude Code Plugins Directory\n\nA curated directory of high-quality plugins for Claude Code.\n\n> **⚠️ Important:** Make sure you trust a plugin before installing, updating, or using it. Anthropic does not control what MCP servers, files, or other software are included in plugins and cannot verify that they will work as intended or that they won't change. See each plugin's homepage for more information.\n\n## Structure\n\n- **`/plugins`** - Internal plugins developed and maintained by Anthropic\n- **`/external_plugins`** - Third-party plugins from partners and the community\n\n## Installation\n\nPlugins can be installed directly from this marketplace via Claude Code's plugin system.\n\nTo install, run `/plugin install {plugin-name}@claude-plugins-official`\n\nor browse for the plugin in `/plugin > Discover`\n\n## Contributing\n\n### Internal Plugins\n\nInternal plugins are developed by Anthropic team members. See `/plugins/example-plugin` for a reference implementation.\n\n### External Plugins\n\nThird-party partners can submit plugins for inclusion in the marketplace. External plugins must meet quality and security standards for approval. To submit a new plugin, use the [plugin directory submission form](https://clau.de/plugin-directory-submission).\n\n## Plugin Structure\n\nEach plugin follows a standard structure:\n\n```\nplugin-name/\n├── .claude-plugin/\n│   └── plugin.json      # Plugin metadata (required)\n├── .mcp.json            # MCP server configuration (optional)\n├── commands/            # Slash commands (optional)\n├── agents/              # Agent definitions (optional)\n├── skills/              # Skill definitions (optional)\n└── README.md            # Documentation\n```\n\n## Plugin names are immutable\n\nThe `name` field in a marketplace entry is an **immutable slug**. Once a plugin has been published, its `name` must not change — users have it installed under that slug, and renaming it breaks their install with a `plugin-not-found` error.\n\n- To change how a plugin is labeled in the UI, set or update `displayName` instead.\n- If a rename is genuinely unavoidable, add an entry to the top-level `renames` map in `.claude-plugin/marketplace.json` so existing installs auto-migrate:\n\n```json\n\"renames\": {\n  \"old-name\": \"new-name\"\n}\n```\n\nThe Claude Code plugin loader reads this map and transparently rewrites the old slug to the new one on the user's next sync.\n\n## Skill-bundle plugins\n\nWhen a plugin's source repository ships skills (`SKILL.md` files) without a `.claude-plugin/plugin.json` manifest, the marketplace entry can declare the skills directly using `strict: false` and an explicit `skills` array.\n\n```json\n{\n  \"name\": \"example-bundle\",\n  \"description\": \"Brief description of the bundled skills.\",\n  \"author\": { \"name\": \"Author Name\" },\n  \"category\": \"development\",\n  \"source\": {\n    \"source\": \"git-subdir\",\n    \"url\": \"https://github.com/example-org/sdk.git\",\n    \"path\": \"packages/agent-skills\",\n    \"ref\": \"main\",\n    \"sha\": \"<commit sha>\"\n  },\n  \"strict\": false,\n  \"skills\": [\n    \"./skill-a\",\n    \"./skill-b\",\n    \"./skill-c\"\n  ],\n  \"homepage\": \"https://github.com/example-org/sdk\"\n}\n```\n\nEach path in `skills` is relative to `source.path` and points at a directory containing a `SKILL.md`. Paths can reach deeper than a single level — for example, `[\"./libA/skill-1\", \"./libB/skill-2\"]` exposes a curated subset across multiple library subdirectories. Each skill is registered as `<plugin-name>:<skill-name>` in Claude Code.\n\nFor the underlying schema, see [Strict mode](https://code.claude.com/docs/en/plugin-marketplaces) in the marketplace documentation.\n\n## License\n\nPlease see each linked plugin for the relevant LICENSE file.\n\n## Documentation\n\nFor more information on developing Claude Code plugins, see the [official documentation](https://code.claude.com/docs/en/plugins).\n",
+        "sources": [
+          {
+            "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+            "full_name": "anthropics/claude-plugins-official",
+            "language": "Python",
+            "trending_stars_period": 4774,
+            "trending_total_forks": null,
+            "trending_total_stars": 43117,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 43117,
+        "topics": [
+          "claude-code",
+          "mcp",
+          "skills"
+        ],
+        "updated_at": "2026-10-19T17:40:41Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 7,
+      "source_kind": "trending_weekly",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 4310,
+      "description": "Scientific Agent Skills – это набор из 177 готовых к использованию «навыков» для AI‑агентов, превращающих их в виртуального исследователя. Каждый навык описывает конкретный протокол: от работы с биологическими базами данных до расчётов в химии, медицине и материаловедении, и включает проверку научных конвенций. Пакет совместим с открытым стандартом Agent Skills, поэтому его можно подключить к Cursor, Claude Code, Codex, Google Antigravity и другим хостам, а также загрузить как Agent Plugin. Проект будет полезен учёным, инженерам и разработчикам, которым нужен быстрый способ добавить в свои модели проверенные научные процедуры без написания кода с нуля.",
+      "evidence_quote": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific datab",
+      "full_name": "K-Dense-AI/scientific-agent-skills",
+      "joke": "Если ваш AI‑агент начнёт писать статьи, не забудьте проверить, не превратился ли он в «псевдо‑учёного» с лишними цитатами.",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2025-10-19T20:54:15Z",
+        "default_branch": "main",
+        "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+        "forks": 4686,
+        "full_name": "K-Dense-AI/scientific-agent-skills",
+        "html_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "language": "Python",
+        "license": "MIT",
+        "open_issues": 49,
+        "pushed_at": "2026-10-19T09:33:57Z",
+        "readme_excerpt": "# Scientific Agent Skills\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)\n[![arXiv](https://img.shields.io/badge/arXiv-2609.00065-b31b1b.svg)](https://arxiv.org/abs/2609.00065)\n[![Version](https://img.shields.io/badge/Version-2.72.0-blue.svg)](pyproject.toml)\n[![Skills](https://img.shields.io/badge/Skills-177-brightgreen.svg)](#-whats-included)\n[![Databases](https://img.shields.io/badge/Databases-100%2B-orange.svg)](#-whats-included)\n[![Agent Skills](https://img.shields.io/badge/Standard-Agent_Skills-blueviolet.svg)](https://agentskills.io/)\n[![Agent Plugins](https://img.shields.io/badge/Standard-Agent_Plugins-0A7A72.svg)](https://agent-plugins.org/)\n[![Security Scan](https://github.com/K-Dense-AI/scientific-agent-skills/actions/workflows/security-scan.yml/badge.svg)](https://github.com/K-Dense-AI/scientific-agent-skills/actions/workflows/security-scan.yml)\n[![Skill Tests](https://github.com/K-Dense-AI/scientific-agent-skills/actions/workflows/skill-tests.yml/badge.svg)](https://github.com/K-Dense-AI/scientific-agent-skills/actions/workflows/skill-tests.yml)\n[![Works with](https://img.shields.io/badge/Works_with-Cursor_|_Claude_Code_|_Codex_|_Google_Antigravity-blue.svg)](#-getting-started)\n[![X](https://img.shields.io/badge/Follow_on_X-%40k__dense__ai-000000?logo=x)](https://x.com/k_dense_ai)\n[![LinkedIn](https://img.shields.io/badge/LinkedIn-K--Dense_Inc.-0A66C2?logo=linkedin)](https://www.linkedin.com/company/k-dense-inc)\n[![YouTube](https://img.shields.io/badge/YouTube-K--Dense_Inc.-FF0000?logo=youtube)](https://www.youtube.com/@K-Dense-Inc)\n[![Reddit](https://img.shields.io/badge/Reddit-u%2F--k--dense---FF4500?logo=reddit&logoColor=white)](https://www.reddit.com/user/-k-dense-/)\n\n> **🔔 Claude Scientific Skills is now Scientific Agent Skills.** Same skills, broader compatibility — now works with any AI agent that supports the open [Agent Skills](https://agentskills.io/) standard, not just Claude.\n\n> **New: [K-Dense BYOK](https://github.com/K-Dense-AI/k-dense-byok)** — A free, open-source AI co-scientist that runs on your desktop, powered by Scientific Agent Skills. Bring your own API keys, pick from 40+ models, and get a full research workspace with web search, file handling, 100+ scientific databases, and access to all 177 skills in this repo. Your data stays on your computer, and you can optionally scale to cloud compute via [Modal](https://modal.com/) for heavy workloads. [Get started here.](https://github.com/K-Dense-AI/k-dense-byok)\n\n> **🎥 Webinar recording — [Getting Started with K-Dense BYOK](https://youtu.be/Du3BIE48DKc?si=9dPpETKSc2PeQbvU)**\n> A hands-on walkthrough of [K-Dense BYOK](https://github.com/K-Dense-AI/k-dense-byok), our free, open-source AI co-scientist that runs locally on your own machine and is powered by Scientific Agent Skills. We cover how to set it up, bring your own API keys, and run real research workflows with these skills. No prior technical experience needed. **[Watch the recording →](https://youtu.be/Du3BIE48DKc?si=9dPpETKSc2PeQbvU)**\n\n> **Stay up to date:** Follow K-Dense on [X](https://x.com/k_dense_ai), [LinkedIn](https://www.linkedin.com/company/k-dense-inc), [YouTube](https://www.youtube.com/@K-Dense-Inc), and [Reddit](https://www.reddit.com/user/-k-dense-/) for new skills, release announcements, walkthroughs, research workflow demos, and examples you can use with your own AI agent.\n\n> **📄 Paper:** Scientific Agent Skills is described in [*Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents*](https://arxiv.org/abs/2609.00065) (arXiv:2609.00065). If you use these skills in your research, please [cite the paper](#-citation).\n\nA collection of **177 scientific and research skills** for AI agents, created by [K-Dense](https://k-dense.ai). The skills cover biology, chemistry, medicine, physics, engineering, Earth science, data analysis, and scientific communication. Each provides guidance for a specific package, data source, or workflow, including the scientific conventions and validation checks needed to use it.\n\nThe collection follows the open [Agent Skills](https://agentskills.io/) standard and works with **Cursor, Claude Code, Codex, Google Antigravity, and other compatible hosts**. It is also a portable [Agent Plugins](https://agent-plugins.org/) package (`plugin.json` + `skills/`), so clients that support that standard can load the collection as one plugin. Browse the [illustrated skill guides](docs/skill-guides/README.md), [skill categories](#-available-skills), or [complete catalog](docs/skills.md) to choose the skills relevant to your work.\n\n> ⭐ **Help make AI for science easier to discover:** If Scientific Agent Skills saves you time, teaches your agent a workflow, or helps your lab move faster, please [star this repository](https://github.com/K-Dense-AI/scientific-agent-skills). A star is a public signal that these open, reusable research skills are worth maintaining: it helps scientists, engineers",
+        "sources": [
+          {
+            "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+            "full_name": "K-Dense-AI/scientific-agent-skills",
+            "language": "Python",
+            "trending_stars_period": 4310,
+            "trending_total_forks": null,
+            "trending_total_stars": 52887,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 52887,
+        "topics": [
+          "agent-skills",
+          "ai-scientist",
+          "bioinformatics",
+          "chemoinformatics",
+          "claude",
+          "claude-skills",
+          "claudecode",
+          "clinical-research",
+          "computational-biology",
+          "data-analysis",
+          "drug-discovery",
+          "genomics",
+          "materials-science",
+          "metabolomics",
+          "proteomics",
+          "scientific-computing",
+          "scientific-visualization"
+        ],
+        "updated_at": "2026-10-19T17:53:47Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 8,
+      "source_kind": "trending_weekly",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 2622,
+      "description": "dsh-purge – плагин для DeepSeek Harness, позволяющий «пробить» любые LLM‑модели, подменяя их подсказки (prompt). В интерфейсе Harness появляется боковая панель с кнопкой «Очистка», где можно управлять наборами патчей, редактировать подсказки и применять их к выбранной модели. Плагин работает как в веб‑версии, так и в официальном десктоп‑клиенте, требует Node ≥18 (Windows ≥22) и не меняет исходный код Harness, а лишь записывает изменения в конфигурацию при нажатии «Применить». Подойдёт специалистам по красной команде и исследователям ограничений LLM, которым нужен локальный инструмент для тестирования и оценки политик отклонения запросов. Лицензия коммерческая, при использовании необходимо указывать автора и репозиторий.",
+      "evidence_quote": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分",
+      "full_name": "YuJunZhiXue/dsh-purge",
+      "joke": "Если ваш LLM отказывается отвечать, dsh-purge скажет ему: «Пора менять подсказку, а то ты как будто в отпуске!»",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-08-19T07:41:12Z",
+        "default_branch": "master",
+        "description": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分",
+        "forks": 1396,
+        "full_name": "YuJunZhiXue/dsh-purge",
+        "html_url": "https://github.com/YuJunZhiXue/dsh-purge",
+        "language": "JavaScript",
+        "license": "Other",
+        "open_issues": 30,
+        "pushed_at": "2026-10-19T13:53:37Z",
+        "readme_excerpt": "<p align=\"center\">\n  <img src=\"docs/banner.svg\" alt=\"dsh-purge\" width=\"720\">\n</p>\n\n<h1 align=\"center\">⚔️ DeepSeek Harness 网络安全红队工具（dsh-purge）</h1>\n\n<p align=\"center\"><strong>Version 1.1.71</strong></p>\n\n<p align=\"center\">\n  <em>DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分</em>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/YuJunZhiXue/dsh-purge/stargazers\"><img src=\"https://img.shields.io/github/stars/YuJunZhiXue/dsh-purge?logo=github&label=Stars\" alt=\"GitHub stars\"></a>\n  <a href=\"https://github.com/YuJunZhiXue/dsh-purge/blob/master/LICENSE\"><img src=\"https://img.shields.io/badge/license-Commercial-c45c26?style=flat\" alt=\"Commercial license\"></a>\n  <a href=\"https://awesome-dsh-plugin.com\"><img src=\"https://awesome-dsh-plugin.com/badge.svg\" alt=\"awesome · DSH plugin\"></a>\n  <a href=\"https://deepseek.stream/plugins/dsh-purge\"><img src=\"https://img.shields.io/badge/Hub-dsh--purge-1a73e8\" alt=\"DeepSeek Harness Hub\"></a>\n  <a href=\"https://www.deepseek.com/harness/\"><img src=\"https://img.shields.io/badge/dsh-0.2.0--rc.2%20%2F%200.2.1--rc.2-blue\" alt=\"DSH\"></a>\n  <br>\n  <img src=\"https://img.shields.io/badge/Node.js-%3E%3D18-339933?logo=node.js&logoColor=fff\" alt=\"Node.js\">\n  <img src=\"https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000\" alt=\"JavaScript\">\n</p>\n\n<p align=\"center\">\n  <a href=\"https://dsh-plugin.org/plugins/yujunzhixue/dsh-purge\"><img src=\"https://dsh-plugin.org/badges/listed.svg\" alt=\"Listed on dsh-plugin.org\"></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"README.md\"><strong>中文</strong></a> · <a href=\"README.en.md\">English</a>\n</p>\n\n> 我直说。\n>\n> 我被裁了。现在彻底没工作，也没有稳定收入。这个仓库一直是我业余在写。后面为了吃饭，我可能得去跑外卖，不一定还能天天改这个。\n>\n> **从今天起到 2026 年 10 月 26 日，我征集七天。** 想留、想骂、想投广告、想赞助，写到 [Issue #130](https://github.com/YuJunZhiXue/dsh-purge/issues/130)。我会看。不保证每条都回。\n>\n> **10 月 27 日起，我把这个仓库关上。** GitHub 上我不再发新版本。后面的包我只发在这个频道：[t.me/LLM_PoJia/271](https://t.me/LLM_PoJia/271)。你们手里已经下过的旧版本还能用。协议我也改了，现在是商业许可，下面有写。\n\n> **官方 Web 和官方桌面端都支持。** 官方 `dsh web` 用 profile `web`；官方桌面 EXE（DeepSeek Harness **0.2.0-rc.2 / 0.2.1-rc.2**）用 profile `desktop`。两边分开安装、分开点「应用」。当前版本只适配 dsh 0.2；更早的 dsh 用对应的老版本插件。社区桌面端不维护。\n>\n> 写进 profile 还不会改宿主。点会话标题旁的 **dsh-purge** → **清洗** → **应用**。成功会自动重启；补丁没打完不重启。重启后新开一轮对话，注入才进当前会话。\n>\n> Node.js **≥18**。Windows 无闪窗需要 **Node ≥22**。npm 上没有 `dsh-purge` 这个包，安装请走下面的 GitHub 归档，不要 `pnpm add dsh-purge`。\n\n## 目录\n\n- [赞助](#sponsor)\n- [广告位](#ad)\n- [介绍](#介绍)\n- [署名要求](#署名要求)\n- [许可证](#许可证)\n- [违规商用公示](#违规商用公示)\n- [适配范围](#适配范围)\n- [安装](#安装)\n- [界面](#界面预览)\n- [使用](#使用)\n- [自己的服务器](#自己的服务器)\n- [工作原理](#工作原理)\n- [还原](#还原)\n- [更新](#更新)\n\n---\n\n<a id=\"sponsor\"></a>\n\n## ☕ 赞助\n\n这个项目要是帮到你了，欢迎打赏。我是讨口子，施舍点~\n\n\n| 资产          | 地址                                             |\n| ----------- | ---------------------------------------------- |\n| USDT（TRC20） | `TV5ajPkRD8RH623Dx9mqvYZVNN8nPGRKid`           |\n| Solana      | `6x16GhRgLVpKFFXaU1seKNdx2rypspSJTL4dbpt6Xpwk` |\n| Ethereum    | `0xB68BD60C0e8c519513B7DF9bB147696815423B3E`   |\n| Bitcoin     | `bc1qu70yxkrtwnymt8ryluz9x8y8hqzune5340npht`   |\n\n---\n\n<a id=\"ad\"></a>\n\n## 广告位\n\n这个 README 一直有人看。我现在开放一点广告位，钱用来贴补我自己维护。\n\n| 位置 | 状态 |\n| --- | --- |\n| 本页赞助区上方（文字链 + 一句介绍，或一张小图） | **空缺，可定** |\n\n名额少。谈妥了我再挂上去。灰产、盗版、冒充我这个仓库、纯引流盘，我不接。\n\n要合作发邮件 [a2269198325@163.com](mailto:a2269198325@163.com)，或 GitHub [@YuJunZhiXue](https://github.com/YuJunZhiXue) 私信。标题写「dsh-purge 广告位」。\n\n这七天也是最后一轮公开征集。我想说的话写在这里：[关于此项目的一些表达！！！征集帖 #130](https://github.com/YuJunZhiXue/dsh-purge/issues/130)。截止 **2026 年 10 月 26 日**。过了这天我闭源，新版本只走 [频道](https://t.me/LLM_PoJia/271)。\n\n---\n\n## 介绍\n\n这是我写的插件。装在你本机官方 [DeepSeek Harness](https://www.deepseek.com/harness/) 上，用来做网络安全红队评测。官方 **Web**（`dsh web`）和官方 **桌面端**（EXE）我都支持，两边你要分开装、分开点「应用」。\n\nHarness 不只是把问题交给模型。它还会在运行时改提示词、审批门、沙箱和会话格式。只看「模型答不答」，会把宿主拦截误当成模型拒绝。我这个插件在你自己的安装里把这两层分开，用来做受控评测，也用来看默认策略该不该收紧。\n\n\n| 你会用到             | 它做什么                                            |\n| ---------------- | ----------------------------------------------- |\n| **dsh-purge 侧栏** | 会话标题旁的按钮打开右侧栏。里面两页：清洗、演练台                       |\n| **清洗**           | 分组查看补丁，应用、还原、卸载；编辑提示词和多套规则                      |\n| **演练台**          | 正式版内置。授权后查看资产、技能和本机环境。只用于你有权管理的本机、离线靶标或已书面授权的演练 |\n| **宿主策略**         | 调整默认文案、权限策略和工具上限。官方能力保留，不另写一套身份                 |\n| **启动时**          | 自动再检查并应用。npm 升级盖掉 `node_modules` 之后不用手改文件       |\n\n\n不写死盘符。按 `$DSH_HOME`、dsh 启动器旁边的 `.dsh`，再退回 `~/.dsh`。不改 Harness 源码仓库，在 **dsh-purge** 的「清洗」里点「应用」才写入。身份来自插件里的加密提示词，也就是提示词框默认显示的那一份。不读取宿主磁盘上的提示词文件。\n\n我这个插件只动你本机已经装好的官方 `@deepseek-ai` 包和本机配置。它不是公网扫描器，也不是打别人站点的套件。仓库里没有木马，也没有对外攻击载荷。\n\n---\n\n## 📌 自己装自己用可以。拿去卖、卖课、白标，先找我买[商业许可](./LICENSE-COMMERCIAL.md)。\n\n## 署名要求\n\n你要用我这个项目的名字、思路、代码或提示词，必须写我的名字，并写明来源仓库：[YuJunZhiXue/dsh-purge](https://github.com/YuJunZhiXue/dsh-purge)。\n\n不署名、藏来源、改头换面当自己的，我会追究。\n\n---\n\n## 许可证\n\n这一版开始，正本是我写的 [商业软件许可](./LICENSE)。我保留所有权利。**这不是开源协议，也不是 MIT。**\n\n| 你要做的事 | 怎么走 |\n| --- | --- |\n| 已经拿到的包装到自己电脑上用 | 可以，见 [LICENSE](./LICENSE) |\n| 付费卖插件 / 卖课 / 白标 / 给别人当产品 | 先找我买授权，[LICENSE-COMME",
+        "sources": [
+          {
+            "description": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分",
+            "full_name": "YuJunZhiXue/dsh-purge",
+            "language": "JavaScript",
+            "trending_stars_period": 2622,
+            "trending_total_forks": null,
+            "trending_total_stars": 8479,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 8479,
+        "topics": [
+          "deepseek",
+          "deepseek-harness",
+          "dsh-plugin",
+          "dsh-plugins",
+          "harness-jailbreak",
+          "jailbreak",
+          "llm-jailbreak"
+        ],
+        "updated_at": "2026-10-19T17:57:41Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 9,
+      "source_kind": "trending_weekly",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 2117,
+      "description": "Ruflo – это мета‑харнесс для агентов, работающих в средах Claude Code и Codex. Он позволяет собрать «рои» автономных агентов, координировать их задачи, подключать векторный поиск (RuVector) и использовать адаптивную память. В комплект входят ядро, консоль‑кокпит и моды, которые можно установить через плагин‑маркетплейс Claude Code или запустить из терминала через npx. Подойдёт разработчикам, желающим быстро построить многопользовательские AI‑системы с поддержкой RAG и самобучения, а также тем, кто хочет экспериментировать с агентными воркфлоу в собственных проектах.",
+      "evidence_quote": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning ",
+      "full_name": "ruvnet/ruflo",
+      "joke": "Запускать Ruflo в терминале так же просто, как вызвать чат‑бота: только вместо «привет» получаешь целый рой, готовый к работе.",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2025-06-02T21:24:20Z",
+        "default_branch": "main",
+        "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+        "forks": 9090,
+        "full_name": "ruvnet/ruflo",
+        "html_url": "https://github.com/ruvnet/ruflo",
+        "language": "TypeScript",
+        "license": "MIT",
+        "open_issues": 1062,
+        "pushed_at": "2026-10-19T16:45:02Z",
+        "readme_excerpt": "<div align=\"center\">\n\n<a href=\"https://cognitum.one/agentic-engineering\"><img src=\"ruflo/assets/ruflo-neon-flicker.gif\" alt=\"Ruflo animated neon sign\" width=\"100%\"></a>\n\n**An agent meta-harness for Claude Code and Codex.**\n\n<!-- Try Ruflo — the 3 badges first-time visitors actually act on -->\n[![npm version (ruflo)](https://img.shields.io/npm/v/ruflo?label=npx%20ruflo&style=for-the-badge&logo=npm&color=cb3837)](https://www.npmjs.com/package/ruflo)\n[![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)\n[![Star on GitHub](https://img.shields.io/github/stars/ruvnet/claude-flow?style=for-the-badge&logo=github&color=gold)](https://github.com/ruvnet/claude-flow)\n\n<p align=\"center\">\n<a href=\"docs/harness-origins.md\"><img src=\"https://raw.githubusercontent.com/ruvnet/ruflo/e69e4b95aa08d65ea0f7715489bbf8e62a83a0d2/docs/assets/readme/badges/first-commit.svg\" width=\"300\" height=\"76\" alt=\"Claude Flow lineage: first commit June 2, 2025 by rUv; inspect the evidence\"></a>\n<a href=\"data/npm-downloads.latest.json\"><img src=\"https://raw.githubusercontent.com/ruvnet/ruflo/275aff65a198af758923669acff36f03d1f41623/docs/assets/readme/badges/downloads.svg\" width=\"300\" height=\"76\" alt=\"Illustrative download counter starts at 98,000,000 and adds varied amounts each second in a 30 second loop. Verified dataset: 97,022,120 download events.\"></a>\n<br>\n<a href=\"https://github.com/ruvnet/claude-flow\"><img src=\"https://raw.githubusercontent.com/ruvnet/ruflo/d1e80400bdefe01d3b13e70395f88fffab76bb18/docs/assets/readme/badges/claude.svg\" width=\"300\" height=\"76\" alt=\"Claude Code plugin\"></a>\n<a href=\"https://www.npmjs.com/package/@claude-flow/codex\"><img src=\"https://raw.githubusercontent.com/ruvnet/ruflo/d1e80400bdefe01d3b13e70395f88fffab76bb18/docs/assets/readme/badges/codex.svg\" width=\"300\" height=\"76\" alt=\"Codex plugin\"></a>\n</p>\n\n</div>\n\n<a id=\"start-here\"></a>\n\n## <img src=\"docs/assets/readme/icons/terminal.svg\" width=\"32\" height=\"32\" alt=\"\"> Get started with Ruflo\n\n<img src=\"docs/assets/readme/icons/plugins.svg\" width=\"28\" height=\"28\" alt=\"\"> **Start in Claude Code** with core tools, the visual console and runtime mods. Requires Claude Code **2.1.287 or later**. Run inside Claude Code:\n\n```text\n/plugin marketplace add ruvnet/ruflo\n/plugin install ruflo-core@ruflo\n/plugin install ruflo-console@ruflo\n/plugin install ruflo-mods@ruflo\n/reload-plugins\n/ruflo\n```\n\n**Core** provides foundation tools. **Console** opens the agent cockpit. **Mods** add routing and policy enforcement inside Claude Code. Mods run with your account's permissions; review their code before installing.\n\n<img src=\"docs/assets/readme/icons/terminal.svg\" width=\"28\" height=\"28\" alt=\"\"> **Using Codex or another MCP enabled tool?** Use NPX for Ruflo project setup and connect your client to the Ruflo MCP server. Run the setup wizard in your project terminal:\n\n```bash\nnpx ruflo@latest init wizard\n```\n\nFor clients that support local stdio MCP servers, configure **command** `npx` and **arguments** `[\"-y\", \"ruflo@latest\", \"mcp\", \"start\"]`. The equivalent server command is:\n\n```bash\nnpx -y ruflo@latest mcp start\n```\n\nMCP exposes Ruflo tools to your client. The console and mods above are Claude Code integrations; hook support depends on the client.\n\n<img src=\"docs/assets/readme/icons/terminal.svg\" width=\"28\" height=\"28\" alt=\"\"> **Prefer a plain terminal? Optional.** The console also runs on its own, with no Claude Code: `npx ruflo tui` (add `--plain` to print one frame for scripts). It shows Overview, Cost, Swarm, Events and Missions, plus an optional AI page. [Terminal UI guide](docs/USERGUIDE.md#terminal-ui-optional)\n\n<p align=\"center\"><img src=\"docs/assets/ruflo-tui-compact.svg\" width=\"640\" alt=\"Looping recording of the optional ruflo terminal UI with its pictures: Overview in the Classic BBS look, the Orbital look with its moving globe, and the Swarm graph, in a sample project\"></p>\n\n[Compare install paths](#quick-start) · [Open the console](#console-walkthrough) · [User guide](docs/USERGUIDE.md)\n\n<div align=\"center\">\n\n\n### Optional: ruOS Desktop\n\n<a href=\"https://ruos.cognitum.one\"><img src=\"ruflo/assets/ruos-animated.svg\" alt=\"ruOS — A desktop that runs itself\" width=\"100%\"></a>\n\n**Connect ruOS to ChatGPT or Claude via MCP:**\n\n```text\nhttps://ruos.cognitum.one/mcp\n```\n\n\n\n<!-- RuVector promo -->\n<a href=\"https://github.com/ruvnet/ruvector\"><img src=\"docs/assets/readme/ruvector-promo-depth.svg\" width=\"100%\" alt=\"RuVector: Give your agents memory. Local vector search, persistent context, graph relationships and feedback learning. Explore RuVector.\"></a>\n\n```bash\nnpx ruvector\n```\n\n\n\n\n# Ruflo\n\n[English](README.md) · [简体中文](README.zh-CN.md)\n\n\n[![RuFlo Explained — build an AI team that plans, remembers, tests, and improves](docs/assets/ruflo-explained/ch14.jpg)](docs/ruflo-explained.md)\n\n**[📖 RuFlo Explained — Build an AI Team That Plans, Remembers, Tests, and Improves](docs/ruflo-explained.md)**\nA 14-chapter guid",
+        "sources": [
+          {
+            "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+            "full_name": "ruvnet/ruflo",
+            "language": "TypeScript",
+            "trending_stars_period": 2117,
+            "trending_total_forks": null,
+            "trending_total_stars": 77022,
+            "type": "trending_weekly"
+          },
+          {
+            "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+            "full_name": "ruvnet/ruflo",
+            "language": "TypeScript",
+            "trending_stars_period": 564,
+            "trending_total_forks": null,
+            "trending_total_stars": 77022,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 77022,
+        "topics": [
+          "agentic-ai",
+          "agentic-framework",
+          "agentic-workflow",
+          "agents",
+          "ai-agents",
+          "ai-assistant",
+          "ai-skills",
+          "autonomous-agents",
+          "claude",
+          "codex",
+          "dsh-plugin",
+          "harness",
+          "mcp-server",
+          "multi-agent",
+          "multi-agent-systems",
+          "npm",
+          "skills",
+          "swarm",
+          "swarm-intelligence",
+          "typescript"
+        ],
+        "updated_at": "2026-10-19T17:56:19Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за неделю",
+      "rank": 10,
+      "source_kind": "trending_weekly",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 1310,
+      "description": "OpenCode – открытый AI‑агент для программирования. Он работает как интерактивный терминал, позволяя генерировать, редактировать и планировать код через два встроенных режима: «build» (полный доступ к файлам и выполнению команд) и «plan» (только чтение, запросы на изменение). Проект распространяется как CLI‑утилита (npm, Homebrew, Pacman, Nix и др.) и в бета‑версии как настольное приложение для macOS, Windows и Linux. Подойдёт разработчикам, которым нужен локальный помощник для быстрой автогенерации и анализа кода, а также тем, кто хочет экспериментировать с AI‑агентами без привязки к облачным сервисам.",
+      "evidence_quote": "The open source coding agent.",
+      "full_name": "anomalyco/opencode",
+      "joke": "OpenCode умеет писать код быстрее, чем вы успеете сказать «npm install».",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2025-04-30T20:08:00Z",
+        "default_branch": "dev",
+        "description": "The open source coding agent.",
+        "forks": 29080,
+        "full_name": "anomalyco/opencode",
+        "html_url": "https://github.com/anomalyco/opencode",
+        "language": "TypeScript",
+        "license": "MIT",
+        "open_issues": 4634,
+        "pushed_at": "2026-10-19T17:55:31Z",
+        "readme_excerpt": "<p align=\"center\">\n  <a href=\"https://opencode.ai\">\n    <picture>\n      <source srcset=\"packages/console/app/src/asset/logo-ornate-dark.svg\" media=\"(prefers-color-scheme: dark)\">\n      <source srcset=\"packages/console/app/src/asset/logo-ornate-light.svg\" media=\"(prefers-color-scheme: light)\">\n      <img src=\"packages/console/app/src/asset/logo-ornate-light.svg\" alt=\"OpenCode logo\">\n    </picture>\n  </a>\n</p>\n<p align=\"center\">The open source AI coding agent.</p>\n<p align=\"center\">\n  <a href=\"https://opencode.ai/discord\"><img alt=\"Discord\" src=\"https://img.shields.io/discord/1391832426048651334?style=flat-square&label=discord\" /></a>\n  <a href=\"https://www.npmjs.com/package/@opencode/cli\"><img alt=\"npm\" src=\"https://img.shields.io/npm/v/@opencode/cli?style=flat-square\" /></a>\n  <a href=\"https://github.com/anomalyco/opencode/actions/workflows/publish.yml\"><img alt=\"Build status\" src=\"https://img.shields.io/github/actions/workflow/status/anomalyco/opencode/publish.yml?style=flat-square&branch=dev\" /></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"README.md\">English</a> |\n  <a href=\"README.zh.md\">简体中文</a> |\n  <a href=\"README.zht.md\">繁體中文</a> |\n  <a href=\"README.ko.md\">한국어</a> |\n  <a href=\"README.de.md\">Deutsch</a> |\n  <a href=\"README.es.md\">Español</a> |\n  <a href=\"README.fr.md\">Français</a> |\n  <a href=\"README.it.md\">Italiano</a> |\n  <a href=\"README.da.md\">Dansk</a> |\n  <a href=\"README.ja.md\">日本語</a> |\n  <a href=\"README.pl.md\">Polski</a> |\n  <a href=\"README.ru.md\">Русский</a> |\n  <a href=\"README.bs.md\">Bosanski</a> |\n  <a href=\"README.ar.md\">العربية</a> |\n  <a href=\"README.no.md\">Norsk</a> |\n  <a href=\"README.br.md\">Português (Brasil)</a> |\n  <a href=\"README.th.md\">ไทย</a> |\n  <a href=\"README.tr.md\">Türkçe</a> |\n  <a href=\"README.uk.md\">Українська</a> |\n  <a href=\"README.bn.md\">বাংলা</a> |\n  <a href=\"README.gr.md\">Ελληνικά</a> |\n  <a href=\"README.vi.md\">Tiếng Việt</a>\n</p>\n\n[![OpenCode Terminal UI](packages/web/src/assets/lander/screenshot.png)](https://opencode.ai)\n\n---\n\n### Installation\n\n```bash\n# YOLO\ncurl -fsSL https://opencode.ai/v2/install | bash\n\n# Package managers\nnpm i -g @opencode/cli@latest      # or bun/pnpm/yarn\nbrew install anomalyco/tap/opencode-v2 # macOS and Linux (recommended, always up to date)\nbrew install opencode              # macOS and Linux (official brew formula, updated less)\nsudo pacman -S opencode            # Arch Linux (Stable)\nparu -S opencode-beta              # Arch Linux (Latest from AUR)\nmise use -g opencode               # Any OS\nnix run github:anomalyco/opencode  # Nix\n```\n\n> [!TIP]\n> Remove versions older than 0.1.x before installing.\n\n### Desktop App (BETA)\n\nOpenCode is also available as a desktop application. Download it from [opencode.ai/download](https://opencode.ai/download).\n\n| Platform              | Download                           |\n| --------------------- | ---------------------------------- |\n| macOS (Apple Silicon) | `opencode-desktop-mac-arm64.dmg`   |\n| macOS (Intel)         | `opencode-desktop-mac-x64.dmg`     |\n| Windows               | `opencode-desktop-win-x64.exe`     |\n| Linux                 | `.deb`, `.rpm`, or `.AppImage`     |\n\n```bash\n# macOS (Homebrew)\nbrew install --cask opencode-desktop\n```\n\n#### Installation Directory\n\nThe install script respects the following priority order for the installation path:\n\n1. `$OPENCODE_INSTALL_DIR` - Custom installation directory\n2. `$XDG_BIN_DIR` - XDG Base Directory Specification compliant path\n3. `$HOME/bin` - Standard user binary directory (if it exists or can be created)\n4. `$HOME/.opencode/bin` - Default fallback\n\n```bash\n# Examples\nOPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/v2/install | bash\nXDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/v2/install | bash\n```\n\n### Agents\n\nOpenCode includes two built-in agents you can switch between with the `Tab` key.\n\n- **build** - Default, full-access agent for development work\n- **plan** - Read-only agent for analysis and code exploration\n  - Denies file edits by default\n  - Asks permission before running bash commands\n  - Ideal for exploring unfamiliar codebases or planning changes\n\nAlso included is a **general** subagent for complex searches and multistep tasks.\nThis is used internally and can be invoked using `@general` in messages.\n\nLearn more about [agents](https://opencode.ai/docs/agents).\n\n### Documentation\n\nFor more info on how to configure OpenCode, [**head over to our docs**](https://opencode.ai/docs).\n\n### Contributing\n\nIf you're interested in contributing to OpenCode, please read our [contributing docs](./CONTRIBUTING.md) before submitting a pull request.\n\n### Building on OpenCode\n\nIf you are working on a project that's related to OpenCode and is using \"opencode\" as part of its name, for example \"opencode-dashboard\" or \"opencode-mobile\", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.\n\n---\n\n**Join our community** [Discord](https://discord.gg/openco",
+        "sources": [
+          {
+            "description": "The open source coding agent.",
+            "full_name": "anomalyco/opencode",
+            "language": "TypeScript",
+            "trending_stars_period": 1310,
+            "trending_total_forks": null,
+            "trending_total_stars": 217521,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 217521,
+        "topics": [],
+        "updated_at": "2026-10-19T17:57:17Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за день",
+      "rank": 11,
+      "source_kind": "trending_daily",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 1011,
+      "description": "ComfyUI — это локальный графический движок для генерации контента на основе диффузионных моделей. Пользователь собирает рабочий процесс из узлов‑операций, задаёт параметры моделей и управляет потоками данных без написания кода. Встроенный асинхронный стриминг весов позволяет запускать даже крупные модели (SDXL, Flux, Qwen и др.) на видеокартах с 4 ГБ VRAM, динамически выгружая части модели в RAM. Движок поддерживает NVIDIA, AMD, Intel, Apple Silicon и Ascend, а также предоставляет API и режим «App Mode» для интеграции в производственные пайплайны. Подключаемые «partner nodes» открывают доступ к закрытым сервисам (Nano Banana, Hunyuan3D). Подойдёт визуальным художникам, видеомейкерам и разработчикам, которым нужен полный контроль над моделью и возможность быстро экспериментировать на обычном ПК.",
+      "evidence_quote": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
+      "full_name": "Comfy-Org/ComfyUI",
+      "joke": "ComfyUI обещает комфорт, но всё равно требует от вас больше узлов, чем от вашего последнего кроссворда.",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2023-01-17T03:15:56Z",
+        "default_branch": "master",
+        "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
+        "forks": 16561,
+        "full_name": "Comfy-Org/ComfyUI",
+        "html_url": "https://github.com/Comfy-Org/ComfyUI",
+        "language": "Python",
+        "license": "GPL-3.0",
+        "open_issues": 5273,
+        "pushed_at": "2026-10-19T17:21:54Z",
+        "readme_excerpt": "<div align=\"center\">\n\n# ComfyUI\n**The most powerful and modular AI engine for content creation.**\n\n\n[![Website][website-shield]][website-url]\n[![Dynamic JSON Badge][discord-shield]][discord-url]\n[![Twitter][twitter-shield]][twitter-url]\n[![Matrix][matrix-shield]][matrix-url]\n<br>\n[![][github-release-shield]][github-release-link]\n[![][github-release-date-shield]][github-release-link]\n[![][github-downloads-shield]][github-downloads-link]\n[![][github-downloads-latest-shield]][github-downloads-link]\n\n[matrix-shield]: https://img.shields.io/badge/Matrix-000000?style=flat&logo=matrix&logoColor=white\n[matrix-url]: https://app.element.io/#/room/%23comfyui_space%3Amatrix.org\n[website-shield]: https://img.shields.io/badge/ComfyOrg-4285F4?style=flat\n[website-url]: https://www.comfy.org/\n<!-- Workaround to display total user from https://github.com/badges/shields/issues/4500#issuecomment-2060079995 -->\n[discord-shield]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2Fcomfyorg%3Fwith_counts%3Dtrue&query=%24.approximate_member_count&logo=discord&logoColor=white&label=Discord&color=green&suffix=%20total\n[discord-url]: https://discord.com/invite/comfyorg\n[twitter-shield]: https://img.shields.io/twitter/follow/ComfyUI\n[twitter-url]: https://x.com/ComfyUI\n\n[github-release-shield]: https://img.shields.io/github/v/release/comfyanonymous/ComfyUI?style=flat&sort=semver\n[github-release-link]: https://github.com/comfyanonymous/ComfyUI/releases\n[github-release-date-shield]: https://img.shields.io/github/release-date/comfyanonymous/ComfyUI?style=flat\n[github-downloads-shield]: https://img.shields.io/github/downloads/comfyanonymous/ComfyUI/total?style=flat\n[github-downloads-latest-shield]: https://img.shields.io/github/downloads/comfyanonymous/ComfyUI/latest/total?style=flat&label=downloads%40latest\n[github-downloads-link]: https://github.com/comfyanonymous/ComfyUI/releases\n\n<img width=\"1590\" height=\"795\" alt=\"ComfyUI Screenshot\" src=\"https://github.com/user-attachments/assets/36e065e0-bfae-4456-8c7f-8369d5ea48a2\" />\n<br>\n</div>\n\nComfyUI is the AI creation engine for visual professionals who demand control over every model, every parameter, and every output. Its powerful and modular node graph interface empowers creatives to generate images, videos, 3D models, audio, and more...\n- ComfyUI natively supports the latest open-source state of the art models.\n- It is by far the most optimized inference engine for diffusion models in the world with a focus on local consumer hardware.\n- Can run even the biggest open source models on as low as 4GB vram + 8GB ram relatively quickly (saturating your GPU compute) using our state of the art asynchronous weight streaming technology.\n- [Partner nodes](https://docs.comfy.org/tutorials/partner-nodes/overview#partner-nodes) provide access to the best closed source models such as Nano Banana, Seedance, Hunyuan3D, etc.\n- It is available on Windows, Linux, and macOS, locally with our [desktop application](https://www.comfy.org/download), our [portable install](#installing) or on our [cloud](https://www.comfy.org/cloud).\n- The most sophisticated workflows can be exposed through a simple UI thanks to App Mode.\n- It integrates seamlessly into production pipelines with our API endpoints.\n\n## Get Started\n\n### Local\n\n#### [Desktop Application](https://www.comfy.org/download)\n- The easiest way to get started.\n- Available on Windows & macOS.\n\n#### [Manual Install](#manual-install-windows-linux)\nSupports all operating systems and GPU types (NVIDIA, AMD, Intel, Apple Silicon, Ascend).\n\n### Cloud\n\n#### [Comfy Cloud](https://www.comfy.org/cloud)\n- Our official paid cloud version for those who can't afford local hardware.\n\n## Examples\nSee what ComfyUI can do with the [newer template workflows](https://comfy.org/workflows) or old [example workflows](https://comfyanonymous.github.io/ComfyUI_examples/).\n\n## Features\n- A visual node graph for building and reusing image, video, audio, 3D, and text workflows without code.\n- Reusable subgraphs, workflow templates, App Mode, and a local API for integrating workflows into applications.\n- Efficient local execution with asynchronous queueing, partial graph re-execution, smart VRAM and RAM management, model offloading, and support for quantized models.\n- Broad native model support. This is a representative list; browse the [workflow library](https://comfy.org/workflows/) for maintained, ready-to-run templates.\n  - [Image generation](https://comfy.org/workflows/tag/text-to-image/): Stable Diffusion 1.5, SDXL, SD3.5, Flux.1, Flux.2, Qwen Image, Z-Image, Hunyuan Image 2.1, HiDream, Lumina Image 2.0, Chroma, Anima, LongCat Image, Ideogram 4, Krea 2, MageFlow, Microsoft Lens, PixelDiT, Kandinsky 5, and Ernie Image.\n  - [Image editing](https://comfy.org/workflows/tag/image-edit/): Flux Kontext, Flux.2 Klein, Qwen Image Edit, HiDream E1.1 and O1, OmniGen2, Boogu, JoyImage Edit, MageFlow Edit, and LongCat Image Edit.\n  - [Video generation](https",
+        "sources": [
+          {
+            "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
+            "full_name": "Comfy-Org/ComfyUI",
+            "language": "Python",
+            "trending_stars_period": 1011,
+            "trending_total_forks": null,
+            "trending_total_stars": 139473,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 139474,
+        "topics": [
+          "ai",
+          "comfy",
+          "comfyui",
+          "python",
+          "pytorch",
+          "stable-diffusion"
+        ],
+        "updated_at": "2026-10-19T17:57:49Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за день",
+      "rank": 12,
+      "source_kind": "trending_daily",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 666,
+      "description": "ai-memory — это сервер‑сервис, который собирает и хранит заметки о работе AI‑кодеров в виде обычных markdown‑файлов, синхронизируемых через git. Он поддерживает более двадцати «harness» (Claude Code, Codex, Cursor, Gemini CLI и др.), позволяя переключаться между ними без повторного объяснения архитектуры, ошибок и открытых вопросов. Память привязывается к проекту, пользователю и машине, поэтому один и тот же контекст доступен в разных репозиториях и на разных устройствах. Для команд сервис обеспечивает аутентификацию, аудит и разделение личных и общих сессий. Все операции (поиск, хранение, «схлопывание» старых записей) работают без вызовов LLM, а при желании можно включить «dream‑mode», где LLM пере‑форматирует холодные заметки. Проект будет полезен разработчикам, использующим несколько AI‑помощников и желающим сохранять контекст между ними, а также небольшим командам, которым нужен общий, легко‑просматриваемый журнал работы.",
+      "evidence_quote": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+      "full_name": "akitaonrails/ai-memory",
+      "joke": "ai-memory хранит ваши баги в markdown, так что даже ваш дедлайн будет читабельным!",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-05-21T23:23:51Z",
+        "default_branch": "main",
+        "description": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+        "forks": 789,
+        "full_name": "akitaonrails/ai-memory",
+        "html_url": "https://github.com/akitaonrails/ai-memory",
+        "language": "Rust",
+        "license": "MIT",
+        "open_issues": 7,
+        "pushed_at": "2026-10-19T17:48:05Z",
+        "readme_excerpt": "<p align=\"center\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/logo-dark.png\">\n    <img alt=\"ai-memory\" src=\"docs/logo-light.png\" width=\"480\">\n  </picture>\n</p>\n\n> Long-term memory for AI coding agents. Quit Claude Code mid-task,\n> start OpenAI Codex in the same directory, continue without\n> re-explaining the architecture, the failed approaches, or the open\n> questions.\n\n**Website: [aimemory.sh](https://aimemory.sh)**\n\n[![Website](https://img.shields.io/badge/website-aimemory.sh-blue)](https://aimemory.sh)\n[![Release](https://img.shields.io/github/v/release/akitaonrails/ai-memory)](https://github.com/akitaonrails/ai-memory/releases/latest)\n[![Rust](https://img.shields.io/badge/rust-1.95+-blue)](rust-toolchain.toml)\n[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)\n\n## Why ai-memory\n\nYour coding agent probably has a memory feature already. Claude Code takes its\nown notes, Cursor remembers some things, and every platform is adding more. They\nall have the same limits: the notes live on one machine, belong to one agent,\nand drop out of view when you switch tools or hand the work to a teammate.\n\nai-memory removes those limits.\n\n- **It follows you across agents.** More than twenty harnesses (Claude Code,\n  Codex, Cursor, Gemini CLI, OpenCode, Grok, Devin, Kimi, Kiro, and others)\n  feed one shared memory. Quit Claude Code mid-task, open Codex in the same\n  directory, and the next agent picks up a handoff that says where you left\n  off, what failed, and what is still open. Handoffs are a typed protocol:\n  each one has an owner and is claimed exactly once.\n\n- **It can carry the session, not just a summary.** Start agents with\n  `ai-memory run`: quit Claude Code, run `ai-memory run codex`, and Codex gets\n  the shared workstream plus a private, temporary local projection of Claude's\n  visible native history for exact details the bounded startup packet omitted.\n  The remote server receives only the harness and session identity, never the\n  local transcript path or body. Direct harness launches behave exactly as\n  before.\n\n- **It follows you across projects.** A small profile of how you usually\n  work (your package manager, test layout, architecture habits) reaches\n  every new repository at session start, so you stop re-explaining yourself.\n  It sits below each repository's rules file as a default. It is on by\n  default for a single user, and on a shared server it is opt-in and private\n  per person. See [`docs/cross-project-profile.md`](docs/cross-project-profile.md).\n\n- **It follows you across machines.** Memory lives in a server you run, on\n  the same laptop, a homelab box, or anywhere else, so the project you left\n  on the desktop is the project you resume on the laptop, with the same\n  knowledge and the same open questions.\n\n- **It works for a team.** Point everyone at one server, and what one\n  person's sessions learn, everyone's agents can retrieve. Knowledge is\n  shared per project; personal handoffs stay personal. Multi-user auth,\n  per-person attribution, and an audit log are built in and are not a paid tier.\n\n- **Your memory is plain markdown.** The source of truth is a git-backed\n  wiki of ordinary `.md` files: `grep` it, open it in Obsidian, edit it by\n  hand, `rsync` it. The database is a derived index that can always be\n  rebuilt from the files. There is no vector store to maintain and no\n  content locked in a binary blob.\n\n- **It captures the work itself, silently.** Lifecycle hooks record what\n  happened (prompts, tool calls, session boundaries), sanitize it at a typed\n  privacy boundary before anything is stored, and the server consolidates it\n  into readable pages. You do not have to ask it to remember anything. The\n  default path uses **zero LLM calls**: capture, search, and handoffs all\n  work with no API key.\n\n- **It ages memory without an LLM.** Memory decays on a schedule you can\n  tune per tier, and memory you use decays *slower*: opening a page,\n  searching it, or reaching it through a link counts as use. When episodic\n  notes go cold they can be compacted down to their durable facts (file\n  paths, error codes, decisions) instead of dropped. Near-duplicates\n  collapse into one, and likely contradictions get flagged, all with **zero\n  API calls**. Nothing is hard-deleted: the original stays in git and the\n  version chain (`restore-page` brings it back). Access-weighted retention is\n  always on because it can only keep memory *longer*. The parts that rewrite\n  or drop content (compaction, dedup, per-tier curves) stay off by default\n  until you turn them on.\n\n- **It can also \"dream\", if you let it.** With an LLM configured, an opt-in\n  background pass rewrites whole clusters of cold notes into single coherent\n  pages while you are idle, and cancels as soon as you come back to work. It\n  never deletes a source (the pre-merge versions stay reachable), it is off\n  by default, and it has to pass a recall eval before it could become\n  default behavior. Un",
+        "sources": [
+          {
+            "description": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+            "full_name": "akitaonrails/ai-memory",
+            "language": "Rust",
+            "trending_stars_period": 666,
+            "trending_total_forks": null,
+            "trending_total_stars": 11116,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 11116,
+        "topics": [],
+        "updated_at": "2026-10-19T17:56:49Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за день",
+      "rank": 13,
+      "source_kind": "trending_daily",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 502,
+      "description": "Jasna — это утилита для восстановления замозаичных (пикселизированных) участков в видеороликах и изображениях. Программа работает на GPU, поддерживая современные NVIDIA (GTX 16‑/RTX 20‑серии и новее) и экспериментально AMD RX 7000/9000. В бесплатной версии используется быстрый BasicVSR++, а для поддержавших проект доступен более точный LTX‑модель (только NVIDIA). Пользователь выбирает зоны для восстановления через графический редактор сегментов, может просматривать результат в реальном времени и сохранять готовый файл. Требования: локальный диск без нелатинских символов в пути, минимум 8 ГБ видеопамяти для LTX, а также драйверы CUDA ≥ 610 (Windows) или ROCm ≥ 26.8.1 (AMD).",
+      "evidence_quote": "Video restoration tool",
+      "full_name": "Kruk2/jasna",
+      "joke": "Если ваш GPU умеет восстанавливать мозаики, значит, он уже прошёл курс «искусственного интеллекта для художников»!",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-01-18T21:13:39Z",
+        "default_branch": "main",
+        "description": "Video restoration tool",
+        "forks": 210,
+        "full_name": "Kruk2/jasna",
+        "html_url": "https://github.com/Kruk2/jasna",
+        "language": "Python",
+        "license": "AGPL-3.0",
+        "open_issues": 64,
+        "pushed_at": "2026-10-18T11:43:28Z",
+        "readme_excerpt": "> **The only places to get a genuine License code for the supporter models are [Buy Me a Coffee](https://buymeacoffee.com/kruk2), [Unifans](https://app.unifans.io/c/kruk2), and for China the seller in the [Chinese README](README.zh.md#在闲鱼购买).**\n>\n> **支持者模型的正版许可证码只能通过 [Buy Me a Coffee](https://buymeacoffee.com/kruk2)、[Unifans](https://app.unifans.io/c/kruk2) 或 [闲鱼](README.zh.md#在闲鱼购买) 获取。**\n\n[**English**](README.md) | [日本語](README.ja.md) | [中文](README.zh.md)\n\n# <img width=\"32\" src=\"https://github.com/Kruk2/jasna/blob/main/assets/jasna-logo.png?raw=true\" /> Jasna \n\nJasna restores mosaics in videos and images. It is free, has a simple app\nand a command line, and runs on your GPU.\n\n<img width=\"1200\" height=\"907\" alt=\"image\" src=\"https://github.com/user-attachments/assets/d59a914b-482d-4f37-ae72-5c59eb5dc9bb\" />\n\n## Contents\n\n**Start here**\n\n- [What Jasna does](#what-jasna-does)\n- [What you need](#what-you-need)\n- [Quick start](#quick-start)\n- [Help and community](#help-and-community)\n- [Supporting the project](#supporting-the-project) (supporter models)\n\n**Advanced**\n\n- [How Jasna works](#how-jasna-works)\n- [Command line](#command-line)\n- [All guides](#all-guides)\n- [Benchmarks](#benchmarks)\n- [Licensing](#licensing)\n- [Acknowledgments](#acknowledgments)\n\n## What Jasna does\n\n- Finds mosaics in a video and restores them. The rest of the picture is not\n  touched.\n- Two restoration models: fast **BasicVSR++** (free) and slow but more\n  detailed **LTX** (for supporters, NVIDIA only).\n- Restores only the parts you choose, with a preview, in the **Segment\n  Editor**.\n- Works with VR180 videos and still images (SD 1.5, for supporters).\n- Lets you watch a video restored live in the **Video Player**, without making\n  a file.\n\n## What you need\n\n- **NVIDIA** GTX 16-series / RTX 20-series or newer, with a recent driver\n  (610+ on Windows, 580+ on Linux). GTX 10-series and older don't work.\n- Or **AMD** Radeon RX 7000/9000 (experimental).\n- A folder on a local disk, with no Chinese, Japanese, accented or other\n  non-English characters in its path.\n\n<details>\n<summary>More details</summary>\n\n- NVIDIA: your GPU needs compute capability 7.5 or higher in NVIDIA's\n  [GPU table](https://developer.nvidia.com/cuda/gpus).\n- AMD: a GPU supported by ROCm (Radeon RX 7000/9000, Radeon 780M/760M/740M,\n  Ryzen AI). On Windows, AMD Adrenalin driver 26.8.1 or newer. Secondary\n  restoration and LTX are NVIDIA only.\n- Disk format: NTFS on Windows; ext4, Btrfs, XFS or ZFS on Linux. Network disks\n  are not supported. Use an SSD; on a hard disk (HDD) Jasna starts and loads\n  models slowly.\n- LTX needs an NVIDIA RTX GPU, at least 8 GB VRAM and 16 GB RAM. See\n  [What LTX needs](docs/en/models.md#what-ltx-needs).\n\n</details>\n\n## Quick start\n\n1. Download the release for your system and GPU.\n2. Unpack it into a folder with no Chinese, Japanese, accented or other\n   non-English characters in the path.\n3. Start the app:\n   - Windows: double-click `jasna.exe`.\n   - Linux NVIDIA: run the `jasna` file.\n   - Linux AMD: run `run_jasna_amd.sh`.\n4. Add a video, choose settings and click the **▶** button at the bottom.\n\n**Your first job is slow.** On NVIDIA, Jasna first prepares the models for\nyour exact GPU. This takes about **15–60 minutes**, only once. Close other\napps and don't use the PC during this time. When you update Jasna, copy the\n`model_weights` folder to the new version, so you don't wait again.\n\nEvery setting has a tooltip: move the mouse over the ⓘ icon. Out of GPU\nmemory (VRAM)? Lower **Max Clip Size**, for example from `90` to `60`. See\n[Tuning](docs/en/tuning.md).\n\n## Help and community\n\n- [App guide](docs/en/gui.md): the queue, presets, output names, the Video\n  Player and activation.\n- [SLS Discord](https://discord.gg/FgrSuwZS3s): examples, help and settings.\n  Jasna has a [new channel](https://discord.com/channels/1196376491815092265/1556960822578909244);\n  older posts stay in the [old channel (archived)](https://discord.com/channels/1196376491815092265/1199059436199759943).\n  Please don't be too weird.\n- Problem? Click **Logs** at the bottom of the app, then **Export** to save a\n  log file. Attach it when you ask for help.\n\n## Supporting the project\n\nJasna is free. Your support pays for training new models, mostly GPU rental.\nSupporters get a License code for the supporter models:\n\n| Support | Models |\n| --- | --- |\n| **$15 USD** or more in total | **UNet 4x**: makes restored areas sharper.<br>**SD 1.5**: experimental model for still images. |\n| **$25 USD** | **UNet 4x** and **SD 1.5**, plus<br>**LTX**: much slower than BasicVSR++, but more detail. NVIDIA only. Includes future updates of this LTX model. |\n\nSupporters who gave **$15 USD or more on or before 14 October 2026** get LTX for free.\n\n**Before you choose LTX:**\n\n- Look at these LTX samples: [1](https://discord.com/channels/1196376491815092265/1199059436199759943/1556346988486856826), [2](https://discord.com/channels/1196376491815092265/1199059436199759943/1556337300814958684), [3]",
+        "sources": [
+          {
+            "description": "Video restoration tool",
+            "full_name": "Kruk2/jasna",
+            "language": "Python",
+            "trending_stars_period": 502,
+            "trending_total_forks": null,
+            "trending_total_stars": 2807,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 2807,
+        "topics": [],
+        "updated_at": "2026-10-19T17:44:45Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за день",
+      "rank": 14,
+      "source_kind": "trending_daily",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 355,
+      "description": "Kronos – первый открытый фундаментальный модельный набор, обученный на K‑line (OHLCV) данных более чем 45 бирж. Проект использует двухэтапный подход: специальный токенизатор дискретизирует многомерные ценовые бары в иерархические токены, после чего автокорреляционный трансформер предобучается на этих последовательностях. В репозитории доступны модели разных размеров (от 4,1 М до 499,2 М параметров) и готовый токенизатор, а также скрипты для дообучения и пример предсказания цены BTC/USDT через класс KronosPredictor. Подойдёт исследователям и практикам, которым нужен единый инструмент для прогнозов, генерации и анализа финансовых временных рядов без необходимости собирать собственный датасет.",
+      "evidence_quote": "Kronos: A Foundation Model for the Language of Financial Markets",
+      "full_name": "shiyu-coder/Kronos",
+      "joke": "Если ваш трейдер всё ещё считает, что «время — деньги», то он просто ещё не встретил Kronos.",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2025-07-01T02:54:32Z",
+        "default_branch": "master",
+        "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+        "forks": 6902,
+        "full_name": "shiyu-coder/Kronos",
+        "html_url": "https://github.com/shiyu-coder/Kronos",
+        "language": "Python",
+        "license": "MIT",
+        "open_issues": 282,
+        "pushed_at": "2026-04-13T12:38:49Z",
+        "readme_excerpt": "<div align=\"center\">\r\n  <h2><b>Kronos: A Foundation Model for the Language of Financial Markets </b></h2>\r\n</div>\r\n\r\n\r\n<div align=\"center\">\r\n\r\n</a> \r\n<a href=\"https://huggingface.co/NeoQuasar\"> \r\n<img src=\"https://img.shields.io/badge/🤗-Hugging_Face-yellow\" alt=\"Hugging Face\"> \r\n</a> \r\n<a href=\"https://shiyu-coder.github.io/Kronos-demo/\"> <img src=\"https://img.shields.io/badge/🚀-Live_Demo-brightgreen\" alt=\"Live Demo\"> </a>\r\n<a href=\"https://github.com/shiyu-coder/Kronos/graphs/commit-activity\"> \r\n<img src=\"https://img.shields.io/github/last-commit/shiyu-coder/Kronos?color=blue\" alt=\"Last Commit\"> \r\n</a> \r\n<a href=\"https://github.com/shiyu-coder/Kronos/stargazers\"> \r\n<img src=\"https://img.shields.io/github/stars/shiyu-coder/Kronos?color=lightblue\" alt=\"GitHub Stars\"> \r\n</a> \r\n<a href=\"https://github.com/shiyu-coder/Kronos/network/members\"> \r\n<img src=\"https://img.shields.io/github/forks/shiyu-coder/Kronos?color=yellow\" alt=\"GitHub Forks\"> \r\n</a> \r\n<a href=\"./LICENSE\"> \r\n<img src=\"https://img.shields.io/github/license/shiyu-coder/Kronos?color=green\" alt=\"License\"> \r\n</a>\r\n\r\n</div>\r\n\r\n<div align=\"center\">\r\n  <!-- Keep these links. Translations will automatically update with the README. -->\r\n  <a href=\"https://zdoc.app/de/shiyu-coder/Kronos\">Deutsch</a> | \r\n  <a href=\"https://zdoc.app/es/shiyu-coder/Kronos\">Español</a> | \r\n  <a href=\"https://zdoc.app/fr/shiyu-coder/Kronos\">Français</a> | \r\n  <a href=\"https://zdoc.app/ja/shiyu-coder/Kronos\">日本語</a> | \r\n  <a href=\"https://zdoc.app/ko/shiyu-coder/Kronos\">한국어</a> | \r\n  <a href=\"https://zdoc.app/pt/shiyu-coder/Kronos\">Português</a> | \r\n  <a href=\"https://zdoc.app/ru/shiyu-coder/Kronos\">Русский</a> | \r\n  <a href=\"https://zdoc.app/zh/shiyu-coder/Kronos\">中文</a>\r\n</div>\r\n\r\n<p align=\"center\">\r\n\r\n<img src=\"./figures/logo.png\" width=\"100\">\r\n\r\n</p>\r\n\r\n> Kronos is the **first open-source foundation model** for financial candlesticks (K-lines), \r\n> trained on data from over **45 global exchanges**.\r\n\r\n\r\n</div>\r\n\r\n## 📰 News\r\n*   🚩 **[2025.11.10]** Kronos has been accpeted by AAAI 2026.\r\n*   🚩 **[2025.08.17]** We have released the scripts for fine-tuning! Check them out to adapt Kronos to your own tasks.\r\n*   🚩 **[2025.08.02]** Our paper is now available on [arXiv](https://arxiv.org/abs/2508.02739)!\r\n\r\n<p align=\"center\">\r\n\r\n## 📜 Introduction\r\n\r\n**Kronos** is a family of decoder-only foundation models, pre-trained specifically for the \"language\" of financial markets—K-line sequences. Unlike general-purpose TSFMs, Kronos is designed to handle the unique, high-noise characteristics of financial data. It leverages a novel two-stage framework: \r\n1. A specialized tokenizer first quantizes continuous, multi-dimensional K-line data (OHLCV) into **hierarchical discrete tokens**. \r\n2. A large, autoregressive Transformer is then pre-trained on these tokens, enabling it to serve as a unified model for diverse quantitative tasks.\r\n\r\n<p align=\"center\">\r\n    <img src=\"figures/overview.png\" alt=\"\" align=\"center\" width=\"700px\" />\r\n</p>\r\n\r\n## ✨ Live Demo \r\nWe have set up a live demo to visualize Kronos's forecasting results. The webpage showcases a forecast for the **BTC/USDT** trading pair over the next 24 hours. \r\n\r\n**👉 [Access the Live Demo Here](https://shiyu-coder.github.io/Kronos-demo/)** \r\n\r\n## 📦 Model Zoo \r\nWe release a family of pre-trained models with varying capacities to suit different computational and application needs. All models are readily accessible from the Hugging Face Hub.\r\n\r\n| Model        | Tokenizer                                                                       | Context length | Params  | Open-source                                                               |\r\n|--------------|---------------------------------------------------------------------------------| -------------- | ------ |---------------------------------------------------------------------------|\r\n| Kronos-mini  | [Kronos-Tokenizer-2k](https://huggingface.co/NeoQuasar/Kronos-Tokenizer-2k)     | 2048           | 4.1M   | ✅ [NeoQuasar/Kronos-mini](https://huggingface.co/NeoQuasar/Kronos-mini)  |\r\n| Kronos-small | [Kronos-Tokenizer-base](https://huggingface.co/NeoQuasar/Kronos-Tokenizer-base) | 512            | 24.7M  | ✅ [NeoQuasar/Kronos-small](https://huggingface.co/NeoQuasar/Kronos-small) |\r\n| Kronos-base  | [Kronos-Tokenizer-base](https://huggingface.co/NeoQuasar/Kronos-Tokenizer-base) | 512            | 102.3M | ✅ [NeoQuasar/Kronos-base](https://huggingface.co/NeoQuasar/Kronos-base)   |\r\n| Kronos-large | [Kronos-Tokenizer-base](https://huggingface.co/NeoQuasar/Kronos-Tokenizer-base) | 512            | 499.2M | ❌                                                                         |\r\n\r\n\r\n## 🚀 Getting Started\r\n\r\n### Installation\r\n\r\n1. Install Python 3.10+, and then install the dependencies:\r\n\r\n```shell\r\npip install -r requirements.txt\r\n```\r\n\r\n### 📈 Making Forecasts\r\n\r\nForecasting with Kronos is straightforward using the `KronosPredictor` class. It handles data preprocessing, normalization, predi",
+        "sources": [
+          {
+            "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+            "full_name": "shiyu-coder/Kronos",
+            "language": "Python",
+            "trending_stars_period": 355,
+            "trending_total_forks": null,
+            "trending_total_stars": 41455,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 41455,
+        "topics": [],
+        "updated_at": "2026-10-19T17:56:38Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за день",
+      "rank": 15,
+      "source_kind": "trending_daily",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 317,
+      "description": "Headroom – это библиотека и набор сервисов, позволяющих сжимать выводы инструментов, логи, файлы и фрагменты RAG перед передачей их в большие языковые модели. По заявлению проекта, сжатие уменьшает количество токенов на 20 % для кодовых агентов и от 60 % до 95 % для JSON‑данных, при этом ответы модели остаются неизменными. В репозитории присутствуют как библиотека для локального использования, так и прокси‑сервер и MCP‑сервер для интеграции в существующие пайплайны, что делает его полезным для разработчиков, строящих LLM‑ориентированные сервисы с ограничениями по токенам.",
+      "evidence_quote": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP se",
+      "full_name": "headroomlabs-ai/headroom",
+      "joke": "Если ваш LLM начинает жаловаться на «переполнение токенов», дайте ему Headroom – он будет дышать легче!",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-01-07T19:58:51Z",
+        "default_branch": "main",
+        "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
+        "forks": 5918,
+        "full_name": "headroomlabs-ai/headroom",
+        "html_url": "https://github.com/headroomlabs-ai/headroom",
+        "language": "Python",
+        "license": "Apache-2.0",
+        "open_issues": 483,
+        "pushed_at": "2026-10-17T18:29:50Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
+            "full_name": "headroomlabs-ai/headroom",
+            "language": "Python",
+            "trending_stars_period": 317,
+            "trending_total_forks": null,
+            "trending_total_stars": 76129,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 76129,
+        "topics": [
+          "agent",
+          "ai",
+          "anthropic",
+          "claude-code",
+          "compression",
+          "context-engineering",
+          "context-window",
+          "cursor",
+          "fastapi",
+          "langchain",
+          "llm",
+          "mcp",
+          "openai",
+          "prompt-engineering",
+          "proxy",
+          "python",
+          "rag",
+          "token-optimization",
+          "tokens",
+          "typescript"
+        ],
+        "updated_at": "2026-10-19T17:54:23Z"
+      },
+      "llm_used": true,
+      "period": "GitHub Trending: звёзды за день",
+      "rank": 16,
+      "source_kind": "trending_daily",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 301,
+      "description": "Описание не указано в GitHub.",
+      "evidence_quote": "",
+      "full_name": "withmarbleapp/os-taxonomy",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-07-08T09:27:48Z",
+        "default_branch": "main",
+        "description": null,
+        "forks": 995,
+        "full_name": "withmarbleapp/os-taxonomy",
+        "html_url": "https://github.com/withmarbleapp/os-taxonomy",
+        "language": "JavaScript",
+        "license": "ODbL-1.0",
+        "open_issues": 17,
+        "pushed_at": "2026-10-19T17:39:15Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "description": "",
+            "full_name": "withmarbleapp/os-taxonomy",
+            "language": "JavaScript",
+            "trending_stars_period": 301,
+            "trending_total_forks": null,
+            "trending_total_stars": 5997,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 5997,
+        "topics": [],
+        "updated_at": "2026-10-19T17:54:29Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за день",
+      "rank": 17,
+      "source_kind": "trending_daily",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 167,
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "evidence_quote": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and han",
+      "full_name": "anthropics/claude-code",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2025-02-22T17:41:21Z",
+        "default_branch": "main",
+        "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+        "forks": 27129,
+        "full_name": "anthropics/claude-code",
+        "html_url": "https://github.com/anthropics/claude-code",
+        "language": "TypeScript",
+        "license": null,
+        "open_issues": 15351,
+        "pushed_at": "2026-10-18T22:26:53Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+            "full_name": "anthropics/claude-code",
+            "language": "TypeScript",
+            "trending_stars_period": 167,
+            "trending_total_forks": null,
+            "trending_total_stars": 152500,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 152500,
+        "topics": [],
+        "updated_at": "2026-10-19T17:57:00Z"
+      },
+      "llm_used": false,
+      "period": "GitHub Trending: звёзды за день",
+      "rank": 18,
+      "source_kind": "trending_daily",
+      "total": 30,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 4329,
+      "description": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
+      "evidence_quote": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
+      "full_name": "Gathin23/cleanyourtv",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-10-17T08:12:35Z",
+        "default_branch": "main",
+        "description": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
+        "forks": 518,
+        "full_name": "Gathin23/cleanyourtv",
+        "html_url": "https://github.com/Gathin23/cleanyourtv",
+        "language": "Java",
+        "license": "Other",
+        "open_issues": 35,
+        "pushed_at": "2026-10-19T17:51:00Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "stars": 4329,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 4329,
+        "topics": [
+          "adb",
+          "adblock",
+          "android-tv",
+          "android-tv-launcher",
+          "apple-tv",
+          "bloatware-removal",
+          "claude-code",
+          "debloat",
+          "fire-tv",
+          "google-tv",
+          "launcher",
+          "privacy",
+          "smart-tv",
+          "sony-bravia",
+          "tcl",
+          "vibe-coding",
+          "xiaomi"
+        ],
+        "updated_at": "2026-10-19T17:57:23Z"
+      },
+      "llm_used": false,
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 19,
+      "source_kind": "new_repo",
+      "total": 30,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 3348,
+      "description": "Qwen-Image 2.1 NSFW/姿势出图 skill：作者级提示词配方 + NSFW LoRA + 136 姿势 VNCCS 人偶控制；适用 Claude Code / Codex / Cursor / OpenClaw",
+      "evidence_quote": "Qwen-Image 2.1 NSFW/姿势出图 skill：作者级提示词配方 + NSFW LoRA + 136 姿势 VNCCS 人偶控制；适用 Claude Code / Codex / Cursor / OpenClaw",
+      "full_name": "Arekejoker/qwen21-nsfw-pose-skill",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-10-13T03:09:42Z",
+        "default_branch": "main",
+        "description": "Qwen-Image 2.1 NSFW/姿势出图 skill：作者级提示词配方 + NSFW LoRA + 136 姿势 VNCCS 人偶控制；适用 Claude Code / Codex / Cursor / OpenClaw",
+        "forks": 607,
+        "full_name": "Arekejoker/qwen21-nsfw-pose-skill",
+        "html_url": "https://github.com/Arekejoker/qwen21-nsfw-pose-skill",
+        "language": "Python",
+        "license": "Apache-2.0",
+        "open_issues": 4,
+        "pushed_at": "2026-10-19T04:48:15Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "stars": 3348,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 3348,
+        "topics": [
+          "agent-skill",
+          "comfyui",
+          "image-generation",
+          "openclaw",
+          "pose-control",
+          "qwen-image"
+        ],
+        "updated_at": "2026-10-19T17:47:35Z"
+      },
+      "llm_used": false,
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 20,
+      "source_kind": "new_repo",
+      "total": 30,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 2311,
+      "description": "We're rebuilding and open-sourcing the world’s software from scratch.",
+      "evidence_quote": "We're rebuilding and open-sourcing the world’s software from scratch.",
+      "full_name": "HeyPuter/everything",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-10-13T16:18:22Z",
+        "default_branch": "main",
+        "description": "We're rebuilding and open-sourcing the world’s software from scratch.",
+        "forks": 328,
+        "full_name": "HeyPuter/everything",
+        "html_url": "https://github.com/HeyPuter/everything",
+        "language": "JavaScript",
+        "license": "MIT",
+        "open_issues": 9,
+        "pushed_at": "2026-10-19T14:15:53Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "stars": 2311,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 2311,
+        "topics": [
+          "adobe",
+          "cad",
+          "office",
+          "photoshop",
+          "saas",
+          "spreadsheet"
+        ],
+        "updated_at": "2026-10-19T17:49:28Z"
+      },
+      "llm_used": false,
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 21,
+      "source_kind": "new_repo",
+      "total": 30,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 1394,
+      "description": "Ears for coding agents: let AI hear, review and make sound. CPU-only, open source.",
+      "evidence_quote": "Ears for coding agents: let AI hear, review and make sound. CPU-only, open source.",
+      "full_name": "Leonxlnx/earshot",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-10-15T06:52:46Z",
+        "default_branch": "main",
+        "description": "Ears for coding agents: let AI hear, review and make sound. CPU-only, open source.",
+        "forks": 78,
+        "full_name": "Leonxlnx/earshot",
+        "html_url": "https://github.com/Leonxlnx/earshot",
+        "language": "Python",
+        "license": "MIT",
+        "open_issues": 3,
+        "pushed_at": "2026-10-18T07:22:49Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "stars": 1394,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 1394,
+        "topics": [
+          "ai-agents",
+          "audio",
+          "claude-code",
+          "mcp",
+          "sound-design"
+        ],
+        "updated_at": "2026-10-19T17:52:13Z"
+      },
+      "llm_used": false,
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 22,
+      "source_kind": "new_repo",
+      "total": 30,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 1246,
+      "description": "基于 REA 深度拆解并高保真还原 Claude 官方桌面端 UI。还原 30 个独立 React 组件与 8 项硬核交互物理算法，附带 3000+ 行逆向分析手册。",
+      "evidence_quote": "基于 REA 深度拆解并高保真还原 Claude 官方桌面端 UI。还原 30 个独立 React 组件与 8 项硬核交互物理算法，附带 3000+ 行逆向分析手册。",
+      "full_name": "Caho1/open-claude-ui",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-10-14T14:05:05Z",
+        "default_branch": "main",
+        "description": "基于 REA 深度拆解并高保真还原 Claude 官方桌面端 UI。还原 30 个独立 React 组件与 8 项硬核交互物理算法，附带 3000+ 行逆向分析手册。",
+        "forks": 263,
+        "full_name": "Caho1/open-claude-ui",
+        "html_url": "https://github.com/Caho1/open-claude-ui",
+        "language": "TypeScript",
+        "license": "MIT",
+        "open_issues": 0,
+        "pushed_at": "2026-10-19T06:43:54Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "stars": 1246,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 1246,
+        "topics": [
+          "anthropic",
+          "audioworklet",
+          "claude",
+          "design-system",
+          "framer-motion",
+          "motion-physics",
+          "react",
+          "reverse-engineering",
+          "tailwindcss",
+          "ui-components"
+        ],
+        "updated_at": "2026-10-19T17:48:10Z"
+      },
+      "llm_used": false,
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 23,
+      "source_kind": "new_repo",
+      "total": 30,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 1143,
+      "description": "Native Windows port of Shadow of the Colossus (PS4, CUSA08809) - bring your own game dump. Port nativo para PC.",
+      "evidence_quote": "Native Windows port of Shadow of the Colossus (PS4, CUSA08809) - bring your own game dump. Port nativo para PC.",
+      "full_name": "AjncSystem/ShadowOfTheColossus-PC",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-10-12T13:11:53Z",
+        "default_branch": "main",
+        "description": "Native Windows port of Shadow of the Colossus (PS4, CUSA08809) - bring your own game dump. Port nativo para PC.",
+        "forks": 59,
+        "full_name": "AjncSystem/ShadowOfTheColossus-PC",
+        "html_url": "https://github.com/AjncSystem/ShadowOfTheColossus-PC",
+        "language": "C++",
+        "license": "GPL-2.0",
+        "open_issues": 116,
+        "pushed_at": "2026-10-17T01:41:22Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "stars": 1143,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 1143,
+        "topics": [],
+        "updated_at": "2026-10-19T17:54:56Z"
+      },
+      "llm_used": false,
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 24,
+      "source_kind": "new_repo",
+      "total": 30,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 929,
+      "description": "Official repository for MOSS-Image, a 5B-parameter base DiT model with high-quality text rendering, layout generation, and efficient fine-tuning.",
+      "evidence_quote": "Official repository for MOSS-Image, a 5B-parameter base DiT model with high-quality text rendering, layout generation, and efficient fine-tuning.",
+      "full_name": "OpenMOSS/MOSS-Image",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-10-16T01:18:13Z",
+        "default_branch": "main",
+        "description": "Official repository for MOSS-Image, a 5B-parameter base DiT model with high-quality text rendering, layout generation, and efficient fine-tuning.",
+        "forks": 45,
+        "full_name": "OpenMOSS/MOSS-Image",
+        "html_url": "https://github.com/OpenMOSS/MOSS-Image",
+        "language": "Python",
+        "license": "Apache-2.0",
+        "open_issues": 10,
+        "pushed_at": "2026-10-19T08:30:56Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "stars": 929,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 929,
+        "topics": [
+          "controllable-generation",
+          "foundation-models",
+          "image-generation",
+          "text-rendering",
+          "text-to-image"
+        ],
+        "updated_at": "2026-10-19T17:56:33Z"
+      },
+      "llm_used": false,
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 25,
+      "source_kind": "new_repo",
+      "total": 30,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 923,
+      "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with OpenAI, ChatGPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon and plugin, copilot for 3D, bpy Python scripting, MCP integration.",
+      "evidence_quote": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with OpenAI, ChatGPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon and plugin,",
+      "full_name": "LiCinCan/blender-ai-mcp-addon",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-10-15T22:30:47Z",
+        "default_branch": "main",
+        "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with OpenAI, ChatGPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon and plugin, copilot for 3D, bpy Python scripting, MCP integration.",
+        "forks": 379,
+        "full_name": "LiCinCan/blender-ai-mcp-addon",
+        "html_url": "https://github.com/LiCinCan/blender-ai-mcp-addon",
+        "language": "Python",
+        "license": "MIT",
+        "open_issues": 31,
+        "pushed_at": "2026-10-18T19:03:22Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "stars": 923,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 923,
+        "topics": [
+          "ai-assistant",
+          "blender",
+          "blender-addon",
+          "blender-ai",
+          "blender-automation",
+          "blender-extension",
+          "blender-mcp",
+          "blender-plugin",
+          "blender-python",
+          "blender-scripting",
+          "bpy",
+          "chatgpt",
+          "gpt",
+          "llm",
+          "mcp",
+          "mcp-for-blender",
+          "mcp-server",
+          "model-context-protocol",
+          "opencode",
+          "python"
+        ],
+        "updated_at": "2026-10-19T17:57:42Z"
+      },
+      "llm_used": false,
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 26,
+      "source_kind": "new_repo",
+      "total": 30,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 871,
+      "description": "Overdrive, a PS5 homebrew game store with 1,800+ games.",
+      "evidence_quote": "Overdrive, a PS5 homebrew game store with 1,800+ games.",
+      "full_name": "MyLuxy/overdrive",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-10-14T00:07:08Z",
+        "default_branch": "main",
+        "description": "Overdrive, a PS5 homebrew game store with 1,800+ games.",
+        "forks": 206,
+        "full_name": "MyLuxy/overdrive",
+        "html_url": "https://github.com/MyLuxy/overdrive",
+        "language": "C++",
+        "license": null,
+        "open_issues": 12,
+        "pushed_at": "2026-10-19T17:48:01Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "stars": 871,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 871,
+        "topics": [
+          "exfat",
+          "game-store",
+          "homebrew",
+          "jailbreak",
+          "ps5",
+          "ps5-homebrew",
+          "reverse-engineering",
+          "shadowmountplus"
+        ],
+        "updated_at": "2026-10-19T17:54:31Z"
+      },
+      "llm_used": false,
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 27,
+      "source_kind": "new_repo",
+      "total": 30,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 832,
+      "description": "Self-hosted GPTibo storefront, admin and Go backend — sanitized MIT source",
+      "evidence_quote": "Self-hosted GPTibo storefront, admin and Go backend — sanitized MIT source",
+      "full_name": "CoolkHz/gptibo",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-10-13T15:57:19Z",
+        "default_branch": "main",
+        "description": "Self-hosted GPTibo storefront, admin and Go backend — sanitized MIT source",
+        "forks": 500,
+        "full_name": "CoolkHz/gptibo",
+        "html_url": "https://github.com/CoolkHz/gptibo",
+        "language": "TypeScript",
+        "license": "MIT",
+        "open_issues": 0,
+        "pushed_at": "2026-10-14T02:40:46Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "stars": 832,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 832,
+        "topics": [],
+        "updated_at": "2026-10-19T15:52:40Z"
+      },
+      "llm_used": false,
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 28,
+      "source_kind": "new_repo",
+      "total": 30,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 744,
+      "description": "Real-time WebGPU ocean renderer written from scratch, no engine. FFT waves, whitecaps, sun glitter, physically based sunset sky with clouds, free camera. Built with Claude Code (Opus 5.5). Opens from a single 61 KB HTML file in Chrome.",
+      "evidence_quote": "Real-time WebGPU ocean renderer written from scratch, no engine. FFT waves, whitecaps, sun glitter, physically based sunset sky with clouds, free camera. Built with Claude Code (Op",
+      "full_name": "Noniv/web-ocean",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-10-16T23:49:53Z",
+        "default_branch": "main",
+        "description": "Real-time WebGPU ocean renderer written from scratch, no engine. FFT waves, whitecaps, sun glitter, physically based sunset sky with clouds, free camera. Built with Claude Code (Opus 5.5). Opens from a single 61 KB HTML file in Chrome.",
+        "forks": 114,
+        "full_name": "Noniv/web-ocean",
+        "html_url": "https://github.com/Noniv/web-ocean",
+        "language": "HTML",
+        "license": "MIT",
+        "open_issues": 5,
+        "pushed_at": "2026-10-17T00:39:56Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "stars": 744,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 744,
+        "topics": [],
+        "updated_at": "2026-10-19T17:27:20Z"
+      },
+      "llm_used": false,
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 29,
+      "source_kind": "new_repo",
+      "total": 30,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 741,
+      "description": "知らない分野を、原文にたどりつくまで芋づる式に掘る Claude Code のスキル",
+      "evidence_quote": "知らない分野を、原文にたどりつくまで芋づる式に掘る Claude Code のスキル",
+      "full_name": "MaryCache/imozuru",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-19T17:57:42Z",
+        "created_at": "2026-10-13T05:56:21Z",
+        "default_branch": "main",
+        "description": "知らない分野を、原文にたどりつくまで芋づる式に掘る Claude Code のスキル",
+        "forks": 31,
+        "full_name": "MaryCache/imozuru",
+        "html_url": "https://github.com/MaryCache/imozuru",
+        "language": "Python",
+        "license": "MIT",
+        "open_issues": 6,
+        "pushed_at": "2026-10-19T11:35:10Z",
+        "readme_excerpt": null,
+        "sources": [
+          {
+            "stars": 741,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 741,
+        "topics": [],
+        "updated_at": "2026-10-19T17:25:13Z"
+      },
+      "llm_used": false,
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 30,
+      "source_kind": "new_repo",
+      "total": 30,
+      "trending_source": false
+    }
+  ],
+  "format_version": 3,
+  "generated_at": "2026-10-19T17:57:42Z",
+  "joke": "",
+  "llm_budget": {
+    "actual_requests": 18,
+    "all_descriptions_complete": false,
+    "expected_requests": 0,
+    "local_inference": false,
+    "max_requests_per_run": 40,
+    "max_requests_per_utc_day": 100,
+    "max_requests_with_retries": 0,
+    "paid_fallback": false,
+    "providers": [
+      {
+        "model": "openai/gpt-oss-120b",
+        "name": "Groq"
+      }
+    ],
+    "reason": "no exact source excerpt available for withmarbleapp/os-taxonomy"
+  },
+  "llm_used": false,
+  "manifest": {
+    "api_repositories": [
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:46Z",
+        "forks": 84483,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 334298,
+        "status": "included",
+        "url": "https://api.github.com/repos/morluto/rea"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:46Z",
+        "forks": 5307,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 33540,
+        "status": "included",
+        "url": "https://api.github.com/repos/storytold/artcraft"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:46Z",
+        "forks": 4032,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 44165,
+        "status": "included",
+        "url": "https://api.github.com/repos/boykopovar/AnyPS5"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:47Z",
+        "forks": 3745,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 58270,
+        "status": "included",
+        "url": "https://api.github.com/repos/cathrynlavery/diagram-design"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:47Z",
+        "forks": 10236,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 91437,
+        "status": "included",
+        "url": "https://api.github.com/repos/NationalSecurityAgency/ghidra"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:47Z",
+        "forks": 17982,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 56383,
+        "status": "included",
+        "url": "https://api.github.com/repos/MadsLorentzen/ai-job-search"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:48Z",
+        "forks": 4560,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 43117,
+        "status": "included",
+        "url": "https://api.github.com/repos/anthropics/claude-plugins-official"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:48Z",
+        "forks": 4686,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 52887,
+        "status": "included",
+        "url": "https://api.github.com/repos/K-Dense-AI/scientific-agent-skills"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:48Z",
+        "forks": 1396,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 8479,
+        "status": "included",
+        "url": "https://api.github.com/repos/YuJunZhiXue/dsh-purge"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:49Z",
+        "forks": 9090,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 77022,
+        "status": "included",
+        "url": "https://api.github.com/repos/ruvnet/ruflo"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:49Z",
+        "forks": 29080,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 217521,
+        "status": "included",
+        "url": "https://api.github.com/repos/anomalyco/opencode"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:50Z",
+        "forks": 16561,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 139474,
+        "status": "included",
+        "url": "https://api.github.com/repos/Comfy-Org/ComfyUI"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:50Z",
+        "forks": 789,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 11116,
+        "status": "included",
+        "url": "https://api.github.com/repos/akitaonrails/ai-memory"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:50Z",
+        "forks": 210,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2807,
+        "status": "included",
+        "url": "https://api.github.com/repos/Kruk2/jasna"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:51Z",
+        "forks": 6902,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 41455,
+        "status": "included",
+        "url": "https://api.github.com/repos/shiyu-coder/Kronos"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:51Z",
+        "forks": 5918,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 76129,
+        "status": "included",
+        "url": "https://api.github.com/repos/headroomlabs-ai/headroom"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:51Z",
+        "forks": 995,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 5997,
+        "status": "included",
+        "url": "https://api.github.com/repos/withmarbleapp/os-taxonomy"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:52Z",
+        "forks": 27129,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 152500,
+        "status": "included",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:52Z",
+        "forks": 59,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1143,
+        "status": "included",
+        "url": "https://api.github.com/repos/AjncSystem/ShadowOfTheColossus-PC"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:52Z",
+        "forks": 607,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 3348,
+        "status": "included",
+        "url": "https://api.github.com/repos/Arekejoker/qwen21-nsfw-pose-skill"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:53Z",
+        "forks": 263,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1246,
+        "status": "included",
+        "url": "https://api.github.com/repos/Caho1/open-claude-ui"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:53Z",
+        "forks": 500,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 832,
+        "status": "included",
+        "url": "https://api.github.com/repos/CoolkHz/gptibo"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:53Z",
+        "forks": 518,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 4329,
+        "status": "included",
+        "url": "https://api.github.com/repos/Gathin23/cleanyourtv"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:54Z",
+        "forks": 328,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2311,
+        "status": "included",
+        "url": "https://api.github.com/repos/HeyPuter/everything"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:54Z",
+        "forks": 78,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1394,
+        "status": "included",
+        "url": "https://api.github.com/repos/Leonxlnx/earshot"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:54Z",
+        "forks": 379,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 923,
+        "status": "included",
+        "url": "https://api.github.com/repos/LiCinCan/blender-ai-mcp-addon"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:55Z",
+        "forks": 31,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 741,
+        "status": "included",
+        "url": "https://api.github.com/repos/MaryCache/imozuru"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:55Z",
+        "forks": 206,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 871,
+        "status": "included",
+        "url": "https://api.github.com/repos/MyLuxy/overdrive"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:55Z",
+        "forks": 114,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 744,
+        "status": "included",
+        "url": "https://api.github.com/repos/Noniv/web-ocean"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:56Z",
+        "forks": 45,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 929,
+        "status": "included",
+        "url": "https://api.github.com/repos/OpenMOSS/MOSS-Image"
+      }
+    ],
+    "candidate_count": 30,
+    "candidate_policy": "Weekly Trending, daily Trending, then Search; stable order; max 30; not a global GitHub census.",
+    "captured_at": "2026-10-19T17:57:42Z",
+    "excluded_candidates": [
+      {
+        "full_name": "debpalash/VoiceStudio",
+        "reason": "already reviewed in the digest on 2026-09-29"
+      },
+      {
+        "full_name": "heygen-com/hyperframes",
+        "reason": "already reviewed in the digest on 2026-09-30"
+      },
+      {
+        "full_name": "mksglu/context-mode",
+        "reason": "already reviewed in the digest on 2026-09-30"
+      },
+      {
+        "full_name": "cursor/plugins",
+        "reason": "already reviewed in the digest on 2026-10-01"
+      },
+      {
+        "full_name": "stablyai/orca",
+        "reason": "already reviewed in the digest on 2026-09-29"
+      },
+      {
+        "full_name": "HKUDS/CLI-Anything",
+        "reason": "already reviewed in the digest on 2026-09-29"
+      },
+      {
+        "full_name": "Supermedo/uncharted_pc",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "Tencent-Hunyuan/Hy-Memory",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "Zfinix/eleven",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "ahwootech/BRUTAL",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "aicodeking/leanrea",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "alchaincyf/huashu-motion",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "chenglou/handwired",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "deeplethe/solid-glass",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "feder-cr/git-ai",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "jhaizhou-ops/d2r-mobile",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "ly05010419/MacNativeGames",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "outcrawlai/scout",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "rohit267/net-merge",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "seedds/nxnative",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "threerocks/sweety-handdraw-video",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "xiaoyang111222/cn-math-taxonomy",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "xscreensaver-official/xscreensaver",
+        "reason": "candidate cap after stable source priority"
+      },
+      {
+        "full_name": "zhuyansen/new-term-radar",
+        "reason": "candidate cap after stable source priority"
+      }
+    ],
+    "sources": [
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:43Z",
+        "pagination": "HTML first page as returned; no pagination",
+        "parsed_candidates": 14,
+        "reason": "repository rows parsed from first page",
+        "source": "GitHub Trending weekly",
+        "status": "included",
+        "url": "https://github.com/trending?since=weekly"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:44Z",
+        "pagination": "HTML first page as returned; no pagination",
+        "parsed_candidates": 12,
+        "reason": "repository rows parsed from first page",
+        "source": "GitHub Trending daily",
+        "status": "included",
+        "url": "https://github.com/trending?since=daily"
+      },
+      {
+        "complete": false,
+        "fetched_at": "2026-10-19T17:57:45Z",
+        "pagination": "per_page=30; first page only; Search API result cap applies",
+        "query": "created:>=2026-10-12",
+        "reason": "first page ingested as candidate source only",
+        "returned": 30,
+        "source": "GitHub REST Search repositories created in last 7 days",
+        "status": "included",
+        "total_count": 2646131,
+        "url": "https://api.github.com/search/repositories?q=created%3A%3E%3D2026-10-12&sort=stars&order=desc&per_page=30"
+      },
+      {
+        "candidate": "morluto/rea",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:56Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/morluto/rea/main/README.md"
+      },
+      {
+        "candidate": "storytold/artcraft",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:56Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/storytold/artcraft/main/README.md"
+      },
+      {
+        "candidate": "boykopovar/AnyPS5",
+        "chars": 3039,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:56Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/boykopovar/AnyPS5/main/README.md"
+      },
+      {
+        "candidate": "cathrynlavery/diagram-design",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:56Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/cathrynlavery/diagram-design/main/README.md"
+      },
+      {
+        "candidate": "NationalSecurityAgency/ghidra",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/master/README.md"
+      },
+      {
+        "candidate": "MadsLorentzen/ai-job-search",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/MadsLorentzen/ai-job-search/master/README.md"
+      },
+      {
+        "candidate": "anthropics/claude-plugins-official",
+        "chars": 3807,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/README.md"
+      },
+      {
+        "candidate": "K-Dense-AI/scientific-agent-skills",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/K-Dense-AI/scientific-agent-skills/main/README.md"
+      },
+      {
+        "candidate": "YuJunZhiXue/dsh-purge",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/YuJunZhiXue/dsh-purge/master/README.md"
+      },
+      {
+        "candidate": "ruvnet/ruflo",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/ruvnet/ruflo/main/README.md"
+      },
+      {
+        "candidate": "anomalyco/opencode",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:58Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/anomalyco/opencode/dev/README.md"
+      },
+      {
+        "candidate": "Comfy-Org/ComfyUI",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:58Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/master/README.md"
+      },
+      {
+        "candidate": "akitaonrails/ai-memory",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:58Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/akitaonrails/ai-memory/main/README.md"
+      },
+      {
+        "candidate": "Kruk2/jasna",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:58Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/Kruk2/jasna/main/README.md"
+      },
+      {
+        "candidate": "shiyu-coder/Kronos",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-10-19T17:57:58Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/shiyu-coder/Kronos/master/README.md"
+      }
+    ],
+    "validation_notes": []
+  },
+  "new_repositories_by_total_stars": [
+    {
+      "created_at": "2026-10-17T08:12:35Z",
+      "full_name": "Gathin23/cleanyourtv",
+      "stars": 4329,
+      "url": "https://github.com/Gathin23/cleanyourtv"
+    },
+    {
+      "created_at": "2026-10-13T03:09:42Z",
+      "full_name": "Arekejoker/qwen21-nsfw-pose-skill",
+      "stars": 3348,
+      "url": "https://github.com/Arekejoker/qwen21-nsfw-pose-skill"
+    },
+    {
+      "created_at": "2026-10-13T16:18:22Z",
+      "full_name": "HeyPuter/everything",
+      "stars": 2311,
+      "url": "https://github.com/HeyPuter/everything"
+    },
+    {
+      "created_at": "2026-10-15T06:52:46Z",
+      "full_name": "Leonxlnx/earshot",
+      "stars": 1394,
+      "url": "https://github.com/Leonxlnx/earshot"
+    },
+    {
+      "created_at": "2026-10-14T14:05:05Z",
+      "full_name": "Caho1/open-claude-ui",
+      "stars": 1246,
+      "url": "https://github.com/Caho1/open-claude-ui"
+    },
+    {
+      "created_at": "2026-10-16T01:18:13Z",
+      "full_name": "OpenMOSS/MOSS-Image",
+      "stars": 929,
+      "url": "https://github.com/OpenMOSS/MOSS-Image"
+    },
+    {
+      "created_at": "2026-10-15T22:30:47Z",
+      "full_name": "LiCinCan/blender-ai-mcp-addon",
+      "stars": 923,
+      "url": "https://github.com/LiCinCan/blender-ai-mcp-addon"
+    },
+    {
+      "created_at": "2026-10-14T00:07:08Z",
+      "full_name": "MyLuxy/overdrive",
+      "stars": 871,
+      "url": "https://github.com/MyLuxy/overdrive"
+    },
+    {
+      "created_at": "2026-10-13T15:57:19Z",
+      "full_name": "CoolkHz/gptibo",
+      "stars": 832,
+      "url": "https://github.com/CoolkHz/gptibo"
+    },
+    {
+      "created_at": "2026-10-16T23:49:53Z",
+      "full_name": "Noniv/web-ocean",
+      "stars": 744,
+      "url": "https://github.com/Noniv/web-ocean"
+    }
+  ],
+  "official_github_trending_weekly": [
+    {
+      "full_name": "morluto/rea",
+      "stars": 334298,
+      "url": "https://github.com/morluto/rea",
+      "weekly_trending_stars": 229268
+    },
+    {
+      "full_name": "storytold/artcraft",
+      "stars": 33540,
+      "url": "https://github.com/storytold/artcraft",
+      "weekly_trending_stars": 16379
+    },
+    {
+      "full_name": "boykopovar/AnyPS5",
+      "stars": 44165,
+      "url": "https://github.com/boykopovar/AnyPS5",
+      "weekly_trending_stars": 14224
+    },
+    {
+      "full_name": "cathrynlavery/diagram-design",
+      "stars": 58270,
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "weekly_trending_stars": 7901
+    },
+    {
+      "full_name": "NationalSecurityAgency/ghidra",
+      "stars": 91437,
+      "url": "https://github.com/NationalSecurityAgency/ghidra",
+      "weekly_trending_stars": 7602
+    },
+    {
+      "full_name": "MadsLorentzen/ai-job-search",
+      "stars": 56383,
+      "url": "https://github.com/MadsLorentzen/ai-job-search",
+      "weekly_trending_stars": 5742
+    },
+    {
+      "full_name": "anthropics/claude-plugins-official",
+      "stars": 43117,
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "weekly_trending_stars": 4774
+    },
+    {
+      "full_name": "K-Dense-AI/scientific-agent-skills",
+      "stars": 52887,
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "weekly_trending_stars": 4310
+    },
+    {
+      "full_name": "YuJunZhiXue/dsh-purge",
+      "stars": 8479,
+      "url": "https://github.com/YuJunZhiXue/dsh-purge",
+      "weekly_trending_stars": 2622
+    },
+    {
+      "full_name": "ruvnet/ruflo",
+      "stars": 77022,
+      "url": "https://github.com/ruvnet/ruflo",
+      "weekly_trending_stars": 2117
+    }
+  ],
+  "overview": "",
+  "period_end": "2026-10-19T17:57:42Z",
+  "period_start": "2026-10-12T17:57:42Z",
+  "ranking": "latest observed candidates per repository within the preceding seven days from GitHub Trending weekly/daily and new-repository search; repositories already reviewed in an earlier digest are excluded; weekly Trending +N first, then daily Trending +N, then new repositories by total stars; current total stars are shown separately and do not determine order; not a global GitHub census",
+  "trend_summary": "Недельная подборка новых для дайджеста проектов из ежедневных наблюдений GitHub Trending и поиска репозиториев. Порядок: недельный Trending, дневный Trending, новые репозитории. Метрики относятся к своим датам среза и не суммируются. Это выборка внимания, не рейтинг качества всего GitHub.",
+  "trends": {
+    "forks": [
+      {
+        "delta": 2427,
+        "full_name": "anthropics/claude-code"
+      },
+      {
+        "delta": 935,
+        "full_name": "vectorize-io/hindsight"
+      },
+      {
+        "delta": 639,
+        "full_name": "debpalash/VoiceStudio"
+      },
+      {
+        "delta": 405,
+        "full_name": "paperclipai/paperclip"
+      },
+      {
+        "delta": 304,
+        "full_name": "rohitg00/ai-engineering-from-scratch"
+      },
+      {
+        "delta": 253,
+        "full_name": "pytorch/pytorch"
+      },
+      {
+        "delta": 239,
+        "full_name": "vercel/next.js"
+      },
+      {
+        "delta": 215,
+        "full_name": "dream-num/univer"
+      },
+      {
+        "delta": 207,
+        "full_name": "akitaonrails/ai-memory"
+      },
+      {
+        "delta": 143,
+        "full_name": "yetone/magpie"
+      }
+    ],
+    "percent": [
+      {
+        "delta": 8031,
+        "full_name": "debpalash/VoiceStudio"
+      },
+      {
+        "delta": 5619,
+        "full_name": "vectorize-io/hindsight"
+      },
+      {
+        "delta": 4709,
+        "full_name": "paperclipai/paperclip"
+      },
+      {
+        "delta": 4315,
+        "full_name": "anthropics/claude-code"
+      },
+      {
+        "delta": 2708,
+        "full_name": "dream-num/univer"
+      },
+      {
+        "delta": 2567,
+        "full_name": "akitaonrails/ai-memory"
+      },
+      {
+        "delta": 2494,
+        "full_name": "yetone/magpie"
+      },
+      {
+        "delta": 2086,
+        "full_name": "stablyai/orca"
+      },
+      {
+        "delta": 2076,
+        "full_name": "rohitg00/ai-engineering-from-scratch"
+      },
+      {
+        "delta": 1777,
+        "full_name": "byoungd/up"
+      }
+    ]
+  }
+}
