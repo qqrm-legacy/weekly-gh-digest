@@ -6746,7 +6746,7 @@
     },
     {
       "full_name": "AjncSystem/ShadowOfTheColossus-PC",
-      "captured_at": "2026-10-19T17:57:42Z",
+      "captured_at": "2026-10-19T18:16:51Z",
       "stars": 1143,
       "forks": 59,
       "language": "C++",
@@ -6765,13 +6765,13 @@
           "type": "new_repo_search"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "# Shadow of the Colossus — PC (port nativo / native port) · v0.57\n\n**[Português](#português)** · **[English](#english)** · [Releases](../../releases) · [Changelog](CHANGELOG.md)\n\n> **Nenhum arquivo do jogo nem da Sony está incluído / No game or Sony files are included.**\n> Você precisa do seu próprio dump do jogo e, para ter som, de dois módulos do seu próprio\n> console. / You need your own game dump and, for sound, two modules from your own console.\n> Este projeto não tem ligação com a Sony Interactive Entertainment nem com a Bluepoint Games. /\n> This project is not affiliated with Sony Interactive Entertainment or Bluepoint Games.\n\n---\n\n## Português\n\nPort nativo do **Shadow of the Colossus** de PS4 (Bluepoint, 2018; CUSA08809, versão EU 1.01)\npara **Windows 10/11**. O código x86-64 do próprio jogo roda direto na CPU do PC e a GPU do PS4\né traduzida para Vulkan. Não é um emulador completo: é um carregador com as funções de sistema\nde que o jogo precisa, no estilo do [bloodborne_pc](https://github.com/Supermedo/bloodborne_pc).\n\n### Novidades\n\n| Versão | Melhorias e correções |\n|---|---|\n| **0.57** | **Placas AMD:** correção das cores verdes/rosas na névoa e nos personagens (as AMD passam a usar o caminho de 32 threads da NVIDIA; diagnóstico da issue #7, ainda não testado numa AMD). **Opção nova** no lançador para desligar o acesso direto à memória: ~10% mais FPS, água distante mais lisa. |\n| **0.56** | **Água do mundo aberto com ondas:** lagos e rios abaixo das cascatas não ficam mais lisos como espelho (uma instrução de shader, `S_WQM_B64`, era ignorada). **Lago de cima ondula e reflete até longe** (acesso direto à memória ligado por padrão, como no Pink-shadPS4). Árvores distantes sem \"lixo colorido\". |\n| **0.0.13** | **Sem quedas:** corrigida a queda na abertura/menu da 0.0.12 (o jogo pedia mais texturas do que cabe no pool). Testado ~40 min pelo mapa, com dois carregamentos de save. **Reflexos do lago** em quase toda a superfície, com ondulação (uma trava de laços dos shaders cortava os raios do reflexo). |\n| **0.0.12** | **Texturas nítidas de volta, sem o jogo fechar:** a corrupção de memória que derrubava o jogo depois de carregar um save foi corrigida, e o streaming de texturas voltou (pedras e paredes bem mais nítidas). **Água:** respingos, anéis e espuma ao nadar; o lago reflete o céu e o brilho do sol; reflexos de ambiente com o *cubemap* certo de cada *probe* (correção do Pink-shadPS4). |\n| **0.0.11** | Corrigida a grama com textura de \"lixo colorido\" da 0.0.10. |\n\nDetalhes de cada versão no [CHANGELOG](CHANGELOG.md).\n\n### Problemas conhecidos\n\n- Na primeira abertura depois de atualizar, os shaders são compilados de novo: o primeiro\n  carregamento demora e engasga.\n- Placas **AMD**: a 0.57 traz a correção das cores verdes/rosas ([#7](../../issues/7)), ainda sem\n  teste numa AMD. Se continuar, mande o seu `user/last_run.log` na issue.\n- Com 8 GB de memória de vídeo, o uso fica perto do limite em áreas grandes.\n\n### Download e uso\n\n1. Baixe o `SotC-PC.zip` da página [Releases](../../releases) e descompacte numa pasta.\n2. Abra o **`SotC.exe`**. Na primeira vez o lançador procura sozinho, nos discos do PC:\n   - a pasta do jogo (o dump CUSA08809, com `eboot.bin`, `sce_module` e `sce_sys`);\n   - os módulos de som (`libSceNgs2.sprx` e `libSceUlt.sprx`) de um shadPS4 que você já\n     tenha, na pasta `user/sys_modules`, e copia para a pasta de dados do port;\n   - um save do jogo no shadPS4, que ele oferece importar;\n   - as DLCs do jogo, se houver: a pasta `addcont` do shadPS4, ou uma pasta com uma subpasta por DLC.\n     Também dá para escolher em **Jogo e saves > Pasta de DLC**.\n3. Confira a página **Jogo e saves**. A **biblioteca de jogos** funciona como a do shadPS4:\n   adicione as pastas dos seus jogos e escolha o jogo na lista.\n4. Clique em **JOGAR**.\n\nRequisitos: Windows 10/11 64-bit, placa de vídeo com **Vulkan 1.3** (NVIDIA, AMD ou Intel\ncom driver recente). Não precisa instalar Python.\n\n#### Os arquivos que você precisa ter\n\n| O quê | De onde | Para quê |\n|---|---|---|\n| Dump do jogo CUSA08809 (EU 1.01 de preferência) | o seu PS4, pelo GoldHEN | o jogo |\n| `libSceNgs2.sprx`, `libSceUlt.sprx` decriptados | o seu PS4 (`/system/common/lib/`, FTP do GoldHEN), ou o `user/sys_modules` do shadPS4 | som (sem eles o jogo roda mudo) |\n\nOs modos de patch (60 FPS, filtro 16x) só valem para a versão EU 1.01; nas outras o jogo roda\nnormalmente, a 30 FPS.\n\n### O lançador\n\n- **Jogar:** confere a versão do jogo, o som, os saves e a placa de vídeo antes de abrir;\n  opções rápidas de saída, upscaler, 60 FPS, filtro 16x e tela cheia.\n- **Jogo e saves:** biblioteca de jogos, busca automática no PC, importação de saves do shadPS4.\n- **Imagem e FPS:** saída 720p a 4K (o jogo renderiza em 1080p e o FSR 1 + RCAS amplia),\n  modo PS4 Pro (o jogo oferece Cinematográfico/Desempenho no próprio menu), efeitos (vinheta,\n  névoa, SSAO) e opções de desempenho.\n- **Controles:** controle (DualShock 4, DualSense, Xbox) automático; c"
     },
     {
       "full_name": "Arekejoker/qwen21-nsfw-pose-skill",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 3348,
-      "forks": 607,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 3347,
+      "forks": 608,
       "language": "Python",
       "description": "Qwen-Image 2.1 NSFW/姿势出图 skill：作者级提示词配方 + NSFW LoRA + 136 姿势 VNCCS 人偶控制；适用 Claude Code / Codex / Cursor / OpenClaw",
       "html_url": "https://github.com/Arekejoker/qwen21-nsfw-pose-skill",
@@ -6784,23 +6784,23 @@
         "qwen-image"
       ],
       "created_at": "2026-10-13T03:09:42Z",
-      "updated_at": "2026-10-19T17:47:35Z",
+      "updated_at": "2026-10-19T18:08:43Z",
       "pushed_at": "2026-10-19T04:48:15Z",
       "license": "Apache-2.0",
       "open_issues": 4,
       "default_branch": "main",
       "sources": [
         {
-          "stars": 3348,
+          "stars": 3347,
           "type": "new_repo_search"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "# qwen21-nsfw-pose\n\n[![Package checks](https://github.com/Arekejoker/qwen21-nsfw-pose-skill/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/Arekejoker/qwen21-nsfw-pose-skill/actions/workflows/validate.yml)\n\n**Qwen-Image 2.1 本地 NSFW / 姿势出图完整配方** — 作者级提示词结构 + NSFW LoRA + 136 个 3D 姿势库 + VNCCS 人偶精确姿势控制。\n\n基于 ComfyUI + `qwen_image_2.1_int8_convrot` 底模（与 Civitai 作者同款底模），复刻并验证过 Civitai 作者样图（2026-10-12）。\n\n- 适用：Claude Code / Codex / Cursor / OpenClaw（agent 技能）+ 人类手动使用\n- 内容：可跟跑的作者案例、强制配方、姿势大胆度阶梯（L0–L3）、完整依赖与安装指南\n\n**演示**（3D 人偶调姿势 → 一键生成 → 成品，Route ④）：\n\n<img src=\"references/demo_pose_studio.gif\" width=\"100%\" alt=\"演示：3D 人偶变形 → 实时生成 → 成品\" />\n\n---\n\n## 效果展示\n\n### 本配方输出：同一海边场景的三级对照（L0 → L1 → L2）\n\n| L0 · 全着装，无 LoRA（提示词即全部） | L1 · 湿身泳装 + LoRA@1.0 | L2 · 极低机位 + 湿身蹲姿 + LoRA@1.0 |\n| --- | --- | --- |\n| <img src=\"references/pose_examples/01_seaside.png\" width=\"290\" /> | <img src=\"references/pose_examples/01b_seaside_lora.png\" width=\"290\" /> | <img src=\"references/pose_examples/06_l2_squat_lowangle.png\" width=\"290\" /> |\n\n三张图同场景递进：L0 只有提示词；L1 加 LoRA + 显式皮肤/水珠描写；L2 再加低机位与开合姿态。**LoRA 负责质感，提示词负责信息密度，机位负责大胆度。**\n\n### NSFW 效果（⚠️ 以下图片包含裸露内容）\n\n<details>\n<summary><picture><img src=\"references/author_samples_cover_cursor.gif?v=3\" width=\"100%\" alt=\"作者原图（NSFW）· 点击卡片展开\" /></picture><br/><b>👇 点击上方卡片展开作者原图（含裸露内容 · 18+，再点收起）</b></summary>\n\n**作者原图**（Civitai showcase，本配方复刻的目标）：\n\n| 作者 · 淋浴（tawsLoRa） | 作者 · 按摩（tawsLoRa） | 作者 · 自拍（TheseAlpacas） |\n| --- | --- | --- |\n| <img src=\"downloads/samples/taws_v13_shower_author.jpg\" width=\"300\" /> | <img src=\"downloads/samples/taws_v13_massage_author.jpg\" width=\"300\" /> | <img src=\"downloads/samples/thesealpacas_v2_selfie_author.jpg\" width=\"300\" /> |\n\n</details>\n\n用 §「快速开始」的命令可复刻淋浴那张（复刻输出已验证与作者原图同场景同构图，见 `downloads/samples/phase5_meta.json` 与本文快速开始一节）。\n\n### 3D 人偶精确姿势（Route ④，136 姿势库）\n\n默认人物图 `references/src_standing.png`；姿势 = 骨骼旋转 JSON（MakeHuman 网格 + three.js 渲染），\n换姿势且保身份。姿势库来源：HuggingFace 4 个公开仓库（`Totemistyk/General_Poses`、\n`Totemistyk/Ballet_PoseStudio`、`MIUProject/VNCCS_PoseLibrary_Main`、\n`MIUProject/MySuperPoseRepo`）+ 55 个手工精选，共 **136 个**。\n\n---\n\n## 快速开始（作者案例跟跑）\n\n前置安装见 [install/setup.md](install/setup.md)。装好后先跑一次自检（只读，不改动任何东西）：\n\n```bash\npython3 scripts/doctor.py\n```\n\n它逐项检查 ComfyUI 连通性、底模/LoRA、VNCCS 节点、姿势库、浏览器后端，并给出缺失项的修复指引。\n全绿后一条命令复刻作者淋浴样图（~5 分钟）：\n\n```bash\npython3 scripts/qwen_pose_test.py \\\n  --mode t2i --name author_case_shower \\\n  --prompt \"$(cat prompts/taws_v13_shower.txt)\" \\\n  --seed 80964 \\\n  --steps 50 --cfg 2.5 --sampler er_sde --scheduler beta \\\n  --width 1152 --height 1728 \\\n  --lora \"qwen2_1-femaledVaginus-nsfw-v1_3-fine_L22-31.safetensors\" \\\n  --lora-strength 1.0 \\\n  --out outputs/author_case/shower.png\n```\n\n对比对象：`downloads/samples/taws_v13_shower_author.jpg`。\n完整元数据（提示词/参数/seed/完整工作流）：`downloads/samples/phase5_meta.json`。\n\n### 硬件要求（参考）\n\n底模为 Qwen-Image 2.1 int8 套件，模型文件合计约 16GB（diffusion 6.8GB / text encoder 8.7GB / VAE 0.6GB），LoRA 各自 ≤608MB。\n\n- **最低**：NVIDIA 12GB 显存 + 32GB 内存——能跑，ComfyUI 会自动把部分模型卸载到内存，出图慢一些\n- **推荐**：24GB 显存（3090/4090 级）+ 32–64GB 内存——模型基本常驻，体验最顺\n- **8GB 显存**：建议用 GGUF 量化版（社区实测 12–16GB 显存可跑 Q4；8GB 靠 offload 会明显更慢）\n- 纯 CPU 不推荐（单张图耗时过长）\n- 硬盘预留 ~40GB；CPU 无特殊要求（现代 x86_64/ARM 均可）；Linux 最省事；Windows 可原生运行基础脚本（doctor / `--list-poses` / 媒体锁回退，社区贡献），完整流程仍建议 WSL2；Mac（Apple Silicon）见下方单独小节\n- 路线④额外需要一个可连接的桌面浏览器（Playwright/CDP，见 `install/setup.md`）\n\n本仓库案例图与实测数据来自统一内存设备（DGX Spark）：1024×1024、40 步约 32 秒/张，峰值增量约 7–10GB。\n\n### macOS（Apple Silicon）\n\n- 适用 M 系芯片（M1 及以上）；Intel Mac 不建议\n- **模型选择看统一内存**：≥32GB 直接用本仓库原版 int8 套件（ComfyUI + MPS）；16–32GB 建议改用 GGUF 量化版（搭配 ComfyUI-GGUF；社区实测 Q8 更快、Q4 更省内存）\n- **速度预期：分钟级/张**——社区报告：M5 Pro 48GB 跑 int8 约 144 秒/1024；M1 Max 64GB 约 7–10 分钟/张（加缓存优化节点如 Comfyui-Spectrum-Qwen2.1 可提速 2–3 倍）。对比本仓库 DGX Spark 实测 32 秒/张，仅供参考\n- 已知坑：编辑模式在 MPS 上偶发 VAE 编码异常，可用 ComfyUI 的 `--cpu-vae` 绕过（ComfyUI issue #16433，已有修复讨论）；内存紧张时建议单张生成、关闭其他大内存应用\n- 路线兼容：①②③ 脚本在 macOS 可直接运行（纯 Python 标准库、POSIX 兼容）；④ 需 `playwright install chromium`（macOS 版），`install/setup.md` 中的 AppArmor 提示不适用\n- ⚠️ 以上 Mac 数据来自社区报告，维护者没有 Mac 硬件、未经实测；如果你在 Mac 上跑通或遇到问题，欢迎开 issue 反馈，我们会持续更新本说明\n\n## 四条路线\n\n| 需求 | 路线 | 命令 |\n| --- | --- | --- |\n| 新 NSFW/性感图（文字出图） | ① T2I + NSFW LoRA（必开） | `scripts/qwen_pose_test.py --mode t2i` |\n| 已有角色图换姿势（保脸/保服装） | ② Edit | `scripts/qwen_pose_test.py --mode edit` |\n| 已有 3D 人偶姿势渲染图，脚本换姿势（不开浏览器） | ③ 脚本姿势迁移（人偶参考 + VNCCS LoRA） | `scripts/run_pose_transfer.py --char <角色图> --pose-ref <人偶渲染图> --out <出图.png>` |\n| 指定 3D 姿势库里的精确姿势 | ④ VNCCS PoseStudio | `scripts/run_vnccs_ui.py --pose <name> [--prompt \"<场景>\"]` |\n\n路线③的人偶参考图可由路线④的运行自动保存（输出目录里的 `doll_*.png`），或任何 3D 姿态渲染图。\n不要用照片/插画当姿势参考——模型会把参考人物拼进画面，或直接重画参考人物；请使用无身份特征的 3D 人偶渲染图（路线③/④）。\n\n姿势怎么选（大胆度阶梯 L0–L3、用户要求→姿势族映射表）：见 `SKILL.md` §4，或\n`scripts/run_vnccs_ui.py --list-poses` 列出全部 136 个姿势。\n\n## 配方要点（摘要）\n\n- `er_sde` + `beta`，CFG 2.5，50 步，1152×1728 竖版\n- **NSFW LoRA 永远开**（默认 `femaledVaginus v1.3b` @ 1.0）\n- 提示词必须按作者结构写满 7 要素、300–1500 字符、含 LoRA 触发词\n- 弱化配方（无 LoRA/短提示词/减步数）前必须告知用户代价，不许默默减弱\n\n完整规则与证据：`SKILL.md`。\n\n## 目录结构\n\n```\n├── SKILL.md            # agent 技能（完整规则）"
     },
     {
       "full_name": "Caho1/open-claude-ui",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 1246,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 1247,
       "forks": 263,
       "language": "TypeScript",
       "description": "基于 REA 深度拆解并高保真还原 Claude 官方桌面端 UI。还原 30 个独立 React 组件与 8 项硬核交互物理算法，附带 3000+ 行逆向分析手册。",
@@ -6818,24 +6818,24 @@
         "ui-components"
       ],
       "created_at": "2026-10-14T14:05:05Z",
-      "updated_at": "2026-10-19T17:48:10Z",
+      "updated_at": "2026-10-19T18:14:03Z",
       "pushed_at": "2026-10-19T06:43:54Z",
       "license": "MIT",
       "open_issues": 0,
       "default_branch": "main",
       "sources": [
         {
-          "stars": 1246,
+          "stars": 1247,
           "type": "new_repo_search"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "# Open Claude UI (`open-claude-ui`)\n\n<p align=\"center\">\n  <img src=\"assets/images/logo.svg\" width=\"96\" height=\"96\" alt=\"Open Claude UI Logo\" />\n</p>\n\n<p align=\"center\">\n  <strong>基于 REA 深度拆解，高保真生产级还原 Claude 设计系统 (CDS) 与工程交互物理学。</strong>\n</p>\n\n<p align=\"center\">\n  <strong>简体中文</strong> · <a href=\"README-en.md\">English</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/Caho1/open-claude-ui/stargazers\"><img src=\"https://img.shields.io/github/stars/Caho1/open-claude-ui?style=flat&logo=github&color=ea580c\" alt=\"GitHub Stars\" /></a>\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-blue.svg\" alt=\"License: MIT\" /></a>\n  <a href=\"https://github.com/morluto/rea\"><img src=\"https://img.shields.io/badge/Reverse%20Engineered%20with-REA-ea580c?logo=github\" alt=\"Reverse Engineered with REA\" /></a>\n  <a href=\"assets/README.md\"><img src=\"https://img.shields.io/badge/assets-clean--room%20compliance-success\" alt=\"Asset Compliance\" /></a>\n  <a href=\"https://www.typescriptlang.org/\"><img src=\"https://img.shields.io/badge/TypeScript-5.5+-blue?logo=typescript\" alt=\"TypeScript\" /></a>\n  <a href=\"https://react.dev/\"><img src=\"https://img.shields.io/badge/React-18+-61DAFB?logo=react\" alt=\"React\" /></a>\n  <a href=\"https://tailwindcss.com/\"><img src=\"https://img.shields.io/badge/TailwindCSS-3.4+-38B2AC?logo=tailwind-css\" alt=\"TailwindCSS\" /></a>\n  <a href=\"https://www.framer.com/motion/\"><img src=\"https://img.shields.io/badge/Framer_Motion-11+-0055FF?logo=framer\" alt=\"Framer Motion\" /></a>\n</p>\n\n---\n\n## 📖 简介 (Introduction)\n\n`open-claude-ui` 是基于对现代桌面端 AI 客户端进行深度拆解与逆向分析构建的高保真开源 UI 组件库与动效引擎。\n\n整个逆向推导、反混淆静态分析与 ASAR 资源解构，均依托于先进的多平台逆向工程框架 **[REA (Reverse Engineer Anything)](https://github.com/morluto/rea)** 完成——通过 REA 的静态 AST 解析、闭包代码反混淆与运行时跟踪能力，穿透生产级压缩包，精准还原了底层工程物理常数与数学模型。\n\n不同于市面上常见的盲猜或近似复刻，本项目所有组件规范、物理阻尼常数、着色器关键帧及音频管道均**严格依据真实前端架构反编译验证**提炼而成：\n* **温润的人文质感 (Editorial Warmth)**：纯正陶土橙（Clay `#d97757`）、4 层微对比表面阶梯（Surface 0-3）与视网膜高分屏发丝细边补偿（Hairline Ring）；\n* **严苛的交互物理学 (Interaction Physics)**：4 套生产级物理弹簧参数调校、4px 指针移动死区、CJK 输入法合成守卫、7 档渐隐非线性 Alpha 遮罩；\n* **高阶视听与系统架构 (Audiovisual & Architecture)**：基于原生 Web Audio API 的零延迟合成提示音、以光标为锚点的画廊跑道平移缩放、macOS 桌面毛玻璃透明融合与 Cowork 多代理协同拓扑。\n\n> 💡 **架构分层说明 (Architecture & Portability)**：  \n> 本项目的 **令牌层 (Tokens) 与纯 CSS 表现层可脱离 React 与 Tailwind 单独使用**。无论是自研桌面 Harness（如 DSH、各类 Agent 桌面容器）、传统 Web 页面还是 Vue/Svelte 宿主，只需引入 `@import \"open-claude-ui/tokens.css\";` 或 `@import \"open-claude-ui/pure.css\";`，即可直接消费全量 183 个设计令牌、Zero-JS 原生滚动消隐遮罩（`[data-cds-scroll-fade]`）与核心动效类，详情见下文快速上手。\n\n> ⚖️ **版权与合规声明 (DMCA & Assets Policy)**：  \n> 本开源项目**不公开分发任何专有二进制资产**（包括商业字体 `.ttf` 与录音 `.mp3`）。本项目提供原生系统级字体回退栈与 Web Audio API 纯代码合成音效，完全自包含、合规安全。详情参见 [assets/README.md](assets/README.md)。\n\n---\n\n## 🌟 核心特性 (Key Features)\n\n```mermaid\ngraph TD\n    OCUI[\"open-claude-ui\"]\n    \n    OCUI --> Tokens[\"1. 设计哲学与令牌体系<br/>(Surfaces 0-3, Clay, Hairlines, System Fonts)\"]\n    OCUI --> Atoms[\"2. 基础原子交互控件<br/>(CdsButton, SegmentedControl, StatusIndicators, Dialog)\"]\n    OCUI --> Stream[\"3. 会话流与指令引擎<br/>(Composer, IME Guard, Model Switcher, MCP Cards)\"]\n    OCUI --> Motion[\"4. 动效物理学与着色器<br/>(Spring Physics, Ambient Shimmer, Scroll Fade Masks)\"]\n    OCUI --> Media[\"5. 视听多媒体与产物交互<br/>(Synthetic Audio, Lightbox Pan/Zoom, Split Resizer, Epitaxy)\"]\n    OCUI --> Desktop[\"6. 桌面架构与协作拓扑<br/>(macOS Vibrancy, Sidebar DnD, Cowork Canvas, A11y Roving)\"]\n    OCUI --> Setup[\"7. 完整工程规范与开箱即用<br/>(Tailwind, CSS Themes, Zero-Binary Dependency)\"]\n```\n\n1. **30 个生产级独立代码模块**：包含 11 个基础原子控件 + 19 个深度架构物理学模块与 React Hooks，即拷即用，零黑盒依赖。\n2. **纯原生系统级排版与音效**：支持系统高保真字体回退栈，内置基于 Web Audio 振荡器的零延迟提示音合成引擎。\n3. **交互式组件故事书 (Storybook Preview)**：内置单文件开箱即用的离线 Storybook，支持浏览器直接打开预览全部组件动效。\n4. **七大领域分卷完整技术手册**：附带深度逆向分析开发手册 [`docs/Claude Design System (CDS).md`](docs/Claude%20Design%20System%20(CDS).md)。\n\n---\n\n## 📚 七大篇章逆向分析手册 (Complete Technical Manual)\n\n整个仓库最具工业价值的核心是这本长达 3,000+ 行、31 个核心子节的深度逆向工程手册：[`docs/Claude Design System (CDS).md`](docs/Claude%20Design%20System%20(CDS).md)。\n\n它不仅记录了所有反编译源码取证位置，还详尽解构了 Anthropic 解决当代大模型产品前端痛点的系统架构方案：\n\n### 📖 第一篇：设计哲学与设计令牌体系\n* **[1.1 设计哲学与视觉调性](docs/v1/01-设计哲学与设计令牌体系.md#11-设计哲学与视觉调性)**：温润的人文质感（Editorial Warmth）、四层低对比表面微阶梯、高帧率轻负担动效。\n* **[1.2 表面体系与色彩阶梯](docs/v1/01-设计哲学与设计令牌体系.md#12-表面体系与色彩阶梯)**：Surface 0 至 3 表面明度阶梯（浅色 `#f5f5f3` 至 `#ffffff`，深色 `#0b0b0a` 至 `#20201e`）与品牌陶土橙（`#d97757`）。\n* **[1.3 控件尺寸与精密圆角矩阵](docs/v1/01-设计哲学与设计令牌体系.md#13-控件尺寸与精密圆角矩阵)**：外框 Composer 20px、气泡 18px、面板 10px、按钮 6/8/10px 的精密圆角拓扑。\n* **[1.4 发丝细边、微光阴影与边框防臃肿体系](docs/v1/01-设计哲学与设计令牌体系.md#14-发丝细边微光阴影与边框防臃肿体系)**：高分屏 0.5px 发丝补偿（Hairline Ring）、单闭合边框原则、双环 Popover 弥散微光投影。\n* **[1.5 字体排版与图标对齐系统约束](docs/v1/01-设计哲学与设计令牌体系.md#15-字体排版与图标对齐系统约束)**：深色模式视网膜字重逆补偿算法（暗色下反向减细以防文字发胀）、行内图标 `-.125em` 光学垂直居中。\n* **[1.6 基础动效令牌体系](docs/v1/01-设计哲学与设计令牌体系.md#16-基础动效令牌体系)**：物理时间常数矩阵（70ms 触觉微震、120ms 几何咬合、300ms 面板滑入）与非对称贝塞尔曲线。\n\n### 🧩 第二篇：基础原子组件与交互控件\n* **[2.1 全能按钮控件阶梯](docs/v1/02-基础原子组件与交互控件.md#21-全能按钮控件阶梯)**：4 级尺寸阶梯（XS/SM/MD/LG）、5 大变体（Primary/Secondary/Ghost/Outline/Danger）、`active:scale-[0.98]` 物理触觉。\n* **[2.2 分段滑动选择胶囊](docs/v"
     },
     {
       "full_name": "Comfy-Org/ComfyUI",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 139474,
-      "forks": 16561,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 139479,
+      "forks": 16562,
       "language": "Python",
       "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
       "html_url": "https://github.com/Comfy-Org/ComfyUI",
@@ -6848,10 +6848,10 @@
         "stable-diffusion"
       ],
       "created_at": "2023-01-17T03:15:56Z",
-      "updated_at": "2026-10-19T17:57:49Z",
+      "updated_at": "2026-10-19T18:15:54Z",
       "pushed_at": "2026-10-19T17:21:54Z",
       "license": "GPL-3.0",
-      "open_issues": 5273,
+      "open_issues": 5274,
       "default_branch": "master",
       "sources": [
         {
@@ -6860,7 +6860,7 @@
           "language": "Python",
           "trending_stars_period": 1011,
           "trending_total_forks": null,
-          "trending_total_stars": 139473,
+          "trending_total_stars": 139479,
           "type": "trending_daily"
         }
       ],
@@ -6868,7 +6868,7 @@
     },
     {
       "full_name": "CoolkHz/gptibo",
-      "captured_at": "2026-10-19T17:57:42Z",
+      "captured_at": "2026-10-19T18:16:51Z",
       "stars": 832,
       "forks": 500,
       "language": "TypeScript",
@@ -6887,13 +6887,13 @@
           "type": "new_repo_search"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "# GPTibo\n\n**可自托管的数字商品商城，包含用户前台、管理后台与代理工作台。**\n\n[![CI](https://github.com/CoolkHz/gptibo/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/CoolkHz/gptibo/actions/workflows/verify.yml)\n[MIT License](LICENSE) · [快速开始](#快速开始) · [后端文档](services/storefront/README.md) · [安全说明](SECURITY.md)\n\nGPTibo 将商品展示、下单支付、订单交付、售后处理和代理商店管理整合在同一套系统中。前端使用 React 与 TypeScript，后端提供 Go + PostgreSQL 和 Cloudflare Workers + D1 两种实现，便于按部署环境选择和二次开发。\n\n原站点已停止运营，项目现以 MIT 许可证开放源码。支付与供应商接入使用匿名适配器，需要配置自己的服务后使用。\n\n## 功能\n\n| 模块 | 能力 |\n| --- | --- |\n| 用户商城 | 商品与套餐展示、下单、支付状态、订单查询、售后申请、中英文界面、深浅色主题 |\n| 管理后台 | 商品定价、订单与客户管理、退款处理、代理管理、结算与通知配置 |\n| 代理工作台 | 独立商店、品牌设置、自定义域名、商品管理、订单统计与下级代理管理 |\n| 业务后端 | 身份验证、支付回调、采购适配、异步任务、邮件通知与交易状态管理 |\n| 开发与部署 | 数据库迁移、Docker Compose、自动化测试、GitHub Actions 与源码安全扫描 |\n\n## 技术栈\n\n| 层级 | 技术 |\n| --- | --- |\n| 前端 | React 19、TypeScript、Vite、Tailwind CSS |\n| Go 后端 | Go、Gin、PostgreSQL，API 与业务 Worker 分进程运行 |\n| Cloudflare 后端 | Workers、D1、Wrangler |\n| 邮件 | React Email |\n| 验证 | Node.js Test Runner、Go Test、Gitleaks |\n\n两套后端均服务于商城。当前公开版本包含商城侧供应商适配器，**不包含独立供货平台及供应商执行系统**。\n\n## 快速开始\n\n### 环境准备\n\n- Node.js 24、npm、Git、Python 3。\n- 使用 Go 后端时，准备 Docker Compose；原生开发需要 Go 1.26+ 和 PostgreSQL。\n- 使用 Cloudflare 后端时，通过项目内的 Wrangler 运行本地环境。\n\n```sh\ngit clone https://github.com/CoolkHz/gptibo.git\ncd gptibo\nnpm ci\n```\n\n选择下面一种后端方式运行。\n\n### 方式一：Go + PostgreSQL\n\n在仓库根目录执行以下命令，初始化本地秘密、数据库和运行角色：\n\n```sh\ncd services/storefront\npython3 scripts/init-secrets.py\ncp .env.example .env\ndocker compose config --quiet\ndocker compose build api\ndocker compose up -d --wait postgres\ndocker compose --profile maintenance run --rm maintenance migrate\ndocker compose --profile maintenance run --rm maintenance grant-runtime\ndocker compose up -d --wait api worker\n```\n\n另开终端，在仓库根目录启动前端：\n\n```sh\nnpx vite --config services/storefront/vite.config.ts\n```\n\n访问 `http://127.0.0.1:5175`。前端会将 `/api` 请求代理到本机 Go API 的 `8093` 端口。\n\n原生启动、管理员登录、邮件服务与接入配置见 [Go 后端文档](services/storefront/README.md)。Windows 用户可使用后端目录中的 `scripts/init-secrets.ps1` 初始化秘密。\n\n### 方式二：Cloudflare Workers + D1\n\n在仓库根目录执行：\n\n```sh\ncp .dev.vars.example .dev.vars\nnpx wrangler d1 migrations apply gptibo-local --local\nnpm run preview:worker\n```\n\n默认访问 `http://127.0.0.1:8787`。需要前端热更新时，另开终端运行 `npm run dev`，访问 `http://127.0.0.1:5173`；API 请求会转发到本地 Worker。\n\n`.dev.vars` 保存本地配置，不应提交。远程部署时需创建自己的 Cloudflare 资源，并替换 `wrangler.jsonc` 中的占位配置。\n\n### 页面入口\n\n| 页面 | 路径 |\n| --- | --- |\n| 商城 | `/` |\n| 管理后台 | `/admin` |\n| 代理工作台 | `/partner` |\n\n管理员登录需要配置自己的管理员身份、TOTP 和邮件验证服务。默认配置不提供可直接登录的管理员账号，也不会发起真实支付、采购或通知。\n\n## 项目结构\n\n```text\nsrc/                   商城前台、管理后台与代理工作台\nservices/storefront/   Go API、业务 Worker、迁移与部署配置\nworker/                Cloudflare Workers 后端\nmigrations/            D1 数据库迁移\nemails/                邮件模板\ntests/                 前端与 Worker 业务测试\nscripts/               构建与源码检查脚本\npublic/                静态资源\n.github/workflows/     持续集成\n```\n\n## 配置与接入\n\n| 配置文件 | 用途 |\n| --- | --- |\n| [services/storefront/.env.example](services/storefront/.env.example) | Go 后端基础运行配置 |\n| [services/storefront/.env.integrations.example](services/storefront/.env.integrations.example) | Go 后端支付、采购及通知接入 |\n| [.dev.vars.example](.dev.vars.example) | Cloudflare 本地配置 |\n| [wrangler.jsonc](wrangler.jsonc) | Worker 与 D1 资源配置 |\n\n供应商适配器使用 `recharge`、`account_supplier`、`delivery_supplier`、`xgift` 等通用名称；`gatewaya`、`gatewayb` 为匿名聚合支付适配器。请依据自己的服务协议核对地址、签名、商品映射、金额和回调，再开启对应功能。\n\n真实商户身份、密钥、账号凭据和生产数据不随源码提供。`example.invalid` 是不可用于真实接入的保留域名，示例商品与金额仅用于演示。请使用新数据库安装；匿名化后的迁移不兼容原生产数据库。\n\n## 开发与验证\n\n在仓库根目录执行：\n\n```sh\nnpm test                # 前端与 Worker 业务测试\nnpm run lint            # 静态检查\nnpm run build           # 类型检查、邮件模板与前端构建\nnpm run security:scan   # 公开源码检查\n```\n\nGo 后端验证：\n\n```sh\ncd services/storefront\ngo test ./...\ngo vet ./...\n```\n\n完整数据库测试需设置 `STOREFRONT_TEST_DATABASE_URL`，连接本机、库名以 `_test` 结尾的专用数据库；未配置时集成测试会跳过。详细要求见[后端测试说明](services/storefront/README.md#测试)。\n\n自动化测试不连接真实支付或供应商服务。生产部署前，需要在自己的环境验证完整交易流程。\n\n## 参与贡献\n\n欢迎通过 [Issues](https://github.com/CoolkHz/gptibo/issues) 反馈问题或提出建议，也欢迎提交 Pull Request。\n\n1. 描述问题、预期行为和复现步骤。\n2. 提交范围明确的改动，涉及交易或账务逻辑时补充回归测试。\n3. 运行与改动相关的检查，在 PR 中说明验证结果。\n\n请勿提交真实凭据、用户资料、生产日志或数据库。安全问题请按 [SECURITY.md](SECURITY.md) 中的方式报告。\n\n## 许可证\n\n项目代码采用 [MIT License](LICENSE)，允许在保留版权与许可声明的前提下使用、修改和分发。\n\n第三方资源遵循各自许可证，商标及美术作品权利归原权利人所有。详见[品牌资源说明](public/brands/README.md)与[第三方样式说明](src/styles/vendor/README.md)。\n"
     },
     {
       "full_name": "Gathin23/cleanyourtv",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 4329,
-      "forks": 518,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 4369,
+      "forks": 524,
       "language": "Java",
       "description": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
       "html_url": "https://github.com/Gathin23/cleanyourtv",
@@ -6917,23 +6917,23 @@
         "xiaomi"
       ],
       "created_at": "2026-10-17T08:12:35Z",
-      "updated_at": "2026-10-19T17:57:23Z",
-      "pushed_at": "2026-10-19T17:51:00Z",
+      "updated_at": "2026-10-19T18:16:44Z",
+      "pushed_at": "2026-10-19T18:14:05Z",
       "license": "Other",
-      "open_issues": 35,
+      "open_issues": 29,
       "default_branch": "main",
       "sources": [
         {
-          "stars": 4329,
+          "stars": 4369,
           "type": "new_repo_search"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "<p align=\"center\">\n  <a href=\"https://cleanyour.tv\"><img src=\"https://raw.githubusercontent.com/Gathin23/cleanyourtv/main/docs/banner.png\" alt=\"CleanYourTV. Your TV, minus the ads.\" width=\"800\"></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://cleanyour.tv\">cleanyour.tv</a> ·\n  <a href=\"PROMPT.md\">The prompt</a> ·\n  <a href=\"examples/\">54 TV lists</a> ·\n  <a href=\"SHOWCASE.md\">11 built on it</a> ·\n  <a href=\"https://x.com/gathint/status/2111379569030939102\">The tweet</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/Gathin23/cleanyourtv/stargazers\"><img src=\"https://img.shields.io/github/stars/Gathin23/cleanyourtv?style=flat&cacheSeconds=1800&color=cfffcf&labelColor=15181e\" alt=\"Stars\"></a>\n  <a href=\"https://github.com/Gathin23/cleanyourtv/pulls?q=is%3Amerged\"><img src=\"https://img.shields.io/github/issues-pr-closed/Gathin23/cleanyourtv?style=flat&cacheSeconds=1800&label=merged%20PRs&color=cfffcf&labelColor=15181e\" alt=\"Merged PRs\"></a>\n  <a href=\"https://github.com/Gathin23/cleanyourtv/network/members\"><img src=\"https://img.shields.io/github/forks/Gathin23/cleanyourtv?style=flat&cacheSeconds=1800&color=cfffcf&labelColor=15181e\" alt=\"Forks\"></a>\n  <a href=\"https://github.com/Gathin23/cleanyourtv/graphs/contributors\"><img src=\"https://img.shields.io/github/contributors/Gathin23/cleanyourtv?style=flat&cacheSeconds=1800&color=cfffcf&labelColor=15181e\" alt=\"Contributors\"></a>\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/licence-MIT-cfffcf?style=flat&labelColor=15181e\" alt=\"MIT\"></a>\n  <a href=\"https://buymeacoffee.com/gathint\"><img src=\"https://img.shields.io/badge/support-%E2%9D%A4-ff5e8a?style=flat&labelColor=15181e\" alt=\"Support, buy me a coffee\"></a>\n</p>\n\nStrip the bloatware from any Android TV or Google TV over Wi-Fi, and replace the ad-filled home\nscreen with a clean launcher that looks like an Apple TV. **No root, no cable, nothing uninstalled,\nand a one-line restore if you change your mind.**\n\n<h3 align=\"center\">54 TVs with tested lists &nbsp;·&nbsp; 23 brands &nbsp;·&nbsp; 12 languages &nbsp;·&nbsp; 280 KB launcher</h3>\n\n![Before: stock Google TV home with a sponsored ad. After: the Clean Your TV launcher](docs/stock-vs-new-side.jpg)\n\n> Vibe coded my parents' TV this afternoon! It was showing a sponsored ad before you could even get\n> to Netflix. Gave Claude Code the model number, it found the TV on wifi, removed 25 Xiaomi packages\n> and wrote a new launcher. Looks like an Apple TV now lol.\n>\n> [@gathint, 17 October 2026](https://x.com/gathint/status/2111379569030939102). The replies are where\n> most of the TV lists here came from. The repo was called tv-vibehack until the 19th; old links work.\n\n## How it works\n\nAndroid TVs have the same debug bridge as Android phones. Switch on USB debugging in the TV's\ndeveloper options, allow your computer once, and the rest is standard Android tooling:\n\n1. **Back up** the list of installed packages and settings.\n2. **Disable** the manufacturer's telemetry, ad services, content rows and preloaded junk with\n   `pm disable-user`. Nothing is uninstalled, so a restore script can undo every step.\n3. **Install** a small native launcher and make it the default home screen.\n\nThe bloat differs by brand, so the prompt has your coding assistant discover it on your TV and ask\nbefore touching anything you might use.\n\n## Quick start\n\nYou need a computer on the same Wi-Fi as the TV and a coding assistant with shell access\n(Claude Code or similar).\n\n| | |\n|---|---|\n| **1. On the TV** | Settings → Device Preferences → About → press OK on **Build** seven times → back → Developer options → **USB debugging** on. If you see a Network or ADB debugging toggle, turn that on too. Keep the TV on. |\n| **2. On your computer** | Paste [`PROMPT.md`](PROMPT.md) into your assistant and fill in your TV model. |\n| **3. Follow along** | Accept \"Allow USB debugging?\" on the TV, then answer the checklist: which apps you use, which four go in the dock, whether to keep the voice assistant, Chromecast and updates. |\n\nThe assistant backs up, debloats, builds and installs the launcher, and checks each step with\nscreenshots pulled from the TV. With this repo as context it takes about fifteen minutes.\n\n## What you get\n\n- **A pitch-black home** with a dock of your four favourite apps in a rounded band, where Apple TV puts it.\n- **A top shelf** naming the focused app in large type, with an ambient glow in a colour taken from its artwork.\n- **The rest of your apps in a grid** that slides up when you press Down.\n- **One floating glass highlight** that springs from tile to tile. The focused tile lifts and shows its name.\n- **Three frosted buttons**: Inputs (HDMI ports, AV, Live TV), Wi-Fi or Ethernet with the network name, Settings.\n- **A greeting, a thin clock and the date** in [Outfit](https://fonts.google.com/specimen/Outfit), and a matching Clock screensaver.\n- **Themes** that change colours, wallpaper, dock and columns without a rebuild, and **module cards** that let other apps plug a "
     },
     {
       "full_name": "HeyPuter/everything",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 2311,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 2313,
       "forks": 328,
       "language": "JavaScript",
       "description": "We're rebuilding and open-sourcing the world’s software from scratch.",
@@ -6947,22 +6947,22 @@
         "spreadsheet"
       ],
       "created_at": "2026-10-13T16:18:22Z",
-      "updated_at": "2026-10-19T17:49:28Z",
+      "updated_at": "2026-10-19T18:08:33Z",
       "pushed_at": "2026-10-19T14:15:53Z",
       "license": "MIT",
       "open_issues": 9,
       "default_branch": "main",
       "sources": [
         {
-          "stars": 2311,
+          "stars": 2313,
           "type": "new_repo_search"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "<p align=\"center\"><img src=\"assets/everything.png\" width=\"300\" alt=\"Everything\"></p>\n\n<h3 align=\"center\">The world’s software. Rebuilt, open-sourced, and MIT-licensed.</h3>\n\n<!-- App names, descriptions, and navigation are native text. The Everything logo, app icons, and decorative hero are images. Demo and source links use project metadata where available; missing destinations point to the link-status note. -->\n\n<p align=\"center\"><img src=\"assets/hero/variants/34-app-wall-intact.png\" width=\"100%\" alt=\"Everything: a wall of app screenshots extending beyond the frame\"></p>\n\nThe Everything Project is an effort to rebuild and open-source the world’s software from scratch. From Office to Slack and Photoshop to AutoCAD, we are recreating free, open-source alternatives to all proprietary software. This is a mono-repository containing all the applications and tools developed under the project.\n\n\n[Office](#office) · [Collaboration](#collaboration) · [Creative Tools](#creative-tools) · [Engineering](#engineering) · [Productivity](#productivity) · [Finance](#finance) · [Business](#business) · [Developer Tools](#developer-tools) · [Games](#games)\n\n<br>\n\n## Getting started\n\nRequires Node.js 22.12 or newer.\n\n```sh\ngit clone https://github.com/HeyPuter/everything.git\ncd everything/src/[app-name]\nnpm install\nnpm run dev\n```\n\n<br>\n\n## Office\n\n<table width=\"100%\">\n<tr><th width=\"296\" align=\"left\">Application</th><th width=\"420\" align=\"left\">Alternative to</th><th width=\"150\" align=\"left\">Links</th></tr>\n<tr><td width=\"296\" valign=\"middle\" nowrap><a href=\"https://spreadsheet.puter.com/\"><img src=\"src/spreadsheet/icon-128.png\" width=\"48\" height=\"48\" alt=\"\" align=\"center\"></a> &nbsp; <strong><a href=\"https://spreadsheet.puter.com/\">Spreadsheet</a></strong></td><td width=\"420\" valign=\"middle\">Microsoft Excel, Google Sheets, Apple Numbers</td><td width=\"150\" valign=\"middle\" nowrap><a href=\"https://spreadsheet.puter.com/\">Try it</a>&nbsp;|&nbsp;<a href=\"src/spreadsheet/\">Source</a></td></tr>\n<tr><td width=\"296\" valign=\"middle\" nowrap><a href=\"https://documents.puter.com\"><img src=\"src/documents/icon-128.png\" width=\"48\" height=\"48\" alt=\"\" align=\"center\"></a> &nbsp; <strong><a href=\"https://documents.puter.com/\">Documents</a></strong></td><td width=\"420\" valign=\"middle\">Microsoft Word, Google Docs, Apple Pages</td><td width=\"150\" valign=\"middle\" nowrap><a href=\"https://documents.puter.com\">Try it</a>&nbsp;|&nbsp;<a href=\"src/documents/\">Source</a></td></tr>\n<tr><td width=\"296\" valign=\"middle\" nowrap><a href=\"https://presentation.puter.com/\"><img src=\"src/presentation/icon-128.png\" width=\"48\" height=\"48\" alt=\"\" align=\"center\"></a> &nbsp; <strong><a href=\"https://presentation.puter.com/\">Presentation</a></strong></td><td width=\"420\" valign=\"middle\">Microsoft PowerPoint, Google Slides, Apple Keynote</td><td width=\"150\" valign=\"middle\" nowrap><a href=\"https://presentation.puter.com/\">Try it</a>&nbsp;|&nbsp;<a href=\"src/presentation/\">Source</a></td></tr>\n<tr><td width=\"296\" valign=\"middle\" nowrap><a href=\"https://whiteboard.puter.com/\"><img src=\"src/whiteboard/icon-128.png\" width=\"48\" height=\"48\" alt=\"\" align=\"center\"></a> &nbsp; <strong><a href=\"https://whiteboard.puter.com/\">Whiteboard</a></strong></td><td width=\"420\" valign=\"middle\">Miro, Microsoft Whiteboard, FigJam</td><td width=\"150\" valign=\"middle\" nowrap><a href=\"https://whiteboard.puter.com/\">Try it</a>&nbsp;|&nbsp;<a href=\"src/whiteboard/\">Source</a></td></tr>\n<tr><td width=\"296\" valign=\"middle\" nowrap><a href=\"https://pdf.puter.com/\"><img src=\"src/pdf/icon-128.png\" width=\"48\" height=\"48\" alt=\"\" align=\"center\"></a> &nbsp; <strong><a href=\"https://pdf.puter.com/\">PDF</a></strong></td><td width=\"420\" valign=\"middle\">Adobe Acrobat, PDF Expert</td><td width=\"150\" valign=\"middle\" nowrap><a href=\"https://pdf.puter.com/\">Try it</a>&nbsp;|&nbsp;<a href=\"src/pdf/\">Source</a></td></tr>\n<tr><td width=\"296\" valign=\"middle\" nowrap><a href=\"https://notes.puter.com\"><img src=\"src/notes/icon-128.png\" width=\"48\" height=\"48\" alt=\"\" align=\"center\"></a> &nbsp; <strong><a href=\"https://notes.puter.com\">Notes</a></strong></td><td width=\"420\" valign=\"middle\">Microsoft OneNote, Evernote, Apple Notes</td><td width=\"150\" valign=\"middle\" nowrap><a href=\"#link-status\" title=\"Demo URL not yet provided\">Try it</a>&nbsp;|&nbsp;<a href=\"src/notes/\">Source</a></td></tr>\n<tr><td width=\"296\" valign=\"middle\" nowrap><a href=\"https://records.puter.com/\"><img src=\"src/records/icon-128.png\" width=\"48\" height=\"48\" alt=\"\" align=\"center\"></a> &nbsp; <strong><a href=\"https://records.puter.com/\">Records</a></strong></td><td width=\"420\" valign=\"middle\">Airtable, Microsoft Access, Baserow</td><td width=\"150\" valign=\"middle\" nowrap><a href=\"https://records.puter.com/\">Try it</a>&nbsp;|&nbsp;<a href=\"src/records/\">Source</a></td></tr>\n</table>\n\n<br>\n\n## Collaboration\n\n<table width=\"100%\">\n<tr><th width=\"296\" align=\"left\">Application</th><th width=\"420\" align=\"left\">Alternative to</th><th width=\"150\" align=\"left\">Links</th><"
     },
     {
       "full_name": "K-Dense-AI/scientific-agent-skills",
-      "captured_at": "2026-10-19T17:57:42Z",
+      "captured_at": "2026-10-19T18:16:51Z",
       "stars": 52887,
       "forks": 4686,
       "language": "Python",
@@ -6988,7 +6988,7 @@
         "scientific-visualization"
       ],
       "created_at": "2025-10-19T20:54:15Z",
-      "updated_at": "2026-10-19T17:53:47Z",
+      "updated_at": "2026-10-19T18:00:32Z",
       "pushed_at": "2026-10-19T09:33:57Z",
       "license": "MIT",
       "open_issues": 49,
@@ -7008,15 +7008,15 @@
     },
     {
       "full_name": "Kruk2/jasna",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 2807,
-      "forks": 210,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 2811,
+      "forks": 211,
       "language": "Python",
       "description": "Video restoration tool",
       "html_url": "https://github.com/Kruk2/jasna",
       "topics": [],
       "created_at": "2026-01-18T21:13:39Z",
-      "updated_at": "2026-10-19T17:44:45Z",
+      "updated_at": "2026-10-19T18:16:53Z",
       "pushed_at": "2026-10-18T11:43:28Z",
       "license": "AGPL-3.0",
       "open_issues": 64,
@@ -7028,7 +7028,7 @@
           "language": "Python",
           "trending_stars_period": 502,
           "trending_total_forks": null,
-          "trending_total_stars": 2807,
+          "trending_total_stars": 2811,
           "type": "trending_daily"
         }
       ],
@@ -7036,8 +7036,8 @@
     },
     {
       "full_name": "Leonxlnx/earshot",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 1394,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 1410,
       "forks": 78,
       "language": "Python",
       "description": "Ears for coding agents: let AI hear, review and make sound. CPU-only, open source.",
@@ -7050,23 +7050,23 @@
         "sound-design"
       ],
       "created_at": "2026-10-15T06:52:46Z",
-      "updated_at": "2026-10-19T17:52:13Z",
+      "updated_at": "2026-10-19T18:15:46Z",
       "pushed_at": "2026-10-18T07:22:49Z",
       "license": "MIT",
       "open_issues": 3,
       "default_branch": "main",
       "sources": [
         {
-          "stars": 1394,
+          "stars": 1410,
           "type": "new_repo_search"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "# earshot\n\n**Ears for coding agents.**\n\n<!-- launch video -->\n[**Watch the 22 s launch film**](https://github.com/Leonxlnx/earshot/releases/tag/v0.1.0) - every sound in it was made\nin code by `earshot forge`; no recordings, no music track.\n\n![Frames from the launch film](docs/media/launch_frames.png)\n\nAI coding agents can now write the code that renders a film, a product demo or a game. They still cannot hear what\nthey made. They cannot tell a premium key press from a cheap one, notice that a hit lands 80 ms after the cut, or\nhear that the music swells in the wrong place.\n\nearshot turns sound into evidence an agent can reason about: what a file sounds like in words, how well it fits a\ndescription, the best moment inside a long recording, whether it is a real recording or code-synthesized, a\nsecond-by-second listening transcript of a whole film, an annotated picture of it, and a scorecard against\nprofessional launch films. It runs locally on CPU, as a CLI, a Python API and an MCP server.\n\nWith ears, an agent can also **make its own sounds in code** and improve them by listening (`earshot forge`), and\n**translate a recording into code** it can vary (`earshot fit`). Both below.\n\n**New in 0.3: sound for code-made films.** A bank of 201 sound effects stored as code that render by id in seconds,\nwith no models and no network: `earshot sfx` aims a whoosh, hit, click or note at a moment in the picture, and\n`earshot kit` renders a whole film's effects with measured sync points ([below](#sound-for-films-bank-sfx-kits)).\n\n```\n$ earshot describe enter.ogg\n  0.56 s short transient (attack 3 ms, decays in 190 ms). Sounds most like: a single mechanical keyboard key press\n  (z +5.4), a soft key release click (z +3.6) ... [clear reading]. peak -0.1 dBFS, brightness 1.5 kHz ...\n\n$ earshot match key.ogg \"a deep thocky mechanical keyboard press\" --alts \"a clicky blue switch keyboard\" \"a mouse click\"\n  -> strong (z +3.7; would rank #2 among 322 vocabulary descriptions) ...\n\n$ earshot find keys.ogg \"a single mechanical key press\" --top 4\n  0:03.94-0:04.19 (0.24 s stroke, z +4.1 strong); 0:10.60-0:10.86 ...\n\n$ earshot critique film.mp4\n  VERDICT: close - 21 of 23 scored metrics in range ... FIX FIRST: 1. [major] nothing reaches body level until 0:01.01 ...\n```\n\n## What it does\n\n| command | what an agent gets |\n|---|---|\n| `describe FILE` | what it sounds like: calibrated tags (z) with the closest alternative readings, AudioSet labels, measurements |\n| `match FILE QUERY [--alts ...]` | how well a description fits: cosine, z among the vocabulary, a verdict (strong / plausible / weak / no match) with held-out evidence |\n| `rank QUERY PATHS...` | many candidate files sorted by a description (pick the best download) |\n| `find FILE QUERY` | the best moments inside a long recording, as sample trims (start / end seconds) |\n| `compare FILE --refs DIR` / `ab A B` | nearest reference recordings and typicality; A/B two sounds or two trims, the differences in words |\n| `realness FILE...` | real recording / pro-produced vs code-synthesized, with evidence and per-window scores |\n| `timeline FILE [--video V] [--cues C]` | the listening transcript: events (time, level, tag), sections, loudness, beat grid, sync of sound to picture cuts and cue frames |\n| `sheet FILE -o out.png` | an annotated PNG (video frames, sections, labelled events, spectrogram, waveform, loudness, sync markers) for agents that read images |\n| `critique FILE [--video V]` | a launch-video scorecard against a profile of 7 professional launch films, with timestamped fixes |\n| `profile REFS... -o p.json` | build your own reference profile from films you admire |\n| `measure FILE` | objective measurements only (no models): LUFS, true peak, LRA, envelope, spectrum, tempo / key |\n| `forge RECIPE --refset CAT` | make a sound in code and improve it by listening (see below) |\n| `fit FILE -o recipe.py` | translate a recording into a forge recipe module that re-renders it, with knobs and morphs (see below) |\n| `sfx render ID -o x.wav` | a sound from the shipped bank of 201, aimed at the picture (`--dur`, `--apex`, `--pitch`) and audited; `sfx list`, `sfx check` (no models) |\n| `kit init / render / check` | a film's sound kit: one bank sound per role, rendered into cached takes with measured onset / peak / end (no models) |\n| `gallery DIR -o page.html` | one static HTML listening page of forge outputs: players, spectrograms, numbers |\n| `llm FILE --yes-upload` | optional audio-LLM critique (Gemini), only with your own key and explicit consent |\n| `mcp` | the same tools as an MCP server for Claude Code and other agents |\n| `doctor [--load]` | check the install, models, data files and CPU settings |\n\nEvery command prints a plain-language summary first; `--json` gives the full result, `--out f.json` saves it. Errors\nare one line on stderr (`earshot <command>: error: ...`, exit 1). Each CLI call is a new process and loads the models\n(~20-40 s) before it answers (`measure`, `sfx` and `kit` load"
     },
     {
       "full_name": "LiCinCan/blender-ai-mcp-addon",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 923,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 931,
       "forks": 379,
       "language": "Python",
       "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with OpenAI, ChatGPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon and plugin, copilot for 3D, bpy Python scripting, MCP integration.",
@@ -7094,24 +7094,24 @@
         "python"
       ],
       "created_at": "2026-10-15T22:30:47Z",
-      "updated_at": "2026-10-19T17:57:42Z",
+      "updated_at": "2026-10-19T18:16:49Z",
       "pushed_at": "2026-10-18T19:03:22Z",
       "license": "MIT",
       "open_issues": 31,
       "default_branch": "main",
       "sources": [
         {
-          "stars": 923,
+          "stars": 931,
           "type": "new_repo_search"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "# mcp-for-blender-pro\n\n### Your Blender scene. Your AI models. One creative workspace.\n\n**An AI assistant for Blender that can inspect your scene, build objects, edit materials, find assets and carry out multi-step workflows—with a visual chat workspace and a built-in Model Context Protocol (MCP) server.**\n\n![Blender 4.2+](https://img.shields.io/badge/Blender-4.2%2B-E87D0D?logo=blender&logoColor=white)\n![Release 1.0.0](https://img.shields.io/badge/release-1.0.0-98D85B)\n![Windows x64](https://img.shields.io/badge/download-Windows_x64-357EC7)\n![MIT](https://img.shields.io/badge/license-MIT-blue)\n\n[Download](../../releases/latest) · [Getting started](docs/QUICKSTART.md) · [Connections and agents](docs/CONNECTIONS.md)\n\n![AI chat workspace with a live Blender scene preview](docs/images/studio.png)\n\n## Turn a creative brief into scene operations\n\nStart with an idea. Ask the assistant to inspect your scene, create a product-display layout, arrange objects, assign materials or prepare an export. Follow its actions in the conversation and inspect the result in the viewport preview. Keep working in Blender throughout the process.\n\n**mcp-for-blender-pro brings conversation, scene tools, model choice and agent workflows together.** It is designed for artists who want faster iteration, technical artists who automate repetitive work, and developers connecting AI tools to Blender.\n\n## Why choose mcp-for-blender-pro?\n\n| Capability | What it gives you |\n|---|---|\n| **Blender-aware assistance** | Scene and object inspection gives the assistant context before it acts. |\n| **A visual Studio workspace** | Chat, scene objects, viewport snapshots, approvals and a task board in a companion window. |\n| **Your choice of AI** | Connect supported cloud providers, local Ollama models or compatible custom endpoints. |\n| **Saved connections** | Keep work and personal connections separate, including multiple keys for the same provider. |\n| **One assistant or a team** | Use a single model for quick changes, or managers, workers and reviewers for structured tasks. |\n| **Built-in MCP server** | Connect OpenCode and other clients supporting authenticated Streamable HTTP MCP. |\n| **21 scene tools** | Create, inspect, edit, capture, search assets, consult Blender APIs and export scenes. |\n| **Multilingual menus** | Choose English, German, French, Spanish or Chinese for the main interface. |\n\n## From a quick edit to an agent team\n\nUse **Single assistant** for direct, conversational work. For larger tasks, configure a **Team chain** with individual responsibilities, instructions and models.\n\n- **Manager:** breaks the request into assignments and acceptance criteria.\n- **Workers:** perform the assigned scene operations.\n- **Reviewers:** inspect results and approve work or return specific findings.\n\nTasks run sequentially so scene edits stay ordered. A blocked task gets one correction attempt; a second failed review stops the workflow. The task board exposes assignments, attempts and review findings as work progresses.\n\n![Agent roles and model configuration](docs/images/studio-team.png)\n\n## Connect the models that fit your work\n\nSupported connections include **OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama and custom APIs**. Load the available model catalog and select a model directly in Blender or Studio.\n\nCustom endpoints support OpenAI Chat Completions, Anthropic Messages and Ollama protocols. Choose models with tool-calling support; image-capable models can also interpret viewport screenshots. OpenCode-only free models are available through the OpenCode client.\n\n![Provider, saved connection and model selection](docs/images/studio-settings.png)\n\n## Install and create\n\n1. Download **`mcp-for-blender-pro.zip`** from [Releases](../../releases/latest).\n2. In Blender, open **Edit → Preferences → Get Extensions → menu → Install from Disk**.\n3. Select the ZIP, enable **mcp-for-blender-pro**, then open **3D Viewport → N → MCP Pro**.\n4. Choose a provider, add your connection details and select a model.\n5. Send a message in Blender or click **Open Studio Window**.\n\nThe release bundle targets **Windows x64 with Blender 4.2 or later**. Keep Blender open while using Studio or an external client.\n\n### Try these prompts\n\n> Inspect this scene and explain its object structure before making any changes.\n\n> Create a simple product-display scene with a pedestal, a camera and three lights. Give the pedestal a matte blue material.\n\n> Duplicate the selected object into a neatly spaced row of five and show the viewport.\n\n> Find an appropriate Poly Haven asset for this scene and ask before importing it.\n\n## Blender automation through MCP\n\nLaunch **OpenCode Portable** from the sidebar to work through OpenCode with the Blender connection configured for you. OpenCode manages its own provider sign-in and model selection. Other compatible MCP clients can connect to the authenticated local endpoint described in the [connection guide](docs/CONNECTION"
     },
     {
       "full_name": "MadsLorentzen/ai-job-search",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 56383,
-      "forks": 17982,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 56433,
+      "forks": 18000,
       "language": "Python",
       "description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
       "html_url": "https://github.com/MadsLorentzen/ai-job-search",
@@ -7130,10 +7130,10 @@
         "resume"
       ],
       "created_at": "2026-03-18T14:33:04Z",
-      "updated_at": "2026-10-19T17:57:45Z",
-      "pushed_at": "2026-10-19T17:57:08Z",
+      "updated_at": "2026-10-19T18:16:22Z",
+      "pushed_at": "2026-10-19T18:12:30Z",
       "license": "MIT",
-      "open_issues": 34,
+      "open_issues": 24,
       "default_branch": "master",
       "sources": [
         {
@@ -7142,7 +7142,7 @@
           "language": "Python",
           "trending_stars_period": 5742,
           "trending_total_forks": null,
-          "trending_total_stars": 56382,
+          "trending_total_stars": 56433,
           "type": "trending_weekly"
         },
         {
@@ -7151,7 +7151,7 @@
           "language": "Python",
           "trending_stars_period": 3860,
           "trending_total_forks": null,
-          "trending_total_stars": 56382,
+          "trending_total_stars": 56433,
           "type": "trending_daily"
         }
       ],
@@ -7159,31 +7159,31 @@
     },
     {
       "full_name": "MaryCache/imozuru",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 741,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 745,
       "forks": 31,
       "language": "Python",
       "description": "知らない分野を、原文にたどりつくまで芋づる式に掘る Claude Code のスキル",
       "html_url": "https://github.com/MaryCache/imozuru",
       "topics": [],
       "created_at": "2026-10-13T05:56:21Z",
-      "updated_at": "2026-10-19T17:25:13Z",
+      "updated_at": "2026-10-19T18:14:14Z",
       "pushed_at": "2026-10-19T11:35:10Z",
       "license": "MIT",
       "open_issues": 6,
       "default_branch": "main",
       "sources": [
         {
-          "stars": 741,
+          "stars": 745,
           "type": "new_repo_search"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "# imozuru\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/brand/logo/imozuru-lockup-light.svg\">\n  <img alt=\"imozuru\" src=\"assets/brand/logo/imozuru-lockup.svg\" width=\"420\">\n</picture>\n\n日本語 | [English](README.en.md)\n\nimozuruは、知らない分野を、原文にたどりつくまで芋づる式に掘るClaude Codeのスキルです。\nBatesのberrypicking、Ellisの探索行動のモデル、Kuhlthauの探索過程の研究など、図書館情報学の情報探索の研究から、考え方を応用しています。\n\n## ふつうに頼んだときとの違い\n\nスキルなしで「調べて」と頼むと、LLMは検索上位の数件を読んで要約を返します。\n要約はすぐに読めますが、判断に必要な細部が落ちやすい欠点を抱えています。\n分野の用語を知らないうちは検索語も選べないため、最初に思いついた言葉の範囲から先へ進めません。\n\nimozuruはまず分野の用語、中心にいる人、知見が集まる場を押さえ、そこから引用やリンク、著者をたどって原文を集めます。\n集めた原文は要約せずに保存し、答えに必要な主張ごとに「どのファイルの何行目か」を示すに留まります。\n原文を読んで判断するのは、ユーザー自身です。\n\n## 動き方\n\n```mermaid\nflowchart LR\n    A[問いと<br>要る主張を書く] --> B[地図づくり<br>用語・人・場]\n    B --> C[たどる<br>引用・リンク・著者]\n    C --> D[原文を落とす]\n    D --> E{要る主張に<br>原文が付いた？}\n    E -- まだ --> C\n    E -- 付いた・飽和した --> F[抜き書きの<br>ページを作る]\n```\n\nClaudeはまず、問いと、答えるために必要な主張を3〜6個書き出します。\n次に、探し方を変えた2本の検索役（Webを検索するサブエージェント）で用語、人、場を集め、地図（`map.md`）にまとめます。\nその後、原文が見つかるまで参考文献や被引用、著者をたどっていきます。\n論文のない分野では、記事の中のリンクや「〇〇さんの記事を参考にした」という記述をたどります。\n\n見つけた原文は `sources/` に保存し、404やログインを求めるページは中身を見て除きます。\nすべての主張に原文が付くか、新しい資料が出てこなくなったら探すのをやめます。\n最後に、原文から切り出した文を主張ごとに並べたページ（抜き書きのページ）を作ります。\n\n見張りのモードでは、掘って見つけた場（QiitaやZennのタグ、note、YouTube、ブログ、arXiv）の新着をRSSで集めて並べます。\n\n## 入れ方\n\n[skills](https://github.com/vercel-labs/skills) のCLIで入れられます。\n\n```sh\nnpx skills add MaryCache/imozuru\n```\n\n手動の場合は、`skills/imozuru/` を `~/.claude/skills/imozuru/` にコピーしてください。\n\n## 必要なもの\n\nスクリプトはPython 3.10以上の標準ライブラリだけで動き、次のコマンドは入っていれば使います。\n\n| コマンド | 使う場面 | 入っていない場合 |\n|---|---|---|\n| `pdftotext`（popplerかXpdf） | PDFから本文を取り出す | PDFの本文が取れず `FAIL` になる |\n| `pdftoppm`（popplerかXpdf）と `tesseract` | 文字の層がない古いPDFをOCRにかける | そのPDFは `FAIL` になる |\n| `yt-dlp` | YouTubeの字幕を取得する | 動画は `FAIL` になる |\n| [ax](https://github.com/yusukebe/ax) | HTMLをmarkdownにする | 標準ライブラリで文字だけを取り出す（見出しや表の形はaxのほうがよく残る） |\n\n引用をたどる `chain.py` は [OpenAlex](https://openalex.org/) のAPIを使いますが、APIキーは必要ありません。\n\n## 使い方\n\nClaude Codeで、次のように頼みます。\n\n```\n芋づる式に調べて: 歌ってみたのMIXで、上手い人がどういう順番で処理しているか\n```\n\n```\nGaussian Splattingってよく聞くけど全然わからない。論文とか解説の流れを掘ってほしい\n```\n\n```\n/imozuru watch react\n```\n\n結果は `~/research/<話題>/` に、次の形で保存されます。\n\n```\nmap.md         問い・要る主張・用語・人・場・原文の表・次の手がかり\nlog.md         周ごとに、何を探して何が出たか・判断とその理由\nsources/       落とした原文\nextracts.json  抜き書き\nreport.html    抜き書きのページ\n```\n\n抜き書きのページの見本は `examples/demo/` にあり、次のコマンドでスクリプトだけを試せます。\n\n```sh\npython3 skills/imozuru/scripts/report.py examples/demo\n```\n\n## 設計の考え方\n\n### 要約しない理由\n\nKuhlthau（1991）は、調べ始めの混乱した段階で詳しくまとめると、早すぎる閉じ（premature closure）を招き、探索の過程が妨げられると述べています。\nそのためimozuruは、原文の場所を示すところまでにとどめています。\n\n### 止めどきの決め方\n\n止める条件は2つです。\n1つ目は、すべての主張に原文の場所が付くことで、証拠がそろったかで止めどきを決めるRohとHan（2026）のHALTにならいました。\n主張が甘くならないよう、少なくとも1つは依頼の言葉の条件をそのまま含め、半分以上は原文を読まないと答えられない形にしています。\n\n2つ目は飽和で、2本の検索役が挙げた資料の7割以上がすでに地図にあれば止めます。\n独立した2回の探索の重なりから全体の数を見積もる考え方（Kastner 2007）を借りたもので、7割は試しながら決めた仮の目安です。\n\n### 方向を1つに決めない理由\n\nZhouら（2026）のHypoSearchによると、AIの検索は方向がいくつもありうる段階で1つを選び、後の検索でもその道を選び続けて失敗しがちです。\nそこで迷ったときは、別の仮説を持たせた検索役を2本並べ、結果を比べてから進みます。\n\n### 論文のない分野の扱い\n\n塗り方やMIXのように論文がほとんどない分野では、知見の多くが個人のブログや動画にあります。\nimozuruはそうした記事も論文と同じようにたどるので、保存した原文には次の印を付け、どれを信じるかはユーザーに任せています。\n\n- 〔論文〕査読や学会を通ったもの、arXivのプレプリント\n- 〔本人〕やった本人の記録（自分で試した、作った、測った過程が書いてあるもの）\n- 〔観察〕他人の作品ややり方を見て、特徴を書き出したもの\n- 〔まとめ〕他人の知見を集めたり言い換えたりした記事\n- 〔公式〕道具や製品を作った側の文書\n\n### 抜き書きを機械で照合する理由\n\n原文を何十本も保存しただけでは、どこから読めばよいか分かりません。\nそこでEllisのモデルにある抜き書き（extracting）にならい、主張ごとに原文の該当部分を切り出したページを作ります。\n`report.py` は、切り出した文が原文の指定の行にそのまま在るかを照合し、1語でも違えばページを作りません。\n\n## 決まりの出典\n\nスキルの各決まりがどの論文のどこから来ているかは、`skills/imozuru/references/theory.md` にまとめています。\n\n## 注意点\n\n- 検索役はWebを検索するため、問いの内容が検索語として外部に送られます。機密情報や個人データが関わる調べものには使わないでください。\n- 有料の論文を回避して入手する手段は使わず、取得できなかったものは「届かなかった」と報告します。\n- 保存した原文は手元で読むための写しなので、再配布しないでください。\n\n## ライセンス\n\nMIT\n"
     },
     {
       "full_name": "MyLuxy/overdrive",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 871,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 874,
       "forks": 206,
       "language": "C++",
       "description": "Overdrive, a PS5 homebrew game store with 1,800+ games.",
@@ -7199,23 +7199,23 @@
         "shadowmountplus"
       ],
       "created_at": "2026-10-14T00:07:08Z",
-      "updated_at": "2026-10-19T17:54:31Z",
-      "pushed_at": "2026-10-19T17:48:01Z",
+      "updated_at": "2026-10-19T18:12:27Z",
+      "pushed_at": "2026-10-19T18:07:13Z",
       "license": null,
       "open_issues": 12,
       "default_branch": "main",
       "sources": [
         {
-          "stars": 871,
+          "stars": 874,
           "type": "new_repo_search"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "<p align=\"center\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\".github/readme/logo-dark.svg\">\n    <img src=\".github/readme/logo-light.svg\" alt=\"Overdrive\" width=\"440\">\n  </picture>\n</p>\n\n<p align=\"center\">\n  <b>English</b> ·\n  <a href=\"README.ru.md\">Русский</a>\n</p>\n\n<p align=\"center\">\n  <b>Your PS5 game store.</b><br>\n  Back from the dead, rebuilt from its own binary, with every line of source in the open.\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/MyLuxy/overdrive/releases/latest\"><img src=\"https://img.shields.io/github/v/release/MyLuxy/overdrive?style=for-the-badge&label=release&labelColor=0b0b0d&color=2a2a2f\" alt=\"Latest release\" width=\"197\"></a>\n  <a href=\"https://github.com/MyLuxy/overdrive/releases\"><img src=\"https://img.shields.io/github/downloads/MyLuxy/overdrive/total?style=for-the-badge&label=downloads&labelColor=0b0b0d&color=2a2a2f\" alt=\"Downloads\" width=\"183\"></a>\n  <a href=\"https://github.com/sponsors/MyLuxy\"><img src=\"https://img.shields.io/badge/sponsor-%E2%9D%A4-db61a2?style=for-the-badge&logo=githubsponsors&logoColor=white&labelColor=0b0b0d\" alt=\"Sponsor MyLuxy on GitHub\" width=\"180\"></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"#install-in-four-steps\">Install</a> ·\n  <a href=\"#features\">Features</a> ·\n  <a href=\"#updates\">Updates</a> ·\n  <a href=\"#troubleshooting\">Troubleshooting</a> ·\n  <a href=\"#build-it-yourself\">Build it yourself</a>\n</p>\n\n> [!NOTE]\n> The original Overdrive project has been shut down so I decompiled the last released build,\n> recovered the complete source and rebuilt it.\n\n<p align=\"center\">\n  <img src=\".github/readme/discover.jpg\" alt=\"Overdrive's Discover page, with a featured game and the Popular now row\" width=\"100%\">\n</p>\n<p align=\"center\">\n  <img src=\".github/readme/browse.jpg\" alt=\"Browse library: 1,845 games with filters, sorting, scores and sizes\" width=\"49.5%\">\n  <img src=\".github/readme/downloads.jpg\" alt=\"Downloads page with activity and storage for internal storage and a USB drive\" width=\"49.5%\">\n</p>\n\n## Features\n\n- **1,800+ games** to discover, with **Top rated**, **New releases** and a featured spotlight\n- **Browse the whole library** with filters, sorting, scores and download sizes at a glance\n- **Downloads straight to the console**, to internal storage or any USB drive, with live speed and storage stats\n- **Favorites**, **search** with an on-screen keyboard, and a **Files** page to see and clean up what's on your drives\n- **16 languages**: English, Deutsch, Español, Français, Italiano, Nederlands, Português (Brasil), Русский, Bahasa Indonesia, 日本語, 简体中文, العربية, فارسی, اردو, हिन्दी, বাংলা\n- **Updates itself**: a new version installs from the console, no PC needed\n- Made for the controller: <kbd>L1</kbd> <kbd>R1</kbd> to switch sections, <kbd>✕</kbd> to select, <kbd>○</kbd> to go back\n\n## Install in four steps\n\n<p align=\"center\">\n  <img src=\".github/readme/install-steps.svg\" alt=\"1 Download Overdrive.exfat · 2 Copy it into a homebrew folder on a USB drive · 3 Plug it in: ShadowMount+ installs it · 4 Play\" width=\"100%\">\n</p>\n\n### Before you start\n\nYou need a **jailbroken PS5** running two payloads: **[ShadowMount+](https://github.com/drakmor/ShadowMountPlus)**,\nwhich installs `.exfat` images by itself, and **[kstuff](https://github.com/EchoStretch/kstuff-lite/releases)**.\nIf ShadowMount+ shows its notification when the console starts, you are ready. You also need a\n**USB drive** and a **PC**.\n\n<p align=\"center\">\n  <a href=\"https://github.com/MyLuxy/overdrive/releases/latest/download/Overdrive.exfat\"><img src=\"https://img.shields.io/badge/Download-Overdrive.exfat-f2f2f3?style=for-the-badge&labelColor=0b0b0d\" alt=\"Download Overdrive.exfat\" width=\"347\"></a>\n</p>\n\n<table>\n<tr>\n<td width=\"64\" align=\"center\" valign=\"top\"><img src=\".github/readme/step-1.svg\" alt=\"1\" width=\"40\"></td>\n<td>\n\n**Download `Overdrive.exfat`** with the button above, or from the\n[latest release](https://github.com/MyLuxy/overdrive/releases/latest). It is the only file you\nneed. Leave it as it is: don't unzip it and don't change the `.exfat` at the end of its name.\n\n</td>\n</tr>\n<tr>\n<td align=\"center\" valign=\"top\"><img src=\".github/readme/step-2.svg\" alt=\"2\" width=\"40\"></td>\n<td>\n\n**Copy it onto a USB drive, inside a folder called `homebrew`.** Plug the drive into your PC,\ncreate a new folder named exactly `homebrew` (all lowercase) at the top level of the drive, and\ncopy `Overdrive.exfat` into it:\n\n```text\nUSB drive\n└── homebrew\n    └── Overdrive.exfat\n```\n\nThe drive must be formatted as **exFAT**, which is how most drives come and what the PS5 reads.\n\n</td>\n</tr>\n<tr>\n<td align=\"center\" valign=\"top\"><img src=\".github/readme/step-3.svg\" alt=\"3\" width=\"40\"></td>\n<td>\n\n**Plug the drive into the PS5.** ShadowMount+ checks for new files every few seconds: it finds\nOverdrive, mounts it and installs it, and a notification tells you when it's done. There is\nnothing to click.\n\n</td>\n</tr>\n<tr>\n<td align=\"center\" valign=\"top\"><img src=\".github/readme/step-4.svg\""
     },
     {
       "full_name": "NationalSecurityAgency/ghidra",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 91437,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 91448,
       "forks": 10236,
       "language": "Java",
       "description": "Ghidra is a software reverse engineering (SRE) framework",
@@ -7226,10 +7226,10 @@
         "software-analysis"
       ],
       "created_at": "2019-03-01T03:27:48Z",
-      "updated_at": "2026-10-19T17:57:41Z",
+      "updated_at": "2026-10-19T18:12:23Z",
       "pushed_at": "2026-10-19T16:16:41Z",
       "license": "Apache-2.0",
-      "open_issues": 2130,
+      "open_issues": 2132,
       "default_branch": "master",
       "sources": [
         {
@@ -7238,7 +7238,7 @@
           "language": "Java",
           "trending_stars_period": 7602,
           "trending_total_forks": null,
-          "trending_total_stars": 91437,
+          "trending_total_stars": 91448,
           "type": "trending_weekly"
         }
       ],
@@ -7246,7 +7246,7 @@
     },
     {
       "full_name": "Noniv/web-ocean",
-      "captured_at": "2026-10-19T17:57:42Z",
+      "captured_at": "2026-10-19T18:16:51Z",
       "stars": 744,
       "forks": 114,
       "language": "HTML",
@@ -7265,12 +7265,12 @@
           "type": "new_repo_search"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "# web-ocean\n\nA real-time ocean renderer written from scratch on WebGPU, with no engine or rendering library. It draws a sunset sea with simulated waves, whitecaps, sun glitter, and a physically based sky with clouds. You fly around it with a free camera.\n\n![Looking toward the sun from 2.4 m above the water](docs/front.jpg)\n\n| 75 degrees off the sun, 2.4 m up | Looking toward the sun from 30 m up |\n|---|---|\n| ![](docs/side.jpg) | ![](docs/high.jpg) |\n\n## Run it\n\nYou need a recent Chrome with WebGPU and a reasonably capable GPU. On a laptop, force Chrome onto the dedicated GPU in the Windows graphics settings, or it will fall back to the integrated one.\n\nOpen `ocean.html` directly in the browser. `ocean.min.html` is the same page minified (61 KB instead of 102 KB). Both are self-contained and work from `file://`.\n\nTo run from source:\n\n```\nnpm install\nnpm start        # serves http://localhost:8080/\n```\n\nAfter editing anything under `js/`, run `npm run build` to regenerate both bundles. The minified build strips WGSL comments and whitespace and minifies the JavaScript with esbuild.\n\n## Controls\n\n| Input | Action |\n|---|---|\n| Click the canvas | Capture the mouse (Esc releases it). Holding the right mouse button also works. |\n| Mouse | Look around |\n| W A S D | Move |\n| Space or E / Q or C | Up / down |\n| Shift | 5x speed |\n| Mouse wheel | Change base speed |\n| H | Settings panel: wind, swell, choppiness, turbidity, foam, sun, haze, clouds, exposure, bloom |\n\nThe camera keeps itself above the displaced water surface, so waves never pass through it.\n\nURL parameters are handy for testing. `?w=2560&h=1440` forces the render resolution, `cam=x,y,z,yawDeg,pitchDeg` sets the camera, `fov=deg` sets the field of view, `ui=0` hides the HUD, and any settings key works too, for example `windSpeed=12&swellHs=2&sunElev=8`.\n\n## How it works\n\n### Waves\n\nThe sea is a Tessendorf FFT simulation with six cascades of 256 by 256 samples. The patches range from 1103 m down to 0.26 m, so wavelengths run from about a kilometre to a few millimetres. The smallest cascade produces the sharp sun sparkles near the camera.\n\nThe spectrum is a fetch-limited JONSWAP wind sea with Donelan-Banner directional spreading, plus a narrow long-crested swell. Dispersion includes the capillary term, and choppy horizontal displacement sharpens the crests. The inverse FFTs are radix-2 compute shaders working in workgroup memory.\n\nThe surface mesh is a CDLOD quadtree with 17 levels. Vertices are 6.25 cm apart near the camera and the mesh reaches 160 km, with continuous vertex morphing between levels.\n\n### Shading\n\n- Mip-mapped first and second moments of the wave slopes (LEAN mapping) give the right anisotropic roughness at every distance. The sun glitter widens with distance and the far sea settles into a sheen without aliasing. Screen-space slope derivatives add specular anti-aliasing.\n- Sun glitter uses an anisotropic Gaussian slope distribution with Smith masking and the size of the solar disc.\n- The sky reflection comes from an environment cube map rebuilt every frame, with roughness-filtered mips. At grazing angles the reflection direction is tilted to account for which wave facets the viewer can actually see.\n- The water body is turbid blue-green, lit by the whole sky hemisphere. Backlit crests get a subsurface glow, and wind-gust patches modulate the short ripples.\n- Whitecaps start where the total surface Jacobian folds. Foam is stored in two camera-centred world-space maps (128 m and 1 km wide), decays over time, drifts downwind, and breaks into streaks as it ages. A procedural bubble texture gives it its structure.\n\n### Sky\n\nThe atmosphere follows Hillaire's approach, with transmittance, multiple-scattering, and sky-view lookup tables plus aerosol haze. There are two cloud layers, a broken low cumulus and a fibrous altostratus deck. Each is shaded with self-shadowing toward the sun, lit rims, silver linings when backlit, and direction-dependent multiple scattering.\n\nCloud noise octaves are filtered by pixel footprint, and silhouettes are anti-aliased analytically: the screen-space derivative of each layer's edge function sets the width of its opacity edge. Cloud transmittance along the sun direction dims the sunlight that reaches the water, and aerial perspective is applied over the sea.\n\n### Post-processing\n\nThe scene renders in HDR with 4x MSAA. Post-processing adds an 8-level bloom, AgX tone mapping, a slight white balance shift, and dithering.\n\n## Performance\n\nAt 2560 by 1440 on an RTX 5070 Ti, the GPU takes about 6 to 8 ms per frame, measured while other programs were also using the GPU. The HUD shows FPS and GPU time when the browser supports `timestamp-query`.\n\nThe per-frame code reuses preallocated typed arrays and descriptors, so the garbage collector has almost nothing to do. The only recurring allocations are the objects WebGPU itself requires, such as the swap-chain view and command buffers.\n\n## Known limitations\n\n- Far water is sti"
     },
     {
       "full_name": "OpenMOSS/MOSS-Image",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 929,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 932,
       "forks": 45,
       "language": "Python",
       "description": "Official repository for MOSS-Image, a 5B-parameter base DiT model with high-quality text rendering, layout generation, and efficient fine-tuning.",
@@ -7283,24 +7283,24 @@
         "text-to-image"
       ],
       "created_at": "2026-10-16T01:18:13Z",
-      "updated_at": "2026-10-19T17:56:33Z",
+      "updated_at": "2026-10-19T18:14:20Z",
       "pushed_at": "2026-10-19T08:30:56Z",
       "license": "Apache-2.0",
       "open_issues": 10,
       "default_branch": "main",
       "sources": [
         {
-          "stars": 929,
+          "stars": 932,
           "type": "new_repo_search"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "<div align=\"center\">\n  <p>\n    <img src=\"assets/lockup-light.svg#gh-light-mode-only\" alt=\"MOSS-Image\" width=\"520\">\n    <img src=\"assets/lockup-dark.svg#gh-dark-mode-only\" alt=\"MOSS-Image\" width=\"520\">\n  </p>\n  <p>\n    <a href=\"https://huggingface.co/OpenMOSS-Team/MOSS-Image-Base\"><img alt=\"Hugging Face · MOSS-Image-Base\" src=\"https://img.shields.io/badge/🤗%20Hugging%20Face-MOSS--Image--Base-ffc107?style=flat-square\"></a>\n    &nbsp;\n    <a href=\"https://huggingface.co/OpenMOSS-Team/MOSS-Image-SFT\"><img alt=\"Hugging Face · MOSS-Image-SFT\" src=\"https://img.shields.io/badge/🤗%20Hugging%20Face-MOSS--Image--SFT-ffc107?style=flat-square\"></a>\n    &nbsp;\n    <a href=\"https://modelscope.cn/models/openmoss/MOSS-Image-Base\"><img alt=\"ModelScope · MOSS-Image-Base\" src=\"assets/modelscope-base-badge.svg\"></a>\n    &nbsp;\n    <a href=\"https://modelscope.cn/models/openmoss/MOSS-Image-SFT\"><img alt=\"ModelScope · MOSS-Image-SFT\" src=\"assets/modelscope-sft-badge.svg\"></a>\n    &nbsp;\n    <a href=\"https://huggingface.co/spaces/OpenMOSS-Team/MOSS-Image\"><img alt=\"Hugging Face Spaces · Demo\" src=\"https://img.shields.io/badge/🤗%20Spaces-Demo-4f46e5?style=flat-square\"></a>\n    &nbsp;\n    <a href=\"https://openmoss.github.io/MOSS-Image/\"><img alt=\"Homepage\" src=\"https://img.shields.io/badge/🌐%20Project-Homepage-2563eb?style=flat-square\"></a>\n    &nbsp;\n    <a href=\"paper/MOSS_Image_Technical_Report.pdf\"><img alt=\"Technical Report\" src=\"https://img.shields.io/badge/📄%20Paper-Technical_Report-b31b1b?style=flat-square\"></a>\n    &nbsp;\n    <a href=\"https://arxiv.org/abs/2610.23374\"><img alt=\"arXiv: 2610.23374\" src=\"https://img.shields.io/badge/arXiv-2610.23374-b31b1b?style=flat-square&amp;logo=arxiv&amp;logoColor=white\"></a>\n    &nbsp;\n    <a href=\"https://x.com/Open_MOSS\"><img alt=\"Follow OpenMOSS on X\" src=\"https://img.shields.io/badge/Follow-OpenMOSS-000000?style=flat-square&amp;logo=x&amp;logoColor=white\"></a>\n    &nbsp;\n    <a href=\"https://qm.qq.com/q/hphM7VhaDu\"><img alt=\"MOSS-Image QQ 交流群：755535143\" src=\"https://img.shields.io/badge/QQ-755535143-12B7F5?style=flat-square&amp;logo=qq&amp;logoColor=white\"></a>\n    &nbsp;\n    <a href=\"https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=7a3m2007-815f-409b-9c3d-a4129f5c058e\"><img alt=\"MOSS-Builders Feishu Community\" src=\"assets/feishu-builders-badge.svg\"></a>\n    &nbsp;\n    <a href=\"https://discord.gg/nXFWEyvbb\"><img alt=\"MOSS-Image Discord Community\" src=\"https://img.shields.io/badge/Discord-Community-5865F2?style=flat-square&amp;logo=discord&amp;logoColor=white\"></a>\n  </p>\n  <p>\n    <strong>English</strong> &nbsp; | &nbsp; <a href=\"README_ZH.md\">简体中文</a>\n  </p>\n</div>\n\n\n## News\n\n- **[2026-10-19]** 📄 The [MOSS-Image Technical Report](https://arxiv.org/abs/2610.23374) is now available on arXiv.\n\n- **[2026-10-16]** 🚀 MOSS-Image has day-0 support in [SGLang](https://docs.sglang.io/cookbook/diffusion/OpenMOSS/MOSS-Image), [vLLM-Omni](https://recipes.vllm.ai/OpenMOSS-Team/MOSS-Image-Base), and [ComfyUI](https://huggingface.co/Comfy-Org/MOSS-Image).\n\n- **[2026-10-16]** 🎉 We are introducing **MOSS-Image-Base** and **MOSS-Image-SFT**! Code and model weights are publicly available.\n\n  **Our key highlights:**\n\n  - 📐 **Layout control:** Control the placement of text and visual elements.\n  - ✍️ **Strong text rendering:** Generate clear, accurate text within images.\n  - 📜 **Long-prompt support:** Accept text prompts of up to 4K tokens.\n  - 🎨 **Versatile visual styles:** Create high-quality anime and photorealistic images.\n  - 🛠️ **Easy to fine-tune:** Adapt the base model to custom tasks and domains.\n  - ⚡ **Compact and efficient:** Efficient image generation with a 5B backbone.\n  - 🖥️ **Heterogeneous GPU training**: Trained on alternative GPU platforms.\n\n<a id=\"user-guide\"></a>\n\n## User guide\n\nStart with the **[English user guide](USERGUIDE.md)** or **[中文用户指南](USERGUIDE_ZH.md)**\nfor recommended inference settings, prompt examples, layout input formats, and\nLoRA training guidance.\n\n<a id=\"comfyui\"></a>\n\n## ComfyUI\n\nThis repository provides a native MOSS-Image plugin for ComfyUI.\n\nSearch for **MOSS-Image** in **ComfyUI Manager** to install the plugin.\nWe are actively working toward integration into the official ComfyUI repository.\n\n[Installation and usage](comfyui/README.md) · [Example workflow](comfyui/moss-image/example_workflows/moss-image.json)\n\n<a id=\"prompt-enhancer\"></a>\n\n## Prompt enhancer skill\n\nThe [MOSS-Image Prompt Enhancer](skills/moss-image-prompt-enhancer/SKILL.md) turns\nimage ideas into detailed captions or spatial Layout prompts. It is designed for\nGPT-6-family agents with local file and Python tools. The bundled script converts\npixel-coordinate drafts into compact JSON with integer centered coordinates;\nit does not call an image-generation service.\n\nInstall the [skill folder](skills/moss-image-prompt-enhancer) in your agent's skills\ndirectory, then invoke `$moss-image-prompt-enhancer` with your image idea, desired\ncaption or Layout output, and any canvas dimension"
     },
     {
       "full_name": "YuJunZhiXue/dsh-purge",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 8479,
-      "forks": 1396,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 8500,
+      "forks": 1403,
       "language": "JavaScript",
       "description": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分",
       "html_url": "https://github.com/YuJunZhiXue/dsh-purge",
@@ -7314,7 +7314,7 @@
         "llm-jailbreak"
       ],
       "created_at": "2026-08-19T07:41:12Z",
-      "updated_at": "2026-10-19T17:57:41Z",
+      "updated_at": "2026-10-19T18:16:33Z",
       "pushed_at": "2026-10-19T13:53:37Z",
       "license": "Other",
       "open_issues": 30,
@@ -7326,7 +7326,7 @@
           "language": "JavaScript",
           "trending_stars_period": 2622,
           "trending_total_forks": null,
-          "trending_total_stars": 8479,
+          "trending_total_stars": 8500,
           "type": "trending_weekly"
         }
       ],
@@ -7334,18 +7334,18 @@
     },
     {
       "full_name": "akitaonrails/ai-memory",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 11116,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 11126,
       "forks": 789,
       "language": "Rust",
       "description": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
       "html_url": "https://github.com/akitaonrails/ai-memory",
       "topics": [],
       "created_at": "2026-05-21T23:23:51Z",
-      "updated_at": "2026-10-19T17:56:49Z",
+      "updated_at": "2026-10-19T18:16:53Z",
       "pushed_at": "2026-10-19T17:48:05Z",
       "license": "MIT",
-      "open_issues": 7,
+      "open_issues": 8,
       "default_branch": "main",
       "sources": [
         {
@@ -7354,7 +7354,7 @@
           "language": "Rust",
           "trending_stars_period": 666,
           "trending_total_forks": null,
-          "trending_total_stars": 11116,
+          "trending_total_stars": 11126,
           "type": "trending_daily"
         }
       ],
@@ -7362,18 +7362,18 @@
     },
     {
       "full_name": "anomalyco/opencode",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 217521,
-      "forks": 29080,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 217534,
+      "forks": 29081,
       "language": "TypeScript",
       "description": "The open source coding agent.",
       "html_url": "https://github.com/anomalyco/opencode",
       "topics": [],
       "created_at": "2025-04-30T20:08:00Z",
-      "updated_at": "2026-10-19T17:57:17Z",
-      "pushed_at": "2026-10-19T17:55:31Z",
+      "updated_at": "2026-10-19T18:12:43Z",
+      "pushed_at": "2026-10-19T18:15:23Z",
       "license": "MIT",
-      "open_issues": 4634,
+      "open_issues": 4640,
       "default_branch": "dev",
       "sources": [
         {
@@ -7382,7 +7382,7 @@
           "language": "TypeScript",
           "trending_stars_period": 1310,
           "trending_total_forks": null,
-          "trending_total_stars": 217521,
+          "trending_total_stars": 217534,
           "type": "trending_daily"
         }
       ],
@@ -7390,18 +7390,18 @@
     },
     {
       "full_name": "anthropics/claude-code",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 152500,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 152508,
       "forks": 27129,
       "language": "TypeScript",
       "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
       "html_url": "https://github.com/anthropics/claude-code",
       "topics": [],
       "created_at": "2025-02-22T17:41:21Z",
-      "updated_at": "2026-10-19T17:57:00Z",
+      "updated_at": "2026-10-19T18:12:55Z",
       "pushed_at": "2026-10-18T22:26:53Z",
       "license": null,
-      "open_issues": 15351,
+      "open_issues": 15353,
       "default_branch": "main",
       "sources": [
         {
@@ -7410,16 +7410,16 @@
           "language": "TypeScript",
           "trending_stars_period": 167,
           "trending_total_forks": null,
-          "trending_total_stars": 152500,
+          "trending_total_stars": 152508,
           "type": "trending_daily"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "# Claude Code\n\n![](https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square) [![npm]](https://www.npmjs.com/package/@anthropic-ai/claude-code)\n\n[npm]: https://img.shields.io/npm/v/@anthropic-ai/claude-code.svg?style=flat-square\n\nClaude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands. Use it in your terminal, IDE, or tag @claude on Github.\n\n**Learn more in the [official documentation](https://code.claude.com/docs/en/overview)**.\n\n<img src=\"./demo.gif\" />\n\n## Get started\n> [!NOTE]\n> Installation via npm is deprecated. Use one of the recommended methods below.\n\nFor more installation options, uninstall steps, and troubleshooting, see the [setup documentation](https://code.claude.com/docs/en/setup).\n\n1. Install Claude Code:\n\n    **MacOS/Linux (Recommended):**\n    ```bash\n    curl -fsSL https://claude.ai/install.sh | bash\n    ```\n\n    **Homebrew (MacOS/Linux):**\n    ```bash\n    brew install --cask claude-code\n    ```\n\n    **Windows (Recommended):**\n    ```powershell\n    irm https://claude.ai/install.ps1 | iex\n    ```\n\n    **WinGet (Windows):**\n    ```powershell\n    winget install Anthropic.ClaudeCode\n    ```\n\n    **NPM (Deprecated):**\n    ```bash\n    npm install -g @anthropic-ai/claude-code\n    ```\n\n2. Navigate to your project directory and run `claude`.\n\n## Plugins\n\nThis repository includes several Claude Code plugins that extend functionality with custom commands and agents. See the [plugins directory](./plugins/README.md) for detailed documentation on available plugins.\n\n## Reporting Bugs\n\nWe welcome your feedback. Use the `/bug` command to report issues directly within Claude Code, or file a [GitHub issue](https://github.com/anthropics/claude-code/issues).\n\n## Connect on Discord\n\nJoin the [Claude Developers Discord](https://anthropic.com/discord) to connect with other developers using Claude Code. Get help, share feedback, and discuss your projects with the community.\n\n## Data collection, usage, and retention\n\nWhen you use Claude Code, we collect feedback, which includes usage data (such as code acceptance or rejections), associated conversation data, and user feedback submitted via the `/bug` command.\n\n### How we use your data\n\nSee our [data usage policies](https://code.claude.com/docs/en/data-usage).\n\n### Privacy safeguards\n\nWe have implemented several safeguards to protect your data, including limited retention periods for sensitive information, restricted access to user session data, and clear policies against using feedback for model training.\n\nFor full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) and [Privacy Policy](https://www.anthropic.com/legal/privacy).\n"
     },
     {
       "full_name": "anthropics/claude-plugins-official",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 43117,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 43121,
       "forks": 4560,
       "language": "Python",
       "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
@@ -7430,7 +7430,7 @@
         "skills"
       ],
       "created_at": "2025-11-20T18:36:20Z",
-      "updated_at": "2026-10-19T17:40:41Z",
+      "updated_at": "2026-10-19T18:10:00Z",
       "pushed_at": "2026-10-19T17:40:33Z",
       "license": "Apache-2.0",
       "open_issues": 1180,
@@ -7442,7 +7442,7 @@
           "language": "Python",
           "trending_stars_period": 4774,
           "trending_total_forks": null,
-          "trending_total_stars": 43117,
+          "trending_total_stars": 43121,
           "type": "trending_weekly"
         }
       ],
@@ -7450,9 +7450,9 @@
     },
     {
       "full_name": "boykopovar/AnyPS5",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 44165,
-      "forks": 4032,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 44182,
+      "forks": 4034,
       "language": "C++",
       "description": "Tool for automatic PS5 executables porting to Linux and Windows",
       "html_url": "https://github.com/boykopovar/AnyPS5",
@@ -7466,10 +7466,10 @@
         "vulkan"
       ],
       "created_at": "2026-08-03T21:30:25Z",
-      "updated_at": "2026-10-19T17:57:21Z",
-      "pushed_at": "2026-10-19T17:56:36Z",
+      "updated_at": "2026-10-19T18:16:22Z",
+      "pushed_at": "2026-10-19T18:10:01Z",
       "license": "GPL-2.0",
-      "open_issues": 885,
+      "open_issues": 892,
       "default_branch": "main",
       "sources": [
         {
@@ -7478,7 +7478,7 @@
           "language": "C++",
           "trending_stars_period": 14224,
           "trending_total_forks": null,
-          "trending_total_stars": 44165,
+          "trending_total_stars": 44182,
           "type": "trending_weekly"
         }
       ],
@@ -7486,9 +7486,9 @@
     },
     {
       "full_name": "cathrynlavery/diagram-design",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 58270,
-      "forks": 3745,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 58277,
+      "forks": 3746,
       "language": "HTML",
       "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
       "html_url": "https://github.com/cathrynlavery/diagram-design",
@@ -7503,7 +7503,7 @@
         "svg"
       ],
       "created_at": "2026-04-16T18:01:16Z",
-      "updated_at": "2026-10-19T17:56:53Z",
+      "updated_at": "2026-10-19T18:14:40Z",
       "pushed_at": "2026-10-16T19:42:46Z",
       "license": "MIT",
       "open_issues": 48,
@@ -7515,7 +7515,7 @@
           "language": "HTML",
           "trending_stars_period": 7901,
           "trending_total_forks": null,
-          "trending_total_stars": 58270,
+          "trending_total_stars": 58277,
           "type": "trending_weekly"
         }
       ],
@@ -7523,8 +7523,8 @@
     },
     {
       "full_name": "headroomlabs-ai/headroom",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 76129,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 76132,
       "forks": 5918,
       "language": "Python",
       "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
@@ -7552,7 +7552,7 @@
         "typescript"
       ],
       "created_at": "2026-01-07T19:58:51Z",
-      "updated_at": "2026-10-19T17:54:23Z",
+      "updated_at": "2026-10-19T18:13:27Z",
       "pushed_at": "2026-10-17T18:29:50Z",
       "license": "Apache-2.0",
       "open_issues": 483,
@@ -7564,17 +7564,17 @@
           "language": "Python",
           "trending_stars_period": 317,
           "trending_total_forks": null,
-          "trending_total_stars": 76129,
+          "trending_total_stars": 76132,
           "type": "trending_daily"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "<div align=\"center\">\n\n<img src=\".github/assets/hero.svg\" alt=\"Headroom — the context compression layer for AI agents. A 55,957 token agent prompt compresses to the 24,340 tokens actually sent to the model, and the FATAL line at item 67 survives byte for byte.\" width=\"880\">\n\n<a href=\"https://trendshift.io/repositories/20881\" target=\"_blank\"><img src=\"https://trendshift.io/api/badge/repositories/20881\" alt=\"headroomlabs-ai/headroom | Trendshift — #1 Repository Of The Day\" width=\"250\" height=\"55\"/></a>\n\n<p>\n  <a href=\"https://github.com/headroomlabs-ai/headroom\"><img src=\"https://img.shields.io/github/stars/headroomlabs-ai/headroom?style=flat&color=00F0B5&labelColor=0C1118&label=stars\" alt=\"GitHub stars\"></a>\n  <a href=\"https://github.com/headroomlabs-ai/headroom/actions/workflows/ci.yml\"><img src=\"https://github.com/headroomlabs-ai/headroom/actions/workflows/ci.yml/badge.svg\" alt=\"CI\"></a>\n  <a href=\"https://pypi.org/project/headroom-ai/\"><img src=\"https://img.shields.io/pypi/v/headroom-ai.svg?color=00F0B5&labelColor=0C1118&label=pypi\" alt=\"PyPI\"></a>\n  <a href=\"https://www.npmjs.com/package/headroom-ai\"><img src=\"https://img.shields.io/npm/v/headroom-ai.svg?color=00F0B5&labelColor=0C1118&label=npm\" alt=\"npm\"></a>\n  <a href=\"https://huggingface.co/chopratejas/kompress-v2-base\"><img src=\"https://img.shields.io/badge/model-kompress--v2--base-65D8FF?labelColor=0C1118\" alt=\"Model\"></a>\n  <a href=\"https://docs.headroomlabs.ai/docs\"><img src=\"https://img.shields.io/badge/docs-online-00F0B5?labelColor=0C1118\" alt=\"Docs\"></a>\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-Apache%202.0-98A4B3?labelColor=0C1118\" alt=\"License\"></a>\n</p>\n\n<p>\n  <b><a href=\"https://docs.headroomlabs.ai/docs/quickstart\">Quickstart</a></b> ·\n  <b><a href=\"#headroom-for-teams\">Headroom for Teams</a></b> ·\n  <a href=\"#get-started-60-seconds\">Install</a> ·\n  <a href=\"#proof\">Proof</a> ·\n  <a href=\"#agent-compatibility\">Agents</a> ·\n  <a href=\"https://docs.headroomlabs.ai/docs\">Docs</a> ·\n  <a href=\"https://discord.gg/yRmaUNpsPJ\">Discord</a> ·\n  <a href=\"llms.txt\">llms.txt</a>\n</p>\n\n<sub><b>AI agents / LLMs:</b> read <a href=\"llms.txt\"><code>/llms.txt</code></a> here, or fetch\n<a href=\"https://docs.headroomlabs.ai/llms.txt\">the live index</a> ·\n<a href=\"https://docs.headroomlabs.ai/llms-full.txt\">full docs blob</a>.</sub>\n\n</div>\n\n<!-- mcp-name: io.github.headroomlabs-ai/headroom -->\n\nHeadroom compresses everything your AI agent reads — tool outputs, logs, RAG\nchunks, files, and conversation history — before it reaches the LLM. Same\nanswers, fraction of the tokens. Compression runs on your machine; no prompt or\nfile content is sent anywhere to be compressed.\n\n<p align=\"center\">\n  <a href=\"https://headroom-perks.vercel.app/?source=github&utm_source=github&utm_medium=readme&utm_content=banner\"><img src=\".github/assets/enterprise-perk.svg\" alt=\"Headroom Enterprise for teams: 3 months free with a 12-month plan. Claim the perk.\" width=\"880\"></a>\n</p>\n\n<div align=\"center\">\n  <img src=\"HeadroomDemo-Fast.gif\" alt=\"Headroom compressing a 10,144 token log dump to 1,260 tokens while preserving the FATAL line\" width=\"820\">\n  <br><sub>10,144 → 1,260 tokens. The same <code>FATAL</code> found.</sub>\n</div>\n\n## What it does\n\n- **Library** — `compress(messages)` in Python or TypeScript, inline in any app.\n- **Proxy** — `headroom proxy --port 8787`, zero code changes, any language.\n- **Agent wrap** — `headroom wrap claude|codex|grok|copilot|cursor|aider|opencode|cline|continue|goose|openhands|openclaw|vibe|omp|zcode` in one command; undo with `headroom unwrap <tool>`.\n- **MCP server** — `headroom_compress`, `headroom_retrieve`, `headroom_stats` for any MCP client.\n- **Cross-agent memory** — one shared store across Claude, Codex, Gemini and Grok, with automatic dedup.\n- **`headroom learn`** — mines failed sessions and writes corrections to `CLAUDE.local.md` (default, gitignored), `CLAUDE.md`, `AGENTS.md`, `GEMINI.md` or `GROK.md`.\n- **Output token reduction** — trims what the model *writes back*, not only what you send. See [below](#output-token-reduction).\n- **Reversible (CCR)** — originals are cached locally and retrieved on demand.\n\n## How it works\n\n```\n Your agent / app\n   (Claude Code, Cursor, Codex, LangChain, Agno, Strands, your own code…)\n        │   prompts · tool outputs · logs · RAG results · files\n        ▼\n    ┌────────────────────────────────────────────────────┐\n    │  Headroom   (runs locally — your data stays here)  │\n    │  ────────────────────────────────────────────────  │\n    │  CacheAligner  →  ContentRouter  →  CCR            │\n    │                    ├─ SmartCrusher   (JSON)        │\n    │                    ├─ CodeCompressor (AST)         │\n    │                    └─ Kompress-v2-base (text, HF)  │\n    │                                                    │\n    │  Cross-agent memory  ·  headroom learn  ·  MCP     │\n    └────────────────────────────────────────────────────┘\n        │   compressed prompt  +  retrieval to"
     },
     {
       "full_name": "morluto/rea",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 334298,
-      "forks": 84483,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 334456,
+      "forks": 84512,
       "language": "TypeScript",
       "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
       "html_url": "https://github.com/morluto/rea",
@@ -7601,10 +7601,10 @@
         "touhou"
       ],
       "created_at": "2026-04-14T00:51:32Z",
-      "updated_at": "2026-10-19T17:57:29Z",
-      "pushed_at": "2026-10-19T17:46:09Z",
+      "updated_at": "2026-10-19T18:16:54Z",
+      "pushed_at": "2026-10-19T18:11:05Z",
       "license": "MIT",
-      "open_issues": 1240,
+      "open_issues": 1241,
       "default_branch": "main",
       "sources": [
         {
@@ -7613,7 +7613,7 @@
           "language": "TypeScript",
           "trending_stars_period": 229268,
           "trending_total_forks": null,
-          "trending_total_stars": 334298,
+          "trending_total_stars": 334455,
           "type": "trending_weekly"
         }
       ],
@@ -7621,9 +7621,9 @@
     },
     {
       "full_name": "ruvnet/ruflo",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 77022,
-      "forks": 9090,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 77037,
+      "forks": 9092,
       "language": "TypeScript",
       "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
       "html_url": "https://github.com/ruvnet/ruflo",
@@ -7650,7 +7650,7 @@
         "typescript"
       ],
       "created_at": "2025-06-02T21:24:20Z",
-      "updated_at": "2026-10-19T17:56:19Z",
+      "updated_at": "2026-10-19T18:16:46Z",
       "pushed_at": "2026-10-19T16:45:02Z",
       "license": "MIT",
       "open_issues": 1062,
@@ -7662,7 +7662,7 @@
           "language": "TypeScript",
           "trending_stars_period": 2117,
           "trending_total_forks": null,
-          "trending_total_stars": 77022,
+          "trending_total_stars": 77037,
           "type": "trending_weekly"
         },
         {
@@ -7671,7 +7671,7 @@
           "language": "TypeScript",
           "trending_stars_period": 564,
           "trending_total_forks": null,
-          "trending_total_stars": 77022,
+          "trending_total_stars": 77037,
           "type": "trending_daily"
         }
       ],
@@ -7679,15 +7679,15 @@
     },
     {
       "full_name": "shiyu-coder/Kronos",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 41455,
-      "forks": 6902,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 41464,
+      "forks": 6904,
       "language": "Python",
       "description": "Kronos: A Foundation Model for the Language of Financial Markets",
       "html_url": "https://github.com/shiyu-coder/Kronos",
       "topics": [],
       "created_at": "2025-07-01T02:54:32Z",
-      "updated_at": "2026-10-19T17:56:38Z",
+      "updated_at": "2026-10-19T18:15:04Z",
       "pushed_at": "2026-04-13T12:38:49Z",
       "license": "MIT",
       "open_issues": 282,
@@ -7699,7 +7699,7 @@
           "language": "Python",
           "trending_stars_period": 355,
           "trending_total_forks": null,
-          "trending_total_stars": 41455,
+          "trending_total_stars": 41464,
           "type": "trending_daily"
         }
       ],
@@ -7707,9 +7707,9 @@
     },
     {
       "full_name": "storytold/artcraft",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 33540,
-      "forks": 5307,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 33551,
+      "forks": 5309,
       "language": "Rust",
       "description": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
       "html_url": "https://github.com/storytold/artcraft",
@@ -7721,10 +7721,10 @@
         "imagegeneration"
       ],
       "created_at": "2022-03-31T23:19:12Z",
-      "updated_at": "2026-10-19T17:56:59Z",
+      "updated_at": "2026-10-19T18:16:30Z",
       "pushed_at": "2026-10-18T19:26:55Z",
       "license": "Apache-2.0",
-      "open_issues": 445,
+      "open_issues": 448,
       "default_branch": "main",
       "sources": [
         {
@@ -7733,7 +7733,7 @@
           "language": "Rust",
           "trending_stars_period": 16379,
           "trending_total_forks": null,
-          "trending_total_stars": 33540,
+          "trending_total_stars": 33551,
           "type": "trending_weekly"
         }
       ],
@@ -7741,15 +7741,15 @@
     },
     {
       "full_name": "withmarbleapp/os-taxonomy",
-      "captured_at": "2026-10-19T17:57:42Z",
-      "stars": 5997,
+      "captured_at": "2026-10-19T18:16:51Z",
+      "stars": 6000,
       "forks": 995,
       "language": "JavaScript",
       "description": null,
       "html_url": "https://github.com/withmarbleapp/os-taxonomy",
       "topics": [],
       "created_at": "2026-07-08T09:27:48Z",
-      "updated_at": "2026-10-19T17:54:29Z",
+      "updated_at": "2026-10-19T18:13:05Z",
       "pushed_at": "2026-10-19T17:39:15Z",
       "license": "ODbL-1.0",
       "open_issues": 17,
@@ -7761,11 +7761,11 @@
           "language": "JavaScript",
           "trending_stars_period": 301,
           "trending_total_forks": null,
-          "trending_total_stars": 5997,
+          "trending_total_stars": 6000,
           "type": "trending_daily"
         }
       ],
-      "readme_excerpt": null
+      "readme_excerpt": "# Marble Skill Taxonomy\n\nAn open, structured taxonomy of **what children learn** across the primary/elementary years — decomposed into fine-grained \"micro-topics\", wired into a prerequisite graph, and aligned to national curriculum standards. Produced by [Marble](https://withmarble.com).\n\n> **Version:** `v1` · **Topics:** 1,591 · **Prerequisite edges:** 3,225 · **Subjects:** 8\n\n## See it\n\n![The taxonomy as a rotating 3D graph: every dot a micro-topic, colored by subject, wired by prerequisites](media/curriculum-viz.gif)\n\nEvery dot is a micro-topic, colored by subject; height is age; each thread is a prerequisite ([full-quality video](media/curriculum-viz.mp4)). Explore it interactively at [withmarble.com/curriculum](https://withmarble.com/curriculum) — tap any concept to trace everything a learner must master before it.\n\n\n## What this is\n\nMost curriculum data is either a flat list of standards or locked inside a product. This dataset is a **connected graph of learning**:\n\n- **1,591 micro-topics** — a single, teachable idea (e.g. *\"Building sentences\"*, *\"Apparent brightness of stars\"*), each with a plain-language description, mastery **evidence** criteria, a type (conceptual / procedural / representational / language / meta), a subject + domain, and an approximate age range.\n- **3,225 prerequisite dependencies** — a directed acyclic graph: *\"topic X depends on prerequisite Y\"*, each edge tagged `hard`/`soft` and carrying a one-line **reason**.\n- **Curriculum alignment** — each micro-topic links to the standards it was distilled from (NGSS, Common Core, the UK National Curriculum, and more).\n- **Teaching research** — 1,051 records covering the current Science and Mathematics topics: teaching approaches, concrete learning activities, feedback, assessment guidance and linked sources. Coverage is partial; the other 540 topics have no research in this release.\n- **Domain clusters** — 176 parent-friendly one-paragraph summaries per (subject, domain, age band).\n\n### Subjects\n\n| Subject | Topics |\n|---|---:|\n| Science | 547 |\n| Mathematics | 504 |\n| English | 286 |\n| History | 90 |\n| Personal & Social Development | 88 |\n| Life Skills | 37 |\n| Computing | 21 |\n| Learning to Learn | 18 |\n\n## Files\n\nAll data lives in [`data/`](data/) as UTF-8 JSON. See [`schema/`](schema/) for JSON Schemas and [`manifest.json`](data/manifest.json) for counts + SHA-256 checksums.\n\n| File | What it holds |\n|---|---|\n| [`data/topics.json`](data/topics.json) | The micro-topics (graph **nodes**). |\n| [`data/dependencies.json`](data/dependencies.json) | Prerequisite **edges** (`topicId` depends on `prerequisiteId`). |\n| [`data/curriculum-standards.json`](data/curriculum-standards.json) | The source curriculum standards, grouped by curriculum. |\n| [`data/clusters.json`](data/clusters.json) | Parent-friendly domain summaries. |\n| [`data/teaching-research.json`](data/teaching-research.json) | Teaching research joined by `topicId`, with explicit coverage and publication notes (~24 MB). |\n| [`data/manifest.json`](data/manifest.json) | Counts, per-subject breakdown, per-file checksums. |\n\n### A topic\n\n```json\n{\n  \"id\": \"mt_N8CpN1EJrP\",\n  \"type\": \"CONCEPTUAL\",\n  \"subject\": \"English\",\n  \"domain\": \"Grammar & Punctuation\",\n  \"name\": \"Building sentences\",\n  \"description\": \"Understand that words combine to make sentences — a sentence expresses a complete thought…\",\n  \"ageRangeStart\": 4,\n  \"ageRangeEnd\": 6,\n  \"centrality\": 0.257,\n  \"evidence\": [\n    \"Distinguish between complete sentences and fragments\",\n    \"Compose a complete sentence with a subject and verb\"\n  ],\n  \"assessmentPrompt\": \"If {{name}} says something like \\\"The dog\\\", can they tell you that's not a complete sentence…?\",\n  \"standards\": [\"ccss-ela:L.K.1f\", \"uk-nc-2013:Eng.App2.Y1.Sent.1\"]\n}\n```\n\n- `id` — stable identifier (`mt_…`), referenced by dependencies and by neighbours.\n- `standards` — keys into `curriculum-standards.json` (`\"<curriculum-slug>:<code>\"`).\n- `assessmentPrompt` — a natural-language check for the idea. Contains a `{{name}}` placeholder (the child's name); substitute or strip before display.\n\n### A dependency\n\n```json\n{ \"topicId\": \"mt__00ZSLnB7p\", \"prerequisiteId\": \"mt_VBl1T1sFCM\", \"strength\": \"hard\",\n  \"reason\": \"Must understand vibrations make sound before finding volume patterns\" }\n```\n\n`topicId` **depends on** `prerequisiteId`. Reverse the edge to get \"unlocks\".\n\n## Teaching research\n\n[`data/teaching-research.json`](data/teaching-research.json) adds **how a topic\nmight be taught** to the graph of what children learn. It covers **547 Science**\nand **504 Mathematics** topics. `coverage.missingTopicIds` and per-subject counts\nmake the **540 topics without research** explicit; absence is not a judgement\nabout whether a topic can be taught.\n\nThe file has `schemaVersion: 1` and taxonomy `version: \"v1\"`. Each `records[]`\nentry joins `topics.json` through `topicId` and contains:\n\n| Field | Meaning |\n|---|---|\n| `pedagogy` | Original teaching summary, practices, representation"
     }
   ],
   "covered": {
@@ -7847,7 +7847,7 @@
     "2026-09-29": 65,
     "2026-09-30": 66,
     "2026-10-01": 7,
-    "2026-10-19": 18
+    "2026-10-19": 49
   },
   "delivery_progress": {
     "20260930T143510Z": {
