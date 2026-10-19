@@ -12,6 +12,7 @@ permissions:
   contents: write
   pull-requests: write
   checks: read
+  actions: read # gh resolves checkSuite.workflowRun through statusCheckRollup.
 
 concurrency:
   group: dependabot-automerge-${{ github.event.workflow_run.head_branch }}
