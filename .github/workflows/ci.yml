@@ -46,7 +46,7 @@ jobs:
           fallback: none
 
       - name: Test with nextest
-        run: cargo nextest run --locked --no-tests=pass
+        run: cargo nextest run --locked --no-tests=pass --no-fail-fast
 
       - name: Verify publication-disabled CLI boundaries
         run: |

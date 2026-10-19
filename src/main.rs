@@ -1806,6 +1806,7 @@ mod tests {
     #[test]
     fn preview_contains_the_real_overview_and_checks_its_unescaped_credentials() {
         let mut digest = json!({
+            "format_version":3,
             "overview":"На этой неделе появились инструменты для разбора данных.",
             "period_start":"2026-10-12T07:00:00Z",
             "period_end":"2026-10-19T07:00:00Z",
@@ -1824,6 +1825,19 @@ mod tests {
         let audit = publication_audit(&digest).unwrap();
         assert_eq!(audit["approved"], false);
         assert!(!audit.to_string().contains(&"a".repeat(40)));
+    }
+
+    #[test]
+    fn retry_selection_accepts_recorded_pool_and_rejects_changed_ranking() {
+        let directory = tempfile::tempdir().unwrap();
+        let rows = json!([{"full_name":"org/young"}]);
+        let digest = json!({"entries":[{"full_name":"org/young"}]});
+        for selection in [rows.clone(), json!({"pool":rows,"excluded":[]})] {
+            write_json(&directory.path().join("selection.json"), &selection).unwrap();
+            assert!(validate_digest_selection(directory.path(), &digest).is_ok());
+            let changed = json!({"entries":[{"full_name":"org/other"}]});
+            assert!(validate_digest_selection(directory.path(), &changed).is_err());
+        }
     }
 
     #[test]
