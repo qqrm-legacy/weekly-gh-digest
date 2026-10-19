@@ -1361,6 +1361,45 @@ fn main() -> Result<()> {
             "publication is disabled pending preview review"
         );
     }
+    if command == "preview-stored" {
+        let run_dir = args
+            .get(1)
+            .map(PathBuf::from)
+            .context("usage: weekly-gh-digest preview-stored <run-directory>")?;
+        record_run_directory(&run_dir)?;
+        let mut digest: Value =
+            serde_json::from_slice(&fs::read(run_dir.join("ranking-input.json"))?)?;
+        validate_digest_selection(&run_dir, &digest)?;
+        digest_publication_text(&digest)?;
+        let entries = digest["entries"]
+            .as_array()
+            .context("stored preview has no entries")?
+            .iter()
+            .map(|entry| {
+                Ok(Ranked {
+                    snapshot: serde_json::from_value(entry["latest"].clone())?,
+                    baseline: None,
+                    delta: 0,
+                    period: String::new(),
+                    trending_source: false,
+                })
+            })
+            .collect::<Result<Vec<_>>>()?;
+        anyhow::ensure!(
+            entries.len() <= MAX_DIGEST_ENTRIES,
+            "stored preview exceeds weekly limit"
+        );
+        let mut state = read_state_strict()?;
+        let clock = clock::SystemClock;
+        digest["overview"] = json!(
+            providers::Groq::from_env(&state_path(), &clock)?
+                .rewrite_overview(&entries, &mut state, &run_dir)?
+        );
+        digest["summary_refreshed_at"] = json!(Utc::now().to_rfc3339());
+        save_preview_files(&run_dir, &digest, true)?;
+        println!("Stored source preview refreshed without collection or Telegram delivery.");
+        return Ok(());
+    }
     if command == "debug-delivery" {
         let run_dir = args
             .get(1)
@@ -1457,32 +1496,7 @@ fn main() -> Result<()> {
         }),
     )?;
     let (mut digest, output) = make_digest(&mut state, &weekly, &gathered.manifest, now, llm)?;
-    write_json(&gathered.dir.join("ranking-input.json"), &digest)?;
-    fs::write(gathered.dir.join("digest.md"), format!("{output}\n"))?;
-    fs::write(gathered.dir.join("summary.md"), render_summary(&digest))?;
-    if !digest_publication_text(&digest)
-        .unwrap_or_default()
-        .is_empty()
-    {
-        fs::write(gathered.dir.join("issue.md"), render_issue_message(&digest))?;
-        let audit = publication_audit(&digest)?;
-        write_json(&gathered.dir.join("release-audit.json"), &audit)?;
-        anyhow::ensure!(
-            audit["approved"] == true,
-            "preview blocked by credential scan"
-        );
-        let mut messages = digest_publication_text(&digest)?;
-        messages.push(final_issue_text(&digest));
-        write_json(&gathered.dir.join("telegram-messages.json"), &messages)?;
-        if command == "preview" && llm {
-            anyhow::ensure!(
-                digest["overview"]
-                    .as_str()
-                    .is_some_and(|text| !text.trim().is_empty()),
-                "weekly synthesis unavailable; inspect provider budget and source gaps"
-            );
-        }
-    }
+    save_preview_files(&gathered.dir, &digest, command == "preview" && llm)?;
     if matches!(command, "digest" | "debug") && !dry {
         println!("Prepared digest preview: {}", gathered.dir.display());
     } else {
@@ -1509,6 +1523,35 @@ fn main() -> Result<()> {
         println!(
             "Debug digest delivered to the technical chat; review status: {}",
             audit["status"]
+        );
+    }
+    Ok(())
+}
+
+fn save_preview_files(run_dir: &Path, digest: &Value, require_overview: bool) -> Result<()> {
+    write_json(&run_dir.join("ranking-input.json"), digest)?;
+    fs::write(run_dir.join("digest.md"), format!("{}\n", render(digest)))?;
+    fs::write(run_dir.join("summary.md"), render_summary(digest))?;
+    if digest["entries"]
+        .as_array()
+        .is_some_and(|entries| !entries.is_empty())
+    {
+        let mut messages = digest_publication_text(digest)?;
+        fs::write(run_dir.join("issue.md"), render_issue_message(digest))?;
+        let audit = publication_audit(digest)?;
+        write_json(&run_dir.join("release-audit.json"), &audit)?;
+        anyhow::ensure!(
+            audit["approved"] == true,
+            "preview blocked by credential scan"
+        );
+        messages.push(final_issue_text(digest));
+        write_json(&run_dir.join("telegram-messages.json"), &messages)?;
+        anyhow::ensure!(
+            !require_overview
+                || digest["overview"]
+                    .as_str()
+                    .is_some_and(|text| !text.trim().is_empty()),
+            "weekly synthesis unavailable; inspect provider budget and source gaps"
         );
     }
     Ok(())

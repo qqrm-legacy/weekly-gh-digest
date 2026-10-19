@@ -23,6 +23,10 @@ on:
         description: Reuse stored analyses and run the deterministic credential scan before delivery
         type: string
         required: false
+      preview_source_run_id:
+        description: Regenerate only the overview from a successful main run; uses the provider and never sends
+        type: string
+        required: false
 
 permissions:
   actions: read
@@ -56,6 +60,7 @@ jobs:
           PREVIEW_WITH_LLM: ${{ inputs.preview_with_llm }}
           DELIVER_TO_MAIN_CHAT: ${{ inputs.deliver_to_main_chat }}
           RETRY_DELIVERY_RUN_ID: ${{ inputs.retry_delivery_run_id }}
+          PREVIEW_SOURCE_RUN_ID: ${{ inputs.preview_source_run_id }}
         run: python3 .github/scripts/run_mode.py
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8 # master
@@ -141,6 +146,7 @@ jobs:
           LLM_FREE_TIER_CONFIRMED: ${{ vars.LLM_FREE_TIER_CONFIRMED }}
           GH_TOKEN: ${{ github.token }}
           RETRY_DELIVERY_RUN_ID: ${{ inputs.retry_delivery_run_id }}
+          PREVIEW_SOURCE_RUN_ID: ${{ inputs.preview_source_run_id }}
           RUN_MODE: ${{ steps.mode.outputs.mode }}
           USE_LLM: ${{ steps.mode.outputs.llm }}
           DIGEST_DELIVERY_ENABLED: ${{ vars.DIGEST_DELIVERY_ENABLED }}
@@ -148,7 +154,23 @@ jobs:
         run: |
           set -euo pipefail
           bot=./target/release/weekly-gh-digest
-          if [[ "$RUN_MODE" == "retry" ]]; then
+          if [[ "$RUN_MODE" == "preview-stored" ]]; then
+            [[ "$PREVIEW_SOURCE_RUN_ID" =~ ^[0-9]+$ ]]
+            source=$(gh run view "$PREVIEW_SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" --json workflowName,headBranch,conclusion)
+            [[ "$(jq -r .workflowName <<<"$source")" == "Run Bot" ]]
+            [[ "$(jq -r .headBranch <<<"$source")" == "main" ]]
+            [[ "$(jq -r .conclusion <<<"$source")" == "success" ]]
+            source_dir="$RUNNER_TEMP/weekly-preview-$PREVIEW_SOURCE_RUN_ID"
+            mkdir -p "$source_dir"
+            gh run download "$PREVIEW_SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" \
+              --name "weekly-gh-digest-$PREVIEW_SOURCE_RUN_ID" --dir "$source_dir"
+            test -f "$source_dir/ranking-input.json"
+            preview_dir="data/runs/refreshed-$GITHUB_RUN_ID"
+            mkdir -p "$preview_dir"
+            cp -a "$source_dir/." "$preview_dir/"
+            printf '{"source_run_id":%s}\n' "$PREVIEW_SOURCE_RUN_ID" > "$preview_dir/preview-source.json"
+            "$bot" preview-stored "$preview_dir"
+          elif [[ "$RUN_MODE" == "retry" ]]; then
             [[ "$RETRY_DELIVERY_RUN_ID" =~ ^[0-9]+$ ]]
             source=$(gh run view "$RETRY_DELIVERY_RUN_ID" --repo "$GITHUB_REPOSITORY" --json workflowName,headBranch)
             [[ "$(jq -r .workflowName <<<"$source")" == "Run Bot" ]] || { echo "Source run is not Run Bot" >&2; exit 1; }
