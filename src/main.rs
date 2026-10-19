@@ -712,7 +712,7 @@ fn render_issue_chunks(digest: &Value) -> Vec<String> {
     chunks
 }
 
-/// Гарантированно одно сообщение: жмём описания, пока батч не влез в лимит.
+/// Joined representation for the preview artifact; the sender uses separate chunks.
 fn render_issue_message(digest: &Value) -> String {
     render_issue_messages(digest).join("\n\n")
 }

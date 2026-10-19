@@ -121,7 +121,7 @@ impl<'a> Groq<'a> {
                 } else {
                     format!("Groq project description failed: {error:#}")
                 };
-                break;
+                continue;
             }
         };
             let (description, project_joke) = match parse_project_description(&response) {
@@ -145,7 +145,7 @@ impl<'a> Groq<'a> {
                                 "Groq description invalid after repair: first={original_error:#}; repair={repair_error:#}; response omitted"
                             );
                         }
-                        break;
+                        continue;
                     }
                 }
                 }
@@ -162,7 +162,7 @@ impl<'a> Groq<'a> {
                     "no exact source excerpt available for {}",
                     snapshot.full_name
                 );
-                break;
+                continue;
             };
             let description = safe_public_text(&description);
             provider_reviews.push(
