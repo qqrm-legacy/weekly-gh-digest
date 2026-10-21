@@ -23299,6 +23299,2030 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "Ansub/tv-detox",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1109,
+      "forks": 113,
+      "language": "Java",
+      "description": "Make an old Android TV fast again with Claude Code or Codex: a tiny ad-free home screen plus the prompt to clean it up",
+      "html_url": "https://github.com/Ansub/tv-detox",
+      "topics": [],
+      "created_at": "2026-10-18T06:42:29Z",
+      "updated_at": "2026-10-21T17:14:12Z",
+      "pushed_at": "2026-10-21T06:44:14Z",
+      "license": "MIT",
+      "open_issues": 8,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-18T06:42:29Z",
+          "description": "Make an old Android TV fast again with Claude Code or Codex: a tiny ad-free home screen plus the prompt to clean it up",
+          "html_url": "https://github.com/Ansub/tv-detox",
+          "stars": 1109,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Caho1/open-claude-ui",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1308,
+      "forks": 268,
+      "language": "TypeScript",
+      "description": "基于 REA 深度拆解并高保真还原 Claude 官方桌面端 UI。还原 30 个独立 React 组件与 8 项硬核交互物理算法，附带 3000+ 行逆向分析手册。",
+      "html_url": "https://github.com/Caho1/open-claude-ui",
+      "topics": [
+        "anthropic",
+        "audioworklet",
+        "claude",
+        "design-system",
+        "framer-motion",
+        "motion-physics",
+        "react",
+        "reverse-engineering",
+        "tailwindcss",
+        "ui-components"
+      ],
+      "created_at": "2026-10-14T14:05:05Z",
+      "updated_at": "2026-10-21T15:51:51Z",
+      "pushed_at": "2026-10-21T08:39:17Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-14T14:05:05Z",
+          "description": "基于 REA 深度拆解并高保真还原 Claude 官方桌面端 UI。还原 30 个独立 React 组件与 8 项硬核交互物理算法，附带 3000+ 行逆向分析手册。",
+          "html_url": "https://github.com/Caho1/open-claude-ui",
+          "stars": 1308,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Comfy-Org/ComfyUI",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 141338,
+      "forks": 16714,
+      "language": "Python",
+      "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
+      "html_url": "https://github.com/Comfy-Org/ComfyUI",
+      "topics": [
+        "ai",
+        "comfy",
+        "comfyui",
+        "python",
+        "pytorch",
+        "stable-diffusion"
+      ],
+      "created_at": "2023-01-17T03:15:56Z",
+      "updated_at": "2026-10-21T17:15:17Z",
+      "pushed_at": "2026-10-21T17:04:40Z",
+      "license": "GPL-3.0",
+      "open_issues": 5311,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
+          "full_name": "Comfy-Org/ComfyUI",
+          "language": "Python",
+          "trending_stars_period": 914,
+          "trending_total_forks": null,
+          "trending_total_stars": 141337,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DietrichGebert/ponytail",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 171126,
+      "forks": 9311,
+      "language": "JavaScript",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "html_url": "https://github.com/DietrichGebert/ponytail",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude",
+        "claude-code",
+        "claude-code-plugin",
+        "cursor-rules",
+        "developer-tools",
+        "llm",
+        "prompt-engineering",
+        "yagni"
+      ],
+      "created_at": "2026-06-12T00:52:37Z",
+      "updated_at": "2026-10-21T17:12:51Z",
+      "pushed_at": "2026-10-18T01:55:14Z",
+      "license": "MIT",
+      "open_issues": 65,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+          "full_name": "DietrichGebert/ponytail",
+          "language": "JavaScript",
+          "trending_stars_period": 2051,
+          "trending_total_forks": null,
+          "trending_total_stars": 171126,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Gathin23/cleanyourtv",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 17658,
+      "forks": 1927,
+      "language": "Java",
+      "description": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
+      "html_url": "https://github.com/Gathin23/cleanyourtv",
+      "topics": [
+        "adb",
+        "adblock",
+        "android-tv",
+        "android-tv-launcher",
+        "apple-tv",
+        "bloatware-removal",
+        "claude-code",
+        "debloat",
+        "fire-tv",
+        "google-tv",
+        "launcher",
+        "privacy",
+        "smart-tv",
+        "sony-bravia",
+        "tcl",
+        "vibe-coding",
+        "xiaomi"
+      ],
+      "created_at": "2026-10-17T08:12:35Z",
+      "updated_at": "2026-10-21T17:15:19Z",
+      "pushed_at": "2026-10-21T17:07:03Z",
+      "license": "Other",
+      "open_issues": 179,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-17T08:12:35Z",
+          "description": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
+          "html_url": "https://github.com/Gathin23/cleanyourtv",
+          "stars": 17656,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Graphify-Labs/graphify",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 131262,
+      "forks": 12609,
+      "language": "Python",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "html_url": "https://github.com/Graphify-Labs/graphify",
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor",
+        "developer-tools",
+        "gemini",
+        "graphify",
+        "graphrag",
+        "knowledge-graph",
+        "leiden",
+        "llm",
+        "mcp",
+        "openclaw",
+        "rag",
+        "skills",
+        "tree-sitter"
+      ],
+      "created_at": "2026-04-03T15:49:07Z",
+      "updated_at": "2026-10-21T17:15:09Z",
+      "pushed_at": "2026-10-21T15:23:36Z",
+      "license": "Apache-2.0",
+      "open_issues": 1598,
+      "default_branch": "v8",
+      "sources": [
+        {
+          "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+          "full_name": "Graphify-Labs/graphify",
+          "language": "Python",
+          "trending_stars_period": 1434,
+          "trending_total_forks": null,
+          "trending_total_stars": 131262,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 55855,
+      "forks": 5042,
+      "language": "Python",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "html_url": "https://github.com/HKUDS/CLI-Anything",
+      "topics": [],
+      "created_at": "2026-03-08T13:52:57Z",
+      "updated_at": "2026-10-21T17:14:02Z",
+      "pushed_at": "2026-09-22T02:01:29Z",
+      "license": "Apache-2.0",
+      "open_issues": 210,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+          "full_name": "HKUDS/CLI-Anything",
+          "language": "Python",
+          "trending_stars_period": 3587,
+          "trending_total_forks": null,
+          "trending_total_stars": 55855,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JoasASantos/REA-Prompts",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1290,
+      "forks": 193,
+      "language": null,
+      "description": "REAP - Prompts for you to use REA (Reverse Engineer Anything), get the most out of it, and clone or break down any program",
+      "html_url": "https://github.com/JoasASantos/REA-Prompts",
+      "topics": [
+        "prompt-engineering",
+        "rea",
+        "reverse-enginnering"
+      ],
+      "created_at": "2026-10-19T22:20:47Z",
+      "updated_at": "2026-10-21T17:12:29Z",
+      "pushed_at": "2026-10-21T00:32:22Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-19T22:20:47Z",
+          "description": "REAP - Prompts for you to use REA (Reverse Engineer Anything), get the most out of it, and clone or break down any program",
+          "html_url": "https://github.com/JoasASantos/REA-Prompts",
+          "stars": 1290,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "K-Dense-AI/scientific-agent-skills",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 53534,
+      "forks": 4728,
+      "language": "Python",
+      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+      "html_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "topics": [
+        "agent-skills",
+        "ai-scientist",
+        "bioinformatics",
+        "chemoinformatics",
+        "claude",
+        "claude-skills",
+        "claudecode",
+        "clinical-research",
+        "computational-biology",
+        "data-analysis",
+        "drug-discovery",
+        "genomics",
+        "materials-science",
+        "metabolomics",
+        "proteomics",
+        "scientific-computing",
+        "scientific-visualization"
+      ],
+      "created_at": "2025-10-19T20:54:15Z",
+      "updated_at": "2026-10-21T16:38:41Z",
+      "pushed_at": "2026-10-19T09:33:57Z",
+      "license": "MIT",
+      "open_issues": 50,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+          "full_name": "K-Dense-AI/scientific-agent-skills",
+          "language": "Python",
+          "trending_stars_period": 4549,
+          "trending_total_forks": null,
+          "trending_total_stars": 53534,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Leonxlnx/earshot",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 2042,
+      "forks": 116,
+      "language": "Python",
+      "description": "Ears for coding agents: let AI hear, review and make sound. CPU-only, open source.",
+      "html_url": "https://github.com/Leonxlnx/earshot",
+      "topics": [
+        "ai-agents",
+        "audio",
+        "claude-code",
+        "mcp",
+        "sound-design"
+      ],
+      "created_at": "2026-10-15T06:52:46Z",
+      "updated_at": "2026-10-21T17:12:22Z",
+      "pushed_at": "2026-10-18T07:22:49Z",
+      "license": "MIT",
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-15T06:52:46Z",
+          "description": "Ears for coding agents: let AI hear, review and make sound. CPU-only, open source.",
+          "html_url": "https://github.com/Leonxlnx/earshot",
+          "stars": 2042,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "LiCinCan/blender-ai-mcp-addon",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 969,
+      "forks": 389,
+      "language": "Python",
+      "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with OpenAI, ChatGPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon and plugin, copilot for 3D, bpy Python scripting, MCP integration.",
+      "html_url": "https://github.com/LiCinCan/blender-ai-mcp-addon",
+      "topics": [
+        "ai-assistant",
+        "blender",
+        "blender-addon",
+        "blender-ai",
+        "blender-automation",
+        "blender-extension",
+        "blender-mcp",
+        "blender-plugin",
+        "blender-python",
+        "blender-scripting",
+        "bpy",
+        "chatgpt",
+        "gpt",
+        "llm",
+        "mcp",
+        "mcp-for-blender",
+        "mcp-server",
+        "model-context-protocol",
+        "opencode",
+        "python"
+      ],
+      "created_at": "2026-10-15T22:30:47Z",
+      "updated_at": "2026-10-21T17:12:39Z",
+      "pushed_at": "2026-10-20T02:31:42Z",
+      "license": "MIT",
+      "open_issues": 31,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-15T22:30:47Z",
+          "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with OpenAI, ChatGPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon and plugin, copilot for 3D, bpy Python scripting, MCP integration.",
+          "html_url": "https://github.com/LiCinCan/blender-ai-mcp-addon",
+          "stars": 969,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "MadsLorentzen/ai-job-search",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 62728,
+      "forks": 19349,
+      "language": "Python",
+      "description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
+      "html_url": "https://github.com/MadsLorentzen/ai-job-search",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "career",
+        "claude-code",
+        "cover-letter",
+        "cv",
+        "interview-preparation",
+        "job-application",
+        "job-hunting",
+        "job-search",
+        "latex",
+        "resume"
+      ],
+      "created_at": "2026-03-18T14:33:04Z",
+      "updated_at": "2026-10-21T17:15:20Z",
+      "pushed_at": "2026-10-21T05:29:11Z",
+      "license": "MIT",
+      "open_issues": 49,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
+          "full_name": "MadsLorentzen/ai-job-search",
+          "language": "Python",
+          "trending_stars_period": 12848,
+          "trending_total_forks": null,
+          "trending_total_stars": 62727,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
+          "full_name": "MadsLorentzen/ai-job-search",
+          "language": "Python",
+          "trending_stars_period": 3131,
+          "trending_total_forks": null,
+          "trending_total_stars": 62727,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "MyLuxy/overdrive",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1090,
+      "forks": 253,
+      "language": "C++",
+      "description": "Overdrive, a PS5 homebrew game store with 1,800+ games.",
+      "html_url": "https://github.com/MyLuxy/overdrive",
+      "topics": [
+        "exfat",
+        "game-store",
+        "homebrew",
+        "jailbreak",
+        "ps5",
+        "ps5-homebrew",
+        "reverse-engineering",
+        "shadowmountplus"
+      ],
+      "created_at": "2026-10-14T00:07:08Z",
+      "updated_at": "2026-10-21T17:01:14Z",
+      "pushed_at": "2026-10-21T16:44:25Z",
+      "license": null,
+      "open_issues": 14,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-14T00:07:08Z",
+          "description": "Overdrive, a PS5 homebrew game store with 1,800+ games.",
+          "html_url": "https://github.com/MyLuxy/overdrive",
+          "stars": 1090,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NationalSecurityAgency/ghidra",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 92517,
+      "forks": 10361,
+      "language": "Java",
+      "description": "Ghidra is a software reverse engineering (SRE) framework",
+      "html_url": "https://github.com/NationalSecurityAgency/ghidra",
+      "topics": [
+        "disassembler",
+        "reverse-engineering",
+        "software-analysis"
+      ],
+      "created_at": "2019-03-01T03:27:48Z",
+      "updated_at": "2026-10-21T17:03:50Z",
+      "pushed_at": "2026-10-20T12:16:20Z",
+      "license": "Apache-2.0",
+      "open_issues": 2139,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Ghidra is a software reverse engineering (SRE) framework",
+          "full_name": "NationalSecurityAgency/ghidra",
+          "language": "Java",
+          "trending_stars_period": 6184,
+          "trending_total_forks": null,
+          "trending_total_stars": 92517,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Noniv/web-ocean",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 824,
+      "forks": 130,
+      "language": "HTML",
+      "description": "Real-time WebGPU ocean renderer written from scratch, no engine. FFT waves, whitecaps, sun glitter, physically based sunset sky with clouds, free camera. Built with Claude Code (Opus 5.5). Opens from a single 61 KB HTML file in Chrome.",
+      "html_url": "https://github.com/Noniv/web-ocean",
+      "topics": [],
+      "created_at": "2026-10-16T23:49:53Z",
+      "updated_at": "2026-10-21T16:46:10Z",
+      "pushed_at": "2026-10-17T00:39:56Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-16T23:49:53Z",
+          "description": "Real-time WebGPU ocean renderer written from scratch, no engine. FFT waves, whitecaps, sun glitter, physically based sunset sky with clouds, free camera. Built with Claude Code (Opus 5.5). Opens from a single 61 KB HTML file in Chrome.",
+          "html_url": "https://github.com/Noniv/web-ocean",
+          "stars": 824,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "OpenMOSS/MOSS-Image",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1258,
+      "forks": 63,
+      "language": "Python",
+      "description": "Official repository for MOSS-Image, a 5B-parameter base DiT model with high-quality text rendering, layout generation, and efficient fine-tuning.",
+      "html_url": "https://github.com/OpenMOSS/MOSS-Image",
+      "topics": [
+        "controllable-generation",
+        "foundation-models",
+        "image-generation",
+        "text-rendering",
+        "text-to-image"
+      ],
+      "created_at": "2026-10-16T01:18:13Z",
+      "updated_at": "2026-10-21T16:58:16Z",
+      "pushed_at": "2026-10-20T16:42:45Z",
+      "license": "Apache-2.0",
+      "open_issues": 14,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-16T01:18:13Z",
+          "description": "Official repository for MOSS-Image, a 5B-parameter base DiT model with high-quality text rendering, layout generation, and efficient fine-tuning.",
+          "html_url": "https://github.com/OpenMOSS/MOSS-Image",
+          "stars": 1258,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Supermedo/uncharted_pc",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1768,
+      "forks": 96,
+      "language": "C++",
+      "description": "Uncharted: The Nathan Drake Collection running natively on Windows - by SuperMedo",
+      "html_url": "https://github.com/Supermedo/uncharted_pc",
+      "topics": [],
+      "created_at": "2026-10-15T00:17:23Z",
+      "updated_at": "2026-10-21T17:13:04Z",
+      "pushed_at": "2026-10-17T23:37:21Z",
+      "license": "GPL-2.0",
+      "open_issues": 335,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-15T00:17:23Z",
+          "description": "Uncharted: The Nathan Drake Collection running natively on Windows - by SuperMedo",
+          "html_url": "https://github.com/Supermedo/uncharted_pc",
+          "stars": 1768,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Tencent-Hunyuan/Hy-Memory",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1119,
+      "forks": 96,
+      "language": "Python",
+      "description": null,
+      "html_url": "https://github.com/Tencent-Hunyuan/Hy-Memory",
+      "topics": [],
+      "created_at": "2026-10-15T13:06:56Z",
+      "updated_at": "2026-10-21T16:15:05Z",
+      "pushed_at": "2026-10-21T13:49:01Z",
+      "license": "Other",
+      "open_issues": 45,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-15T13:06:56Z",
+          "description": null,
+          "html_url": "https://github.com/Tencent-Hunyuan/Hy-Memory",
+          "stars": 1119,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "YOURSJEYO/claude-switcher",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 712,
+      "forks": 67,
+      "language": "Shell",
+      "description": "Fail-Closed 账号环境管理器:11项环境指纹审计(Block-on-Fail)、手写STUN协议栈的WebRTC泄漏探针、Kill-Switch断网急停、多账号快照隔离、配置漂移自愈 —— 让真实IP在物理上无法泄漏",
+      "html_url": "https://github.com/YOURSJEYO/claude-switcher",
+      "topics": [],
+      "created_at": "2026-10-14T05:39:53Z",
+      "updated_at": "2026-10-21T16:10:12Z",
+      "pushed_at": "2026-10-21T15:33:24Z",
+      "license": "MIT",
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-14T05:39:53Z",
+          "description": "Fail-Closed 账号环境管理器:11项环境指纹审计(Block-on-Fail)、手写STUN协议栈的WebRTC泄漏探针、Kill-Switch断网急停、多账号快照隔离、配置漂移自愈 —— 让真实IP在物理上无法泄漏",
+          "html_url": "https://github.com/YOURSJEYO/claude-switcher",
+          "stars": 712,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ahwootech/BRUTAL",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 2107,
+      "forks": 118,
+      "language": "C#",
+      "description": "A free, open source C# framework for making games, or your own game engine. Direct access to native APIs and Vulkan, with the low-level libraries around them. The foundation under Kitten Space Agency and RimWorld's Waylith engine.",
+      "html_url": "https://github.com/ahwootech/BRUTAL",
+      "topics": [
+        "csharp",
+        "dotnet",
+        "game-engine",
+        "gamedev",
+        "vulkan"
+      ],
+      "created_at": "2026-10-14T19:33:56Z",
+      "updated_at": "2026-10-21T17:10:13Z",
+      "pushed_at": "2026-10-21T02:32:31Z",
+      "license": "Other",
+      "open_issues": 16,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-14T19:33:56Z",
+          "description": "A free, open source C# framework for making games, or your own game engine. Direct access to native APIs and Vulkan, with the low-level libraries around them. The foundation under Kitten Space Agency and RimWorld's Waylith engine.",
+          "html_url": "https://github.com/ahwootech/BRUTAL",
+          "stars": 2107,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "aicodeking/leanrea",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1262,
+      "forks": 190,
+      "language": "Python",
+      "description": "One 8 KB skill that replaces REA (Reverse Engineer Anything): plain CLI tools, no MCP. Benchmarked: 38% faster, 35% cheaper.",
+      "html_url": "https://github.com/aicodeking/leanrea",
+      "topics": [],
+      "created_at": "2026-10-17T02:53:24Z",
+      "updated_at": "2026-10-21T17:01:55Z",
+      "pushed_at": "2026-10-19T11:34:21Z",
+      "license": "MIT",
+      "open_issues": 6,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-17T02:53:24Z",
+          "description": "One 8 KB skill that replaces REA (Reverse Engineer Anything): plain CLI tools, no MCP. Benchmarked: 38% faster, 35% cheaper.",
+          "html_url": "https://github.com/aicodeking/leanrea",
+          "stars": 1262,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "akitaonrails/ai-memory",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 12165,
+      "forks": 860,
+      "language": "Rust",
+      "description": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+      "html_url": "https://github.com/akitaonrails/ai-memory",
+      "topics": [],
+      "created_at": "2026-05-21T23:23:51Z",
+      "updated_at": "2026-10-21T17:13:47Z",
+      "pushed_at": "2026-10-21T15:49:38Z",
+      "license": "MIT",
+      "open_issues": 8,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+          "full_name": "akitaonrails/ai-memory",
+          "language": "Rust",
+          "trending_stars_period": 2640,
+          "trending_total_forks": null,
+          "trending_total_stars": 12165,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+          "full_name": "akitaonrails/ai-memory",
+          "language": "Rust",
+          "trending_stars_period": 303,
+          "trending_total_forks": null,
+          "trending_total_stars": 12165,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "alchaincyf/huashu-motion",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1250,
+      "forks": 124,
+      "language": "JavaScript",
+      "description": "让你的agent一键直出商业级产品宣传片：会作曲，能指着画面改。Commercial-grade launch films by your coding agent — point at the frame to change it.",
+      "html_url": "https://github.com/alchaincyf/huashu-motion",
+      "topics": [
+        "agent-skills",
+        "animation",
+        "claude-code",
+        "codex",
+        "gsap",
+        "launch-video",
+        "motion-graphics",
+        "skills"
+      ],
+      "created_at": "2026-10-18T12:19:27Z",
+      "updated_at": "2026-10-21T16:01:45Z",
+      "pushed_at": "2026-10-19T13:36:51Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-18T12:19:27Z",
+          "description": "让你的agent一键直出商业级产品宣传片：会作曲，能指着画面改。Commercial-grade launch films by your coding agent — point at the frame to change it.",
+          "html_url": "https://github.com/alchaincyf/huashu-motion",
+          "stars": 1250,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "android/skills",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 9130,
+      "forks": 589,
+      "language": "Kotlin",
+      "description": null,
+      "html_url": "https://github.com/android/skills",
+      "topics": [
+        "skills"
+      ],
+      "created_at": "2026-03-16T12:41:46Z",
+      "updated_at": "2026-10-21T16:55:57Z",
+      "pushed_at": "2026-10-21T13:55:04Z",
+      "license": "Apache-2.0",
+      "open_issues": 31,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "",
+          "full_name": "android/skills",
+          "language": "Kotlin",
+          "trending_stars_period": 1255,
+          "trending_total_forks": null,
+          "trending_total_stars": 9130,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anomalyco/opencode",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 219562,
+      "forks": 29289,
+      "language": "TypeScript",
+      "description": "The open source coding agent.",
+      "html_url": "https://github.com/anomalyco/opencode",
+      "topics": [],
+      "created_at": "2025-04-30T20:08:00Z",
+      "updated_at": "2026-10-21T17:13:17Z",
+      "pushed_at": "2026-10-21T17:15:13Z",
+      "license": "MIT",
+      "open_issues": 3719,
+      "default_branch": "dev",
+      "sources": [
+        {
+          "description": "The open source coding agent.",
+          "full_name": "anomalyco/opencode",
+          "language": "TypeScript",
+          "trending_stars_period": 5792,
+          "trending_total_forks": null,
+          "trending_total_stars": 219562,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/claude-plugins-official",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 43569,
+      "forks": 4598,
+      "language": "Python",
+      "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "html_url": "https://github.com/anthropics/claude-plugins-official",
+      "topics": [
+        "claude-code",
+        "mcp",
+        "skills"
+      ],
+      "created_at": "2025-11-20T18:36:20Z",
+      "updated_at": "2026-10-21T17:10:24Z",
+      "pushed_at": "2026-10-21T16:50:17Z",
+      "license": "Apache-2.0",
+      "open_issues": 1183,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+          "full_name": "anthropics/claude-plugins-official",
+          "language": "Python",
+          "trending_stars_period": 5650,
+          "trending_total_forks": null,
+          "trending_total_stars": 43569,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "chenglou/handwired",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1867,
+      "forks": 155,
+      "language": "TypeScript",
+      "description": "Turn your regular JavaScript code into a neural net.",
+      "html_url": "https://github.com/chenglou/handwired",
+      "topics": [],
+      "created_at": "2026-10-15T02:15:09Z",
+      "updated_at": "2026-10-21T16:43:44Z",
+      "pushed_at": "2026-10-17T01:12:12Z",
+      "license": "MIT",
+      "open_issues": 9,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-15T02:15:09Z",
+          "description": "Turn your regular JavaScript code into a neural net.",
+          "html_url": "https://github.com/chenglou/handwired",
+          "stars": 1867,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 35462,
+      "forks": 2229,
+      "language": "JavaScript",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "html_url": "https://github.com/cloudflare/security-audit-skill",
+      "topics": [],
+      "created_at": "2026-06-18T14:08:44Z",
+      "updated_at": "2026-10-21T17:15:16Z",
+      "pushed_at": "2026-09-14T19:29:02Z",
+      "license": "MIT",
+      "open_issues": 77,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "full_name": "cloudflare/security-audit-skill",
+          "language": "JavaScript",
+          "trending_stars_period": 1997,
+          "trending_total_forks": null,
+          "trending_total_stars": 35462,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cranebeaker/coop-anything",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 770,
+      "forks": 95,
+      "language": "Python",
+      "description": "Co-op Anything: point your AI agent at any single-player game and play it with friends (online and/or splitscreen!). MCP server and playbook to let you reverse engineer, fix, test, ship and share what it learns.",
+      "html_url": "https://github.com/cranebeaker/coop-anything",
+      "topics": [],
+      "created_at": "2026-10-16T11:12:03Z",
+      "updated_at": "2026-10-21T17:08:11Z",
+      "pushed_at": "2026-10-21T17:08:07Z",
+      "license": "MIT",
+      "open_issues": 65,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-16T11:12:03Z",
+          "description": "Co-op Anything: point your AI agent at any single-player game and play it with friends (online and/or splitscreen!). MCP server and playbook to let you reverse engineer, fix, test, ship and share what it learns.",
+          "html_url": "https://github.com/cranebeaker/coop-anything",
+          "stars": 770,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ctresb/leis",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 748,
+      "forks": 108,
+      "language": null,
+      "description": "Todas as leis do Brasil",
+      "html_url": "https://github.com/ctresb/leis",
+      "topics": [],
+      "created_at": "2026-10-15T01:40:37Z",
+      "updated_at": "2026-10-21T17:14:54Z",
+      "pushed_at": "2026-10-21T10:24:56Z",
+      "license": "Other",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-15T01:40:37Z",
+          "description": "Todas as leis do Brasil",
+          "html_url": "https://github.com/ctresb/leis",
+          "stars": 748,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cursor/plugins",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 13361,
+      "forks": 1327,
+      "language": "TypeScript",
+      "description": "Cursor plugin specification and official plugins",
+      "html_url": "https://github.com/cursor/plugins",
+      "topics": [],
+      "created_at": "2026-01-23T01:57:42Z",
+      "updated_at": "2026-10-21T17:12:55Z",
+      "pushed_at": "2026-10-21T03:58:40Z",
+      "license": null,
+      "open_issues": 301,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Cursor plugin specification and official plugins",
+          "full_name": "cursor/plugins",
+          "language": "TypeScript",
+          "trending_stars_period": 2040,
+          "trending_total_forks": null,
+          "trending_total_stars": 13361,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "debpalash/VoiceStudio",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 80008,
+      "forks": 8806,
+      "language": "Python",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "html_url": "https://github.com/debpalash/VoiceStudio",
+      "topics": [
+        "ai",
+        "audiobook",
+        "cuda",
+        "dubbing",
+        "elevenlabs-alternative",
+        "huggingface",
+        "local-first",
+        "mlx",
+        "omnivoice-studio",
+        "speech-to-text",
+        "text-to-speech",
+        "transcription",
+        "translate",
+        "tts",
+        "voice-ai",
+        "voice-cloning",
+        "voice-generation",
+        "voicestudio",
+        "workflow"
+      ],
+      "created_at": "2026-04-09T21:40:26Z",
+      "updated_at": "2026-10-21T17:15:13Z",
+      "pushed_at": "2026-10-21T05:19:20Z",
+      "license": "AGPL-3.0",
+      "open_issues": 294,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+          "full_name": "debpalash/VoiceStudio",
+          "language": "Python",
+          "trending_stars_period": 17057,
+          "trending_total_forks": null,
+          "trending_total_stars": 80008,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "deepseek-ai/DeepInfer",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 17449,
+      "forks": 1776,
+      "language": "Python",
+      "description": "DeepInfer: High-performance, large-scale inference framework for DeepSeek models",
+      "html_url": "https://github.com/deepseek-ai/DeepInfer",
+      "topics": [],
+      "created_at": "2026-10-16T07:47:23Z",
+      "updated_at": "2026-10-21T17:15:02Z",
+      "pushed_at": "2026-10-21T04:55:44Z",
+      "license": "Apache-2.0",
+      "open_issues": 180,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-16T07:47:23Z",
+          "description": "DeepInfer: High-performance, large-scale inference framework for DeepSeek models",
+          "html_url": "https://github.com/deepseek-ai/DeepInfer",
+          "stars": 17449,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dipa-studio/ios-sweet",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 830,
+      "forks": 370,
+      "language": "Python",
+      "description": "iOS 16 userland + XNU on Redmi Note 10 Pro (sweet, SM7150)",
+      "html_url": "https://github.com/dipa-studio/ios-sweet",
+      "topics": [],
+      "created_at": "2026-10-14T19:15:18Z",
+      "updated_at": "2026-10-21T17:01:42Z",
+      "pushed_at": "2026-10-21T13:30:35Z",
+      "license": null,
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-14T19:15:18Z",
+          "description": "iOS 16 userland + XNU on Redmi Note 10 Pro (sweet, SM7150)",
+          "html_url": "https://github.com/dipa-studio/ios-sweet",
+          "stars": 830,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "earthtojake/text-to-cad",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 22212,
+      "forks": 2174,
+      "language": "Python",
+      "description": "Give your agent CAD superpowers.",
+      "html_url": "https://github.com/earthtojake/text-to-cad",
+      "topics": [
+        "agents",
+        "ai-agents",
+        "cad",
+        "mechanical-engineering",
+        "robotics",
+        "step",
+        "stl",
+        "stp",
+        "text-to-cad"
+      ],
+      "created_at": "2026-04-22T01:09:45Z",
+      "updated_at": "2026-10-21T17:14:58Z",
+      "pushed_at": "2026-10-20T19:07:49Z",
+      "license": "MIT",
+      "open_issues": 29,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Give your agent CAD superpowers.",
+          "full_name": "earthtojake/text-to-cad",
+          "language": "Python",
+          "trending_stars_period": 2069,
+          "trending_total_forks": null,
+          "trending_total_stars": 22212,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "feder-cr/git-ai",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 907,
+      "forks": 83,
+      "language": "Go",
+      "description": "Git designed for AI agents.",
+      "html_url": "https://github.com/feder-cr/git-ai",
+      "topics": [
+        "ai-agents",
+        "coding-agents",
+        "git",
+        "golang",
+        "scion",
+        "version-control"
+      ],
+      "created_at": "2026-10-15T13:12:02Z",
+      "updated_at": "2026-10-21T17:04:13Z",
+      "pushed_at": "2026-10-21T08:26:21Z",
+      "license": "Other",
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-15T13:12:02Z",
+          "description": "Git designed for AI agents.",
+          "html_url": "https://github.com/feder-cr/git-ai",
+          "stars": 907,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "headroomlabs-ai/headroom",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 77113,
+      "forks": 5984,
+      "language": "Python",
+      "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
+      "html_url": "https://github.com/headroomlabs-ai/headroom",
+      "topics": [
+        "agent",
+        "ai",
+        "anthropic",
+        "claude-code",
+        "compression",
+        "context-engineering",
+        "context-window",
+        "cursor",
+        "fastapi",
+        "langchain",
+        "llm",
+        "mcp",
+        "openai",
+        "prompt-engineering",
+        "proxy",
+        "python",
+        "rag",
+        "token-optimization",
+        "tokens",
+        "typescript"
+      ],
+      "created_at": "2026-01-07T19:58:51Z",
+      "updated_at": "2026-10-21T17:15:27Z",
+      "pushed_at": "2026-10-21T04:15:22Z",
+      "license": "Apache-2.0",
+      "open_issues": 507,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
+          "full_name": "headroomlabs-ai/headroom",
+          "language": "Python",
+          "trending_stars_period": 477,
+          "trending_total_forks": null,
+          "trending_total_stars": 77112,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "heygen-com/hyperframes",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 69030,
+      "forks": 6252,
+      "language": "TypeScript",
+      "description": "Write HTML. Render video. Built for agents.",
+      "html_url": "https://github.com/heygen-com/hyperframes",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "animation",
+        "claude-code",
+        "ffmpeg",
+        "framework",
+        "gsap",
+        "html",
+        "html-to-video",
+        "mcp",
+        "motion-graphics",
+        "puppeteer",
+        "rendering",
+        "typescript",
+        "video-editor"
+      ],
+      "created_at": "2026-03-10T01:51:06Z",
+      "updated_at": "2026-10-21T17:13:55Z",
+      "pushed_at": "2026-10-21T17:08:20Z",
+      "license": "Apache-2.0",
+      "open_issues": 409,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Write HTML. Render video. Built for agents.",
+          "full_name": "heygen-com/hyperframes",
+          "language": "TypeScript",
+          "trending_stars_period": 5994,
+          "trending_total_forks": null,
+          "trending_total_stars": 69030,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "humblemuzzu/dumbtv",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1116,
+      "forks": 96,
+      "language": "JavaScript",
+      "description": null,
+      "html_url": "https://github.com/humblemuzzu/dumbtv",
+      "topics": [],
+      "created_at": "2026-10-18T17:04:12Z",
+      "updated_at": "2026-10-21T17:14:45Z",
+      "pushed_at": "2026-10-19T16:44:23Z",
+      "license": "Other",
+      "open_issues": 47,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-18T17:04:12Z",
+          "description": null,
+          "html_url": "https://github.com/humblemuzzu/dumbtv",
+          "stars": 1116,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ly05010419/MacNativeGames",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 3658,
+      "forks": 517,
+      "language": "C",
+      "description": null,
+      "html_url": "https://github.com/ly05010419/MacNativeGames",
+      "topics": [],
+      "created_at": "2026-10-17T19:52:00Z",
+      "updated_at": "2026-10-21T17:15:21Z",
+      "pushed_at": "2026-10-21T16:14:37Z",
+      "license": "MIT",
+      "open_issues": 62,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-17T19:52:00Z",
+          "description": null,
+          "html_url": "https://github.com/ly05010419/MacNativeGames",
+          "stars": 3657,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mistralai/timestral",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 708,
+      "forks": 53,
+      "language": "Python",
+      "description": "Repository for Timestral, the time-series foundation model by Mistral AI",
+      "html_url": "https://github.com/mistralai/timestral",
+      "topics": [],
+      "created_at": "2026-10-15T10:20:18Z",
+      "updated_at": "2026-10-21T16:46:19Z",
+      "pushed_at": "2026-10-15T14:59:57Z",
+      "license": "Apache-2.0",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-15T10:20:18Z",
+          "description": "Repository for Timestral, the time-series foundation model by Mistral AI",
+          "html_url": "https://github.com/mistralai/timestral",
+          "stars": 708,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mksglu/context-mode",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 31605,
+      "forks": 2178,
+      "language": "TypeScript",
+      "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and   enforces routing across 17 platforms via MCP + hooks.",
+      "html_url": "https://github.com/mksglu/context-mode",
+      "topics": [
+        "antigravity",
+        "claude",
+        "claude-code",
+        "claude-code-hooks",
+        "claude-code-plugins",
+        "claude-code-skill",
+        "codex",
+        "codex-cli",
+        "context-mode",
+        "copilot",
+        "cursor-plugin",
+        "kiro",
+        "mcp",
+        "mcp-server",
+        "mcp-tools",
+        "openclaw",
+        "opencode",
+        "pi-agent",
+        "skills",
+        "zed-extension"
+      ],
+      "created_at": "2026-02-23T05:56:28Z",
+      "updated_at": "2026-10-21T17:07:25Z",
+      "pushed_at": "2026-10-21T17:15:13Z",
+      "license": "Other",
+      "open_issues": 356,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+          "full_name": "mksglu/context-mode",
+          "language": "TypeScript",
+          "trending_stars_period": 3556,
+          "trending_total_forks": null,
+          "trending_total_stars": 31605,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "morluto/rea",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 355698,
+      "forks": 89327,
+      "language": "TypeScript",
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "html_url": "https://github.com/morluto/rea",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "binary-analysis",
+        "claude-code",
+        "cli",
+        "codex",
+        "cordis",
+        "decompiler",
+        "developer-tools",
+        "dsh",
+        "dsh-plugin",
+        "ghidra",
+        "hopper",
+        "llm",
+        "mcp",
+        "model-context-protocol",
+        "rea",
+        "reverse-engineering",
+        "static-analysis",
+        "touhou"
+      ],
+      "created_at": "2026-04-14T00:51:32Z",
+      "updated_at": "2026-10-21T17:15:34Z",
+      "pushed_at": "2026-10-21T16:53:06Z",
+      "license": "MIT",
+      "open_issues": 1734,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+          "full_name": "morluto/rea",
+          "language": "TypeScript",
+          "trending_stars_period": 157631,
+          "trending_total_forks": null,
+          "trending_total_stars": 355693,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "pengchujin/aerial-tv",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1961,
+      "forks": 136,
+      "language": "Kotlin",
+      "description": "给国产电视的一块干净桌面：参照 tvOS 设计的开源 Android TV 桌面，没有广告，开机自动接管。A tvOS-style launcher for Xiaomi, TCL and other China-market TVs.",
+      "html_url": "https://github.com/pengchujin/aerial-tv",
+      "topics": [],
+      "created_at": "2026-10-20T09:13:06Z",
+      "updated_at": "2026-10-21T17:11:51Z",
+      "pushed_at": "2026-10-21T15:50:36Z",
+      "license": "MIT",
+      "open_issues": 47,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-20T09:13:06Z",
+          "description": "给国产电视的一块干净桌面：参照 tvOS 设计的开源 Android TV 桌面，没有广告，开机自动接管。A tvOS-style launcher for Xiaomi, TCL and other China-market TVs.",
+          "html_url": "https://github.com/pengchujin/aerial-tv",
+          "stars": 1961,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "reason-machines/reason-network",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 885,
+      "forks": 70,
+      "language": "Rust",
+      "description": "Reason Network: your team's coding agents, talking to each other. The engine behind `reason network`.",
+      "html_url": "https://github.com/reason-machines/reason-network",
+      "topics": [
+        "coding-agents",
+        "iroh",
+        "mcp",
+        "peer-to-peer",
+        "reason"
+      ],
+      "created_at": "2026-10-16T15:34:34Z",
+      "updated_at": "2026-10-21T17:13:00Z",
+      "pushed_at": "2026-10-21T10:17:50Z",
+      "license": "Apache-2.0",
+      "open_issues": 8,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-16T15:34:34Z",
+          "description": "Reason Network: your team's coding agents, talking to each other. The engine behind `reason network`.",
+          "html_url": "https://github.com/reason-machines/reason-network",
+          "stars": 885,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ruvnet/ruflo",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 78142,
+      "forks": 9189,
+      "language": "TypeScript",
+      "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+      "html_url": "https://github.com/ruvnet/ruflo",
+      "topics": [
+        "agentic-ai",
+        "agentic-framework",
+        "agentic-workflow",
+        "agents",
+        "ai-agents",
+        "ai-assistant",
+        "ai-skills",
+        "autonomous-agents",
+        "claude",
+        "codex",
+        "dsh-plugin",
+        "harness",
+        "mcp-server",
+        "multi-agent",
+        "multi-agent-systems",
+        "npm",
+        "skills",
+        "swarm",
+        "swarm-intelligence",
+        "typescript"
+      ],
+      "created_at": "2025-06-02T21:24:20Z",
+      "updated_at": "2026-10-21T17:15:30Z",
+      "pushed_at": "2026-10-21T16:34:58Z",
+      "license": "MIT",
+      "open_issues": 980,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+          "full_name": "ruvnet/ruflo",
+          "language": "TypeScript",
+          "trending_stars_period": 3143,
+          "trending_total_forks": null,
+          "trending_total_stars": 78141,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "shiyu-coder/Kronos",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 42702,
+      "forks": 7053,
+      "language": "Python",
+      "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+      "html_url": "https://github.com/shiyu-coder/Kronos",
+      "topics": [],
+      "created_at": "2025-07-01T02:54:32Z",
+      "updated_at": "2026-10-21T17:14:26Z",
+      "pushed_at": "2026-04-13T12:38:49Z",
+      "license": "MIT",
+      "open_issues": 283,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+          "full_name": "shiyu-coder/Kronos",
+          "language": "Python",
+          "trending_stars_period": 570,
+          "trending_total_forks": null,
+          "trending_total_stars": 42702,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "simbasjungles/free-my-tv",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 2443,
+      "forks": 280,
+      "language": "Java",
+      "description": "A fast, ad-free home screen for Google TV. Open source, built with Claude Code. One button to undo.",
+      "html_url": "https://github.com/simbasjungles/free-my-tv",
+      "topics": [
+        "android-tv",
+        "claude-code",
+        "google-tv",
+        "home-screen",
+        "launcher",
+        "no-ads",
+        "open-source",
+        "tmdb"
+      ],
+      "created_at": "2026-10-19T19:29:01Z",
+      "updated_at": "2026-10-21T17:14:13Z",
+      "pushed_at": "2026-10-20T22:16:13Z",
+      "license": "MIT",
+      "open_issues": 51,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-19T19:29:01Z",
+          "description": "A fast, ad-free home screen for Google TV. Open source, built with Claude Code. One button to undo.",
+          "html_url": "https://github.com/simbasjungles/free-my-tv",
+          "stars": 2443,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "stablyai/orca",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 100891,
+      "forks": 6378,
+      "language": "TypeScript",
+      "description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+      "html_url": "https://github.com/stablyai/orca",
+      "topics": [
+        "ade",
+        "agent-ide",
+        "ai-agents",
+        "automation",
+        "bot",
+        "claude-code",
+        "codex",
+        "ghostty",
+        "grok-bot",
+        "hermes-agent",
+        "mobile-app",
+        "muse",
+        "openclaw",
+        "opencode",
+        "orchestration",
+        "pi",
+        "runtime",
+        "terminal",
+        "worktrees",
+        "yc-backed"
+      ],
+      "created_at": "2026-03-17T03:28:57Z",
+      "updated_at": "2026-10-21T17:14:45Z",
+      "pushed_at": "2026-10-21T17:13:58Z",
+      "license": "MIT",
+      "open_issues": 8586,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+          "full_name": "stablyai/orca",
+          "language": "TypeScript",
+          "trending_stars_period": 8173,
+          "trending_total_forks": null,
+          "trending_total_stars": 100891,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+          "full_name": "stablyai/orca",
+          "language": "TypeScript",
+          "trending_stars_period": 1543,
+          "trending_total_forks": null,
+          "trending_total_stars": 100891,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "strelov1/freehire",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 2181,
+      "forks": 234,
+      "language": "Go",
+      "description": "freehire — the open-source search engine for job seekers",
+      "html_url": "https://github.com/strelov1/freehire",
+      "topics": [
+        "ats",
+        "career",
+        "careers",
+        "golang",
+        "hiring",
+        "job-aggregator",
+        "job-board",
+        "job-portal",
+        "job-scraper",
+        "job-search",
+        "jobs",
+        "langchain",
+        "llm",
+        "meilisearch",
+        "postgresql",
+        "recruitment",
+        "remote-jobs",
+        "self-hosted",
+        "svelte",
+        "sveltekit"
+      ],
+      "created_at": "2026-06-07T03:20:31Z",
+      "updated_at": "2026-10-21T17:15:19Z",
+      "pushed_at": "2026-10-21T17:06:43Z",
+      "license": "MIT",
+      "open_issues": 9,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "freehire — the open-source search engine for job seekers",
+          "full_name": "strelov1/freehire",
+          "language": "Go",
+          "trending_stars_period": 396,
+          "trending_total_forks": null,
+          "trending_total_stars": 2181,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "supabase/supabase",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 112786,
+      "forks": 16865,
+      "language": "TypeScript",
+      "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+      "html_url": "https://github.com/supabase/supabase",
+      "topics": [
+        "ai",
+        "alternative",
+        "auth",
+        "database",
+        "deno",
+        "embeddings",
+        "example",
+        "firebase",
+        "nextjs",
+        "oauth2",
+        "pgvector",
+        "postgis",
+        "postgres",
+        "postgresql",
+        "postgrest",
+        "realtime",
+        "supabase",
+        "vectors",
+        "websockets"
+      ],
+      "created_at": "2019-10-12T05:56:49Z",
+      "updated_at": "2026-10-21T17:13:45Z",
+      "pushed_at": "2026-10-21T17:12:00Z",
+      "license": "Apache-2.0",
+      "open_issues": 1173,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+          "full_name": "supabase/supabase",
+          "language": "TypeScript",
+          "trending_stars_period": 509,
+          "trending_total_forks": null,
+          "trending_total_stars": 112786,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "twentyhq/twenty",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 58958,
+      "forks": 9651,
+      "language": "TypeScript",
+      "description": "The open alternative to Salesforce, designed for AI.",
+      "html_url": "https://github.com/twentyhq/twenty",
+      "topics": [
+        "crm",
+        "crm-system",
+        "customer",
+        "good-first-issue",
+        "graphql",
+        "hacktoberfest",
+        "javascript",
+        "marketing",
+        "monorepo",
+        "nestjs",
+        "open-source",
+        "postgresql",
+        "react",
+        "reactjs",
+        "sales",
+        "typescript",
+        "web"
+      ],
+      "created_at": "2022-12-01T13:04:40Z",
+      "updated_at": "2026-10-21T17:14:50Z",
+      "pushed_at": "2026-10-21T17:02:58Z",
+      "license": "Other",
+      "open_issues": 138,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The open alternative to Salesforce, designed for AI.",
+          "full_name": "twentyhq/twenty",
+          "language": "TypeScript",
+          "trending_stars_period": 105,
+          "trending_total_forks": null,
+          "trending_total_stars": 58958,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vllm-project/vllm",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 94762,
+      "forks": 23728,
+      "language": "Python",
+      "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
+      "html_url": "https://github.com/vllm-project/vllm",
+      "topics": [
+        "amd",
+        "blackwell",
+        "cuda",
+        "deepseek",
+        "deepseek-v3",
+        "gpt",
+        "gpt-oss",
+        "inference",
+        "kimi",
+        "llama",
+        "llm",
+        "llm-serving",
+        "model-serving",
+        "moe",
+        "openai",
+        "pytorch",
+        "qwen",
+        "qwen3",
+        "tpu",
+        "transformer"
+      ],
+      "created_at": "2023-02-09T11:23:20Z",
+      "updated_at": "2026-10-21T17:15:18Z",
+      "pushed_at": "2026-10-21T17:11:09Z",
+      "license": "Apache-2.0",
+      "open_issues": 9233,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
+          "full_name": "vllm-project/vllm",
+          "language": "Python",
+          "trending_stars_period": 439,
+          "trending_total_forks": null,
+          "trending_total_stars": 94761,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "wshobson/agents",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 41437,
+      "forks": 4400,
+      "language": "Python",
+      "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, Google Antigravity, and Pi",
+      "html_url": "https://github.com/wshobson/agents",
+      "topics": [
+        "agent-skills",
+        "agentic-ai",
+        "ai-agents",
+        "anthropic",
+        "antigravity",
+        "claude",
+        "claude-code",
+        "claude-code-marketplace",
+        "claude-code-plugin",
+        "claude-skills",
+        "codex",
+        "coding-agents",
+        "cursor",
+        "cursor-rules",
+        "github-copilot",
+        "mcp",
+        "multi-agent",
+        "opencode",
+        "pi-coding-agent",
+        "subagents"
+      ],
+      "created_at": "2025-07-24T23:28:14Z",
+      "updated_at": "2026-10-21T17:09:36Z",
+      "pushed_at": "2026-10-19T18:28:14Z",
+      "license": "MIT",
+      "open_issues": 6,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, Google Antigravity, and Pi",
+          "full_name": "wshobson/agents",
+          "language": "Python",
+          "trending_stars_period": 665,
+          "trending_total_forks": null,
+          "trending_total_stars": 41437,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "xiaoyang111222/cn-math-taxonomy",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1934,
+      "forks": 437,
+      "language": "Python",
+      "description": "中小学知识图谱 + 前置诊断：数学（一–九年级、高中必修与选择性必修）+ 英语（小学、初中、高中），课标对齐、人教版，1503 知识点、6159 题、自适应诊断",
+      "html_url": "https://github.com/xiaoyang111222/cn-math-taxonomy",
+      "topics": [
+        "chinese",
+        "curriculum",
+        "diagnostic",
+        "edtech",
+        "education",
+        "elementary-school",
+        "english",
+        "high-school",
+        "junior-high-school",
+        "k12",
+        "knowledge-graph",
+        "math",
+        "mathematics",
+        "middle-school",
+        "open-data",
+        "primary-school"
+      ],
+      "created_at": "2026-10-18T09:04:43Z",
+      "updated_at": "2026-10-21T17:14:41Z",
+      "pushed_at": "2026-10-21T14:52:52Z",
+      "license": "Other",
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-18T09:04:43Z",
+          "description": "中小学知识图谱 + 前置诊断：数学（一–九年级、高中必修与选择性必修）+ 英语（小学、初中、高中），课标对齐、人教版，1503 知识点、6159 题、自适应诊断",
+          "html_url": "https://github.com/xiaoyang111222/cn-math-taxonomy",
+          "stars": 1934,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "xscreensaver-official/xscreensaver",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 1121,
+      "forks": 32,
+      "language": null,
+      "description": "There is no official XScreenSaver GitHub repository.",
+      "html_url": "https://github.com/xscreensaver-official/xscreensaver",
+      "topics": [],
+      "created_at": "2026-10-16T16:24:44Z",
+      "updated_at": "2026-10-21T14:44:25Z",
+      "pushed_at": "2026-10-16T16:29:21Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-16T16:24:44Z",
+          "description": "There is no official XScreenSaver GitHub repository.",
+          "html_url": "https://github.com/xscreensaver-official/xscreensaver",
+          "stars": 1121,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "zcbacxc/mcd-party-planner",
+      "captured_at": "2026-10-21T17:15:13Z",
+      "stars": 728,
+      "forks": 38,
+      "language": "Python",
+      "description": "麦当劳 MCP 聚会/团餐组织助手 — 基于 Model Context Protocol 的派对预订与团餐规划 CLI/Skill",
+      "html_url": "https://github.com/zcbacxc/mcd-party-planner",
+      "topics": [],
+      "created_at": "2026-10-15T18:29:02Z",
+      "updated_at": "2026-10-21T17:11:10Z",
+      "pushed_at": "2026-10-20T06:30:07Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-15T18:29:02Z",
+          "description": "麦当劳 MCP 聚会/团餐组织助手 — 基于 Model Context Protocol 的派对预订与团餐规划 CLI/Skill",
+          "html_url": "https://github.com/zcbacxc/mcd-party-planner",
+          "stars": 728,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
