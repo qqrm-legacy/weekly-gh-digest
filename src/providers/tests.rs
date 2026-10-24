@@ -29,6 +29,9 @@ fn body(request: &str) -> Value {
     serde_json::from_str(request.split_once("\r\n\r\n").unwrap().1).unwrap()
 }
 
+const README_EVIDENCE: &str =
+    "This tool parses source files locally and reports their dependency graph.";
+
 #[test]
 fn retries_reserve_each_attempt_and_use_utc_day_at_each_attempt() {
     let clock = FakeClock::at("2026-10-14T23:59:59Z");
@@ -204,7 +207,7 @@ fn ranked(name: &str) -> Ranked {
             open_issues: None,
             default_branch: None,
             sources: vec![],
-            readme_excerpt: None,
+            readme_excerpt: Some(format!("# Project\n\n{README_EVIDENCE}")),
             observation: None,
         },
         baseline: None,
@@ -227,6 +230,11 @@ fn stored_overview_uses_one_request_and_primary_sources_without_regenerating_car
     let mut state = State::default();
     let mut entry = ranked("org/analysis");
     entry.snapshot.description = Some("Primary description of a code analysis tool.".into());
+    let primary_readme = format!(
+        "# Project\n\n{README_EVIDENCE}\n\n{}\n\nThe backend is not included in this repository.",
+        "Source context. ".repeat(300)
+    );
+    entry.snapshot.readme_excerpt = Some(primary_readme.clone());
     let text = groq
         .rewrite_overview(&[entry], &mut state, directory.path())
         .unwrap();
@@ -239,6 +247,23 @@ fn stored_overview_uses_one_request_and_primary_sources_without_regenerating_car
     assert_eq!(
         source["entries"][0]["description"],
         "Primary description of a code analysis tool."
+    );
+    assert!(source["entries"][0].get("readme_excerpt").is_none());
+    assert_eq!(source["entries"][0]["evidence_source"], "readme");
+    assert_eq!(source["entries"][0]["evidence"], README_EVIDENCE);
+    assert!(
+        source["entries"][0]["evidence"]
+            .as_str()
+            .unwrap()
+            .chars()
+            .count()
+            <= 180
+    );
+    assert!(
+        !request["messages"][1]["content"]
+            .as_str()
+            .unwrap()
+            .contains("Source context.")
     );
     assert!(clock.sleeps.borrow().is_empty());
     assert_eq!(state.llm_daily_requests["2026-10-19"], 1);
@@ -254,7 +279,7 @@ fn partial_enrichment_keeps_confirmed_descriptions_and_original_fallback_contrac
     let description =
         "Подтверждённое источником описание проекта и его практического применения. ".repeat(4);
     let response =
-        json!({"description":description.trim(), "joke":"Шутка про открытый код и документацию."})
+        json!({"description":description.trim(), "joke":"Шутка про открытый код и документацию.","evidence_quote":README_EVIDENCE})
             .to_string();
     let server = TestServer::start(vec![
         (200, completion(&response)),
@@ -293,7 +318,7 @@ fn completed_enrichment_preserves_overview_schema_and_artifact_budget() {
     let description =
         "Подтверждённое источником описание проекта и его практического применения. ".repeat(4);
     let response =
-        json!({"description":description.trim(), "joke":"Шутка про открытый код и документацию."})
+        json!({"description":description.trim(), "joke":"Шутка про открытый код и документацию.","evidence_quote":README_EVIDENCE})
             .to_string();
     let server = TestServer::start(vec![
         (200, completion(&response)),
@@ -319,6 +344,13 @@ fn completed_enrichment_preserves_overview_schema_and_artifact_budget() {
         serde_json::from_slice(&std::fs::read(dir.path().join("llm-bundle.json")).unwrap())
             .unwrap();
     assert_eq!(artifact["provider_reviews"][0]["id"], "a/one");
+    assert_eq!(artifact["provider_reviews"][0]["evidence"], README_EVIDENCE);
+    assert_eq!(result.evidence_quotes["a/one"], README_EVIDENCE);
+    assert_eq!(result.budget["factual_review_performed"], false);
+    assert_eq!(
+        body(&requests[0])["response_format"]["json_schema"]["schema"]["required"],
+        json!(["description", "joke", "evidence_quote"])
+    );
     assert_eq!(artifact["budget"], result.budget);
 }
 
@@ -329,7 +361,8 @@ fn missing_evidence_skips_only_that_project_and_keeps_the_weekly_overview() {
     let path = dir.path().join("state.json");
     let response = json!({
         "description":"Подтверждённое источниками описание полезного проекта. ".repeat(6),
-        "joke":"Шутка про открытую документацию."
+        "joke":"Шутка про открытую документацию.",
+        "evidence_quote":README_EVIDENCE
     })
     .to_string();
     let server = TestServer::start(vec![
@@ -360,4 +393,271 @@ fn missing_evidence_skips_only_that_project_and_keeps_the_weekly_overview() {
         result.overview,
         "Общий итог по двум подтверждённым проектам."
     );
+}
+
+#[test]
+fn source_gaps_are_recorded_without_llm_key_or_free_tier_confirmation() {
+    for (do_llm, has_key, free_tier_confirmed) in [
+        (false, true, true),
+        (true, false, true),
+        (true, true, false),
+    ] {
+        let clock = FakeClock::at("2026-10-25T07:00:00Z");
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("state.json");
+        let mut groq = provider(&clock, &path, "http://127.0.0.1:1", "openai/gpt-oss-120b");
+        groq.token = has_key.then(|| "fixture-key".into());
+        groq.free_tier_confirmed = free_tier_confirmed;
+        let mut missing = ranked("a/missing");
+        missing.snapshot.description = None;
+        missing.snapshot.readme_excerpt = None;
+        let mut metadata_only = ranked("b/metadata-only");
+        metadata_only.snapshot.readme_excerpt = None;
+        let mut markup_only = ranked("c/markup-only");
+        markup_only.snapshot.readme_excerpt = Some("<img src=\"badge.png\" />".into());
+        let mut readme_only = ranked("d/readme-only");
+        readme_only.snapshot.description = None;
+        let mut state = State::default();
+        let result = groq
+            .enrich(
+                &[missing, metadata_only, markup_only, readme_only],
+                &mut state,
+                do_llm,
+                dir.path(),
+            )
+            .unwrap();
+        assert_eq!(result.budget["source_gaps"], json!(["a/missing"]));
+        assert_eq!(
+            result.budget["readme_gaps"],
+            json!(["b/metadata-only", "c/markup-only"])
+        );
+        assert_eq!(result.budget["actual_requests"], 0);
+        assert_eq!(result.budget["expected_requests"], 0);
+        assert!(result.descriptions.is_empty());
+        assert!(result.evidence_quotes.is_empty());
+        assert!(state.llm_daily_requests.is_empty());
+        assert!(!path.exists());
+        assert!(clock.sleeps.borrow().is_empty());
+        let artifact: Value =
+            serde_json::from_slice(&std::fs::read(dir.path().join("llm-bundle.json")).unwrap())
+                .unwrap();
+        assert_eq!(artifact["items"][0]["evidence_source"], "missing");
+        assert_eq!(artifact["items"][1]["evidence_source"], "metadata_only");
+        assert_eq!(artifact["items"][3]["evidence_source"], "readme");
+        assert_eq!(artifact["budget"], result.budget);
+    }
+}
+
+#[test]
+fn source_gaps_after_a_provider_failure_are_not_hidden() {
+    let clock = FakeClock::at("2026-10-25T07:00:00Z");
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("state.json");
+    let server = TestServer::start(vec![
+        (400, "{}".into()),
+        (
+            200,
+            completion(r#"{"overview":"В этой подборке есть инструменты анализа кода."}"#),
+        ),
+    ]);
+    let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+    let mut missing = ranked("b/missing");
+    missing.snapshot.description = None;
+    missing.snapshot.readme_excerpt = None;
+    let mut metadata_only = ranked("c/metadata-only");
+    metadata_only.snapshot.readme_excerpt = None;
+    let result = groq
+        .enrich(
+            &[ranked("a/failure"), missing, metadata_only],
+            &mut State::default(),
+            true,
+            dir.path(),
+        )
+        .unwrap();
+    assert_eq!(server.finish().len(), 2);
+    assert_eq!(result.budget["source_gaps"], json!(["b/missing"]));
+    assert_eq!(result.budget["readme_gaps"], json!(["c/metadata-only"]));
+    assert_eq!(result.budget["expected_requests"], 2);
+    assert_eq!(result.budget["actual_requests"], 2);
+    assert!(result.descriptions.is_empty());
+    assert!(!result.overview.is_empty());
+}
+
+#[test]
+fn metadata_only_project_keeps_source_fallback_without_description_completion() {
+    let clock = FakeClock::at("2026-10-25T07:00:00Z");
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("state.json");
+    let server = TestServer::start(vec![(
+        200,
+        completion(r#"{"overview":"В этой подборке представлен инструмент по описанию автора."}"#),
+    )]);
+    let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+    let mut entry = ranked("org/metadata-only");
+    entry.snapshot.readme_excerpt = None;
+    let result = groq
+        .enrich(&[entry], &mut State::default(), true, dir.path())
+        .unwrap();
+    let requests = server.finish();
+    assert_eq!(requests.len(), 1);
+    assert!(result.descriptions.is_empty());
+    assert!(result.evidence_quotes.is_empty());
+    assert!(!result.complete);
+    assert_eq!(result.budget["source_gaps"], json!([]));
+    assert_eq!(result.budget["readme_gaps"], json!(["org/metadata-only"]));
+    assert_eq!(result.budget["expected_requests"], 1);
+    assert_eq!(result.budget["actual_requests"], 1);
+    let request = body(&requests[0]);
+    assert_eq!(
+        request["response_format"]["json_schema"]["name"],
+        "issue_overview"
+    );
+    let payload: Value =
+        serde_json::from_str(request["messages"][1]["content"].as_str().unwrap()).unwrap();
+    assert_eq!(payload["entries"][0]["evidence_source"], "metadata_only");
+    assert!(payload["entries"][0].get("readme_excerpt").is_none());
+}
+
+#[test]
+fn all_missing_sources_spend_no_requests_and_plan_no_overview() {
+    let clock = FakeClock::at("2026-10-25T07:00:00Z");
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("state.json");
+    let groq = provider(&clock, &path, "http://127.0.0.1:1", "openai/gpt-oss-120b");
+    let mut entry = ranked("org/missing");
+    entry.snapshot.description = None;
+    entry.snapshot.readme_excerpt = None;
+    let mut state = State::default();
+    let result = groq.enrich(&[entry], &mut state, true, dir.path()).unwrap();
+    assert_eq!(result.budget["source_gaps"], json!(["org/missing"]));
+    assert_eq!(result.budget["expected_requests"], 0);
+    assert_eq!(result.budget["actual_requests"], 0);
+    assert!(result.overview.is_empty());
+    assert!(state.llm_daily_requests.is_empty());
+}
+
+#[test]
+fn quote_matching_metadata_only_is_rejected_without_repair_or_losing_other_cards() {
+    let clock = FakeClock::at("2026-10-25T07:00:00Z");
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("state.json");
+    let description =
+        "По README инструмент разбирает исходные файлы локально и строит граф зависимостей. "
+            .repeat(4);
+    let valid = json!({
+        "description":description,"joke":"В графе зависимостей даже баги ходят парами.",
+        "evidence_quote":README_EVIDENCE
+    });
+    let metadata_quote = "Metadata claims the service provides anonymous telemetry.";
+    let invalid = json!({
+        "description":description,"joke":"В графе зависимостей даже баги ходят парами.",
+        "evidence_quote":metadata_quote
+    });
+    let server = TestServer::start(vec![
+        (200, completion(&valid.to_string())),
+        (200, completion(&invalid.to_string())),
+        (200, completion(&valid.to_string())),
+        (
+            200,
+            completion(r#"{"overview":"В этой подборке представлены инструменты анализа кода."}"#),
+        ),
+    ]);
+    let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+    let mut invalid_entry = ranked("b/unmatched");
+    invalid_entry.snapshot.description = Some(metadata_quote.into());
+    let result = groq
+        .enrich(
+            &[ranked("a/accepted"), invalid_entry, ranked("c/accepted")],
+            &mut State::default(),
+            true,
+            dir.path(),
+        )
+        .unwrap();
+    assert_eq!(server.finish().len(), 4);
+    assert_eq!(result.descriptions.len(), 2);
+    assert!(!result.descriptions.contains_key("b/unmatched"));
+    assert!(!result.jokes.contains_key("b/unmatched"));
+    assert_eq!(result.evidence_quotes.len(), 2);
+    assert_eq!(result.evidence_quotes["a/accepted"], README_EVIDENCE);
+    assert_eq!(result.evidence_quotes["c/accepted"], README_EVIDENCE);
+    assert_eq!(result.budget["actual_requests"], 4);
+    assert_eq!(result.budget["grounding_failures"][0]["id"], "b/unmatched");
+    assert_eq!(
+        result.budget["grounding_failures"][0]["additional_requests"],
+        0
+    );
+    assert!(!result.complete);
+    assert_eq!(*clock.sleeps.borrow(), [StdDuration::from_secs(30); 2]);
+}
+
+#[test]
+fn readme_quote_matching_preserves_exact_unicode_and_whitespace() {
+    let readme = "# Проект\n\nАвторегрессионный Transformer\nработает с OHLCV-данными.";
+    assert!(
+        validate_readme_quote(
+            readme,
+            "Авторегрессионный Transformer\nработает с OHLCV-данными."
+        )
+        .is_ok()
+    );
+    assert!(
+        validate_readme_quote(
+            readme,
+            "Авторегрессионный Transformer работает с OHLCV-данными."
+        )
+        .is_err()
+    );
+    assert!(
+        validate_readme_quote(
+            readme,
+            "Автокорреляционный Transformer работает с OHLCV-данными."
+        )
+        .is_err()
+    );
+    assert!(validate_readme_quote(readme, "Transformer").is_err());
+}
+
+#[test]
+fn omitted_evidence_does_not_spend_a_schema_repair_request() {
+    let clock = FakeClock::at("2026-10-25T07:00:00Z");
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("state.json");
+    let ungrounded = json!({
+        "description":"По README инструмент разбирает файлы локально и строит граф их зависимостей. ".repeat(4),
+        "joke":"В графе зависимостей даже баги ходят парами."
+    });
+    let server = TestServer::start(vec![
+        (200, completion(&ungrounded.to_string())),
+        (
+            200,
+            completion(r#"{"overview":"В этой подборке есть инструмент анализа кода."}"#),
+        ),
+    ]);
+    let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+    let result = groq
+        .enrich(
+            &[ranked("org/no-quote")],
+            &mut State::default(),
+            true,
+            dir.path(),
+        )
+        .unwrap();
+    let requests = server.finish();
+    assert_eq!(requests.len(), 2);
+    assert_eq!(
+        body(&requests[1])["response_format"]["json_schema"]["name"],
+        "issue_overview"
+    );
+    assert!(result.descriptions.is_empty());
+    assert_eq!(result.budget["grounding_failures"][0]["id"], "org/no-quote");
+    assert_eq!(result.budget["actual_requests"], 2);
+    assert!(clock.sleeps.borrow().is_empty());
+}
+
+#[test]
+fn usable_readme_skips_a_short_intro_and_rejects_markup_only() {
+    let readme = format!("# Project\n\nShort introduction.\n\n{README_EVIDENCE}");
+    assert_eq!(usable_readme(Some(&readme)), Some(readme.as_str()));
+    assert!(usable_readme(Some("<img src=\"long-name-badge.svg\" />")).is_none());
+    assert!(usable_readme(Some("# A sufficiently long heading with no prose")).is_none());
 }

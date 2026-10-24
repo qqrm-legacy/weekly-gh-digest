@@ -1,10 +1,10 @@
 # GitHub Digest
 
-Weekly Russian GitHub summary delivered to Telegram, with source observation every three hours on hosted GitHub Actions.
+Weekly Russian GitHub summary delivered to Telegram, with a three-hour observation schedule on hosted GitHub Actions and explicit reporting of actual capture gaps.
 
 ## Weekly issue and candidate selection
 
-- Collect candidate metadata at minute 17 every three hours (00:17, 03:17, …, 21:17 UTC), without LLM calls or Telegram credentials.
+- Schedule candidate metadata collection at minute 17 every three hours (00:17, 03:17, …, 21:17 UTC), without LLM calls or Telegram credentials. Scheduling is best effort; coverage.json records the actual retained captures and gaps instead of claiming the nominal cadence was achieved.
 - Prepare one issue on Monday at 07:00 UTC (10:00 Moscow). GitHub scheduling is best effort: a delayed run retains the same weekly issue identity. The Monday-only Probe Trigger can recover a missed run after publication is enabled.
 - Sources remain the first returned pages of weekly Trending, daily Trending, and GitHub Search for repositories created in the past seven days. This is a bounded sample, not a global ranking or a code/security audit.
 - Retain every real observation with its full timestamp, including multiple captures on one day and already published repositories. Build the union over the preceding seven days, keep first/last appearance and observation count, and use latest metadata plus the maximum observed rolling Trending metric per source with its original timestamp. A candidate seen earlier in the week remains available even if absent from Monday's Trending page. Retained observation timestamps and raw source archives preserve provenance; daily and weekly star counts are never added together.
@@ -17,7 +17,7 @@ Publication is **off by default**. Leave repository variable `DIGEST_DELIVERY_EN
 
 Run `Run Bot` manually with `dry_run=true`, `preview_with_llm=true`, and `deliver_to_main_chat=false` for a real provider-enriched artifact without sending any message. The existing `LLM_FREE_TIER_CONFIRMED=yes` assertion and persisted request budgets remain mandatory; there is no paid fallback. Default dry runs do not call the provider.
 
-Review `summary.md` (overview and full cards), `issue.md` (Telegram-formatted body), `ranking-input.json`, `selection.json`, `candidate-observations.json`, `weekly-observations.json`, `weekly-window.json`, `weekly-source-manifest.json`, `telegram-messages.json`, `manifest.json`, `llm-bundle.json`, and `release-audit.json` in the private run artifact. The same deterministic credential scan checks both the overview and project text before preview acceptance or publication. Each actual Telegram payload is bounded to 3,800 UTF-16 units; long issues keep separate chunks and every project link. Only the duplicate link index may be omitted from an oversized overview. Provider-enriched previews fail explicitly if synthesis is unavailable. Artifacts contain only the current run, not the restored archive.
+Review `summary.md` (overview and full cards), `issue.md` (Telegram-formatted body), `ranking-input.json`, `selection.json`, `candidate-observations.json`, `weekly-observations.json`, `weekly-window.json`, `weekly-source-manifest.json`, `coverage.json`, `telegram-messages.json`, `manifest.json`, `llm-bundle.json`, and `release-audit.json` in the private run artifact. The same deterministic credential scan checks both the overview and project text before preview acceptance or publication. Every actual payload also passes a local validator for the MarkdownV2 subset emitted by this renderer. Each message is bounded to 3,800 UTF-16 units; long issues split at project boundaries and preserve descriptions, jokes, and links. A single oversized card fails explicitly rather than losing its text. Total stars and Trending peaks show their separate capture timestamps. Only the duplicate link index may be omitted from an oversized overview. Provider-enriched previews fail explicitly if synthesis is unavailable. Artifacts contain only the current run, not the restored archive.
 
 Only after approval of the preview, set `DIGEST_DELIVERY_ENABLED=true` and enable `Probe Trigger` if recovery is wanted. `Run Bot` can be enabled for collection and previews while the publication variable remains false. Real manual/technical sends and retry delivery also require the variable to be exactly `true`. Keep credentials private.
 
@@ -32,7 +32,7 @@ The authoritative `delivery-state` checkpoint keeps a `covered` map of every rep
 
 ## Evidence-based project analysis
 
-Groq returns a Russian project description and short joke grounded in GitHub metadata and the README excerpt. One exact source excerpt is stored in the run artifact. README collection covers the whole selected pool. A project without usable evidence is recorded in source_gaps and skipped before any model call; other projects continue. The overview uses available source-backed facts even when a project description is missing or fails. Rust supplies card titles and links, star counts, language, source labels, escaping, order and layout. Partial provider failure preserves completed descriptions and falls back to GitHub text for the remaining projects; the publication audit is a deterministic credential scan only.
+Groq returns a Russian project description and short joke grounded in GitHub metadata and the README excerpt. Generated descriptions must include an exact README evidence quote, validated against the supplied primary text and retained in the artifact. Quote presence proves provenance, not the truth of every generated assertion. README collection covers the whole selected pool. Missing primary evidence is recorded in source_gaps, and missing usable README evidence in readme_gaps, including previews with LLM disabled. Projects without usable README evidence retain the GitHub-description fallback; other projects continue. The overview uses available source-backed facts even when a project description is missing or fails. Rust supplies card titles and links, star counts, language, source labels, escaping, order and layout. Partial provider failure preserves completed descriptions and falls back to GitHub text for the remaining projects; the publication audit checks credentials, message lengths, and the emitted MarkdownV2 subset. It does not certify factual accuracy or project quality.
 
 ## Configure GitHub Actions
 
@@ -107,9 +107,15 @@ the checkpoint migration, because their old code does not implement this deliver
 
 ## Editorial and coverage boundaries
 
-The overview uses primary repository descriptions and exact source excerpts rather than model-generated project analyses. Prompts distinguish this bounded selection from a global ranking or release feed and forbid unverified safety, quality, legal, and financial guarantees. The text describes author-stated capabilities; it is not runtime, legal, or security validation. A human preview remains required before publication is enabled.
+The overview uses primary repository descriptions and README excerpts rather than model-generated project analyses. Prompts distinguish this bounded selection from a global ranking or release feed and forbid unverified safety, quality, legal, and financial guarantees. The text describes author-stated capabilities; it is not runtime, legal, or security validation. A human preview remains required before publication is enabled.
 
 Every collection retains all parsed identities from both Trending pages and the first 30 Search results, including metadata failures; raw responses, per-candidate errors, and complete observation identities are archived. This does not mean every repository matching Search was fetched. Weekly provenance lists every retained capture and explicitly marks missing manifests. Historical early caps and missing captures cannot be reconstructed. An appearance entirely between three-hour observations can still be missed.
+
+## Inspect actual observation coverage
+
+Every collection and ordinary preview writes `coverage.json`. It reports the rolling seven-day window, actual capture and repository counts, observed intervals, leading/trailing gaps, missing source manifests, archived captures absent from retained state, and historical filtered captures. It records the nominal cron separately: snapshots alone cannot identify which captures were scheduled, so the report does not invent a scheduled success percentage or reconstruct missing observations.
+
+The preview includes a concise coverage notice. `release-audit.json` records the scope of its deterministic checks explicitly; an accepted payload is not an editorial, licensing, runtime, or security approval. A project's appearance in Trending does not establish a new release, open-source licensing, or independently measured performance. Provider instructions require precise technical terminology and prohibit unsupported privacy, licensing, safety, and quality guarantees. Human review remains necessary before publication is enabled.
 
 ## Regenerate only the overview
 

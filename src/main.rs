@@ -1,10 +1,12 @@
 mod checkpoint;
 mod clock;
+mod coverage;
 mod delivery;
 mod providers;
 mod schedule;
 mod sources;
 mod state_store;
+mod telegram_format;
 #[cfg(test)]
 mod test_support;
 
@@ -412,6 +414,7 @@ fn make_digest(
     let providers::Enrichment {
         descriptions,
         jokes,
+        evidence_quotes,
         overview,
         complete,
         budget: llm_budget,
@@ -431,11 +434,25 @@ fn make_digest(
                         .unwrap_or("Описание не указано в GitHub."),
                 )
             });
-            let evidence_quote = exact_evidence_quote(
-                entry.snapshot.description.as_deref(),
-                entry.snapshot.readme_excerpt.as_deref(),
-            )
-            .unwrap_or_default();
+            let evidence_quote = evidence_quotes
+                .get(id)
+                .cloned()
+                .or_else(|| {
+                    exact_evidence_quote(
+                        entry.snapshot.description.as_deref(),
+                        entry.snapshot.readme_excerpt.as_deref(),
+                    )
+                })
+                .unwrap_or_default();
+            let evidence_kind = if evidence_quotes.contains_key(id) {
+                "provider_selected_exact_readme_quote"
+            } else if evidence_quote.is_empty() {
+                "unavailable"
+            } else if entry.snapshot.description.as_deref().is_some_and(|text| text.trim().chars().count() >= 12) {
+                "github_description_excerpt"
+            } else {
+                "readme_excerpt"
+            };
             json!({
                 "rank": index + 1,
                 "total": entries.len(),
@@ -450,6 +467,8 @@ fn make_digest(
                 "description": description,
                 "joke": jokes.get(id).cloned().unwrap_or_default(),
                 "evidence_quote": evidence_quote,
+                "evidence_kind": evidence_kind,
+                "evidence_scope":"Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
                 "llm_used": descriptions.contains_key(id)
             })
         })
@@ -480,7 +499,8 @@ fn make_digest(
     official.truncate(10);
     newrepos.sort_by_key(|entry| -entry["stars"].as_i64().unwrap_or(0));
     newrepos.truncate(10);
-    let trend_summary = "Недельная подборка из наблюдений GitHub Trending и поиска каждые три часа. Сначала проекты из недельного Trending, затем дневного, затем найденные новые репозитории. Для Trending показан максимальный наблюдавшийся +N своего периода, а не сумма срезов и не измеренный прирост за календарную неделю. Это ограниченная выборка, не рейтинг качества всего GitHub и не список новых релизов.";
+    let coverage_report = coverage::report(&state.snapshots, now, &runs_dir())?;
+    let trend_summary = "Недельная подборка из сохранённых наблюдений GitHub Trending и поиска. Плановый интервал сбора — три часа; фактические интервалы и пробелы указаны отдельно. Сначала проекты из недельного Trending, затем дневного, затем найденные новые репозитории. Для Trending показан максимальный наблюдавшийся +N своего периода, а не сумма срезов и не измеренный прирост за календарную неделю. Это ограниченная выборка, не рейтинг качества всего GitHub и не список новых релизов.";
     let digest = json!({
         "format_version":3,
         "generated_at":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
@@ -493,6 +513,7 @@ fn make_digest(
         "llm_used":complete,
         "overview":overview,
         "trend_summary":trend_summary,
+        "coverage":coverage_report,
         "joke":"",
         "llm_budget":llm_budget,
         "official_github_trending_weekly":official,
@@ -549,8 +570,6 @@ fn safe_public_text(text: &str) -> String {
 
 /// Telegram caps one message at 4096 chars; stay safely under it.
 const ISSUE_CHUNK_LIMIT: usize = 3_800;
-/// A compact issue carries a one-liner per repository, not a full card.
-const ISSUE_DESCRIPTION_LIMIT: usize = 280;
 
 fn ru_count(n: usize, one: &str, few: &str, many: &str) -> String {
     let n10 = n % 10;
@@ -565,7 +584,16 @@ fn ru_count(n: usize, one: &str, few: &str, many: &str) -> String {
     format!("{n} {word}")
 }
 
-fn issue_item(entry: &Value, description_limit: usize) -> String {
+fn observation_timestamp(value: Option<&str>) -> String {
+    value
+        .and_then(parse_time)
+        .map(|time| time.format("%Y-%m-%d %H:%M:%S UTC").to_string())
+        .unwrap_or_else(|| "дата неизвестна".to_string())
+}
+
+/// Render the complete source-backed card; never remove its description to
+/// make other cards fit. Chunking happens only between these rendered cards.
+fn issue_item(entry: &Value) -> String {
     let id = entry["full_name"].as_str().unwrap_or("unknown/repository");
     let snapshot = &entry["latest"];
     let language = snapshot["language"].as_str().unwrap_or("язык не указан");
@@ -583,66 +611,40 @@ fn issue_item(entry: &Value, description_limit: usize) -> String {
             )
         })
         .unwrap_or_else(|| markdown_v2_escape(id));
+    let metadata_at = observation_timestamp(snapshot["captured_at"].as_str());
+    let metric_at = observation_timestamp(entry["metric_captured_at"].as_str());
     let metric = match entry["source_kind"].as_str() {
-        Some("trending_daily") => format!("макс\\. \\+{delta} за день в Trending"),
-        Some("new_repo") => "новый репозиторий".to_string(),
-        _ => format!("макс\\. \\+{delta} за неделю в Trending"),
-    };
-    let observed = entry["metric_captured_at"]
-        .as_str()
-        .or_else(|| snapshot["captured_at"].as_str())
-        .and_then(parse_time)
-        .map(|time| format!(" · срез {}", time.format("%d.%m")))
-        .unwrap_or_default();
-    let stats = format!(
-        "⭐ {} · {} · {}{}",
-        markdown_v2_escape(&stars),
-        metric,
-        markdown_v2_escape(language),
-        markdown_v2_escape(&observed)
-    );
-    if description_limit == 0 {
-        return format!("{title}\n{stats}");
-    }
-    let mut description = entry["description"]
-        .as_str()
-        .unwrap_or("")
-        .trim()
-        .to_string();
-    if description.chars().count() > description_limit {
-        description = description.chars().take(description_limit).collect();
-        if let Some(pos) = description.rfind(' ') {
-            description.truncate(pos);
+        Some("trending_daily") => {
+            format!("Trending: макс. +{delta} за день · срез метрики: {metric_at}")
         }
-        description.push('…');
-    }
+        Some("new_repo") => "Новый репозиторий из поиска".to_string(),
+        _ => format!("Trending: макс. +{delta} за неделю · срез метрики: {metric_at}"),
+    };
+    let stats = markdown_v2_escape(&format!(
+        "⭐ Всего: {stars} · метаданные: {metadata_at} · {language}\n{metric}"
+    ));
+    let description = entry["description"].as_str().unwrap_or("").trim();
     let joke_line = match entry["joke"].as_str().map(str::trim) {
-        Some(joke) if description_limit > 0 && !joke.is_empty() => {
+        Some(joke) if !joke.is_empty() => {
             format!("\n😄 {}", render_markdown_v2_inline(joke))
         }
         _ => String::new(),
     };
     format!(
         "{title}\n{stats}\n{}{joke_line}",
-        render_markdown_v2_inline(&description)
+        render_markdown_v2_inline(description)
     )
 }
 
-/// Компрессионные уровни описаний, чтобы весь батч гарантированно влезал в
-/// одно сообщение Telegram: 280 → 140 → 60 символов → без описаний.
-const ISSUE_DESCRIPTION_STEPS: [usize; 4] = [280, 140, 60, 0];
-
-/// The whole issue as ONE cohesive message: a header, a compact block per
-/// fresh repository, a footer. When the batch does not fit Telegram's cap,
-/// descriptions compress progressively instead of splitting the issue into
-/// continuation chunks.
-fn render_issue_with_description_limit(digest: &Value, description_limit: usize) -> String {
+/// Preserve complete cards and split only between projects. A card that cannot
+/// fit by itself is an explicit error, never a silently shortened description.
+fn render_issue_messages(digest: &Value) -> Result<Vec<String>> {
     let entries: Vec<&Value> = digest["entries"]
         .as_array()
         .map(|entries| entries.iter().collect())
         .unwrap_or_default();
     if entries.is_empty() {
-        return String::new();
+        return Ok(Vec::new());
     }
     let generated = digest["generated_at"].as_str().unwrap_or("");
     let when = DateTime::parse_from_rfc3339(generated)
@@ -671,65 +673,37 @@ fn render_issue_with_description_limit(digest: &Value, description_limit: usize)
             "Порядок: недельный Trending, затем дневный Trending, затем новые репозитории. Полные данные — в артефакте прогона."
         )
     );
-    let mut current = header.clone();
-    for entry in entries {
-        let item = issue_item(entry, description_limit);
-        if !current.ends_with('\n') {
-            current.push('\n');
-        }
-        current.push('\n');
-        current.push_str(&item);
-    }
-    if !current.ends_with('\n') {
-        current.push('\n');
-    }
-    current.push_str(&footer);
-    current
-}
-
-/// Fallback for the theoretically impossible case when even a
-/// description-free batch of 20 entries overflows the cap: split at item
-/// boundaries the old way instead of failing the delivery.
-fn render_issue_chunks(digest: &Value) -> Vec<String> {
-    let entries: Vec<&Value> = digest["entries"]
-        .as_array()
-        .map(|entries| entries.iter().collect())
-        .unwrap_or_default();
-    if entries.is_empty() {
-        return Vec::new();
-    }
+    let continuation = "*🚀 GitHub — продолжение*";
     let mut chunks = Vec::new();
-    let mut current = "*🚀 GitHub — итоги недели*\n".to_string();
+    let mut current = header.trim_end().to_string();
     for entry in entries {
-        let item = issue_item(entry, ISSUE_DESCRIPTION_LIMIT);
-        if current.encode_utf16().count() + item.encode_utf16().count() + 2 > ISSUE_CHUNK_LIMIT {
-            chunks.push(current.trim_end().to_string());
-            current = "*🚀 GitHub — продолжение*\n".to_string();
+        let item = issue_item(entry);
+        anyhow::ensure!(
+            continuation.encode_utf16().count() + 2 + item.encode_utf16().count()
+                <= ISSUE_CHUNK_LIMIT,
+            "a complete project card exceeds the Telegram-safe limit; review its source text"
+        );
+        if current.encode_utf16().count() + 2 + item.encode_utf16().count() > ISSUE_CHUNK_LIMIT {
+            chunks.push(current);
+            current = continuation.to_string();
         }
-        if !current.ends_with('\n') {
-            current.push('\n');
-        }
-        current.push('\n');
+        current.push_str("\n\n");
         current.push_str(&item);
     }
-    chunks.push(current.trim_end().to_string());
-    chunks
+    if current.encode_utf16().count() + 2 + footer.encode_utf16().count() > ISSUE_CHUNK_LIMIT {
+        chunks.push(current);
+        current = footer;
+    } else {
+        current.push_str("\n\n");
+        current.push_str(&footer);
+    }
+    chunks.push(current);
+    Ok(chunks)
 }
 
 /// Joined representation for the preview artifact; the sender uses separate chunks.
-fn render_issue_message(digest: &Value) -> String {
-    render_issue_messages(digest).join("\n\n")
-}
-
-/// The actual sender retains message boundaries instead of joining them again.
-fn render_issue_messages(digest: &Value) -> Vec<String> {
-    for limit in ISSUE_DESCRIPTION_STEPS {
-        let message = render_issue_with_description_limit(digest, limit);
-        if message.encode_utf16().count() <= ISSUE_CHUNK_LIMIT {
-            return vec![message];
-        }
-    }
-    render_issue_chunks(digest)
+fn render_issue_message(digest: &Value) -> Result<String> {
+    Ok(render_issue_messages(digest)?.join("\n\n"))
 }
 
 fn markdown_v2_escape(text: &str) -> String {
@@ -757,9 +731,15 @@ fn render_markdown_v2_inline(text: &str) -> String {
             return output;
         };
         output.push_str(&render_plain_text_with_scoped_packages(&remaining[..start]));
-        output.push('`');
-        output.push_str(&after_start[..end].replace('\\', "\\\\").replace('`', "\\`"));
-        output.push('`');
+        if end == 0 {
+            // Empty code entities are not part of the emitted subset. Keep the
+            // literal backticks from a source instead of generating one.
+            output.push_str(&markdown_v2_escape("``"));
+        } else {
+            output.push('`');
+            output.push_str(&after_start[..end].replace('\\', "\\\\").replace('`', "\\`"));
+            output.push('`');
+        }
         remaining = &after_start[end + 1..];
     }
     output.push_str(&render_plain_text_with_scoped_packages(remaining));
@@ -827,8 +807,39 @@ fn render(d: &Value) -> String {
     if let Some(reason) = d["llm_budget"]["reason"].as_str() {
         lines.push(format!("Статус LLM: {reason}"));
     }
-    lines.push("Формат выпуска: одно цельное сообщение (см. issue.md).".into());
+    lines.push(
+        "Формат выпуска: полные карточки, разбитые на сообщения (см. telegram-messages.json)."
+            .into(),
+    );
     lines.join("\n")
+}
+
+/// A legacy artifact cannot acquire a complete observation history by re-rendering.
+fn coverage_notice(digest: &Value) -> String {
+    let mut notice = match digest.get("coverage").filter(|report| report["format_version"] == 1) {
+        Some(report) => coverage::render_notice(report),
+        None => "Полнота наблюдений для этого сохранённого выпуска неизвестна; пропущенные данные не восстановлены.".to_string(),
+    };
+    notice.push_str(
+        " Возможности проектов приведены по материалам авторов; работа проектов не проверялась.",
+    );
+    notice
+}
+
+fn record_coverage_summary(report: &Value) -> Result<()> {
+    if let Some(path) = env::var_os("GITHUB_STEP_SUMMARY") {
+        use std::io::Write;
+        let mut file = fs::OpenOptions::new()
+            .create(true)
+            .append(true)
+            .open(path)?;
+        writeln!(
+            file,
+            "## Observation coverage\n\n{}\n",
+            coverage::render_notice(report)
+        )?;
+    }
+    Ok(())
 }
 
 /// Human-readable artifact containing the actual overview and source-backed cards.
@@ -847,6 +858,7 @@ fn render_summary(digest: &Value) -> String {
         digest["period_end"].as_str().unwrap_or("?"),
         overview
     );
+    text.push_str(&format!("\n{}\n", coverage_notice(digest)));
     if let Some(entries) = digest["entries"].as_array() {
         for entry in entries {
             let name = entry["full_name"].as_str().unwrap_or("?");
@@ -882,12 +894,9 @@ fn telegram_send_to(chat: &str, text: &str) -> Result<i64> {
 /// reply to `reply_to` when given — the final issue summary references the
 /// batch message this way.
 fn telegram_send_reply_to(chat: &str, reply_to: Option<i64>, text: &str) -> Result<i64> {
+    telegram_format::validate_message(text, ISSUE_CHUNK_LIMIT)
+        .context("refusing to send invalid emitted Telegram MarkdownV2")?;
     let token = env::var("TELEGRAM_BOT_TOKEN").context("TELEGRAM_BOT_TOKEN missing")?;
-    if text.chars().count() > 3800 {
-        return Err(anyhow!(
-            "refusing to send an oversized Telegram digest post"
-        ));
-    }
     let http = client()?;
     let mut body = json!({"chat_id":chat,"text":text,"parse_mode":"MarkdownV2","disable_web_page_preview":true});
     if let Some(reply_to) = reply_to {
@@ -1001,8 +1010,8 @@ fn credential_markers(text: &str) -> Vec<&'static str> {
     matches
 }
 
-/// The issue is the rendered chunks; every entry must carry some
-/// description text (Groq's or GitHub's) for a sane one-liner.
+/// Validate all actual payloads, including the final overview, before the
+/// caller accepts a preview or starts sending the first project chunk.
 fn digest_publication_text(digest: &Value) -> Result<Vec<String>> {
     if digest["format_version"] != 3 {
         return Err(anyhow!(
@@ -1023,13 +1032,13 @@ fn digest_publication_text(digest: &Value) -> Result<Vec<String>> {
             return Err(anyhow!("publication found a project without a description"));
         }
     }
-    let chunks = render_issue_messages(digest);
-    anyhow::ensure!(
-        chunks
-            .iter()
-            .all(|text| text.encode_utf16().count() <= ISSUE_CHUNK_LIMIT),
-        "a publication chunk exceeds the Telegram-safe limit"
-    );
+    let chunks = render_issue_messages(digest)?;
+    for (index, chunk) in chunks.iter().enumerate() {
+        telegram_format::validate_message(chunk, ISSUE_CHUNK_LIMIT)
+            .with_context(|| format!("invalid rendered publication chunk {}", index + 1))?;
+    }
+    telegram_format::validate_message(&final_issue_text(digest), ISSUE_CHUNK_LIMIT)
+        .context("invalid rendered publication overview")?;
     Ok(chunks)
 }
 
@@ -1052,11 +1061,11 @@ fn final_issue_text(digest: &Value) -> String {
                 .map(|entry| {
                     let name = entry["full_name"].as_str().unwrap_or("?");
                     let delta = entry["delta"].as_i64().unwrap_or_default();
-                    format!("{} (\\+{delta})", markdown_v2_escape(name))
+                    markdown_v2_escape(&format!("{name} (+{delta})"))
                 })
                 .collect();
             if top.is_empty() {
-                "Выпуск без новых проектов.".to_string()
+                markdown_v2_escape("Выпуск без новых проектов.")
             } else {
                 format!("Главное в выпуске: {}", top.join(", "))
             }
@@ -1084,6 +1093,7 @@ fn final_issue_text(digest: &Value) -> String {
             links.join("\n")
         )
     };
+    let body = format!("{body}\n\n{}", markdown_v2_escape(&coverage_notice(digest)));
     let full = format!("*📌 Итог выпуска*\n{body}{link_block}");
     if full.encode_utf16().count() <= ISSUE_CHUNK_LIMIT {
         full
@@ -1448,7 +1458,13 @@ fn main() -> Result<()> {
     record_run_directory(&gathered.dir)?;
     let mut state = update_state(&gathered.snapshots)?;
     if command == "collect" {
-        println!("Three-hour observation saved without provider calls or Telegram delivery.");
+        let coverage_report = coverage::report(&state.snapshots, now, &runs_dir())?;
+        write_json(&gathered.dir.join("coverage.json"), &coverage_report)?;
+        record_coverage_summary(&coverage_report)?;
+        println!(
+            "Observation saved without provider calls or Telegram delivery. {}",
+            coverage::render_notice(&coverage_report)
+        );
         return Ok(());
     }
     let day = now.format("%Y-%m-%d").to_string();
@@ -1475,7 +1491,7 @@ fn main() -> Result<()> {
     }).collect::<Vec<_>>();
     write_json(
         &gathered.dir.join("weekly-source-manifest.json"),
-        &json!({"captures":provenance,"note":"Every discovered capture is included or explicitly marked as a gap. Legacy per-run caps and source limits remain visible in original manifests; no history is backfilled."}),
+        &json!({"captures":provenance,"note":"Every retained-state capture is included or explicitly marked as a gap. coverage.json additionally lists archive captures absent from retained state. Legacy per-run caps and source limits remain visible in original manifests; no history is backfilled."}),
     )?;
     let observed_dates = state
         .snapshots
@@ -1496,6 +1512,7 @@ fn main() -> Result<()> {
         }),
     )?;
     let (mut digest, output) = make_digest(&mut state, &weekly, &gathered.manifest, now, llm)?;
+    record_coverage_summary(&digest["coverage"])?;
     save_preview_files(&gathered.dir, &digest, command == "preview" && llm)?;
     if matches!(command, "digest" | "debug") && !dry {
         println!("Prepared digest preview: {}", gathered.dir.display());
@@ -1529,6 +1546,9 @@ fn main() -> Result<()> {
 }
 
 fn save_preview_files(run_dir: &Path, digest: &Value, require_overview: bool) -> Result<()> {
+    if let Some(report) = digest.get("coverage") {
+        write_json(&run_dir.join("coverage.json"), report)?;
+    }
     write_json(&run_dir.join("ranking-input.json"), digest)?;
     fs::write(run_dir.join("digest.md"), format!("{}\n", render(digest)))?;
     fs::write(run_dir.join("summary.md"), render_summary(digest))?;
@@ -1537,7 +1557,7 @@ fn save_preview_files(run_dir: &Path, digest: &Value, require_overview: bool) ->
         .is_some_and(|entries| !entries.is_empty())
     {
         let mut messages = digest_publication_text(digest)?;
-        fs::write(run_dir.join("issue.md"), render_issue_message(digest))?;
+        fs::write(run_dir.join("issue.md"), render_issue_message(digest)?)?;
         let audit = publication_audit(digest)?;
         write_json(&run_dir.join("release-audit.json"), &audit)?;
         anyhow::ensure!(
@@ -1557,9 +1577,8 @@ fn save_preview_files(run_dir: &Path, digest: &Value, require_overview: bool) ->
     Ok(())
 }
 
-/// Delivery gate: the deterministic credential scan is the only reviewer.
-/// The former Gemini release review burned LLM requests on every issue and
-/// produced tech-chat noise; verdicts live in git history if ever needed.
+/// Local release checks cover payload formatting and credential patterns.
+/// They do not review factual accuracy, project quality, or source coverage.
 fn advisory_audit(digest: &mut Value, state: &mut State, run_dir: &Path) -> Result<Value> {
     let audit = publication_audit(digest)?;
     write_json(&run_dir.join("release-audit.json"), &audit)?;
@@ -1580,12 +1599,10 @@ fn advisory_audit(digest: &mut Value, state: &mut State, run_dir: &Path) -> Resu
 fn publication_audit(digest: &Value) -> Result<Value> {
     let mut chunks = digest_publication_text(digest)?;
     chunks.push(final_issue_text(digest));
-    anyhow::ensure!(
-        chunks
-            .iter()
-            .all(|text| text.encode_utf16().count() <= ISSUE_CHUNK_LIMIT),
-        "the weekly overview exceeds the Telegram-safe limit"
-    );
+    let message_lengths = chunks
+        .iter()
+        .map(|text| text.encode_utf16().count())
+        .collect::<Vec<_>>();
     chunks.push(digest["overview"].as_str().unwrap_or("").to_string());
     if let Some(entries) = digest["entries"].as_array() {
         for entry in entries {
@@ -1601,6 +1618,15 @@ fn publication_audit(digest: &Value) -> Result<Value> {
     Ok(json!({
         "approved":matches.is_empty(),
         "status":if matches.is_empty() { "deterministic-only" } else { "blocked" },
+        "approval_scope":"Only local payload-format and credential-pattern checks; not factual, editorial, quality, safety or coverage approval",
+        "telegram_format":{
+            "status":"passed",
+            "scope":telegram_format::VALIDATION_SCOPE,
+            "utf16_limit":ISSUE_CHUNK_LIMIT,
+            "message_utf16_units":message_lengths,
+            "api_acceptance_tested":false
+        },
+        "factual_review":"not_performed",
         "deterministic_scan":if matches.is_empty() { "passed" } else { "failed" },
         "matched_pattern_classes":matches,
         "review":null
@@ -1609,7 +1635,7 @@ fn publication_audit(digest: &Value) -> Result<Value> {
 
 /// Delivery of one fresh issue into the main chat. The slot guard runs
 /// first: at most one issue per week no matter how many runs fire.
-/// The deterministic credential scan is the only publication reviewer.
+/// Only local payload-format and credential checks run automatically.
 /// On success every reviewed repository is marked covered and stays out of
 /// all future issues. "Nothing new" stays silent in both chats.
 fn deliver_new_digest(
@@ -1764,26 +1790,29 @@ mod tests {
     }
 
     #[test]
-    fn issue_items_are_compact_and_correctly_escaped() {
+    fn issue_items_keep_full_text_and_distinct_exact_observation_dates() {
         let project = json!({
             "rank": 1,
             "total": 1,
             "source_kind": "trending_weekly",
             "full_name": "org/repo",
             "delta": 120,
-            "description": "Инструмент для проверки репозитория.",
+            "metric_captured_at":"2026-10-20T12:17:08Z",
+            "description": "Инструмент для проверки репозитория. ".repeat(15),
             "joke": "Растёт быстрее, чем его тудушка.",
-            "latest": {"html_url":"https://github.com/org/repo","language":"Rust","stars":500}
+            "latest": {"html_url":"https://github.com/org/repo","language":"Rust","stars":500,
+                "captured_at":"2026-10-24T20:53:42Z"}
         });
-        let item = issue_item(&project, ISSUE_DESCRIPTION_LIMIT);
+        let item = issue_item(&project);
         assert!(item.contains("[org/repo](https://github.com/org/repo)"));
-        assert!(item.contains("\\+120 за неделю в Trending"));
-        assert!(item.contains("Инструмент для проверки репозитория\\."));
+        assert!(item.contains("Trending: макс\\. \\+120 за неделю"));
+        assert!(item.contains("⭐ Всего: 500 · метаданные: 2026\\-10\\-24 20:53:42 UTC"));
+        assert!(item.contains("срез метрики: 2026\\-10\\-20 12:17:08 UTC"));
+        assert!(item.contains(&markdown_v2_escape(
+            project["description"].as_str().unwrap().trim()
+        )));
         assert!(item.contains("😄 Растёт быстрее, чем его тудушка\\."));
-        // На самом сжатом уровне описания и шутки уходят целиком.
-        let bare = issue_item(&project, 0);
-        assert!(!bare.contains("Инструмент"));
-        assert!(!bare.contains("😄"));
+        assert!(telegram_format::validate_message(&item, ISSUE_CHUNK_LIMIT).is_ok());
         assert!(!item.contains("ПРОЕКТ"));
         assert_eq!(markdown_v2_escape("a_b.c"), "a\\_b\\.c");
         let scoped_package = render_markdown_v2_inline(
@@ -1792,11 +1821,20 @@ mod tests {
         assert!(scoped_package.contains("`@alibaba-group/open-code-review`,"));
         assert!(scoped_package.contains("`npm install @alibaba-group/open-code-review`"));
         assert!(!scoped_package.contains("@alibaba-group/open-code-review,"));
+        assert!(telegram_format::validate_message(&scoped_package, ISSUE_CHUNK_LIMIT).is_ok());
+        assert!(
+            telegram_format::validate_message(
+                &render_markdown_v2_inline("Source with empty `` or an unmatched ` marker."),
+                ISSUE_CHUNK_LIMIT
+            )
+            .is_ok()
+        );
         assert!(project_github_url("org/repo/extra").is_none());
+        assert_eq!(observation_timestamp(None), "дата неизвестна");
     }
 
     #[test]
-    fn issue_is_always_one_compressed_message() {
+    fn issues_split_between_complete_cards_without_compressing_descriptions() {
         let entries = (1..=10)
             .map(|rank| {
                 json!({
@@ -1825,10 +1863,14 @@ mod tests {
         assert!(chunks[0].contains("[org/repo\\-1](https://github.com/org/repo-1)"));
         // MarkdownV2 reserves '.', so every literal dot outside URLs must be
         // escaped — an unescaped one makes Telegram reject the whole issue.
-        assert!(chunks[0].contains("новые репозитории\\. Полные"));
-        assert!(chunks[0].chars().count() <= 3_800);
-        // Heavy issues compress descriptions instead of splitting: the whole
-        // 20-entry batch still arrives as exactly one Telegram message.
+        assert!(chunks.join("\n").contains("новые репозитории\\. Полные"));
+        assert!(
+            chunks
+                .iter()
+                .all(|chunk| chunk.encode_utf16().count() <= ISSUE_CHUNK_LIMIT)
+        );
+        // A large issue keeps every complete description and joke, even when
+        // several messages are required. No 280/140/60/0 compression remains.
         let heavy = json!({
             "format_version":3,
             "llm_used":false,
@@ -1839,42 +1881,51 @@ mod tests {
                     "source_kind":"trending_weekly",
                     "full_name":format!("org/big-{rank:02}"),
                     "delta":rank*10,
-                    "description":"х".repeat(280),
+                    "description":format!("Описание {rank}: {} конец описания.", "х".repeat(500)),
+                    "joke":format!("Шутка {rank} без потери текста."),
                     "latest":{"stars":500,"language":"Rust"}
                 })
             }).collect::<Vec<_>>()
         });
         let heavy_chunks = digest_publication_text(&heavy).unwrap();
-        assert_eq!(heavy_chunks.len(), 1);
-        assert!(heavy_chunks[0].chars().count() <= 3_800);
-        // Длинные описания сжаты с многоточием, а не выброшены целиком,
-        // пока есть куда жать.
-        assert!(heavy_chunks[0].contains('…'));
+        assert!(heavy_chunks.len() > 1);
+        assert!(
+            heavy_chunks
+                .iter()
+                .all(|chunk| chunk.encode_utf16().count() <= ISSUE_CHUNK_LIMIT)
+        );
+        for entry in heavy["entries"].as_array().unwrap() {
+            let complete_card = issue_item(entry);
+            assert_eq!(
+                heavy_chunks
+                    .iter()
+                    .filter(|chunk| chunk.contains(&complete_card))
+                    .count(),
+                1
+            );
+        }
+        assert!(!heavy_chunks.join("\n").contains('…'));
         let preview = render(&digest);
         assert!(!preview.contains("ПРОЕКТ"));
     }
 
     #[test]
-    fn issue_without_room_for_descriptions_keeps_every_repository() {
+    fn an_oversized_individual_card_fails_instead_of_removing_its_description() {
         let heavy = json!({
             "format_version":3,
             "generated_at":"2026-09-28T00:00:00Z",
-            "entries":(1..=20).map(|rank| {
-                json!({
-                    "rank":rank,
+            "entries":[{
+                    "rank":1,
                     "source_kind":"new_repo",
-                    "full_name":format!("org/wide-{rank:02}"),
-                    "delta":rank*10,
-                    "description":"х".repeat(280),
+                    "full_name":"org/wide",
+                    "delta":10,
+                    "description":"😀".repeat(1900),
                     "latest":{"stars":500,"language":"Rust"}
-                })
-            }).collect::<Vec<_>>()
+            }]
         });
-        let message = render_issue_message(&heavy);
-        assert!(message.chars().count() <= 3_800);
-        for rank in 1..=20 {
-            assert!(message.contains(&format!("org/wide-{rank:02}")));
-        }
+        let error = digest_publication_text(&heavy).unwrap_err().to_string();
+        assert!(error.contains("complete project card exceeds"));
+        assert!(publication_audit(&heavy).is_err());
     }
 
     #[test]
@@ -1908,9 +1959,13 @@ mod tests {
             ]
         });
         let text = final_issue_text(&fallback);
-        assert!(text.contains("org/a (\\+50)"));
-        assert!(text.contains("org/b (\\+20)"));
+        assert!(text.contains("org/a \\(\\+50\\)"));
+        assert!(text.contains("org/b \\(\\+20\\)"));
         assert!(text.contains("[org/b](https://github.com/org/b)"));
+        assert!(telegram_format::validate_message(&text, ISSUE_CHUNK_LIMIT).is_ok());
+        let empty = final_issue_text(&json!({"entries":[]}));
+        assert!(empty.contains("Выпуск без новых проектов\\."));
+        assert!(telegram_format::validate_message(&empty, ISSUE_CHUNK_LIMIT).is_ok());
     }
 
     #[test]
@@ -1946,11 +2001,38 @@ mod tests {
         assert!(preview.contains(digest["overview"].as_str().unwrap()));
         assert!(preview.contains("[org/young](https://github.com/org/young)"));
         assert!(preview.contains("2026-10-18T07:00:00Z"));
-        assert_eq!(publication_audit(&digest).unwrap()["approved"], true);
+        let approved = publication_audit(&digest).unwrap();
+        assert_eq!(approved["approved"], true);
+        assert_eq!(approved["factual_review"], "not_performed");
+        assert_eq!(approved["telegram_format"]["status"], "passed");
+        assert_eq!(approved["telegram_format"]["api_acceptance_tested"], false);
         digest["overview"] = json!(format!("Example ghp_{}", "a".repeat(40)));
         let audit = publication_audit(&digest).unwrap();
         assert_eq!(audit["approved"], false);
         assert!(!audit.to_string().contains(&"a".repeat(40)));
+    }
+
+    #[test]
+    fn an_invalid_overview_blocks_preview_before_any_telegram_payload_is_accepted() {
+        let directory = tempfile::tempdir().unwrap();
+        let digest = json!({
+            "format_version":3,
+            "overview":"😀".repeat(1900),
+            "entries":[{
+                "full_name":"org/project", "description":"Source-backed project description.",
+                "source_kind":"new_repo", "latest":{"stars":5}
+            }]
+        });
+        // The project card fits, but the overview with its header does not.
+        assert!(
+            render_issue_messages(&digest)
+                .unwrap()
+                .iter()
+                .all(|text| text.encode_utf16().count() <= ISSUE_CHUNK_LIMIT)
+        );
+        assert!(digest_publication_text(&digest).is_err());
+        assert!(save_preview_files(directory.path(), &digest, false).is_err());
+        assert!(!directory.path().join("telegram-messages.json").exists());
     }
 
     #[test]
