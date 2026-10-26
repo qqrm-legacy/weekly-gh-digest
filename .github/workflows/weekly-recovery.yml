@@ -1,4 +1,4 @@
-name: Probe Trigger
+name: Weekly Recovery
 
 # An independent best-effort wake-up throughout the week, including delayed runs.
 # Run Bot checks durable completion under its shared concurrency lock.
@@ -7,12 +7,19 @@ on:
   schedule:
     - cron: '43 */6 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/scripts/run_mode.py
+      - .github/scripts/weekly_run.py
+      - .github/workflows/run-bot.yml
+      - .github/workflows/weekly-recovery.yml
 
 permissions:
   actions: write
 
 concurrency:
-  group: probe-trigger
+  group: weekly-recovery
   cancel-in-progress: false
 
 jobs:

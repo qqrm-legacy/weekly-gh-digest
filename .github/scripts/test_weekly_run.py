@@ -170,7 +170,7 @@ class WeeklyRecoveryTests(unittest.TestCase):
             self.assertEqual(plan["reason"], "preview-artifact-already-saved")
 
     def test_watchdog_passes_only_safe_inputs_without_clock_or_delivery_gate(self):
-        workflow = (Path(__file__).parents[1] / "workflows/probe-trigger.yml").read_text()
+        workflow = (Path(__file__).parents[1] / "workflows/weekly-recovery.yml").read_text()
         self.assertNotIn("DIGEST_DELIVERY_ENABLED", workflow)
         self.assertNotIn("date -u", workflow)
         script = workflow.split("        run: |\n", 1)[1]
