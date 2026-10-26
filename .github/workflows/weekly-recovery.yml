@@ -1,0 +1,36 @@
+name: Weekly Recovery
+
+# An independent best-effort wake-up throughout the week, including delayed runs.
+# Run Bot checks durable completion under its shared concurrency lock.
+# This watchdog can only request a preview, regardless of the publication gate.
+on:
+  schedule:
+    - cron: '43 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/scripts/run_mode.py
+      - .github/scripts/weekly_run.py
+      - .github/workflows/run-bot.yml
+      - .github/workflows/weekly-recovery.yml
+
+permissions:
+  actions: write
+
+concurrency:
+  group: weekly-recovery
+  cancel-in-progress: false
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Request idempotent weekly preview recovery
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh workflow run run-bot.yml --repo "$GITHUB_REPOSITORY" --ref main \
+            -f dry_run=true -f recover_weekly=true -f deliver_to_main_chat=false

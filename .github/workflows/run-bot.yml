@@ -2,7 +2,8 @@ name: Run Bot
 
 on:
   schedule:
-    # Observe every three hours; publish Monday 07:00 UTC = 10:00 Moscow.
+    # Every observation tick also recovers an unfinished weekly slot.
+    # Monday 07:00 UTC = 10:00 Moscow remains the nominal deadline.
     - cron: '17 */3 * * *'
     - cron: '0 7 * * 1'
   workflow_dispatch:
@@ -11,6 +12,10 @@ on:
         description: Build and upload a preview without sending to the technical chat
         type: boolean
         default: true
+      recover_weekly:
+        description: Recover the current weekly preview only if its artifact is missing; never send
+        type: boolean
+        default: false
       preview_with_llm:
         description: Enrich the dry-run artifact using the confirmed free provider; never send
         type: boolean
@@ -49,29 +54,6 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-
-      - name: Select collection, preview, or enabled publication
-        id: mode
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-          EVENT_SCHEDULE: ${{ github.event.schedule }}
-          DIGEST_DELIVERY_ENABLED: ${{ vars.DIGEST_DELIVERY_ENABLED }}
-          MANUAL_DRY_RUN: ${{ inputs.dry_run }}
-          PREVIEW_WITH_LLM: ${{ inputs.preview_with_llm }}
-          DELIVER_TO_MAIN_CHAT: ${{ inputs.deliver_to_main_chat }}
-          RETRY_DELIVERY_RUN_ID: ${{ inputs.retry_delivery_run_id }}
-          PREVIEW_SOURCE_RUN_ID: ${{ inputs.preview_source_run_id }}
-        run: python3 .github/scripts/run_mode.py
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8 # master
-        with:
-          toolchain: stable
-
-      - name: Cache build
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
-
-      - name: Build bot
-        run: cargo build --release --locked
 
       - name: Restore persistent state
         id: restore-state
@@ -131,6 +113,31 @@ jobs:
           elif [[ "$status" != 0 ]]; then
             exit "$status"
           fi
+
+      - name: Select collection, preview, or enabled publication
+        id: mode
+        env:
+          PLAN_FILE: ${{ runner.temp }}/weekly-run-plan.json
+          RECOVER_WEEKLY: ${{ inputs.recover_weekly }}
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+          DIGEST_DELIVERY_ENABLED: ${{ vars.DIGEST_DELIVERY_ENABLED }}
+          MANUAL_DRY_RUN: ${{ inputs.dry_run }}
+          PREVIEW_WITH_LLM: ${{ inputs.preview_with_llm }}
+          DELIVER_TO_MAIN_CHAT: ${{ inputs.deliver_to_main_chat }}
+          RETRY_DELIVERY_RUN_ID: ${{ inputs.retry_delivery_run_id }}
+          PREVIEW_SOURCE_RUN_ID: ${{ inputs.preview_source_run_id }}
+        run: python3 .github/scripts/run_mode.py
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8 # master
+        with:
+          toolchain: stable
+
+      - name: Cache build
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+
+      - name: Build bot
+        run: cargo build --release --locked
 
       - name: Collect, preview, or deliver digest
         id: prepare
@@ -205,6 +212,34 @@ jobs:
             echo 'Unknown run mode; refusing execution' >&2
             exit 1
           fi
+      - name: Verify weekly preview artifact
+        id: verify-preview
+        if: steps.mode.outputs.mode == 'preview' || steps.mode.outputs.mode == 'digest'
+        env:
+          RUN_DIRECTORY: ${{ steps.prepare.outputs.run_directory }}
+          WEEKLY_SLOT: ${{ steps.mode.outputs.slot }}
+          PLAN_FILE: ${{ runner.temp }}/weekly-run-plan.json
+        run: python3 .github/scripts/weekly_run.py verify
+
+      - name: Upload run preview and provenance
+        id: upload
+        if: always() && steps.prepare.outputs.run_directory != ''
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: weekly-gh-digest-${{ github.run_id }}
+          path: ${{ steps.prepare.outputs.run_directory }}
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Record uploaded weekly completion
+        if: steps.verify-preview.outcome == 'success' && steps.upload.outcome == 'success'
+        env:
+          RUN_DIRECTORY: ${{ steps.prepare.outputs.run_directory }}
+          WEEKLY_SLOT: ${{ steps.mode.outputs.slot }}
+          RUN_MODE: ${{ steps.mode.outputs.mode }}
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+        run: python3 .github/scripts/weekly_run.py record
+
       - name: Save state and source provenance
         if: always() && steps.restore-state.outcome == 'success' && steps.restore-delivery.outcome == 'success'
         env:
@@ -247,12 +282,3 @@ jobs:
             git -C "$state_dir" commit -m "Update digest state and source archive"
             git -C "$state_dir" push origin HEAD:bot-state
           fi
-
-      - name: Upload run preview and provenance
-        if: always() && steps.prepare.outputs.run_directory != ''
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-        with:
-          name: weekly-gh-digest-${{ github.run_id }}
-          path: ${{ steps.prepare.outputs.run_directory }}
-          if-no-files-found: ignore
-          retention-days: 90
