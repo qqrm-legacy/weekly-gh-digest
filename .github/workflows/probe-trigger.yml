@@ -1,11 +1,11 @@
 name: Probe Trigger
 
-# Monday-only fallback for the 10:00 Moscow weekly issue.
-# The publication gate and durable weekly slot prevent unapproved sends/repeats.
-
+# An independent best-effort wake-up throughout the week, including delayed runs.
+# Run Bot checks durable completion under its shared concurrency lock.
+# This watchdog can only request a preview, regardless of the publication gate.
 on:
   schedule:
-    - cron: '10,40 7,8 * * 1'
+    - cron: '43 */6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -17,29 +17,13 @@ concurrency:
 
 jobs:
   trigger:
-    if: vars.DIGEST_DELIVERY_ENABLED == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Dispatch Run Bot when the slot has no run yet
+      - name: Request idempotent weekly preview recovery
         env:
           GH_TOKEN: ${{ github.token }}
-        shell: bash
         run: |
           set -euo pipefail
-          [[ "$(date -u +%u)" == 1 ]] || exit 0
-          hour="$(date -u +%H)"
-          case "$hour" in
-            07|08) window_start="$(date -u +%Y-%m-%dT)07:00" ;;
-
-            *) echo "Outside slot windows; nothing to do"; exit 0 ;;
-          esac
-          started=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow run-bot.yml \
-            --json createdAt --limit 15 \
-            --jq "[.[] | select(.createdAt >= \"$window_start\")] | length")
-          if [[ "$started" -gt 0 ]]; then
-            echo "Run Bot already started in this window ($started run(s)); nothing to do"
-            exit 0
-          fi
-          gh workflow run run-bot.yml --repo "$GITHUB_REPOSITORY" -f deliver_to_main_chat=true
-          echo "Dispatched Run Bot for the $window_start slot"
+          gh workflow run run-bot.yml --repo "$GITHUB_REPOSITORY" --ref main \
+            -f dry_run=true -f recover_weekly=true -f deliver_to_main_chat=false
