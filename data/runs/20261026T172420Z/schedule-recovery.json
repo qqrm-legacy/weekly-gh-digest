@@ -1,0 +1,13 @@
+{
+  "slot": "weekly:2026-10-26",
+  "mode": "preview",
+  "send": false,
+  "llm": false,
+  "reason": "weekly-preview-due",
+  "event": "workflow_dispatch",
+  "cron": "",
+  "delivery_enabled": false,
+  "issue_due_at": "2026-10-26T07:00:00+00:00",
+  "selected_at": "2026-10-26T17:23:55.240169+00:00",
+  "issue_age_seconds": 37435
+}

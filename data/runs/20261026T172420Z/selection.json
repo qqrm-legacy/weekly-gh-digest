@@ -1,0 +1,643 @@
+{
+  "covered_repositories_tracked": 60,
+  "excluded": [
+    {
+      "full_name": "DietrichGebert/ponytail",
+      "reason": "already reviewed in the digest on 2026-09-30",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "NVIDIA/OpenShell",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "cursor/plugins",
+      "reason": "already reviewed in the digest on 2026-10-01",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "debpalash/VoiceStudio",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "heygen-com/hyperframes",
+      "reason": "already reviewed in the digest on 2026-09-30",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "mksglu/context-mode",
+      "reason": "already reviewed in the digest on 2026-09-30",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "pbakaus/impeccable",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "stablyai/orca",
+      "reason": "already reviewed in the digest on 2026-09-29",
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "shiyu-coder/Kronos",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Panniantong/Agent-Reach",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "php/php-src",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "supabase/supabase",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "msitarzewski/agency-agents",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "headroomlabs-ai/headroom",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Renhuai123/ziwei-doushu",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Kruk2/jasna",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "strelov1/freehire",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "nightly-labs/openbot",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "withmarbleapp/os-taxonomy",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "jbiaojerry/ebook-treasure-chest",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "SnailSploit/Claude-Red",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "NVIDIA/SkillSpector",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "coollabsio/coolify",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "alchaincyf/huashu-design",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "anthropics/claude-code",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "OpenBMB/VoxCPM",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "gitroomhq/postiz-app",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Meloong-Git/PCL",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "twentyhq/twenty",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "fastapi/fastapi",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "nodejs/node",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "sickn33/agentic-awesome-skills",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "google-gemini/gemini-cli",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "aws/agent-toolkit-for-aws",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Gathin23/cleanyourtv",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "deepseek-ai/DeepInfer",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Zagitta/gpu-unlock",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "pengchujin/aerial-tv",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "ly05010419/MacNativeGames",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "simbasjungles/free-my-tv",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "jhaizhou-ops/d2r-mobile",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "JustAResearcher/gpu-unlock-ada",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "xiaoyang111222/cn-math-taxonomy",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Arekejoker/qwen21-nsfw-pose-skill",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "HeyPuter/everything",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "JoasASantos/REA-Prompts",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "deeplethe/solid-glass",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "EthanArbuckle/fairplay-decrypt",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Leonxlnx/earshot",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "aicodeking/leanrea",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "ahwootech/BRUTAL",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "wesbos/3d-model-anything",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "xevrion/hatchzip",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Jakeschincariol/day-trader-skill",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "chenglou/handwired",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "tek-sys-hub/Rubix-lang",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Supermedo/uncharted_pc",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "ikow/php2shell-poc",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "rddmwmddr/android-ad-cleaner",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "alchaincyf/huashu-motion",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "oosexgang/hackios-xnu-kernel",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "OpenMOSS/MOSS-Image",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Ansub/tv-detox",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "humblemuzzu/dumbtv",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "designfuchen/word-atlas",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "9bie/php2shell-bypass-aslr-exp",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "openai/php2shell-checker",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "ctresb/leis",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "rohit267/net-merge",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Caho1/open-claude-ui",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "colinhacks/reylo",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "t3dotgg/tstack",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Tencent-Hunyuan/Hy-Memory",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "lyramakesmusic/neuron-explorer",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "morganlinton/BeautifulRust",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "xscreensaver-official/xscreensaver",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "AjncSystem/ShadowOfTheColossus-PC",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "reason-machines/reason-network",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "zhuyansen/new-term-radar",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "MyLuxy/overdrive",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "UniXNU/UniXNU",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "cranebeaker/coop-anything",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "ELY-Open-Source/ElyOffice",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Revivedx/SavageWindRecomp",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "eness/php2shell-CVE-2026-109618-CVE-2026-109619-PoC",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "eagle-hq/EAGLE-4",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "LiCinCan/blender-ai-mcp-addon",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Snapintosh/Snapintosh",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "stackedlol/ascii-sharks",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "feder-cr/git-ai",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "MaryCache/imozuru",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "outcrawlai/scout",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "assetnote/php2shell-scanner",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "seedds/nxnative",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Noniv/web-ocean",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "enesozturk/dimensional-drawing",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "dipa-studio/ios-sweet",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "zcbacxc/mcd-party-planner",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "CoolkHz/gptibo",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "datalab-to/indra",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Zfinix/eleven",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "KillaBoi/StealMyBitcoin-PoC",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "mistralai/timestral",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "DenisSergeevitch/ex-ussr-kinship-research",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "threerocks/sweety-handdraw-video",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "YOURSJEYO/claude-switcher",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "udhaykumarbala/cleanyourtv-app",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "mizorewww/gdirect",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "0xProbabillity/house-control",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "HayatoG/iss_pc",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "Hugo-Dz/spritefusion-sprite-normals",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "aicodeking/pandacode",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "NVIDIA/flare-local-inference",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "dominikmartn/harp",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "nthnclrk/CleanFrame",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "solana-classic/solana-classic",
+      "reason": "digest cap after stable source priority"
+    },
+    {
+      "full_name": "VictorTaelin/uniichat",
+      "reason": "digest cap after stable source priority"
+    }
+  ],
+  "pool": [
+    {
+      "full_name": "morluto/rea",
+      "ordering_metric": 229268,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "storytold/artcraft",
+      "ordering_metric": 16379,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "boykopovar/AnyPS5",
+      "ordering_metric": 14224,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "MadsLorentzen/ai-job-search",
+      "ordering_metric": 12848,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "cathrynlavery/diagram-design",
+      "ordering_metric": 7901,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "NationalSecurityAgency/ghidra",
+      "ordering_metric": 7602,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "Graphify-Labs/graphify",
+      "ordering_metric": 6903,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "anomalyco/opencode",
+      "ordering_metric": 6857,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "anthropics/claude-plugins-official",
+      "ordering_metric": 5703,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "Comfy-Org/ComfyUI",
+      "ordering_metric": 4790,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "K-Dense-AI/scientific-agent-skills",
+      "ordering_metric": 4719,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "ruvnet/ruflo",
+      "ordering_metric": 3708,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "akitaonrails/ai-memory",
+      "ordering_metric": 3541,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "multica-ai/andrej-karpathy-skills",
+      "ordering_metric": 2981,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "YuJunZhiXue/dsh-purge",
+      "ordering_metric": 2933,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "anthropics/knowledge-work-plugins",
+      "ordering_metric": 2790,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "AgriciDaniel/claude-seo",
+      "ordering_metric": 2492,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "TauricResearch/TradingAgents",
+      "ordering_metric": 2461,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "earthtojake/text-to-cad",
+      "ordering_metric": 2069,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "pingdotgg/t3code",
+      "ordering_metric": 1778,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "android/skills",
+      "ordering_metric": 1471,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "vllm-project/vllm",
+      "ordering_metric": 1445,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "elie222/rakazo",
+      "ordering_metric": 1166,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "wshobson/agents",
+      "ordering_metric": 785,
+      "source_kind": "trending_weekly"
+    },
+    {
+      "full_name": "Nutlope/hallmark",
+      "ordering_metric": 2235,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "makecindy/cindy",
+      "ordering_metric": 1268,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "JetBrains/thinkrail",
+      "ordering_metric": 1156,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "luongnv89/claude-howto",
+      "ordering_metric": 1053,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "affaan-m/ECC",
+      "ordering_metric": 853,
+      "source_kind": "trending_daily"
+    },
+    {
+      "full_name": "pollen-robotics/microduck",
+      "ordering_metric": 844,
+      "source_kind": "trending_daily"
+    }
+  ]
+}
