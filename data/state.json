@@ -100990,6 +100990,1764 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "AgriciDaniel/claude-seo",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 23640,
+      "forks": 3175,
+      "language": "Python",
+      "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
+      "html_url": "https://github.com/AgriciDaniel/claude-seo",
+      "topics": [
+        "ai",
+        "ai-seo",
+        "claude-code",
+        "claude-code-skill",
+        "marketing-automation",
+        "open-source",
+        "seo"
+      ],
+      "created_at": "2026-02-07T08:17:38Z",
+      "updated_at": "2026-10-29T09:58:09Z",
+      "pushed_at": "2026-10-22T16:47:40Z",
+      "license": "MIT",
+      "open_issues": 75,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
+          "full_name": "AgriciDaniel/claude-seo",
+          "language": "Python",
+          "trending_stars_period": 3516,
+          "trending_total_forks": null,
+          "trending_total_stars": 23640,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DenisSergeevitch/ex-ussr-kinship-research",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 1205,
+      "forks": 130,
+      "language": "Python",
+      "description": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
+      "html_url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+      "topics": [
+        "agent-skills",
+        "archives",
+        "claude-code",
+        "codex",
+        "family-history",
+        "familysearch",
+        "genealogy",
+        "ussr"
+      ],
+      "created_at": "2026-10-25T10:05:56Z",
+      "updated_at": "2026-10-29T09:56:12Z",
+      "pushed_at": "2026-10-29T00:08:16Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T10:05:56Z",
+          "description": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
+          "html_url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+          "stars": 1205,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DrWhax/unfairplay",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 750,
+      "forks": 158,
+      "language": "Go",
+      "description": "Decrypt IPA's on MacOS",
+      "html_url": "https://github.com/DrWhax/unfairplay",
+      "topics": [],
+      "created_at": "2026-10-25T21:22:20Z",
+      "updated_at": "2026-10-29T09:38:00Z",
+      "pushed_at": "2026-10-29T01:27:33Z",
+      "license": "MIT",
+      "open_issues": 12,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T21:22:20Z",
+          "description": "Decrypt IPA's on MacOS",
+          "html_url": "https://github.com/DrWhax/unfairplay",
+          "stars": 750,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Graphify-Labs/graphify",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 138182,
+      "forks": 13174,
+      "language": "Python",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "html_url": "https://github.com/Graphify-Labs/graphify",
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor",
+        "developer-tools",
+        "gemini",
+        "graphify",
+        "graphrag",
+        "knowledge-graph",
+        "leiden",
+        "llm",
+        "mcp",
+        "openclaw",
+        "rag",
+        "skills",
+        "tree-sitter"
+      ],
+      "created_at": "2026-04-03T15:49:07Z",
+      "updated_at": "2026-10-29T10:00:25Z",
+      "pushed_at": "2026-10-27T18:15:35Z",
+      "license": "Apache-2.0",
+      "open_issues": 1646,
+      "default_branch": "v8",
+      "sources": [
+        {
+          "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+          "full_name": "Graphify-Labs/graphify",
+          "language": "Python",
+          "trending_stars_period": 6662,
+          "trending_total_forks": null,
+          "trending_total_stars": 138182,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HKUDS/DeepTutor",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 48899,
+      "forks": 6050,
+      "language": "Python",
+      "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
+      "html_url": "https://github.com/HKUDS/DeepTutor",
+      "topics": [
+        "ai-agents",
+        "ai-tutor",
+        "clawbot",
+        "cli-tool",
+        "deepresearch",
+        "interactive-learning",
+        "learning",
+        "multi-agent-systems",
+        "rag"
+      ],
+      "created_at": "2025-12-28T15:35:54Z",
+      "updated_at": "2026-10-29T10:01:25Z",
+      "pushed_at": "2026-10-28T18:01:08Z",
+      "license": "Apache-2.0",
+      "open_issues": 229,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/ .",
+          "full_name": "HKUDS/DeepTutor",
+          "language": "Python",
+          "trending_stars_period": 2371,
+          "trending_total_forks": null,
+          "trending_total_stars": 48899,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JetBrains/thinkrail",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 5575,
+      "forks": 285,
+      "language": "TypeScript",
+      "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+      "html_url": "https://github.com/JetBrains/thinkrail",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "agentic-ai",
+        "agentic-workflow",
+        "ai-coding",
+        "ai-tools",
+        "pi-agent",
+        "pi-agent-extension",
+        "spec-driven",
+        "spec-driven-coding",
+        "spec-driven-development",
+        "vibe-coding",
+        "vibecoding"
+      ],
+      "created_at": "2026-07-08T07:40:43Z",
+      "updated_at": "2026-10-29T10:00:09Z",
+      "pushed_at": "2026-10-29T09:55:06Z",
+      "license": "Apache-2.0",
+      "open_issues": 247,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+          "full_name": "JetBrains/thinkrail",
+          "language": "TypeScript",
+          "trending_stars_period": 1068,
+          "trending_total_forks": null,
+          "trending_total_stars": 5575,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JustAResearcher/gpu-unlock-ada",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 4463,
+      "forks": 571,
+      "language": "C",
+      "description": "GPU tensor unlock source for RTX 4090 and experimental RTX 4070 Ti SUPER; firmware generated locally",
+      "html_url": "https://github.com/JustAResearcher/gpu-unlock-ada",
+      "topics": [],
+      "created_at": "2026-10-23T21:00:53Z",
+      "updated_at": "2026-10-29T09:52:03Z",
+      "pushed_at": "2026-10-26T04:24:46Z",
+      "license": "GPL-2.0",
+      "open_issues": 53,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-23T21:00:53Z",
+          "description": "GPU tensor unlock source for RTX 4090 and experimental RTX 4070 Ti SUPER; firmware generated locally",
+          "html_url": "https://github.com/JustAResearcher/gpu-unlock-ada",
+          "stars": 4463,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "KillaBoi/StealMyBitcoin-PoC",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 988,
+      "forks": 146,
+      "language": "Python",
+      "description": "A public release of the Steal My Bitcoin challenge",
+      "html_url": "https://github.com/KillaBoi/StealMyBitcoin-PoC",
+      "topics": [],
+      "created_at": "2026-10-25T21:48:32Z",
+      "updated_at": "2026-10-29T08:33:20Z",
+      "pushed_at": "2026-10-26T11:25:47Z",
+      "license": null,
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T21:48:32Z",
+          "description": "A public release of the Steal My Bitcoin challenge",
+          "html_url": "https://github.com/KillaBoi/StealMyBitcoin-PoC",
+          "stars": 988,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Leonxlnx/taste-skill",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 104982,
+      "forks": 7101,
+      "language": "JavaScript",
+      "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
+      "html_url": "https://github.com/Leonxlnx/taste-skill",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "anti-slop",
+        "claude-code",
+        "codex",
+        "cursor",
+        "design-system",
+        "frontend",
+        "landing-page",
+        "ui-design",
+        "web-design"
+      ],
+      "created_at": "2026-02-19T21:44:05Z",
+      "updated_at": "2026-10-29T09:57:16Z",
+      "pushed_at": "2026-10-29T08:49:32Z",
+      "license": "MIT",
+      "open_issues": 6,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
+          "full_name": "Leonxlnx/taste-skill",
+          "language": "JavaScript",
+          "trending_stars_period": 3940,
+          "trending_total_forks": null,
+          "trending_total_stars": 104982,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Marker284/yandex-station-extended",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 586,
+      "forks": 77,
+      "language": "Shell",
+      "description": null,
+      "html_url": "https://github.com/Marker284/yandex-station-extended",
+      "topics": [],
+      "created_at": "2026-10-23T21:03:11Z",
+      "updated_at": "2026-10-29T09:52:51Z",
+      "pushed_at": "2026-10-28T12:04:54Z",
+      "license": "CC-BY-4.0",
+      "open_issues": 34,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-23T21:03:11Z",
+          "description": null,
+          "html_url": "https://github.com/Marker284/yandex-station-extended",
+          "stars": 586,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Motionsites-AI/claude-skill",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 1007,
+      "forks": 105,
+      "language": "Python",
+      "description": "Free Claude skill: make Claude build award-level, cinematic landing pages. By MotionSites.",
+      "html_url": "https://github.com/Motionsites-AI/claude-skill",
+      "topics": [],
+      "created_at": "2026-10-26T06:58:45Z",
+      "updated_at": "2026-10-29T10:01:33Z",
+      "pushed_at": "2026-10-26T07:04:24Z",
+      "license": "Other",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-26T06:58:45Z",
+          "description": "Free Claude skill: make Claude build award-level, cinematic landing pages. By MotionSites.",
+          "html_url": "https://github.com/Motionsites-AI/claude-skill",
+          "stars": 1007,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Nutlope/hallmark",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 41333,
+      "forks": 2144,
+      "language": "CSS",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "html_url": "https://github.com/Nutlope/hallmark",
+      "topics": [],
+      "created_at": "2026-04-27T20:47:10Z",
+      "updated_at": "2026-10-29T10:01:11Z",
+      "pushed_at": "2026-10-28T14:52:03Z",
+      "license": "MIT",
+      "open_issues": 68,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+          "full_name": "Nutlope/hallmark",
+          "language": "CSS",
+          "trending_stars_period": 2110,
+          "trending_total_forks": null,
+          "trending_total_stars": 41333,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Snapintosh/Snapintosh",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 1037,
+      "forks": 59,
+      "language": "Python",
+      "description": "EL2 hypervisor and toolchain that boots macOS on the ASUS A16 (Snapdragon X2 Elite), with an Adreno Metal/IOGPU stack",
+      "html_url": "https://github.com/Snapintosh/Snapintosh",
+      "topics": [],
+      "created_at": "2026-10-22T01:40:05Z",
+      "updated_at": "2026-10-29T09:26:04Z",
+      "pushed_at": "2026-10-25T05:05:43Z",
+      "license": "Other",
+      "open_issues": 10,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-22T01:40:05Z",
+          "description": "EL2 hypervisor and toolchain that boots macOS on the ASUS A16 (Snapdragon X2 Elite), with an Adreno Metal/IOGPU stack",
+          "html_url": "https://github.com/Snapintosh/Snapintosh",
+          "stars": 1037,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "TauricResearch/TradingAgents",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 118084,
+      "forks": 22586,
+      "language": "Python",
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "html_url": "https://github.com/TauricResearch/TradingAgents",
+      "topics": [
+        "agent",
+        "finance",
+        "llm",
+        "multiagent",
+        "trading"
+      ],
+      "created_at": "2024-12-28T03:31:08Z",
+      "updated_at": "2026-10-29T09:55:25Z",
+      "pushed_at": "2026-10-27T08:43:04Z",
+      "license": "Apache-2.0",
+      "open_issues": 90,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+          "full_name": "TauricResearch/TradingAgents",
+          "language": "Python",
+          "trending_stars_period": 5322,
+          "trending_total_forks": null,
+          "trending_total_stars": 118084,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ZiChuanLan/agent-purge",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 861,
+      "forks": 632,
+      "language": "JavaScript",
+      "description": "One persona, many coding agents. Replace or inject system prompts across codex, claude, opencode, grok, omp, hermes, pi, zcode - with a local web console.",
+      "html_url": "https://github.com/ZiChuanLan/agent-purge",
+      "topics": [
+        "claude-code",
+        "codex",
+        "coding-agent",
+        "deepseek-harness",
+        "harness",
+        "omp",
+        "opencode",
+        "pi",
+        "system-prompt"
+      ],
+      "created_at": "2026-10-25T06:06:02Z",
+      "updated_at": "2026-10-29T09:17:52Z",
+      "pushed_at": "2026-10-28T15:34:13Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T06:06:02Z",
+          "description": "One persona, many coding agents. Replace or inject system prompts across codex, claude, opencode, grok, omp, hermes, pi, zcode - with a local web console.",
+          "html_url": "https://github.com/ZiChuanLan/agent-purge",
+          "stars": 861,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "andyhuo520/digital-human-koubo",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 1388,
+      "forks": 321,
+      "language": "TypeScript",
+      "description": "AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude Code / Codex / OpenClaw / WorkBuddy …",
+      "html_url": "https://github.com/andyhuo520/digital-human-koubo",
+      "topics": [],
+      "created_at": "2026-10-26T04:34:09Z",
+      "updated_at": "2026-10-29T09:52:59Z",
+      "pushed_at": "2026-10-26T11:52:14Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-26T04:34:09Z",
+          "description": "AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude Code / Codex / OpenClaw / WorkBuddy …",
+          "html_url": "https://github.com/andyhuo520/digital-human-koubo",
+          "stars": 1388,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anhao/ai-pose-gallery-zh",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 2474,
+      "forks": 655,
+      "language": "HTML",
+      "description": "中文版 AI 姿势参考图库 · 1439 组 / 2878 张图片 / 完整汉化 · 零依赖静态画廊",
+      "html_url": "https://github.com/anhao/ai-pose-gallery-zh",
+      "topics": [
+        "ai-art",
+        "chinese",
+        "cloudflare-pages",
+        "gallery",
+        "i18n",
+        "pose",
+        "reference-images",
+        "static-site"
+      ],
+      "created_at": "2026-10-27T12:24:37Z",
+      "updated_at": "2026-10-29T10:01:29Z",
+      "pushed_at": "2026-10-27T14:32:23Z",
+      "license": "Other",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-27T12:24:37Z",
+          "description": "中文版 AI 姿势参考图库 · 1439 组 / 2878 张图片 / 完整汉化 · 零依赖静态画廊",
+          "html_url": "https://github.com/anhao/ai-pose-gallery-zh",
+          "stars": 2474,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anomalyco/opencode",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 222899,
+      "forks": 29871,
+      "language": "TypeScript",
+      "description": "The open source coding agent.",
+      "html_url": "https://github.com/anomalyco/opencode",
+      "topics": [],
+      "created_at": "2025-04-30T20:08:00Z",
+      "updated_at": "2026-10-29T10:01:21Z",
+      "pushed_at": "2026-10-29T09:59:48Z",
+      "license": "MIT",
+      "open_issues": 3891,
+      "default_branch": "dev",
+      "sources": [
+        {
+          "description": "The open source coding agent.",
+          "full_name": "anomalyco/opencode",
+          "language": "TypeScript",
+          "trending_stars_period": 3498,
+          "trending_total_forks": null,
+          "trending_total_stars": 222899,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anonnerdfrenzy/survival-llm",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 671,
+      "forks": 54,
+      "language": "Python",
+      "description": "A free AI assistant and survival library that runs on your own computer, with no internet needed. Shows the source of every answer.",
+      "html_url": "https://github.com/anonnerdfrenzy/survival-llm",
+      "topics": [],
+      "created_at": "2026-10-24T19:12:41Z",
+      "updated_at": "2026-10-29T09:57:27Z",
+      "pushed_at": "2026-10-28T21:04:24Z",
+      "license": "Other",
+      "open_issues": 9,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-24T19:12:41Z",
+          "description": "A free AI assistant and survival library that runs on your own computer, with no internet needed. Shows the source of every answer.",
+          "html_url": "https://github.com/anonnerdfrenzy/survival-llm",
+          "stars": 671,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/knowledge-work-plugins",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 33739,
+      "forks": 3711,
+      "language": "Python",
+      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+      "html_url": "https://github.com/anthropics/knowledge-work-plugins",
+      "topics": [],
+      "created_at": "2026-01-23T20:11:54Z",
+      "updated_at": "2026-10-29T09:59:44Z",
+      "pushed_at": "2026-10-29T07:28:50Z",
+      "license": "Apache-2.0",
+      "open_issues": 156,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+          "full_name": "anthropics/knowledge-work-plugins",
+          "language": "Python",
+          "trending_stars_period": 2612,
+          "trending_total_forks": null,
+          "trending_total_stars": 33739,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "assetnote/php2shell-scanner",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 961,
+      "forks": 141,
+      "language": "Python",
+      "description": "High fidelity scanner for php2shell (CVE-2026-109618 and CVE-2026-109619)",
+      "html_url": "https://github.com/assetnote/php2shell-scanner",
+      "topics": [],
+      "created_at": "2026-10-22T03:53:20Z",
+      "updated_at": "2026-10-29T07:27:36Z",
+      "pushed_at": "2026-10-24T03:40:18Z",
+      "license": "MIT",
+      "open_issues": 4,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-10-22T03:53:20Z",
+          "description": "High fidelity scanner for php2shell (CVE-2026-109618 and CVE-2026-109619)",
+          "html_url": "https://github.com/assetnote/php2shell-scanner",
+          "stars": 961,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "blakeandersonw/ai-app-playbook",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 571,
+      "forks": 77,
+      "language": "TypeScript",
+      "description": "How to build useful, profitable apps in 2026. Clone it and point your coding agent at AGENTS.md.",
+      "html_url": "https://github.com/blakeandersonw/ai-app-playbook",
+      "topics": [],
+      "created_at": "2026-10-26T16:07:05Z",
+      "updated_at": "2026-10-29T09:54:09Z",
+      "pushed_at": "2026-10-26T16:55:25Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-26T16:07:05Z",
+          "description": "How to build useful, profitable apps in 2026. Clone it and point your coding agent at AGENTS.md.",
+          "html_url": "https://github.com/blakeandersonw/ai-app-playbook",
+          "stars": 571,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 52166,
+      "forks": 3339,
+      "language": "JavaScript",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "html_url": "https://github.com/cloudflare/security-audit-skill",
+      "topics": [],
+      "created_at": "2026-06-18T14:08:44Z",
+      "updated_at": "2026-10-29T10:01:25Z",
+      "pushed_at": "2026-09-14T19:29:02Z",
+      "license": "MIT",
+      "open_issues": 102,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "full_name": "cloudflare/security-audit-skill",
+          "language": "JavaScript",
+          "trending_stars_period": 16002,
+          "trending_total_forks": null,
+          "trending_total_stars": 52166,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "daveebbelaar/bama",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 678,
+      "forks": 100,
+      "language": "Swift",
+      "description": "BAMA: Build Any Mac App. Agent skills to research, clone, design, build, optimize, and test native macOS apps with Swift and SwiftUI.",
+      "html_url": "https://github.com/daveebbelaar/bama",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "app-clone",
+        "claude-code",
+        "claude-code-plugin",
+        "codex",
+        "computer-use",
+        "liquid-glass",
+        "macos",
+        "macos-app",
+        "native-apps",
+        "skills",
+        "swift",
+        "swiftdata",
+        "swiftui"
+      ],
+      "created_at": "2026-10-24T08:44:36Z",
+      "updated_at": "2026-10-29T09:55:11Z",
+      "pushed_at": "2026-10-27T06:51:15Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-24T08:44:36Z",
+          "description": "BAMA: Build Any Mac App. Agent skills to research, clone, design, build, optimize, and test native macOS apps with Swift and SwiftUI.",
+          "html_url": "https://github.com/daveebbelaar/bama",
+          "stars": 678,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "designfuchen/word-atlas",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 3167,
+      "forks": 695,
+      "language": "TypeScript",
+      "description": "词光 · Word Atlas — Illustrated IELTS vocabulary with 7,298 words, UK/US audio and FSRS review. Open-source app + CC BY 4.0 dataset.",
+      "html_url": "https://github.com/designfuchen/word-atlas",
+      "topics": [
+        "chinese",
+        "dataset",
+        "english-learning",
+        "flashcards",
+        "fsrs",
+        "ielts",
+        "language-learning",
+        "pwa",
+        "react",
+        "spaced-repetition",
+        "vocabulary",
+        "webgl"
+      ],
+      "created_at": "2026-10-25T08:27:22Z",
+      "updated_at": "2026-10-29T09:59:20Z",
+      "pushed_at": "2026-10-27T10:55:44Z",
+      "license": "Other",
+      "open_issues": 23,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T08:27:22Z",
+          "description": "词光 · Word Atlas — Illustrated IELTS vocabulary with 7,298 words, UK/US audio and FSRS review. Open-source app + CC BY 4.0 dataset.",
+          "html_url": "https://github.com/designfuchen/word-atlas",
+          "stars": 3167,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "elayadesign/ai-design-skills",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 11625,
+      "forks": 840,
+      "language": null,
+      "description": null,
+      "html_url": "https://github.com/elayadesign/ai-design-skills",
+      "topics": [],
+      "created_at": "2026-07-29T06:43:16Z",
+      "updated_at": "2026-10-29T10:01:23Z",
+      "pushed_at": "2026-10-27T16:02:10Z",
+      "license": "MIT",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "",
+          "full_name": "elayadesign/ai-design-skills",
+          "language": "",
+          "trending_stars_period": 2139,
+          "trending_total_forks": null,
+          "trending_total_stars": 11625,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "enesozturk/dimensional-drawing",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 1493,
+      "forks": 95,
+      "language": "HTML",
+      "description": "Create Apple style dimensional drawings of UI components.",
+      "html_url": "https://github.com/enesozturk/dimensional-drawing",
+      "topics": [
+        "skills",
+        "ui"
+      ],
+      "created_at": "2026-10-23T12:20:16Z",
+      "updated_at": "2026-10-29T10:01:33Z",
+      "pushed_at": "2026-10-24T09:41:54Z",
+      "license": "MIT",
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-23T12:20:16Z",
+          "description": "Create Apple style dimensional drawings of UI components.",
+          "html_url": "https://github.com/enesozturk/dimensional-drawing",
+          "stars": 1493,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "expo/skills",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 3726,
+      "forks": 235,
+      "language": "Shell",
+      "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services",
+      "html_url": "https://github.com/expo/skills",
+      "topics": [],
+      "created_at": "2025-11-30T03:57:18Z",
+      "updated_at": "2026-10-29T10:00:27Z",
+      "pushed_at": "2026-10-28T20:08:40Z",
+      "license": "MIT",
+      "open_issues": 101,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services",
+          "full_name": "expo/skills",
+          "language": "Shell",
+          "trending_stars_period": 90,
+          "trending_total_forks": null,
+          "trending_total_stars": 3726,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "hmjz100/LinkSwift",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 35892,
+      "forks": 2543,
+      "language": "JavaScript",
+      "description": "一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘",
+      "html_url": "https://github.com/hmjz100/LinkSwift",
+      "topics": [
+        "123pan",
+        "aliyun-drive",
+        "aliyunpan",
+        "aria2",
+        "baidu",
+        "baidu-netdisk",
+        "baidunetdisk",
+        "baidupan",
+        "baiduyun",
+        "guangya-netdisk",
+        "motrix",
+        "quark-netdisk",
+        "tampermonkey",
+        "tampermonkey-script",
+        "tampermonkey-userscript",
+        "tianyi-netdisk",
+        "uc-netdisk",
+        "userscript",
+        "xunlei-netdisk",
+        "yidong-netdisk"
+      ],
+      "created_at": "2022-08-10T11:59:44Z",
+      "updated_at": "2026-10-29T10:01:14Z",
+      "pushed_at": "2026-10-27T15:14:58Z",
+      "license": "AGPL-3.0",
+      "open_issues": 50,
+      "default_branch": "dev",
+      "sources": [
+        {
+          "description": "一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘",
+          "full_name": "hmjz100/LinkSwift",
+          "language": "JavaScript",
+          "trending_stars_period": 1616,
+          "trending_total_forks": null,
+          "trending_total_stars": 35892,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "interplains/Zero-Breach-Toolkit",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 3083,
+      "forks": 331,
+      "language": "Python",
+      "description": "Free, open-source, offline checks for traces of known mercenary spyware. Works on Windows, macOS and Linux, Android phones and iPhone backups.",
+      "html_url": "https://github.com/interplains/Zero-Breach-Toolkit",
+      "topics": [],
+      "created_at": "2026-10-25T14:41:34Z",
+      "updated_at": "2026-10-29T10:00:54Z",
+      "pushed_at": "2026-10-29T05:21:29Z",
+      "license": "Apache-2.0",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T14:41:34Z",
+          "description": "Free, open-source, offline checks for traces of known mercenary spyware. Works on Windows, macOS and Linux, Android phones and iPhone backups.",
+          "html_url": "https://github.com/interplains/Zero-Breach-Toolkit",
+          "stars": 3083,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jakubkrehel/skills",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 9084,
+      "forks": 345,
+      "language": "Markdown",
+      "description": "A collection of agent skills that help you build great interfaces.",
+      "html_url": "https://github.com/jakubkrehel/skills",
+      "topics": [],
+      "created_at": "2026-07-10T08:58:36Z",
+      "updated_at": "2026-10-29T09:50:28Z",
+      "pushed_at": "2026-10-25T13:26:17Z",
+      "license": "MIT",
+      "open_issues": 9,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A collection of agent skills that help you build great interfaces.",
+          "full_name": "jakubkrehel/skills",
+          "language": "Markdown",
+          "trending_stars_period": 776,
+          "trending_total_forks": null,
+          "trending_total_stars": 9084,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kargulstudio/calender-app-design",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 793,
+      "forks": 95,
+      "language": "TypeScript",
+      "description": null,
+      "html_url": "https://github.com/kargulstudio/calender-app-design",
+      "topics": [],
+      "created_at": "2026-10-26T18:38:56Z",
+      "updated_at": "2026-10-29T08:31:20Z",
+      "pushed_at": "2026-10-26T20:34:05Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-26T18:38:56Z",
+          "description": null,
+          "html_url": "https://github.com/kargulstudio/calender-app-design",
+          "stars": 793,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "macro-inc/macro",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 5614,
+      "forks": 529,
+      "language": "Rust",
+      "description": "Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory.",
+      "html_url": "https://github.com/macro-inc/macro",
+      "topics": [
+        "agent",
+        "ai",
+        "ai-agents",
+        "all-in-one",
+        "crm",
+        "crm-system",
+        "email",
+        "linear",
+        "mcp",
+        "messaging",
+        "notes",
+        "notion",
+        "office",
+        "rust",
+        "slack",
+        "slack-alternative",
+        "startup",
+        "startup-tools",
+        "typescript",
+        "workspace"
+      ],
+      "created_at": "2025-11-08T15:18:27Z",
+      "updated_at": "2026-10-29T09:49:50Z",
+      "pushed_at": "2026-10-29T08:04:58Z",
+      "license": "AGPL-3.0",
+      "open_issues": 344,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory.",
+          "full_name": "macro-inc/macro",
+          "language": "Rust",
+          "trending_stars_period": 117,
+          "trending_total_forks": null,
+          "trending_total_stars": 5614,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "makecindy/cindy",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 8430,
+      "forks": 985,
+      "language": "TypeScript",
+      "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
+      "html_url": "https://github.com/makecindy/cindy",
+      "topics": [
+        "agent",
+        "ai-agent",
+        "ai-assistant",
+        "android",
+        "claude-code",
+        "codex",
+        "electron",
+        "ios",
+        "llm",
+        "macos",
+        "react-native",
+        "typescript",
+        "windows"
+      ],
+      "created_at": "2026-07-22T17:49:34Z",
+      "updated_at": "2026-10-29T09:59:04Z",
+      "pushed_at": "2026-10-29T09:44:39Z",
+      "license": "Apache-2.0",
+      "open_issues": 2237,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
+          "full_name": "makecindy/cindy",
+          "language": "TypeScript",
+          "trending_stars_period": 728,
+          "trending_total_forks": null,
+          "trending_total_stars": 8430,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "man15h/tellyscope",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 625,
+      "forks": 34,
+      "language": "Kotlin",
+      "description": "Debloat your Android TV, install apps, browse and transfer files on it, all from your phone. Under 3 MB, no tracking, no root, no PC.",
+      "html_url": "https://github.com/man15h/tellyscope",
+      "topics": [
+        "android",
+        "androidtv",
+        "googletv",
+        "privacy"
+      ],
+      "created_at": "2026-10-22T19:51:46Z",
+      "updated_at": "2026-10-29T10:01:01Z",
+      "pushed_at": "2026-10-29T10:01:48Z",
+      "license": "GPL-3.0",
+      "open_issues": 6,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-22T19:51:46Z",
+          "description": "Debloat your Android TV, install apps, browse and transfer files on it, all from your phone. Under 3 MB, no tracking, no root, no PC.",
+          "html_url": "https://github.com/man15h/tellyscope",
+          "stars": 625,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mirkobrombin/raven",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 528,
+      "forks": 12,
+      "language": "C++",
+      "description": "A Windows your apps recognize.",
+      "html_url": "https://github.com/mirkobrombin/raven",
+      "topics": [],
+      "created_at": "2026-10-24T17:13:42Z",
+      "updated_at": "2026-10-29T09:58:15Z",
+      "pushed_at": "2026-10-29T09:58:09Z",
+      "license": "Other",
+      "open_issues": 9,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-24T17:13:42Z",
+          "description": "A Windows your apps recognize.",
+          "html_url": "https://github.com/mirkobrombin/raven",
+          "stars": 528,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mizorewww/gdirect",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 761,
+      "forks": 52,
+      "language": "Rust",
+      "description": "Rust Google Drive direct downloader using pinned libaria2",
+      "html_url": "https://github.com/mizorewww/gdirect",
+      "topics": [],
+      "created_at": "2026-10-25T05:52:22Z",
+      "updated_at": "2026-10-29T09:01:39Z",
+      "pushed_at": "2026-10-26T11:07:58Z",
+      "license": "GPL-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T05:52:22Z",
+          "description": "Rust Google Drive direct downloader using pinned libaria2",
+          "html_url": "https://github.com/mizorewww/gdirect",
+          "stars": 761,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "morganlinton/BeautifulRust",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 1384,
+      "forks": 63,
+      "language": "Python",
+      "description": "Agent Skills that teach coding agents to write, review, and port idiomatic Rust, plus a tested clippy config. Works with Claude Code, Codex, Copilot, Cursor, and Gemini CLI.",
+      "html_url": "https://github.com/morganlinton/BeautifulRust",
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "claude-plugin",
+        "claude-skills",
+        "clippy",
+        "code-review",
+        "coding-agent",
+        "cursor",
+        "rust",
+        "style-guide"
+      ],
+      "created_at": "2026-10-23T03:01:11Z",
+      "updated_at": "2026-10-29T09:49:14Z",
+      "pushed_at": "2026-10-28T15:41:26Z",
+      "license": "MIT",
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-23T03:01:11Z",
+          "description": "Agent Skills that teach coding agents to write, review, and port idiomatic Rust, plus a tested clippy config. Works with Claude Code, Codex, Copilot, Cursor, and Gemini CLI.",
+          "html_url": "https://github.com/morganlinton/BeautifulRust",
+          "stars": 1384,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "multica-ai/andrej-karpathy-skills",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 226175,
+      "forks": 22587,
+      "language": null,
+      "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "html_url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "topics": [],
+      "created_at": "2026-01-27T03:53:13Z",
+      "updated_at": "2026-10-29T10:01:22Z",
+      "pushed_at": "2026-04-20T10:05:04Z",
+      "license": null,
+      "open_issues": 138,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+          "full_name": "multica-ai/andrej-karpathy-skills",
+          "language": "",
+          "trending_stars_period": 4293,
+          "trending_total_forks": null,
+          "trending_total_stars": 226175,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "nightly-labs/openbot",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 3543,
+      "forks": 336,
+      "language": "TypeScript",
+      "description": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
+      "html_url": "https://github.com/nightly-labs/openbot",
+      "topics": [
+        "ai-agents",
+        "bun",
+        "codex",
+        "electron",
+        "local-first",
+        "macos",
+        "solidjs",
+        "typescript"
+      ],
+      "created_at": "2026-08-12T21:32:03Z",
+      "updated_at": "2026-10-29T10:00:08Z",
+      "pushed_at": "2026-10-29T10:01:07Z",
+      "license": "Other",
+      "open_issues": 327,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
+          "full_name": "nightly-labs/openbot",
+          "language": "TypeScript",
+          "trending_stars_period": 1054,
+          "trending_total_forks": null,
+          "trending_total_stars": 3543,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "obra/superpowers",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 307826,
+      "forks": 27377,
+      "language": "Shell",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "html_url": "https://github.com/obra/superpowers",
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
+      ],
+      "created_at": "2025-10-09T19:45:18Z",
+      "updated_at": "2026-10-29T10:00:42Z",
+      "pushed_at": "2026-10-23T03:48:57Z",
+      "license": "MIT",
+      "open_issues": 369,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An agentic skills framework & software development methodology that works.",
+          "full_name": "obra/superpowers",
+          "language": "Shell",
+          "trending_stars_period": 1095,
+          "trending_total_forks": null,
+          "trending_total_stars": 307826,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "oosexgang/hakios-xnu-kernel",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 1927,
+      "forks": 331,
+      "language": "C",
+      "description": null,
+      "html_url": "https://github.com/oosexgang/hakios-xnu-kernel",
+      "topics": [],
+      "created_at": "2026-10-22T06:20:11Z",
+      "updated_at": "2026-10-29T09:49:56Z",
+      "pushed_at": "2026-10-28T19:07:44Z",
+      "license": "Other",
+      "open_issues": 19,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-22T06:20:11Z",
+          "description": null,
+          "html_url": "https://github.com/oosexgang/hakios-xnu-kernel",
+          "stars": 1927,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "pbakaus/impeccable",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 93952,
+      "forks": 5551,
+      "language": "Rust",
+      "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+      "html_url": "https://github.com/pbakaus/impeccable",
+      "topics": [
+        "agent-skills",
+        "ai",
+        "anti-slop",
+        "design",
+        "slop"
+      ],
+      "created_at": "2025-11-16T01:52:04Z",
+      "updated_at": "2026-10-29T10:01:46Z",
+      "pushed_at": "2026-10-29T04:51:37Z",
+      "license": "Apache-2.0",
+      "open_issues": 48,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+          "full_name": "pbakaus/impeccable",
+          "language": "Rust",
+          "trending_stars_period": 7283,
+          "trending_total_forks": null,
+          "trending_total_stars": 93951,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+          "full_name": "pbakaus/impeccable",
+          "language": "Rust",
+          "trending_stars_period": 1472,
+          "trending_total_forks": null,
+          "trending_total_stars": 93951,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "rddmwmddr/android-ad-cleaner",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 4568,
+      "forks": 413,
+      "language": "Python",
+      "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+      "html_url": "https://github.com/rddmwmddr/android-ad-cleaner",
+      "topics": [
+        "adb",
+        "ai-agent",
+        "android",
+        "coloros",
+        "debloat",
+        "hyperos",
+        "magicos",
+        "originos"
+      ],
+      "created_at": "2026-10-24T05:35:47Z",
+      "updated_at": "2026-10-29T09:58:19Z",
+      "pushed_at": "2026-10-29T09:49:47Z",
+      "license": "MIT",
+      "open_issues": 122,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-24T05:35:47Z",
+          "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+          "html_url": "https://github.com/rddmwmddr/android-ad-cleaner",
+          "stars": 4568,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "rossark0/rossark-motion-skill",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 563,
+      "forks": 42,
+      "language": "Swift",
+      "description": "Turn any SVG into a professional 60 fps animation. A Claude Code skill that brings anything drawn to life: live faces, full-body acting and whole scenes, in React Native and SwiftUI.",
+      "html_url": "https://github.com/rossark0/rossark-motion-skill",
+      "topics": [],
+      "created_at": "2026-10-22T03:33:03Z",
+      "updated_at": "2026-10-29T04:49:43Z",
+      "pushed_at": "2026-10-22T06:38:46Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-22T03:33:03Z",
+          "description": "Turn any SVG into a professional 60 fps animation. A Claude Code skill that brings anything drawn to life: live faces, full-body acting and whole scenes, in React Native and SwiftUI.",
+          "html_url": "https://github.com/rossark0/rossark-motion-skill",
+          "stars": 563,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ruvnet/RuView",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 101423,
+      "forks": 13182,
+      "language": "Rust",
+      "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "html_url": "https://github.com/ruvnet/RuView",
+      "topics": [
+        "awesome",
+        "claude",
+        "densepose",
+        "esp32",
+        "firmware",
+        "home-assistant",
+        "home-automation",
+        "iot",
+        "monitoring",
+        "networking",
+        "npm",
+        "pose-estimation",
+        "react",
+        "rf",
+        "self-learning",
+        "skills",
+        "spatial-intelligence",
+        "typescript",
+        "wifi",
+        "wifi-security"
+      ],
+      "created_at": "2025-06-07T04:32:30Z",
+      "updated_at": "2026-10-29T10:01:10Z",
+      "pushed_at": "2026-10-29T10:00:58Z",
+      "license": "MIT",
+      "open_issues": 505,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+          "full_name": "ruvnet/RuView",
+          "language": "Rust",
+          "trending_stars_period": 557,
+          "trending_total_forks": null,
+          "trending_total_stars": 101423,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ruvnet/ruflo",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 80047,
+      "forks": 9391,
+      "language": "TypeScript",
+      "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+      "html_url": "https://github.com/ruvnet/ruflo",
+      "topics": [
+        "agentic-ai",
+        "agentic-framework",
+        "agentic-workflow",
+        "agents",
+        "ai-agents",
+        "ai-assistant",
+        "ai-skills",
+        "autonomous-agents",
+        "claude",
+        "codex",
+        "dsh-plugin",
+        "harness",
+        "mcp-server",
+        "multi-agent",
+        "multi-agent-systems",
+        "npm",
+        "skills",
+        "swarm",
+        "swarm-intelligence",
+        "typescript"
+      ],
+      "created_at": "2025-06-02T21:24:20Z",
+      "updated_at": "2026-10-29T09:58:49Z",
+      "pushed_at": "2026-10-29T06:31:16Z",
+      "license": "MIT",
+      "open_issues": 985,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+          "full_name": "ruvnet/ruflo",
+          "language": "TypeScript",
+          "trending_stars_period": 1930,
+          "trending_total_forks": null,
+          "trending_total_stars": 80047,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "smithjohn78390/tongjiang-lab",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 748,
+      "forks": 199,
+      "language": "HTML",
+      "description": "Free interactive 3D science lessons for high school · 铜匠实验室 · https://lab.tongjiang.app",
+      "html_url": "https://github.com/smithjohn78390/tongjiang-lab",
+      "topics": [
+        "3d",
+        "biology",
+        "chemistry",
+        "education",
+        "geography",
+        "high-school",
+        "interactive",
+        "open-educational-resources",
+        "physics",
+        "threejs",
+        "webgl"
+      ],
+      "created_at": "2026-10-28T04:29:29Z",
+      "updated_at": "2026-10-29T09:55:46Z",
+      "pushed_at": "2026-10-28T11:35:35Z",
+      "license": "Other",
+      "open_issues": 12,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-28T04:29:29Z",
+          "description": "Free interactive 3D science lessons for high school · 铜匠实验室 · https://lab.tongjiang.app",
+          "html_url": "https://github.com/smithjohn78390/tongjiang-lab",
+          "stars": 748,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "surendrapandar/minilytics",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 766,
+      "forks": 184,
+      "language": "TypeScript",
+      "description": "Opensource Revenue-first analytics for indie hackers & solo founders ",
+      "html_url": "https://github.com/surendrapandar/minilytics",
+      "topics": [],
+      "created_at": "2026-10-23T19:27:24Z",
+      "updated_at": "2026-10-29T08:04:12Z",
+      "pushed_at": "2026-10-27T12:36:21Z",
+      "license": "MIT",
+      "open_issues": 9,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-23T19:27:24Z",
+          "description": "Opensource Revenue-first analytics for indie hackers & solo founders ",
+          "html_url": "https://github.com/surendrapandar/minilytics",
+          "stars": 766,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "t3dotgg/tstack",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 2312,
+      "forks": 143,
+      "language": "Python",
+      "description": "The agent skills I use every day. Works with Claude Code and Codex.",
+      "html_url": "https://github.com/t3dotgg/tstack",
+      "topics": [],
+      "created_at": "2026-10-24T05:00:20Z",
+      "updated_at": "2026-10-29T09:59:06Z",
+      "pushed_at": "2026-10-28T02:38:03Z",
+      "license": "MIT",
+      "open_issues": 11,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-24T05:00:20Z",
+          "description": "The agent skills I use every day. Works with Claude Code and Codex.",
+          "html_url": "https://github.com/t3dotgg/tstack",
+          "stars": 2312,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "togg53192-cmd/jailbreaks",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 7782,
+      "forks": 1099,
+      "language": null,
+      "description": "LIST OF ALL MY JAILBREAKS",
+      "html_url": "https://github.com/togg53192-cmd/jailbreaks",
+      "topics": [],
+      "created_at": "2026-06-18T18:21:25Z",
+      "updated_at": "2026-10-29T10:00:29Z",
+      "pushed_at": "2026-10-28T12:31:33Z",
+      "license": null,
+      "open_issues": 17,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "LIST OF ALL MY JAILBREAKS",
+          "full_name": "togg53192-cmd/jailbreaks",
+          "language": "",
+          "trending_stars_period": 1477,
+          "trending_total_forks": null,
+          "trending_total_stars": 7782,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "unclebob/ub-mode",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 4131,
+      "forks": 227,
+      "language": null,
+      "description": null,
+      "html_url": "https://github.com/unclebob/ub-mode",
+      "topics": [],
+      "created_at": "2026-10-25T16:04:09Z",
+      "updated_at": "2026-10-29T10:01:36Z",
+      "pushed_at": "2026-10-25T16:07:59Z",
+      "license": null,
+      "open_issues": 5,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-10-25T16:04:09Z",
+          "description": null,
+          "html_url": "https://github.com/unclebob/ub-mode",
+          "stars": 4131,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "xiaolai/the-craft-of-selfteaching",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 18788,
+      "forks": 17927,
+      "language": "Jupyter Notebook",
+      "description": "One has no future if one couldn't teach themself.",
+      "html_url": "https://github.com/xiaolai/the-craft-of-selfteaching",
+      "topics": [],
+      "created_at": "2019-03-14T14:12:13Z",
+      "updated_at": "2026-10-29T10:01:04Z",
+      "pushed_at": "2026-05-20T23:38:19Z",
+      "license": null,
+      "open_issues": 200,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "One has no future if one couldn't teach themself.",
+          "full_name": "xiaolai/the-craft-of-selfteaching",
+          "language": "Jupyter Notebook",
+          "trending_stars_period": 148,
+          "trending_total_forks": null,
+          "trending_total_stars": 18788,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "yaojingang/GEOInflow",
+      "captured_at": "2026-10-29T10:01:37Z",
+      "stars": 706,
+      "forks": 226,
+      "language": "TypeScript",
+      "description": "Self-hosted web and AI crawler analytics for Generative Engine Optimization (GEO). Track visitors, AI search referrals, crawl logs, content coverage, and conversions. Jointly published by 猎看科技 · 北京日报社智源GEO. MIT licensed.",
+      "html_url": "https://github.com/yaojingang/GEOInflow",
+      "topics": [
+        "ai-analytics",
+        "geo",
+        "mit",
+        "postgresql",
+        "self-hosted",
+        "web-analytics"
+      ],
+      "created_at": "2026-10-26T03:12:45Z",
+      "updated_at": "2026-10-29T08:54:45Z",
+      "pushed_at": "2026-10-29T09:52:07Z",
+      "license": "MIT",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-26T03:12:45Z",
+          "description": "Self-hosted web and AI crawler analytics for Generative Engine Optimization (GEO). Track visitors, AI search referrals, crawl logs, content coverage, and conversions. Jointly published by 猎看科技 · 北京日报社智源GEO. MIT licensed.",
+          "html_url": "https://github.com/yaojingang/GEOInflow",
+          "stars": 706,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
