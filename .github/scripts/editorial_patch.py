@@ -13,8 +13,8 @@ def edit(name, changes):
 
 
 edit('src/main.rs', [
-    ('mod editions;\n', 'mod editions;\nmod editorial;\n'),
-    ('    if command == "preview-stored" {', '    if command == "test-summary" {\n        return test_delivery::summary(&args);\n    }\n    if command == "preview-stored" {'),
+    ('mod editions;\n', 'mod editions;\nmod editorial;\nmod test_delivery_review;\n'),
+    ('    if command == "preview-stored" {', '    if command == "test-summary" {\n        return test_delivery_review::run(&args);\n    }\n    if command == "preview-stored" {'),
     ('"llm_used":complete,', '"llm_used":complete,\n        "llm_requested":do_llm,'),
     ('    // The deterministic credential scan blocks unsafe publication text.\n', '    editorial::require_synthesis(digest)?;\n    // The deterministic credential scan blocks unsafe publication text.\n'),
     ('    let description = entry["description"].as_str().unwrap_or("").trim();',
