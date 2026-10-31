@@ -6,8 +6,14 @@ on:
     # Monday 07:00 UTC = 10:00 Moscow remains the nominal deadline.
     - cron: '17 */3 * * *'
     - cron: '0 7 * * 1'
+    - cron: '37 7 * * *'
   workflow_dispatch:
     inputs:
+      digest_format:
+        description: Select the daily discoveries or weekly summary
+        type: choice
+        options: [weekly, daily]
+        default: weekly
       dry_run:
         description: Build and upload a preview without sending to the technical chat
         type: boolean
@@ -122,7 +128,9 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           EVENT_SCHEDULE: ${{ github.event.schedule }}
           DIGEST_DELIVERY_ENABLED: ${{ vars.DIGEST_DELIVERY_ENABLED }}
+          DIGEST_DAILY_DELIVERY_ENABLED: ${{ vars.DIGEST_DAILY_DELIVERY_ENABLED }}
           MANUAL_DRY_RUN: ${{ inputs.dry_run }}
+          DIGEST_FORMAT: ${{ inputs.digest_format }}
           PREVIEW_WITH_LLM: ${{ inputs.preview_with_llm }}
           DELIVER_TO_MAIN_CHAT: ${{ inputs.deliver_to_main_chat }}
           RETRY_DELIVERY_RUN_ID: ${{ inputs.retry_delivery_run_id }}
@@ -157,6 +165,7 @@ jobs:
           RUN_MODE: ${{ steps.mode.outputs.mode }}
           USE_LLM: ${{ steps.mode.outputs.llm }}
           DIGEST_DELIVERY_ENABLED: ${{ vars.DIGEST_DELIVERY_ENABLED }}
+          DIGEST_DAILY_DELIVERY_ENABLED: ${{ vars.DIGEST_DAILY_DELIVERY_ENABLED }}
         shell: bash
         run: |
           set -euo pipefail
@@ -198,6 +207,12 @@ jobs:
             mkdir -p "$delivery_dir"
             cp -a "$(dirname "$source_input")/." "$delivery_dir/"
             "$bot" debug-delivery "$delivery_dir"
+          elif [[ "$RUN_MODE" == "daily-digest" ]]; then
+            "$bot" digest --daily --llm
+          elif [[ "$RUN_MODE" == "daily-preview" ]]; then
+            args=(preview --daily --dry-run)
+            if [[ "$USE_LLM" == "true" ]]; then args+=(--llm); fi
+            "$bot" "${args[@]}"
           elif [[ "$RUN_MODE" == "digest" ]]; then
             "$bot" digest --llm
           elif [[ "$RUN_MODE" == "debug" ]]; then
@@ -214,12 +229,18 @@ jobs:
           fi
       - name: Verify weekly preview artifact
         id: verify-preview
-        if: steps.mode.outputs.mode == 'preview' || steps.mode.outputs.mode == 'digest'
+        if: steps.mode.outputs.mode == 'preview' || steps.mode.outputs.mode == 'digest' || steps.mode.outputs.mode == 'daily-preview' || steps.mode.outputs.mode == 'daily-digest'
         env:
           RUN_DIRECTORY: ${{ steps.prepare.outputs.run_directory }}
           WEEKLY_SLOT: ${{ steps.mode.outputs.slot }}
           PLAN_FILE: ${{ runner.temp }}/weekly-run-plan.json
-        run: python3 .github/scripts/weekly_run.py verify
+          RUN_MODE: ${{ steps.mode.outputs.mode }}
+        run: |
+          if [[ "$RUN_MODE" == daily-* ]]; then
+            python3 .github/scripts/daily_run.py verify
+          else
+            python3 .github/scripts/weekly_run.py verify
+          fi
 
       - name: Upload run preview and provenance
         id: upload
@@ -238,7 +259,12 @@ jobs:
           WEEKLY_SLOT: ${{ steps.mode.outputs.slot }}
           RUN_MODE: ${{ steps.mode.outputs.mode }}
           ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
-        run: python3 .github/scripts/weekly_run.py record
+        run: |
+          if [[ "$RUN_MODE" == daily-* ]]; then
+            python3 .github/scripts/daily_run.py record
+          else
+            python3 .github/scripts/weekly_run.py record
+          fi
 
       - name: Save state and source provenance
         if: always() && steps.restore-state.outcome == 'success' && steps.restore-delivery.outcome == 'success'

@@ -1,5 +1,8 @@
 # GitHub Digest
 
+> Daily and weekly editions now share a durable discovery queue, not a disposable seven-day selection. See [edition semantics and rollout](docs/daily-weekly-queue.md). Telegram gates remain opt-in; daily additionally requires `DIGEST_DAILY_DELIVERY_ENABLED=true`.
+
+
 Weekly Russian GitHub summary delivered to Telegram, with a three-hour observation schedule on hosted GitHub Actions and explicit reporting of actual capture gaps.
 
 ## Weekly issue and candidate selection

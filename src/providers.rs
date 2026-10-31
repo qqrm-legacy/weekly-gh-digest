@@ -177,6 +177,13 @@ impl<'a> Groq<'a> {
                 "evidence_source": if readme.is_some() { "readme" } else if source_quote.is_some() { "metadata_only" } else { "missing" },
             });
             bundles.push(bundle.clone());
+            if let Some(cached) = crate::editions::cached_analysis(state, snapshot) {
+                descriptions.insert(snapshot.full_name.clone(), cached.description);
+                jokes.insert(snapshot.full_name.clone(), cached.joke);
+                evidence_quotes.insert(snapshot.full_name.clone(), cached.evidence_quote);
+                provider_reviews.push(json!({"id":snapshot.full_name,"stage":"cached_analysis", "primary_sources_unchanged":true}));
+                continue;
+            }
             if !do_llm || !configured || !failure_reason.is_empty() {
                 continue;
             }

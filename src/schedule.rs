@@ -38,17 +38,29 @@ pub(super) fn slot(moment: DateTime<Utc>) -> String {
 /// Union every observed repository, retaining peak metrics separately from latest metadata.
 /// Daily/weekly rolling counts are never summed, and disappearing rows stay eligible.
 pub(super) fn candidates(state: &State, now: DateTime<Utc>) -> Vec<Snapshot> {
-    let cutoff = now - Duration::days(7);
+    candidates_since(state, now, Some(now - Duration::days(7)))
+}
+
+/// Pending findings do not expire with the reporting window.
+pub(super) fn all_candidates(state: &State, now: DateTime<Utc>) -> Vec<Snapshot> {
+    candidates_since(state, now, None)
+}
+
+fn candidates_since(
+    state: &State,
+    now: DateTime<Utc>,
+    cutoff: Option<DateTime<Utc>>,
+) -> Vec<Snapshot> {
     let mut groups = BTreeMap::<String, BTreeMap<DateTime<Utc>, &Snapshot>>::new();
     for snapshot in &state.snapshots {
         let Some(captured) = parse_time(&snapshot.captured_at) else {
             continue;
         };
-        if captured < cutoff || captured > now {
+        if cutoff.is_some_and(|cutoff| captured < cutoff) || captured > now {
             continue;
         }
         groups
-            .entry(snapshot.full_name.clone())
+            .entry(snapshot.full_name.to_ascii_lowercase())
             .or_default()
             .insert(captured, snapshot);
     }
