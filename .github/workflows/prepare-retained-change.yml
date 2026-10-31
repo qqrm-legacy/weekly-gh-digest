@@ -73,36 +73,41 @@ jobs:
           ./target/debug/weekly-gh-digest preview-retained "$RUNNER_TEMP/retained-state.json" preview-results/daily --daily --at="$instant"
           ./target/debug/weekly-gh-digest preview-retained "$RUNNER_TEMP/retained-state.json" preview-results/weekly --at="$instant"
           sha256sum --check "$RUNNER_TEMP/preview-before.sha"
-          git diff 59337244f4b595a7e0583f541af3d5e61bd0e301 --binary > preview-results/implementation.patch
+          git diff 59337244f4b595a7e0583f541af3d5e61bd0e301 --binary --full-index > preview-results/implementation.patch
           printf 'Read-only retained-state previews; no Telegram or LLM requests.\nState blob: %s\n' "$(cat "$RUNNER_TEMP/retained-state.json.remote-sha")" > preview-results/provenance.txt
-      - name: Create validated candidate commit without updating a branch
+      - name: Export validated source blobs without changing refs
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
           python3 - <<'PY'
-          import json, os, pathlib, subprocess
+          import json, os, pathlib, subprocess, shutil
           repo = os.environ['GITHUB_REPOSITORY']
           parent = os.environ['GITHUB_SHA']
-          def api(endpoint, payload):
-              result = subprocess.run(['gh','api','--method','POST',f'repos/{repo}/git/{endpoint}','--input','-'], input=json.dumps(payload), text=True, capture_output=True, check=True)
-              return json.loads(result.stdout)
-          assert subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip() == parent
-          paths = subprocess.check_output(['git','diff','--name-only','-z','HEAD']).decode().split('\0')
+          base = '59337244f4b595a7e0583f541af3d5e61bd0e301'
+          assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip() == parent
+          paths = subprocess.check_output(['git','diff','--name-only','-z',base]).decode().split('\0')
           elements = []
           for name in filter(None, paths):
               path = pathlib.Path(name)
-              item = {'path':name,'mode':'100644','type':'blob'}
-              item['sha'] = api('blobs',{'content':path.read_text(),'encoding':'utf-8'})['sha'] if path.is_file() else None
+              if not path.is_file():
+                  raise RuntimeError('Unexpected deletion relative to reviewed base: '+name)
+              result = subprocess.run(['gh','api','--method','POST',f'repos/{repo}/git/blobs','--input','-'], input=json.dumps({'content':path.read_text(),'encoding':'utf-8'}), text=True, capture_output=True)
+              if result.returncode:
+                  raise RuntimeError('Blob export failed for '+name+': '+result.stderr)
+              sha = json.loads(result.stdout)['sha']
+              expected = subprocess.check_output(['git','hash-object',name],text=True).strip()
+              assert sha == expected, name
+              item = {'path':name,'mode':'100644','type':'blob','sha':sha}
               elements.append(item)
-          tree = api('trees',{'base_tree':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],text=True).strip(),'tree':elements})
-          commit = api('commits',{'message':'feat: retain discoveries across daily and weekly editions','tree':tree['sha'],'parents':[parent]})
-          sha = commit['sha']
-          pathlib.Path('preview-results/candidate-commit.txt').write_text(sha+'\n')
-          print('VALIDATED_CANDIDATE_COMMIT='+sha)
-          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
-              out.write('Validated candidate commit: `'+sha+'`\n\nNo branch ref or Telegram configuration was changed by this job.\n')
+              destination = pathlib.Path('preview-results/source') / name
+              destination.parent.mkdir(parents=True,exist_ok=True)
+              shutil.copyfile(path,destination)
+              print('TESTED_SOURCE_BLOB '+json.dumps(item),flush=True)
+          manifest = {'base':base,'parent':parent,'tree_elements':elements}
+          pathlib.Path('preview-results/source-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          print('No tree, commit, ref, production state or publication settings changed by the validation job.')
           PY
       - name: Upload previews and tested patch
         if: always()
@@ -110,5 +115,6 @@ jobs:
         with:
           name: retained-digest-previews-${{ github.run_id }}
           path: preview-results
+          include-hidden-files: true
           if-no-files-found: warn
           retention-days: 30
