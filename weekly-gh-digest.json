@@ -9055,7 +9055,8 @@
         "chunk-02": 32,
         "chunk-03": 33,
         "chunk-04": 34,
-        "chunk-05": 35
+        "chunk-05": 35,
+        "overview": 36
       },
       "overview_message_id": null,
       "message_texts": {
@@ -9072,5 +9073,5 @@
   "overview_ids": {
     "daily-20261031T120742Z": 29
   },
-  "uncertain_delivery": "-1004402046575:weekly-20261031T121210Z/overview"
+  "uncertain_delivery": null
 }
