@@ -18,6 +18,7 @@
     },
     "analyses": {
       "donchitos/claude-code-game-studios": {
+        "policy_version": 0,
         "source_description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
         "source_readme": "<p align=\"center\">\n  <h1 align=\"center\">Claude Code Game Studios</h1>\n  <p align=\"center\">\n    Turn a single Claude Code session into a full game development studio.\n    <br />\n    49 agents. 74 skills. One coordinated AI team.\n  </p>\n</p>\n\n<p align=\"center\">\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-blue.svg\" alt=\"MIT License\"></a>\n  <a href=\".claude/agents\"><img src=\"https://img.shields.io/badge/agents-49-blueviolet\" alt=\"49 Agents\"></a>\n  <a href=\".claude/skills\"><img src=\"https://img.shields.io/badge/skills-74-green\" alt=\"74 Skills\"></a>\n  <a href=\".claude/hooks\"><img src=\"https://img.shields.io/badge/hooks-15-orange\" alt=\"15 Hooks\"></a>\n  <a href=\".claude/rules\"><img src=\"https://img.shields.io/badge/rules-14-red\" alt=\"14 Rules\"></a>\n  <a href=\"https://code.claude.com/docs\"><img src=\"https://img.shields.io/badge/built%20for-Claude%20Code-f5f5f5?logo=anthropic\" alt=\"Built for Claude Code\"></a>\n  <a href=\"https://www.buymeacoffee.com/donchitos3\"><img src=\"https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support%20this%20project-FFDD00?logo=buymeacoffee&logoColor=black\" alt=\"Buy Me a Coffee\"></a>\n  <a href=\"https://github.com/sponsors/Donchitos\"><img src=\"https://img.shields.io/badge/GitHub%20Sponsors-Support%20this%20project-ea4aaa?logo=githubsponsors&logoColor=white\" alt=\"GitHub Sponsors\"></a>\n</p>\n\n---\n\n## Why This Exists\n\nBuilding a game solo with AI is powerful — but a single chat session has no structure. No one stops you from hardcoding magic numbers, skipping design docs, or writing spaghetti code. There's no QA pass, no design review, no one asking \"does this actually fit the game's vision?\"\n\n**Claude Code Game Studios** solves this by giving your AI session the structure of a real studio. Instead of one general-purpose assistant, you get 49 specialized agents organized into a studio hierarchy — directors who guard the vision, department leads who own their domains, and specialists who do the hands-on work. Each agent has defined responsibilities, escalation paths, and quality gates.\n\nThe result: you still make every decision, but now you have a team that asks the right questions, catches mistakes early, and keeps your project organized from first brainstorm to launch.\n\n---\n\n## Table of Contents\n\n- [What's Included](#whats-included)\n- [Studio Hierarchy](#studio-hierarchy)\n- [Slash Commands](#slash-commands)\n- [Does it produce games, or documents?](#does-it-produce-games-or-documents)\n- [Getting Started](#getting-started)\n- [Configuration](#configuration)\n- [Upgrading](#upgrading)\n- [Project Structure](#project-structure)\n- [How It Works](#how-it-works)\n- [Design Philosophy](#design-philosophy)\n- [Customization](#customization)\n- [Platform Support](#platform-support)\n- [Community](#community)\n- [Supporting This Project](#supporting-this-project)\n- [License](#license)\n\n---\n\n## What's Included\n\n| Category | Count | Description |\n|----------|-------|-------------|\n| **Agents** | 49 | Specialized subagents across design, programming, art, audio, narrative, QA, and production |\n| **Skills** | 74 | Slash commands for every workflow phase (`/start`, `/design-system`, `/create-epics`, `/create-stories`, `/dev-story`, `/story-done`, etc.) |\n| **Hooks** | 15 | Automated validation on commits, pushes, asset changes, design-doc reads, writes and registries, session lifecycle, agent audit trail, and gap detection |\n| **Rules** | 14 | Path-scoped coding standards enforced when editing gameplay, engine, AI, UI, network code, scene and asset files, and more |\n| **Templates** | 62 | Document templates for GDDs, UX specs, ADRs, sprint plans, HUD design, accessibility, and more |\n\n## Studio Hierarchy\n\nAgents are organized into three tiers, matching how real studios operate:\n\n```\nTier 1 — Directors\n  creative-director    technical-director    producer\n\nTier 2 — Department Leads\n  game-designer        lead-programmer       art-director\n  audio-director       narrative-director    qa-lead\n  release-manager      localization-lead\n\nTier 3 — Specialists\n  gameplay-programmer  engine-programmer     ai-programmer\n  network-programmer   tools-programmer      ui-programmer\n  systems-designer     level-designer        economy-designer\n  technical-artist     sound-designer        writer\n  world-builder        ux-designer           prototyper\n  performance-analyst  devops-engineer       analytics-engineer\n  security-engineer    qa-tester             accessibility-specialist\n  live-ops-designer    community-manager\n```\n\nEach agent declares a model in its frontmatter: the three directors ask for\nOpus, `lead-programmer` and fifteen specialists name Sonnet, and the remaining thirty\n**inherit your session's model**. Treat the tiers as seniority of role, not as\na billing plan — most of the studio runs on whatever model you are already using.\n\n### Engine Specialists\n\nThe template includes agent sets for all three major engines. Use the set that matches your project:\n\n| Engine | Lead Agent | Sub-Specialist",
         "description": "В этой подборке представлен проект Claude Code Game Studios, который превращает отдельную сессию Claude Code в структуру, похожую на полноценную игровую студию. Автор предлагает 49 специализированных агентов, распределённых по трём уровням иерархии – от директоров до специалистов, а также 74 навыка в виде slash‑команд, охватывающих весь цикл разработки от дизайна до выпуска. Каждый агент имеет чётко определённые обязанности, пути эскалации и контроль качества, что позволяет избежать хаотичного кода и отсутствия документирования. Проект включает шаблоны документов, правила кодирования и хуки для автоматической валидации, но остаётся инструментом, требующим участия пользователя в принятии решений.",
@@ -25,6 +26,7 @@
         "evidence_quote": "Building a game solo with AI is powerful — but a single chat session has no structure. No one stops you from hardcoding magic numbers, skipping design docs, or writing spaghetti code. There's no QA pass, no design review, no one asking \"does this actually fit the game's vision?\""
       },
       "orkas-ai/orkas": {
+        "policy_version": 0,
         "source_description": "Orkas is an open-source (MIT), local-first AI team for your desktop: a Commander turns your goal into to-dos and coordinates 16 built-in specialist agents plus Claude Code, Codex, OpenCode, OpenClaw and Hermes, with projects, scheduled automations and connectors. Free app for macOS & Windows; built-in models or your own keys.",
         "source_readme": "# Orkas\n\n**An open-source team of AI agents on your desktop — it turns your goals into finished work and keeps it moving.**\n\nOrkas is an open-source (MIT), local-first multi-agent desktop app — an AI assistant that works as a team. Tell the **Commander** what you need: it finishes many tasks on its own, and for bigger work it plans the steps and brings in specialist agents along with the coding and personal agents you already use — **Claude Code, Codex, OpenCode, OpenClaw and Hermes-Agent** — to work on it together.\n\nOrkas is built to keep a project moving, not just answer one prompt. A **project** holds the goal, rules, memory and files, so every new conversation picks up where the last one left off. **To-dos** split the work between people and agents, **Auto-advance** lets the team take on the next to-do by itself, and **scheduled automations** repeat routine work hourly, daily, weekly or monthly. All your data stays on your computer, and finished work comes back for your review — so you can trust Orkas with the ongoing work of your business.\n\n**[⬇ Download Orkas for macOS & Windows](https://orkas.ai/download/?source=gh-orkas&entry_point=github_readme&download=1)** — free, with 500 credits for the built-in Orkas model, so you don't need an API key to start. Prefer your own keys? Claude · OpenAI · Gemini · DeepSeek · Kimi · GLM · Qwen · MiniMax · Doubao, or a local OpenAI-compatible endpoint.\n\n[![Download for macOS & Windows](https://img.shields.io/badge/Download-macOS%20%26%20Windows-5b57d6?style=for-the-badge)](https://orkas.ai/download/?source=gh-orkas&entry_point=github_readme&download=1)\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)\n[![GitHub stars](https://img.shields.io/github/stars/Orkas-AI/Orkas?style=flat&logo=github&label=Stars&color=yellow)](https://github.com/Orkas-AI/Orkas/stargazers)\n[![Release](https://img.shields.io/github/v/release/Orkas-AI/Orkas?color=blue)](https://github.com/Orkas-AI/Orkas/releases)\n[![X: @leochenpm](https://img.shields.io/badge/X-%40leochenpm-black?logo=x)](https://x.com/leochenpm)\n[![Website: orkas.ai](https://img.shields.io/badge/Website-orkas.ai-5b57d6)](https://orkas.ai/?source=gh-orkas)\n\n[English](./README.md) · [简体中文](./README.zh-CN.md)\n\n---\n\nhttps://github.com/user-attachments/assets/4f8b16c8-a192-45a4-b19f-80e8d02c3dab\n\n![Orkas desktop — task conversation and deliverables](./resources/app-ui/task-en.png)\n\n---\n\n## What the team delivers\n\n- **Videos, voice-overs and images** — VideoStudio, VoiceStudio, ImageStudio\n- **Research reports, SEO audits and market analysis** — DeepResearcher, SeoGeoAgent, StockAnalyser\n- **Posts, articles, newsletters and slide decks** — ContentWriter, PptMaker\n- **Websites, UI and code** — UIDesigner, ProductDeveloper\n- **Word, Excel, PowerPoint and PDF files** — OfficeWorker\n- **E-commerce work** — product research, listings, review analysis, sales analysis and catalog changes, from five e-commerce agents\n- **Complex work that takes several agents** — the Commander splits it up, hands each part to the right agent and combines the results; for example, market research that becomes a report, a slide deck and a launch video\n\n16 specialists ship with the app, each with its own skills, memory and tools. Browse 30+ agents in the [agent marketplace](https://orkas.ai/views/marketplace/gs/agents/?source=gh-orkas), or describe the role you need and the Commander builds a custom agent for you.\n\n<details>\n<summary><b>All 16 built-in agents</b></summary>\n\n| Area | Agent | What it delivers |\n| --- | --- | --- |\n| Research & analysis | **DeepResearcher** | Evidence-grounded research with verified sources, flagged contradictions and an auditable report |\n| | **SeoGeoAgent** | Give it a URL — technical audit, content quality, Core Web Vitals, AI-answer (GEO) citability, ranked fix list |\n| | **StockAnalyser** | Equity research, factor screens, backtests and portfolio risk checks, with traceable dashboards |\n| Content & media | **ContentWriter** | Publish-ready posts, articles, newsletters and case studies from a goal, sources or a rough draft |\n| | **PptMaker** | Editable, reviewable PPTX decks from a topic, outline or document |\n| | **ImageStudio** | Posters, covers, social images and infographics |\n| | **VideoStudio** | Narration, AI presenters, captions and dubbing, highlight clips, localization, and reference-video recreation with your own content and footage |\n| | **VoiceStudio** | Narration, multi-voice audio, transcripts and subtitles, audio editing and mixing |\n| | **UIDesigner** | Editable, HTML-first UI from product goals, PRDs, screenshots or Figma material |\n| Build & office | **ProductDeveloper** | Repo-aware engineering — implement a PRD, fix bugs, refactor, review, with verifiable results |\n| | **OfficeWorker** | Create, edit, check and deliver Word / Excel / PowerPoint / PDF files, one at a time or in batches |\n| E-commerce | **ECommerceResearcher** | Product selection by budget, market and sourcing",
         "description": "В этой подборке представлена Orkas — локальное приложение‑ассистент, которое организует работу команды из 16 встроенных специализированных агентов и подключаемых моделей (Claude Code, Codex, OpenCode, OpenClaw, Hermes). Пользователь задаёт цель Командиру, который планирует шаги, распределяет задачи между агентами и автоматически продвигает их через To‑do‑списки и запланированные автоматизации. Проект хранит все данные на компьютере, поддерживает как встроенную модель с 500 бесплатными кредитами, так и пользовательские API‑ключи к различным сервисам, включая Claude, OpenAI, Gemini и локальные эндпоинты. Приложение доступно для macOS и Windows и позиционируется как средство для непрерывного выполнения бизнес‑задач без постоянного обращения к облаку.",
@@ -32,6 +34,7 @@
         "evidence_quote": "Orkas is an open-source (MIT), local-first multi-agent desktop app — an AI assistant that works as a team. Tell the **Commander** what you need: it finishes many tasks on its own, and for bigger work it plans the steps and brings in specialist agents along with the coding and personal agents you already use — **Claude Code, Codex, OpenCode, OpenClaw and Hermes-Agent** — to work on it together."
       },
       "pbakaus/impeccable": {
+        "policy_version": 0,
         "source_description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
         "source_readme": "# Impeccable\n\nThe design vocabulary for your coding agent. Steer with `polish` and `bolder`, review with `critique` and `audit`, and catch AI slop before it ships.\n\nFrom your project root:\n\n```bash\nnpx impeccable install\n```\n\nReload your coding tool, then run `/impeccable init` in your agent (`$impeccable init` on Codex).\n\nWorks with Claude Code, Cursor, Codex CLI, GitHub Copilot, Devin, Replit Agent, Gemini CLI, Grok Build, OpenCode, Google Antigravity, Kiro, Trae, Rovo Dev, Qoder, Mistral Vibe, Pi, Hermes Agent, DeepSeek Harness, and Veto. Full docs live at [impeccable.style/docs](https://impeccable.style/docs).\n\n| Without Impeccable | With Impeccable |\n|---|---|\n| ![Villa Castagneto built without Impeccable: cream background, a thin serif headline with an italic accent, two pill buttons, and flat vector illustrations in rounded cards](https://github.com/pbakaus/impeccable/raw/main/docs/images/readme-without.webp) | ![Villa Castagneto built with Impeccable: a full-bleed engraved night scene of the villa on its cliff above the sea, a condensed cream and vermilion headline, and a month strip along the bottom](https://github.com/pbakaus/impeccable/raw/main/docs/images/readme-with.webp) |\n\nSame model (Fable 5.1), same brief: a fourteen-room family guesthouse on the Ligurian coast. Without Impeccable, it builds the tasteful default: cream page, thin serif, italic accent, pill buttons. With it, the page is built around one picture: the house at night, seen from the water.\n\nFor a full project, see the [Neo Mirai case study](https://impeccable.style/cases/neo-mirai): a conference site taken from mockup to shipped page.\n\n## Why\n\nInter for everything. Purple-to-blue gradients. Cards nested in cards, gray text on colored backgrounds, a rounded-square icon tile above every heading. Ask an agent for a page with no other guidance and these show up again and again, across models and projects.\n\n- **Words for what you want.** \"Make it pop\" leaves your agent to guess. `/impeccable bolder the pricing cards` loads a playbook written for that one move and points it at one target.\n- **A reviewer.** `critique` scores the design against usability heuristics and ranks what to fix first. `audit` checks accessibility, performance, theming, and responsive behavior, with findings ranked P0 (blocking) to P3 (polish).\n- **A slop detector.** 62 deterministic rules flag the tells above, plus quality problems like cramped padding and skipped headings. No LLM, no API key.\n\nImpeccable is strongest on interfaces that already exist: point it at a page or a component and iterate. It builds new pages too; see [Build something new](https://impeccable.style/docs/new-work) for how to get the most out of that harder mode. To start, pick one component:\n\n```\n/impeccable critique the pricing cards\n```\n\n## How it works\n\nRun `/impeccable init` once per project. It reads your code, asks only what it can't infer (who the product is for, what it needs to do, the constraints), and writes `PRODUCT.md`. Every later command reads it. Run `/impeccable document` to capture your existing visual system in `DESIGN.md`, so changes stay on-brand. [More on context files](https://impeccable.style/docs/context).\n\nThen name a command and a target:\n\n```\n/impeccable critique the onboarding flow\n/impeccable quieter the landing page\n/impeccable polish settings\n/impeccable harden checkout\n```\n\nOr just describe what you want: `/impeccable redo this hero section`. Narrow targets get better results; a single section reviewed closely beats a whole page at a glance. Pin a command you use often with `/impeccable pin audit` to get `/audit` as its own shortcut.\n\n### 24 commands\n\n| | Commands |\n|---|---|\n| **Steer** | `bolder` amplifies safe designs · `quieter` tones down loud ones · `distill` removes what the page doesn't need · `colorize` brings color to a gray interface · `typeset` fixes fonts, hierarchy, and sizing · `layout` fixes spacing and rhythm · `animate` adds transitions and interaction feedback · `delight` adds personality · `overdrive` goes for shaders, spring physics, and scroll-driven effects |\n| **Review** | `critique` is a scored UX review · `audit` is a technical quality report |\n| **Finish** | `polish` is the final pass before shipping · `harden` covers errors, i18n, overflow, and edge cases · `clarify` rewrites unclear copy · `adapt` handles screen sizes and devices · `optimize` fixes loading and rendering performance · `onboard` designs first-run flows and empty states |\n| **Iterate live** | `live` lets you pick an element in the browser and cycle through variants · `generate` produces variants of a named element without manual picking |\n| **Plan and set up** | `shape` plans UX before code · `init` writes `PRODUCT.md` · `document` writes `DESIGN.md` · `extract` pulls repeated patterns into your design system |\n\nThe 24th, `craft`, is a deprecated alias for a plain build request. Type `/impeccable` alone to see the list in your agent. Each command has its own page:",
         "description": "В этой подборке представлен Impeccable — набор команд для улучшения дизайна, управляемый через подсказки в код‑агенте. Проект предлагает словарь действий (polish, bolder, critique, audit) для точного управления внешним видом и качества интерфейсов, позволяя агенту выполнять целевые правки, оценивать юзабилити и проверять доступность без обращения к LLM. После однократного `/impeccable init` создаётся файл PRODUCT.md, а последующие команды читают его и, при необходимости, генерируют DESIGN.md. Инструмент работает с множеством популярных код‑агентов и поддерживает 24 команды, охватывающие стилизацию, ревью, финальную полировку и живую итерацию.",
@@ -39,6 +42,7 @@
         "evidence_quote": "The design vocabulary for your coding agent. Steer with `polish` and `bolder`, review with `critique` and `audit`, and catch AI slop before it ships."
       },
       "pingdotgg/t3code": {
+        "policy_version": 0,
         "source_description": null,
         "source_readme": "# T3 Code\n\nT3 Code is an \"agent harness control surface\". It enables control of the agents on your machine with a best-in-class mobile app ([iOS](https://apps.apple.com/us/app/t3-code-remote-claude-more/id6787819824), [Android](https://play.google.com/store/apps/details?id=com.t3tools.t3code)), [web app](https://app.t3.codes) and [Electron-based desktop app](https://t3.codes).\n\nWorks with your subscriptions on Claude Code, Codex, Cursor, Grok Build, OpenCode, and Google Antigravity. If they're set up on your computer, T3 Code can control them.\n\n## \"Wait, what are you selling me?\"\n\nNothing. We built T3 Code because we wanted the best possible development experience with agents. We were inspired by existing solutions like the Codex desktop app, Conductor, Claude Desktop and Cursor Glass, but none met our bar.\n\nWe wanted something performant, remote-ready, and truly open. If we ever go the wrong direction, we want you to have everything you need to fork and build the editor that you want.\n\n## Installation\n\n> [!WARNING]\n> T3 Code currently supports Codex, Claude, Cursor, Grok Build, OpenCode, and Antigravity. Install and authenticate at least one provider before use:\n>\n> - Codex: install [Codex CLI](https://developers.openai.com/codex/cli) and run `codex login`\n> - Claude: install [Claude Code](https://claude.com/product/claude-code) and run `claude auth login`\n> - Cursor: install [Cursor CLI](https://cursor.com/cli) and run `agent login`\n> - Grok Build: install [Grok Build CLI](https://x.ai/cli) and run `grok login`\n> - OpenCode: install [OpenCode](https://opencode.ai) and run `opencode auth login`\n> - Antigravity: enable it in Settings, then use **Install Antigravity** and **Sign in with Google**. No CLI is required.\n\n### Command line\n\n```bash\ncurl -fsSL https://t3.codes/install.sh | sh\n```\n\nOn Windows, in PowerShell:\n\n```powershell\nirm https://t3.codes/install.ps1 | iex\n```\n\nThen run `t3` to start the server and open the local web app. `t3 service install` keeps it running in the background, `t3 update` moves to a newer release, and `t3 --help` has the full reference.\n\nTo try it once without installing, run `npx t3@latest` instead.\n\n### Desktop app\n\nInstall the latest version of the desktop app from [GitHub Releases](https://github.com/pingdotgg/t3code/releases), or from your favorite package registry:\n\n#### Windows (`winget`)\n\n```bash\nwinget install T3Tools.T3Code\n```\n\n#### Windows (`scoop`)\n\n```bash\nscoop install extras/t3code\n```\n\n#### macOS (Homebrew)\n\n```bash\nbrew install --cask t3-code\n```\n\n#### Debian, Ubuntu (`.deb`)\n\nDownload the `.deb` from [GitHub Releases](https://github.com/pingdotgg/t3code/releases), then:\n\n```bash\nsudo apt install ./T3-Code-*.deb\n```\n\n#### Arch Linux (AUR)\n\nStable:\n\n```bash\nyay -S t3code-bin\n```\n\nNightly:\n\n```bash\nyay -S t3code-nightly-bin\n```\n\nThe AUR packaging is maintained in this repository under [`packaging/aur`](./packaging/aur).\n\n#### Nix (nixpkgs)\n\n```bash\nnix profile add github:NixOS/nixpkgs/nixos-unstable#t3code\n```\n\nThe package is maintained in [nixpkgs](https://github.com/NixOS/nixpkgs/tree/nixos-unstable/pkgs/by-name/t3/t3code)\nand includes the desktop app (`t3code-desktop`) and the `t3` command.\nSee [Nix installation](./docs/user/install.md#nix-nixpkgs) for NixOS configuration and updates.\n\n## Some notes\n\nWe are very very early in this project. Expect bugs.\n\nWe are (mostly) not accepting contributions yet. Small fixes may be considered. Big features will not be.\n\n## Documentation\n\nFull docs live in [docs/](./docs). There's no docs site yet.\n\n- [FAQ](./docs/user/faq.md)\n- [Install and first run](./docs/user/install.md)\n- [Permission modes](./docs/user/permission-modes.md)\n- [Keyboard shortcuts](./docs/user/keybindings.md)\n- [Project settings](./docs/user/project-settings.md)\n- [Appearance preferences](./docs/user/appearance.md)\n- [Remote access from a phone or another machine](./docs/user/remote-access.md)\n- [Connect Claude Code, Codex, ChatGPT and other agents over MCP](./docs/user/outside-agents.md)\n- [Keeping app and server in sync](./docs/user/updating.md)\n- [Source control integrations](./docs/user/source-control.md)\n- Multiple accounts: [Codex](./docs/user/providers-codex.md) · [Claude](./docs/user/providers-claude.md)\n- [Run T3 Code as a background service](./docs/user/background-service.md)\n\nBuilding from source? Start at [docs/internals/overview.md](./docs/internals/overview.md).\n\n## If you REALLY want to contribute still.... read this first\n\n### Install `vp`\n\nT3 Code uses Vite+ so you'll need to install the global `vp` command-line tool.\n\n#### macOS / Linux\n\n```bash\ncurl -fsSL https://vite.plus | bash\n```\n\n#### Windows\n\n```bash\nirm https://vite.plus/ps1 | iex\n```\n\nCheckout their getting started guide for more information: https://viteplus.dev/guide/\n\n### Install dependencies\n\n```bash\nvp i\n```\n\nRead [CONTRIBUTING.md](./CONTRIBUTING.md) before reporting a bug or opening a PR.\n\nHave a feature request? Start an [Ideas discussion](https://github.com/pingdotgg",
         "description": "В этой подборке представлены проекты, ориентированные на управление AI‑агентами через удобный пользовательский интерфейс. T3 Code выступает в роли «agent harness control surface», позволяя контролировать локально установленные агенты (Claude Code, Codex, Cursor, Grok Build, OpenCode, Google Antigravity) с помощью мобильных приложений для iOS и Android, веб‑приложения и десктоп‑клиента на Electron. Приложение требует предварительной установки и аутентификации хотя бы одного провайдера, после чего запускает сервер, к которому можно подключаться удалённо. Проект находится на ранней стадии, ожидаются баги и ограниченная поддержка внешних вкладов, но предоставляет полную документацию и скрипты установки для разных платформ.",
@@ -46,6 +50,7 @@
         "evidence_quote": "T3 Code is an \"agent harness control surface\". It enables control of the agents on your machine with a best-in-class mobile app ([iOS](https://apps.apple.com/us/app/t3-code-remote-claude-more/id6787819824), [Android](https://play.google.com/store/apps/details?id=com.t3tools.t3code)), [web app](https://app.t3.codes) and [Electron-based desktop app](https://t3.codes)."
       },
       "renhuai123/ziwei-doushu": {
+        "policy_version": 0,
         "source_description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
         "source_readme": "<div align=\"center\">\n\n# 紫微斗数 · 开源排盘引擎\n\n### 算法是公开的传统智慧，不应该被锁在围墙里\n\n[![CI](https://github.com/Renhuai123/ziwei-doushu/actions/workflows/ci.yml/badge.svg)](https://github.com/Renhuai123/ziwei-doushu/actions/workflows/ci.yml)\n[![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](./LICENSE)\n[![Dataset: CC BY 4.0](https://img.shields.io/badge/dataset-CC%20BY%204.0-green.svg)](./DATASET-LICENSE)\n\n**中文** · [English](./README.en.md)\n\n</div>\n\n**一、项目理念**：紫微斗数是中国传统命理学的瑰宝，倪海厦老师在《天纪》中系统梳理了正宗的紫微斗数体系。我们希望通过技术手段让更多人接触和学习这门学问。\n\n开源排盘算法和知识库，是因为我们相信：**算法是公开的传统智慧，不应该被锁在围墙里**。真正的价值在于解读的深度、用户体验的打磨、以及持续运营的积累。\n\n**二、项目信息**：基于<strong>倪海厦《天纪》</strong>教学体系的紫微斗数排盘系统，包含完整排盘算法、四化系统、格局知识库、古籍原文数据，以及一套完整开源的紫微斗数解读数据：**v4.0 解读数据集——67.5 万张命盘 × 13 维 = 877 万段解读，正文约 204 亿字，解压后 56.6 GB**（2026-10-15 发布）。\n\n| 数据集 | 命盘 | 解读段数 | 解压后 | 覆盖年份 | 每张盘解读字数 |\n|---|---|---|---|---|---|\n| **v4.0 解读数据集**（2026-10-15） | **674,976** | **8,774,688** | **56.6 GB** | **1950–2026**（只含真实日期） | **约 3.0 万字** |\n| v3.0 样本数据集 | 518,400 | 6,739,200 | 33.1 GB | 1924–1983 | 约 2.1 万字 |\n| 变化 | +30% | +30% | **+71%** | +17 年 | +44% |\n\n<sub>v3.0 每张盘解读字数按 2,160 张盘抽样估算，其余数字为全量统计；两版每张盘都是 13 维。</sub>\n\n在线体验：[ouranic.cn](https://ouranic.cn/?from=gh-readme)，排盘、AI 解读、命盘历史全部开放。\n\n> **注：关于六亲判断**\n>\n> 紫微斗数在六亲（父母、兄弟、子女等）判断上存在一定局限。倪师在《天纪》中指出：“斗数批六亲本来就比较差一点。”（[2上 · 00:25:27](https://www.bilibili.com/video/BV1KJsLekEfA?p=3&t=1527)）在传统术数中，铁板神数在核对六亲方面有其独特优势（[2上 · 00:03:15](https://www.bilibili.com/video/BV1KJsLekEfA?p=3&t=195)）；倪师仍以紫微斗数为核心，是因为它能结合地理、环境与人事进行综合判断，形成“上知天文、下知地理、中知人事”的完整体系（[2上 · 00:25:43](https://www.bilibili.com/video/BV1KJsLekEfA?p=3&t=1543)）。因此，与六亲相关的分析仅供参考；[ouranic.cn](https://ouranic.cn/?from=gh-readme) 上父母、兄弟、子女三个维度也附有同样的说明。\n\n---\n\n## 目录\n\n| | 章节 | 一句话 |\n|---|------|--------|\n| 一 | [本轮更新](#一本轮更新2026-10-15) | 13 维断语按倪师原话与《全书》逐句校正，发布 67.5 万命盘 × 13 维解读数据集 v4.0 |\n| 二·新 | [13 维解读数据集 v4.0](#二新13-维解读数据集-v402026-10-15) | 2026-10-15 新版断语，67.5 万命盘，按年份下载 |\n| 二 | [51.8 万命盘样本数据集](#二518-万命盘样本数据集) | 规格、下载、用途、许可 |\n| 三 | [快速开始](#三快速开始) | 克隆到跑起来 |\n| 四 | [排盘引擎](#四排盘引擎) | 能做到什么、文件怎么分、古籍数据 |\n| 五 | [倪师《天纪·紫微斗数》原话](#五倪师天纪紫微斗数原话) | 14 讲 + 2 段补充、1848 条，一图看全，每条可回放 |\n| 六 | [界面是一份 Demo](#六界面是一份-demo) | 不是线上那套，差距写明 |\n| 七 | [开源边界](#七开源边界什么不在里面) | 什么开源、什么不开源 |\n| 八 | [维护节奏与贡献](#八维护节奏与贡献) | 同步节奏、issue / PR 口径 |\n| 九 | [协议](#九协议) | 代码 MIT / 数据 CC BY 4.0 / 古籍公版 / 倪师原话非商用 |\n| 十 | [关于与联系](#十关于与联系) | 项目理念、技术栈、联系方式 |\n\n---\n\n## 一、本轮更新（2026-10-15）\n\n本轮跟随网站 2026-10-15 发版（网站内容版本 `ca268829f7a9`）：\n\n![本轮更新总览](./docs/update-20261015.png)\n\n**1. 发布 13 维解读数据集 v4.0** —— 674,976 张命盘（公历 1950–2026 年每一个真实日期 × 12 时辰 × 男女）× 13 维 = **8,774,688 段解读**，正文约 204 亿字。解压后 56.6 GB（v3.0 为 33.1 GB，增加 71%），压缩后只有 161 MB，按年份分 77 个文件，可以只下需要的年份，也可以一次下全年份总包。下载见 [Release v4.0-13d](https://github.com/Renhuai123/ziwei-doushu/releases/tag/v4.0-13d)，规格和字段见[第二·新章](#二新13-维解读数据集-v402026-10-15)。发布前 77 个文件逐个解压，与原始数据逐字节比对一致。\n\n**2. 13 维断语按倪师原话与《全书》原文逐句校正**（断语库仍不开源，校正结果体现在 v4.0 数据集里）：\n\n- 标着倪师或《全书》却查不到出处的引文，删掉或换成逐字可查的原话；倪师原话注明《天纪》第几集、几分几秒\n- 不会发生的四化（如七杀化权、紫微化忌）相关的句子删去；只在某种条件下才成立的断语补上条件\n- 「力量强时……落陷时……」这类两头说的句子，改为按命盘只显示成立的那一种\n- 健康：哪个脏腑要留意，改按倪师的看法——全盘杀星最集中的那一宫，按它的地支对应脏腑；不再按星的五行推脏器\n- 网站知识库「古籍引证」由 244 处增至 405 处，每一处都能在《紫微斗数全书》原文里逐字找到\n\n**3. 排盘引擎同步**（[PR #39](https://github.com/Renhuai123/ziwei-doushu/pull/39)）—— `dst-cn.ts` 新增 `chinaDSTSpan(year)`，查某年中国夏令时起止；`cities.ts` 补全省直辖县级单位与新疆兵团各市的经度（神农架、海南各市县、阿拉尔等），出生地选这些城市时真太阳时校正可用。\n\n**4. 许可** —— [`DATASET-LICENSE`](./DATASET-LICENSE) 适用范围加上 v4.0；写明解读里引用的倪师原话不在数据授权范围内，与第五章倪师原话的 CC BY-NC-SA 4.0 一致。v3.0 样本数据集及其条款不变。\n\n> **2026-10-31 补充**：线上平台更名 **OURANIC**，网址由 metisziwei.com 迁到 **[ouranic.cn](https://ouranic.cn/?from=gh-readme)**（运营主体北京王多鱼科技有限责任公司，京ICP备2026069066号-1）；旧网址会自动跳转，本仓库的代码、数据集与许可都不变。\n\n> **2026-10-27 补充**：排盘引擎同步——`true-solar-time.ts` 支持海外出生地：传 `utcOffsetMinutes`（出生地时区的固定标准偏移），按当地时区中央经线做经度修正，国内不传时结果逐位不变；新增 `clock-adjust.ts`，把夏令时、或当年时区与现在不同时的**钟表读数换成标准时间**（跨日不改，交给用户），建议做成用户亲手点、可撤销的按钮，不要自动改。顺带更正：中国夏令时引擎**只判定、从不自动扣除**，此前「引擎能力」表写成「自动扣除」，有误。\n\n> **2026-10-24 补充**：项目理念移到页首——标题下居中一句「算法是公开的传统智慧，不应该被锁在围墙里」，紧接两段理念原文（前标「项目理念」），原有介绍段前标「项目信息」；第十章「项目理念」改为指向页首。\n\n> **2026-10-20 补充**：星曜亮度默认改为《斗数全书》，与主流排盘软件默认一致，此前默认的「现代修正 v2」仍可在流派设置里选；补齐天姚、天刑、天喜、大耗、解神、截空、副截、旬空的亮度，月德不再标亮度。用 5 张金标准盘逐宫核对，星曜落宫与亮度全部吻合。注意：v4.0 数据集（10-15）是按旧默认「现代修正 v2」生成的，其中亮度字和少量随亮度变化的解读句会与新默认不同。\n\n> **2026-10-06 ~ 10-07 补充**：README 加「注：关于六亲判断」（倪师原话 + 出处链接，中英两份）；网站链接加渠道码 `?from=`；同步倪师原话语料勘误（主星南斗、北斗归属）。\n\n### 上一轮更新（2026-09-21）\n\n\n> **2026-10-03 补充**：倪师《天纪·紫微斗数》原话 1848 条单独成章（第五章）；合并外部贡献 #29（时辰序号校验）；引擎拒绝不存在的公历日期，数据集补字段口径与已知问题；提交 package-lock.json；站点地址改为可配置；合盘演示改用本地引擎起盘、AI 接口缺失时明确提示；补齐贡献指南、行为准则、问题与 PR 模板；新增英文简介 [README.en.md](./README.en.md)；去掉两个用不上的部署工具包（vercel CLI、@cloudflare/next-on-pages），依赖从 483 个减到 185 个；随后升级到 Next.js 16 修掉 postcss 漏洞，GitHub 安全提醒从 51 条清零。\n\n![本轮更新总览](./docs/update-20260921.png)\n\n时隔三个月，本仓库完成一次完整更新（[PR #28](https://github.com/Renhuai123/ziwei-doushu/pull/28)，26 个文件、+2736 / −108 行）：\n\n**1. 排盘引擎同步到线上口径** —— `algorithm.ts` 从 181 行到 641 行，另更新 sihua / types / constants / patterns / cities / famous；新增 8 个模块（1367 行）：\n\n| 模块 | 作用 |\n|------|------|\n| `true-solar-time.ts` | 真太阳时校正（经度差 +",
         "description": "В этой подборке представлен открытый движок для расчёта гороскопов по системе 紫微斗数, основанный на учебных материалах НИ Хайша из книги «Тяньцзи». Репозиторий включает полностью реализованный алгоритм расчёта, систему четырёх преобразований, базу знаний о конфигурациях и набор оригинальных древних текстов. Кроме кода, публикуется большой набор данных‑интерпретаций: более 670 000 карт с 13 измерениями, что составляет почти 9 млн текстовых фрагментов. Проект также предоставляет инструменты корректировки истинного солнечного времени и учёт летнего времени для разных регионов.",
@@ -14903,6 +14908,1860 @@
           "description": "Mika — 你手机上的私人 AI 助理，替你操作 App、上网、把事办成。An on-device AI agent for Android that operates apps and the web to get things done for you.",
           "html_url": "https://github.com/wangzan101/Mika",
           "stars": 2143,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "AgriciDaniel/claude-seo",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 24772,
+      "forks": 3291,
+      "language": "Python",
+      "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
+      "html_url": "https://github.com/AgriciDaniel/claude-seo",
+      "topics": [
+        "ai",
+        "ai-seo",
+        "claude-code",
+        "claude-code-skill",
+        "marketing-automation",
+        "open-source",
+        "seo"
+      ],
+      "created_at": "2026-02-07T08:17:38Z",
+      "updated_at": "2026-10-31T12:22:49Z",
+      "pushed_at": "2026-10-22T16:47:40Z",
+      "license": "MIT",
+      "open_issues": 75,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
+          "full_name": "AgriciDaniel/claude-seo",
+          "language": "Python",
+          "trending_stars_period": 4478,
+          "trending_total_forks": null,
+          "trending_total_stars": 24772,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "AstrBotDevs/AstrBot",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 45204,
+      "forks": 3310,
+      "language": "Python",
+      "description": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
+      "html_url": "https://github.com/AstrBotDevs/AstrBot",
+      "topics": [
+        "agent",
+        "ai",
+        "astrbot",
+        "chatbot",
+        "chatgpt",
+        "discord",
+        "docker",
+        "gemini",
+        "gpt",
+        "llama",
+        "llm",
+        "mcp",
+        "openai",
+        "python",
+        "qq",
+        "qqbot",
+        "telegram"
+      ],
+      "created_at": "2022-12-08T13:27:46Z",
+      "updated_at": "2026-10-31T12:23:27Z",
+      "pushed_at": "2026-10-31T11:57:11Z",
+      "license": "AGPL-3.0",
+      "open_issues": 1123,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
+          "full_name": "AstrBotDevs/AstrBot",
+          "language": "Python",
+          "trending_stars_period": 2133,
+          "trending_total_forks": null,
+          "trending_total_stars": 45204,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "BryceYuuu/RUN",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 790,
+      "forks": 49,
+      "language": "Python",
+      "description": "RUN · 润：海外移居手册（欧洲 36 国 · 110 条路线 · 主要移民地区）",
+      "html_url": "https://github.com/BryceYuuu/RUN",
+      "topics": [],
+      "created_at": "2026-10-29T11:28:43Z",
+      "updated_at": "2026-10-31T12:25:10Z",
+      "pushed_at": "2026-10-29T11:40:12Z",
+      "license": "CC-BY-SA-4.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-29T11:28:43Z",
+          "description": "RUN · 润：海外移居手册（欧洲 36 国 · 110 条路线 · 主要移民地区）",
+          "html_url": "https://github.com/BryceYuuu/RUN",
+          "stars": 790,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DenisSergeevitch/ex-ussr-kinship-research",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 1380,
+      "forks": 142,
+      "language": "Python",
+      "description": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
+      "html_url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+      "topics": [
+        "agent-skills",
+        "archives",
+        "claude-code",
+        "codex",
+        "family-history",
+        "familysearch",
+        "genealogy",
+        "ussr"
+      ],
+      "created_at": "2026-10-25T10:05:56Z",
+      "updated_at": "2026-10-31T12:23:29Z",
+      "pushed_at": "2026-10-30T21:06:20Z",
+      "license": "MIT",
+      "open_issues": 18,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T10:05:56Z",
+          "description": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
+          "html_url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+          "stars": 1380,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Djihads80/Eglantine",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 769,
+      "forks": 93,
+      "language": "C++",
+      "description": "VERY experimental Nintendo Switch 2 emulator",
+      "html_url": "https://github.com/Djihads80/Eglantine",
+      "topics": [],
+      "created_at": "2026-10-29T00:25:18Z",
+      "updated_at": "2026-10-31T12:25:42Z",
+      "pushed_at": "2026-10-31T12:22:23Z",
+      "license": "GPL-3.0",
+      "open_issues": 49,
+      "default_branch": "nx2",
+      "sources": [
+        {
+          "created_at": "2026-10-29T00:25:18Z",
+          "description": "VERY experimental Nintendo Switch 2 emulator",
+          "html_url": "https://github.com/Djihads80/Eglantine",
+          "stars": 769,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Donchitos/Claude-Code-Game-Studios",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 30687,
+      "forks": 4202,
+      "language": "Shell",
+      "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+      "html_url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "topics": [
+        "ai-agents",
+        "ai-assisted-development",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "game-design",
+        "game-development",
+        "gamedev",
+        "godot",
+        "indie-game-dev",
+        "unity",
+        "unreal-engine"
+      ],
+      "created_at": "2026-02-12T05:21:38Z",
+      "updated_at": "2026-10-31T12:22:23Z",
+      "pushed_at": "2026-10-19T02:43:42Z",
+      "license": "MIT",
+      "open_issues": 71,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+          "full_name": "Donchitos/Claude-Code-Game-Studios",
+          "language": "Shell",
+          "trending_stars_period": 1347,
+          "trending_total_forks": null,
+          "trending_total_stars": 30687,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DrWhax/unfairplay",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 819,
+      "forks": 165,
+      "language": "Go",
+      "description": "Decrypt IPA's on MacOS",
+      "html_url": "https://github.com/DrWhax/unfairplay",
+      "topics": [],
+      "created_at": "2026-10-25T21:22:20Z",
+      "updated_at": "2026-10-31T09:00:19Z",
+      "pushed_at": "2026-10-30T15:39:16Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T21:22:20Z",
+          "description": "Decrypt IPA's on MacOS",
+          "html_url": "https://github.com/DrWhax/unfairplay",
+          "stars": 819,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HKUDS/DeepTutor",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 52283,
+      "forks": 6409,
+      "language": "Python",
+      "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
+      "html_url": "https://github.com/HKUDS/DeepTutor",
+      "topics": [
+        "ai-agents",
+        "ai-tutor",
+        "clawbot",
+        "cli-tool",
+        "deepresearch",
+        "interactive-learning",
+        "learning",
+        "multi-agent-systems",
+        "rag"
+      ],
+      "created_at": "2025-12-28T15:35:54Z",
+      "updated_at": "2026-10-31T12:25:14Z",
+      "pushed_at": "2026-10-31T11:34:23Z",
+      "license": "Apache-2.0",
+      "open_issues": 234,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/ .",
+          "full_name": "HKUDS/DeepTutor",
+          "language": "Python",
+          "trending_stars_period": 1035,
+          "trending_total_forks": null,
+          "trending_total_stars": 52283,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HRuiCcc/RuiC-PoseAtlas",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 778,
+      "forks": 207,
+      "language": "JavaScript",
+      "description": "RuiC-PoseAtlas｜姿态 + 衣装双图鉴：288 组人体姿态 × 5 视角 × 1,439 张人台线稿，加 1,407 套无人物衣装 × 8 分类 × 86 个三语标签。中/英/日切换、搜索筛选、键盘浏览、原图下载，纯静态零依赖。",
+      "html_url": "https://github.com/HRuiCcc/RuiC-PoseAtlas",
+      "topics": [
+        "3d-modeling",
+        "ai-art",
+        "art-reference",
+        "gallery",
+        "photography",
+        "pose-reference",
+        "ruic",
+        "static-site",
+        "trilingual",
+        "vanilla-javascript"
+      ],
+      "created_at": "2026-10-28T07:00:53Z",
+      "updated_at": "2026-10-31T12:00:28Z",
+      "pushed_at": "2026-10-30T14:48:17Z",
+      "license": "Other",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-28T07:00:53Z",
+          "description": "RuiC-PoseAtlas｜姿态 + 衣装双图鉴：288 组人体姿态 × 5 视角 × 1,439 张人台线稿，加 1,407 套无人物衣装 × 8 分类 × 86 个三语标签。中/英/日切换、搜索筛选、键盘浏览、原图下载，纯静态零依赖。",
+          "html_url": "https://github.com/HRuiCcc/RuiC-PoseAtlas",
+          "stars": 778,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "KillaBoi/StealMyBitcoin-PoC",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 1020,
+      "forks": 147,
+      "language": "Python",
+      "description": "A public release of the Steal My Bitcoin challenge",
+      "html_url": "https://github.com/KillaBoi/StealMyBitcoin-PoC",
+      "topics": [],
+      "created_at": "2026-10-25T21:48:32Z",
+      "updated_at": "2026-10-31T12:05:42Z",
+      "pushed_at": "2026-10-26T11:25:47Z",
+      "license": null,
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T21:48:32Z",
+          "description": "A public release of the Steal My Bitcoin challenge",
+          "html_url": "https://github.com/KillaBoi/StealMyBitcoin-PoC",
+          "stars": 1020,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Leonxlnx/taste-skill",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 106655,
+      "forks": 7215,
+      "language": "JavaScript",
+      "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
+      "html_url": "https://github.com/Leonxlnx/taste-skill",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "anti-slop",
+        "claude-code",
+        "codex",
+        "cursor",
+        "design-system",
+        "frontend",
+        "landing-page",
+        "ui-design",
+        "web-design"
+      ],
+      "created_at": "2026-02-19T21:44:05Z",
+      "updated_at": "2026-10-31T12:25:44Z",
+      "pushed_at": "2026-10-31T07:59:58Z",
+      "license": "MIT",
+      "open_issues": 8,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
+          "full_name": "Leonxlnx/taste-skill",
+          "language": "JavaScript",
+          "trending_stars_period": 4712,
+          "trending_total_forks": null,
+          "trending_total_stars": 106654,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Motionsites-AI/claude-skill",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 1232,
+      "forks": 125,
+      "language": "Python",
+      "description": "Free Claude skill: make Claude build award-level, cinematic landing pages. By MotionSites.",
+      "html_url": "https://github.com/Motionsites-AI/claude-skill",
+      "topics": [],
+      "created_at": "2026-10-26T06:58:45Z",
+      "updated_at": "2026-10-31T12:10:23Z",
+      "pushed_at": "2026-10-26T07:04:24Z",
+      "license": "Other",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-26T06:58:45Z",
+          "description": "Free Claude skill: make Claude build award-level, cinematic landing pages. By MotionSites.",
+          "html_url": "https://github.com/Motionsites-AI/claude-skill",
+          "stars": 1232,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Nutlope/hallmark",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 43419,
+      "forks": 2279,
+      "language": "CSS",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "html_url": "https://github.com/Nutlope/hallmark",
+      "topics": [],
+      "created_at": "2026-04-27T20:47:10Z",
+      "updated_at": "2026-10-31T12:22:22Z",
+      "pushed_at": "2026-10-29T16:50:04Z",
+      "license": "MIT",
+      "open_issues": 66,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+          "full_name": "Nutlope/hallmark",
+          "language": "CSS",
+          "trending_stars_period": 11766,
+          "trending_total_forks": null,
+          "trending_total_stars": 43419,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Orkas-AI/Orkas",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 5868,
+      "forks": 354,
+      "language": "JavaScript",
+      "description": "Orkas is an open-source (MIT), local-first AI team for your desktop: a Commander turns your goal into to-dos and coordinates 16 built-in specialist agents plus Claude Code, Codex, OpenCode, OpenClaw and Hermes, with projects, scheduled automations and connectors. Free app for macOS & Windows; built-in models or your own keys.",
+      "html_url": "https://github.com/Orkas-AI/Orkas",
+      "topics": [
+        "agent-collaboration",
+        "agent-harness",
+        "agent-orchestration",
+        "agent-team",
+        "agent-workflow",
+        "ai-assistant",
+        "ai-automation",
+        "ai-employee",
+        "ai-productivity",
+        "ai-team",
+        "ai-workflow",
+        "autonomous-agents",
+        "claude-code-gui",
+        "claude-cowork",
+        "desktop-agent",
+        "local-first",
+        "multi-agent",
+        "multi-agent-system",
+        "self-evolving-agents",
+        "task-automation"
+      ],
+      "created_at": "2026-04-29T12:19:08Z",
+      "updated_at": "2026-10-31T12:25:11Z",
+      "pushed_at": "2026-10-31T03:36:24Z",
+      "license": "MIT",
+      "open_issues": 6,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Orkas is an open-source (MIT), local-first AI team for your desktop: a Commander turns your goal into to-dos and coordinates 16 built-in specialist agents plus Claude Code, Codex, OpenCode, OpenClaw and Hermes, with projects, scheduled automations and connectors. Free app for macOS & Windows; built-in models or your own keys.",
+          "full_name": "Orkas-AI/Orkas",
+          "language": "JavaScript",
+          "trending_stars_period": 1004,
+          "trending_total_forks": null,
+          "trending_total_stars": 5868,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Renhuai123/ziwei-doushu",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 11867,
+      "forks": 2334,
+      "language": "TypeScript",
+      "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+      "html_url": "https://github.com/Renhuai123/ziwei-doushu",
+      "topics": [
+        "bazi",
+        "chinese-astrology",
+        "divination",
+        "fortune-telling",
+        "nextjs",
+        "open-source",
+        "purple-star-astrology",
+        "typescript",
+        "zi-wei-dou-shu",
+        "ziwei-doushu"
+      ],
+      "created_at": "2026-05-01T05:09:59Z",
+      "updated_at": "2026-10-31T12:25:36Z",
+      "pushed_at": "2026-10-31T00:10:01Z",
+      "license": "MIT",
+      "open_issues": 16,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+          "full_name": "Renhuai123/ziwei-doushu",
+          "language": "TypeScript",
+          "trending_stars_period": 1093,
+          "trending_total_forks": null,
+          "trending_total_stars": 11866,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "THU-MAIC/OpenMAIC",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 42000,
+      "forks": 6503,
+      "language": "TypeScript",
+      "description": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
+      "html_url": "https://github.com/THU-MAIC/OpenMAIC",
+      "topics": [],
+      "created_at": "2026-03-11T10:13:16Z",
+      "updated_at": "2026-10-31T12:10:46Z",
+      "pushed_at": "2026-10-31T01:53:42Z",
+      "license": "MIT",
+      "open_issues": 213,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
+          "full_name": "THU-MAIC/OpenMAIC",
+          "language": "TypeScript",
+          "trending_stars_period": 115,
+          "trending_total_forks": null,
+          "trending_total_stars": 42000,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "TauricResearch/TradingAgents",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 118857,
+      "forks": 22721,
+      "language": "Python",
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "html_url": "https://github.com/TauricResearch/TradingAgents",
+      "topics": [
+        "agent",
+        "finance",
+        "llm",
+        "multiagent",
+        "trading"
+      ],
+      "created_at": "2024-12-28T03:31:08Z",
+      "updated_at": "2026-10-31T12:25:20Z",
+      "pushed_at": "2026-10-27T08:43:04Z",
+      "license": "Apache-2.0",
+      "open_issues": 97,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+          "full_name": "TauricResearch/TradingAgents",
+          "language": "Python",
+          "trending_stars_period": 5490,
+          "trending_total_forks": null,
+          "trending_total_stars": 118857,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "YuJunZhiXue/dsh-purge",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 14254,
+      "forks": 3283,
+      "language": "JavaScript",
+      "description": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分",
+      "html_url": "https://github.com/YuJunZhiXue/dsh-purge",
+      "topics": [
+        "deepseek",
+        "deepseek-harness",
+        "dsh-plugin",
+        "dsh-plugins",
+        "harness-jailbreak",
+        "jailbreak",
+        "llm-jailbreak"
+      ],
+      "created_at": "2026-08-19T07:41:12Z",
+      "updated_at": "2026-10-31T12:24:00Z",
+      "pushed_at": "2026-10-31T07:07:41Z",
+      "license": "Apache-2.0",
+      "open_issues": 5,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分",
+          "full_name": "YuJunZhiXue/dsh-purge",
+          "language": "JavaScript",
+          "trending_stars_period": 6665,
+          "trending_total_forks": null,
+          "trending_total_stars": 14254,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ZiChuanLan/agent-purge",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 930,
+      "forks": 672,
+      "language": "JavaScript",
+      "description": "One persona, many coding agents. Replace or inject system prompts across codex, claude, opencode, grok, omp, hermes, pi, zcode - with a local web console.",
+      "html_url": "https://github.com/ZiChuanLan/agent-purge",
+      "topics": [
+        "claude-code",
+        "codex",
+        "coding-agent",
+        "deepseek-harness",
+        "harness",
+        "omp",
+        "opencode",
+        "pi",
+        "system-prompt"
+      ],
+      "created_at": "2026-10-25T06:06:02Z",
+      "updated_at": "2026-10-31T12:02:46Z",
+      "pushed_at": "2026-10-30T12:06:34Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T06:06:02Z",
+          "description": "One persona, many coding agents. Replace or inject system prompts across codex, claude, opencode, grok, omp, hermes, pi, zcode - with a local web console.",
+          "html_url": "https://github.com/ZiChuanLan/agent-purge",
+          "stars": 930,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "affaan-m/ECC",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 293687,
+      "forks": 43459,
+      "language": "JavaScript",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "html_url": "https://github.com/affaan-m/ECC",
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ],
+      "created_at": "2026-01-18T00:51:51Z",
+      "updated_at": "2026-10-31T12:25:36Z",
+      "pushed_at": "2026-10-30T03:06:42Z",
+      "license": "MIT",
+      "open_issues": 190,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+          "full_name": "affaan-m/ECC",
+          "language": "JavaScript",
+          "trending_stars_period": 6506,
+          "trending_total_forks": null,
+          "trending_total_stars": 293687,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "andyhuo520/digital-human-koubo",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 1569,
+      "forks": 357,
+      "language": "TypeScript",
+      "description": "AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude Code / Codex / OpenClaw / WorkBuddy …",
+      "html_url": "https://github.com/andyhuo520/digital-human-koubo",
+      "topics": [],
+      "created_at": "2026-10-26T04:34:09Z",
+      "updated_at": "2026-10-31T12:05:51Z",
+      "pushed_at": "2026-10-31T12:05:46Z",
+      "license": "MIT",
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-26T04:34:09Z",
+          "description": "AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude Code / Codex / OpenClaw / WorkBuddy …",
+          "html_url": "https://github.com/andyhuo520/digital-human-koubo",
+          "stars": 1569,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anhao/ai-pose-gallery-zh",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 4405,
+      "forks": 1123,
+      "language": "TypeScript",
+      "description": "中文版 AI 姿势参考图库 · 1439 组 / 2878 张图片 / 完整汉化 · 零依赖静态画廊",
+      "html_url": "https://github.com/anhao/ai-pose-gallery-zh",
+      "topics": [
+        "ai-art",
+        "chinese",
+        "cloudflare-pages",
+        "gallery",
+        "i18n",
+        "pose",
+        "reference-images",
+        "static-site"
+      ],
+      "created_at": "2026-10-27T12:24:37Z",
+      "updated_at": "2026-10-31T12:25:26Z",
+      "pushed_at": "2026-10-31T11:59:07Z",
+      "license": "Other",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-27T12:24:37Z",
+          "description": "中文版 AI 姿势参考图库 · 1439 组 / 2878 张图片 / 完整汉化 · 零依赖静态画廊",
+          "html_url": "https://github.com/anhao/ai-pose-gallery-zh",
+          "stars": 4405,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anonnerdfrenzy/survival-llm",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 1066,
+      "forks": 84,
+      "language": "Python",
+      "description": "A free AI assistant and survival library that runs on your own computer, with no internet needed. Shows the source of every answer.",
+      "html_url": "https://github.com/anonnerdfrenzy/survival-llm",
+      "topics": [],
+      "created_at": "2026-10-24T19:12:41Z",
+      "updated_at": "2026-10-31T12:20:30Z",
+      "pushed_at": "2026-10-29T22:21:56Z",
+      "license": "Other",
+      "open_issues": 6,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-24T19:12:41Z",
+          "description": "A free AI assistant and survival library that runs on your own computer, with no internet needed. Shows the source of every answer.",
+          "html_url": "https://github.com/anonnerdfrenzy/survival-llm",
+          "stars": 1066,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/skills",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 185692,
+      "forks": 21922,
+      "language": "Python",
+      "description": "Public repository for Agent Skills",
+      "html_url": "https://github.com/anthropics/skills",
+      "topics": [
+        "agent-skills"
+      ],
+      "created_at": "2025-09-22T15:53:31Z",
+      "updated_at": "2026-10-31T12:22:38Z",
+      "pushed_at": "2026-10-28T19:20:39Z",
+      "license": null,
+      "open_issues": 1451,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Public repository for Agent Skills",
+          "full_name": "anthropics/skills",
+          "language": "Python",
+          "trending_stars_period": 1888,
+          "trending_total_forks": null,
+          "trending_total_stars": 185692,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "aschmelyun/print-my-profile-pic",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 1409,
+      "forks": 2,
+      "language": null,
+      "description": "Say cheese! Star this repo and your profile picture gets printed out on a receipt printer.",
+      "html_url": "https://github.com/aschmelyun/print-my-profile-pic",
+      "topics": [],
+      "created_at": "2026-10-27T20:40:05Z",
+      "updated_at": "2026-10-31T12:25:47Z",
+      "pushed_at": "2026-10-29T03:34:22Z",
+      "license": null,
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-27T20:40:05Z",
+          "description": "Say cheese! Star this repo and your profile picture gets printed out on a receipt printer.",
+          "html_url": "https://github.com/aschmelyun/print-my-profile-pic",
+          "stars": 1408,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "bregman-arie/devops-exercises",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 85564,
+      "forks": 20521,
+      "language": "Python",
+      "description": "Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions",
+      "html_url": "https://github.com/bregman-arie/devops-exercises",
+      "topics": [
+        "ansible",
+        "aws",
+        "azure",
+        "coding",
+        "containers",
+        "devops",
+        "docker",
+        "git",
+        "interview",
+        "interview-questions",
+        "kubernetes",
+        "linux",
+        "openstack",
+        "production-engineer",
+        "prometheus",
+        "python",
+        "sql",
+        "sre",
+        "terraform"
+      ],
+      "created_at": "2019-10-03T17:31:21Z",
+      "updated_at": "2026-10-31T12:22:53Z",
+      "pushed_at": "2025-12-27T14:22:30Z",
+      "license": "Other",
+      "open_issues": 56,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions",
+          "full_name": "bregman-arie/devops-exercises",
+          "language": "Python",
+          "trending_stars_period": 341,
+          "trending_total_forks": null,
+          "trending_total_stars": 85564,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ccch1mneyyy/dsh-Go",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 3218,
+      "forks": 142,
+      "language": "Dart",
+      "description": "dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
+      "html_url": "https://github.com/ccch1mneyyy/dsh-Go",
+      "topics": [
+        "ai-agent",
+        "android",
+        "android-app",
+        "coding-agent",
+        "deepseek",
+        "deepseek-harness",
+        "dsh",
+        "dsh-plugin",
+        "dsh-tui",
+        "flutter",
+        "llm"
+      ],
+      "created_at": "2026-10-25T08:09:52Z",
+      "updated_at": "2026-10-31T12:25:20Z",
+      "pushed_at": "2026-10-31T10:48:22Z",
+      "license": "AGPL-3.0",
+      "open_issues": 167,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T08:09:52Z",
+          "description": "dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
+          "html_url": "https://github.com/ccch1mneyyy/dsh-Go",
+          "stars": 3218,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 54728,
+      "forks": 3556,
+      "language": "JavaScript",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "html_url": "https://github.com/cloudflare/security-audit-skill",
+      "topics": [],
+      "created_at": "2026-06-18T14:08:44Z",
+      "updated_at": "2026-10-31T12:24:07Z",
+      "pushed_at": "2026-09-14T19:29:02Z",
+      "license": "MIT",
+      "open_issues": 103,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "full_name": "cloudflare/security-audit-skill",
+          "language": "JavaScript",
+          "trending_stars_period": 12838,
+          "trending_total_forks": null,
+          "trending_total_stars": 54728,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "daveebbelaar/bama",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 1006,
+      "forks": 141,
+      "language": "Swift",
+      "description": "BAMA: Build Any Mac App. Agent skills to research, clone, design, build, optimize, and test native macOS apps with Swift and SwiftUI.",
+      "html_url": "https://github.com/daveebbelaar/bama",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "app-clone",
+        "claude-code",
+        "claude-code-plugin",
+        "codex",
+        "computer-use",
+        "liquid-glass",
+        "macos",
+        "macos-app",
+        "native-apps",
+        "skills",
+        "swift",
+        "swiftdata",
+        "swiftui"
+      ],
+      "created_at": "2026-10-24T08:44:36Z",
+      "updated_at": "2026-10-31T12:17:15Z",
+      "pushed_at": "2026-10-29T13:05:44Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-24T08:44:36Z",
+          "description": "BAMA: Build Any Mac App. Agent skills to research, clone, design, build, optimize, and test native macOS apps with Swift and SwiftUI.",
+          "html_url": "https://github.com/daveebbelaar/bama",
+          "stars": 1006,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "deepopen-com/deepopen-3d-webs",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 1120,
+      "forks": 111,
+      "language": "Python",
+      "description": "Image-driven 3D scene generation system. Users provide a reference image and prompt words, and the system generates previewable, replayable, and traceable scene results according to the camera trajectory; official 3D demonstration assets allow direct viewing of color/depth animations and Gaussian point clouds in the browser 图像驱动的三维场景生成系统",
+      "html_url": "https://github.com/deepopen-com/deepopen-3d-webs",
+      "topics": [
+        "3d",
+        "gaussian-filter",
+        "gaussian-splatting"
+      ],
+      "created_at": "2026-10-26T12:13:47Z",
+      "updated_at": "2026-10-31T12:17:33Z",
+      "pushed_at": "2026-10-27T06:48:29Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-26T12:13:47Z",
+          "description": "Image-driven 3D scene generation system. Users provide a reference image and prompt words, and the system generates previewable, replayable, and traceable scene results according to the camera trajectory; official 3D demonstration assets allow direct viewing of color/depth animations and Gaussian point clouds in the browser 图像驱动的三维场景生成系统",
+          "html_url": "https://github.com/deepopen-com/deepopen-3d-webs",
+          "stars": 1120,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "designfuchen/word-atlas",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 3481,
+      "forks": 761,
+      "language": "TypeScript",
+      "description": "词光 · Word Atlas — Illustrated IELTS vocabulary with 7,298 words, UK/US audio and FSRS review. Open-source app + CC BY 4.0 dataset.",
+      "html_url": "https://github.com/designfuchen/word-atlas",
+      "topics": [
+        "chinese",
+        "dataset",
+        "english-learning",
+        "flashcards",
+        "fsrs",
+        "ielts",
+        "language-learning",
+        "pwa",
+        "react",
+        "spaced-repetition",
+        "vocabulary",
+        "webgl"
+      ],
+      "created_at": "2026-10-25T08:27:22Z",
+      "updated_at": "2026-10-31T12:23:21Z",
+      "pushed_at": "2026-10-31T11:37:01Z",
+      "license": "Other",
+      "open_issues": 28,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T08:27:22Z",
+          "description": "词光 · Word Atlas — Illustrated IELTS vocabulary with 7,298 words, UK/US audio and FSRS review. Open-source app + CC BY 4.0 dataset.",
+          "html_url": "https://github.com/designfuchen/word-atlas",
+          "stars": 3481,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "heydamir/unslop",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 2383,
+      "forks": 117,
+      "language": "JavaScript",
+      "description": "A Claude skill that turns vibecoded, AI-looking UI into a designed interface",
+      "html_url": "https://github.com/heydamir/unslop",
+      "topics": [],
+      "created_at": "2026-10-29T15:41:21Z",
+      "updated_at": "2026-10-31T12:25:48Z",
+      "pushed_at": "2026-10-29T16:17:15Z",
+      "license": "CC-BY-4.0",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-29T15:41:21Z",
+          "description": "A Claude skill that turns vibecoded, AI-looking UI into a designed interface",
+          "html_url": "https://github.com/heydamir/unslop",
+          "stars": 2382,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "interplains/Zero-Breach-Toolkit",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 3945,
+      "forks": 421,
+      "language": "Python",
+      "description": "Free, open-source, offline checks for traces of known mercenary spyware. Works on Windows, macOS and Linux, Android phones and iPhone backups.",
+      "html_url": "https://github.com/interplains/Zero-Breach-Toolkit",
+      "topics": [],
+      "created_at": "2026-10-25T14:41:34Z",
+      "updated_at": "2026-10-31T12:19:04Z",
+      "pushed_at": "2026-10-31T08:52:25Z",
+      "license": "Apache-2.0",
+      "open_issues": 8,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T14:41:34Z",
+          "description": "Free, open-source, offline checks for traces of known mercenary spyware. Works on Windows, macOS and Linux, Android phones and iPhone backups.",
+          "html_url": "https://github.com/interplains/Zero-Breach-Toolkit",
+          "stars": 3945,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jakubkrehel/skills",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 9482,
+      "forks": 364,
+      "language": "Markdown",
+      "description": "A collection of agent skills that help you build great interfaces.",
+      "html_url": "https://github.com/jakubkrehel/skills",
+      "topics": [],
+      "created_at": "2026-07-10T08:58:36Z",
+      "updated_at": "2026-10-31T12:23:41Z",
+      "pushed_at": "2026-10-25T13:26:17Z",
+      "license": "MIT",
+      "open_issues": 10,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A collection of agent skills that help you build great interfaces.",
+          "full_name": "jakubkrehel/skills",
+          "language": "Markdown",
+          "trending_stars_period": 1107,
+          "trending_total_forks": null,
+          "trending_total_stars": 9482,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kargulstudio/calender-app-design",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 832,
+      "forks": 102,
+      "language": "TypeScript",
+      "description": null,
+      "html_url": "https://github.com/kargulstudio/calender-app-design",
+      "topics": [],
+      "created_at": "2026-10-26T18:38:56Z",
+      "updated_at": "2026-10-31T08:11:39Z",
+      "pushed_at": "2026-10-26T20:34:05Z",
+      "license": "MIT",
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-26T18:38:56Z",
+          "description": null,
+          "html_url": "https://github.com/kargulstudio/calender-app-design",
+          "stars": 832,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kevinraymond/florilegium",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 950,
+      "forks": 24,
+      "language": "Lua",
+      "description": "Procedurally generated Delft-blue floral page margins for LuaLaTeX, drawn in Lua",
+      "html_url": "https://github.com/kevinraymond/florilegium",
+      "topics": [],
+      "created_at": "2026-10-30T07:49:05Z",
+      "updated_at": "2026-10-31T12:25:27Z",
+      "pushed_at": "2026-10-31T09:25:19Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-30T07:49:05Z",
+          "description": "Procedurally generated Delft-blue floral page margins for LuaLaTeX, drawn in Lua",
+          "html_url": "https://github.com/kevinraymond/florilegium",
+          "stars": 950,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "lexifina/global-law",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 1223,
+      "forks": 99,
+      "language": "HTML",
+      "description": "Git for Global Law: the law of every country as one git history, each country's record a submodule, every commit one law taking effect",
+      "html_url": "https://github.com/lexifina/global-law",
+      "topics": [],
+      "created_at": "2026-10-28T13:34:16Z",
+      "updated_at": "2026-10-31T12:23:03Z",
+      "pushed_at": "2026-10-31T12:23:08Z",
+      "license": "Other",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-28T13:34:16Z",
+          "description": "Git for Global Law: the law of every country as one git history, each country's record a submodule, every commit one law taking effect",
+          "html_url": "https://github.com/lexifina/global-law",
+          "stars": 1223,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "lightpanda-io/browser",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 38793,
+      "forks": 1885,
+      "language": "Zig",
+      "description": "Lightpanda: the headless browser designed for AI and automation",
+      "html_url": "https://github.com/lightpanda-io/browser",
+      "topics": [
+        "browser",
+        "browser-automation",
+        "cdp",
+        "headless",
+        "lightpanda",
+        "playwright",
+        "puppeteer",
+        "zig"
+      ],
+      "created_at": "2023-02-07T15:19:34Z",
+      "updated_at": "2026-10-31T12:24:48Z",
+      "pushed_at": "2026-10-31T11:44:59Z",
+      "license": "AGPL-3.0",
+      "open_issues": 101,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Lightpanda: the headless browser designed for AI and automation",
+          "full_name": "lightpanda-io/browser",
+          "language": "Zig",
+          "trending_stars_period": 929,
+          "trending_total_forks": null,
+          "trending_total_stars": 38793,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mattpocock/skills",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 307880,
+      "forks": 25907,
+      "language": "Shell",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "html_url": "https://github.com/mattpocock/skills",
+      "topics": [],
+      "created_at": "2026-02-03T11:15:53Z",
+      "updated_at": "2026-10-31T12:25:45Z",
+      "pushed_at": "2026-10-30T14:00:30Z",
+      "license": "MIT",
+      "open_issues": 195,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Skills for Real Engineers. Straight from my .agents directory.",
+          "full_name": "mattpocock/skills",
+          "language": "Shell",
+          "trending_stars_period": 882,
+          "trending_total_forks": null,
+          "trending_total_stars": 307879,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "milind-soni/OpenMausBot",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 9212,
+      "forks": 1256,
+      "language": "TypeScript",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "html_url": "https://github.com/milind-soni/OpenMausBot",
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "computer-use",
+        "docker",
+        "electron",
+        "expo",
+        "grok",
+        "grok-bot",
+        "grok-bot-alternative",
+        "self-hosted",
+        "typescript"
+      ],
+      "created_at": "2026-08-11T18:58:55Z",
+      "updated_at": "2026-10-31T12:25:04Z",
+      "pushed_at": "2026-10-31T11:42:41Z",
+      "license": "Apache-2.0",
+      "open_issues": 599,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "full_name": "milind-soni/OpenMausBot",
+          "language": "TypeScript",
+          "trending_stars_period": 1304,
+          "trending_total_forks": null,
+          "trending_total_stars": 9212,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mizorewww/gdirect",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 775,
+      "forks": 51,
+      "language": "Rust",
+      "description": "Rust Google Drive direct downloader using pinned libaria2",
+      "html_url": "https://github.com/mizorewww/gdirect",
+      "topics": [],
+      "created_at": "2026-10-25T05:52:22Z",
+      "updated_at": "2026-10-31T10:22:20Z",
+      "pushed_at": "2026-10-26T11:07:58Z",
+      "license": "GPL-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T05:52:22Z",
+          "description": "Rust Google Drive direct downloader using pinned libaria2",
+          "html_url": "https://github.com/mizorewww/gdirect",
+          "stars": 775,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "multica-ai/andrej-karpathy-skills",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 227183,
+      "forks": 22672,
+      "language": null,
+      "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "html_url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "topics": [],
+      "created_at": "2026-01-27T03:53:13Z",
+      "updated_at": "2026-10-31T12:24:45Z",
+      "pushed_at": "2026-04-20T10:05:04Z",
+      "license": null,
+      "open_issues": 138,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+          "full_name": "multica-ai/andrej-karpathy-skills",
+          "language": "",
+          "trending_stars_period": 4178,
+          "trending_total_forks": null,
+          "trending_total_stars": 227183,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "obra/superpowers",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 309720,
+      "forks": 27551,
+      "language": "Shell",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "html_url": "https://github.com/obra/superpowers",
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
+      ],
+      "created_at": "2025-10-09T19:45:18Z",
+      "updated_at": "2026-10-31T12:25:24Z",
+      "pushed_at": "2026-10-29T23:35:34Z",
+      "license": "MIT",
+      "open_issues": 375,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An agentic skills framework & software development methodology that works.",
+          "full_name": "obra/superpowers",
+          "language": "Shell",
+          "trending_stars_period": 5474,
+          "trending_total_forks": null,
+          "trending_total_stars": 309720,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "An agentic skills framework & software development methodology that works.",
+          "full_name": "obra/superpowers",
+          "language": "Shell",
+          "trending_stars_period": 663,
+          "trending_total_forks": null,
+          "trending_total_stars": 309721,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "paipiange/nvzhuang",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 1534,
+      "forks": 421,
+      "language": "Go",
+      "description": "1407 张 AI 女装参考图集与虚拟试穿网站，支持中英检索、OpenAI Images / Gemini / 豆包及自定义 Base URL、API Key、模型。https://github.com/paipiange/nvzhuang",
+      "html_url": "https://github.com/paipiange/nvzhuang",
+      "topics": [],
+      "created_at": "2026-10-29T06:08:00Z",
+      "updated_at": "2026-10-31T12:23:21Z",
+      "pushed_at": "2026-10-31T04:23:30Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-29T06:08:00Z",
+          "description": "1407 张 AI 女装参考图集与虚拟试穿网站，支持中英检索、OpenAI Images / Gemini / 豆包及自定义 Base URL、API Key、模型。https://github.com/paipiange/nvzhuang",
+          "html_url": "https://github.com/paipiange/nvzhuang",
+          "stars": 1534,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "pbakaus/impeccable",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 97678,
+      "forks": 5760,
+      "language": "Rust",
+      "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+      "html_url": "https://github.com/pbakaus/impeccable",
+      "topics": [
+        "agent-skills",
+        "ai",
+        "anti-slop",
+        "design",
+        "slop"
+      ],
+      "created_at": "2025-11-16T01:52:04Z",
+      "updated_at": "2026-10-31T12:23:50Z",
+      "pushed_at": "2026-10-31T11:56:18Z",
+      "license": "Apache-2.0",
+      "open_issues": 67,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+          "full_name": "pbakaus/impeccable",
+          "language": "Rust",
+          "trending_stars_period": 11323,
+          "trending_total_forks": null,
+          "trending_total_stars": 97678,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+          "full_name": "pbakaus/impeccable",
+          "language": "Rust",
+          "trending_stars_period": 1339,
+          "trending_total_forks": null,
+          "trending_total_stars": 97678,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "pingdotgg/t3code",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 33583,
+      "forks": 8708,
+      "language": "TypeScript",
+      "description": null,
+      "html_url": "https://github.com/pingdotgg/t3code",
+      "topics": [],
+      "created_at": "2026-02-08T23:46:22Z",
+      "updated_at": "2026-10-31T12:25:50Z",
+      "pushed_at": "2026-10-31T12:11:27Z",
+      "license": "MIT",
+      "open_issues": 3778,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "",
+          "full_name": "pingdotgg/t3code",
+          "language": "TypeScript",
+          "trending_stars_period": 2775,
+          "trending_total_forks": null,
+          "trending_total_stars": 33582,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "",
+          "full_name": "pingdotgg/t3code",
+          "language": "TypeScript",
+          "trending_stars_period": 1148,
+          "trending_total_forks": null,
+          "trending_total_stars": 33581,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "qybaihe/bla",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 1608,
+      "forks": 218,
+      "language": "TypeScript",
+      "description": "🛡️ BLA (Blind LLM Agents) — Adversarial defense shield that protects binaries, Electron apps, JS bundles, Python, and WebAssembly against AI reverse-engineering agents like REA. Poison -> Exhaust -> Hallucinate.",
+      "html_url": "https://github.com/qybaihe/bla",
+      "topics": [
+        "adversarial-ai",
+        "claude-code",
+        "cursor",
+        "electron-security",
+        "llm-security",
+        "mcp",
+        "mcp-server",
+        "obfuscation",
+        "reverse-engineering",
+        "webassembly"
+      ],
+      "created_at": "2026-10-25T05:25:45Z",
+      "updated_at": "2026-10-31T12:25:41Z",
+      "pushed_at": "2026-10-30T18:16:20Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-25T05:25:45Z",
+          "description": "🛡️ BLA (Blind LLM Agents) — Adversarial defense shield that protects binaries, Electron apps, JS bundles, Python, and WebAssembly against AI reverse-engineering agents like REA. Poison -> Exhaust -> Hallucinate.",
+          "html_url": "https://github.com/qybaihe/bla",
+          "stars": 1608,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "rddmwmddr/android-ad-cleaner",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 5266,
+      "forks": 474,
+      "language": "Python",
+      "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+      "html_url": "https://github.com/rddmwmddr/android-ad-cleaner",
+      "topics": [
+        "adb",
+        "ai-agent",
+        "android",
+        "coloros",
+        "debloat",
+        "hyperos",
+        "magicos",
+        "originos"
+      ],
+      "created_at": "2026-10-24T05:35:47Z",
+      "updated_at": "2026-10-31T12:24:32Z",
+      "pushed_at": "2026-10-31T11:48:52Z",
+      "license": "MIT",
+      "open_issues": 126,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-24T05:35:47Z",
+          "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+          "html_url": "https://github.com/rddmwmddr/android-ad-cleaner",
+          "stars": 5266,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "smithjohn78390/tongjiang-lab",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 1143,
+      "forks": 307,
+      "language": "HTML",
+      "description": "Free interactive 3D science lessons for high school · 铜匠实验室 · https://lab.tongjiang.app",
+      "html_url": "https://github.com/smithjohn78390/tongjiang-lab",
+      "topics": [
+        "3d",
+        "biology",
+        "chemistry",
+        "education",
+        "geography",
+        "high-school",
+        "interactive",
+        "open-educational-resources",
+        "physics",
+        "threejs",
+        "webgl"
+      ],
+      "created_at": "2026-10-28T04:29:29Z",
+      "updated_at": "2026-10-31T12:21:06Z",
+      "pushed_at": "2026-10-28T11:35:35Z",
+      "license": "Other",
+      "open_issues": 14,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-28T04:29:29Z",
+          "description": "Free interactive 3D science lessons for high school · 铜匠实验室 · https://lab.tongjiang.app",
+          "html_url": "https://github.com/smithjohn78390/tongjiang-lab",
+          "stars": 1143,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "t3dotgg/tstack",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 2496,
+      "forks": 158,
+      "language": "Python",
+      "description": "The agent skills I use every day. Works with Claude Code and Codex.",
+      "html_url": "https://github.com/t3dotgg/tstack",
+      "topics": [],
+      "created_at": "2026-10-24T05:00:20Z",
+      "updated_at": "2026-10-31T12:17:09Z",
+      "pushed_at": "2026-10-28T02:38:03Z",
+      "license": "MIT",
+      "open_issues": 12,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-24T05:00:20Z",
+          "description": "The agent skills I use every day. Works with Claude Code and Codex.",
+          "html_url": "https://github.com/t3dotgg/tstack",
+          "stars": 2496,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "thedotmack/claude-mem",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 107037,
+      "forks": 9408,
+      "language": "TypeScript",
+      "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "html_url": "https://github.com/thedotmack/claude-mem",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-memory",
+        "anthropic",
+        "artificial-intelligence",
+        "chromadb",
+        "claude",
+        "claude-agent-sdk",
+        "claude-agents",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "embeddings",
+        "long-term-memory",
+        "mem0",
+        "memory-engine",
+        "openmemory",
+        "rag",
+        "sqlite",
+        "supermemory"
+      ],
+      "created_at": "2025-08-31T20:50:03Z",
+      "updated_at": "2026-10-31T12:24:52Z",
+      "pushed_at": "2026-10-31T08:56:15Z",
+      "license": "Apache-2.0",
+      "open_issues": 150,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+          "full_name": "thedotmack/claude-mem",
+          "language": "TypeScript",
+          "trending_stars_period": 3518,
+          "trending_total_forks": null,
+          "trending_total_stars": 107037,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+          "full_name": "thedotmack/claude-mem",
+          "language": "TypeScript",
+          "trending_stars_period": 1723,
+          "trending_total_forks": null,
+          "trending_total_stars": 107037,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "unclebob/ub-mode",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 5521,
+      "forks": 300,
+      "language": null,
+      "description": null,
+      "html_url": "https://github.com/unclebob/ub-mode",
+      "topics": [],
+      "created_at": "2026-10-25T16:04:09Z",
+      "updated_at": "2026-10-31T12:16:06Z",
+      "pushed_at": "2026-10-25T16:07:59Z",
+      "license": null,
+      "open_issues": 8,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-10-25T16:04:09Z",
+          "description": null,
+          "html_url": "https://github.com/unclebob/ub-mode",
+          "stars": 5521,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "valentderah/totk-pc-recomp",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 2090,
+      "forks": 146,
+      "language": "C",
+      "description": "Static recompilation of The Legend of Zelda: Tears of the Kingdom to native Windows x86-64, with a Vulkan renderer. Game files not included.",
+      "html_url": "https://github.com/valentderah/totk-pc-recomp",
+      "topics": [],
+      "created_at": "2026-10-29T12:32:46Z",
+      "updated_at": "2026-10-31T12:25:32Z",
+      "pushed_at": "2026-10-31T12:14:21Z",
+      "license": "MIT",
+      "open_issues": 143,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-29T12:32:46Z",
+          "description": "Static recompilation of The Legend of Zelda: Tears of the Kingdom to native Windows x86-64, with a Vulkan renderer. Game files not included.",
+          "html_url": "https://github.com/valentderah/totk-pc-recomp",
+          "stars": 2090,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vorssaint/vorssaint-utils",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 31533,
+      "forks": 1518,
+      "language": "Swift",
+      "description": "Free and open-source macOS menu bar toolkit.",
+      "html_url": "https://github.com/vorssaint/vorssaint-utils",
+      "topics": [
+        "alt-tab",
+        "app-uninstaller",
+        "appkit",
+        "finder",
+        "free",
+        "keep-awake",
+        "mac-os",
+        "menu-bar",
+        "menubar",
+        "open-source",
+        "swift",
+        "swift-ui",
+        "system-monitor",
+        "uninstaller",
+        "volume-mixer",
+        "window-switcher"
+      ],
+      "created_at": "2026-06-12T15:25:43Z",
+      "updated_at": "2026-10-31T12:25:00Z",
+      "pushed_at": "2026-10-30T02:38:26Z",
+      "license": "GPL-3.0",
+      "open_issues": 1324,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Free and open-source macOS menu bar toolkit.",
+          "full_name": "vorssaint/vorssaint-utils",
+          "language": "Swift",
+          "trending_stars_period": 499,
+          "trending_total_forks": null,
+          "trending_total_stars": 31533,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "wangzan101/Mika",
+      "captured_at": "2026-10-31T12:25:42Z",
+      "stars": 2155,
+      "forks": 344,
+      "language": "Kotlin",
+      "description": "Mika — 你手机上的私人 AI 助理，替你操作 App、上网、把事办成。An on-device AI agent for Android that operates apps and the web to get things done for you.",
+      "html_url": "https://github.com/wangzan101/Mika",
+      "topics": [
+        "accessibility",
+        "ai-agent",
+        "android",
+        "automation",
+        "jetpack-compose",
+        "kotlin",
+        "llm",
+        "mobile-agent"
+      ],
+      "created_at": "2026-10-29T14:34:07Z",
+      "updated_at": "2026-10-31T12:25:01Z",
+      "pushed_at": "2026-10-31T11:03:11Z",
+      "license": "Apache-2.0",
+      "open_issues": 23,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-10-29T14:34:07Z",
+          "description": "Mika — 你手机上的私人 AI 助理，替你操作 App、上网、把事办成。An on-device AI agent for Android that operates apps and the web to get things done for you.",
+          "html_url": "https://github.com/wangzan101/Mika",
+          "stars": 2155,
           "type": "new_repo_search"
         }
       ],
