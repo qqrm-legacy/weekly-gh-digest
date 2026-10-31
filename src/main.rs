@@ -3,11 +3,14 @@ mod clock;
 mod coverage;
 mod delivery;
 mod editions;
+mod editorial;
 mod providers;
 mod schedule;
 mod sources;
 mod state_store;
 mod telegram_format;
+mod test_delivery;
+mod test_delivery_review;
 #[cfg(test)]
 mod test_support;
 
@@ -533,6 +536,7 @@ fn make_digest_for(
         "dedup_excluded":selection_excluded,
         "entries":entries_json,
         "llm_used":complete,
+        "llm_requested":do_llm,
         "overview":overview,
         "trend_summary":trend_summary,
         "coverage":coverage_report,
@@ -646,6 +650,11 @@ fn issue_item(entry: &Value) -> String {
         "⭐ Всего: {stars} · метаданные: {metadata_at} · {language}\n{metric}"
     ));
     let description = entry["description"].as_str().unwrap_or("").trim();
+    let description = if entry["llm_used"] == false {
+        format!("Исходное описание, без редакторского разбора: {description}")
+    } else {
+        description.to_string()
+    };
     let joke_line = match entry["joke"].as_str().map(str::trim) {
         Some(joke) if !joke.is_empty() => {
             format!("\n😄 {}", render_markdown_v2_inline(joke))
@@ -654,7 +663,7 @@ fn issue_item(entry: &Value) -> String {
     };
     format!(
         "{title}\n{stats}\n{}{joke_line}",
-        render_markdown_v2_inline(description)
+        render_markdown_v2_inline(&description)
     )
 }
 
@@ -706,6 +715,11 @@ fn render_issue_messages(digest: &Value) -> Result<Vec<String>> {
             "*🚀 GitHub — итоги недели*\nСрез: {when}\n{} с прошлого выпуска — всё опубликованное ранее не повторяется\n",
             markdown_v2_escape(&counted)
         )
+    };
+    let header = if env::var("DIGEST_TEST_ONLY").as_deref() == Ok("true") {
+        format!("*ТЕСТОВЫЙ ВЫПУСК — наблюдения с 31\\.10\\.2026*\n{header}")
+    } else {
+        header
     };
     let footer = format!(
         "_{}_",
@@ -943,6 +957,10 @@ fn telegram_send_to(chat: &str, text: &str) -> Result<i64> {
 /// reply to `reply_to` when given — the final issue summary references the
 /// batch message this way.
 fn telegram_send_reply_to(chat: &str, reply_to: Option<i64>, text: &str) -> Result<i64> {
+    test_delivery::guard(chat)?;
+    if env::var("DIGEST_TEST_ONLY").as_deref() == Ok("true") {
+        std::thread::sleep(StdDuration::from_millis(3100));
+    }
     telegram_format::validate_message(text, ISSUE_CHUNK_LIMIT)
         .context("refusing to send invalid emitted Telegram MarkdownV2")?;
     let token = env::var("TELEGRAM_BOT_TOKEN").context("TELEGRAM_BOT_TOKEN missing")?;
@@ -969,12 +987,14 @@ fn telegram_send_reply_to(chat: &str, reply_to: Option<i64>, text: &str) -> Resu
             description.chars().take(200).collect::<String>()
         ));
     }
+    test_delivery::receipt(&resp["result"], text)?;
     resp["result"]["message_id"]
         .as_i64()
         .ok_or_else(|| anyhow!("Telegram sendMessage response omitted message_id"))
 }
 
 fn telegram_pin_in(chat: &str, message_id: i64) -> Result<()> {
+    test_delivery::guard(chat)?;
     let token = env::var("TELEGRAM_BOT_TOKEN").context("TELEGRAM_BOT_TOKEN missing")?;
     let http = client()?;
     let pinned: Value = http
@@ -1301,10 +1321,6 @@ fn telegram_deliver_digest(
     let first_id = *ids
         .first()
         .ok_or_else(|| anyhow!("issue delivery produced no messages"))?;
-    if let Err(error) = telegram_pin(first_id) {
-        // Pinning is cosmetic; the issue is delivered regardless.
-        println!("Pin skipped: {error:#}");
-    }
     // Финальный итог — reply'ем на сообщение с батчем: он «ссылается» на
     // выпуск прямо в интерфейсе Telegram.
     let final_text = final_issue_text(digest);
@@ -1328,6 +1344,10 @@ fn telegram_deliver_digest(
         .remove(&format!("{chat}:{digest_id}"));
     state.pending_digests.remove(digest_id);
     write_json(&state_path(), state)?;
+    // Pinning is cosmetic and must follow complete, durable delivery.
+    if let Err(error) = telegram_pin(first_id) {
+        println!("Pin skipped: {error:#}");
+    }
     Ok(())
 }
 
@@ -1366,6 +1386,9 @@ fn main() -> Result<()> {
                 ),
             "daily publication is disabled pending preview review"
         );
+    }
+    if command == "test-summary" {
+        return test_delivery_review::run(&args);
     }
     if command == "preview-stored" {
         let run_dir = args
@@ -1479,6 +1502,23 @@ fn main() -> Result<()> {
         } else {
             editions::resume(&mut state, now, format)?;
         }
+    }
+    // Keep collecting on retries, but do not spend provider requests for a
+    // publication slot that already has a durable acknowledgement.
+    if command == "digest" && !dry && state.sent_slots.contains_key(&slot_key) {
+        if let Some(output) = env::var_os("GITHUB_OUTPUT") {
+            use std::io::Write;
+            let mut file = fs::OpenOptions::new().append(true).open(output)?;
+            writeln!(file, "delivery_skipped=true")?;
+        }
+        write_json(
+            &gathered.dir.join("delivery-skipped.json"),
+            &json!({"slot":slot_key,"already_delivered":true,"collection_retained":true}),
+        )?;
+        println!(
+            "Slot {slot_key} already delivered; collection retained, no provider calls or sends"
+        );
+        return Ok(());
     }
     let weekly = schedule::candidates(&state, now);
     write_json(&gathered.dir.join("weekly-observations.json"), &weekly)?;
@@ -1700,6 +1740,7 @@ fn deliver_new_digest(
         println!("No fresh candidates after deduplication; main chat stays quiet");
         return Ok(());
     }
+    editorial::require_synthesis(digest)?;
     // The deterministic credential scan blocks unsafe publication text.
     let _ = advisory_audit(digest, state, run_dir)?;
     state

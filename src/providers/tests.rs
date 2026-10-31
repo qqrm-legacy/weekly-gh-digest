@@ -69,7 +69,7 @@ fn retries_reserve_each_attempt_and_use_utc_day_at_each_attempt() {
     assert_eq!(stored.llm_daily_requests, state.llm_daily_requests);
     assert_eq!(
         *clock.sleeps.borrow(),
-        [StdDuration::from_secs(1), StdDuration::from_secs(2)]
+        [StdDuration::from_secs(60), StdDuration::from_secs(2)]
     );
     for request in requests {
         let body = body(&request);

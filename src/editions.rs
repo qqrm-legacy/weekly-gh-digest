@@ -54,6 +54,8 @@ pub(super) struct Ledger {
 
 #[derive(Clone, Serialize, Deserialize)]
 pub(super) struct Analysis {
+    #[serde(default)]
+    policy_version: u32,
     source_description: Option<String>,
     source_readme: Option<String>,
     pub(super) description: String,
@@ -184,7 +186,8 @@ pub(super) fn cached_analysis(state: &State, snapshot: &Snapshot) -> Option<Anal
         .analyses
         .get(&snapshot.full_name.to_ascii_lowercase())
         .filter(|analysis| {
-            analysis.source_description == snapshot.description
+            analysis.policy_version == crate::editorial::POLICY_VERSION
+                && analysis.source_description == snapshot.description
                 && analysis.source_readme == snapshot.readme_excerpt
         })
         .cloned()
@@ -201,6 +204,7 @@ pub(super) fn remember_analyses(state: &mut State, digest: &Value) {
         state.editions.analyses.insert(
             name.to_ascii_lowercase(),
             Analysis {
+                policy_version: crate::editorial::POLICY_VERSION,
                 source_description: entry["latest"]["description"].as_str().map(str::to_owned),
                 source_readme: entry["latest"]["readme_excerpt"]
                     .as_str()

@@ -229,7 +229,7 @@ jobs:
           fi
       - name: Verify weekly preview artifact
         id: verify-preview
-        if: steps.mode.outputs.mode == 'preview' || steps.mode.outputs.mode == 'digest' || steps.mode.outputs.mode == 'daily-preview' || steps.mode.outputs.mode == 'daily-digest'
+        if: steps.prepare.outputs.delivery_skipped != 'true' && (steps.mode.outputs.mode == 'preview' || steps.mode.outputs.mode == 'digest' || steps.mode.outputs.mode == 'daily-preview' || steps.mode.outputs.mode == 'daily-digest')
         env:
           RUN_DIRECTORY: ${{ steps.prepare.outputs.run_directory }}
           WEEKLY_SLOT: ${{ steps.mode.outputs.slot }}
