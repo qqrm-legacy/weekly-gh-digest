@@ -29806,7 +29806,8 @@
   "sent_digests": {
     "daily-20261031T120742Z": 26,
     "test-editorial-summary-2026-10-31-v2": 37,
-    "weekly-20261031T121210Z": 30
+    "weekly-20261031T121210Z": 30,
+    "test-editorial-reviewed-2026-10-31-v3": 37
   },
   "sent_slots": {
     "daily:2026-10-31": 26,
@@ -29836,5 +29837,5 @@
     "daily-20261031T120742Z": 29,
     "weekly-20261031T121210Z": 36
   },
-  "uncertain_delivery": "test-editorial-reviewed-2026-10-31-v3:37"
+  "uncertain_delivery": null
 }
