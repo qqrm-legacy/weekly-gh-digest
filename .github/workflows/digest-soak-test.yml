@@ -1,0 +1,95 @@
+name: Digest technical-chat trial
+
+on:
+  push:
+    branches: [feat/retained-daily-weekly-digests-2026-10-31]
+    paths:
+      - .github/workflows/digest-soak-test.yml
+      - .github/scripts/soak_test.py
+      - .github/scripts/soak_patch.py
+      - src/test_delivery.rs
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: digest-technical-chat-trial-2026-10-31
+  cancel-in-progress: false
+
+jobs:
+  trial:
+    if: github.ref == 'refs/heads/feat/retained-daily-weekly-digests-2026-10-31'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DIGEST_DELIVERY_ENABLED: 'false'
+      DIGEST_DAILY_DELIVERY_ENABLED: 'false'
+    steps:
+      - name: Checkout test branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8 # master
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+      - name: Cache build
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+      - name: Apply guarded integration edits
+        run: python3 .github/scripts/soak_patch.py
+      - name: Format and static checks
+        run: |
+          cargo fmt --all
+          cargo fmt --all -- --check
+          cargo check --locked --tests --benches
+          cargo clippy --locked --all-targets --all-features -- -D warnings
+      - name: Tests and blocked-publication checks
+        run: |
+          cargo test --locked
+          python3 -m unittest discover -s .github/scripts -p 'test_*.py'
+          cargo build --locked
+          python3 .github/scripts/verify_publication_disabled.py ./target/debug/weekly-gh-digest
+      - name: Export tested source blobs without moving refs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p soak-artifacts
+          python3 - <<'PY'
+          import json, os, pathlib, subprocess
+          elements = []
+          for name in ['src/main.rs', 'src/test_delivery.rs']:
+              path = pathlib.Path(name)
+              payload = json.dumps({'content':path.read_text(),'encoding':'utf-8'})
+              result = subprocess.run(['gh','api','--method','POST','repos/'+os.environ['GITHUB_REPOSITORY']+'/git/blobs','--input','-'],input=payload,text=True,capture_output=True,check=True)
+              sha = json.loads(result.stdout)['sha']
+              elements.append({'path':name,'mode':'100644','type':'blob','sha':sha})
+              destination = pathlib.Path('soak-artifacts/source') / name
+              destination.parent.mkdir(parents=True,exist_ok=True)
+              destination.write_text(path.read_text())
+          pathlib.Path('soak-artifacts/source-manifest.json').write_text(json.dumps({'parent':os.environ['GITHUB_SHA'],'tree_elements':elements},indent=2)+'\n')
+          print(json.dumps(elements))
+          PY
+      - name: Real technical-chat trial and restart checks
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_TECH_CHAT_ID: ${{ secrets.TELEGRAM_TECH_CHAT_ID }}
+          PRODUCTION_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: ${{ vars.GROQ_MODEL }}
+          LLM_FREE_TIER_CONFIRMED: ${{ vars.LLM_FREE_TIER_CONFIRMED }}
+        run: python3 .github/scripts/soak_test.py
+      - name: Upload test receipts and editorial artifacts
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: digest-trial-${{ github.run_id }}-${{ github.run_attempt }}
+          path: soak-artifacts
+          if-no-files-found: warn
+          retention-days: 30
