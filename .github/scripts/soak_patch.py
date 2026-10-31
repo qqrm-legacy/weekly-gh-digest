@@ -1,4 +1,4 @@
-"""Exact, idempotent integration edits for the test branch; export the tested source."""
+"""Exact integration edits for the test branch; export the tested source."""
 from pathlib import Path
 p = Path('src/main.rs')
 s = p.read_text()
@@ -23,6 +23,13 @@ old='''    let weekly = schedule::candidates(&state, now);
 new='''    // Keep collecting on retries, but do not spend provider requests for a
     // publication slot that already has a durable acknowledgement.
     if command == "digest" && !dry && state.sent_slots.contains_key(&slot_key) {
+        if let Some(output) = env::var_os("GITHUB_OUTPUT") {
+            use std::io::Write;
+            let mut file = fs::OpenOptions::new().append(true).open(output)?;
+            writeln!(file, "delivery_skipped=true")?;
+        }
+        write_json(&gathered.dir.join("delivery-skipped.json"),
+            &json!({"slot":slot_key,"already_delivered":true,"collection_retained":true}))?;
         println!("Slot {slot_key} already delivered; collection retained, no provider calls or sends");
         return Ok(());
     }
@@ -50,3 +57,10 @@ new='''    state.pending_digests.remove(digest_id);
 }'''
 replace(old,new)
 p.write_text(s)
+p = Path('.github/workflows/run-bot.yml')
+s = p.read_text()
+old = "        if: steps.mode.outputs.mode == 'preview' || steps.mode.outputs.mode == 'digest' || steps.mode.outputs.mode == 'daily-preview' || steps.mode.outputs.mode == 'daily-digest'"
+new = "        if: steps.prepare.outputs.delivery_skipped != 'true' && (steps.mode.outputs.mode == 'preview' || steps.mode.outputs.mode == 'digest' || steps.mode.outputs.mode == 'daily-preview' || steps.mode.outputs.mode == 'daily-digest')"
+if new not in s:
+    assert s.count(old) == 1
+    p.write_text(s.replace(old, new))
