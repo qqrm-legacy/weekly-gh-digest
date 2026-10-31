@@ -1,0 +1,114 @@
+name: Prepare retained digest change
+on:
+  push:
+    branches: [feat/retained-daily-weekly-digests-2026-10-31]
+permissions:
+  contents: write
+concurrency:
+  group: prepare-retained-digest-change
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/feat/retained-daily-weekly-digests-2026-10-31'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DIGEST_DELIVERY_ENABLED: 'false'
+      DIGEST_DAILY_DELIVERY_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6
+      - name: Apply exact integration edits
+        run: |
+          python3 .github/scripts/apply_retained_change.py
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('.github/workflows/ci.yml')
+          s = p.read_text()
+          anchor = '      - name: Format\n'
+          assert s.count(anchor) == 1
+          p.write_text(s.replace(anchor, "      - name: Workflow and queue tests\n        run: python3 -m unittest discover -s .github/scripts -p 'test_*.py'\n\n" + anchor))
+          PY
+      - name: Format
+        run: cargo fmt --all
+      - name: Check
+        run: cargo check --locked --tests --benches
+      - name: Clippy
+        run: cargo clippy --locked --all-targets --all-features -- -D warnings
+      - uses: taiki-e/install-action@8cca0918f8471c33515202b73f56ab27f2bed283
+        with:
+          tool: cargo-nextest
+          fallback: none
+      - name: Rust tests
+        run: cargo nextest run --locked --no-tests=pass --no-fail-fast
+      - name: Workflow and state tests
+        run: python3 -m unittest discover -s .github/scripts -p 'test_*.py'
+      - name: Build and verify publication gates
+        run: |
+          cargo build --locked
+          python3 .github/scripts/verify_publication_disabled.py ./target/debug/weekly-gh-digest
+          if GITHUB_ACTIONS=false DIGEST_DELIVERY_ENABLED=true DIGEST_DAILY_DELIVERY_ENABLED=false ./target/debug/weekly-gh-digest digest --daily > "$RUNNER_TEMP/daily-gate.log" 2>&1; then
+            echo 'Daily gate unexpectedly allowed execution' >&2
+            exit 1
+          fi
+          grep -q 'daily publication is disabled' "$RUNNER_TEMP/daily-gate.log"
+      - name: Read authoritative state into temporary copy
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DELIVERY_STATE_KEY: weekly-gh-digest.json
+        run: python3 .github/scripts/remote_state.py restore "$RUNNER_TEMP/retained-state.json"
+      - name: Offline previews without state changes or external delivery
+        run: |
+          set -euo pipefail
+          mkdir -p preview-results
+          sha256sum "$RUNNER_TEMP/retained-state.json" > "$RUNNER_TEMP/preview-before.sha"
+          instant=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          ./target/debug/weekly-gh-digest preview-retained "$RUNNER_TEMP/retained-state.json" preview-results/daily --daily --at="$instant"
+          ./target/debug/weekly-gh-digest preview-retained "$RUNNER_TEMP/retained-state.json" preview-results/weekly --at="$instant"
+          sha256sum --check "$RUNNER_TEMP/preview-before.sha"
+          git diff 59337244f4b595a7e0583f541af3d5e61bd0e301 --binary > preview-results/implementation.patch
+          printf 'Read-only retained-state previews; no Telegram or LLM requests.\nState blob: %s\n' "$(cat "$RUNNER_TEMP/retained-state.json.remote-sha")" > preview-results/provenance.txt
+      - name: Create validated candidate commit without updating a branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, pathlib, subprocess
+          repo = os.environ['GITHUB_REPOSITORY']
+          parent = os.environ['GITHUB_SHA']
+          def api(endpoint, payload):
+              result = subprocess.run(['gh','api','--method','POST',f'repos/{repo}/git/{endpoint}','--input','-'], input=json.dumps(payload), text=True, capture_output=True, check=True)
+              return json.loads(result.stdout)
+          assert subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip() == parent
+          paths = subprocess.check_output(['git','diff','--name-only','-z','HEAD']).decode().split('\0')
+          elements = []
+          for name in filter(None, paths):
+              path = pathlib.Path(name)
+              item = {'path':name,'mode':'100644','type':'blob'}
+              item['sha'] = api('blobs',{'content':path.read_text(),'encoding':'utf-8'})['sha'] if path.is_file() else None
+              elements.append(item)
+          tree = api('trees',{'base_tree':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],text=True).strip(),'tree':elements})
+          commit = api('commits',{'message':'feat: retain discoveries across daily and weekly editions','tree':tree['sha'],'parents':[parent]})
+          sha = commit['sha']
+          pathlib.Path('preview-results/candidate-commit.txt').write_text(sha+'\n')
+          print('VALIDATED_CANDIDATE_COMMIT='+sha)
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
+              out.write('Validated candidate commit: `'+sha+'`\n\nNo branch ref or Telegram configuration was changed by this job.\n')
+          PY
+      - name: Upload previews and tested patch
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: retained-digest-previews-${{ github.run_id }}
+          path: preview-results
+          if-no-files-found: warn
+          retention-days: 30
