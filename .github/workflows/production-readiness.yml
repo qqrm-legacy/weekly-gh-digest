@@ -1,0 +1,113 @@
+name: Production readiness
+
+on:
+  push:
+    branches: [feat/retained-daily-weekly-digests-2026-10-31]
+    paths: [.github/workflows/production-readiness.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  readiness:
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/feat/retained-daily-weekly-digests-2026-10-31'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Inspect production target and state without sending
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TECH_CHAT_ID: ${{ secrets.TELEGRAM_TECH_CHAT_ID }}
+          DELIVERY_ENABLED: ${{ vars.DIGEST_DELIVERY_ENABLED }}
+          DAILY_DELIVERY_ENABLED: ${{ vars.DIGEST_DAILY_DELIVERY_ENABLED }}
+          DELIVERY_PAUSED: ${{ vars.DIGEST_DELIVERY_PAUSED }}
+          LLM_FREE_TIER_CONFIRMED: ${{ vars.LLM_FREE_TIER_CONFIRMED }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p readiness-artifacts
+          python3 - <<'PY'
+          import json, os, pathlib, sys, urllib.request, urllib.error
+          sys.path.insert(0, '.github/scripts')
+          import remote_state
+          out = pathlib.Path('readiness-artifacts/report.json')
+          report = {'telegram_mutations': 0, 'state_writes': 0, 'tested_commit': os.environ['GITHUB_SHA']}
+          def require(condition, message):
+              if not condition:
+                  raise RuntimeError(message)
+          def telegram(method, payload):
+              require(method in {'getMe', 'getChat', 'getChatMember'}, 'Read-only operation required')
+              request = urllib.request.Request(
+                  'https://api.telegram.org/bot' + os.environ['TELEGRAM_BOT_TOKEN'] + '/' + method,
+                  data=json.dumps(payload).encode(), headers={'Content-Type':'application/json'})
+              try:
+                  with urllib.request.urlopen(request, timeout=30) as response:
+                      value = json.load(response)
+              except (urllib.error.URLError, TimeoutError, ValueError):
+                  raise RuntimeError('Telegram read-only preflight failed') from None
+              require(value.get('ok') is True, 'Telegram read-only preflight rejected')
+              return value['result']
+          try:
+              for key in ('TELEGRAM_BOT_TOKEN', 'TELEGRAM_CHAT_ID', 'TELEGRAM_TECH_CHAT_ID', 'GROQ_API_KEY'):
+                  require(bool(os.environ.get(key, '').strip()), 'Required credential missing: ' + key)
+              require(os.environ.get('LLM_FREE_TIER_CONFIRMED', '').lower() == 'yes', 'Free provider not confirmed')
+              me = telegram('getMe', {})
+              production = telegram('getChat', {'chat_id':os.environ['TELEGRAM_CHAT_ID']})
+              technical = telegram('getChat', {'chat_id':os.environ['TELEGRAM_TECH_CHAT_ID']})
+              require(production['id'] != technical['id'], 'Production and test targets must be distinct')
+              require(production['type'] in ('channel', 'supergroup'), 'Unsupported production target')
+              member = telegram('getChatMember', {'chat_id':production['id'], 'user_id':me['id']})
+              require(member.get('status') not in ('left', 'kicked'), 'Bot is absent from production')
+              if production['type'] == 'channel':
+                  require(member.get('status') == 'creator' or member.get('can_post_messages') is True,
+                          'Bot has no production post permission')
+              elif member.get('status') == 'restricted':
+                  require(member.get('is_member') and member.get('can_send_messages'), 'Bot is restricted')
+              elif member.get('status') == 'member':
+                  require(production.get('permissions', {}).get('can_send_messages') is True,
+                          'Production members cannot send messages')
+              remote = remote_state.api('/contents/weekly-gh-digest.json?ref=delivery-state')
+              require(remote is not None, 'Existing production checkpoint missing')
+              state = json.loads(remote_state.decode(remote))
+              require(not state.get('uncertain_delivery'), 'Production delivery requires reconciliation')
+              report.update({
+                  'production_target_distinct': True,
+                  'production_chat_type': production['type'],
+                  'bot_membership': member.get('status'),
+                  'can_post': True,
+                  'checkpoint_blob': remote['sha'],
+                  'uncertain_delivery': bool(state.get('uncertain_delivery')),
+                  'pending_issues': len(state.get('pending_digests', {})),
+                  'sent_slot_count': len(state.get('sent_slots', {})),
+                  'weekly_published': len(state.get('covered', {})),
+                  'daily_published': len(state.get('editions', {}).get('daily_covered', {})),
+                  'retained_observations': len(state.get('snapshots', [])),
+                  'latest_observation': max((r.get('captured_at', '') for r in state.get('snapshots', [])), default=None),
+                  'repository_weekly_gate': os.environ.get('DELIVERY_ENABLED', ''),
+                  'repository_daily_gate': os.environ.get('DAILY_DELIVERY_ENABLED', ''),
+                  'repository_pause': os.environ.get('DELIVERY_PAUSED', ''),
+                  'ready': True,
+              })
+              print(json.dumps(report))
+          except Exception as error:
+              report.update({'ready': False, 'error':str(error)})
+              raise
+          finally:
+              out.write_text(json.dumps(report, indent=2) + '\n')
+          PY
+      - name: Upload read-only readiness report
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: production-readiness-${{ github.run_id }}
+          path: readiness-artifacts
+          if-no-files-found: error
+          retention-days: 30
