@@ -1,0 +1,188 @@
+{
+  "archive": {
+    "available": true,
+    "captures_without_manifest": [],
+    "directories_without_manifest": [],
+    "filtered_captures": [],
+    "invalid_manifests": [],
+    "manifest_capture_count": 48,
+    "manifests_without_snapshots": [],
+    "metadata_failure_records": 0,
+    "source_failure_records": 0
+  },
+  "cadence": {
+    "empty_window": false,
+    "interval_count": 47,
+    "intervals_over_three_hours": [
+      {
+        "from": "2026-10-25T23:18:08Z",
+        "seconds": 19958,
+        "to": "2026-10-26T04:50:46Z"
+      },
+      {
+        "from": "2026-10-26T04:50:46Z",
+        "seconds": 29820,
+        "to": "2026-10-26T13:07:46Z"
+      },
+      {
+        "from": "2026-10-26T13:55:37Z",
+        "seconds": 12523,
+        "to": "2026-10-26T17:24:20Z"
+      },
+      {
+        "from": "2026-10-26T17:27:15Z",
+        "seconds": 11034,
+        "to": "2026-10-26T20:31:09Z"
+      },
+      {
+        "from": "2026-10-27T00:28:07Z",
+        "seconds": 18451,
+        "to": "2026-10-27T05:35:38Z"
+      },
+      {
+        "from": "2026-10-27T05:35:38Z",
+        "seconds": 12451,
+        "to": "2026-10-27T09:03:09Z"
+      },
+      {
+        "from": "2026-10-27T09:03:09Z",
+        "seconds": 13029,
+        "to": "2026-10-27T12:40:18Z"
+      },
+      {
+        "from": "2026-10-27T18:16:24Z",
+        "seconds": 14461,
+        "to": "2026-10-27T22:17:25Z"
+      },
+      {
+        "from": "2026-10-27T22:36:55Z",
+        "seconds": 25735,
+        "to": "2026-10-28T05:45:50Z"
+      },
+      {
+        "from": "2026-10-28T06:16:58Z",
+        "seconds": 24133,
+        "to": "2026-10-28T12:59:11Z"
+      },
+      {
+        "from": "2026-10-28T13:32:03Z",
+        "seconds": 24319,
+        "to": "2026-10-28T20:17:22Z"
+      },
+      {
+        "from": "2026-10-29T01:00:10Z",
+        "seconds": 19630,
+        "to": "2026-10-29T06:27:20Z"
+      },
+      {
+        "from": "2026-10-29T06:27:20Z",
+        "seconds": 12857,
+        "to": "2026-10-29T10:01:37Z"
+      },
+      {
+        "from": "2026-10-29T10:01:37Z",
+        "seconds": 13241,
+        "to": "2026-10-29T13:42:18Z"
+      },
+      {
+        "from": "2026-10-29T13:42:18Z",
+        "seconds": 17280,
+        "to": "2026-10-29T18:30:18Z"
+      },
+      {
+        "from": "2026-10-29T18:30:18Z",
+        "seconds": 16108,
+        "to": "2026-10-29T22:58:46Z"
+      },
+      {
+        "from": "2026-10-30T01:02:48Z",
+        "seconds": 19414,
+        "to": "2026-10-30T06:26:22Z"
+      },
+      {
+        "from": "2026-10-30T06:26:22Z",
+        "seconds": 13089,
+        "to": "2026-10-30T10:04:31Z"
+      },
+      {
+        "from": "2026-10-30T10:04:31Z",
+        "seconds": 12425,
+        "to": "2026-10-30T13:31:36Z"
+      },
+      {
+        "from": "2026-10-30T13:31:36Z",
+        "seconds": 16266,
+        "to": "2026-10-30T18:02:42Z"
+      },
+      {
+        "from": "2026-10-30T18:02:42Z",
+        "seconds": 15658,
+        "to": "2026-10-30T22:23:40Z"
+      },
+      {
+        "from": "2026-10-30T22:39:31Z",
+        "seconds": 25580,
+        "to": "2026-10-31T05:45:51Z"
+      },
+      {
+        "from": "2026-10-31T06:16:54Z",
+        "seconds": 22747,
+        "to": "2026-10-31T12:36:01Z"
+      },
+      {
+        "from": "2026-10-31T13:03:23Z",
+        "seconds": 22576,
+        "to": "2026-10-31T19:19:39Z"
+      },
+      {
+        "from": "2026-11-01T00:09:32Z",
+        "seconds": 21608,
+        "to": "2026-11-01T06:09:40Z"
+      },
+      {
+        "from": "2026-11-01T06:50:47Z",
+        "seconds": 23871,
+        "to": "2026-11-01T13:28:38Z"
+      },
+      {
+        "from": "2026-11-01T13:28:38Z",
+        "seconds": 16681,
+        "to": "2026-11-01T18:06:39Z"
+      }
+    ],
+    "leading_gap_seconds": 3203,
+    "max_interval_seconds": 29820,
+    "median_interval_seconds": 12523.0,
+    "min_interval_seconds": 175,
+    "nominal_cron": "17 */3 * * *",
+    "nominal_slot_boundary": "start_exclusive_end_inclusive",
+    "nominal_slots_in_window": 56,
+    "scheduled_capture_count": null,
+    "target_interval_seconds": 10800,
+    "trailing_gap_seconds": 0,
+    "trigger_note": "Historical snapshots do not identify manual versus scheduled runs; capture counts are not schedule completion counts."
+  },
+  "format_version": 1,
+  "observed": {
+    "capture_count": 48,
+    "duplicate_snapshot_rows": 0,
+    "first_capture_at": "2026-10-25T23:18:08Z",
+    "ignored_future_rows": 0,
+    "invalid_timestamp_rows": 0,
+    "last_capture_at": "2026-11-01T22:24:44Z",
+    "snapshot_rows": 2627,
+    "unique_repositories": 157
+  },
+  "scope": {
+    "global_coverage_known": false,
+    "missing_intervals_reconstructed": false,
+    "note": "No observations are invented, interpolated or restored from aggregated weekly candidates. Leading and trailing gaps describe the observed window, not proven failed triggers.",
+    "search_first_page_limit": 30,
+    "trending": "first returned weekly and daily pages"
+  },
+  "window": {
+    "end": "2026-11-01T22:24:44Z",
+    "kind": "rolling_seven_days",
+    "start": "2026-10-25T22:24:44Z"
+  }
+}
