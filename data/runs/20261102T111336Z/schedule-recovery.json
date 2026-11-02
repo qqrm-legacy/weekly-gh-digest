@@ -1,0 +1,13 @@
+{
+  "slot": "weekly:2026-11-02",
+  "mode": "preview",
+  "send": false,
+  "llm": false,
+  "reason": "weekly-preview-due",
+  "event": "schedule",
+  "cron": "17 */3 * * *",
+  "delivery_enabled": false,
+  "issue_due_at": "2026-11-02T07:00:00+00:00",
+  "selected_at": "2026-11-02T11:13:15.411766+00:00",
+  "issue_age_seconds": 15195
+}
