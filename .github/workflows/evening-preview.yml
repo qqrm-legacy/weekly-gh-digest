@@ -6,6 +6,7 @@ on:
     paths:
       - .github/workflows/evening-preview.yml
       - .github/scripts/evening_preview.py
+      - src/editorial.rs
   workflow_dispatch:
 
 permissions:
