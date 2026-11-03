@@ -14,9 +14,9 @@ deleted when a queue item is acknowledged.
 
 `covered` remains the weekly receipt map for compatibility. The new
 `editions.daily_covered` map is independent. `editions.analyses` retains analyses
-between runs and editions; reuse requires exactly matching primary description
-and README text. Metrics and timestamps come from observations, not model prose.
-Sources are untrusted data, never executable instructions.
+between runs and editions; reuse requires exactly matching primary description,
+README text and editorial policy version. Metrics and timestamps come from
+observations, not model prose. Sources are untrusted data, never instructions.
 
 Legacy weekly receipts seed daily receipts once on migration, avoiding replay
 of already published pre-daily issues. After migration, neither format's
@@ -27,9 +27,9 @@ acknowledgements consume the other's queue. Identity is case-insensitive
 
 Daily: at most 12 detailed discoveries per issue. Oldest discovery date first,
 then daily Trending peak, weekly Trending peak and Search within that date.
-This prevents new popular projects from starving the backlog. Overflow remains
-pending even after leaving Trending. New means new to the feed, not necessarily
-newly created or newly released.
+Overflow remains pending even after leaving Trending. New means new to the feed,
+not necessarily newly created or newly released. With AI enabled, only completed
+Russian explanations are included; raw metadata is not a published daily card.
 
 Weekly: up to 30 detailed cards using the existing source priority. Every other
 pending discovery is published in a linked index, split into Telegram-safe
@@ -42,7 +42,8 @@ not mark that project's daily card delivered.
 Seven-day observation and coverage artifacts remain separate from the all-history
 pending queue. `queue.json` records queued candidates, detailed cards, carried
 backlog and expected remainder after successful delivery. Overlapping Trending
-rolling counts are never summed; peak metrics retain source timestamps.
+rolling counts are never summed; peak metrics retain source timestamps. This is
+not a strict calendar-week top-20 ranking or a release/change log for every repo.
 
 ## Delivery, then acknowledgement
 
@@ -65,13 +66,14 @@ atomic transaction. Collection and previews continue while delivery is reconcile
 
 ## Schedule and permissions
 
-- `17 */3 * * *`: collect; recover unfinished weekly work first, then daily work.
+- `17 */3 * * *`: collect; after 15:00 UTC an enabled, due daily delivery has
+  priority. Otherwise recover weekly work, then any due daily preview.
 - `0 7 * * 1`: existing weekly publication/recovery slot, unchanged.
 - `0 15 * * *`: daily issue, using the same daily identity on delayed recovery.
 
 `DIGEST_DELIVERY_ENABLED=true` remains mandatory for every send. Daily sends also
-require `DIGEST_DAILY_DELIVERY_ENABLED=true`. Neither variable is enabled by this
-change. Missing/false daily permission produces only a preview even when the
+require `DIGEST_DAILY_DELIVERY_ENABLED=true`. Neither variable is enabled by a
+code merge. Missing/false daily permission produces only a preview even when the
 weekly gate is enabled. Manual dispatch defaults to weekly dry-run; select
 `digest_format=daily` for a daily preview. Technical delivery retries also check
 the stored edition's gate.
@@ -80,18 +82,35 @@ Daily artifact completion uses `data/daily-runs.json`; weekly completion stays i
 `data/weekly-runs.json`. Preview receipts never substitute for `sent_slots`.
 Explicit `recover_weekly` retains its weekly-only and never-send semantics.
 
+After reviewing the merged code, target and provider configuration, an authorized
+operator can activate the scheduled production pipeline with:
+
+```sh
+gh variable set DIGEST_DELIVERY_ENABLED --repo qqrm-labs/weekly-gh-digest --body true
+gh variable set DIGEST_DAILY_DELIVERY_ENABLED --repo qqrm-labs/weekly-gh-digest --body true
+```
+
+This enables both weekly and daily production delivery using the already configured
+`TELEGRAM_CHAT_ID`. It does not point production at the technical chat or migrate
+test acknowledgements. To stop all publication, set `DIGEST_DELIVERY_ENABLED=false`.
+No secrets belong in these variables or in source control.
+
 ## Read-only replay
 
 ```sh
 cargo build --locked
-./target/debug/weekly-gh-digest preview-retained /tmp/state.json /tmp/daily-preview --daily --at=2026-10-31T12:00:00Z
-./target/debug/weekly-gh-digest preview-retained /tmp/state.json /tmp/weekly-preview --at=2026-10-31T12:00:00Z
+./target/debug/weekly-gh-digest preview-retained /tmp/state.json /tmp/daily-preview --daily --at=2026-11-03T15:00:00Z
+./target/debug/weekly-gh-digest preview-retained /tmp/state.json /tmp/weekly-preview --at=2026-11-03T15:00:00Z
 ```
 
 Output directories must be new. The command reads a saved state copy, uses source
 descriptions or matching cached analyses, and writes only preview artifacts. It
 makes no GitHub, LLM or Telegram requests and does not modify input state. Offline
 previews are labelled, not presented as fresh LLM analyses.
+
+`Evening digest validation` exercises the real free provider on a local copy of
+state. It has read-only repository permission, no Telegram credentials, and no
+remote checkpoint writer. Its artifact is a preview, not a delivery receipt.
 
 Run the repository's Rust checks and:
 
@@ -101,22 +120,16 @@ python3 -m unittest discover -s .github/scripts -p 'test_*.py'
 
 Tests cover disappearing projects, prolonged outages, independent acknowledgements,
 capacity carry-over, migration, source-sensitive analysis reuse, date boundaries,
-frozen overdue payloads, full weekly indexes, chunk limits and safe daily routing.
-
-## Coverage limits
-
-Retention protects actually observed findings. It cannot reconstruct projects
-that entered and left all configured sources between collection ticks, or data
-missed during source failures. Bounded searches are not a GitHub census. Existing
-source manifests and coverage notices remain explicit about gaps. History currently
-grows without pruning; future compaction must preserve both queues and evidence.
+frozen overdue payloads, full weekly indexes, chunk limits, daily recovery priority
+and safe publication routing.
 
 ## Evening daily edition
 
 The daily deadline is 18:00 Moscow (15:00 UTC), without a test expiry in the normal
 Run Bot workflow. Three-hour collection remains enabled so transient observations
-are retained. Morning recovery ticks collect only; unsuccessful evening work can
-retry at later collection ticks. A successful daily slot is never resent.
+are retained. Before the daily deadline, recovery does not send a daily issue;
+weekly recovery remains possible. Unsuccessful evening work can retry at later
+collection ticks. A successfully acknowledged daily slot is never resent.
 
 Daily LLM editions publish only source-backed Russian explanations that completed
 validation. Raw README/metadata fallbacks stay in the daily queue; the synopsis
@@ -125,8 +138,20 @@ collection. Completed analyses are checkpointed individually and reused when
 sources and editorial policy match. Weekly eligibility remains independent.
 
 Explanations cover what the repository does, its intended user, a source-supported
-use case and documented limits. Language and known terminology regression checks
-are not a complete factual audit. Free Groq is used only with explicit free-tier
-confirmation; existing request caps, retry-after handling and no paid fallback
-remain in place. Exact on-the-minute delivery cannot be guaranteed by Actions or
-a free external provider. Capacity overflow remains queued, not discarded.
+use case and documented limits. Language, Latin product-name provenance and known
+terminology regression checks are conservative heuristics, not a complete factual
+audit. They can defer valid text and cannot detect all unsupported claims.
+
+Free Groq is used only with explicit free-tier confirmation; existing request caps,
+retry-after handling and no paid fallback remain in place. Exact on-the-minute
+delivery or an AI issue every day cannot be guaranteed by Actions or a free
+external provider. If no valid cards or synopsis are available, the run fails
+without publishing raw fallback text and retains the queue.
+
+## Coverage limits
+
+Retention protects actually observed findings. It cannot reconstruct projects
+that entered and left all configured sources between collection ticks, or data
+missed during source failures. Bounded searches are not a GitHub census. Existing
+source manifests and coverage notices remain explicit about gaps. History currently
+grows without pruning; future compaction must preserve both queues and evidence.
