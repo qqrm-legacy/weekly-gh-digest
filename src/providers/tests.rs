@@ -661,3 +661,55 @@ fn usable_readme_skips_a_short_intro_and_rejects_markup_only() {
     assert!(usable_readme(Some("<img src=\"long-name-badge.svg\" />")).is_none());
     assert!(usable_readme(Some("# A sufficiently long heading with no prose")).is_none());
 }
+
+#[test]
+fn daily_summary_uses_only_ready_cards_and_restart_reuses_checkpointed_analysis() {
+    let clock = FakeClock::at("2026-11-03T15:00:00Z");
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("state.json");
+    let entries = vec![ranked("org/ready"), ranked("org/later")];
+    let card = json!({
+        "description":"Инструмент разбирает исходные файлы и показывает связи между ними. Такой граф можно рассмотреть для знакомства с зависимостями незнакомого проекта. Описание возможностей опирается на README; работу программы мы не проверяли.",
+        "joke":"Даже у зависимостей есть свой круг общения.",
+        "evidence_quote":README_EVIDENCE
+    }).to_string();
+    let summary = completion(
+        r#"{"overview":"В этой подборке есть инструмент для анализа связей между исходными файлами."}"#,
+    );
+    let server = TestServer::start(vec![
+        (200, completion(&card)),
+        (400, "{}".into()),
+        (200, summary.clone()),
+    ]);
+    let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+    let mut state = State {
+        snapshots: entries.iter().map(|entry| entry.snapshot.clone()).collect(),
+        ..State::default()
+    };
+    let first = groq.enrich_daily(&entries, &mut state, dir.path()).unwrap();
+    let requests = server.finish();
+    assert_eq!(first.descriptions.len(), 1);
+    let payload: Value = serde_json::from_str(
+        body(&requests[2])["messages"][1]["content"]
+            .as_str()
+            .unwrap(),
+    )
+    .unwrap();
+    assert_eq!(payload["entries"].as_array().unwrap().len(), 1);
+    assert_eq!(payload["entries"][0]["repository"], "org/ready");
+    let mut restored: State = StateStore::new(&path).load().unwrap();
+    assert!(crate::editions::cached_analysis(&restored, &entries[0].snapshot).is_some());
+    assert!(restored.covered.is_empty());
+    assert!(restored.editions.daily_covered.is_empty());
+    assert_eq!(restored.snapshots.len(), 2);
+    let server = TestServer::start(vec![(200, completion(&card)), (200, summary)]);
+    let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+    let second = groq
+        .enrich_daily(&entries, &mut restored, dir.path())
+        .unwrap();
+    assert_eq!(server.finish().len(), 2);
+    assert!(second.complete);
+    assert_eq!(second.budget["actual_requests"], 2);
+    assert!(restored.covered.is_empty());
+    assert!(restored.editions.daily_covered.is_empty());
+}

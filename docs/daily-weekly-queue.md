@@ -51,7 +51,7 @@ a repository. Only successful delivery of every message, including the weekly
 index and final overview, acknowledges the precise names in that edition.
 New discoveries and capacity overflow are never cleared wholesale.
 
-Daily slots are `daily:YYYY-MM-DD`, starting at 07:00 UTC (10:00 Moscow).
+Daily slots are `daily:YYYY-MM-DD`, starting at 15:00 UTC (18:00 Moscow).
 Weekly slots remain `weekly:YYYY-MM-DD`, Monday 07:00 UTC. Message progress is
 scoped by chat and edition-prefixed digest ID. A pending payload is frozen before
 sending; recovery reuses it without regenerating or trimming it. Pending issues
@@ -67,7 +67,7 @@ atomic transaction. Collection and previews continue while delivery is reconcile
 
 - `17 */3 * * *`: collect; recover unfinished weekly work first, then daily work.
 - `0 7 * * 1`: existing weekly publication/recovery slot, unchanged.
-- `37 7 * * *`: daily issue, using the same daily identity on delayed recovery.
+- `0 15 * * *`: daily issue, using the same daily identity on delayed recovery.
 
 `DIGEST_DELIVERY_ENABLED=true` remains mandatory for every send. Daily sends also
 require `DIGEST_DAILY_DELIVERY_ENABLED=true`. Neither variable is enabled by this
@@ -110,3 +110,23 @@ that entered and left all configured sources between collection ticks, or data
 missed during source failures. Bounded searches are not a GitHub census. Existing
 source manifests and coverage notices remain explicit about gaps. History currently
 grows without pruning; future compaction must preserve both queues and evidence.
+
+## Evening daily edition
+
+The daily deadline is 18:00 Moscow (15:00 UTC), without a test expiry in the normal
+Run Bot workflow. Three-hour collection remains enabled so transient observations
+are retained. Morning recovery ticks collect only; unsuccessful evening work can
+retry at later collection ticks. A successful daily slot is never resent.
+
+Daily LLM editions publish only source-backed Russian explanations that completed
+validation. Raw README/metadata fallbacks stay in the daily queue; the synopsis
+uses only the cards actually included. A failed synopsis prevents sending, not
+collection. Completed analyses are checkpointed individually and reused when
+sources and editorial policy match. Weekly eligibility remains independent.
+
+Explanations cover what the repository does, its intended user, a source-supported
+use case and documented limits. Language and known terminology regression checks
+are not a complete factual audit. Free Groq is used only with explicit free-tier
+confirmation; existing request caps, retry-after handling and no paid fallback
+remain in place. Exact on-the-minute delivery cannot be guaranteed by Actions or
+a free external provider. Capacity overflow remains queued, not discarded.

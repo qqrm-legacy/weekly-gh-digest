@@ -16,13 +16,23 @@ from test_state_workflow import step_script
 
 class DailyRunTests(unittest.TestCase):
     def setUp(self):
-        self.now = datetime(2026, 10, 31, 8, tzinfo=timezone.utc)
+        self.now = datetime(2026, 10, 31, 16, tzinfo=timezone.utc)
         self.key = daily_run.slot(self.now)
 
     def test_daily_boundary_and_namespace(self):
-        self.assertEqual(daily_run.slot(datetime(2027, 1, 1, 6, 59, tzinfo=timezone.utc)), "daily:2026-12-31")
-        self.assertEqual(daily_run.slot(datetime(2027, 1, 1, 7, tzinfo=timezone.utc)), "daily:2027-01-01")
+        self.assertEqual(daily_run.slot(datetime(2027, 1, 1, 14, 59, tzinfo=timezone.utc)), "daily:2026-12-31")
+        self.assertEqual(daily_run.slot(datetime(2027, 1, 1, 15, tzinfo=timezone.utc)), "daily:2027-01-01")
         self.assertNotEqual(self.key, weekly_run.slot(self.now))
+
+    def test_morning_collection_does_not_send_yesterday_or_today(self):
+        env = {"DIGEST_DELIVERY_ENABLED": "true", "DIGEST_DAILY_DELIVERY_ENABLED": "true"}
+        before = datetime(2026, 11, 3, 14, 59, 59, tzinfo=timezone.utc)
+        self.assertEqual(daily_run.recovery_mode(env, before, {}, {})[0], ("collect", False, False))
+        after = datetime(2026, 11, 3, 15, tzinfo=timezone.utc)
+        self.assertEqual(daily_run.recovery_mode(env, after, {}, {})[0], ("daily-digest", True, True))
+        sent = {"sent_slots": {daily_run.slot(after): 12}}
+        self.assertEqual(daily_run.recovery_mode(env, after, {}, sent)[0], ("collect", False, False))
+        self.assertEqual(run_mode.DAILY_CRON, "0 15 * * *")
 
     def test_daily_requires_two_explicit_gates(self):
         event = {"EVENT_NAME": "schedule", "EVENT_SCHEDULE": run_mode.DAILY_CRON}

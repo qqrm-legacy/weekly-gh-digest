@@ -6,7 +6,8 @@ on:
     # Monday 07:00 UTC = 10:00 Moscow remains the nominal deadline.
     - cron: '17 */3 * * *'
     - cron: '0 7 * * 1'
-    - cron: '37 7 * * *'
+    # Daily discoveries at 18:00 Moscow (UTC+3).
+    - cron: '0 15 * * *'
   workflow_dispatch:
     inputs:
       digest_format:

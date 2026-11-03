@@ -9,7 +9,7 @@ import weekly_run
 
 COLLECTION_CRON = "17 */3 * * *"
 PUBLICATION_CRON = "0 7 * * 1"
-DAILY_CRON = "37 7 * * *"
+DAILY_CRON = "0 15 * * *"
 
 
 def choose(env):

@@ -4,7 +4,7 @@ use reqwest::{StatusCode, header::HeaderMap};
 use serde_json::Value;
 use std::time::Duration;
 
-pub(super) const POLICY_VERSION: u32 = 2;
+pub(super) const POLICY_VERSION: u32 = 3;
 
 pub(super) fn retry_delay(
     status: StatusCode,
@@ -29,6 +29,49 @@ pub(super) fn retry_delay(
     Ok(Duration::from_secs(seconds.max(1)))
 }
 
+/// Language and observed terminology regressions only; not a factual audit.
+pub(super) fn validate_text(text: &str, sources: &str) -> Result<()> {
+    let letters = text.chars().filter(|ch| ch.is_alphabetic()).count();
+    let cyrillic = text
+        .chars()
+        .filter(|ch| matches!(ch, '\u{0400}'..='\u{04ff}'))
+        .count();
+    ensure!(
+        cyrillic >= 10 && cyrillic * 4 >= letters,
+        "editorial text must be Russian"
+    );
+    let text = text.to_lowercase();
+    let sources = sources.to_lowercase();
+    let multi_agent = sources.contains("multi-agent")
+        || sources.contains("multi agent")
+        || sources.contains("multiagent");
+    let multi_user = sources.contains("multi-user")
+        || sources.contains("multi user")
+        || sources.contains("multiuser")
+        || sources.contains("многопользовательск");
+    ensure!(
+        !(multi_agent && !multi_user && text.contains("многопользовательск")),
+        "multi-agent is not multi-user"
+    );
+    let local_first = sources.contains("local-first") || sources.contains("local first");
+    let offline_claim = [
+        "полностью офлайн",
+        "без интернета",
+        "не требует интернета",
+        "не обращается к облаку",
+    ]
+    .iter()
+    .any(|claim| text.contains(claim));
+    ensure!(
+        !(local_first
+            && offline_claim
+            && !sources.contains("offline")
+            && !sources.contains("офлайн")),
+        "local-first does not prove offline operation"
+    );
+    Ok(())
+}
+
 pub(super) fn require_synthesis(digest: &Value) -> Result<()> {
     let requested = digest["llm_requested"] == true;
     let has_entries = digest["entries"]
@@ -42,6 +85,24 @@ pub(super) fn require_synthesis(digest: &Value) -> Result<()> {
                 .is_some_and(|text| !text.trim().is_empty()),
         "requested editorial synthesis is missing; findings remain pending, no Telegram delivery"
     );
+    if requested && digest["edition"] == "daily" {
+        for entry in digest["entries"].as_array().into_iter().flatten() {
+            ensure!(
+                entry["llm_used"] == true,
+                "daily source fallback must remain queued, not be published"
+            );
+            validate_text(
+                entry["description"].as_str().unwrap_or(""),
+                &entry["latest"].to_string(),
+            )?;
+        }
+        if has_entries {
+            validate_text(
+                digest["overview"].as_str().unwrap_or(""),
+                &digest["entries"].to_string(),
+            )?;
+        }
+    }
     Ok(())
 }
 
@@ -49,6 +110,51 @@ pub(super) fn require_synthesis(digest: &Value) -> Result<()> {
 mod tests {
     use super::*;
     use serde_json::json;
+
+    #[test]
+    fn observed_translation_regressions_are_rejected_not_rewritten() {
+        assert!(
+            validate_text(
+                "Многопользовательский инструмент для автоматического анализа.",
+                "A multi-agent framework"
+            )
+            .is_err()
+        );
+        assert!(
+            validate_text(
+                "Многоагентный инструмент для автоматического анализа.",
+                "A multi-agent framework"
+            )
+            .is_ok()
+        );
+        assert!(
+            validate_text(
+                "Многопользовательский инструмент для автоматического анализа.",
+                "multi-agent and multi-user"
+            )
+            .is_ok()
+        );
+        assert!(
+            validate_text(
+                "Работает полностью офлайн без интернета и внешних сервисов.",
+                "local-first data store with cloud APIs"
+            )
+            .is_err()
+        );
+        assert!(
+            validate_text(
+                "This tool is used to process source files and build graphs.",
+                "source"
+            )
+            .is_err()
+        );
+    }
+
+    #[test]
+    fn daily_fallback_is_not_an_editorial_card() {
+        let digest = json!({"edition":"daily", "llm_requested":true, "overview":"В этой подборке представлены инструменты анализа программ.", "entries":[{"llm_used":false,"description":"Raw README description"}]});
+        assert!(require_synthesis(&digest).is_err());
+    }
 
     #[test]
     fn rate_limit_honors_retry_after_and_never_retries_a_long_cooldown_early() {

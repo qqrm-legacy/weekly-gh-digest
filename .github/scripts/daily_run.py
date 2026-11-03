@@ -12,7 +12,7 @@ RECEIPTS = Path("data/daily-runs.json")
 
 def issue_start(now):
     now = now.astimezone(timezone.utc)
-    boundary = now.replace(hour=7, minute=0, second=0, microsecond=0)
+    boundary = now.replace(hour=15, minute=0, second=0, microsecond=0)
     return boundary if now >= boundary else boundary - timedelta(days=1)
 
 
@@ -26,6 +26,9 @@ def delivery_enabled(env):
 
 
 def recovery_mode(env, now, receipts, state):
+    # Never turn morning collection into an early daily publication.
+    if now.astimezone(timezone.utc).hour < 15:
+        return ("collect", False, False), "daily-before-evening-deadline"
     key = slot(now)
     sent = state.get("sent_slots", {})
     if not isinstance(sent, dict):

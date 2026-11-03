@@ -395,7 +395,7 @@ fn make_digest_for(
     do_llm: bool,
     format: editions::Format,
 ) -> Result<(Value, String)> {
-    let (mut entries, selection_excluded) = editions::select(current, state, format);
+    let (mut entries, mut selection_excluded) = editions::select(current, state, format);
     let mut selected = entries
         .iter()
         .map(|entry| entry.snapshot.clone())
@@ -442,7 +442,35 @@ fn make_digest_for(
         overview,
         complete,
         budget: llm_budget,
-    } = provider.enrich(&entries, state, do_llm, &runs_dir().join(stamp(now)))?;
+    } = if format == editions::Format::Daily && do_llm {
+        provider.enrich_daily(&entries, state, &runs_dir().join(stamp(now)))?
+    } else {
+        provider.enrich(&entries, state, do_llm, &runs_dir().join(stamp(now)))?
+    };
+    if format == editions::Format::Daily && do_llm {
+        let attempted = entries.len();
+        entries.retain(|entry| {
+            let ready = descriptions.contains_key(&entry.snapshot.full_name);
+            if !ready { selection_excluded.push(json!({"full_name":entry.snapshot.full_name,"reason":"AI explanation unavailable; retained for a later daily issue"})); }
+            ready
+        });
+        let ready_pool = pool_rows
+            .into_iter()
+            .filter(|row| {
+                row["full_name"]
+                    .as_str()
+                    .is_some_and(|name| descriptions.contains_key(name))
+            })
+            .collect::<Vec<_>>();
+        write_json(
+            &runs_dir().join(stamp(now)).join("selection.json"),
+            &json!({"pool":ready_pool,"excluded":selection_excluded,"covered_repositories_tracked":state.covered.len()}),
+        )?;
+        anyhow::ensure!(
+            attempted == 0 || !entries.is_empty(),
+            "no source-backed Russian explanations ready; findings remain queued"
+        );
+    }
     let entries_json: Vec<Value> = entries
         .iter()
         .enumerate()
@@ -535,7 +563,7 @@ fn make_digest_for(
         "ranking":"Union of all retained observations within seven days; latest metadata and maximum observed rolling Trending metric with its original timestamp; first/last appearance retained. Only weekly selection excludes covered repositories and caps at 30. Weekly Trending peak +N first, daily peak +N next, then Search by latest total stars. Never sum overlapping rolling metrics; not a global census or a release feed.",
         "dedup_excluded":selection_excluded,
         "entries":entries_json,
-        "llm_used":complete,
+        "llm_used":complete || (format == editions::Format::Daily && do_llm && !entries.is_empty()),
         "llm_requested":do_llm,
         "overview":overview,
         "trend_summary":trend_summary,

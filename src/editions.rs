@@ -28,7 +28,7 @@ impl Format {
     pub(super) fn slot(self, now: DateTime<Utc>) -> String {
         match self {
             Self::Weekly => crate::slot_key_of(now),
-            Self::Daily => format!("daily:{}", (now - Duration::hours(7)).date_naive()),
+            Self::Daily => format!("daily:{}", (now - Duration::hours(15)).date_naive()),
         }
     }
 
@@ -663,11 +663,11 @@ mod tests {
     #[test]
     fn daily_and_weekly_slot_boundaries_are_independent() {
         assert_eq!(
-            Format::Daily.slot(time("2027-01-01T06:59:59Z")),
+            Format::Daily.slot(time("2027-01-01T14:59:59Z")),
             "daily:2026-12-31"
         );
         assert_eq!(
-            Format::Daily.slot(time("2027-01-01T07:00:00Z")),
+            Format::Daily.slot(time("2027-01-01T15:00:00Z")),
             "daily:2027-01-01"
         );
         assert_eq!(

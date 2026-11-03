@@ -5,11 +5,10 @@ on:
     branches: [feat/retained-daily-weekly-digests-2026-10-31]
     paths:
       - .github/workflows/evening-preview.yml
-      - .github/scripts/prepare_evening.py
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: evening-digest-validation
@@ -24,7 +23,7 @@ jobs:
       DIGEST_DELIVERY_ENABLED: 'false'
       DIGEST_DAILY_DELIVERY_ENABLED: 'false'
     steps:
-      - name: Checkout exact source
+      - name: Checkout committed source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
@@ -35,21 +34,8 @@ jobs:
           components: rustfmt, clippy
       - name: Cache build
         uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
-      - name: Integrate evening changes
+      - name: Static checks
         run: |
-          python3 .github/scripts/prepare_evening.py
-          python3 - <<'PY'
-          from pathlib import Path
-          p = Path('src/providers/tests.rs')
-          text = p.read_text()
-          old = '    let mut state = State::default();\n    state.snapshots = entries.iter().map(|entry| entry.snapshot.clone()).collect();'
-          new = '    let mut state = State { snapshots: entries.iter().map(|entry| entry.snapshot.clone()).collect(), ..State::default() };'
-          assert text.count(old) == 1
-          p.write_text(text.replace(old,new))
-          PY
-      - name: Format and check
-        run: |
-          cargo fmt --all
           cargo fmt --all -- --check
           cargo check --locked --tests --benches
           cargo clippy --locked --all-targets --all-features -- -D warnings
@@ -64,27 +50,9 @@ jobs:
           python3 -m unittest discover -s .github/scripts -p 'test_*.py'
           cargo build --locked
           python3 .github/scripts/verify_publication_disabled.py ./target/debug/weekly-gh-digest
-      - name: Export tested sources without moving a branch
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          set -euo pipefail
+          git diff --exit-code
           mkdir -p validation-artifacts
-          python3 - <<'PY'
-          import json, os, pathlib, subprocess
-          names = subprocess.check_output(['git','diff','--name-only','HEAD'],text=True).splitlines()
-          elements = []
-          for name in names:
-              path = pathlib.Path(name)
-              if not path.is_file():
-                  raise RuntimeError('Unexpected deletion')
-              result = subprocess.run(['gh','api','--method','POST','repos/'+os.environ['GITHUB_REPOSITORY']+'/git/blobs','--input','-'],input=json.dumps({'content':path.read_text(),'encoding':'utf-8'}),text=True,capture_output=True,check=True)
-              elements.append({'path':name,'mode':'100644','type':'blob','sha':json.loads(result.stdout)['sha']})
-          pathlib.Path('validation-artifacts/source-manifest.json').write_text(json.dumps({'parent':os.environ['GITHUB_SHA'],'tree_elements':elements},indent=2)+'\n')
-          PY
-          tar -cf validation-artifacts/tested-source.tar src .github/scripts .github/workflows docs Cargo.toml Cargo.lock AGENTS.md
-          git diff --binary > validation-artifacts/implementation.patch
+          git rev-parse HEAD > validation-artifacts/tested-commit.txt
       - name: Daily preview using free provider and a local state copy only
         env:
           GH_TOKEN: ${{ github.token }}
@@ -92,8 +60,7 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL }}
           LLM_FREE_TIER_CONFIRMED: ${{ vars.LLM_FREE_TIER_CONFIRMED }}
-          GITHUB_ACTIONS: 'false'
-          GITHUB_OUTPUT: ${{ runner.temp }}/evening-output
+          PREVIEW_OUTPUT: ${{ runner.temp }}/evening-output
         shell: bash
         run: |
           set -euo pipefail
@@ -109,13 +76,14 @@ jobs:
           pathlib.Path('data/state.json').write_text(json.dumps(state))
           pathlib.Path('validation-artifacts/provenance.json').write_text(json.dumps({'source_state_blob':remote['sha'],'production_state_writes':0,'telegram_calls':0,'llm_provider':'Groq','paid_fallback':False},indent=2))
           PY
-          ./target/debug/weekly-gh-digest preview --daily --dry-run --llm > validation-artifacts/preview.log 2>&1
+          # This dry-run has no Telegram credentials and never writes remote state.
+          # Override the child process only; the normal hosted sender still requires its checkpoint.
+          env GITHUB_ACTIONS=false GITHUB_OUTPUT="$PREVIEW_OUTPUT" ./target/debug/weekly-gh-digest preview --daily --dry-run --llm > validation-artifacts/preview.log 2>&1
           python3 - <<'PY'
           import json, os, pathlib, shutil, sys
           sys.path.insert(0,'.github/scripts')
           import daily_run
-          output = pathlib.Path(os.environ['GITHUB_OUTPUT']).read_text()
-          paths = [line.split('=',1)[1] for line in output.splitlines() if line.startswith('run_directory=')]
+          paths = [line.split('=',1)[1] for line in pathlib.Path(os.environ['PREVIEW_OUTPUT']).read_text().splitlines() if line.startswith('run_directory=')]
           directory = pathlib.Path(paths[-1])
           digest = json.loads((directory/'ranking-input.json').read_text())
           daily_run.validate_preview(directory,digest['delivery_slot'])
