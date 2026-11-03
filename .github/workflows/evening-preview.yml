@@ -36,7 +36,17 @@ jobs:
       - name: Cache build
         uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
       - name: Integrate evening changes
-        run: python3 .github/scripts/prepare_evening.py
+        run: |
+          python3 .github/scripts/prepare_evening.py
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('src/providers/tests.rs')
+          text = p.read_text()
+          old = '    let mut state = State::default();\n    state.snapshots = entries.iter().map(|entry| entry.snapshot.clone()).collect();'
+          new = '    let mut state = State { snapshots: entries.iter().map(|entry| entry.snapshot.clone()).collect(), ..State::default() };'
+          assert text.count(old) == 1
+          p.write_text(text.replace(old,new))
+          PY
       - name: Format and check
         run: |
           cargo fmt --all
