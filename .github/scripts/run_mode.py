@@ -1,4 +1,4 @@
-"""Choose independent daily/weekly editions without implicit delivery permission."""
+"""Automate daily editions only; weekly commands require an explicit manual request."""
 import os
 import json
 from datetime import datetime, timezone
@@ -8,7 +8,7 @@ import daily_run
 import weekly_run
 
 COLLECTION_CRON = "17 */3 * * *"
-PUBLICATION_CRON = "0 7 * * 1"
+PUBLICATION_CRON = "0 7 * * 1"  # Retired; delayed events are collection-only.
 DAILY_CRON = "0 15 * * *"
 
 
@@ -25,7 +25,8 @@ def choose(env):
             return ("daily-digest", True, True) if daily_run.delivery_enabled(env) else ("daily-preview", False, False)
         if schedule != PUBLICATION_CRON:
             raise ValueError("Unknown schedule; refusing publication")
-        return ("digest", True, True) if enabled else ("preview", False, False)
+        # An old queued Monday event must not re-enable weekly publication.
+        return "collect", False, False
     if env.get("EVENT_NAME") != "workflow_dispatch":
         raise ValueError("Unsupported event")
     retry = env.get("RETRY_DELIVERY_RUN_ID", "")
@@ -68,21 +69,14 @@ def choose(env):
 
 def select_plan(env, now, weekly_receipts, daily_receipts, state):
     chosen = choose(env)
-    if env.get("EVENT_NAME") == "schedule" and env.get("EVENT_SCHEDULE") == DAILY_CRON:
+    if env.get("EVENT_NAME") == "schedule":
+        if env.get("EVENT_SCHEDULE") == PUBLICATION_CRON:
+            return chosen, "daily-only-retired-weekly-schedule"
+        # Both the evening deadline and collection ticks recover only daily work.
+        # No weekly ACK, preview receipt or backlog may select a weekly sender.
         return daily_run.recovery_mode(env, now, daily_receipts, state)
-    if (env.get("EVENT_NAME") == "schedule" and env.get("EVENT_SCHEDULE") == COLLECTION_CRON
-            and daily_run.delivery_enabled(env)):
-        # An overdue weekly synthesis must not starve the evening daily issue.
-        # Before 15:00 UTC, or after its ACK, normal weekly recovery still wins.
-        daily_choice, reason = daily_run.recovery_mode(env, now, daily_receipts, state)
-        if daily_choice[0] == "daily-digest":
-            return daily_choice, reason
-    if env.get("EVENT_NAME") == "schedule" or env.get("RECOVER_WEEKLY") == "true":
-        chosen, reason = weekly_run.recovery_mode(env, now, weekly_receipts, state)
-        if (chosen[0] == "collect" and env.get("EVENT_NAME") == "schedule"
-                and env.get("EVENT_SCHEDULE") == COLLECTION_CRON):
-            return daily_run.recovery_mode(env, now, daily_receipts, state)
-        return chosen, reason
+    if env.get("RECOVER_WEEKLY") == "true":
+        return weekly_run.recovery_mode(env, now, weekly_receipts, state)
     return chosen, "explicit-manual-request"
 
 

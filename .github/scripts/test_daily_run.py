@@ -1,4 +1,4 @@
-"""Independent gates and slots; daily work must not alter weekly recovery."""
+"""Independent gates and slots; automatic work is daily-only."""
 from datetime import datetime, timezone
 import unittest
 from unittest.mock import patch
@@ -63,13 +63,12 @@ class DailyRunTests(unittest.TestCase):
         enabled = {"DIGEST_DELIVERY_ENABLED": "true", "DIGEST_DAILY_DELIVERY_ENABLED": "true"}
         self.assertEqual(daily_run.recovery_mode(enabled, self.now, receipts, {})[0], ("daily-digest", True, True))
 
-    def test_weekly_recovery_still_takes_priority_on_collection_tick(self):
+    def test_collection_tick_only_recovers_daily_preview(self):
         env = {"EVENT_NAME": "schedule", "EVENT_SCHEDULE": run_mode.COLLECTION_CRON}
-        mode, _ = run_mode.select_plan(env, self.now, {}, {}, {})
-        self.assertEqual(mode, ("preview", False, False))
-        state = {"sent_slots": {weekly_run.slot(self.now): 42}}
-        mode, _ = run_mode.select_plan(env, self.now, {}, {}, state)
-        self.assertEqual(mode, ("daily-preview", False, False))
+        with patch.object(weekly_run, "recovery_mode", side_effect=AssertionError("automatic weekly recovery")):
+            for state in [{}, {"sent_slots": {weekly_run.slot(self.now): 42}}]:
+                mode, _ = run_mode.select_plan(env, self.now, {}, {}, state)
+                self.assertEqual(mode, ("daily-preview", False, False))
 
     def test_explicit_weekly_recovery_never_runs_daily(self):
         env = {"EVENT_NAME": "workflow_dispatch", "RECOVER_WEEKLY": "true"}
