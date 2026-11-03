@@ -1,0 +1,37 @@
+name: Evening digest validation
+
+on:
+  push:
+    branches: [feat/retained-daily-weekly-digests-2026-10-31]
+    paths: [.github/workflows/evening-preview.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: evening-digest-validation
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: github.ref == 'refs/heads/feat/retained-daily-weekly-digests-2026-10-31'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Export source without credentials or runtime state
+        run: |
+          mkdir -p validation-artifacts
+          git archive --format=tar HEAD > validation-artifacts/source.tar
+          git rev-parse HEAD > validation-artifacts/source-commit.txt
+      - name: Upload source baseline
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: evening-validation-${{ github.run_id }}
+          path: validation-artifacts
+          if-no-files-found: error
+          retention-days: 7
