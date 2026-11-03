@@ -1,15 +1,10 @@
 name: Evening digest validation
 
 on:
-  push:
-    branches: [feat/retained-daily-weekly-digests-2026-10-31]
-    paths:
-      - .github/workflows/evening-preview.yml
-      - .github/scripts/prepare_overview_evidence.py
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: evening-digest-validation
@@ -17,14 +12,14 @@ concurrency:
 
 jobs:
   validate:
-    if: github.ref == 'refs/heads/feat/retained-daily-weekly-digests-2026-10-31'
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/feat/retained-daily-weekly-digests-2026-10-31'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
       DIGEST_DELIVERY_ENABLED: 'false'
       DIGEST_DAILY_DELIVERY_ENABLED: 'false'
     steps:
-      - name: Checkout source
+      - name: Checkout committed source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
@@ -35,10 +30,6 @@ jobs:
           components: rustfmt, clippy
       - name: Cache build
         uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
-      - name: Integrate exact evidence change
-        run: |
-          python3 .github/scripts/prepare_overview_evidence.py
-          cargo fmt --all
       - name: Static checks
         run: |
           cargo fmt --all -- --check
@@ -55,25 +46,9 @@ jobs:
           python3 -m unittest discover -s .github/scripts -p 'test_*.py'
           cargo build --locked
           python3 .github/scripts/verify_publication_disabled.py ./target/debug/weekly-gh-digest
-      - name: Export tested source blobs without moving refs
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          set -euo pipefail
+          git diff --exit-code
           mkdir -p validation-artifacts
-          python3 - <<'PY'
-          import json, os, pathlib, subprocess
-          names = subprocess.check_output(['git','diff','--name-only','HEAD'],text=True).splitlines()
-          assert set(names) == {'src/providers.rs', 'src/providers/tests.rs'}
-          elements = []
-          for name in names:
-              path = pathlib.Path(name)
-              result = subprocess.run(['gh','api','--method','POST','repos/'+os.environ['GITHUB_REPOSITORY']+'/git/blobs','--input','-'],input=json.dumps({'content':path.read_text(),'encoding':'utf-8'}),text=True,capture_output=True,check=True)
-              elements.append({'path':name,'mode':'100644','type':'blob','sha':json.loads(result.stdout)['sha']})
-          pathlib.Path('validation-artifacts/source-manifest.json').write_text(json.dumps({'parent':os.environ['GITHUB_SHA'],'tree_elements':elements},indent=2)+'\n')
-          PY
-          git diff --binary > validation-artifacts/implementation.patch
+          git rev-parse HEAD > validation-artifacts/tested-commit.txt
       - name: Daily preview using free provider and a local state copy only
         env:
           GH_TOKEN: ${{ github.token }}

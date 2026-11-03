@@ -327,7 +327,23 @@ impl<'a> Groq<'a> {
             })
             .cloned()
             .collect::<Vec<_>>();
-        let overview_payload = source_overview_payload(&overview_entries);
+        let mut overview_payload = source_overview_payload(&overview_entries);
+        // Prefer the exact README quotation already checked for this card.
+        // The first README paragraph may be a table of contents, not evidence.
+        // Generated card prose is deliberately not treated as a primary source.
+        for item in overview_payload["entries"]
+            .as_array_mut()
+            .into_iter()
+            .flatten()
+        {
+            if let Some(quote) = item["repository"]
+                .as_str()
+                .and_then(|name| evidence_quotes.get(name))
+            {
+                item["evidence"] = json!(quote);
+                item["evidence_source"] = json!("verified_exact_readme_quote");
+            }
+        }
         if do_llm
             && configured
             && overview_payload["entries"]

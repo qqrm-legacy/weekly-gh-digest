@@ -697,6 +697,11 @@ fn daily_summary_uses_only_ready_cards_and_restart_reuses_checkpointed_analysis(
     .unwrap();
     assert_eq!(payload["entries"].as_array().unwrap().len(), 1);
     assert_eq!(payload["entries"][0]["repository"], "org/ready");
+    assert_eq!(payload["entries"][0]["evidence"], README_EVIDENCE);
+    assert_eq!(
+        payload["entries"][0]["evidence_source"],
+        "verified_exact_readme_quote"
+    );
     let mut restored: State = StateStore::new(&path).load().unwrap();
     assert!(crate::editions::cached_analysis(&restored, &entries[0].snapshot).is_some());
     assert!(restored.covered.is_empty());
