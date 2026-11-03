@@ -4,7 +4,7 @@ use reqwest::{StatusCode, header::HeaderMap};
 use serde_json::Value;
 use std::time::Duration;
 
-pub(super) const POLICY_VERSION: u32 = 3;
+pub(super) const POLICY_VERSION: u32 = 4;
 
 pub(super) fn retry_delay(
     status: StatusCode,
@@ -29,6 +29,22 @@ pub(super) fn retry_delay(
     Ok(Duration::from_secs(seconds.max(1)))
 }
 
+/// Conservative check for invented Latin product/integration names. This is
+/// not semantic entailment: lowercase names and unrelated claims need review.
+fn check_named_terms(text: &str, sources: &str) -> Result<()> {
+    const COMMON: &[&str] = &["README", "JSON", "HTTP", "HTTPS", "HTML", "API"];
+    for word in text.split(|ch: char| !ch.is_ascii_alphanumeric()) {
+        let named = word.chars().next().is_some_and(|ch| ch.is_ascii_uppercase());
+        if word.len() >= 4 && named && !COMMON.contains(&word) {
+            ensure!(
+                sources.contains(&word.to_ascii_lowercase()),
+                "named product or integration is absent from the supplied primary sources"
+            );
+        }
+    }
+    Ok(())
+}
+
 /// Language and observed terminology regressions only; not a factual audit.
 pub(super) fn validate_text(text: &str, sources: &str) -> Result<()> {
     let letters = text.chars().filter(|ch| ch.is_alphabetic()).count();
@@ -40,8 +56,9 @@ pub(super) fn validate_text(text: &str, sources: &str) -> Result<()> {
         cyrillic >= 10 && cyrillic * 4 >= letters,
         "editorial text must be Russian"
     );
-    let text = text.to_lowercase();
     let sources = sources.to_lowercase();
+    check_named_terms(text, &sources)?;
+    let text = text.to_lowercase();
     let multi_agent = sources.contains("multi-agent")
         || sources.contains("multi agent")
         || sources.contains("multiagent");
@@ -68,6 +85,22 @@ pub(super) fn validate_text(text: &str, sources: &str) -> Result<()> {
             && !sources.contains("offline")
             && !sources.contains("офлайн")),
         "local-first does not prove offline operation"
+    );
+    let normalized = sources
+        .split_whitespace()
+        .filter(|word| *word != ">")
+        .collect::<Vec<_>>()
+        .join(" ");
+    let broken_skill = [
+        "нарушить работу навыка",
+        "навык не работает",
+        "навык перестаёт работать",
+    ]
+    .iter()
+    .any(|claim| text.contains(claim));
+    ensure!(
+        !(normalized.contains("skill still works") && broken_skill),
+        "unavailable supplemental checklists do not mean the skill stops working"
     );
     Ok(())
 }
@@ -110,6 +143,21 @@ pub(super) fn require_synthesis(digest: &Value) -> Result<()> {
 mod tests {
     use super::*;
     use serde_json::json;
+
+    #[test]
+    fn invented_named_integrations_are_rejected() {
+        let text = "Плагины позволяют подключить Salesforce для работы с заявками клиентов.";
+        assert!(validate_text(text, "Plugins with Slack, Notion and Jira connectors.").is_err());
+        assert!(validate_text(text, "Plugins include a Salesforce connector.").is_ok());
+        assert!(validate_text("По README инструмент возвращает JSON с результатами анализа.", "A source analysis tool.").is_ok());
+    }
+
+    #[test]
+    fn_missing_supplement_does_not_turn_into_a_broken_skill() {
+        let source = "The skill still\n> works, but supplementary shared checklists are unavailable.";
+        assert!(validate_text("Отсутствие общих чек-листов может нарушить работу навыка.", source).is_err());
+        assert!(validate_text("Навык продолжает работать, но общие чек-листы недоступны.", source).is_ok());
+    }
 
     #[test]
     fn observed_translation_regressions_are_rejected_not_rewritten() {
