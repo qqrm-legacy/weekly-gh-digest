@@ -54,11 +54,11 @@ class RunModeTests(unittest.TestCase):
             self.assertEqual(choose({"EVENT_NAME": "schedule", "EVENT_SCHEDULE": COLLECTION_CRON,
                              "DIGEST_DELIVERY_ENABLED": enabled}), ("collect", False, False))
 
-    def test_monday_schedule_previews_until_review(self):
+    def test_retired_monday_schedule_only_collects_even_with_delivery_enabled(self):
         event = {"EVENT_NAME": "schedule", "EVENT_SCHEDULE": PUBLICATION_CRON}
-        self.assertEqual(choose(event), ("preview", False, False))
+        self.assertEqual(choose(event), ("collect", False, False))
         self.assertEqual(choose({**event, "DIGEST_DELIVERY_ENABLED": "true"}),
-                         ("digest", True, True))
+                         ("collect", False, False))
 
     def test_unknown_event_schedule_or_retry_fails_closed(self):
         for event in [{"EVENT_NAME": "push"}, {"EVENT_NAME": "schedule"},
@@ -72,7 +72,7 @@ class RunModeTests(unittest.TestCase):
     def test_workflow_schedules_and_secret_injection_match_the_gate(self):
         workflow = (Path(__file__).parents[1] / "workflows/run-bot.yml").read_text()
         self.assertEqual(re.findall(r"cron: '([^']+)'", workflow),
-                         [COLLECTION_CRON, PUBLICATION_CRON, DAILY_CRON])
+                         [COLLECTION_CRON, DAILY_CRON])
         for secret in ["TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "TELEGRAM_TECH_CHAT_ID"]:
             self.assertIn("steps.mode.outputs.send == 'true' && secrets." + secret, workflow)
 

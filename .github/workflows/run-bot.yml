@@ -2,10 +2,8 @@ name: Run Bot
 
 on:
   schedule:
-    # Every observation tick also recovers an unfinished weekly slot.
-    # Monday 07:00 UTC = 10:00 Moscow remains the nominal deadline.
+    # Collection ticks recover only the evening daily issue, never weekly work.
     - cron: '17 */3 * * *'
-    - cron: '0 7 * * 1'
     # Daily discoveries at 18:00 Moscow (UTC+3).
     - cron: '0 15 * * *'
   workflow_dispatch:
@@ -28,7 +26,7 @@ on:
         type: boolean
         default: false
       deliver_to_main_chat:
-        description: Send the weekly digest now (requires DIGEST_DELIVERY_ENABLED=true)
+        description: Send the selected digest now (requires its delivery gates)
         type: boolean
         default: false
       retry_delivery_run_id:

@@ -1,19 +1,9 @@
 name: Weekly Recovery
 
-# An independent best-effort wake-up throughout the week, including delayed runs.
-# Run Bot checks durable completion under its shared concurrency lock.
-# This watchdog can only request a preview, regardless of the publication gate.
+# Retained for explicit manual diagnostics only. No schedule or push trigger.
+# Run Bot checks durable completion; this workflow can only request a preview.
 on:
-  schedule:
-    - cron: '43 */6 * * *'
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - .github/scripts/run_mode.py
-      - .github/scripts/weekly_run.py
-      - .github/workflows/run-bot.yml
-      - .github/workflows/weekly-recovery.yml
 
 permissions:
   actions: write
