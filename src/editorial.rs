@@ -149,14 +149,33 @@ mod tests {
         let text = "Плагины позволяют подключить Salesforce для работы с заявками клиентов.";
         assert!(validate_text(text, "Plugins with Slack, Notion and Jira connectors.").is_err());
         assert!(validate_text(text, "Plugins include a Salesforce connector.").is_ok());
-        assert!(validate_text("По README инструмент возвращает JSON с результатами анализа.", "A source analysis tool.").is_ok());
+        assert!(
+            validate_text(
+                "По README инструмент возвращает JSON с результатами анализа.",
+                "A source analysis tool."
+            )
+            .is_ok()
+        );
     }
 
     #[test]
-    fn_missing_supplement_does_not_turn_into_a_broken_skill() {
-        let source = "The skill still\n> works, but supplementary shared checklists are unavailable.";
-        assert!(validate_text("Отсутствие общих чек-листов может нарушить работу навыка.", source).is_err());
-        assert!(validate_text("Навык продолжает работать, но общие чек-листы недоступны.", source).is_ok());
+    fn missing_supplement_does_not_turn_into_a_broken_skill() {
+        let source =
+            "The skill still\n> works, but supplementary shared checklists are unavailable.";
+        assert!(
+            validate_text(
+                "Отсутствие общих чек-листов может нарушить работу навыка.",
+                source
+            )
+            .is_err()
+        );
+        assert!(
+            validate_text(
+                "Навык продолжает работать, но общие чек-листы недоступны.",
+                source
+            )
+            .is_ok()
+        );
     }
 
     #[test]
