@@ -70,6 +70,13 @@ def select_plan(env, now, weekly_receipts, daily_receipts, state):
     chosen = choose(env)
     if env.get("EVENT_NAME") == "schedule" and env.get("EVENT_SCHEDULE") == DAILY_CRON:
         return daily_run.recovery_mode(env, now, daily_receipts, state)
+    if (env.get("EVENT_NAME") == "schedule" and env.get("EVENT_SCHEDULE") == COLLECTION_CRON
+            and daily_run.delivery_enabled(env)):
+        # An overdue weekly synthesis must not starve the evening daily issue.
+        # Before 15:00 UTC, or after its ACK, normal weekly recovery still wins.
+        daily_choice, reason = daily_run.recovery_mode(env, now, daily_receipts, state)
+        if daily_choice[0] == "daily-digest":
+            return daily_choice, reason
     if env.get("EVENT_NAME") == "schedule" or env.get("RECOVER_WEEKLY") == "true":
         chosen, reason = weekly_run.recovery_mode(env, now, weekly_receipts, state)
         if (chosen[0] == "collect" and env.get("EVENT_NAME") == "schedule"
