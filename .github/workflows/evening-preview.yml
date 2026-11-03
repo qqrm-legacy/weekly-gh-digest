@@ -5,6 +5,7 @@ on:
     branches: [feat/retained-daily-weekly-digests-2026-10-31]
     paths:
       - .github/workflows/evening-preview.yml
+      - .github/scripts/evening_preview.py
   workflow_dispatch:
 
 permissions:
@@ -60,48 +61,7 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL }}
           LLM_FREE_TIER_CONFIRMED: ${{ vars.LLM_FREE_TIER_CONFIRMED }}
-          PREVIEW_OUTPUT: ${{ runner.temp }}/evening-output
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          import json, pathlib, sys
-          sys.path.insert(0,'.github/scripts')
-          import remote_state
-          remote = remote_state.api('/contents/weekly-gh-digest.json?ref=delivery-state')
-          if remote is None:
-              raise RuntimeError('Authoritative observations unavailable')
-          state = json.loads(remote_state.decode(remote))
-          pathlib.Path('data').mkdir(exist_ok=True)
-          pathlib.Path('data/state.json').write_text(json.dumps(state))
-          pathlib.Path('validation-artifacts/provenance.json').write_text(json.dumps({'source_state_blob':remote['sha'],'production_state_writes':0,'telegram_calls':0,'llm_provider':'Groq','paid_fallback':False},indent=2))
-          PY
-          # This dry-run has no Telegram credentials and never writes remote state.
-          # Override the child process only; the normal hosted sender still requires its checkpoint.
-          env GITHUB_ACTIONS=false GITHUB_OUTPUT="$PREVIEW_OUTPUT" ./target/debug/weekly-gh-digest preview --daily --dry-run --llm > validation-artifacts/preview.log 2>&1
-          python3 - <<'PY'
-          import json, os, pathlib, shutil, sys
-          sys.path.insert(0,'.github/scripts')
-          import daily_run
-          paths = [line.split('=',1)[1] for line in pathlib.Path(os.environ['PREVIEW_OUTPUT']).read_text().splitlines() if line.startswith('run_directory=')]
-          directory = pathlib.Path(paths[-1])
-          digest = json.loads((directory/'ranking-input.json').read_text())
-          daily_run.validate_preview(directory,digest['delivery_slot'])
-          if not digest['entries'] or not digest.get('overview','').strip():
-              raise RuntimeError('A nonempty daily AI preview is required')
-          if not all(row.get('llm_used') for row in digest['entries']):
-              raise RuntimeError('Raw source fallback reached daily preview')
-          shutil.copytree(directory,'validation-artifacts/daily',dirs_exist_ok=True)
-          result = {'cards':len(digest['entries']),'overview':digest['overview'],'all_cards_ai':True,'llm_budget':digest['llm_budget'],'queue':digest['queue'],'telegram_calls':0,'production_state_writes':0}
-          pathlib.Path('validation-artifacts/report.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
-          print(json.dumps(result,ensure_ascii=False))
-          PY
-      - name: Preserve diagnostics after a failed preview
-        if: failure()
-        shell: bash
-        run: |
-          mkdir -p validation-artifacts
-          if [ -d data/runs ]; then cp -a data/runs validation-artifacts/failed-runs; fi
+        run: python3 .github/scripts/evening_preview.py
       - name: Upload validation and preview
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
