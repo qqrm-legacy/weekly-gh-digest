@@ -1,0 +1,67 @@
+name: Evening digest validation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: evening-digest-validation
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/feat/retained-daily-weekly-digests-2026-10-31'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DIGEST_DELIVERY_ENABLED: 'false'
+      DIGEST_DAILY_DELIVERY_ENABLED: 'false'
+    steps:
+      - name: Checkout committed source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8 # master
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+      - name: Cache build
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+      - name: Static checks
+        run: |
+          cargo fmt --all -- --check
+          cargo check --locked --tests --benches
+          cargo clippy --locked --all-targets --all-features -- -D warnings
+      - name: Install nextest
+        uses: taiki-e/install-action@8cca0918f8471c33515202b73f56ab27f2bed283 # v2.87.29
+        with:
+          tool: cargo-nextest
+          fallback: none
+      - name: Test schedules, state, language and publication boundaries
+        run: |
+          cargo nextest run --locked --no-tests=pass --no-fail-fast
+          python3 -m unittest discover -s .github/scripts -p 'test_*.py'
+          cargo build --locked
+          python3 .github/scripts/verify_publication_disabled.py ./target/debug/weekly-gh-digest
+          git diff --exit-code
+          mkdir -p validation-artifacts
+          git rev-parse HEAD > validation-artifacts/tested-commit.txt
+      - name: Daily preview using free provider and a local state copy only
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: ${{ vars.GROQ_MODEL }}
+          LLM_FREE_TIER_CONFIRMED: ${{ vars.LLM_FREE_TIER_CONFIRMED }}
+        run: python3 .github/scripts/evening_preview.py
+      - name: Upload validation and preview
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: evening-validation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: validation-artifacts
+          if-no-files-found: warn
+          retention-days: 14

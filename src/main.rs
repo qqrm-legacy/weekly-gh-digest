@@ -2,11 +2,15 @@ mod checkpoint;
 mod clock;
 mod coverage;
 mod delivery;
+mod editions;
+mod editorial;
 mod providers;
 mod schedule;
 mod sources;
 mod state_store;
 mod telegram_format;
+mod test_delivery;
+mod test_delivery_review;
 #[cfg(test)]
 mod test_support;
 
@@ -54,6 +58,8 @@ struct Snapshot {
 struct State {
     #[serde(default = "schema_one")]
     schema: u32,
+    #[serde(default)]
+    editions: editions::Ledger,
     #[serde(default)]
     snapshots: Vec<Snapshot>,
     #[serde(default)]
@@ -144,11 +150,10 @@ fn write_json(path: &Path, value: &impl Serialize) -> Result<()> {
 /// the run instead of silently starting from empty memory and reposting
 /// already published projects.
 fn read_state_strict() -> Result<State> {
-    let state: State = state_store::StateStore::new(&state_path()).load()?;
-    anyhow::ensure!(
-        state.uncertain_delivery.is_none(),
-        "unconfirmed Telegram delivery; operator reconciliation required"
-    );
+    let mut state: State = state_store::StateStore::new(&state_path()).load()?;
+    editions::migrate(&mut state)?;
+    // Collection and previews may continue during reconciliation. The sender
+    // independently refuses every side effect while delivery is uncertain.
     Ok(state)
 }
 
@@ -343,6 +348,7 @@ fn validate_digest_selection(run_dir: &Path, digest: &Value) -> Result<()> {
             ));
         }
     }
+    editions::validate_catalogue(digest, &selection)?;
     Ok(())
 }
 
@@ -371,7 +377,25 @@ fn make_digest(
     now: DateTime<Utc>,
     do_llm: bool,
 ) -> Result<(Value, String)> {
-    let (mut entries, selection_excluded) = select_candidates(current, &state.covered);
+    make_digest_for(
+        state,
+        current,
+        manifest,
+        now,
+        do_llm,
+        editions::Format::Weekly,
+    )
+}
+
+fn make_digest_for(
+    state: &mut State,
+    current: &[Snapshot],
+    manifest: &Value,
+    now: DateTime<Utc>,
+    do_llm: bool,
+    format: editions::Format,
+) -> Result<(Value, String)> {
+    let (mut entries, mut selection_excluded) = editions::select(current, state, format);
     let mut selected = entries
         .iter()
         .map(|entry| entry.snapshot.clone())
@@ -401,7 +425,7 @@ fn make_digest(
     let pool_rows: Vec<Value> = entries
         .iter()
         .map(|entry| {
-            let (_, metric, kind) = source_priority(&entry.snapshot);
+            let (_, metric, kind) = editions::priority(&entry.snapshot, format);
             json!({"full_name":entry.snapshot.full_name,"source_kind":kind,"ordering_metric":metric})
         })
         .collect();
@@ -418,7 +442,35 @@ fn make_digest(
         overview,
         complete,
         budget: llm_budget,
-    } = provider.enrich(&entries, state, do_llm, &runs_dir().join(stamp(now)))?;
+    } = if format == editions::Format::Daily && do_llm {
+        provider.enrich_daily(&entries, state, &runs_dir().join(stamp(now)))?
+    } else {
+        provider.enrich(&entries, state, do_llm, &runs_dir().join(stamp(now)))?
+    };
+    if format == editions::Format::Daily && do_llm {
+        let attempted = entries.len();
+        entries.retain(|entry| {
+            let ready = descriptions.contains_key(&entry.snapshot.full_name);
+            if !ready { selection_excluded.push(json!({"full_name":entry.snapshot.full_name,"reason":"AI explanation unavailable; retained for a later daily issue"})); }
+            ready
+        });
+        let ready_pool = pool_rows
+            .into_iter()
+            .filter(|row| {
+                row["full_name"]
+                    .as_str()
+                    .is_some_and(|name| descriptions.contains_key(name))
+            })
+            .collect::<Vec<_>>();
+        write_json(
+            &runs_dir().join(stamp(now)).join("selection.json"),
+            &json!({"pool":ready_pool,"excluded":selection_excluded,"covered_repositories_tracked":state.covered.len()}),
+        )?;
+        anyhow::ensure!(
+            attempted == 0 || !entries.is_empty(),
+            "no source-backed Russian explanations ready; findings remain queued"
+        );
+    }
     let entries_json: Vec<Value> = entries
         .iter()
         .enumerate()
@@ -461,8 +513,8 @@ fn make_digest(
                 "baseline": entry.baseline,
                 "delta": entry.delta,
                 "period": entry.period,
-                "source_kind": source_priority(&entry.snapshot).2,
-                "metric_captured_at": entry.snapshot.sources.iter().find(|source| source["type"].as_str() == Some(source_priority(&entry.snapshot).2)).and_then(|source| source["captured_at"].as_str()).unwrap_or(&entry.snapshot.captured_at),
+                "source_kind": editions::priority(&entry.snapshot, format).2,
+                "metric_captured_at": entry.snapshot.sources.iter().find(|source| source["type"].as_str() == Some(editions::priority(&entry.snapshot, format).2)).and_then(|source| source["captured_at"].as_str()).unwrap_or(&entry.snapshot.captured_at),
                 "trending_source": entry.trending_source,
                 "description": description,
                 "joke": jokes.get(id).cloned().unwrap_or_default(),
@@ -504,13 +556,15 @@ fn make_digest(
     let digest = json!({
         "format_version":3,
         "generated_at":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
-        "delivery_slot":slot_key_of(now),
+        "delivery_slot":format.slot(now),
+        "edition":format.name(),
         "period_start":(now - Duration::days(7)).to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
         "period_end":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
         "ranking":"Union of all retained observations within seven days; latest metadata and maximum observed rolling Trending metric with its original timestamp; first/last appearance retained. Only weekly selection excludes covered repositories and caps at 30. Weekly Trending peak +N first, daily peak +N next, then Search by latest total stars. Never sum overlapping rolling metrics; not a global census or a release feed.",
         "dedup_excluded":selection_excluded,
         "entries":entries_json,
-        "llm_used":complete,
+        "llm_used":complete || (format == editions::Format::Daily && do_llm && !entries.is_empty()),
+        "llm_requested":do_llm,
         "overview":overview,
         "trend_summary":trend_summary,
         "coverage":coverage_report,
@@ -624,6 +678,11 @@ fn issue_item(entry: &Value) -> String {
         "⭐ Всего: {stars} · метаданные: {metadata_at} · {language}\n{metric}"
     ));
     let description = entry["description"].as_str().unwrap_or("").trim();
+    let description = if entry["llm_used"] == false {
+        format!("Исходное описание, без редакторского разбора: {description}")
+    } else {
+        description.to_string()
+    };
     let joke_line = match entry["joke"].as_str().map(str::trim) {
         Some(joke) if !joke.is_empty() => {
             format!("\n😄 {}", render_markdown_v2_inline(joke))
@@ -632,7 +691,7 @@ fn issue_item(entry: &Value) -> String {
     };
     format!(
         "{title}\n{stats}\n{}{joke_line}",
-        render_markdown_v2_inline(description)
+        render_markdown_v2_inline(&description)
     )
 }
 
@@ -663,15 +722,40 @@ fn render_issue_messages(digest: &Value) -> Result<Vec<String>> {
         "новых проекта",
         "новых проектов",
     );
-    let header = format!(
-        "*🚀 GitHub — итоги недели*\nСрез: {when}\n{} с прошлого выпуска — всё опубликованное ранее не повторяется\n",
-        markdown_v2_escape(&counted)
-    );
+    let header = if digest["edition"] == "daily" {
+        format!(
+            "*🚀 GitHub — находки дня*\nСрез: {when}\n{} из очереди находок\n{}",
+            markdown_v2_escape(&counted),
+            markdown_v2_escape(
+                "Дневная публикация сохраняет проект для недельного обзора. Остаток очереди переносится."
+            )
+        )
+    } else if digest.get("edition").is_some() {
+        format!(
+            "*🚀 GitHub — итоги недели*\nСрез: {when}\n{} с подробным разбором\n{}",
+            markdown_v2_escape(&counted),
+            markdown_v2_escape(
+                "Включены находки дневных выпусков и недоставленный остаток. Остальные ссылки — в указателе выпуска."
+            )
+        )
+    } else {
+        format!(
+            "*🚀 GitHub — итоги недели*\nСрез: {when}\n{} с прошлого выпуска — всё опубликованное ранее не повторяется\n",
+            markdown_v2_escape(&counted)
+        )
+    };
+    let header = if env::var("DIGEST_TEST_ONLY").as_deref() == Ok("true") {
+        format!("*ТЕСТОВЫЙ ВЫПУСК — наблюдения с 31\\.10\\.2026*\n{header}")
+    } else {
+        header
+    };
     let footer = format!(
         "_{}_",
-        markdown_v2_escape(
+        markdown_v2_escape(if digest["edition"] == "daily" {
+            "Порядок: старейшая дата находки, затем дневной Trending, недельный Trending и поиск. Не вошедшие проекты остаются в очереди."
+        } else {
             "Порядок: недельный Trending, затем дневный Trending, затем новые репозитории. Полные данные — в артефакте прогона."
-        )
+        })
     );
     let continuation = "*🚀 GitHub — продолжение*";
     let mut chunks = Vec::new();
@@ -698,6 +782,7 @@ fn render_issue_messages(digest: &Value) -> Result<Vec<String>> {
         current.push_str(&footer);
     }
     chunks.push(current);
+    editions::append_catalogue(&mut chunks, digest)?;
     Ok(chunks)
 }
 
@@ -853,7 +938,12 @@ fn render_summary(digest: &Value) -> String {
                 .unwrap_or("Нет новых проектов.")
         });
     let mut text = format!(
-        "# GitHub — итоги недели\n\nПериод наблюдений: {} — {}\n\n{}\n",
+        "# GitHub — {}\n\nПериод обзора: {} — {}\n\n{}\n",
+        if digest["edition"] == "daily" {
+            "находки дня"
+        } else {
+            "итоги недели"
+        },
         digest["period_start"].as_str().unwrap_or("?"),
         digest["period_end"].as_str().unwrap_or("?"),
         overview
@@ -883,6 +973,7 @@ fn render_summary(digest: &Value) -> String {
             }
         }
     }
+    text.push_str(&editions::catalogue_markdown(digest));
     text
 }
 
@@ -894,6 +985,10 @@ fn telegram_send_to(chat: &str, text: &str) -> Result<i64> {
 /// reply to `reply_to` when given — the final issue summary references the
 /// batch message this way.
 fn telegram_send_reply_to(chat: &str, reply_to: Option<i64>, text: &str) -> Result<i64> {
+    test_delivery::guard(chat)?;
+    if env::var("DIGEST_TEST_ONLY").as_deref() == Ok("true") {
+        std::thread::sleep(StdDuration::from_millis(3100));
+    }
     telegram_format::validate_message(text, ISSUE_CHUNK_LIMIT)
         .context("refusing to send invalid emitted Telegram MarkdownV2")?;
     let token = env::var("TELEGRAM_BOT_TOKEN").context("TELEGRAM_BOT_TOKEN missing")?;
@@ -920,12 +1015,14 @@ fn telegram_send_reply_to(chat: &str, reply_to: Option<i64>, text: &str) -> Resu
             description.chars().take(200).collect::<String>()
         ));
     }
+    test_delivery::receipt(&resp["result"], text)?;
     resp["result"]["message_id"]
         .as_i64()
         .ok_or_else(|| anyhow!("Telegram sendMessage response omitted message_id"))
 }
 
 fn telegram_pin_in(chat: &str, message_id: i64) -> Result<()> {
+    test_delivery::guard(chat)?;
     let token = env::var("TELEGRAM_BOT_TOKEN").context("TELEGRAM_BOT_TOKEN missing")?;
     let http = client()?;
     let pinned: Value = http
@@ -1208,6 +1305,11 @@ fn tech_notice(text: &str) {
 /// manually released, or seeded from prior channel content) so no delivery
 /// path can ever repost them, then reindexes rank/total.
 fn trim_covered_entries(digest: &mut Value, state: &State) -> usize {
+    let format = if digest["edition"] == "daily" {
+        editions::Format::Daily
+    } else {
+        editions::Format::Weekly
+    };
     let Some(entries) = digest["entries"].as_array_mut() else {
         return 0;
     };
@@ -1215,7 +1317,7 @@ fn trim_covered_entries(digest: &mut Value, state: &State) -> usize {
     entries.retain(|entry| {
         entry["full_name"]
             .as_str()
-            .is_none_or(|name| !state.covered.contains_key(name))
+            .is_none_or(|name| !editions::was_published(state, format, name))
     });
     let total = entries.len();
     for (index, entry) in entries.iter_mut().enumerate() {
@@ -1247,10 +1349,6 @@ fn telegram_deliver_digest(
     let first_id = *ids
         .first()
         .ok_or_else(|| anyhow!("issue delivery produced no messages"))?;
-    if let Err(error) = telegram_pin(first_id) {
-        // Pinning is cosmetic; the issue is delivered regardless.
-        println!("Pin skipped: {error:#}");
-    }
     // Финальный итог — reply'ем на сообщение с батчем: он «ссылается» на
     // выпуск прямо в интерфейсе Telegram.
     let final_text = final_issue_text(digest);
@@ -1266,14 +1364,7 @@ fn telegram_deliver_digest(
             chunks.join("\n\n")
         ),
     )?;
-    for entry in digest["entries"].as_array().into_iter().flatten() {
-        if let Some(name) = entry["full_name"].as_str() {
-            state
-                .covered
-                .entry(name.to_string())
-                .or_insert_with(|| day.to_string());
-        }
-    }
+    editions::acknowledge(state, digest, day)?;
     state.sent_digests.insert(digest_id.to_string(), first_id);
     state.sent_slots.insert(slot_key.to_string(), first_id);
     state
@@ -1281,6 +1372,10 @@ fn telegram_deliver_digest(
         .remove(&format!("{chat}:{digest_id}"));
     state.pending_digests.remove(digest_id);
     write_json(&state_path(), state)?;
+    // Pinning is cosmetic and must follow complete, durable delivery.
+    if let Err(error) = telegram_pin(first_id) {
+        println!("Pin skipped: {error:#}");
+    }
     Ok(())
 }
 
@@ -1289,87 +1384,39 @@ fn slot_key_of(moment: DateTime<Utc>) -> String {
     schedule::slot(moment)
 }
 
-/// Completes delivery of earlier issues that passed the credential gate but
-/// were interrupted before reaching the main chat, then drops pending
-/// digests that have stayed unfinished for two weeks.
+/// Resume the frozen weekly payload even when its original slot is overdue.
 fn deliver_pending_digests(state: &mut State, now: DateTime<Utc>) -> Result<()> {
-    let today = now.format("%Y-%m-%d").to_string();
-    let pending: Vec<(String, Value)> = state
-        .pending_digests
-        .iter()
-        .map(|(id, digest)| (id.clone(), digest.clone()))
-        .collect();
-    for (id, mut digest) in pending {
-        let dropped = trim_covered_entries(&mut digest, state);
-        if digest["entries"]
-            .as_array()
-            .is_none_or(|entries| entries.is_empty())
-        {
-            state.pending_digests.remove(&id);
-            write_json(&state_path(), state)?;
-            continue;
-        }
-        if dropped > 0 {
-            write_json(&state_path(), state)?;
-        }
-        let generated = digest["generated_at"]
-            .as_str()
-            .and_then(|value| DateTime::parse_from_rfc3339(value).ok())
-            .map(|time| time.with_timezone(&Utc));
-        let day = generated
-            .map(|time| time.format("%Y-%m-%d").to_string())
-            .unwrap_or_else(|| today.to_string());
-        let slot_key = generated.map(slot_key_of).unwrap_or_else(|| day.clone());
-        anyhow::ensure!(
-            digest["delivery_slot"].as_str() == Some(slot_key.as_str())
-                && slot_key == slot_key_of(now),
-            "pending digest belongs to a legacy or earlier week; reconciliation required"
-        );
-        if state.sent_slots.contains_key(&slot_key) {
-            println!("Slot {slot_key} already delivered an issue; dropping pending {id}");
-            state.pending_digests.remove(&id);
-            write_json(&state_path(), state)?;
-            continue;
-        }
-        telegram_deliver_digest(&digest, &id, &day, &slot_key, state)?;
-        println!("Completed delayed delivery of digest {id} to the main chat.");
-    }
-    let cutoff = chrono::NaiveDate::parse_from_str(&today, "%Y-%m-%d")
-        .ok()
-        .and_then(|date| date.checked_sub_days(chrono::Days::new(14)));
-    if let Some(cutoff) = cutoff {
-        let stale: Vec<String> = state
-            .pending_digests
-            .keys()
-            .filter_map(|id| chrono::NaiveDate::parse_from_str(id.get(0..8)?, "%Y%m%d").ok())
-            .filter(|date| *date < cutoff)
-            .map(|date| date.format("%Y%m%d").to_string())
-            .collect();
-        for prefix in stale {
-            let doomed: Vec<String> = state
-                .pending_digests
-                .keys()
-                .filter(|id| id.starts_with(&prefix))
-                .cloned()
-                .collect();
-            for id in doomed {
-                state.pending_digests.remove(&id);
-            }
-        }
-    }
-    Ok(())
+    editions::resume(state, now, editions::Format::Weekly)
 }
 
 fn main() -> Result<()> {
-    checkpoint::require_hosted_configuration()?;
     let args: Vec<String> = env::args().skip(1).collect();
     let command = args.first().map(String::as_str).unwrap_or("preview");
+    if command == "preview-retained" {
+        return editions::preview_retained(&args);
+    }
+    checkpoint::require_hosted_configuration()?;
+    let format = if args.iter().any(|arg| arg == "--daily") {
+        editions::Format::Daily
+    } else {
+        editions::Format::Weekly
+    };
     let dry = args.iter().any(|x| x == "--dry-run");
     if command == "debug-delivery" || (matches!(command, "digest" | "debug") && !dry) {
         anyhow::ensure!(
             schedule::delivery_enabled(env::var("DIGEST_DELIVERY_ENABLED").ok().as_deref()),
             "publication is disabled pending preview review"
         );
+        anyhow::ensure!(
+            format != editions::Format::Daily
+                || schedule::delivery_enabled(
+                    env::var("DIGEST_DAILY_DELIVERY_ENABLED").ok().as_deref()
+                ),
+            "daily publication is disabled pending preview review"
+        );
+    }
+    if command == "test-summary" {
+        return test_delivery_review::run(&args);
     }
     if command == "preview-stored" {
         let run_dir = args
@@ -1420,6 +1467,13 @@ fn main() -> Result<()> {
             serde_json::from_slice(&fs::read(run_dir.join("ranking-input.json"))?)
                 .context("debug artifact has invalid ranking-input.json")?;
         validate_digest_selection(&run_dir, &digest)?;
+        anyhow::ensure!(
+            editions::Format::from_digest(&digest)? != editions::Format::Daily
+                || schedule::delivery_enabled(
+                    env::var("DIGEST_DAILY_DELIVERY_ENABLED").ok().as_deref()
+                ),
+            "daily publication is disabled pending preview review"
+        );
         if digest["entries"]
             .as_array()
             .is_none_or(|entries| entries.is_empty())
@@ -1468,10 +1522,31 @@ fn main() -> Result<()> {
         return Ok(());
     }
     let day = now.format("%Y-%m-%d").to_string();
-    let digest_id = stamp(now);
-    let slot_key = slot_key_of(now);
+    let digest_id = format!("{}-{}", format.name(), stamp(now));
+    let slot_key = format.slot(now);
     if command == "digest" && !dry {
-        deliver_pending_digests(&mut state, now)?;
+        if format == editions::Format::Weekly {
+            deliver_pending_digests(&mut state, now)?;
+        } else {
+            editions::resume(&mut state, now, format)?;
+        }
+    }
+    // Keep collecting on retries, but do not spend provider requests for a
+    // publication slot that already has a durable acknowledgement.
+    if command == "digest" && !dry && state.sent_slots.contains_key(&slot_key) {
+        if let Some(output) = env::var_os("GITHUB_OUTPUT") {
+            use std::io::Write;
+            let mut file = fs::OpenOptions::new().append(true).open(output)?;
+            writeln!(file, "delivery_skipped=true")?;
+        }
+        write_json(
+            &gathered.dir.join("delivery-skipped.json"),
+            &json!({"slot":slot_key,"already_delivered":true,"collection_retained":true}),
+        )?;
+        println!(
+            "Slot {slot_key} already delivered; collection retained, no provider calls or sends"
+        );
+        return Ok(());
     }
     let weekly = schedule::candidates(&state, now);
     write_json(&gathered.dir.join("weekly-observations.json"), &weekly)?;
@@ -1511,9 +1586,24 @@ fn main() -> Result<()> {
             "note":"Historical observations are not backfilled; source failures/caps remain in each run manifest."
         }),
     )?;
-    let (mut digest, output) = make_digest(&mut state, &weekly, &gathered.manifest, now, llm)?;
+    let candidates = editions::pending(&state, now, format);
+    let (mut digest, output) = if format == editions::Format::Weekly {
+        make_digest(&mut state, &candidates, &gathered.manifest, now, llm)?
+    } else {
+        make_digest_for(
+            &mut state,
+            &candidates,
+            &gathered.manifest,
+            now,
+            llm,
+            format,
+        )?
+    };
+    editions::decorate(&mut digest, &candidates, now, format, &gathered.dir)?;
     record_coverage_summary(&digest["coverage"])?;
     save_preview_files(&gathered.dir, &digest, command == "preview" && llm)?;
+    editions::remember_analyses(&mut state, &digest);
+    write_json(&state_path(), &state)?;
     if matches!(command, "digest" | "debug") && !dry {
         println!("Prepared digest preview: {}", gathered.dir.display());
     } else {
@@ -1646,6 +1736,7 @@ fn deliver_new_digest(
     day: &str,
     slot_key: &str,
 ) -> Result<()> {
+    editions::Format::from_digest(digest)?;
     if state.sent_digests.contains_key(digest_id) {
         println!("Digest {digest_id} was already sent to the main chat; skipping");
         return Ok(());
@@ -1677,6 +1768,7 @@ fn deliver_new_digest(
         println!("No fresh candidates after deduplication; main chat stays quiet");
         return Ok(());
     }
+    editorial::require_synthesis(digest)?;
     // The deterministic credential scan blocks unsafe publication text.
     let _ = advisory_audit(digest, state, run_dir)?;
     state

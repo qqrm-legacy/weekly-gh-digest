@@ -65,7 +65,7 @@ def recovery_mode(env, now, receipts, state):
     return ("preview", False, env.get("PREVIEW_WITH_LLM") == "true"), "weekly-preview-due"
 
 
-def validate_preview(directory, expected_slot):
+def validate_preview(directory, expected_slot, slot_resolver=slot):
     directory = Path(directory)
     for name in ("summary.md", "digest.md", "selection.json", "coverage.json",
                  "weekly-window.json", "weekly-source-manifest.json", "manifest.json"):
@@ -74,7 +74,7 @@ def validate_preview(directory, expected_slot):
     digest = read_object(directory / "ranking-input.json")
     generated = datetime.fromisoformat(digest["generated_at"].replace("Z", "+00:00"))
     if (digest.get("format_version") != 3 or digest.get("delivery_slot") != expected_slot
-            or slot(generated) != expected_slot):
+            or slot_resolver(generated) != expected_slot):
         raise ValueError("Preview belongs to a different weekly slot")
     entries = digest.get("entries")
     if not isinstance(entries, list) or len(entries) > 30:

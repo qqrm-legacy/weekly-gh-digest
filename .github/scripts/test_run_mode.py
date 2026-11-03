@@ -7,7 +7,7 @@ import subprocess
 import tempfile
 import json
 
-from run_mode import COLLECTION_CRON, PUBLICATION_CRON, choose
+from run_mode import COLLECTION_CRON, PUBLICATION_CRON, DAILY_CRON, choose
 from test_state_workflow import step_script
 
 
@@ -72,7 +72,7 @@ class RunModeTests(unittest.TestCase):
     def test_workflow_schedules_and_secret_injection_match_the_gate(self):
         workflow = (Path(__file__).parents[1] / "workflows/run-bot.yml").read_text()
         self.assertEqual(re.findall(r"cron: '([^']+)'", workflow),
-                         [COLLECTION_CRON, PUBLICATION_CRON])
+                         [COLLECTION_CRON, PUBLICATION_CRON, DAILY_CRON])
         for secret in ["TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "TELEGRAM_TECH_CHAT_ID"]:
             self.assertIn("steps.mode.outputs.send == 'true' && secrets." + secret, workflow)
 
