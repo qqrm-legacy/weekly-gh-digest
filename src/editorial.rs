@@ -34,7 +34,10 @@ pub(super) fn retry_delay(
 fn check_named_terms(text: &str, sources: &str) -> Result<()> {
     const COMMON: &[&str] = &["README", "JSON", "HTTP", "HTTPS", "HTML", "API"];
     for word in text.split(|ch: char| !ch.is_ascii_alphanumeric()) {
-        let named = word.chars().next().is_some_and(|ch| ch.is_ascii_uppercase());
+        let named = word
+            .chars()
+            .next()
+            .is_some_and(|ch| ch.is_ascii_uppercase());
         if word.len() >= 4 && named && !COMMON.contains(&word) {
             ensure!(
                 sources.contains(&word.to_ascii_lowercase()),
