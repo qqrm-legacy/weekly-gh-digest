@@ -19,13 +19,15 @@ no timer and no push-triggered dispatch.
 
 ## What readers receive
 
-The daily format contains up to 12 concise, validated Russian AI explanations.
-Each card has a linked repository name, roughly three or four substantive sentences
-(usually 350–550 characters, at most 650), and a compact line
-with a language hashtag and available star metrics. Humor is optional; there is no
-issue synopsis or separate final message. Source and capture details remain in
+The daily format contains up to 12 substantive, validated Russian AI mini-reviews.
+Each card has a linked repository name, two or three short paragraphs
+(usually 800–1200 characters, at most 1600), and a compact line
+with a language hashtag and available star metrics. Reviews explain the task,
+mechanism, useful capabilities, practical application, and documented requirements
+or limits. Paragraph breaks are preserved; sparse sources need no padding.
+Humor is optional; there is no issue synopsis or separate final message. Source and capture details remain in
 artifacts rather than publication text. A daily publication slot may contain several Telegram messages; it
-is one issue, not one Telegram message. Existing provider caps, editorial checks,
+is one issue, not one Telegram message. Existing provider request caps, editorial checks,
 retry handling and refusal to send raw description fallbacks remain unchanged.
 
 The retired automatic weekly format offered up to 30 detailed cards plus an

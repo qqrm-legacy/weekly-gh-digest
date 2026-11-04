@@ -138,10 +138,12 @@ issue synopsis or separate summary request. Completed analyses are checkpointed
 individually and reused when
 sources and editorial policy match. Weekly eligibility remains independent.
 
-Explanations normally use three or four sentences and 350–550 characters (at most
-650) to explain the task, mechanism or distinction, practical use, and any material
-documented limit. Useful details are preserved; sparse sources need no padding. Humor is optional and project-specific;
-language is rendered as a hashtag. Selection provenance remains in artifacts. Language, Latin product-name provenance and known
+Mini-reviews normally use two or three short paragraphs and 800–1200 characters
+(at most 1600) to explain the task, user-facing result, mechanism, two or three
+useful capabilities or distinctions, practical use, and material documented
+requirements or limits. Paragraph breaks and useful details are preserved; each
+sentence adds information, and sparse sources need no padding. Humor is optional
+and project-specific; language is rendered as a hashtag. Selection provenance remains in artifacts. Language, Latin product-name provenance and known
 terminology regression checks are conservative heuristics, not a complete factual
 audit. They can defer valid text and cannot detect all unsupported claims.
 
