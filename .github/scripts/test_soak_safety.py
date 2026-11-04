@@ -7,9 +7,19 @@ import unittest
 from unittest.mock import patch
 
 import soak_test
+import soak_editorial
+import soak_reviewed
 
 
 class SoakSafetyTests(unittest.TestCase):
+    def test_retired_summary_commands_never_resolve_a_chat_or_send(self):
+        with patch('soak_test.preflight') as preflight, patch('soak_test.telegram') as telegram:
+            for script in (soak_editorial, soak_reviewed):
+                with self.subTest(script=script.__name__), self.assertRaisesRegex(RuntimeError, 'retired'):
+                    script.main()
+            preflight.assert_not_called()
+            telegram.assert_not_called()
+
     def env(self):
         return {'TELEGRAM_BOT_TOKEN':'fixture', 'TELEGRAM_TECH_CHAT_ID':'@test',
                 'PRODUCTION_CHAT_ID':'@production', 'GROQ_API_KEY':'fixture',

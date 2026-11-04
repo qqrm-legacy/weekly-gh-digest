@@ -75,7 +75,7 @@ struct State {
     llm_daily_requests: BTreeMap<String, usize>,
     #[serde(default)]
     delivery_progress: BTreeMap<String, DeliveryProgress>,
-    /// Final issue message (reply to the batch) per digest id.
+    /// Legacy summary receipts, retained for compatibility with saved state.
     #[serde(default)]
     overview_ids: BTreeMap<String, i64>,
     #[serde(default)]
@@ -439,7 +439,6 @@ fn make_digest_for(
         descriptions,
         jokes,
         evidence_quotes,
-        overview,
         complete,
         budget: llm_budget,
     } = if format == editions::Format::Daily && do_llm {
@@ -565,7 +564,6 @@ fn make_digest_for(
         "entries":entries_json,
         "llm_used":complete || (format == editions::Format::Daily && do_llm && !entries.is_empty()),
         "llm_requested":do_llm,
-        "overview":overview,
         "trend_summary":trend_summary,
         "coverage":coverage_report,
         "joke":"",
@@ -638,11 +636,33 @@ fn ru_count(n: usize, one: &str, few: &str, many: &str) -> String {
     format!("{n} {word}")
 }
 
-fn observation_timestamp(value: Option<&str>) -> String {
-    value
-        .and_then(parse_time)
-        .map(|time| time.format("%Y-%m-%d %H:%M:%S UTC").to_string())
-        .unwrap_or_else(|| "дата неизвестна".to_string())
+fn language_hashtag(language: &str) -> Option<String> {
+    let language = match language.trim() {
+        "C++" => "CPP",
+        "C#" => "CSharp",
+        "F#" => "FSharp",
+        "Objective-C++" => "ObjectiveCPP",
+        value => value,
+    };
+    let tag: String = language
+        .chars()
+        .filter(|ch| ch.is_alphanumeric() || *ch == '_')
+        .collect();
+    tag.chars()
+        .any(char::is_alphabetic)
+        .then(|| format!("#{tag}"))
+}
+
+fn grouped_count(value: i64) -> String {
+    let digits = value.to_string();
+    let mut text = String::new();
+    for (index, digit) in digits.chars().enumerate() {
+        if index > 0 && (digits.len() - index).is_multiple_of(3) {
+            text.push(' ');
+        }
+        text.push(digit);
+    }
+    text
 }
 
 /// Render the complete source-backed card; never remove its description to
@@ -650,12 +670,6 @@ fn observation_timestamp(value: Option<&str>) -> String {
 fn issue_item(entry: &Value) -> String {
     let id = entry["full_name"].as_str().unwrap_or("unknown/repository");
     let snapshot = &entry["latest"];
-    let language = snapshot["language"].as_str().unwrap_or("язык не указан");
-    let delta = entry["delta"].as_i64().unwrap_or_default();
-    let stars = snapshot["stars"]
-        .as_i64()
-        .map(|value| value.to_string())
-        .unwrap_or_else(|| "нет данных".to_string());
     let title = project_github_url(id)
         .map(|url| {
             format!(
@@ -665,34 +679,42 @@ fn issue_item(entry: &Value) -> String {
             )
         })
         .unwrap_or_else(|| markdown_v2_escape(id));
-    let metadata_at = observation_timestamp(snapshot["captured_at"].as_str());
-    let metric_at = observation_timestamp(entry["metric_captured_at"].as_str());
-    let metric = match entry["source_kind"].as_str() {
-        Some("trending_daily") => {
-            format!("Trending: макс. +{delta} за день · срез метрики: {metric_at}")
+    let mut stats = Vec::new();
+    if let Some(tag) = snapshot["language"].as_str().and_then(language_hashtag) {
+        stats.push(tag);
+    }
+    if let Some(stars) = snapshot["stars"].as_i64().filter(|value| *value >= 0) {
+        stats.push(format!("⭐ {}", grouped_count(stars)));
+    }
+    if let Some(delta) = entry["delta"].as_i64().filter(|value| *value > 0) {
+        let period = match entry["source_kind"].as_str() {
+            Some("trending_daily") => Some("день"),
+            Some("trending_weekly") => Some("неделю"),
+            _ => None,
+        };
+        if let Some(period) = period {
+            stats.push(format!(
+                "Trending: макс. +{} за {period}",
+                grouped_count(delta)
+            ));
         }
-        Some("new_repo") => "Новый репозиторий из поиска".to_string(),
-        _ => format!("Trending: макс. +{delta} за неделю · срез метрики: {metric_at}"),
-    };
-    let stats = markdown_v2_escape(&format!(
-        "⭐ Всего: {stars} · метаданные: {metadata_at} · {language}\n{metric}"
-    ));
+    }
     let description = entry["description"].as_str().unwrap_or("").trim();
-    let description = if entry["llm_used"] == false {
-        format!("Исходное описание, без редакторского разбора: {description}")
-    } else {
-        description.to_string()
-    };
     let joke_line = match entry["joke"].as_str().map(str::trim) {
         Some(joke) if !joke.is_empty() => {
-            format!("\n😄 {}", render_markdown_v2_inline(joke))
+            format!("\n{}", render_markdown_v2_inline(joke))
         }
         _ => String::new(),
     };
-    format!(
-        "{title}\n{stats}\n{}{joke_line}",
-        render_markdown_v2_inline(&description)
-    )
+    let mut card = format!(
+        "{title}\n{}{joke_line}",
+        render_markdown_v2_inline(description)
+    );
+    if !stats.is_empty() {
+        card.push('\n');
+        card.push_str(&markdown_v2_escape(&stats.join(" · ")));
+    }
+    card
 }
 
 /// Preserve complete cards and split only between projects. A card that cannot
@@ -711,53 +733,29 @@ fn render_issue_messages(digest: &Value) -> Result<Vec<String>> {
         .map(|time| {
             markdown_v2_escape(
                 &(time.with_timezone(&Utc) + Duration::hours(3))
-                    .format("%d.%m %H:%M МСК")
+                    .format("%d.%m.%Y")
                     .to_string(),
             )
         })
         .unwrap_or_else(|| markdown_v2_escape(generated));
-    let counted = ru_count(
-        entries.len(),
-        "новый проект",
-        "новых проекта",
-        "новых проектов",
-    );
-    let header = if digest["edition"] == "daily" {
-        format!(
-            "*🚀 GitHub — находки дня*\nСрез: {when}\n{} из очереди находок\n{}",
-            markdown_v2_escape(&counted),
-            markdown_v2_escape(
-                "Дневная публикация сохраняет проект для недельного обзора. Остаток очереди переносится."
-            )
-        )
-    } else if digest.get("edition").is_some() {
-        format!(
-            "*🚀 GitHub — итоги недели*\nСрез: {when}\n{} с подробным разбором\n{}",
-            markdown_v2_escape(&counted),
-            markdown_v2_escape(
-                "Включены находки дневных выпусков и недоставленный остаток. Остальные ссылки — в указателе выпуска."
-            )
-        )
+    let counted = ru_count(entries.len(), "проект", "проекта", "проектов");
+    let edition = if digest["edition"] == "daily" {
+        "находки дня"
     } else {
-        format!(
-            "*🚀 GitHub — итоги недели*\nСрез: {when}\n{} с прошлого выпуска — всё опубликованное ранее не повторяется\n",
-            markdown_v2_escape(&counted)
-        )
+        "подборка недели"
     };
+    let date_and_count = if when.is_empty() {
+        markdown_v2_escape(&counted)
+    } else {
+        format!("{when} · {}", markdown_v2_escape(&counted))
+    };
+    let header = format!("*GitHub — {edition}*\n{date_and_count}");
     let header = if env::var("DIGEST_TEST_ONLY").as_deref() == Ok("true") {
         format!("*ТЕСТОВЫЙ ВЫПУСК — наблюдения с 31\\.10\\.2026*\n{header}")
     } else {
         header
     };
-    let footer = format!(
-        "_{}_",
-        markdown_v2_escape(if digest["edition"] == "daily" {
-            "Порядок: старейшая дата находки, затем дневной Trending, недельный Trending и поиск. Не вошедшие проекты остаются в очереди."
-        } else {
-            "Порядок: недельный Trending, затем дневный Trending, затем новые репозитории. Полные данные — в артефакте прогона."
-        })
-    );
-    let continuation = "*🚀 GitHub — продолжение*";
+    let continuation = "*GitHub — продолжение*";
     let mut chunks = Vec::new();
     let mut current = header.trim_end().to_string();
     for entry in entries {
@@ -773,13 +771,6 @@ fn render_issue_messages(digest: &Value) -> Result<Vec<String>> {
         }
         current.push_str("\n\n");
         current.push_str(&item);
-    }
-    if current.encode_utf16().count() + 2 + footer.encode_utf16().count() > ISSUE_CHUNK_LIMIT {
-        chunks.push(current);
-        current = footer;
-    } else {
-        current.push_str("\n\n");
-        current.push_str(&footer);
     }
     chunks.push(current);
     editions::append_catalogue(&mut chunks, digest)?;
@@ -927,26 +918,17 @@ fn record_coverage_summary(report: &Value) -> Result<()> {
     Ok(())
 }
 
-/// Human-readable artifact containing the actual overview and source-backed cards.
+/// Human-readable source audit; the outgoing messages live in issue.md.
 fn render_summary(digest: &Value) -> String {
-    let overview = digest["overview"]
-        .as_str()
-        .filter(|text| !text.trim().is_empty())
-        .unwrap_or_else(|| {
-            digest["trend_summary"]
-                .as_str()
-                .unwrap_or("Нет новых проектов.")
-        });
     let mut text = format!(
-        "# GitHub — {}\n\nПериод обзора: {} — {}\n\n{}\n",
+        "# GitHub — {}\n\nПериод обзора: {} — {}\n",
         if digest["edition"] == "daily" {
             "находки дня"
         } else {
             "итоги недели"
         },
         digest["period_start"].as_str().unwrap_or("?"),
-        digest["period_end"].as_str().unwrap_or("?"),
-        overview
+        digest["period_end"].as_str().unwrap_or("?")
     );
     text.push_str(&format!("\n{}\n", coverage_notice(digest)));
     if let Some(entries) = digest["entries"].as_array() {
@@ -982,8 +964,7 @@ fn telegram_send_to(chat: &str, text: &str) -> Result<i64> {
 }
 
 /// Same as `telegram_send_to`, but the message is threaded as a Telegram
-/// reply to `reply_to` when given — the final issue summary references the
-/// batch message this way.
+/// reply to `reply_to` when given.
 fn telegram_send_reply_to(chat: &str, reply_to: Option<i64>, text: &str) -> Result<i64> {
     test_delivery::guard(chat)?;
     if env::var("DIGEST_TEST_ONLY").as_deref() == Ok("true") {
@@ -1107,7 +1088,7 @@ fn credential_markers(text: &str) -> Vec<&'static str> {
     matches
 }
 
-/// Validate all actual payloads, including the final overview, before the
+/// Validate every actual payload before the
 /// caller accepts a preview or starts sending the first project chunk.
 fn digest_publication_text(digest: &Value) -> Result<Vec<String>> {
     if digest["format_version"] != 3 {
@@ -1134,73 +1115,7 @@ fn digest_publication_text(digest: &Value) -> Result<Vec<String>> {
         telegram_format::validate_message(chunk, ISSUE_CHUNK_LIMIT)
             .with_context(|| format!("invalid rendered publication chunk {}", index + 1))?;
     }
-    telegram_format::validate_message(&final_issue_text(digest), ISSUE_CHUNK_LIMIT)
-        .context("invalid rendered publication overview")?;
     Ok(chunks)
-}
-
-/// Финальное сообщение выпуска: LLM-саммаризация дня плюс детерминированный
-/// группированный список ссылок на все проекты — удобно перейти к любому.
-/// Уходит reply'ем на сообщение с батчем.
-fn final_issue_text(digest: &Value) -> String {
-    let entries = digest["entries"].as_array();
-    let body = match digest["overview"]
-        .as_str()
-        .map(str::trim)
-        .filter(|text| !text.is_empty())
-    {
-        Some(overview) => render_markdown_v2_inline(overview),
-        None => {
-            let top: Vec<String> = entries
-                .unwrap_or(&Vec::new())
-                .iter()
-                .take(3)
-                .map(|entry| {
-                    let name = entry["full_name"].as_str().unwrap_or("?");
-                    let delta = entry["delta"].as_i64().unwrap_or_default();
-                    markdown_v2_escape(&format!("{name} (+{delta})"))
-                })
-                .collect();
-            if top.is_empty() {
-                markdown_v2_escape("Выпуск без новых проектов.")
-            } else {
-                format!("Главное в выпуске: {}", top.join(", "))
-            }
-        }
-    };
-    let links: Vec<String> = entries
-        .unwrap_or(&Vec::new())
-        .iter()
-        .filter_map(|entry| {
-            let name = entry["full_name"].as_str()?;
-            let url = project_github_url(name)?;
-            Some(format!(
-                "• [{}]({})",
-                markdown_v2_escape(name),
-                markdown_v2_url_escape(&url)
-            ))
-        })
-        .collect();
-    let link_block = if links.is_empty() {
-        String::new()
-    } else {
-        format!(
-            "\n\n{}\n{}",
-            markdown_v2_escape("Ссылки выпуска:"),
-            links.join("\n")
-        )
-    };
-    let body = format!("{body}\n\n{}", markdown_v2_escape(&coverage_notice(digest)));
-    let full = format!("*📌 Итог выпуска*\n{body}{link_block}");
-    if full.encode_utf16().count() <= ISSUE_CHUNK_LIMIT {
-        full
-    } else {
-        // The cards already contain every link; omit only the duplicate index.
-        format!(
-            "*📌 Итог выпуска*\n{body}\n\n{}",
-            markdown_v2_escape("Все ссылки — в карточках выпуска.")
-        )
-    }
 }
 
 /// Sends the issue chunks sequentially, resuming per chunk after an
@@ -1224,25 +1139,7 @@ fn send_issue_chunks(
     )
 }
 
-/// Delivers the issue preview to the technical chat as a few cohesive
-/// messages. `digest_id` doubles as the resume key.
-fn send_overview(
-    chat: &str,
-    first_id: i64,
-    digest_id: &str,
-    digest: &Value,
-    state: &mut State,
-) -> Result<i64> {
-    delivery::send_one(
-        &final_issue_text(digest),
-        &format!("{chat}:{digest_id}"),
-        "overview",
-        state,
-        |text| telegram_send_reply_to(chat, Some(first_id), text),
-        |state| write_json(&state_path(), state),
-    )
-}
-
+/// Delivers complete project chunks to the technical chat.
 fn telegram_deliver_debug_digest(
     digest: &Value,
     digest_id: &str,
@@ -1254,12 +1151,22 @@ fn telegram_deliver_debug_digest(
     let delivery_path = run_dir.join("debug-delivery.json");
     if delivery_path.exists() {
         let delivery: DebugDelivery = serde_json::from_slice(&fs::read(&delivery_path)?)?;
+        let progress_key = format!("{chat}:{digest_id}");
+        delivery::validate_chunks(&chunks, &progress_key, state)?;
+        let progress = state.delivery_progress.get(&progress_key);
         if delivery.day != digest_id
             || delivery.chat_id != chat
-            || !chunks
-                .iter()
-                .enumerate()
-                .all(|(index, _)| delivery.posts.contains_key(&format!("chunk-{index:02}")))
+            || delivery.posts.len() != chunks.len()
+            || !chunks.iter().enumerate().all(|(index, text)| {
+                let key = format!("chunk-{index:02}");
+                progress.is_some_and(|saved| {
+                    saved.message_texts.get(&key) == Some(text)
+                        && saved
+                            .project_message_ids
+                            .get(&key)
+                            .is_some_and(|id| delivery.posts.get(&key) == Some(id))
+                })
+            })
         {
             return Err(anyhow!(
                 "existing debug delivery does not match this digest"
@@ -1274,8 +1181,6 @@ fn telegram_deliver_debug_digest(
     for (index, id) in ids.iter().enumerate() {
         posts.insert(format!("chunk-{index:02}"), *id);
     }
-    let overview_id = send_overview(&chat, first_id, digest_id, digest, state)?;
-    posts.insert("overview".to_string(), overview_id);
     let delivery = DebugDelivery {
         day: digest_id.to_string(),
         chat_id: chat,
@@ -1349,20 +1254,10 @@ fn telegram_deliver_digest(
     let first_id = *ids
         .first()
         .ok_or_else(|| anyhow!("issue delivery produced no messages"))?;
-    // Финальный итог — reply'ем на сообщение с батчем: он «ссылается» на
-    // выпуск прямо в интерфейсе Telegram.
-    let final_text = final_issue_text(digest);
-    let overview_id = send_overview(&chat, first_id, digest_id, digest, state)?;
-    state
-        .overview_ids
-        .insert(digest_id.to_string(), overview_id);
     fs::create_dir_all(runs_dir().join(digest_id))?;
     fs::write(
         runs_dir().join(digest_id).join("issue.md"),
-        format!(
-            "{}\n\n—— финальный итог ——\n\n{final_text}",
-            chunks.join("\n\n")
-        ),
+        chunks.join("\n\n"),
     )?;
     editions::acknowledge(state, digest, day)?;
     state.sent_digests.insert(digest_id.to_string(), first_id);
@@ -1428,33 +1323,22 @@ fn main() -> Result<()> {
             serde_json::from_slice(&fs::read(run_dir.join("ranking-input.json"))?)?;
         validate_digest_selection(&run_dir, &digest)?;
         digest_publication_text(&digest)?;
-        let entries = digest["entries"]
-            .as_array()
-            .context("stored preview has no entries")?
-            .iter()
-            .map(|entry| {
-                Ok(Ranked {
-                    snapshot: serde_json::from_value(entry["latest"].clone())?,
-                    baseline: None,
-                    delta: 0,
-                    period: String::new(),
-                    trending_source: false,
-                })
-            })
-            .collect::<Result<Vec<_>>>()?;
-        anyhow::ensure!(
-            entries.len() <= MAX_DIGEST_ENTRIES,
-            "stored preview exceeds weekly limit"
+        let refreshed_at = Utc::now().to_rfc3339();
+        digest["format_refreshed_at"] = json!(refreshed_at);
+        save_preview_files(&run_dir, &digest, false)?;
+        write_json(
+            &run_dir.join("format-refresh.json"),
+            &json!({
+                "source_generated_at":digest["generated_at"],
+                "refreshed_at":refreshed_at,
+                "provider_requests":0,
+                "message_count":digest_publication_text(&digest)?.len(),
+                "editorial_policy_version":editorial::POLICY_VERSION
+            }),
+        )?;
+        println!(
+            "Stored cards reformatted offline; no collection, provider requests or Telegram delivery."
         );
-        let mut state = read_state_strict()?;
-        let clock = clock::SystemClock;
-        digest["overview"] = json!(
-            providers::Groq::from_env(&state_path(), &clock)?
-                .rewrite_overview(&entries, &mut state, &run_dir)?
-        );
-        digest["summary_refreshed_at"] = json!(Utc::now().to_rfc3339());
-        save_preview_files(&run_dir, &digest, true)?;
-        println!("Stored source preview refreshed without collection or Telegram delivery.");
         return Ok(());
     }
     if command == "debug-delivery" {
@@ -1635,7 +1519,10 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-fn save_preview_files(run_dir: &Path, digest: &Value, require_overview: bool) -> Result<()> {
+fn save_preview_files(run_dir: &Path, digest: &Value, require_editorial: bool) -> Result<()> {
+    if require_editorial {
+        editorial::require_synthesis(digest)?;
+    }
     if let Some(report) = digest.get("coverage") {
         write_json(&run_dir.join("coverage.json"), report)?;
     }
@@ -1646,7 +1533,7 @@ fn save_preview_files(run_dir: &Path, digest: &Value, require_overview: bool) ->
         .as_array()
         .is_some_and(|entries| !entries.is_empty())
     {
-        let mut messages = digest_publication_text(digest)?;
+        let messages = digest_publication_text(digest)?;
         fs::write(run_dir.join("issue.md"), render_issue_message(digest)?)?;
         let audit = publication_audit(digest)?;
         write_json(&run_dir.join("release-audit.json"), &audit)?;
@@ -1654,15 +1541,7 @@ fn save_preview_files(run_dir: &Path, digest: &Value, require_overview: bool) ->
             audit["approved"] == true,
             "preview blocked by credential scan"
         );
-        messages.push(final_issue_text(digest));
         write_json(&run_dir.join("telegram-messages.json"), &messages)?;
-        anyhow::ensure!(
-            !require_overview
-                || digest["overview"]
-                    .as_str()
-                    .is_some_and(|text| !text.trim().is_empty()),
-            "weekly synthesis unavailable; inspect provider budget and source gaps"
-        );
     }
     Ok(())
 }
@@ -1688,12 +1567,10 @@ fn advisory_audit(digest: &mut Value, state: &mut State, run_dir: &Path) -> Resu
 /// This function never contacts Telegram, including when the scan fails.
 fn publication_audit(digest: &Value) -> Result<Value> {
     let mut chunks = digest_publication_text(digest)?;
-    chunks.push(final_issue_text(digest));
     let message_lengths = chunks
         .iter()
         .map(|text| text.encode_utf16().count())
         .collect::<Vec<_>>();
-    chunks.push(digest["overview"].as_str().unwrap_or("").to_string());
     if let Some(entries) = digest["entries"].as_array() {
         for entry in entries {
             for field in ["description", "joke"] {
@@ -1854,7 +1731,7 @@ mod tests {
     #[test]
     fn project_description_parser_accepts_description_and_joke_only() {
         let complete = "Инструмент собирает данные репозитория и показывает изменения за неделю. Он читает GitHub API и формирует отдельный отчёт для каждого проекта. Это полезно для оценки новых инструментов перед внедрением в команду.";
-        let joke = "Единственный проект, который растёт быстрее, чем его тудушка.";
+        let joke = "Дайджест читает репозитории, пока вы читаете дайджест.";
         assert_eq!(
             parse_project_description(&json!({"description":complete,"joke":joke}).to_string())
                 .unwrap(),
@@ -1873,16 +1750,22 @@ mod tests {
             )
             .is_err()
         );
+        assert_eq!(
+            parse_project_description(&json!({"description":complete,"joke":""}).to_string())
+                .unwrap()
+                .1,
+            ""
+        );
         assert!(
             parse_project_description(
-                &json!({"description":complete,"joke":"коротко"}).to_string()
+                &json!({"description":"я".repeat(421),"joke":""}).to_string()
             )
             .is_err()
         );
     }
 
     #[test]
-    fn issue_items_keep_full_text_and_distinct_exact_observation_dates() {
+    fn issue_items_keep_full_text_with_compact_tags_and_metrics() {
         let project = json!({
             "rank": 1,
             "total": 1,
@@ -1891,19 +1774,21 @@ mod tests {
             "delta": 120,
             "metric_captured_at":"2026-10-20T12:17:08Z",
             "description": "Инструмент для проверки репозитория. ".repeat(15),
-            "joke": "Растёт быстрее, чем его тудушка.",
+            "joke": "Проверку прошёл даже этот пример.",
             "latest": {"html_url":"https://github.com/org/repo","language":"Rust","stars":500,
                 "captured_at":"2026-10-24T20:53:42Z"}
         });
         let item = issue_item(&project);
         assert!(item.contains("[org/repo](https://github.com/org/repo)"));
         assert!(item.contains("Trending: макс\\. \\+120 за неделю"));
-        assert!(item.contains("⭐ Всего: 500 · метаданные: 2026\\-10\\-24 20:53:42 UTC"));
-        assert!(item.contains("срез метрики: 2026\\-10\\-20 12:17:08 UTC"));
+        assert!(item.contains("\\#Rust · ⭐ 500"));
+        assert!(!item.contains("метаданные"));
+        assert!(!item.contains("срез метрики"));
+        assert!(!item.contains("2026"));
         assert!(item.contains(&markdown_v2_escape(
             project["description"].as_str().unwrap().trim()
         )));
-        assert!(item.contains("😄 Растёт быстрее, чем его тудушка\\."));
+        assert!(item.contains("Проверку прошёл даже этот пример\\."));
         assert!(telegram_format::validate_message(&item, ISSUE_CHUNK_LIMIT).is_ok());
         assert!(!item.contains("ПРОЕКТ"));
         assert_eq!(markdown_v2_escape("a_b.c"), "a\\_b\\.c");
@@ -1922,7 +1807,6 @@ mod tests {
             .is_ok()
         );
         assert!(project_github_url("org/repo/extra").is_none());
-        assert_eq!(observation_timestamp(None), "дата неизвестна");
     }
 
     #[test]
@@ -1950,12 +1834,11 @@ mod tests {
         });
         let chunks = digest_publication_text(&digest).unwrap();
         assert_eq!(chunks.len(), 1);
-        assert!(chunks[0].starts_with("*🚀 GitHub — итоги недели*"));
-        assert!(chunks[0].contains("10 новых проектов"));
+        assert!(chunks[0].starts_with("*GitHub — подборка недели*"));
+        assert!(chunks[0].contains("10 проектов"));
         assert!(chunks[0].contains("[org/repo\\-1](https://github.com/org/repo-1)"));
-        // MarkdownV2 reserves '.', so every literal dot outside URLs must be
-        // escaped — an unescaped one makes Telegram reject the whole issue.
-        assert!(chunks.join("\n").contains("новые репозитории\\. Полные"));
+        assert!(chunks[0].contains("28\\.09\\.2026"));
+        assert!(!chunks.join("\n").contains("Порядок:"));
         assert!(
             chunks
                 .iter()
@@ -2028,36 +1911,108 @@ mod tests {
         assert_ne!(slot_key_of(monday), slot_key_of(monday + Duration::days(7)));
     }
     #[test]
-    fn final_issue_text_prefers_llm_overview_and_falls_back_deterministically() {
-        let with_overview = json!({
-            "overview": "День языковых инструментов: лидирует новый разбор конфигов.",
-            "entries":[
-                {"full_name":"org/a","delta":50},
-                {"full_name":"org/b","delta":20},
-            ]
+    fn project_tags_are_valid_and_search_provenance_is_not_public() {
+        for (language, expected) in [
+            ("Python", "#Python"),
+            ("C++", "#CPP"),
+            ("C#", "#CSharp"),
+            ("F#", "#FSharp"),
+            ("Objective-C", "#ObjectiveC"),
+            ("Objective-C++", "#ObjectiveCPP"),
+            ("Jupyter Notebook", "#JupyterNotebook"),
+        ] {
+            let entry = json!({
+                "full_name":"org/project", "source_kind":"new_repo", "delta":1234,
+                "description":"Инструмент проверяет зависимости проекта.", "joke":"",
+                "llm_used":false, "latest":{"language":language,"stars":1234}
+            });
+            let card = issue_item(&entry);
+            assert!(card.ends_with(&format!("{} · ⭐ 1 234", markdown_v2_escape(expected))));
+            for clutter in [
+                "из поиска",
+                "метаданные",
+                "Trending",
+                "Исходное описание",
+                "😄",
+            ] {
+                assert!(!card.contains(clutter), "{card}");
+            }
+            telegram_format::validate_message(&card, ISSUE_CHUNK_LIMIT).unwrap();
+        }
+        for language in ["", " ", "++", "123"] {
+            assert!(language_hashtag(language).is_none());
+        }
+        let mut unknown = json!({
+            "full_name":"org/project", "description":"Описание проекта.",
+            "latest":{"language":null,"stars":null}
         });
-        let text = final_issue_text(&with_overview);
-        assert!(text.contains("Итог выпуска"));
-        // LLM-текст экранируется под MarkdownV2: точка не должна сломать
-        // отправку сообщения.
-        assert!(text.contains("конфигов\\."));
-        assert!(text.contains("Ссылки выпуска:"));
-        assert!(text.contains("[org/a](https://github.com/org/a)"));
-        assert!(text.contains("[org/b](https://github.com/org/b)"));
-        let fallback = json!({
-            "entries":[
-                {"full_name":"org/a","delta":50},
-                {"full_name":"org/b","delta":20},
-            ]
+        assert!(issue_item(&unknown).ends_with(r"Описание проекта\."));
+        unknown["latest"]["stars"] = json!(0);
+        assert!(issue_item(&unknown).ends_with("⭐ 0"));
+    }
+
+    #[test]
+    fn previews_and_delivery_have_only_project_messages_even_with_a_legacy_overview() {
+        let directory = tempfile::tempdir().unwrap();
+        let digest = json!({
+            "format_version":3, "edition":"daily", "generated_at":"2026-11-04T15:00:00Z",
+            "overview":"Legacy summary that must not be rendered.",
+            "entries":[{
+                "full_name":"org/project", "source_kind":"new_repo",
+                "description":"Инструмент проверяет зависимости проекта.",
+                "latest":{"language":"Python","stars":1234}
+            }]
         });
-        let text = final_issue_text(&fallback);
-        assert!(text.contains("org/a \\(\\+50\\)"));
-        assert!(text.contains("org/b \\(\\+20\\)"));
-        assert!(text.contains("[org/b](https://github.com/org/b)"));
-        assert!(telegram_format::validate_message(&text, ISSUE_CHUNK_LIMIT).is_ok());
-        let empty = final_issue_text(&json!({"entries":[]}));
-        assert!(empty.contains("Выпуск без новых проектов\\."));
-        assert!(telegram_format::validate_message(&empty, ISSUE_CHUNK_LIMIT).is_ok());
+        let chunks = digest_publication_text(&digest).unwrap();
+        assert_eq!(chunks.len(), 1);
+        assert!(chunks[0].starts_with("*GitHub — находки дня*"));
+        for clutter in [
+            "Итог выпуска",
+            "Legacy summary",
+            "очеред",
+            "Порядок:",
+            "из поиска",
+        ] {
+            assert!(!chunks[0].contains(clutter));
+        }
+        save_preview_files(directory.path(), &digest, false).unwrap();
+        let preview: Vec<String> = serde_json::from_slice(
+            &fs::read(directory.path().join("telegram-messages.json")).unwrap(),
+        )
+        .unwrap();
+        assert_eq!(preview, chunks);
+        let audit = publication_audit(&digest).unwrap();
+        assert_eq!(
+            audit["telegram_format"]["message_utf16_units"]
+                .as_array()
+                .unwrap()
+                .len(),
+            chunks.len()
+        );
+        let mut state = State::default();
+        let mut sent = Vec::new();
+        let ids = delivery::send_chunks(
+            &chunks,
+            "chat:format-test",
+            &mut state,
+            |text| {
+                sent.push(text.to_string());
+                Ok(42)
+            },
+            |_| Ok(()),
+        )
+        .unwrap();
+        assert_eq!(sent, preview);
+        assert_eq!(ids, [42]);
+        assert!(state.overview_ids.is_empty());
+        delivery::send_chunks(
+            &chunks,
+            "chat:format-test",
+            &mut state,
+            |_| panic!("acknowledged cards must not be sent again"),
+            |_| Ok(()),
+        )
+        .unwrap();
     }
 
     #[test]
@@ -2077,7 +2032,7 @@ mod tests {
     }
 
     #[test]
-    fn preview_contains_the_real_overview_and_checks_its_unescaped_credentials() {
+    fn source_audit_retains_provenance_and_checks_unescaped_card_credentials() {
         let mut digest = json!({
             "format_version":3,
             "overview":"На этой неделе появились инструменты для разбора данных.",
@@ -2090,7 +2045,7 @@ mod tests {
             }]
         });
         let preview = render_summary(&digest);
-        assert!(preview.contains(digest["overview"].as_str().unwrap()));
+        assert!(!preview.contains(digest["overview"].as_str().unwrap()));
         assert!(preview.contains("[org/young](https://github.com/org/young)"));
         assert!(preview.contains("2026-10-18T07:00:00Z"));
         let approved = publication_audit(&digest).unwrap();
@@ -2098,14 +2053,14 @@ mod tests {
         assert_eq!(approved["factual_review"], "not_performed");
         assert_eq!(approved["telegram_format"]["status"], "passed");
         assert_eq!(approved["telegram_format"]["api_acceptance_tested"], false);
-        digest["overview"] = json!(format!("Example ghp_{}", "a".repeat(40)));
+        digest["entries"][0]["description"] = json!(format!("Example ghp_{}", "a".repeat(40)));
         let audit = publication_audit(&digest).unwrap();
         assert_eq!(audit["approved"], false);
         assert!(!audit.to_string().contains(&"a".repeat(40)));
     }
 
     #[test]
-    fn an_invalid_overview_blocks_preview_before_any_telegram_payload_is_accepted() {
+    fn obsolete_overview_cannot_block_valid_project_previews() {
         let directory = tempfile::tempdir().unwrap();
         let digest = json!({
             "format_version":3,
@@ -2115,16 +2070,11 @@ mod tests {
                 "source_kind":"new_repo", "latest":{"stars":5}
             }]
         });
-        // The project card fits, but the overview with its header does not.
-        assert!(
-            render_issue_messages(&digest)
-                .unwrap()
-                .iter()
-                .all(|text| text.encode_utf16().count() <= ISSUE_CHUNK_LIMIT)
-        );
-        assert!(digest_publication_text(&digest).is_err());
-        assert!(save_preview_files(directory.path(), &digest, false).is_err());
-        assert!(!directory.path().join("telegram-messages.json").exists());
+        let messages = digest_publication_text(&digest).unwrap();
+        assert_eq!(messages.len(), 1);
+        assert!(!messages[0].contains('😀'));
+        save_preview_files(directory.path(), &digest, false).unwrap();
+        assert!(directory.path().join("telegram-messages.json").exists());
     }
 
     #[test]
@@ -2167,7 +2117,6 @@ mod tests {
                 text.contains(&project_github_url(entry["full_name"].as_str().unwrap()).unwrap())
             );
         }
-        assert!(final_issue_text(&digest).encode_utf16().count() <= ISSUE_CHUNK_LIMIT);
         assert_eq!(publication_audit(&digest).unwrap()["approved"], true);
     }
 

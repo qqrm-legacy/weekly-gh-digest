@@ -1,5 +1,6 @@
 use crate::State;
 use anyhow::{Result, ensure};
+use std::collections::BTreeMap;
 
 /// An ambiguous send leaves a durable intent and requires reconciliation.
 /// A successful acknowledgement and its cursor are checkpointed together.
@@ -45,6 +46,41 @@ pub fn send_one(
     Ok(id)
 }
 
+/// Validate every stored receipt and text against the complete intended payload.
+/// This is read-only and can also guard a saved technical-preview receipt.
+pub fn validate_chunks(chunks: &[String], progress_key: &str, state: &State) -> Result<()> {
+    ensure!(
+        state.uncertain_delivery.is_none(),
+        "unconfirmed Telegram delivery; operator reconciliation required"
+    );
+    // Check the complete payload before sending anything. A shorter or changed
+    // renderer must not strand receipts or emit earlier chunks before a mismatch.
+    if let Some(progress) = state.delivery_progress.get(progress_key) {
+        let intended: BTreeMap<_, _> = chunks
+            .iter()
+            .enumerate()
+            .map(|(index, text)| (format!("chunk-{index:02}"), text))
+            .collect();
+        ensure!(
+            progress.overview_message_id.is_none(),
+            "legacy summary progress requires operator reconciliation"
+        );
+        for key in progress.project_message_ids.keys() {
+            ensure!(
+                intended.contains_key(key) && progress.message_texts.contains_key(key),
+                "delivery receipts do not match the intended chunks; operator reconciliation required"
+            );
+        }
+        for (key, previous) in &progress.message_texts {
+            ensure!(
+                intended.get(key).is_some_and(|text| *text == previous),
+                "delivery content changed; operator reconciliation required"
+            );
+        }
+    }
+    Ok(())
+}
+
 pub fn send_chunks(
     chunks: &[String],
     progress_key: &str,
@@ -52,6 +88,7 @@ pub fn send_chunks(
     mut send: impl FnMut(&str) -> Result<i64>,
     mut checkpoint: impl FnMut(&State) -> Result<()>,
 ) -> Result<Vec<i64>> {
+    validate_chunks(chunks, progress_key, state)?;
     chunks
         .iter()
         .enumerate()
@@ -203,5 +240,86 @@ mod tests {
             )
             .is_err()
         );
+    }
+
+    #[test]
+    fn shorter_payload_cannot_discard_acknowledged_chunks() {
+        let mut state = State::default();
+        send_chunks(
+            &["first".into(), "second".into()],
+            "issue",
+            &mut state,
+            |_| Ok(41),
+            |_| Ok(()),
+        )
+        .unwrap();
+        let before = serde_json::to_value(&state).unwrap();
+        for chunks in [vec!["first".into()], Vec::new()] {
+            assert!(
+                send_chunks(
+                    &chunks,
+                    "issue",
+                    &mut state,
+                    |_| panic!("shortened payload must not send"),
+                    |_| panic!("shortened payload must not change checkpoints")
+                )
+                .is_err()
+            );
+            assert_eq!(serde_json::to_value(&state).unwrap(), before);
+        }
+    }
+
+    #[test]
+    fn a_later_mismatch_is_detected_before_an_earlier_new_chunk_is_sent() {
+        let mut state = State::default();
+        send_one(
+            "original second",
+            "issue",
+            "chunk-01",
+            &mut state,
+            |_| Ok(42),
+            |_| Ok(()),
+        )
+        .unwrap();
+        let before = serde_json::to_value(&state).unwrap();
+        assert!(
+            send_chunks(
+                &["new first".into(), "changed second".into()],
+                "issue",
+                &mut state,
+                |_| panic!("complete preflight must precede the first send"),
+                |_| panic!("complete preflight must precede checkpoint writes")
+            )
+            .is_err()
+        );
+        assert_eq!(serde_json::to_value(&state).unwrap(), before);
+    }
+
+    #[test]
+    fn legacy_summary_or_receipts_without_content_require_reconciliation() {
+        for progress in [
+            serde_json::json!({"overview_message_id":43}),
+            serde_json::json!({"project_message_ids":{"overview":43},
+                "message_texts":{"overview":"Legacy summary"}}),
+            serde_json::json!({"message_texts":{"overview":"Unsent legacy summary"}}),
+            serde_json::json!({"project_message_ids":{"chunk-00":41}}),
+        ] {
+            let mut state: State = serde_json::from_value(serde_json::json!({
+                "delivery_progress":{"issue":progress}
+            }))
+            .unwrap();
+            let before = serde_json::to_value(&state).unwrap();
+            assert!(
+                send_chunks(
+                    &["card".into()],
+                    "issue",
+                    &mut state,
+                    |_| panic!("legacy receipts must not trigger a send"),
+                    |_| panic!("legacy receipts must stay unchanged")
+                )
+                .is_err()
+            );
+            assert_eq!(serde_json::to_value(&state).unwrap(), before);
+        }
     }
 }

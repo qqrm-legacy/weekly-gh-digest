@@ -47,7 +47,9 @@ class DailyRunTests(unittest.TestCase):
         self.assertEqual(run_mode.choose({**env, "DELIVER_TO_MAIN_CHAT": "true"}), ("daily-digest", True, True))
         with self.assertRaises(ValueError):
             run_mode.choose({**env, "DIGEST_DAILY_DELIVERY_ENABLED": "false", "DELIVER_TO_MAIN_CHAT": "true"})
-        for field in ["RECOVER_WEEKLY", "RETRY_DELIVERY_RUN_ID", "PREVIEW_SOURCE_RUN_ID"]:
+        self.assertEqual(run_mode.choose({**env, "PREVIEW_SOURCE_RUN_ID": "12"}),
+                         ("preview-stored", False, False))
+        for field in ["RECOVER_WEEKLY", "RETRY_DELIVERY_RUN_ID"]:
             with self.assertRaises(ValueError):
                 run_mode.choose({**env, field: "true" if field == "RECOVER_WEEKLY" else "12"})
 

@@ -31,8 +31,17 @@ def choose(env):
         raise ValueError("Unsupported event")
     retry = env.get("RETRY_DELIVERY_RUN_ID", "")
     preview_source = env.get("PREVIEW_SOURCE_RUN_ID", "")
+    if preview_source:
+        if not preview_source.isascii() or not preview_source.isdigit():
+            raise ValueError("preview_source_run_id must contain ASCII digits only")
+        if (retry or env.get("DELIVER_TO_MAIN_CHAT") == "true"
+                or env.get("MANUAL_DRY_RUN") == "false" or env.get("RECOVER_WEEKLY") == "true"):
+            raise ValueError("Stored preview cannot be combined with sending or recovery inputs")
+        # Re-render either edition from its saved cards. Do not inject a provider
+        # key, even if preview_with_llm was also selected in the dispatch form.
+        return "preview-stored", False, False
     if edition == "daily":
-        if retry or preview_source or env.get("RECOVER_WEEKLY") == "true":
+        if retry or env.get("RECOVER_WEEKLY") == "true":
             raise ValueError("Daily mode cannot use legacy weekly replay/recovery inputs")
         if env.get("MANUAL_DRY_RUN") == "false" and env.get("DELIVER_TO_MAIN_CHAT") != "true":
             raise ValueError("Daily delivery requires explicit main-chat intent")
@@ -46,12 +55,6 @@ def choose(env):
                 or env.get("MANUAL_DRY_RUN") == "false"):
             raise ValueError("Weekly recovery cannot be combined with sending or stored-preview inputs")
         return "preview", False, env.get("PREVIEW_WITH_LLM") == "true"
-    if preview_source:
-        if not preview_source.isascii() or not preview_source.isdigit():
-            raise ValueError("preview_source_run_id must contain ASCII digits only")
-        if retry or env.get("DELIVER_TO_MAIN_CHAT") == "true" or env.get("MANUAL_DRY_RUN") == "false":
-            raise ValueError("Stored preview cannot be combined with sending inputs")
-        return "preview-stored", False, True
     if retry:
         if not retry.isascii() or not retry.isdigit():
             raise ValueError("retry_delivery_run_id must contain ASCII digits only")
@@ -88,7 +91,8 @@ def main():
         weekly_run.read_object(weekly_run.RECEIPTS, missing_ok=True),
         weekly_run.read_object(daily_run.RECEIPTS, missing_ok=True),
         weekly_run.read_object("data/state.json"))
-    daily = mode.startswith("daily-") or reason.startswith("daily-")
+    daily = (mode.startswith("daily-") or reason.startswith("daily-")
+             or (mode == "preview-stored" and os.environ.get("DIGEST_FORMAT") == "daily"))
     resolver = daily_run if daily else weekly_run
     key = resolver.slot(now)
     plan = {"slot": key, "mode": mode, "send": send, "llm": llm, "reason": reason,

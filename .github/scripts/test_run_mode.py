@@ -21,12 +21,15 @@ class RunModeTests(unittest.TestCase):
         self.assertEqual(self.manual(PREVIEW_WITH_LLM="true",
                          DIGEST_DELIVERY_ENABLED="true"), ("preview", False, True))
 
-    def test_stored_preview_never_selects_a_sender_and_rejects_conflicts(self):
-        for enabled in ["true", "false"]:
-            self.assertEqual(self.manual(PREVIEW_SOURCE_RUN_ID="123", DIGEST_DELIVERY_ENABLED=enabled),
-                             ("preview-stored", False, True))
+    def test_stored_preview_never_selects_a_sender_or_provider_and_rejects_conflicts(self):
+        for edition in ["daily", "weekly"]:
+            for enabled in ["true", "false"]:
+                for llm in ["true", "false"]:
+                    self.assertEqual(self.manual(PREVIEW_SOURCE_RUN_ID="123", DIGEST_FORMAT=edition,
+                                     DIGEST_DELIVERY_ENABLED=enabled, PREVIEW_WITH_LLM=llm),
+                                     ("preview-stored", False, False))
         for conflict in [{"RETRY_DELIVERY_RUN_ID":"123"}, {"DELIVER_TO_MAIN_CHAT":"true"},
-                         {"MANUAL_DRY_RUN":"false"}]:
+                         {"MANUAL_DRY_RUN":"false"}, {"RECOVER_WEEKLY":"true"}]:
             with self.assertRaises(ValueError):
                 self.manual(PREVIEW_SOURCE_RUN_ID="123", **conflict)
         for value in ["../123", "１２３", "1;echo bad"]:
@@ -75,6 +78,7 @@ class RunModeTests(unittest.TestCase):
                          [COLLECTION_CRON, DAILY_CRON])
         for secret in ["TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "TELEGRAM_TECH_CHAT_ID"]:
             self.assertIn("steps.mode.outputs.send == 'true' && secrets." + secret, workflow)
+        self.assertIn("steps.mode.outputs.llm == 'true' && secrets.GROQ_API_KEY", workflow)
 
     def test_actual_preview_shell_cannot_choose_a_sending_command(self):
         for llm in ["true", "false"]:

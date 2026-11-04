@@ -236,7 +236,11 @@ def main():
             source = Path('data/runs') / capture
             if source.exists():
                 shutil.copytree(source, OUT / edition, dirs_exist_ok=True)
-            require(after['overview_ids'].get(digest_id), 'Completion omitted final overview ID')
+            first_id = after['sent_digests'][digest_id]
+            require(isinstance(first_id, int) and first_id > 0,
+                    'Completion omitted the first card acknowledgement')
+            require(digest_id not in after.get('pending_digests', {}),
+                    'Completed card delivery is still pending')
         report['iterations'].append({'edition':edition,'new_digest_ids':new_ids,'messages_sent':sent,
             'repeat_messages':0,'repeat_llm_requests':0,'independent_queue_ack':True})
         write(OUT / 'report.json', report)
