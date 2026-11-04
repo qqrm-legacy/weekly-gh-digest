@@ -16,8 +16,10 @@ a durable intent requiring operator reconciliation. Never clear that marker to r
 
 Every successful `sendMessage` response is captured with server message ID, accepted
 text/entities and reply ID in `telegram-receipts.jsonl`, without bot credentials or
-chat metadata. A separately labelled reviewed edit retains its acknowledgement in
+chat metadata. Historical reviewed edits retain their acknowledgements in
 `reviewed-telegram-receipt.json`; the original model text remains in older artifacts.
+The one-off summary generation and editing commands are retired without sending.
+Current trials exercise card delivery and restart behavior only.
 This proves API acceptance, not client-side layout, read receipts or later chat edits.
 
 ## Evidence and limits
@@ -29,11 +31,11 @@ checks and duplicate-run assertions. `editorial-followup.json` and reviewed rece
 are separate from repository publication receipts and never consume discoveries.
 
 The initial live test exposed rate limiting, missing synthesized overviews, invalid
-source quotations and overbroad model claims. Provider backoff now respects bounded
-Retry-After, reserves request capacity for synthesis and blocks a requested-LLM
-release without a real overview. Policy-versioned analysis caches prevent old
-editorial text from being reused after the policy change. Raw-source fallback cards
-are labelled explicitly. These are safeguards, not a general factual-correctness
+source quotations and overbroad model claims. Provider backoff respects bounded
+Retry-After. Current issues no longer generate or require an overview; daily AI
+delivery instead requires validated Russian cards. Policy-versioned analysis
+caches prevent old editorial text from being reused after a policy change.
+Raw-source fallbacks stay queued for daily delivery. These are safeguards, not a general factual-correctness
 proof: automated editorial quality is not accepted as equivalent to the owner's
 TWIR bot merely because transport and tests pass. Review semantic claims and
 translation terminology against source bundles during the week.

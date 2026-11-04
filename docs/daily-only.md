@@ -19,9 +19,11 @@ no timer and no push-triggered dispatch.
 
 ## What readers receive
 
-The daily format remains up to 12 validated Russian AI explanations and an issue
-synopsis. Each explanation describes the project, intended use and source-backed
-limitations. A daily publication slot may contain several Telegram messages; it
+The daily format contains up to 12 concise, validated Russian AI explanations.
+Each card has a linked repository name, one or two sentences, and a compact line
+with a language hashtag and available star metrics. Humor is optional; there is no
+issue synopsis or separate final message. Source and capture details remain in
+artifacts rather than publication text. A daily publication slot may contain several Telegram messages; it
 is one issue, not one Telegram message. Existing provider caps, editorial checks,
 retry handling and refusal to send raw description fallbacks remain unchanged.
 

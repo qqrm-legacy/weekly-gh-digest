@@ -4,7 +4,7 @@ use reqwest::{StatusCode, header::HeaderMap};
 use serde_json::Value;
 use std::time::Duration;
 
-pub(super) const POLICY_VERSION: u32 = 4;
+pub(super) const POLICY_VERSION: u32 = 5;
 
 pub(super) fn retry_delay(
     status: StatusCode,
@@ -108,19 +108,9 @@ pub(super) fn validate_text(text: &str, sources: &str) -> Result<()> {
     Ok(())
 }
 
+/// Requested daily issues need edited cards, not an issue-wide synthesis.
 pub(super) fn require_synthesis(digest: &Value) -> Result<()> {
     let requested = digest["llm_requested"] == true;
-    let has_entries = digest["entries"]
-        .as_array()
-        .is_some_and(|rows| !rows.is_empty());
-    ensure!(
-        !requested
-            || !has_entries
-            || digest["overview"]
-                .as_str()
-                .is_some_and(|text| !text.trim().is_empty()),
-        "requested editorial synthesis is missing; findings remain pending, no Telegram delivery"
-    );
     if requested && digest["edition"] == "daily" {
         for entry in digest["entries"].as_array().into_iter().flatten() {
             ensure!(
@@ -130,12 +120,6 @@ pub(super) fn require_synthesis(digest: &Value) -> Result<()> {
             validate_text(
                 entry["description"].as_str().unwrap_or(""),
                 &entry["latest"].to_string(),
-            )?;
-        }
-        if has_entries {
-            validate_text(
-                digest["overview"].as_str().unwrap_or(""),
-                &digest["entries"].to_string(),
             )?;
         }
     }
@@ -222,7 +206,7 @@ mod tests {
 
     #[test]
     fn daily_fallback_is_not_an_editorial_card() {
-        let digest = json!({"edition":"daily", "llm_requested":true, "overview":"В этой подборке представлены инструменты анализа программ.", "entries":[{"llm_used":false,"description":"Raw README description"}]});
+        let digest = json!({"edition":"daily", "llm_requested":true, "entries":[{"llm_used":false,"description":"Raw README description"}]});
         assert!(require_synthesis(&digest).is_err());
     }
 
@@ -262,14 +246,25 @@ mod tests {
     }
 
     #[test]
-    fn a_requested_summary_cannot_silently_turn_into_a_top_three_fallback() {
-        let mut digest =
-            json!({"llm_requested":true,"entries":[{"full_name":"org/repo"}],"overview":""});
-        assert!(require_synthesis(&digest).is_err());
-        digest["overview"] = json!("В этой подборке — инструмент разбора исходников.");
+    fn edited_cards_do_not_require_an_issue_summary() {
+        let mut digest = json!({"edition":"daily","llm_requested":true,"entries":[{
+            "full_name":"org/repo","llm_used":true,
+            "description":"Инструмент разбирает исходные файлы и показывает их зависимости.",
+            "latest":{"description":"Parses source files and shows their dependencies."}
+        }]});
         assert!(require_synthesis(&digest).is_ok());
+        // A legacy summary is no longer rendered or part of card readiness.
+        digest["overview"] = json!("unused legacy text");
+        assert!(require_synthesis(&digest).is_ok());
+        digest["entries"][0]["description"] = json!("An untranslated source description.");
+        assert!(require_synthesis(&digest).is_err());
+        digest["entries"][0]["description"] =
+            json!("Инструмент подключается к Salesforce для обработки заявок клиентов.");
+        assert!(require_synthesis(&digest).is_err());
+        digest["edition"] = json!("weekly");
+        assert!(require_synthesis(&digest).is_ok());
+        digest["edition"] = json!("daily");
         digest["llm_requested"] = json!(false);
-        digest["overview"] = json!("");
         assert!(require_synthesis(&digest).is_ok());
     }
 }

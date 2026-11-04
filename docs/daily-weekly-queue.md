@@ -1,4 +1,6 @@
-# Daily discoveries and weekly summaries
+# Daily discoveries and manual weekly editions
+
+Automatic delivery is daily-only; see [the current schedule](daily-only.md).
 
 ## Durable state, not a text hand-off
 
@@ -25,16 +27,16 @@ acknowledgements consume the other's queue. Identity is case-insensitive
 
 ## Editorial policies
 
-Daily: at most 12 detailed discoveries per issue. Oldest discovery date first,
+Daily: at most 12 concise discoveries per issue. Oldest discovery date first,
 then daily Trending peak, weekly Trending peak and Search within that date.
 Overflow remains pending even after leaving Trending. New means new to the feed,
 not necessarily newly created or newly released. With AI enabled, only completed
 Russian explanations are included; raw metadata is not a published daily card.
 
-Weekly: up to 30 detailed cards using the existing source priority. Every other
+Manual weekly: up to 30 cards using the existing source priority. Every other
 pending discovery is published in a linked index, split into Telegram-safe
 messages. The index is part of the delivered payload, not just a hidden file.
-All daily discoveries therefore remain represented in the weekly summary even
+All daily discoveries therefore remain represented in a manual weekly edition even
 when there are more than 30. Older undelivered discoveries are included and counted
 as carried backlog. A weekly index appearance is a weekly publication, but does
 not mark that project's daily card delivered.
@@ -48,8 +50,8 @@ not a strict calendar-week top-20 ranking or a release/change log for every repo
 ## Delivery, then acknowledgement
 
 A preview, uploaded artifact, collection or generated analysis never acknowledges
-a repository. Only successful delivery of every message, including the weekly
-index and final overview, acknowledges the precise names in that edition.
+a repository. Only successful delivery of every message, including a manual weekly
+index, acknowledges the precise names in that edition.
 New discoveries and capacity overflow are never cleared wholesale.
 
 Daily slots are `daily:YYYY-MM-DD`, starting at 15:00 UTC (18:00 Moscow).
@@ -66,10 +68,10 @@ atomic transaction. Collection and previews continue while delivery is reconcile
 
 ## Schedule and permissions
 
-- `17 */3 * * *`: collect; after 15:00 UTC an enabled, due daily delivery has
-  priority. Otherwise recover weekly work, then any due daily preview.
-- `0 7 * * 1`: existing weekly publication/recovery slot, unchanged.
+- `17 */3 * * *`: collect; after 15:00 UTC recover only the due daily issue
+  or daily preview. Before that deadline and after an acknowledged issue, collect only.
 - `0 15 * * *`: daily issue, using the same daily identity on delayed recovery.
+- Weekly work requires a manual request; the retired Monday cron is collection-only.
 
 `DIGEST_DELIVERY_ENABLED=true` remains mandatory for every send. Daily sends also
 require `DIGEST_DAILY_DELIVERY_ENABLED=true`. Neither variable is enabled by a
@@ -90,7 +92,7 @@ gh variable set DIGEST_DELIVERY_ENABLED --repo qqrm-labs/weekly-gh-digest --body
 gh variable set DIGEST_DAILY_DELIVERY_ENABLED --repo qqrm-labs/weekly-gh-digest --body true
 ```
 
-This enables both weekly and daily production delivery using the already configured
+This permits scheduled daily and explicitly requested weekly delivery using the configured
 `TELEGRAM_CHAT_ID`. It does not point production at the technical chat or migrate
 test acknowledgements. To stop all publication, set `DIGEST_DELIVERY_ENABLED=false`.
 No secrets belong in these variables or in source control.
@@ -127,25 +129,25 @@ and safe publication routing.
 
 The daily deadline is 18:00 Moscow (15:00 UTC), without a test expiry in the normal
 Run Bot workflow. Three-hour collection remains enabled so transient observations
-are retained. Before the daily deadline, recovery does not send a daily issue;
-weekly recovery remains possible. Unsuccessful evening work can retry at later
+are retained. Before the daily deadline, automatic recovery only collects observations. Unsuccessful evening work can retry at later
 collection ticks. A successfully acknowledged daily slot is never resent.
 
 Daily LLM editions publish only source-backed Russian explanations that completed
-validation. Raw README/metadata fallbacks stay in the daily queue; the synopsis
-uses only the cards actually included. A failed synopsis prevents sending, not
-collection. Completed analyses are checkpointed individually and reused when
+validation. Raw README/metadata fallbacks stay in the daily queue. There is no
+issue synopsis or separate summary request. Completed analyses are checkpointed
+individually and reused when
 sources and editorial policy match. Weekly eligibility remains independent.
 
-Explanations cover what the repository does, its intended user, a source-supported
-use case and documented limits. Language, Latin product-name provenance and known
+Explanations use one or two sentences to state the task and a useful mechanism,
+use case, or material documented limit. Humor is optional and project-specific;
+language is rendered as a hashtag. Selection provenance remains in artifacts. Language, Latin product-name provenance and known
 terminology regression checks are conservative heuristics, not a complete factual
 audit. They can defer valid text and cannot detect all unsupported claims.
 
 Free Groq is used only with explicit free-tier confirmation; existing request caps,
 retry-after handling and no paid fallback remain in place. Exact on-the-minute
 delivery or an AI issue every day cannot be guaranteed by Actions or a free
-external provider. If no valid cards or synopsis are available, the run fails
+external provider. If no valid cards are available, the run fails
 without publishing raw fallback text and retains the queue.
 
 ## Coverage limits
@@ -153,5 +155,5 @@ without publishing raw fallback text and retains the queue.
 Retention protects actually observed findings. It cannot reconstruct projects
 that entered and left all configured sources between collection ticks, or data
 missed during source failures. Bounded searches are not a GitHub census. Existing
-source manifests and coverage notices remain explicit about gaps. History currently
+source manifests and coverage artifacts remain explicit about gaps. History currently
 grows without pruning; future compaction must preserve both queues and evidence.

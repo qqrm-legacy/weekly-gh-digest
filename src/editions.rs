@@ -237,7 +237,7 @@ pub(super) fn decorate(
         current.iter().filter(|row| !detailed.contains(&row.full_name.to_ascii_lowercase()))
             .map(|row| json!({"full_name":row.full_name,"first_seen":first_seen(row),
                 "description":crate::safe_public_text(row.description.as_deref().unwrap_or("")).chars().take(180).collect::<String>(),
-                "metadata_captured_at":row.captured_at})).collect()
+                "language":row.language,"metadata_captured_at":row.captured_at})).collect()
     } else {
         Vec::new()
     };
@@ -333,16 +333,20 @@ pub(super) fn append_catalogue(chunks: &mut Vec<String>, digest: &Value) -> Resu
             .as_str()
             .context("catalogue entry without name")?;
         let url = crate::project_github_url(name).context("invalid catalogue repository")?;
-        let item = format!(
-            "[{}]({}) — {}\n{}",
+        let mut item = format!(
+            "[{}]({})",
             crate::markdown_v2_escape(name),
-            crate::markdown_v2_url_escape(&url),
-            crate::markdown_v2_escape(entry["description"].as_str().unwrap_or("")),
-            crate::markdown_v2_escape(&format!(
-                "Впервые замечен: {}",
-                entry["first_seen"].as_str().unwrap_or("неизвестно")
-            ))
+            crate::markdown_v2_url_escape(&url)
         );
+        let description = entry["description"].as_str().unwrap_or("").trim();
+        if !description.is_empty() {
+            item.push_str(" — ");
+            item.push_str(&crate::markdown_v2_escape(description));
+        }
+        if let Some(tag) = entry["language"].as_str().and_then(crate::language_hashtag) {
+            item.push('\n');
+            item.push_str(&crate::markdown_v2_escape(&tag));
+        }
         ensure!(
             header.encode_utf16().count() + 2 + item.encode_utf16().count()
                 <= crate::ISSUE_CHUNK_LIMIT,
@@ -363,10 +367,6 @@ pub(super) fn append_catalogue(chunks: &mut Vec<String>, digest: &Value) -> Resu
 
 pub(super) fn catalogue_markdown(digest: &Value) -> String {
     let mut text = String::new();
-    if let Some(queue) = digest.get("queue") {
-        text.push_str(&format!("\nОчередь до выпуска: {}; подробных карточек: {}; остальных ссылок: {}; находок из более ранних периодов: {}.\n",
-            queue["pending_before"],queue["detailed"],queue["catalogue"],queue["carried_from_earlier_periods"]));
-    }
     if let Some(catalogue) = digest["catalogue"]
         .as_array()
         .filter(|items| !items.is_empty())
@@ -377,18 +377,22 @@ pub(super) fn catalogue_markdown(digest: &Value) -> String {
                 continue;
             };
             if let Some(url) = crate::project_github_url(name) {
-                text.push_str(&format!(
-                    "\n- [{name}]({url}) — {}. Впервые замечен: {}.\n",
-                    entry["description"].as_str().unwrap_or(""),
-                    entry["first_seen"].as_str().unwrap_or("?")
-                ));
+                text.push_str(&format!("\n- [{name}]({url})"));
+                let description = entry["description"].as_str().unwrap_or("").trim();
+                if !description.is_empty() {
+                    text.push_str(&format!(" — {description}"));
+                }
+                if let Some(tag) = entry["language"].as_str().and_then(crate::language_hashtag) {
+                    text.push_str(&format!(" · {tag}"));
+                }
+                text.push('\n');
             }
         }
     }
     text
 }
 
-/// Called only after every card, index chunk and final overview was acknowledged.
+/// Called only after every card and index chunk was acknowledged.
 pub(super) fn acknowledge(state: &mut State, digest: &Value, day: &str) -> Result<()> {
     let format = Format::from_digest(digest)?;
     let entries = digest["entries"]
@@ -506,7 +510,7 @@ pub(super) fn preview_retained(args: &[String]) -> Result<()> {
     }).collect();
     let mut digest = json!({"format_version":3,"edition":format.name(),"generated_at":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
         "delivery_slot":format.slot(now),"period_end":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
-        "entries":entries,"overview":"","llm_used":false,"preview_kind":"retained-offline",
+        "entries":entries,"llm_used":false,"preview_kind":"retained-offline",
         "llm_budget":{"reason":"Offline preview: saved source descriptions only; no new provider requests"},
         "manifest":{"sources":[],"note":"Read-only replay of retained state; no source collection or delivery"}});
     fs::create_dir_all(directory)?;
@@ -730,8 +734,11 @@ mod tests {
         assert!(chunks.len() > 1);
         for chunk in &chunks {
             crate::telegram_format::validate_message(chunk, crate::ISSUE_CHUNK_LIMIT).unwrap();
+            assert!(!chunk.contains("Впервые замечен"));
         }
         for entry in digest["catalogue"].as_array().unwrap() {
+            assert!(entry["first_seen"].as_str().is_some());
+            assert!(entry["metadata_captured_at"].as_str().is_some());
             let link = crate::project_github_url(entry["full_name"].as_str().unwrap()).unwrap();
             assert_eq!(
                 chunks.iter().filter(|chunk| chunk.contains(&link)).count(),
@@ -744,6 +751,32 @@ mod tests {
         assert_eq!(pending(&state, now, Format::Daily).len(), 85);
         digest["catalogue"][0]["full_name"] = json!("org/injected");
         assert!(validate_catalogue(&digest, &selection).is_err());
+    }
+
+    #[test]
+    fn catalogue_hashtags_are_optional_and_provenance_stays_out_of_messages() {
+        let digest = json!({
+            "queue":{"pending_before":2},
+            "catalogue":[
+                {"full_name":"org/parser","description":"Разбирает исходные файлы.",
+                 "language":"C#","first_seen":"2026-10-13T00:17:00Z"},
+                {"full_name":"org/docs","description":"","language":null,
+                 "first_seen":"2026-10-14T00:17:00Z"}
+            ]
+        });
+        let mut chunks = Vec::new();
+        append_catalogue(&mut chunks, &digest).unwrap();
+        assert_eq!(chunks.len(), 1);
+        crate::telegram_format::validate_message(&chunks[0], crate::ISSUE_CHUNK_LIMIT).unwrap();
+        assert!(chunks[0].contains("\\#CSharp"));
+        assert!(chunks[0].ends_with("[org/docs](https://github.com/org/docs)"));
+        let preview = catalogue_markdown(&digest);
+        assert!(preview.contains("#CSharp"));
+        for text in [&chunks[0], &preview] {
+            assert!(!text.contains("Впервые замечен"));
+            assert!(!text.contains("Очередь до выпуска"));
+            assert!(!text.contains("2026"));
+        }
     }
 
     #[test]
@@ -762,6 +795,31 @@ mod tests {
         );
         snapshot.readme_excerpt = Some("Changed README".into());
         assert!(cached_analysis(&state, &snapshot).is_none());
+    }
+
+    #[test]
+    fn an_older_editorial_policy_invalidates_cache_without_losing_evidence() {
+        let mut state = fixture(1);
+        let snapshot = state.snapshots[0].clone();
+        remember_analyses(
+            &mut state,
+            &json!({"entries":[{"full_name":snapshot.full_name,"latest":snapshot,
+                "llm_used":true,"description":"Old verbose analysis","joke":"Repeated joke",
+                "evidence_quote":"Retained primary evidence"}]}),
+        );
+        assert!(cached_analysis(&state, &snapshot).is_some());
+        state.editions.analyses.get_mut("org/p000").unwrap().policy_version =
+            crate::editorial::POLICY_VERSION - 1;
+        let restored: State = serde_json::from_slice(&serde_json::to_vec(&state).unwrap()).unwrap();
+        assert!(cached_analysis(&restored, &snapshot).is_none());
+        assert_eq!(
+            restored.editions.analyses["org/p000"].evidence_quote,
+            "Retained primary evidence"
+        );
+        assert_eq!(
+            pending(&restored, time("2026-10-31T08:00:00Z"), Format::Daily).len(),
+            1
+        );
     }
 
     #[test]

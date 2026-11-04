@@ -34,7 +34,7 @@ on:
         type: string
         required: false
       preview_source_run_id:
-        description: Regenerate only the overview from a successful main run; uses the provider and never sends
+        description: Re-render a successful main run offline; no provider calls or sending
         type: string
         required: false
 

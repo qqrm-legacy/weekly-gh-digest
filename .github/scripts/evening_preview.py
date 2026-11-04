@@ -11,6 +11,13 @@ import remote_state
 OUT = Path('validation-artifacts')
 
 
+def validate_ai_cards(digest):
+    if not digest.get('entries'):
+        raise RuntimeError('A nonempty daily AI preview is required')
+    if not all(row.get('llm_used') is True for row in digest['entries']):
+        raise RuntimeError('Raw source fallback reached daily preview')
+
+
 def main():
     if os.environ.get('GITHUB_REPOSITORY') != 'qqrm-labs/weekly-gh-digest':
         raise RuntimeError('Unexpected repository')
@@ -42,12 +49,9 @@ def main():
     directory = Path(paths[-1])
     digest = json.loads((directory / 'ranking-input.json').read_text())
     daily_run.validate_preview(directory, digest['delivery_slot'])
-    if not digest['entries'] or not digest.get('overview', '').strip():
-        raise RuntimeError('A nonempty daily AI preview is required')
-    if not all(row.get('llm_used') for row in digest['entries']):
-        raise RuntimeError('Raw source fallback reached daily preview')
+    validate_ai_cards(digest)
     shutil.copytree(directory, OUT / 'daily', dirs_exist_ok=True)
-    result = {'cards': len(digest['entries']), 'overview': digest['overview'],
+    result = {'cards': len(digest['entries']),
               'all_cards_ai': True, 'llm_budget': digest['llm_budget'], 'queue': digest['queue'],
               'telegram_calls': 0, 'production_state_writes': 0}
     (OUT / 'report.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
