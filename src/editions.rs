@@ -808,8 +808,12 @@ mod tests {
                 "evidence_quote":"Retained primary evidence"}]}),
         );
         assert!(cached_analysis(&state, &snapshot).is_some());
-        state.editions.analyses.get_mut("org/p000").unwrap().policy_version =
-            crate::editorial::POLICY_VERSION - 1;
+        state
+            .editions
+            .analyses
+            .get_mut("org/p000")
+            .unwrap()
+            .policy_version = crate::editorial::POLICY_VERSION - 1;
         let restored: State = serde_json::from_slice(&serde_json::to_vec(&state).unwrap()).unwrap();
         assert!(cached_analysis(&restored, &snapshot).is_none());
         assert_eq!(

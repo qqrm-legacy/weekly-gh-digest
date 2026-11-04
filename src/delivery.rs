@@ -48,11 +48,7 @@ pub fn send_one(
 
 /// Validate every stored receipt and text against the complete intended payload.
 /// This is read-only and can also guard a saved technical-preview receipt.
-pub fn validate_chunks(
-    chunks: &[String],
-    progress_key: &str,
-    state: &State,
-) -> Result<()> {
+pub fn validate_chunks(chunks: &[String], progress_key: &str, state: &State) -> Result<()> {
     ensure!(
         state.uncertain_delivery.is_none(),
         "unconfirmed Telegram delivery; operator reconciliation required"

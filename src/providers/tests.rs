@@ -220,10 +220,9 @@ fn ranked(name: &str) -> Ranked {
 #[test]
 fn concise_cards_accept_empty_humour_and_bound_unicode_without_truncation() {
     let description = "Локально строит граф зависимостей исходных файлов.";
-    let parsed = parse_project_description(
-        &json!({"description":description,"joke":" \n\t "}).to_string(),
-    )
-    .unwrap();
+    let parsed =
+        parse_project_description(&json!({"description":description,"joke":" \n\t "}).to_string())
+            .unwrap();
     assert_eq!(parsed, (description.into(), String::new()));
     let boundary = "я".repeat(MAX_DESCRIPTION_CHARS);
     assert_eq!(
@@ -260,8 +259,7 @@ fn partial_enrichment_keeps_confirmed_descriptions_and_original_fallback_contrac
     let path = dir.path().join("state.json");
     let description = "Локально разбирает исходные файлы и показывает граф их зависимостей.";
     let response =
-        json!({"description":description,"joke":"","evidence_quote":README_EVIDENCE})
-            .to_string();
+        json!({"description":description,"joke":"","evidence_quote":README_EVIDENCE}).to_string();
     let server = TestServer::start(vec![(200, completion(&response)), (400, "{}".into())]);
     let provider = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
     let result = provider
@@ -291,8 +289,7 @@ fn completed_enrichment_uses_one_request_per_card_and_preserves_primary_evidence
     let path = dir.path().join("state.json");
     let description = "Локально разбирает исходные файлы и показывает граф их зависимостей.";
     let response =
-        json!({"description":description,"joke":"","evidence_quote":README_EVIDENCE})
-            .to_string();
+        json!({"description":description,"joke":"","evidence_quote":README_EVIDENCE}).to_string();
     let server = TestServer::start(vec![(200, completion(&response))]);
     let provider = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
     let mut entry = ranked("a/one");
@@ -346,7 +343,10 @@ fn missing_evidence_skips_only_that_project_without_requesting_a_summary() {
         "evidence_quote":README_EVIDENCE
     })
     .to_string();
-    let server = TestServer::start(vec![(200, completion(&response)), (200, completion(&response))]);
+    let server = TestServer::start(vec![
+        (200, completion(&response)),
+        (200, completion(&response)),
+    ]);
     let provider = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
     let mut unknown = ranked("b/unknown");
     unknown.snapshot.description = None;
@@ -608,7 +608,8 @@ fn daily_enrichment_resumes_checkpointed_cards_without_summary_or_duplicate_requ
         "description":"Локально разбирает исходные файлы и показывает граф их зависимостей.",
         "joke":"У зависимостей появилось семейное древо.",
         "evidence_quote":README_EVIDENCE
-    }).to_string();
+    })
+    .to_string();
     let server = TestServer::start(vec![(200, completion(&card)), (400, "{}".into())]);
     let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
     let mut state = State {

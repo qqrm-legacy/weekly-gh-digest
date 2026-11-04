@@ -1157,18 +1157,16 @@ fn telegram_deliver_debug_digest(
         if delivery.day != digest_id
             || delivery.chat_id != chat
             || delivery.posts.len() != chunks.len()
-            || !chunks
-                .iter()
-                .enumerate()
-                .all(|(index, text)| {
-                    let key = format!("chunk-{index:02}");
-                    progress.is_some_and(|saved| {
-                        saved.message_texts.get(&key) == Some(text)
-                            && saved.project_message_ids.get(&key).is_some_and(|id| {
-                                delivery.posts.get(&key) == Some(id)
-                            })
-                    })
+            || !chunks.iter().enumerate().all(|(index, text)| {
+                let key = format!("chunk-{index:02}");
+                progress.is_some_and(|saved| {
+                    saved.message_texts.get(&key) == Some(text)
+                        && saved
+                            .project_message_ids
+                            .get(&key)
+                            .is_some_and(|id| delivery.posts.get(&key) == Some(id))
                 })
+            })
         {
             return Err(anyhow!(
                 "existing debug delivery does not match this digest"
@@ -1338,7 +1336,9 @@ fn main() -> Result<()> {
                 "editorial_policy_version":editorial::POLICY_VERSION
             }),
         )?;
-        println!("Stored cards reformatted offline; no collection, provider requests or Telegram delivery.");
+        println!(
+            "Stored cards reformatted offline; no collection, provider requests or Telegram delivery."
+        );
         return Ok(());
     }
     if command == "debug-delivery" {
@@ -1751,11 +1751,9 @@ mod tests {
             .is_err()
         );
         assert_eq!(
-            parse_project_description(
-                &json!({"description":complete,"joke":""}).to_string()
-            )
-            .unwrap()
-            .1,
+            parse_project_description(&json!({"description":complete,"joke":""}).to_string())
+                .unwrap()
+                .1,
             ""
         );
         assert!(
@@ -1930,7 +1928,13 @@ mod tests {
             });
             let card = issue_item(&entry);
             assert!(card.ends_with(&format!("{} · ⭐ 1 234", markdown_v2_escape(expected))));
-            for clutter in ["из поиска", "метаданные", "Trending", "Исходное описание", "😄"] {
+            for clutter in [
+                "из поиска",
+                "метаданные",
+                "Trending",
+                "Исходное описание",
+                "😄",
+            ] {
                 assert!(!card.contains(clutter), "{card}");
             }
             telegram_format::validate_message(&card, ISSUE_CHUNK_LIMIT).unwrap();
@@ -1962,7 +1966,13 @@ mod tests {
         let chunks = digest_publication_text(&digest).unwrap();
         assert_eq!(chunks.len(), 1);
         assert!(chunks[0].starts_with("*GitHub — находки дня*"));
-        for clutter in ["Итог выпуска", "Legacy summary", "очеред", "Порядок:", "из поиска"] {
+        for clutter in [
+            "Итог выпуска",
+            "Legacy summary",
+            "очеред",
+            "Порядок:",
+            "из поиска",
+        ] {
             assert!(!chunks[0].contains(clutter));
         }
         save_preview_files(directory.path(), &digest, false).unwrap();
