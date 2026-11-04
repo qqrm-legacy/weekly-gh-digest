@@ -11,8 +11,8 @@ permissions:
   contents: read
 
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  group: ci-${{ github.workflow }}-${{ github.ref == 'refs/heads/main' && github.sha || github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
   checks:
@@ -55,6 +55,7 @@ jobs:
         run: |
           cargo build --locked
           python3 .github/scripts/verify_publication_disabled.py ./target/debug/weekly-gh-digest
+          python3 .github/scripts/verify_release_runtime.py ./target/debug/weekly-gh-digest
 
       - name: Install dependency tooling
         uses: taiki-e/install-action@8cca0918f8471c33515202b73f56ab27f2bed283 # v2.87.29
@@ -85,3 +86,4 @@ jobs:
           RESULT_0: ${{ needs.checks.result }}
         run: |
           test "$RESULT_0" = success
+

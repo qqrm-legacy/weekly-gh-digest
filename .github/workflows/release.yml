@@ -1,0 +1,136 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    outputs:
+      version: ${{ steps.metadata.outputs.version }}
+      tag: ${{ steps.metadata.outputs.tag }}
+      commit: ${{ steps.metadata.outputs.commit }}
+      artifact_name: ${{ steps.metadata.outputs.artifact_name }}
+    steps:
+      - name: Checkout the exact release commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Determine release version
+        id: metadata
+        env:
+          RELEASE_ARTIFACT: weekly-gh-digest-release-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          python3 .github/scripts/publish_release.py metadata
+          printf 'artifact_name=%s\n' "$RELEASE_ARTIFACT" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8 # master
+        with:
+          toolchain: stable
+
+      - name: Build release binary
+        env:
+          WEEKLY_DIGEST_VERSION: ${{ steps.metadata.outputs.version }}
+          WEEKLY_DIGEST_COMMIT: ${{ github.sha }}
+        run: cargo build --release --locked
+
+      - name: Verify portable offline runtime
+        run: python3 .github/scripts/verify_release_runtime.py "$PWD/target/release/weekly-gh-digest"
+
+      - name: Package the release binary and metadata
+        run: python3 .github/scripts/publish_release.py package target/release/weekly-gh-digest release-assets
+
+      - name: Verify the archived executable outside the checkout
+        run: python3 .github/scripts/publish_release.py verify release-assets
+
+      - name: Upload release assets
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ${{ steps.metadata.outputs.artifact_name }}
+          path: release-assets
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    if: github.ref == 'refs/heads/main'
+    needs: [build]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      actions: read
+      checks: read
+    steps:
+      - name: Checkout the exact release commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Download assets from this build attempt
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_ARTIFACT: ${{ needs.build.outputs.artifact_name }}
+        run: |
+          gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" \
+            --name "$RELEASE_ARTIFACT" --dir release-assets
+
+      - name: Verify downloaded assets without credentials
+        run: python3 .github/scripts/publish_release.py verify release-assets
+
+      - name: Require all checks and publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/publish_release.py publish release-assets
+
+  verify-release:
+    name: Verify published release
+    needs: [build, publish]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout the released runtime scripts
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ needs.build.outputs.commit }}
+          persist-credentials: false
+
+      - name: Resolve the published release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ needs.build.outputs.tag }}
+          RELEASE_SELECTION: ${{ runner.temp }}/verified-release.json
+        run: python3 .github/scripts/download_release.py resolve --tag "$RELEASE_TAG" --output "$RELEASE_SELECTION"
+
+      - name: Download and verify the released executable
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_SELECTION: ${{ runner.temp }}/verified-release.json
+        run: python3 .github/scripts/download_release.py install "$RELEASE_SELECTION" --destination bin
+
+      - name: Exercise the downloaded binary without publication credentials
+        env:
+          RELEASE_TAG: ${{ needs.build.outputs.tag }}
+          RELEASE_COMMIT: ${{ needs.build.outputs.commit }}
+        run: |
+          ./bin/weekly-gh-digest --version
+          python3 .github/scripts/verify_publication_disabled.py ./bin/weekly-gh-digest
+          python3 .github/scripts/verify_release_runtime.py ./bin/weekly-gh-digest
+          printf 'Verified published release %s (%s): downloaded asset, identity, offline rendering and local state guard.\n' \
+            "$RELEASE_TAG" "$RELEASE_COMMIT" >> "$GITHUB_STEP_SUMMARY"

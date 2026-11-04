@@ -85,7 +85,7 @@ class DailyRunTests(unittest.TestCase):
         for llm in ["true", "false"]:
             with tempfile.TemporaryDirectory() as directory:
                 root = Path(directory)
-                binary = root / "target/release/weekly-gh-digest"
+                binary = root / "bin/weekly-gh-digest"
                 binary.parent.mkdir(parents=True)
                 binary.write_text("#!/bin/sh\nprintf '%s\\n' \"$@\" > arguments\n")
                 binary.chmod(0o755)

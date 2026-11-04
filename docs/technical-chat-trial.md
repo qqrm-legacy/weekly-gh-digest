@@ -1,5 +1,9 @@
 # Bounded technical-chat trial: 31 October–7 November 2026
 
+This is a branch-scoped developer acceptance test. It builds the trial
+branch to test unshipped changes; it is outside the [production release pipeline](releases.md).
+Ordinary production and technical previews use the released version through `Run Bot`.
+
 The owner authorized live test delivery, not production publication or merging PR #20.
 The trial runs only on `feat/retained-daily-weekly-digests-2026-10-31` and refuses
 sends at or after `2026-11-08T00:00:00Z`. Both publication variables remain unchanged

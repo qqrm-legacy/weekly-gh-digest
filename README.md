@@ -41,7 +41,7 @@ The authoritative `delivery-state` checkpoint keeps a `covered` map of every rep
 
 ## Evidence-based project analysis
 
-Groq returns a concise Russian project description and an optional short joke grounded in GitHub metadata and the README excerpt. Generated descriptions must include an exact README evidence quote, validated against the supplied primary text and retained in the artifact. Quote presence proves provenance, not the truth of every generated assertion. README collection covers the whole selected pool. Missing primary evidence is recorded in source_gaps, and missing usable README evidence in readme_gaps, including previews with LLM disabled. Projects without usable README evidence retain the GitHub-description fallback for offline or manual weekly previews and stay queued for daily AI delivery. Rust supplies card titles and links, star counts, language hashtags, escaping, order and layout. Partial provider failure preserves completed descriptions; the publication audit checks credentials, message lengths, and the emitted MarkdownV2 subset. It does not certify factual accuracy or project quality.
+Groq returns a substantive Russian mini-review and an optional short joke grounded in GitHub metadata and the README excerpt. Generated descriptions must include an exact README evidence quote, validated against the supplied primary text and retained in the artifact. Quote presence proves provenance, not the truth of every generated assertion. README collection covers the whole selected pool. Missing primary evidence is recorded in source_gaps, and missing usable README evidence in readme_gaps, including previews with LLM disabled. Projects without usable README evidence retain the GitHub-description fallback for offline or manual weekly previews and stay queued for daily AI delivery. Rust supplies card titles and links, star counts, language hashtags, escaping, order and layout. Partial provider failure preserves completed descriptions; the publication audit checks credentials, message lengths, and the emitted MarkdownV2 subset. It does not certify factual accuracy or project quality.
 
 ## Configure GitHub Actions
 
@@ -67,9 +67,13 @@ The workflow needs repository `contents: write` permission to update `delivery-s
 - state_store.rs owns atomic state files; delivery.rs owns resumable chunk delivery. main.rs keeps CLI orchestration, ranking and deterministic rendering.
 - Regression tests use loopback HTTP and a fake clock. They never need provider or Telegram credentials, real sleeps, or production state.
 
-## Hosted validation
+## CI and production releases
 
-The repository template retains CI, action security checks, Dependabot, and its Rust toolchain configuration. CI checks formatting, compilation, Clippy, dependency advisories, dependency policy, and unused dependencies. To validate delivery without sending a Telegram message, run `Run Bot` manually with the default dry-run setting and inspect its uploaded artifact.
+Every push to `main`, including a merged pull request, starts a release for that commit. Publication waits for all six CI and workflow-security checks to succeed. CI covers Rust and Python tests, formatting, compilation, Clippy, dependency advisories, dependency policy, unused dependencies, and publication-disabled CLI boundaries.
+
+`Run Bot` downloads the latest stable GitHub Release and uses the binary together with runtime scripts from the release's exact commit. It verifies the archive checksum and release metadata and never compiles Rust or falls back to a source build. A merge becomes available after its release is published; the next `Run Bot` run picks it up. The release itself does not send a digest or change publication permissions.
+
+See [release versions, verification, and rollback](docs/releases.md). For a production preview, dispatch `Run Bot` with the default dry-run setting and inspect its artifact. Source builds in CI and the explicitly named developer validation workflows test unshipped changes; they do not select the production binary.
 
 ## Checkpoint and maintenance guarantees
 
@@ -128,6 +132,6 @@ Preview artifacts retain coverage notices and capture timestamps without adding 
 
 ## Re-render a saved issue offline
 
-Dispatch `Run Bot` with `preview_source_run_id` set to a successful run of `Run Bot` from `main`. This downloads its flat artifact as data, validates the recorded selection and publication format, and re-renders the stored cards with the current layout. Both daily and weekly artifacts are supported. Sending or recovery inputs cannot be combined with this option. No provider key or Telegram credentials are injected, even if `preview_with_llm=true` is also selected.
+Dispatch `Run Bot` with `preview_source_run_id` set to a successful run of `Run Bot` from `main`. This downloads its flat artifact as data, validates the recorded selection and publication format, and re-renders the stored cards with the selected release's layout. Both daily and weekly artifacts are supported. Sending or recovery inputs cannot be combined with this option. No provider key or Telegram credentials are injected, even if `preview_with_llm=true` is also selected.
 
 The local equivalent is `weekly-gh-digest preview-stored <run-directory>`. It preserves source descriptions, observation dates, and provenance, and writes the current preview files. `format-refresh.json` records the source generation time, refresh time, zero provider requests, message count, and editorial policy version; `format_refreshed_at` records the refresh in the digest. `preview-source.json` identifies the originating Actions run. This operation changes presentation only and does not generate new analyses or acknowledge publication.

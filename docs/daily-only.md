@@ -17,6 +17,13 @@ global delivery gate is enabled. A delayed event using the retired Monday cron
 is collection-only. Weekly Recovery has only a manual, preview-only trigger:
 no timer and no push-triggered dispatch.
 
+## Runtime version
+
+Every `Run Bot` mode uses the latest stable [GitHub Release](releases.md), with
+verified assets and runtime scripts from the same commit. Merging to `main` starts
+the checked release pipeline; the next run adopts the version only after release
+publication succeeds. Publication gates and the daily schedule remain separate.
+
 ## What readers receive
 
 The daily format contains up to 12 substantive, validated Russian AI mini-reviews.
