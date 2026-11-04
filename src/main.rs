@@ -1758,7 +1758,7 @@ mod tests {
         );
         assert!(
             parse_project_description(
-                &json!({"description":"я".repeat(421),"joke":""}).to_string()
+                &json!({"description":"я".repeat(651),"joke":""}).to_string()
             )
             .is_err()
         );

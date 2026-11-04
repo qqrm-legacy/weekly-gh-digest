@@ -20,7 +20,8 @@ no timer and no push-triggered dispatch.
 ## What readers receive
 
 The daily format contains up to 12 concise, validated Russian AI explanations.
-Each card has a linked repository name, one or two sentences, and a compact line
+Each card has a linked repository name, roughly three or four substantive sentences
+(usually 350–550 characters, at most 650), and a compact line
 with a language hashtag and available star metrics. Humor is optional; there is no
 issue synopsis or separate final message. Source and capture details remain in
 artifacts rather than publication text. A daily publication slot may contain several Telegram messages; it

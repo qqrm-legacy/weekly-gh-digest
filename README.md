@@ -12,7 +12,7 @@ Russian GitHub discoveries delivered to Telegram each day at 18:00 Moscow, with 
 
 ## Message format
 
-A message starts with the edition and date, followed by linked repository names and concise Russian descriptions. A card explains the concrete task and one useful mechanism, use case, or material limitation in one or two sentences, normally 160–320 characters and at most 420. Language is a hashtag such as `#Python`; total stars and an available positive Trending peak form a compact statistics line. `C++` and `C#` use valid tags `#CPP` and `#CSharp`.
+A message starts with the edition and date, followed by linked repository names and concise Russian descriptions. A card explains the concrete task, useful mechanism or distinction, practical application, and any material documented limitation in roughly three or four sentences, normally 350–550 characters and at most 650. Preserve useful technical details; sparse sources may justify a shorter card without padding or invented claims. Language is a hashtag such as `#Python`; total stars and an available positive Trending peak form a compact statistics line. `C++` and `C#` use valid tags `#CPP` and `#CSharp`.
 
 Humor is optional: a short observation tied to that project can be kept, while filler, repeated templates, and duplicate jokes are omitted. There is no final issue summary, duplicate link list, `Метаданные:` label, capture timestamp, queue explanation, or “new repository from Search” line in the published cards. Source provenance, coverage, queue decisions, and evidence quotes remain in the review artifacts.
 

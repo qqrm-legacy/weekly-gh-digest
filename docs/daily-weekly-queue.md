@@ -138,8 +138,9 @@ issue synopsis or separate summary request. Completed analyses are checkpointed
 individually and reused when
 sources and editorial policy match. Weekly eligibility remains independent.
 
-Explanations use one or two sentences to state the task and a useful mechanism,
-use case, or material documented limit. Humor is optional and project-specific;
+Explanations normally use three or four sentences and 350–550 characters (at most
+650) to explain the task, mechanism or distinction, practical use, and any material
+documented limit. Useful details are preserved; sparse sources need no padding. Humor is optional and project-specific;
 language is rendered as a hashtag. Selection provenance remains in artifacts. Language, Latin product-name provenance and known
 terminology regression checks are conservative heuristics, not a complete factual
 audit. They can defer valid text and cannot detect all unsupported claims.
