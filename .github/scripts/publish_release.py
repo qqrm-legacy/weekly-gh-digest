@@ -130,6 +130,12 @@ def verify_archive_runtime(directory, metadata):
                         str(binary)], cwd=working, env=env, check=True, timeout=60)
 
 
+class GitHubError(RuntimeError):
+    def __init__(self, message, status=None):
+        super().__init__(message)
+        self.status = status
+
+
 class GitHub:
     def __init__(self, repository):
         require(re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repository) is not None,
@@ -140,7 +146,10 @@ class GitHub:
     def command(*arguments):
         result = subprocess.run(["gh", *arguments], text=True, capture_output=True,
                                 timeout=180, check=False)
-        require(result.returncode == 0, f"GitHub command failed: {result.stderr.strip()}")
+        if result.returncode != 0:
+            status = re.search(r"\(HTTP ([0-9]{3})\)", result.stderr)
+            raise GitHubError(f"GitHub command failed: {result.stderr.strip()}",
+                              int(status[1]) if status else None)
         return result.stdout
 
     def api(self, endpoint, *arguments):
@@ -155,14 +164,29 @@ class GitHub:
         pages = self.api("releases?per_page=100", "--paginate", "--slurp")
         return [release for page in pages for release in page]
 
+    def release_by_id(self, identifier):
+        require(type(identifier) is int and identifier > 0,
+                "Release must have a positive integer id")
+        return self.api(f"releases/{identifier}")
+
     def tag_ref(self, tag):
         matches = self.api(f"git/matching-refs/tags/{tag}")
         exact = [ref for ref in matches if ref.get("ref") == f"refs/tags/{tag}"]
         require(len(exact) <= 1, "GitHub returned duplicate release tags")
         return exact[0] if exact else None
 
-    def release_command(self, action, tag, *arguments):
-        return self.command("release", action, tag, "--repo", self.repository, *arguments)
+    def upload_asset(self, identifier, path):
+        require(type(identifier) is int and identifier > 0,
+                "Release must have a positive integer id")
+        path = Path(path)
+        require(path.name in ASSETS, "Unexpected release asset name")
+        # gh release upload discovers drafts through a separate GraphQL tag index.
+        # Upload to the known REST id so that index cannot delay this operation.
+        endpoint = (f"https://uploads.github.com/repos/{self.repository}/releases/{identifier}/assets"
+                    f"?name={path.name}")
+        return json.loads(self.command("api", endpoint, "--method", "POST", "--input", str(path),
+                                       "-H", "Content-Type: application/octet-stream",
+                                       "-H", f"Content-Length: {path.stat().st_size}"))
 
 
 def pending_checks(check_runs, commit):
@@ -205,7 +229,7 @@ def find_release(releases, tag):
 
 
 def validate_release(release, metadata):
-    require(release is not None, "The release was not returned by GitHub")
+    require(isinstance(release, dict), "The release was not returned by GitHub")
     require(type(release.get("id")) is int and release["id"] > 0,
             "Release must have a positive integer id")
     require(release.get("tag_name") == metadata["tag"]
@@ -219,24 +243,66 @@ def validate_tag(github, metadata, allow_missing=False):
     ref = github.tag_ref(metadata["tag"])
     if ref is None:
         require(allow_missing, "Published release tag is missing")
+        return False
     else:
         require(ref.get("object", {}).get("type") == "commit"
                 and ref["object"].get("sha") == metadata["commit"],
                 "Release tag does not point to the exact build commit")
+        return True
 
 
-def validate_uploaded_assets(release, hashes, allow_missing=False):
-    assets = release.get("assets", [])
+def validate_uploaded_assets(release, hashes, allow_missing=False, allow_pending=False):
+    assets = release.get("assets")
+    require(isinstance(assets, list) and all(isinstance(asset, dict) for asset in assets),
+            "Release assets must be a list of asset objects")
     names = [asset.get("name") for asset in assets]
     require(len(names) == len(set(names)) and set(names) <= set(ASSETS),
             "Existing release has unexpected or duplicate assets")
     for asset in assets:
-        require(asset.get("state") == "uploaded"
-                and asset.get("digest") == f"sha256:{hashes[asset['name']]}",
+        expected = f"sha256:{hashes[asset['name']]}"
+        require(asset.get("state") in {"starter", "uploaded"}, "Invalid release asset state")
+        require(asset.get("digest") is None or asset["digest"] == expected,
                 f"Existing asset differs from this build: {asset['name']}; refusing replacement")
+        if not allow_pending:
+            require(asset["state"] == "uploaded" and asset.get("digest") == expected,
+                    f"Release asset is not ready: {asset['name']}")
     if not allow_missing:
         require(set(names) == set(ASSETS), "Published release is missing required assets")
     return set(names)
+
+
+def wait_for_release(github, identifier, metadata, hashes, *, require_assets=False,
+                     published=False, timeout=60, interval=2):
+    """Retry only reads of a known id; invalid identity, data and permissions fail immediately."""
+    deadline = time.monotonic() + timeout
+    while True:
+        not_found = False
+        try:
+            current = github.release_by_id(identifier)
+        except GitHubError as error:
+            if error.status != 404:
+                raise
+            not_found = True
+        if not not_found:
+            validate_release(current, metadata)
+            require(current["id"] == identifier, "GitHub returned a different release id")
+            names = validate_uploaded_assets(current, hashes, allow_missing=True, allow_pending=True)
+            ready = (not require_assets or names == set(ASSETS)) and all(
+                asset["state"] == "uploaded" and asset.get("digest") == f"sha256:{hashes[asset['name']]}"
+                for asset in current["assets"]
+            )
+            if published:
+                ready = ready and not current["draft"]
+                if ready:
+                    ready = validate_tag(github, metadata, allow_missing=True)
+            else:
+                require(current["draft"], "Release changed while preparing publication")
+            if ready:
+                return current
+        remaining = deadline - time.monotonic()
+        require(remaining > 0, f"Timed out waiting for release {metadata['tag']} ({identifier}) to become ready")
+        print(f"Waiting for release {metadata['tag']} ({identifier}) to become ready", flush=True)
+        time.sleep(min(interval, remaining))
 
 
 def should_make_latest(releases, version):
@@ -264,49 +330,51 @@ def publish_release(github, directory, metadata, timeout=2100):
     should_make_latest(releases, metadata["version"])
     if release is not None:
         validate_release(release, metadata)
-        validate_uploaded_assets(release, hashes, allow_missing=release["draft"])
         if not release["draft"]:
+            wait_for_release(github, release["id"], metadata, hashes, require_assets=True,
+                             published=True)
             print(f"{metadata['tag']} already published with identical assets; no changes.")
             return
     else:
         with tempfile.TemporaryDirectory(prefix="release-notes-") as temporary:
-            notes = Path(temporary) / "notes.md"
-            notes.write_text(
+            notes = (
                 f"Automated build from main.\n\nCommit: `{metadata['commit']}`\n"
                 f"Target: `{metadata['target']}`\n\n"
-                "All required CI and workflow security checks passed for this commit.\n",
-                encoding="utf-8",
+                "All required CI and workflow security checks passed for this commit.\n"
             )
-            github.release_command("create", metadata["tag"], "--draft", "--latest=false",
-                                   "--target", metadata["commit"], "--title", metadata["tag"],
-                                   "--notes-file", str(notes))
-        release = find_release(github.releases(), metadata["tag"])
+            payload = Path(temporary) / "release.json"
+            payload.write_text(json.dumps({"tag_name": metadata["tag"],
+                                           "target_commitish": metadata["commit"],
+                                           "name": metadata["tag"], "body": notes,
+                                           "draft": True, "prerelease": False,
+                                           "make_latest": "false"}), encoding="utf-8")
+            release = github.api("releases", "--method", "POST", "--input", str(payload))
         validate_release(release, metadata)
         require(release["draft"], "New release must remain a draft until assets are verified")
 
+    identifier = release["id"]
+    release = wait_for_release(github, identifier, metadata, hashes)
     existing = validate_uploaded_assets(release, hashes, allow_missing=True)
-    missing = [str(directory / name) for name in ASSETS if name not in existing]
-    if missing:
-        # Never use --clobber: published assets and partial draft uploads are immutable here.
-        github.release_command("upload", metadata["tag"], *missing)
-    releases = github.releases()
-    release = find_release(releases, metadata["tag"])
-    validate_release(release, metadata)
-    require(release["draft"], "Release changed while preparing publication")
-    validate_uploaded_assets(release, hashes)
+    for name in ASSETS:
+        if name not in existing:
+            # Each POST is attempted once; an uncertain result is inspected on the next run.
+            uploaded = github.upload_asset(identifier, directory / name)
+            require(isinstance(uploaded, dict) and uploaded.get("name") == name,
+                    "GitHub returned a different uploaded asset")
+            validate_uploaded_assets({"assets": [uploaded]}, hashes,
+                                     allow_missing=True, allow_pending=True)
+    wait_for_release(github, identifier, metadata, hashes, require_assets=True)
     validate_tag(github, metadata, allow_missing=True)
     # A newly started check rerun must not be hidden by the earlier successful observation.
     wait_for_checks(github, metadata["commit"], timeout=timeout)
     # Never force latest=true: another run can publish a newer version after this read.
     # Server-side legacy selection handles that race without a lossy global queue.
-    latest = "legacy" if should_make_latest(releases, metadata["version"]) else "false"
-    github.api(f"releases/{release['id']}", "--method", "PATCH",
-               "-F", "draft=false", "-f", f"make_latest={latest}")
-    published = find_release(github.releases(), metadata["tag"])
+    latest = "legacy" if should_make_latest(github.releases(), metadata["version"]) else "false"
+    published = github.api(f"releases/{identifier}", "--method", "PATCH",
+                           "-F", "draft=false", "-f", f"make_latest={latest}")
     validate_release(published, metadata)
-    require(not published["draft"], "Release remained a draft after publication")
-    validate_uploaded_assets(published, hashes)
-    validate_tag(github, metadata)
+    require(published["id"] == identifier, "GitHub returned a different release id")
+    wait_for_release(github, identifier, metadata, hashes, require_assets=True, published=True)
     print(f"Published {metadata['tag']} from {metadata['commit']} (latest={latest}).")
 
 
