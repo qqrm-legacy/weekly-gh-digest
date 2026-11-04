@@ -1,6 +1,8 @@
 # Daily discoveries and manual weekly editions
 
 Automatic delivery is daily-only; see [the current schedule](daily-only.md).
+`Run Bot` uses the verified binary and matching runtime scripts from the latest
+stable [GitHub Release](releases.md).
 
 ## Durable state, not a text hand-off
 
@@ -99,6 +101,10 @@ No secrets belong in these variables or in source control.
 
 ## Read-only replay
 
+These commands build the current checkout for local development and produce only
+offline artifacts. Production and ordinary Actions previews use `Run Bot` and its
+released binary.
+
 ```sh
 cargo build --locked
 ./target/debug/weekly-gh-digest preview-retained /tmp/state.json /tmp/daily-preview --daily --at=2026-11-03T15:00:00Z
@@ -110,9 +116,12 @@ descriptions or matching cached analyses, and writes only preview artifacts. It
 makes no GitHub, LLM or Telegram requests and does not modify input state. Offline
 previews are labelled, not presented as fresh LLM analyses.
 
-`Evening digest validation` exercises the real free provider on a local copy of
-state. It has read-only repository permission, no Telegram credentials, and no
-remote checkpoint writer. Its artifact is a preview, not a delivery receipt.
+`Evening digest validation` is an explicit developer validation of the selected
+source checkout, including its Rust checks and a real free-provider preview on a
+local copy of state. It has read-only repository permission, no Telegram
+credentials, and no remote checkpoint writer. Its artifact is a preview, not a
+delivery receipt or a production deployment. Use `Run Bot` for a preview of the
+released production version.
 
 Run the repository's Rust checks and:
 

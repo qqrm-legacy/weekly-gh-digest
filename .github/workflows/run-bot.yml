@@ -49,16 +49,74 @@ concurrency:
 jobs:
   run:
     if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 45
-    env:
-      CARGO_TERM_COLOR: always
     steps:
-      - name: Checkout
+      - name: Resolve latest published stable release
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_SELECTION: ${{ runner.temp }}/weekly-gh-digest-release.json
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import re
+          import subprocess
+
+          repository = os.environ['GITHUB_REPOSITORY']
+          if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]*/[A-Za-z0-9][A-Za-z0-9_.-]*', repository):
+              raise SystemExit('Invalid repository')
+          def api(path):
+              return json.loads(subprocess.check_output(
+                  ['gh', 'api', '--hostname', 'github.com', '-H', 'Accept: application/vnd.github+json',
+                   f'repos/{repository}/{path}'], text=True, timeout=60))
+          release = api('releases/latest')
+          if (release.get('draft') is not False or release.get('prerelease') is not False
+                  or not release.get('published_at')):
+              raise SystemExit('Latest release must be published and stable')
+          tag = release.get('tag_name', '')
+          if not isinstance(tag, str) or not re.fullmatch(r'v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)', tag):
+              raise SystemExit('Latest release must have a stable vMAJOR.MINOR.PATCH tag')
+          reference = api(f'git/ref/tags/{tag}')
+          if reference.get('ref') != f'refs/tags/{tag}':
+              raise SystemExit('Release tag reference does not match')
+          obj = reference.get('object', {})
+          for _ in range(8):
+              sha = obj.get('sha', '')
+              if not isinstance(sha, str) or not re.fullmatch(r'[0-9a-f]{40}', sha):
+                  raise SystemExit('Release reference has no full object SHA')
+              if obj.get('type') == 'commit':
+                  break
+              if obj.get('type') != 'tag':
+                  raise SystemExit('Release tag does not reference a commit')
+              obj = api(f'git/tags/{sha}').get('object', {})
+          else:
+              raise SystemExit('Release tag nesting is too deep')
+          commit = api(f'commits/{sha}').get('sha')
+          if commit != sha:
+              raise SystemExit('Resolved release commit does not match')
+          selection = {'repository': repository, 'release': release, 'commit': commit}
+          Path(os.environ['RELEASE_SELECTION']).write_text(json.dumps(selection), encoding='utf-8')
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write(f'tag={tag}\ncommit={commit}\n')
+          PY
+
+      - name: Checkout selected release source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: ${{ steps.release.outputs.commit }}
           fetch-depth: 0
           persist-credentials: false
+
+      - name: Install verified release binary
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_SELECTION: ${{ runner.temp }}/weekly-gh-digest-release.json
+        run: python3 .github/scripts/download_release.py install "$RELEASE_SELECTION" --destination bin
 
       - name: Restore persistent state
         id: restore-state
@@ -135,17 +193,6 @@ jobs:
           RETRY_DELIVERY_RUN_ID: ${{ inputs.retry_delivery_run_id }}
           PREVIEW_SOURCE_RUN_ID: ${{ inputs.preview_source_run_id }}
         run: python3 .github/scripts/run_mode.py
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8 # master
-        with:
-          toolchain: stable
-
-      - name: Cache build
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
-
-      - name: Build bot
-        run: cargo build --release --locked
-
       - name: Collect, preview, or deliver digest
         id: prepare
         env:
@@ -168,7 +215,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          bot=./target/release/weekly-gh-digest
+          bot=./bin/weekly-gh-digest
           if [[ "$RUN_MODE" == "preview-stored" ]]; then
             [[ "$PREVIEW_SOURCE_RUN_ID" =~ ^[0-9]+$ ]]
             source=$(gh run view "$PREVIEW_SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" --json workflowName,headBranch,conclusion)

@@ -27,7 +27,6 @@ use std::time::Duration as StdDuration;
 
 /// Selection is bounded only after the whole weekly observation union is built.
 const MAX_DIGEST_ENTRIES: usize = 30;
-const ROOT: &str = env!("CARGO_MANIFEST_DIR");
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 struct Snapshot {
@@ -114,7 +113,7 @@ struct Ranked {
 }
 
 fn root() -> PathBuf {
-    PathBuf::from(ROOT)
+    PathBuf::from(".")
 }
 fn data_dir() -> PathBuf {
     root().join("data")
@@ -1287,6 +1286,12 @@ fn deliver_pending_digests(state: &mut State, now: DateTime<Utc>) -> Result<()> 
 fn main() -> Result<()> {
     let args: Vec<String> = env::args().skip(1).collect();
     let command = args.first().map(String::as_str).unwrap_or("preview");
+    if matches!(command, "--version" | "-V") {
+        let version = option_env!("WEEKLY_DIGEST_VERSION").unwrap_or(env!("CARGO_PKG_VERSION"));
+        let commit = option_env!("WEEKLY_DIGEST_COMMIT").unwrap_or("unknown");
+        println!("weekly-gh-digest {version} ({commit})");
+        return Ok(());
+    }
     if command == "preview-retained" {
         return editions::preview_retained(&args);
     }
