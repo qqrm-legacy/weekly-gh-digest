@@ -1758,7 +1758,7 @@ mod tests {
         );
         assert!(
             parse_project_description(
-                &json!({"description":"я".repeat(651),"joke":""}).to_string()
+                &json!({"description":"я".repeat(1601),"joke":""}).to_string()
             )
             .is_err()
         );
@@ -1766,6 +1766,12 @@ mod tests {
 
     #[test]
     fn issue_items_keep_full_text_with_compact_tags_and_metrics() {
+        let description = [
+            "Инструмент для проверки репозитория. ".repeat(30).trim(),
+            "Показывает найденные зависимости и помогает оценить объём изменений.",
+            "Результат проверки можно использовать при подготовке обновления.",
+        ]
+        .join("\n\n");
         let project = json!({
             "rank": 1,
             "total": 1,
@@ -1773,7 +1779,7 @@ mod tests {
             "full_name": "org/repo",
             "delta": 120,
             "metric_captured_at":"2026-10-20T12:17:08Z",
-            "description": "Инструмент для проверки репозитория. ".repeat(15),
+            "description": description,
             "joke": "Проверку прошёл даже этот пример.",
             "latest": {"html_url":"https://github.com/org/repo","language":"Rust","stars":500,
                 "captured_at":"2026-10-24T20:53:42Z"}

@@ -218,7 +218,7 @@ fn ranked(name: &str) -> Ranked {
 }
 
 #[test]
-fn concise_cards_accept_empty_humour_and_bound_unicode_without_truncation() {
+fn project_cards_accept_empty_humour_and_bound_unicode_without_truncation() {
     let description = "Локально строит граф зависимостей исходных файлов.";
     let parsed =
         parse_project_description(&json!({"description":description,"joke":" \n\t "}).to_string())
@@ -250,6 +250,15 @@ fn concise_cards_accept_empty_humour_and_bound_unicode_without_truncation() {
     )
     .unwrap();
     assert_eq!(parsed, (description.into(), String::new()));
+}
+
+#[test]
+fn project_descriptions_preserve_paragraphs_and_normalize_line_wrapping() {
+    let raw = " \r\n  Локально  строит граф\r\nзависимостей исходных файлов.\r\n \t \r\n\r\nПоказывает связи  между модулями.\n\t\nПомогает оценить\n  объём изменений.  \n\n";
+    let expected = "Локально строит граф зависимостей исходных файлов.\n\nПоказывает связи между модулями.\n\nПомогает оценить объём изменений.";
+    let parsed =
+        parse_project_description(&json!({"description":raw,"joke":""}).to_string()).unwrap();
+    assert_eq!(parsed, (expected.into(), String::new()));
 }
 
 #[test]

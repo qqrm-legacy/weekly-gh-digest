@@ -4,7 +4,7 @@ use reqwest::{StatusCode, header::HeaderMap};
 use serde_json::Value;
 use std::time::Duration;
 
-pub(super) const POLICY_VERSION: u32 = 6;
+pub(super) const POLICY_VERSION: u32 = 7;
 
 pub(super) fn retry_delay(
     status: StatusCode,
