@@ -27,6 +27,11 @@ publication succeeds. Publication gates and the daily schedule remain separate.
 ## What readers receive
 
 The daily format contains up to 12 substantive, validated Russian AI mini-reviews.
+Selection reserves eight places for findings first observed within the last 24
+hours, ranked by daily Trending, weekly Trending, then Search and descending
+source metric. Four places serve the oldest due backlog. Either group can use
+unfilled places, up to 12 candidates in total. Repeated sightings and retries do
+not refresh a finding's first-seen time; overflow remains queued.
 Each card has a linked repository name, two or three short paragraphs
 (usually 800–1200 characters, with a requested maximum of 1500; responses up to
 2000 are accepted without truncation), and a compact line

@@ -34,15 +34,28 @@ acknowledgements consume the other's queue. Identity is case-insensitive
 
 ## Editorial policies
 
-Daily: at most 12 concise discoveries per issue. Earliest queue time first,
-then daily Trending peak, weekly Trending peak and Search when times match.
-Queue time starts at first discovery. A confirmed local explanation failure
+Daily: at most 12 concise discoveries per issue. Selection reserves eight places
+for findings first observed in the last 24 hours and four for older pending
+findings. Fresh findings rank by daily Trending, weekly Trending, then Search;
+within each source, the higher metric comes first, followed by queue time and
+repository name for ties. Older findings keep earliest queue time first, then
+the same source and metric priority. Fresh cards appear before backlog cards.
+Either group uses the other's unfilled places, so an all-fresh or all-backlog
+pool can still select 12. These are candidate quotas; rejected or unavailable
+explanations can reduce the final issue.
+
+Freshness uses the earliest retained observation in the inclusive UTC interval
+`[now - 24 hours, now]`. A later sighting or retry time does not make an old
+finding fresh. Overflow stays pending and joins the backlog after leaving that
+window; no observation is dropped or acknowledged by selection.
+
+Backlog queue time starts at first discovery. A confirmed local explanation failure
 (missing or unusable README, rejected quotation, invalid description or payload
 after repair, or a rejected cached card) sets `editions.daily_retry_at` to 24 hours
 after that attempt. The finding stays pending, then rejoins at that fixed retry
-time instead of retaining its old
-position. Existing backlog goes first; later discoveries cannot continually
-overtake a due retry. Matching cached or newly accepted analyses clear the retry.
+time instead of retaining its old position. Within the backlog, later discoveries
+cannot continually overtake a due retry. Matching cached or newly accepted
+analyses clear the retry.
 Only fetched README content or HTTP 404/410 establishes a local README failure;
 transport errors, authentication/rate-limit failures, exhausted request budgets
 and unvisited candidates do not move queue positions. Weekly and offline
@@ -151,7 +164,9 @@ python3 -m unittest discover -s .github/scripts -p 'test_*.py'
 Tests cover disappearing projects, prolonged outages, independent acknowledgements,
 capacity carry-over, migration, source-sensitive analysis reuse, date boundaries,
 frozen overdue payloads, full weekly indexes, chunk limits, daily recovery priority
-and safe publication routing.
+and safe publication routing. Daily selection tests cover the 24-hour boundary,
+fresh popularity, reserved backlog progress during continuing arrivals, capacity
+transfer in both directions, stable ordering and retained retry positions.
 
 ## Evening daily edition
 

@@ -10,6 +10,7 @@ use std::fs;
 use std::path::Path;
 
 pub(super) const DAILY_LIMIT: usize = 12;
+const DAILY_FRESH_LIMIT: usize = 8;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub(super) enum Format {
@@ -191,8 +192,8 @@ pub(super) fn select(
             Some((row, queued_at))
         })
         .collect();
-    // Local rejects rejoin at a fixed retry time rather than keeping an old
-    // position forever. Later discoveries cannot overtake an already due retry.
+    // Backlog keeps its queue order. Local rejects rejoin at a fixed retry time
+    // rather than reclaiming their old position after every rejection.
     pool.sort_by(|(a, a_time), (b, b_time)| {
         let pa = daily_priority(a);
         let pb = daily_priority(b);
@@ -202,14 +203,38 @@ pub(super) fn select(
             .then(pb.1.cmp(&pa.1))
             .then(a.full_name.cmp(&b.full_name))
     });
-    excluded.extend(pool.iter().skip(DAILY_LIMIT).map(|(row, _)| {
-        json!({
-            "full_name": row.full_name, "reason": "daily capacity; retained in pending queue"
-        })
-    }));
-    let entries = pool
+    let cutoff = now - Duration::days(1);
+    let (mut fresh, backlog): (Vec<_>, Vec<_>) = pool.into_iter().partition(|(row, _)| {
+        parse_time(first_seen(row)).is_some_and(|seen| seen >= cutoff && seen <= now)
+    });
+    fresh.sort_by(|(a, a_time), (b, b_time)| {
+        let pa = daily_priority(a);
+        let pb = daily_priority(b);
+        pa.0.cmp(&pb.0)
+            .then(pb.1.cmp(&pa.1))
+            .then(a_time.cmp(b_time))
+            .then(a.full_name.cmp(&b.full_name))
+    });
+    // Reserve eight places for fresh discoveries and four for older findings.
+    // Either group can use capacity the other does not need; no finding expires.
+    let backlog_reserve = backlog.len().min(DAILY_LIMIT - DAILY_FRESH_LIMIT);
+    let fresh_count = fresh.len().min(DAILY_LIMIT - backlog_reserve);
+    let backlog_count = backlog.len().min(DAILY_LIMIT - fresh_count);
+    excluded.extend(
+        fresh
+            .iter()
+            .skip(fresh_count)
+            .chain(backlog.iter().skip(backlog_count))
+            .map(|(row, _)| {
+                json!({
+                    "full_name": row.full_name, "reason": "daily capacity; retained in pending queue"
+                })
+            }),
+    );
+    let entries = fresh
         .into_iter()
-        .take(DAILY_LIMIT)
+        .take(fresh_count)
+        .chain(backlog.into_iter().take(backlog_count))
         .map(|(snapshot, _)| {
             let (_, delta, kind) = daily_priority(snapshot);
             Ranked {
@@ -306,12 +331,12 @@ pub(super) fn decorate(
         "pending_after_success":current.len() - detailed.len() - catalogue.len(),
         "ack_policy":"Only completed delivery acknowledges this format. Previews, failures and caps acknowledge nothing."});
     digest["ranking"] = json!(if format == Format::Daily {
-        "Persistent discovery queue: first-seen time or a rejected card's retry time, then daily Trending peak, weekly peak, Search. Local explanation failures wait 24 hours; deferred and capacity overflow findings stay queued. Daily publication does not exclude weekly publication."
+        "Up to 8 discoveries first seen within the last 24 hours, ranked by daily Trending peak, weekly peak, then Search, plus 4 oldest due backlog findings. Either group uses spare capacity, up to 12 total. Backlog order uses first-seen or retry time; local explanation failures wait 24 hours. Deferred and overflow findings stay queued. Daily publication does not exclude weekly publication."
     } else {
         "Persistent weekly queue including daily discoveries and undelivered backlog. Up to 30 detailed cards ranked by source peaks; every remaining candidate appears in the published index. No dependency on still appearing in Trending."
     });
     digest["trend_summary"] = json!(if format == Format::Daily {
-        "Находки дня из сохранённых наблюдений и недоставленного остатка. Порядок — время обнаружения или повторной попытки, при совпадении — дневной Trending. Новые для нашей ленты, не обязательно недавно созданные. Дневная публикация не исключает проект из недельного обзора."
+        "До восьми находок, впервые замеченных за последние 24 часа, по популярности в дневном Trending, недельном Trending и поиске; ещё четыре места — для старых находок по времени очереди или повторной попытки. Свободные места передаются другой группе, всего до 12 карточек. Новые для нашей ленты, не обязательно недавно созданные. Дневная публикация не исключает проект из недельного обзора."
     } else {
         "Недельный обзор накопленных находок, включая дневные выпуски и недоставленный остаток прошлых периодов. Подробные карточки дополнены полным указателем остальных находок. Метрики Trending — максимальные наблюдавшиеся значения своих скользящих периодов, а не сумма срезов или измеренный прирост за календарную неделю."
     });
@@ -675,13 +700,13 @@ mod tests {
     }
 
     #[test]
-    fn old_backlog_precedes_fresh_popularity_and_case_changes_do_not_duplicate() {
+    fn fresh_selection_uses_first_discovery_and_case_changes_do_not_duplicate() {
         let mut state = fixture(1);
         schedule::record(
             &mut state,
             &[
-                row("ORG/P000", "2026-10-14T00:17:00Z", 50),
-                row("org/fresh", "2026-10-30T00:17:00Z", 99999),
+                row("ORG/P000", "2026-10-31T01:17:00Z", 99999),
+                row("org/fresh", "2026-10-31T00:17:00Z", 50),
             ],
         );
         let candidates = pending(&state, time("2026-10-31T08:00:00Z"), Format::Daily);
@@ -692,8 +717,9 @@ mod tests {
             Format::Daily,
             time("2026-10-31T08:00:00Z"),
         );
+        assert_eq!(selected[0].snapshot.full_name, "org/fresh");
         assert!(
-            selected[0]
+            selected[1]
                 .snapshot
                 .full_name
                 .eq_ignore_ascii_case("org/p000")
@@ -711,6 +737,190 @@ mod tests {
     }
 
     #[test]
+    fn fresh_popularity_and_old_backlog_both_get_capacity_without_consuming_state() {
+        let mut state = fixture(10);
+        let now = time("2026-11-08T15:00:00Z");
+        for (kind, count) in [
+            ("trending_daily", 6),
+            ("trending_weekly", 4),
+            ("new_repo", 4),
+        ] {
+            for index in 0..count {
+                let mut snapshot = row(
+                    &format!("fresh/{kind}-{index}"),
+                    &format!("2026-11-08T{:02}:00:00Z", 8 + index),
+                    index + 1,
+                );
+                snapshot.stars = Some(1_000_000 + index);
+                snapshot.sources[0]["type"] = json!(kind);
+                if kind == "trending_daily" && index < 2 {
+                    snapshot.captured_at = "2026-11-08T14:00:00Z".into();
+                    snapshot.sources[0]["trending_stars_period"] = json!(1);
+                }
+                schedule::record(&mut state, &[snapshot]);
+            }
+        }
+        let mut candidates = pending(&state, now, Format::Daily);
+        let before = serde_json::to_value(&state).unwrap();
+        let (selected, excluded) = select(&candidates, &state, Format::Daily, now);
+        let names: Vec<_> = selected
+            .iter()
+            .map(|entry| entry.snapshot.full_name.as_str())
+            .collect();
+        assert_eq!(
+            names,
+            [
+                "fresh/trending_daily-5",
+                "fresh/trending_daily-4",
+                "fresh/trending_daily-3",
+                "fresh/trending_daily-2",
+                "fresh/trending_daily-0",
+                "fresh/trending_daily-1",
+                "fresh/trending_weekly-3",
+                "fresh/trending_weekly-2",
+                "org/p009",
+                "org/p008",
+                "org/p007",
+                "org/p006",
+            ]
+        );
+        assert_eq!(names.iter().collect::<BTreeSet<_>>().len(), DAILY_LIMIT);
+        assert_eq!(selected.len() + excluded.len(), candidates.len());
+        assert_eq!(serde_json::to_value(&state).unwrap(), before);
+        candidates.reverse();
+        let (reordered, _) = select(&candidates, &state, Format::Daily, now);
+        assert_eq!(
+            reordered
+                .iter()
+                .map(|entry| entry.snapshot.full_name.as_str())
+                .collect::<Vec<_>>(),
+            names
+        );
+    }
+
+    #[test]
+    fn unused_daily_capacity_moves_between_fresh_and_backlog() {
+        for (fresh, backlog, expected_fresh, expected_backlog) in [
+            (20, 0, 12, 0),
+            (0, 20, 0, 12),
+            (3, 20, 3, 9),
+            (20, 2, 10, 2),
+            (2, 3, 2, 3),
+        ] {
+            let mut state = fixture(backlog);
+            let now = time("2026-11-08T15:00:00Z");
+            for index in 0..fresh {
+                schedule::record(
+                    &mut state,
+                    &[row(
+                        &format!("fresh/p{index}"),
+                        "2026-11-08T14:00:00Z",
+                        index,
+                    )],
+                );
+            }
+            let candidates = pending(&state, now, Format::Daily);
+            let (selected, _) = select(&candidates, &state, Format::Daily, now);
+            assert_eq!(selected.len(), expected_fresh + expected_backlog);
+            assert_eq!(
+                selected
+                    .iter()
+                    .filter(|entry| entry.snapshot.full_name.starts_with("fresh/"))
+                    .count(),
+                expected_fresh
+            );
+            assert_eq!(pending(&state, now, Format::Daily).len(), candidates.len());
+        }
+    }
+
+    #[test]
+    fn fresh_window_includes_24_hour_boundary_but_not_older_reobservations() {
+        let mut state = fixture(12);
+        let now = time("2026-11-08T15:00:00Z");
+        schedule::record(
+            &mut state,
+            &[
+                row("org/boundary", "2026-11-07T15:00:00Z", 1),
+                row("org/too-old", "2026-11-07T14:59:59Z", 99999),
+                row("ORG/P000", "2026-11-08T14:00:00Z", 99999),
+                row("org/future", "2026-11-08T15:00:01Z", 999999),
+            ],
+        );
+        let candidates = pending(&state, now, Format::Daily);
+        let (selected, _) = select(&candidates, &state, Format::Daily, now);
+        assert_eq!(selected.len(), DAILY_LIMIT);
+        assert_eq!(selected[0].snapshot.full_name, "org/boundary");
+        assert_eq!(selected[1].snapshot.full_name, "ORG/P000");
+        assert!(!selected.iter().any(|entry| {
+            matches!(entry.snapshot.full_name.as_str(), "org/too-old" | "org/future")
+        }));
+    }
+
+    #[test]
+    fn a_due_retry_does_not_turn_an_old_discovery_into_a_fresh_one() {
+        let mut state = fixture(1);
+        let now = time("2026-11-08T15:00:00Z");
+        let retry_at = defer_daily(&mut state, "org/p000", now - Duration::hours(25));
+        for index in 0..12 {
+            schedule::record(
+                &mut state,
+                &[row(
+                    &format!("fresh/p{index}"),
+                    "2026-11-08T14:00:00Z",
+                    1000 + index,
+                )],
+            );
+        }
+        let candidates = pending(&state, now, Format::Daily);
+        let (selected, excluded) = select(&candidates, &state, Format::Daily, now);
+        assert_eq!(selected.len(), DAILY_LIMIT);
+        assert_eq!(selected.last().unwrap().snapshot.full_name, "org/p000");
+        assert_eq!(excluded.len(), 1);
+        assert_eq!(daily_retry_at(&state, "org/p000"), Some(retry_at));
+    }
+
+    #[test]
+    fn backlog_progress_continues_with_new_popular_findings_each_day() {
+        let mut state = fixture(12);
+        let mut delivered_backlog = BTreeSet::new();
+        for day in 8..=10 {
+            let now = time(&format!("2026-11-{day:02}T15:00:00Z"));
+            for index in 0..12 {
+                schedule::record(
+                    &mut state,
+                    &[row(
+                        &format!("fresh/day-{day}-{index}"),
+                        &format!("2026-11-{day:02}T14:00:00Z"),
+                        1000 + index,
+                    )],
+                );
+            }
+            let candidates = pending(&state, now, Format::Daily);
+            let (selected, _) = select(&candidates, &state, Format::Daily, now);
+            let old: Vec<_> = selected
+                .iter()
+                .filter(|entry| entry.snapshot.full_name.starts_with("org/"))
+                .collect();
+            assert_eq!(old.len(), 4);
+            for entry in old {
+                assert!(delivered_backlog.insert(entry.snapshot.full_name.clone()));
+            }
+            let names = selected
+                .iter()
+                .map(|entry| entry.snapshot.full_name.clone())
+                .collect();
+            acknowledge(
+                &mut state,
+                &issue(names, Format::Daily),
+                &now.date_naive().to_string(),
+            )
+            .unwrap();
+        }
+        assert_eq!(delivered_backlog.len(), 12);
+        assert_eq!(state.snapshots.len(), 48);
+    }
+
+    #[test]
     fn due_daily_retry_keeps_its_position_between_backlog_and_later_arrivals() {
         let mut state = fixture(1);
         let retry_at = defer_daily(&mut state, "ORG/P000", time("2026-11-08T15:00:00Z"));
@@ -724,7 +934,7 @@ mod tests {
         let mut restored: State =
             serde_json::from_slice(&serde_json::to_vec(&state).unwrap()).unwrap();
         assert_eq!(daily_retry_at(&restored, "org/p000"), Some(retry_at));
-        let now = time("2026-11-10T15:00:00Z");
+        let now = time("2026-11-10T17:00:00Z");
         let candidates = pending(&restored, now, Format::Daily);
         let (selected, _) = select(&candidates, &restored, Format::Daily, now);
         assert_eq!(
@@ -743,9 +953,9 @@ mod tests {
         defer_daily(&mut restored, "org/p000", now);
         schedule::record(
             &mut restored,
-            &[row("org/newer", "2026-11-11T16:00:00Z", 999999)],
+            &[row("org/newer", "2026-11-11T18:00:00Z", 999999)],
         );
-        let now = time("2026-11-12T15:00:00Z");
+        let now = time("2026-11-12T19:00:00Z");
         let candidates = pending(&restored, now, Format::Daily);
         let (selected, _) = select(&candidates, &restored, Format::Daily, now);
         assert_eq!(
