@@ -101,19 +101,20 @@ impl<'a> Groq<'a> {
         let mut evidence_quotes = HashMap::<String, String>::new();
         let configured = self.configured();
         let mut calls = 0usize;
-        let mut failure_reason = String::new();
+        let mut stop_reason = String::new();
         let mut provider_reviews = Vec::<Value>::new();
         let mut source_gaps = Vec::<String>::new();
         let mut readme_gaps = Vec::<String>::new();
         let mut grounding_failures = Vec::<Value>::new();
+        let mut card_failures = Vec::<Value>::new();
         let mut prompts = Vec::<Value>::new();
         let mut bundles = Vec::<Value>::new();
         let mut accepted_jokes = Vec::<String>::new();
         let mut expected_requests = 0;
         if do_llm && entries.is_empty() {
-            failure_reason = "no fresh candidates after deduplication; descriptions skipped".into();
+            stop_reason = "no fresh candidates after deduplication; descriptions skipped".into();
         } else if do_llm && !configured {
-            failure_reason = "Groq key or explicit free-tier confirmation missing".into();
+            stop_reason = "Groq key or explicit free-tier confirmation missing".into();
         }
         // Больше нет предпроверки «кэп будет превышен — не начинать вовсе»:
         // цикл описаний стартует всегда и останавливается, когда дневной бюджет
@@ -154,7 +155,7 @@ impl<'a> Groq<'a> {
             if do_llm && configured && readme.is_some() {
                 expected_requests += 1;
             }
-            if !do_llm || !configured || !failure_reason.is_empty() {
+            if !do_llm || !configured || !stop_reason.is_empty() {
                 continue;
             }
             let Some(readme) = readme else {
@@ -163,7 +164,7 @@ impl<'a> Groq<'a> {
                 continue;
             };
             if calls >= MAX_LLM_REQUESTS {
-                failure_reason = "per-run LLM request cap reached".into();
+                stop_reason = "per-run LLM request cap reached".into();
                 continue;
             }
             let primary_sources = serde_json::to_string(&bundle)?;
@@ -186,7 +187,7 @@ impl<'a> Groq<'a> {
             ) {
                 Ok(response) => response,
                 Err(error) => {
-                    failure_reason = if error.to_string().contains("cap reached") {
+                    stop_reason = if error.to_string().contains("cap reached") {
                         format!(
                             "LLM budget exhausted; delivered {} of {} descriptions",
                             descriptions.len(),
@@ -209,33 +210,44 @@ impl<'a> Groq<'a> {
                 Ok(parsed) => parsed,
                 Err(original_error) => {
                     prompts.push(json!({"stage":"project_description_schema_repair","provider":"groq","user_json":payload}));
-                    match self
-                        .complete(
-                            Completion {
-                                payload: &payload,
-                                system: REPAIR_SYSTEM,
-                                max_tokens: 1800,
-                                schema_name: "project_description",
-                                schema: &description_schema,
-                            },
-                            state,
-                            &mut calls,
-                        )
-                        .and_then(|repaired| parse_card(&repaired))
-                    {
-                        Ok(description) => description,
-                        Err(repair_error) => {
-                            if repair_error.to_string().contains("cap reached") {
-                                failure_reason = format!(
+                    let repaired = match self.complete(
+                        Completion {
+                            payload: &payload,
+                            system: REPAIR_SYSTEM,
+                            max_tokens: 1800,
+                            schema_name: "project_description",
+                            schema: &description_schema,
+                        },
+                        state,
+                        &mut calls,
+                    ) {
+                        Ok(response) => response,
+                        Err(error) => {
+                            stop_reason = if error.to_string().contains("cap reached") {
+                                format!(
                                     "LLM budget exhausted; delivered {} of {} descriptions",
                                     descriptions.len(),
                                     entries.len()
-                                );
+                                )
                             } else {
-                                failure_reason = format!(
-                                    "Groq description invalid after repair: first={original_error:#}; repair={repair_error:#}; response omitted"
-                                );
-                            }
+                                format!("Groq project description repair failed: {error:#}")
+                            };
+                            continue;
+                        }
+                    };
+                    match parse_card(&repaired) {
+                        Ok(description) => description,
+                        Err(repair_error) => {
+                            // A rejected card must not prevent unrelated projects
+                            // from being enriched. Provider/budget failures above
+                            // still stop requests for the rest of this run.
+                            card_failures.push(json!({
+                                "id":snapshot.full_name,
+                                "stage":"project_description_schema_repair",
+                                "initial_error":format!("{original_error:#}"),
+                                "repair_error":format!("{repair_error:#}"),
+                                "disposition":"retained_for_later_issue"
+                            }));
                             continue;
                         }
                     }
@@ -276,6 +288,28 @@ impl<'a> Groq<'a> {
         // retain their source fallback. Neither path requests an issue summary.
         let llm_completed = descriptions.len();
         let complete = do_llm && !entries.is_empty() && llm_completed == entries.len();
+        let reason = if !stop_reason.is_empty() {
+            stop_reason
+        } else if complete {
+            "one Groq description per project completed; exact README quotations checked, factual review still required".to_string()
+        } else if !do_llm {
+            "LLM disabled for this run; source gaps still recorded".to_string()
+        } else if let Some(failure) = card_failures.first() {
+            format!(
+                "{} project descriptions rejected after repair; first {}: {}; findings remain queued",
+                card_failures.len(),
+                failure["id"].as_str().unwrap_or_default(),
+                failure["repair_error"].as_str().unwrap_or_default()
+            )
+        } else if !grounding_failures.is_empty() {
+            "Unmatched README quotations rejected without extra requests; source fallback retained"
+                .to_string()
+        } else if !source_gaps.is_empty() || !readme_gaps.is_empty() {
+            "Some projects lack usable README evidence for expanded descriptions; source fallback retained"
+                .to_string()
+        } else {
+            "no fresh candidates available".to_string()
+        };
         let llm_budget = json!({
             "providers":[{"name":"Groq","model":self.model}],
             "expected_requests":expected_requests,
@@ -283,6 +317,7 @@ impl<'a> Groq<'a> {
             "source_gaps":source_gaps,
             "readme_gaps":readme_gaps,
             "grounding_failures":grounding_failures,
+            "card_failures":card_failures,
             "evidence_scope":EVIDENCE_SCOPE,
             "factual_review_performed":false,
             "actual_requests":calls,
@@ -291,7 +326,7 @@ impl<'a> Groq<'a> {
             "paid_fallback":false,
             "local_inference":false,
             "all_descriptions_complete":complete,
-            "reason":if !failure_reason.is_empty() { failure_reason } else if complete { "one Groq description per project completed; exact README quotations checked, factual review still required".to_string() } else if !do_llm { "LLM disabled for this run; source gaps still recorded".to_string() } else if !grounding_failures.is_empty() { "Unmatched README quotations rejected without extra requests; source fallback retained".to_string() } else if !source_gaps.is_empty() || !readme_gaps.is_empty() { "Some projects lack usable README evidence for expanded descriptions; source fallback retained".to_string() } else { "no fresh candidates available".to_string() }
+            "reason":reason
         });
         write_json(
             &run_dir.join("llm-bundle.json"),

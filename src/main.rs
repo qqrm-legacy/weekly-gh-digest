@@ -466,7 +466,12 @@ fn make_digest_for(
         )?;
         anyhow::ensure!(
             attempted == 0 || !entries.is_empty(),
-            "no source-backed Russian explanations ready; findings remain queued"
+            "no source-backed Russian explanations ready; findings remain queued; ready={}/{attempted}, requests={}: {}",
+            entries.len(),
+            llm_budget["actual_requests"],
+            llm_budget["reason"]
+                .as_str()
+                .unwrap_or("no enrichment diagnostic")
         );
     }
     let entries_json: Vec<Value> = entries
