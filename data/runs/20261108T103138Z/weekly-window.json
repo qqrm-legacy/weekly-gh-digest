@@ -1,0 +1,17 @@
+{
+  "note": "Historical observations are not backfilled; source failures/caps remain in each run manifest.",
+  "observed_capture_count": 36,
+  "observed_repository_dates": [
+    "2026-11-01",
+    "2026-11-02",
+    "2026-11-03",
+    "2026-11-04",
+    "2026-11-05",
+    "2026-11-06",
+    "2026-11-07",
+    "2026-11-08"
+  ],
+  "weekly_observed_repositories": 178,
+  "window_end": "2026-11-08T10:31:38.912537310+00:00",
+  "window_start": "2026-11-01T10:31:38.912537310+00:00"
+}
