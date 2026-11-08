@@ -58,13 +58,13 @@ jobs:
           python3 .github/scripts/verify_release_runtime.py ./target/debug/weekly-gh-digest
 
       - name: Install dependency tooling
-        uses: taiki-e/install-action@8cca0918f8471c33515202b73f56ab27f2bed283 # v2.87.29
-        with:
-          tool: |
-            cargo-audit@0.22.2
-            cargo-deny@0.20.2
-            cargo-machete@0.9.2
-          fallback: none
+        timeout-minutes: 20
+        env:
+          CARGO_TARGET_DIR: ${{ runner.temp }}/dependency-tools-target
+        run: |
+          cargo install --locked --version '=0.22.2' cargo-audit
+          cargo install --locked --version '=0.20.2' cargo-deny
+          cargo install --locked --version '=0.9.2' cargo-machete
 
       - name: Audit dependencies
         run: cargo audit
