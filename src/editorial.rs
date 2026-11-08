@@ -1,5 +1,5 @@
 //! Bounded provider backoff and minimum editorial readiness, not a factual audit.
-use anyhow::{Result, ensure};
+use anyhow::{Context, Result, ensure};
 use reqwest::{StatusCode, header::HeaderMap};
 use serde_json::Value;
 use std::time::Duration;
@@ -120,7 +120,13 @@ pub(super) fn require_synthesis(digest: &Value) -> Result<()> {
             validate_text(
                 entry["description"].as_str().unwrap_or(""),
                 &entry["latest"].to_string(),
-            )?;
+            )
+            .with_context(|| {
+                format!(
+                    "daily card {} failed editorial validation",
+                    entry["full_name"].as_str().unwrap_or("unknown")
+                )
+            })?;
         }
     }
     Ok(())
