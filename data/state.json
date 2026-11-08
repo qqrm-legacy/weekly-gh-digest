@@ -11,6 +11,7 @@
       "alirezarezvani/claude-skills": "2026-09-30",
       "anthropics/claude-code": "2026-11-03",
       "anthropics/claude-code-action": "2026-09-30",
+      "anthropics/claude-quickstarts": "2026-11-08",
       "anthropics/financial-services": "2026-09-29",
       "anthropics/knowledge-work-plugins": "2026-11-03",
       "averygan/reclip": "2026-09-29",
@@ -36,6 +37,7 @@
       "firelex/jeff": "2026-09-30",
       "flutter/flutter": "2026-10-01",
       "fxembed/fxembed": "2026-09-29",
+      "google-deepmind/mujoco": "2026-11-08",
       "harry0703/moneyprinterturbo": "2026-09-30",
       "heygen-com/hyperframes": "2026-09-30",
       "hkuds/cli-anything": "2026-09-29",
@@ -52,6 +54,7 @@
       "mvschwarz/openrig": "2026-09-29",
       "nawfalmotii79/plfm_radar": "2026-09-30",
       "niko1221/strata": "2026-09-30",
+      "nokia-applied-research/anyjev": "2026-11-08",
       "nvidia/openshell": "2026-09-29",
       "oblien/openship": "2026-09-29",
       "obra/superpowers": "2026-10-01",
@@ -62,18 +65,24 @@
       "prismml-eng/bonsai-demo": "2026-09-29",
       "pytorch/pytorch": "2026-09-29",
       "rakyll/hey": "2026-09-29",
+      "riba2534/claude-opus-5-5-demo": "2026-11-08",
       "rohitg00/ai-engineering-from-scratch": "2026-09-29",
+      "sarpstar/cinecode": "2026-11-08",
       "shihabal3amri/diplay": "2026-09-30",
+      "sostenesfreitas/ocarina-recomp": "2026-11-08",
       "stablyai/orca": "2026-09-29",
       "t8y2/dbx": "2026-09-29",
+      "tangerineturtle1/nx2navi": "2026-11-08",
       "tencent/weknora": "2026-09-29",
       "tencentcloud/octop": "2026-09-29",
       "tile-ai/tilelang": "2026-10-01",
       "tobi/disktree": "2026-09-30",
       "trycua/cua": "2026-09-29",
+      "v-modal/awesome-jev-tools": "2026-11-08",
       "vectifyai/pageindex": "2026-09-29",
       "vectorize-io/hindsight": "2026-09-29",
       "vercel/next.js": "2026-09-29",
+      "volotat/mini-agi": "2026-11-08",
       "willfaust/madeira": "2026-09-29",
       "yetone/magpie": "2026-09-30",
       "zai-org/zcode": "2026-11-03"
@@ -119,6 +128,14 @@
         "joke": "Почему кодер любит Claude Code? Потому что он умеет слушать, а не только компилировать!",
         "evidence_quote": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows -- all through natural language commands."
       },
+      "anthropics/claude-quickstarts": {
+        "policy_version": 7,
+        "source_description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+        "source_readme": "# Claude Quickstarts\n\nClaude Quickstarts is a collection of projects designed to help developers quickly get started with building  applications using the Claude API. Each quickstart provides a foundation that you can easily build upon and customize for your specific needs.\n\n## Getting Started\n\nTo use these quickstarts, you'll need an Claude API key. If you don't have one yet, you can sign up for free at [console.anthropic.com](https://console.anthropic.com).\n\n## Available Quickstarts\n\n### Customer Support Agent\n\nA customer support agent powered by Claude. This project demonstrates how to leverage Claude's natural language understanding and generation capabilities to create an AI-assisted customer support system with access to a knowledge base.\n\n[Go to Customer Support Agent Quickstart](./customer-support-agent)\n\n### Financial Data Analyst\n\nA financial data analyst powered by Claude. This project demonstrates how to leverage Claude's capabilities with interactive data visualization to analyze financial data via chat.\n\n[Go to Financial Data Analyst Quickstart](./financial-data-analyst)\n\n### Computer Use Demo\n\nAn environment and tools that Claude can use to control a desktop computer. This project demonstrates how to leverage the computer use capabilities of Claude, including support for the latest `computer_toolset_20260801` toolset shape, where each computer action is a member tool the model calls by name.\n\n[Go to Computer Use Demo Quickstart](./computer-use-demo)\n\n### Computer Use Best Practices\n\nA pedagogical, native-macOS reference implementation of a computer-use agent. Unlike the containerized Computer Use Demo, this project runs directly against the macOS desktop (run it in a VM!) and demonstrates common patterns for building more reliable and cost-effective computer-use agents: explicit tool definitions, correct image sizing and pruning, prompt caching, server-side compaction, batched tool calls, a sandboxed shell, and trajectory recording. It pairs with Anthropic's [computer-use best-practices guide](https://claude.com/blog/best-practices-for-computer-and-browser-use-with-claude).\n\n[Go to Computer Use Best Practices Quickstart](./computer-use-best-practices)\n\n### Browser Use Demo\n\nA complete reference implementation for browser automation powered by Claude. This project demonstrates how to give Claude the ability to navigate websites, inspect and interact with DOM elements, extract content, and fill forms using a custom Playwright-backed browser tool.\n\n[Go to Browser Use Demo Quickstart](./browser-use-demo)\n\n### Browser Toolset Quickstart\n\nThe minimal CDP example of Claude's browser toolset (`browser_toolset_20260801`), in Python and TypeScript. It has a small driver for one Chromium tab over the Chrome DevTools Protocol, a script that runs the driver with the tool runner, and a script that exercises it without a model. It shows the interface and is not production code.\n\n[Go to Browser Toolset Quickstart](./browser-toolset)\n\n### Computer Toolset Quickstart\n\nThe minimal VNC example of Claude's computer toolset (`computer_toolset_20260801`), in Python and TypeScript. It has a small driver for one desktop over VNC (the RFB protocol, no VNC library), a script that runs the driver with the tool runner, and a script that exercises it without a model. It shows the interface and is not production code.\n\n[Go to Computer Toolset Quickstart](./computer-toolset)\n\n### Autonomous Coding Agent\n\nAn autonomous coding agent powered by the Claude Agent SDK. This project demonstrates a two-agent pattern (initializer + coding agent) that can build complete applications over multiple sessions, with progress persisted via git and a feature list that the agent works through incrementally.\n\n[Go to Autonomous Coding Agent Quickstart](./autonomous-coding)\n\n### Managed Agents: Chat SDK\n\nA browser chat app powered by Claude Managed Agents and Vercel's Chat SDK. This project demonstrates how to pair a persistent Managed Agents session per conversation with a chat surface: a research analyst researches with web search and streams its brief token by token while a live feed shows the tool calls. The same handler runs on Slack, Teams, Discord, Telegram, or WhatsApp by swapping the Chat SDK adapter.\n\n[Go to Managed Agents Chat SDK Quickstart](./managed-agents/chat-sdk)\n\n### Managed Agents with CopilotKit and AG-UI\n\nA personal finance assistant chat app built on a Claude Managed Agent and rendered with CopilotKit. This project demonstrates how to bridge a managed-agent session to the AG-UI protocol, stream replies token by token with event deltas, and render agent tool calls as interactive generative UI components in the chat.\n\n[Go to Managed Agents with CopilotKit Quickstart](./managed-agents/copilot-kit-ag-ui)\n\n### Managed Agents: Daily Brief\n\nA scheduled agent that reads your Slack channels and GitHub pull requests each weekday and posts one short brief to Slack, built on Claude Managed Agents. This project demonstrates a deploymen",
+        "description": "Claude Quickstarts – это набор готовых шаблонов, позволяющих разработчикам быстро собрать и развернуть приложения, использующие Claude API. Каждый шаблон представляет собой минимально рабочий пример, который можно адаптировать под собственные задачи, будь то поддержка клиентов, финансовый анализ или автоматизация браузера. Проекты включают как простые демонстрации, так и более сложные сценарии, например, агент‑коды, использующий Claude Agent SDK для автономного создания приложений с сохранением прогресса в Git, а также интеграцию Managed Agents с чат‑интерфейсами через Vercel Chat SDK или CopilotKit.\n\nКлючевые возможности: (1) демонстрация компьютерных и браузерных инструментов Claude (computer_toolset_20260801, browser_toolset_20260801) с готовыми драйверами VNC и CDP; (2) примеры многокомпонентных агентов, где один агент инициализирует процесс, а второй – пишет код, позволяя построить приложение за несколько сессий; (3) готовые решения для интеграции с популярными мессенджерами и платформами (Slack, Teams, Discord, Telegram, WhatsApp) через Managed Agents, что упрощает развёртывание в продакшн. Для работы требуется только ключ API Claude, а некоторые шаблоны требуют локального доступа к macOS или контейнерной среды для демонстрации компьютерных действий. Ограничения: примеры не являются готовыми к производству, они показывают интерфейсы и требуют доработки, а инструменты браузера и компьютера работают только с поддерживаемыми версиями toolset и могут потребовать дополнительной настройки окружения.",
+        "joke": "Claude уже умеет открывать браузер, а вам всё ещё нужен клик‑поиск?",
+        "evidence_quote": "Claude Quickstarts is a collection of projects designed to help developers quickly get started with building  applications using the Claude API. Each quickstart provides a foundation that you can easily build upon and customize for your specific needs."
+      },
       "anthropics/knowledge-work-plugins": {
         "policy_version": 4,
         "source_description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
@@ -163,9 +180,17 @@
         "policy_version": 7,
         "source_description": "微信聊天记录一键转发到 AI Agent 与 Obsidian 的原生 macOS 工具",
         "source_readme": "<div align=\"center\">\n  <img src=\"shared/Screenshots/app-icon-rounded.png\" width=\"128\" alt=\"WeChatBridge 图标\" />\n  <h1>WeChatBridge（微信流）</h1>\n  <p><strong>群里几百条消息没空翻？多选、转发，一步交给 AI 总结，或存进你的知识库。</strong></p>\n  <p>在微信「转发到其他应用」里直接选 Codex、Claude、豆包、千问、Obsidian……不读数据库、不注入微信，全程本地。</p>\n\n  <p>\n    <a href=\"#下载安装\"><img src=\"https://img.shields.io/badge/免费下载-macOS%20%7C%20Windows-07C160?style=flat-square\" alt=\"免费下载\" /></a>\n    <a href=\"#加入交流群\"><img src=\"https://img.shields.io/badge/交流群-微信扫码-07C160?style=flat-square&logo=wechat&logoColor=white\" alt=\"加入交流群\" /></a>\n    <a href=\"https://github.com/freestylefly/WeChatBridge/stargazers\"><img src=\"https://img.shields.io/github/stars/freestylefly/WeChatBridge?style=flat-square\" alt=\"GitHub Stars\" /></a>\n    <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-blue?style=flat-square\" alt=\"MIT License\" /></a>\n  </p>\n\n  <p>\n    <a href=\"#下载安装\"><strong>下载</strong></a> ·\n    <a href=\"#加入交流群\"><strong>交流群</strong></a> ·\n    <a href=\"USAGE.zh-CN.md\">使用指南</a> ·\n    <a href=\"https://render.qmuse.pub/p/muse/2413870555736078\">官网</a> ·\n    <a href=\"README_EN.md\">English</a>\n  </p>\n\n  <img src=\"shared/Screenshots/demo-wechat-to-agent.gif\" width=\"800\" alt=\"演示：在微信多选群聊消息，转发到微信流，选择场景后交给 Codex 总结\" />\n  <br />\n  <sub>多选群聊 → 转发到其他应用 → 选「发给 Codex」和场景 → Agent 收到聊天记录并开始总结</sub>\n</div>\n\n## 它能帮你做什么\n\n<table>\n  <tr>\n    <th align=\"center\" width=\"33%\">群聊一键交给 AI</th>\n    <th align=\"center\" width=\"33%\">沉淀进知识库</th>\n    <th align=\"center\" width=\"33%\">一个群一个场景</th>\n  </tr>\n  <tr>\n    <td align=\"center\"><img src=\"shared/Screenshots/usage-skill-result-top.png\" alt=\"Agent 根据群聊生成的总结\" /></td>\n    <td align=\"center\"><img src=\"shared/Screenshots/usage-obsidian-attachments.png\" alt=\"Obsidian 中的聊天记录与附件\" /></td>\n    <td align=\"center\"><img src=\"shared/Screenshots/usage-scene-picker.png\" alt=\"转发时选择场景\" /></td>\n  </tr>\n  <tr>\n    <td><sub>转发到 Codex、Claude、豆包、千问办公、WorkBuddy 等，自动带上提示词并粘贴好聊天记录，回车就出总结、待办和纪要。</sub></td>\n    <td><sub>一键存成 Obsidian 笔记或任意文件夹里的 Markdown，图片和附件原样保留，按聊天名归档。</sub></td>\n    <td><sub>给不同的群存好各自的提示词，比如「群聊总结」「日常摘要」，转发时选一个就行；还能给 Agent 装技能包，读懂群里的链接和视频。</sub></td>\n  </tr>\n</table>\n\n超过 100 条也不怕：微信一次最多转发 100 条，用「分批收集到微信流」分几批选，收齐后一次发出去。\n\n<div align=\"center\">\n  <img src=\"shared/Screenshots/usage-supported-agents.png\" width=\"520\" alt=\"支持的 Agent：Codex、Claude、豆包、千问办公、WorkBuddy、WeSight、DeepSeek Harness 等\" />\n  <br />\n  <sub>内置十二个入口，还能添加任意应用作为自定义目标</sub>\n</div>\n\n## 三步上手\n\n1. **安装**：从下面的蓝奏云链接下载，macOS 把「微信流」拖进「应用程序」。\n2. **打开入口**：在「微信流 → 设置 → 入口」里勾选要用的目标，例如「发给 Codex」「沉淀到 Obsidian」。\n3. **转发**：在微信里多选聊天记录 →「合并转发」→「转发到其他应用」→ 选择微信流的入口。\n\n需要 macOS 微信 4.1.13 或更高版本。完整步骤、权限说明和常见问题见 [使用指南](USAGE.zh-CN.md)。\n\n## 下载安装\n\n免费下载，全部安装包通过蓝奏云发布，提取密码都是 **`向明`**：\n\n| 平台 | 下载地址 | 提取密码 |\n| --- | --- | --- |\n| macOS 14+（Apple Silicon 与 Intel） | [wwbsr.lanzout.com/b0umjur8h](https://wwbsr.lanzout.com/b0umjur8h) | `向明` |\n| Windows | [wwbsr.lanzout.com/b0umjur4d](https://wwbsr.lanzout.com/b0umjur4d) | `向明` |\n\nmacOS 版打开 DMG，把「微信流」拖入「应用程序」即可；Windows 版解压后按目录内说明运行。iOS 版正在开发中，进群可以第一时间知道进展。\n\n## 加入交流群\n\n<table>\n  <tr>\n    <td width=\"300\" align=\"center\">\n      <img src=\"shared/Screenshots/wechat-community-group.png\" width=\"260\" alt=\"WeChatBridge 微信交流群二维码\" />\n      <br />\n      <sub>微信扫码加入</sub>\n    </td>\n    <td>\n      <strong>进群你可以：</strong>\n      <ul>\n        <li>第一时间拿到新版本和新平台（iOS 等）的消息</li>\n        <li>遇到装不上、找不到入口、粘贴失败，直接问开发者</li>\n        <li>拿到群友在用的场景提示词和技能包，抄作业比自己写快</li>\n        <li>提需求：你想把聊天记录送到哪个应用，告诉我们</li>\n      </ul>\n      二维码过期的话，扫下方「关于我们」里苍何的微信，备注「微信流」。\n    </td>\n  </tr>\n</table>\n\n## 为什么做微信流\n\nmacOS 微信 4.1.13 起，多选聊天记录后可以「合并转发」给第三方应用：微信会生成一份包含 TXT、图片和视频的 ZIP，正好适合交给 AI Agent 处理，或沉淀进本地知识库。\n\n但系统的「转发到其他应用」列表只显示带有 Share Extension 的应用，大多数 AI 工具并不在里面。微信流补上了这层入口，让一次转发直接到达你常用的 Agent、Obsidian、剪贴板或你指定的任何应用。\n\n```mermaid\nflowchart LR\n    A[微信多选聊天记录] --> B[合并转发]\n    B --> C[微信流]\n    C --> D[AI Agent]\n    C --> E[Obsidian / 文件夹]\n    C --> F[剪贴板]\n    C --> G[自定义应用]\n```\n\n## 全部功能\n\n<details>\n<summary><strong>核心能力</strong></summary>\n\n| 能力 | 使用体验 |\n| --- | --- |\n| 十二个原生入口 | 在微信转发菜单直接选择目标，无需打开微信流主窗口 |\n| AI Agent 转发 | 激活目标应用，附加场景指令并自动粘贴聊天归档 |\n| Obsidian 沉淀 | 生成 Markdown 笔记，保存原始 ZIP，并按聊天名组织内容 |\n| 自定义目标 | 添加任意 macOS 应用，终端类应用可只接收文件路径 |\n| 场景与技能 | 为不同群聊保留场景提示词，并管理兼容 Agent 的 `SKILL.md` |\n| 本地记录 | 查看批次状态、重新发送、复制、定位文件和清理历史 |\n| 失败兜底 | 目标未安装或权限不足时，文件仍会保留在剪贴板 |\n| 双语界面 | 完整支持简体中文与 English |\n\n</details>\n\n<details>\n<summary><strong>十二个内置入口</strong></summary>\n\n| 入口 | 行为 |\n| --- | --- |\n| 发给 Codex | 激活 ChatGPT/Codex 并粘贴聊天归档 |\n| 发给 Claude | 激活 Claude 并粘贴聊天归档 |\n| 发给豆包 | 激活豆包并粘贴聊天归档 |\n| 发给千问办公 | 激活千问办公并粘贴聊天归档 |\n| 发给 WorkBuddy | 激活 WorkBuddy 并粘贴聊天归档 |\n| 发给 WeSight | 激活 WeSight 并粘贴聊天归档 |\n| 发给 DeepSeek Harness | 激活 DeepSeek Harness 并粘贴聊天归档 |\n| 沉淀到 Obsidian | 创建 Markdown 笔记并保存原始附件，通知可打开笔记 |\n| 沉淀到文件夹 | 写入选定目录中的 Markdown 与附件，通知可在访达中定位 |\n| 分批收集到微信流 | 连续分享多批原始 ZIP，收齐后一次选择目标和场景 |\n| 复制到剪贴板 | 保留文件，交给用户手动粘贴 |\n| 发送到自定义 | 转发到用户维护的应用列表 |\n\n分批收集时，每批在微信手动选取并分享到「分批收集到微信流」。浮条显示已收批次和上一批首尾参考；收齐后点击「完成并发送」。原始图片、视频保留在 ZIP 中，未完成的收集可在记录页继续，失败可重试。\n\n</details>\n\n<details>\n<summary><strong>更多截图</strong></summa",
-        "description": "WeChatBridge — нативный macOS‑инструмент, позволяющий одним нажатием отправлять выбранные сообщения из группового чата WeChat в AI‑агенты (Codex, Claude, 豆包, 千问办公 и др.) или сохранять их в локальную базу знаний Obsidian. Приложение реализовано как Share Extension, поэтому после мультивыбора сообщений в WeChat появляется пункт «转发到微信流», где пользователь выбирает целевой агент или действие (сохранить в Markdown, скопировать в буфер и т.п.). При передаче приложение автоматически добавляет заранее заданный промпт‑сценарий, вставляет архив ZIP с текстом, изображениями и видео, а затем активирует выбранный агент, позволяя получить сразу готовое резюме, список задач или протокол встречи.\n\nДля настройки достаточно трёх шагов: скачать пакет (macOS 14+ или Windows) из предоставленных ссылок, включить нужные «入口» в настройках WeChatBridge и в WeChat выполнить «合并转发» → «转发到其他应用» → выбрать нужный пункт. Приложение поддерживает до 100 сообщений за один раз; при большем объёме можно воспользоваться функцией «分批收集到微信流», которая собирает несколько пакетов и отправляет их единой командой. Кроме того, каждый чат может иметь собственный набор подсказок‑сценариев и набор навыков‑пакетов, что упрощает адаптацию под разные рабочие процессы. Требуется WeChat 4.1.13 или новее; все операции происходят локально, без доступа к базе данных WeChat, а оригинальные медиа‑файлы сохраняются в архиве без потери качества.",
+        "description": "Нативный инструмент для передачи выбранных сообщений WeChat в Codex, Claude и другие AI-агенты либо в локальную базу Obsidian. В macOS он добавляет Share Extension в меню «转发到其他应用»: пользователь объединяет выбранные сообщения и выбирает целевое приложение или действие. WeChat создаёт ZIP с текстом, изображениями и видео; мост активирует выбранного агента, добавляет сохранённую инструкцию и вставляет архив. Затем пользователь запускает обработку в агенте. Можно также сохранить Markdown с вложениями в Obsidian или выбранную папку либо оставить архив в буфере обмена.\n\nWeChat разрешает переслать до 100 сообщений за раз. Функция «分批收集到微信流» позволяет вручную собрать несколько пакетов и затем передать их вместе. Для разных чатов сохраняются свои сценарии и подсказки; для совместимых агентов можно устанавливать пакеты навыков. Исходные изображения и видео остаются в ZIP. Сам мост работает локально, не читает базу WeChat и не внедряется в приложение; дальнейшая обработка переданного архива выполняется выбранным агентом.\n\nДля описанного сценария на macOS требуются macOS 14+ и WeChat 4.1.13 или новее. Доступна также Windows-сборка с инструкцией в архиве.",
         "joke": "",
-        "evidence_quote": "超过 100 条也不怕：微信一次最多转发 100 条，用「分批收集到微信流」分几批选，收齐后一次发出去。"
+        "evidence_quote": "macOS 微信 4.1.13 起，多选聊天记录后可以「合并转发」给第三方应用：微信会生成一份包含 TXT、图片和视频的 ZIP，正好适合交给 AI Agent 处理，或沉淀进本地知识库。"
+      },
+      "google-deepmind/mujoco": {
+        "policy_version": 7,
+        "source_description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+        "source_readme": "<h1>\n  <a href=\"https://mujoco.org\"><img alt=\"MuJoCo\" src=\"banner.png\" width=\"100%\"/></a>\n</h1>\n\n<p>\n  <a href=\"https://mujoco.org\" alt=\"Website\">\n    <img src=\"https://img.shields.io/badge/website-mujoco.org-0053d6\">\n  </a>\n  <a href=\"https://github.com/google-deepmind/mujoco/actions/workflows/build.yml?query=branch%3Amain\" alt=\"GitHub Actions\">\n    <img src=\"https://img.shields.io/github/actions/workflow/status/google-deepmind/mujoco/build.yml?branch=main\">\n  </a>\n  <a href=\"https://mujoco.readthedocs.io/\" alt=\"Documentation\">\n    <img src=\"https://readthedocs.org/projects/mujoco/badge/?version=latest\">\n  </a>\n  <a href=\"https://github.com/google-deepmind/mujoco/blob/main/LICENSE\" alt=\"License\">\n    <img src=\"https://img.shields.io/github/license/google-deepmind/mujoco\">\n  </a>\n</p>\n\n**MuJoCo** stands for **Mu**lti-**Jo**int dynamics with **Co**ntact. It is a\ngeneral purpose physics engine that aims to facilitate research and development\nin robotics, biomechanics, graphics and animation, machine learning, and other\nareas which demand fast and accurate simulation of articulated structures\ninteracting with their environment.\n\nThis repository is maintained by [Google DeepMind](https://www.deepmind.com/).\n\nMuJoCo has a C API and is intended for researchers and developers. The runtime\nsimulation module is tuned to maximize performance and operates on low-level\ndata structures that are preallocated by the built-in XML compiler. The library\nincludes interactive visualization in native desktop windows and web browsers.\nMuJoCo further exposes a large number of utility functions for computing\nphysics-related quantities.\n\nWe also provide [Python bindings] and a plug-in for the [Unity] game engine.\n\n## Documentation\n\nMuJoCo's documentation can be found at [mujoco.readthedocs.io]. Upcoming\nfeatures due for the next release can be found in the [changelog] in the\n\"latest\" branch.\n\n## Getting Started\n\n1. **Try MuJoCo in your browser.**\nVisit [mujoco.org](https://mujoco.org) to explore MuJoCo on desktop or mobile\nwith nothing to install, or open [live.mujoco.org](https://live.mujoco.org) to\ninspect and drag and drop your own models in the WebAssembly version of the\n[MuJoCo Studio] app (slower than native C, since it runs in WebAssembly).\n\n2. **Run a viewer on your machine.**\nFollow the [Getting Started] guide in the documentation to download a prebuilt\nrelease and run the [MuJoCo Studio] app or the classic `simulate` viewer (shown\nin [this video](https://www.youtube.com/watch?v=P83tKA1iz2Y)) on your machine.\n\n3. **Explore our online IPython notebooks.**\nIf you are a Python user, you might want to start with our tutorial notebooks\nrunning on Google Colab:\n\n - The **introductory** tutorial teaches MuJoCo basics:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/python/tutorial.ipynb)\n - The **Model Editing** tutorial shows how to create and edit models procedurally:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/python/mjspec.ipynb)\n - The **rollout** tutorial shows how to use the multithreaded `rollout` module:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/python/rollout.ipynb)\n - The **LQR** tutorial synthesizes a linear-quadratic controller, balancing a\n   humanoid on one leg:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/python/LQR.ipynb)\n - The **least-squares** tutorial explains how to use the Python-based nonlinear\n   least-squares solver:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/python/least_squares.ipynb)\n - The **MJX** tutorial provides usage examples of\n   [MuJoCo XLA](https://mujoco.readthedocs.io/en/stable/mjx.html), a branch of MuJoCo written in JAX:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/mjx/tutorial.ipynb)\n - The **differentiable physics** tutorial trains locomotion policies with\n   analytical gradients automatically derived from MuJoCo's physics step:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/mjx/training_apg.ipynb)\n\n## Installation\n\n### Prebuilt binaries\n\nVersioned releases are available as precompiled binaries from the GitHub\n[releases page], built for Linux (x86-64 and AArch64), Windows (x86-64 only),\nand macOS (universal). This is the recommended way to use the software.\n\n### Building from source\n\nUsers who wish to build MuJoCo from source should cons",
+        "description": "MuJoCo — это физический движок, ориентированный на быстрые и точные симуляции многосоставных систем с контактами. Он предоставляет C‑API, предвыделенные структуры данных и набор утилит для расчёта физических величин, что делает его пригодным для исследований в робототехнике, биомеханике, графике, а также для обучения машинных моделей. Встроенный визуализатор работает как в нативных десктопных окнах, так и в браузерах через WebAssembly, а также доступны Python‑биндинги и плагин для Unity, что упрощает интеграцию в разные среды разработки.\n\nДля пользователя ключевыми возможностями являются: 1) возможность запускать готовые модели в браузере без установки, используя MuJoCo Studio в WebAssembly; 2) поддержка многопоточного модуля `rollout` для ускоренного генерации траекторий; 3) дифференцируемая физика через ветку MJX, позволяющая получать аналитические градиенты прямо из шага симуляции, что полезно при обучении контроллеров. Примером применения может быть разработка контроллера балансировки гуманоидного робота: модель редактируется программно, симуляция запускается в реальном времени, а градиенты используются для оптимизации политики в JAX.\n\nДля работы требуется современная платформа — Linux (x86‑64, AArch64), Windows x86‑64 или macOS (универсальная). Предпочтительно использовать предкомпилированные бинарники из релизов; сборка из исходников возможна, но требует дополнительных зависимостей. Ограничения: WebAssembly‑версия медленнее нативной, а доступ к некоторым функциям (например, низкоуровневый C‑API) ограничен только локальными установками.",
+        "joke": "Симулируешь робота? MuJoCo уже знает, как он упадёт.",
+        "evidence_quote": "**MuJoCo** stands for **Mu**lti-**Jo**int dynamics with **Co**ntact. It is a\ngeneral purpose physics engine that aims to facilitate research and development\nin robotics, biomechanics, graphics and animation, machine learning, and other\nareas which demand fast and accurate simulation of articulated structures\ninteracting with their environment."
       },
       "heyjunpenn/awesome-jev": {
         "policy_version": 7,
@@ -243,9 +268,33 @@
         "policy_version": 7,
         "source_description": "The open, local take on Jev: typed decisions from an LLM, without generating a single token",
         "source_readme": "<div align=\"center\">\n\n<img src=\"assets/rizzo_flow_logo.png\" alt=\"Rizzo Flow mascot — a purple hedgehog holding an infinity-shaped flow of arrows\" width=\"200\" />\n\n# Rizzo Flow\n\n### The open, local take on Jev: typed decisions from an LLM, without generating a single token\n\n**_Unstructured state in → typed, probabilistic decisions out. On your own machine._**\n\n<p>\n<img src=\"https://img.shields.io/badge/100%25-LOCAL-7c3aed?style=for-the-badge\" alt=\"100% local\" />\n<img src=\"https://img.shields.io/badge/0-GENERATED%20TOKENS-7c3aed?style=for-the-badge\" alt=\"0 generated tokens\" />\n<img src=\"https://img.shields.io/badge/JEV--COMPATIBLE-API-7c3aed?style=for-the-badge\" alt=\"Jev-compatible API\" />\n</p>\n\n<p>\n<img src=\"https://img.shields.io/badge/models-Spark--X2.5%204B%20·%201.7B-blue\" alt=\"Spark-X2.5 4B and 1.7B\" />\n<img src=\"https://img.shields.io/badge/native%20context-1M%20tokens-blue\" alt=\"1M-token native context\" />\n<img src=\"https://img.shields.io/badge/runtime-llama.cpp%20·%20Metal%20%7C%20CUDA%20%7C%20Vulkan%20%7C%20ROCm%20%7C%20SYCL%20%7C%20CPU-blue\" alt=\"llama.cpp on Metal, CUDA, Vulkan, ROCm, SYCL or CPU\" />\n<img src=\"https://img.shields.io/badge/latency-~50%20ms%20%2F%20decision%20(Q8__0%2C%20RTX%205060%20Ti)-brightgreen\" alt=\"about 50 ms per decision at Q8_0 on an RTX 5060 Ti\" />\n<img src=\"https://img.shields.io/badge/GPU%20memory-~5.6%20GiB%20(Q8__0)-brightgreen\" alt=\"about 5.6 GiB of GPU memory at Q8_0\" />\n<img src=\"https://img.shields.io/badge/license-Apache--2.0-brightgreen\" alt=\"Apache-2.0 license\" />\n</p>\n\n<sub>🌐 <a href=\"https://rizzo-ai-academy.github.io/rizzo-flow/\"><b>Website</b></a> · A project by <a href=\"https://www.rizzoaiacademy.com\"><b>Rizzo AI Academy</b></a> · 🇮🇹 <a href=\"docs/README.it.md\">Documentazione dettagliata in italiano</a></sub>\n\n</div>\n\n**Rizzo Flow** is an open-source, local-first implementation of the idea behind\n[**Jev**](https://typesafe.ai/blog/introducing-system-one-models-and-jev), TypeSafe's \"System One\"\nmodel: a *function call with judgment* that takes unstructured state and returns **typed decisions\nwith probabilities** — a yes/no, a choice among options, a score on a rubric, a number — instead\nof text you then have to parse.\n\nJev is a closed, hosted service. Rizzo Flow gives you the same programming model **on your own\nhardware, with open weights, and with the same HTTP interface**, so code written against the\nTypeSafe API can point at `localhost` by changing one URL. It runs on\n[llama.cpp](https://github.com/ggml-org/llama.cpp), so the hardware can be an Apple, NVIDIA, AMD\nor Intel GPU, or no GPU at all.\n\n> **Independent project.** Rizzo Flow is not affiliated with TypeSafe and does not reproduce Jev's\n> proprietary architecture or its RLCD training. It reproduces the *interface pattern* with an\n> open model (Spark-X2.5, with our own [LoRA fine-tune](#fine-tuning) on public data), in the\n> spirit of [SemIf](https://github.com/TheoLeeCJ/SemIf), which inspired it. Probabilities are\n> **uncalibrated** unless you calibrate them on your own data, and\n> we make no claim of matching Jev or SemIf in quality. Every number below comes with its caveats.\n\n**New: fine-tuned weights.** Since 25 September 2026 the default model is Spark-X2.5 with our own\nLoRA fine-tune for typed decisions ([how and on what](#training-and-calibration)). On the\n[`typed-decisions`](https://huggingface.co/datasets/LocalLLaMA/typed-decisions) benchmark, same GPU,\nQ8_0:\n\n| | Accuracy ↑ | KL from gold ↓ | Brier ↓ | ECE ↓ |\n| --- | ---: | ---: | ---: | ---: |\n| Spark-X2.5-4B, original | 0.574 | 2.899 | 0.480 | 0.349 |\n| **Rizzo Flow 4B, fine-tuned** | **0.648** | **0.452** | **0.205** | **0.112** |\n| TypeSafe Jev 1.13.0 (its dataset card) | 0.727 | 1.442 | 0.148 | – |\n\nBetter answers (+7.4 points) and much better-shaped probabilities, still below Jev in accuracy.\n\n<div align=\"center\">\n<br />\n<a href=\"assets/snake_run.gif\"><img src=\"assets/snake_run.gif\" alt=\"A game of Snake played by Rizzo Flow: on every move the bars show the probability of each direction, about 150 ms per decision\" width=\"800\" /></a>\n\n<sub>🐍 <b>Fast enough to play Snake</b> — every move is one <code>POST /v1/decisions</code>. Recorded at <b>real speed</b>, not sped up:\n140 moves in 25.6 s (≈ 5.5 per second), about <b>150 ms per decision</b> round trip, <b>0 generated tokens</b>.<br />\nSpark-X2.5-4B at 8 bit on an RTX 5060 Ti, recorded with the earlier MLX runtime (today's llama.cpp runtime is ~1.8× faster per decision) · one game, not a benchmark · <a href=\"#snake-demo\">about the demo ↓</a> · <a href=\"#quickstart\">run it yourself ↓</a></sub>\n</div>\n\n---\n\n## Quickstart\n\nYou need Python ≥ 3.11, git and [uv](https://docs.astral.sh/uv/). The same four commands work on\nmacOS, Windows and Linux; nothing is compiled and no GPU toolkit is installed.\n\n```bash\ngit clone https://github.com/Rizzo-AI-Academy/rizzo-flow && cd rizzo-flow\nuv sync --locked          # seconds: four small Python packages\nuv run rizzo download     # llama.cpp for this ma",
-        "description": "Rizzo Flow — открытая локальная реализация идеи Jev от TypeSafe, позволяющая получать типизированные решения от LLM без генерации текста. Проект принимает неструктурированное состояние и возвращает решения с вероятностями (да/нет, выбор из вариантов, оценка по шкале, число) через тот же HTTP‑интерфейс, что и у Jev, поэтому существующий код можно перенаправить на localhost, изменив лишь URL. Модель работает на llama.cpp, что делает её совместимой с GPU от Apple, NVIDIA, AMD, Intel и даже с CPU, а также поддерживает 1 М токенов контекста. По умолчанию используется Spark‑X2.5 4 B с LoRA‑дообучением, которое повышает точность на 7,4 пунктов и улучшает калибровку вероятностей по сравнению с оригинальной моделью, хотя результаты всё‑ещё отстают от закрытого Jev. Пример демонстрирует, что один запрос POST /v1/decisions занимает около 150 мс на RTX 5060 Ti, позволяя в реальном времени управлять игрой Snake, где каждый ход сопровождается вероятностным распределением направлений. Быстрый старт требует Python ≥ 3.11, git и uv; после клонирования репозитория достаточно четырёх команд для установки зависимостей, загрузки llama.cpp и запуска сервера, без необходимости компиляции или установки GPU‑тулкитов.",
+        "description": "Открытая локальная реализация интерфейсного подхода Jev: неструктурированное состояние преобразуется в типизированные решения с вероятностями — да/нет, выбор варианта, оценку по шкале или число — без генерации текста. HTTP-интерфейс совместим с TypeSafe API, поэтому существующий код можно направить на localhost, изменив URL. Проект независим от TypeSafe и использует собственное дообучение открытой модели.\n\nИсполнение идёт через llama.cpp на GPU Apple, NVIDIA, AMD, Intel или CPU. Для Spark-X2.5 заявлен нативный контекст 1 млн токенов. По умолчанию используется модель с LoRA-дообучением. Для варианта 4B на typed-decisions при Q8_0 автор приводит рост точности с 57,4% до 64,8% и снижение ошибок вероятностей; по точности он уступает приведённому результату Jev. Вероятности остаются некалиброванными без настройки на собственных данных.\n\nВ демо Snake один POST /v1/decisions выбирает направление движения. Указанные около 150 мс на ход относятся к записи на прежнем MLX runtime с RTX 5060 Ti; это пример одной игры. Для быстрого старта нужны Python ≥ 3.11, git и uv. Инструкция рассчитана на macOS, Windows и Linux, без компиляции и установки GPU-тулкитов.",
         "joke": "Съедаем токены? Нет, только решения — и всё без калорий.",
-        "evidence_quote": "**_Unstructured state in → typed, probabilistic decisions out. On your own machine._**"
+        "evidence_quote": "**Rizzo Flow** is an open-source, local-first implementation of the idea behind\n[**Jev**](https://typesafe.ai/blog/introducing-system-one-models-and-jev), TypeSafe's \"System One\"\nmodel: a *function call with judgment* that takes unstructured state and returns **typed decisions\nwith probabilities** — a yes/no, a choice among options, a score on a rubric, a number — instead\nof text you then have to parse."
+      },
+      "sarpstar/cinecode": {
+        "policy_version": 7,
+        "source_description": "Films made with code. Short films, long YouTube videos, ads, explainers and music videos: an AI coding agent writes the script, builds every frame in code, designs the sound and hands you an MP4.",
+        "source_readme": "<p align=\"center\">\n  <img src=\"docs/media/lockup.png\" alt=\"cinecode\" width=\"560\">\n</p>\n\n<p align=\"center\">\n  <b>Kodla yazılmış filmler.</b><br>\n  Kısa filmler, uzun YouTube videoları, reklamlar, açıklayıcılar ve müzik videoları. Fikri ve zevki sen getirirsin; bir yapay zekâ kodlama ajanı senaryoyu yazar, her kareyi kodla kurar, sesi tasarlar ve sana bitmiş bir MP4 verir.\n</p>\n\n<p align=\"center\">\n  <a href=\"README.en.md\">English</a> ·\n  <a href=\"README.zh-CN.md\">简体中文</a> ·\n  <a href=\"README.ja.md\">日本語</a> ·\n  <a href=\"#kurulum\">Kurulum</a> ·\n  <a href=\"#hızlı-başlangıç\">Hızlı başlangıç</a> ·\n  <a href=\"#sss\">SSS</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/sarpstar/cinecode/actions/workflows/tests.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/sarpstar/cinecode/tests.yml?branch=main&label=tests&style=flat-square\" alt=\"tests\"></a>\n  <img src=\"https://img.shields.io/badge/license-MIT-C37232?style=flat-square\" alt=\"license: MIT\">\n  <img src=\"https://img.shields.io/badge/agents-Claude%20Code%20%C2%B7%20Cursor-1a1a1a?style=flat-square\" alt=\"agents: Claude Code, Cursor\">\n  <img src=\"https://img.shields.io/badge/render-three.js%20%C2%B7%20ffmpeg-1a1a1a?style=flat-square\" alt=\"render: three.js, ffmpeg\">\n</p>\n\n<p align=\"center\">\n  <img src=\"docs/media/reel.gif\" alt=\"cinecode ile yapılmış filmlerden 30 saniye: gün doğumunda taş kemerler, karda linol baskı bir posta treni, oyulmuş bir saat mekanizması, çölde 3B bir tavşan, yağan kodun altında minyatür bir şehir, su altında pop-art bir balina, turuncu kapılardan geçen bir yol, üç dikey açıklayıcı, buğday tarlasında raylı bir film kamerası, altın ışık sütunları altında köpekler, bir kibrit, bir fırın ve bir caz afişi, fenerli bir çocuğun orman masalı, gece ufukta bir gemi\" width=\"100%\">\n</p>\n<p align=\"center\"><sub>cinecode ile yapılmış filmlerden 30 saniye. Her kare başsız Chrome'da koddan üretildi.</sub></p>\n\nKendi bilgisayarında, **Claude Code** (masaüstü uygulaması, VS Code eklentisi, terminal) ya da **Cursor** içinde çalışır. Ücretli bir servis gerekmez; dış ses, yalnızca istersen, kendi Gemini anahtarını (ücretsiz kotası var), ElevenLabs'i ya da ücretsiz bir Türkçe sesi kullanır.\n\n## Neler yapabilirsin\n\n### Kodla yapılmış kısa filmler\n\nAklındakini tek cümleyle yaz; gerisini birlikte kurarsınız.\n\n- **Sıradan fikirde kalmaz.** Ajan fikrini, dünyadan rastgele çekilen gerçek bir şeyle buluşturur: bir müze eseri, bir hayvan, uzaydan bir fotoğraf, eski bir icat, tarihî bir yer, bir zanaat. Böylece sana herkesin aklına ilk gelen filmi değil, fikrinin senin bile düşünmediğin yorumlarını getirir.\n- **Kendini tekrar etmez.** Her öneri senin daha önce yaptığın filmlerle karşılaştırılır; aynı filmi sana ikinci kez önermez.\n- **Son söz hep senin.** Filmin neyden yapılacağını sen seçersin: gerçek ışıklı 3B, 2B animasyon, boya, mürekkep, kâğıt, kil, hareketli grafik ya da piksel. Görünümü gerçek filmlerden karelerle kurulmuş bir panodan seçersin; film bütünüyle kurulmadan önce ilk iki sahneyi görüp onaylarsın.\n\n### Uzun YouTube videoları\n\nOn dakikayı aşan belgeseller, açıklayıcılar ve video denemeleri; Film modunda perdeler ve bölümler hâlinde kurulur:\n\n- gerçek bir kişi ya da olay hakkındaki her iddianın kaynağıyla yazıldığı, araştırılmış bir metin;\n- ilk dakikada kurulan açık bir soru ve izleyiciyi sona kadar tutan bir merak haritası;\n- senin dilinde bir anlatıcı (Türkçe ve İngilizce sesler, ücretsiz Türkçe sesler dahil), çiğ motor sesiyle değil, filme ait bir ses işlemesiyle;\n- açık arşivlerden fotoğraflar, haritalar, belgeler ve görüntüler; resmi olmayan yerde kod: kendini çizen haritalar, sayaçlar, şemalar, yeniden kurulan mekânlar;\n- biçim isterse bölüm kartları, her perde için kulakla seçilen müzik, −14 LUFS mastering ve video açıklaman için bir künye dosyası.\n\n### Reklam ve ürün filmleri\n\nÜrünün, renklerin, fontların, logon ve çağrı cümlen. Ürün ayrıntısıyla kurulur ve stüdyo çekimi gibi aydınlatılır; yazılım için arayüz kahraman planları; özgüllük testi filmin başka bir markaya uymasını önler; 9:16, 1:1 ve 16:9 sürümleri güvenli alanlarıyla gelir.\n\n### Sosyal medya için açıklayıcılar\n\n30–60 saniyelik dikey filmler: ilk saniyede bir soru, açık lisanslı ve Türkçesi denenmiş bir font eşleşmesiyle kinetik yazı, çizgi çizgi kurulan şemalar, telefonda okunan sözcükler.\n\n### Müzik videoları\n\nŞarkını getir: vuruş ızgarası ölçülür, kesmeler ölçülere, vurgular vuruşlara oturur, her söz satırına bir görüntü.\n\n### Ve dahası\n\n- **Sevdiğin bir video gibi ama farklı:** biçimi ölçülür (kesmeler, tempo, ışık, renk), film o biçimle yeniden yapılır, onun karelerinden asla.\n- **Kendi çekimlerinin kurgusu:** konuşan kafa ya da ekran kaydı, kelime zamanlı bir dökümden kesilir; duraklamalar kırpılır, grafikler sözcüklere oturur.\n- **Tek formatta seri:** bir filmin formatını kaydedip sonraki bölümü o formatta yaparsın.\n\n15 saniyelik bir klipten on dakikayı aşan filmlere kadar. Hızlı mod yaklaşık 3 dakikaya kadar bir filmi tek oturumda yapar; Film modu daha uzu",
+        "description": "Cinecode – это локальный AI‑агент, который превращает текстовое описание в готовый видеоролик в формате MP4. Пользователь формулирует идею одной фразой, после чего агент генерирует сценарий, создает каждый кадр программным способом (используя three.js и ffmpeg), подбирает или синтезирует звук (через Gemini API, ElevenLabs или бесплатные турецкие голоса) и собирает всё в финальный файл. Инструмент поддерживает несколько режимов: короткие художественные фильмы, длительные документальные ролики, рекламные клипы, вертикальные объяснительные видео для соцсетей и музыкальные клипы, где ритм песни синхронно отображается визуально. При работе пользователь выбирает стиль визуализации (3D‑рендер, 2D‑анимация, живопись, клей, пиксель‑арт) и может предварительно одобрить первые сцены, а система избегает повторения уже созданных фильмов, сравнивая новые предложения с историей пользователя. Cinecode работает полностью на компьютере без обязательных платных сервисов; требуется лишь доступ к бесплатным API‑ключам для синтеза речи, если нужен внешний звук. Пример применения – маркетолог задаёт «презентация нового смартфона в стиле киберпанк», выбирает вертикальный формат 9:16, одобряет два первых кадра, а система генерирует полностью анимированный рекламный ролик с озвучкой и музыкальным сопровождением за несколько минут.",
+        "joke": "Сгенерировал фильм за 3 минуты – теперь у меня больше времени на попкорн.",
+        "evidence_quote": "Kendi bilgisayarında, **Claude Code** (masaüstü uygulaması, VS Code eklentisi, terminal) ya da **Cursor** içinde çalışır. Ücretli bir servis gerekmez; dış ses, yalnızca istersen, kendi Gemini anahtarını (ücretsiz kotası var), ElevenLabs'i ya da ücretsiz bir Türkçe sesi kullanır."
+      },
+      "sostenesfreitas/ocarina-recomp": {
+        "policy_version": 7,
+        "source_description": "Ocarina of Time running natively on Windows, no emulator. Built on your PC from your own copy. No game files included.",
+        "source_readme": "# Ocarina Recomp\n\n[Read in English](README.en.md)\n\n**Ocarina rodando nativo no Windows, sem emulador.**\n\nO código do jogo é traduzido para C e compilado como um programa do Windows. Os gráficos do Switch 2 são convertidos para Vulkan. Tudo isso acontece **no seu PC, a partir do seu próprio arquivo do jogo**.\n\n> [!IMPORTANT]\n> Este repositório **não contém o jogo, keys nem executável**, e não explica como obtê-los. Você precisa da sua própria cópia. O que a instalação gera (o `ocarina.exe`, o código gerado, o cache de shaders e os saves) sai do seu jogo: **não compartilhe**.\n\n## Estado do projeto\n\nExperimental. Só foi testado em **um PC** (Ryzen 9 9950X3D, RTX 5090), na região do início do jogo.\n\n| O quê | Situação |\n|---|---|\n| Abertura e jogo novo, até a Árvore Deku | ✅ Funciona |\n| Vilarejo Kokiri: árvores, plantas, casas, luz | ✅ Funciona |\n| Som, controle, saves e vídeos | ✅ Funciona |\n| Desempenho na RTX 5090 | ✅ Cerca de 59 fps parado, 51 a 55 fps caminhando |\n| Travadinhas ao entrar em áreas novas | ⚠️ Ainda acontecem, principalmente na primeira vez |\n| Tocar a ocarina | ❓ Correção aplicada, ainda sem teste em jogo |\n| Hyrule Field e o resto do jogo | ❓ Ainda não testados |\n| Placas AMD e Intel | ❓ Nunca testadas |\n\n## Como compilar\n\nO jogo não vem pronto: ele é compilado no seu PC, a partir da sua cópia. Escolha um destes três jeitos.\n\n**1. Com o instalador em ZIP, o mais fácil:** não instala nada no Windows e não pede administrador.\n\n1. Baixe o **`Ocarina-Setup-...-windows.zip`** da [página de versões](https://github.com/sostenesfreitas/ocarina-recomp/releases/latest).\n2. **Extraia o ZIP inteiro** para uma pasta e abra o `Instalar-Ocarina.exe` que está dentro dela.\n3. O executável não tem assinatura digital, então o Windows pode avisar. Clique em **Mais informações** e depois em **Executar assim mesmo**.\n4. Na janela, escolha o `.nup` do seu jogo (ou uma pasta com `exefs` e `romfs`) e clique em **Instalar**.\n5. No fim, clique em **Jogar**, ou use o atalho **Ocarina Recomp** na Área de Trabalho.\n\nPara desinstalar, apague a pasta de instalação. Prefere conferir antes? O executável só abre o script `instalador\\Instalar-Ocarina.ps1`, que está ao lado dele no ZIP e pode ser lido em qualquer editor. O [código do executável](instalador/launcher.c) tem poucas linhas. Alguns antivírus reclamam de programas novos sem assinatura e de scripts do PowerShell: é um alarme possível, e o código está todo aqui para quem quiser conferir. A página de versões traz o SHA-256 do arquivo.\n\n> [!NOTE]\n> A etapa \"Preparar os arquivos do jogo\" é lenta, principalmente em HD: enquanto o relógio da janela andar, está funcionando.\n\n**2. Com os scripts, que você pode ler antes de rodar** (instale antes as ferramentas do passo 1 do [guia](docs/compilar-manual.md)):\n\n```powershell\ngit clone https://github.com/sostenesfreitas/ocarina-recomp C:\\OcarinaRecomp\ncd C:\\OcarinaRecomp\npowershell -ExecutionPolicy Bypass -File .\\verificar.ps1 -Jogo \"C:\\caminho\\seu-jogo.nup\"\npowershell -ExecutionPolicy Bypass -File .\\compilar.ps1 -Simular -Jogo \"C:\\caminho\\seu-jogo.nup\"\npowershell -ExecutionPolicy Bypass -File .\\compilar.ps1 -Jogo \"C:\\caminho\\seu-jogo.nup\"\n```\n\n1. O `verificar.ps1` só olha e diz o que falta. Ele não altera nada.\n2. O `compilar.ps1 -Simular` mostra todos os comandos sem executar nenhum.\n3. O `compilar.ps1` executa esses comandos, mostra cada um e pergunta antes de cada etapa. Se parar, rode de novo: ele continua de onde parou.\n\n`-ExecutionPolicy Bypass` vale só para esse comando e não muda a configuração do Windows.\n\n**3. Totalmente à mão:** siga o **[passo a passo para compilar](docs/compilar-manual.md)**.\n\n**No Linux:** o `compilar.sh` faz os mesmos passos e o `jogar/jogar-ocarina.sh` abre o jogo. Os pacotes e o estado do\nport estão em [docs/building.md](docs/building.md#linux-in-progress).\n\n```sh\ngit clone https://github.com/sostenesfreitas/ocarina-recomp\ncd ocarina-recomp\n./compilar.sh --jogo /caminho/seu-jogo.nup\n./jogar/jogar-ocarina.sh\n```\n\n### Trazer o save de um emulador\n\nO save do Lichii, do Eden e de emuladores parecidos funciona aqui. No fim da instalação, clique em **Importar save de emulador**, ou rode depois:\n\n```powershell\npowershell -ExecutionPolicy Bypass -File jogar\\importar-save.ps1\n```\n\nEle acha o save sozinho ou pergunta a pasta, guarda uma cópia do seu save atual e não altera o emulador.\n\n### Idioma\n\nO jogo escolhe o idioma pelo do Windows, inclusive português do Brasil. Para trocar, aperte **F1** e vá em **Jogo → Idioma**.\n\n### O que isto faz no seu PC\n\n- O instalador em ZIP e os scripts não pedem administrador. Só as ferramentas dos jeitos 2 e 3 podem pedir, e é você quem as instala.\n- Escreve só dentro da pasta do projeto, e nunca altera o seu arquivo do jogo.\n- Baixa os pacotes Python (`tools\\requirements-build.txt`) e .NET do tradutor de shaders e, se o executável do jogo estiver comprimido, o [zbic](https://github.com/kinnay/zbic).\n- Para desinstalar, apague a pasta do projeto. As ferramentas do pass",
+        "description": "Проект позволяет запускать оригинальную игру Ocarina of Time на Windows без использования эмулятора. Исходный код игры переводится в C, компилируется в нативный exe и графика Switch 2 преобразуется в Vulkan, так что игра работает как обычное Windows‑приложение, используя только ваш собственный файл игры. Сборка происходит полностью на вашем ПК: вы выбираете один из трёх способов – готовый ZIP‑инсталлятор, набор PowerShell‑скриптов или полностью ручную сборку – и после указания .nup‑файла (или папки с exefs/romfs) получаете ocarina.exe, кеш шейдеров и файлы сохранений, которые находятся исключительно в каталоге проекта. Приложение умеет импортировать сохранения из популярных эмуляторов, автоматически определяя их или запрашивая путь, и сохраняет копию текущего save‑файла, не меняя оригинал. Тесты показали работоспособность первых областей игры (от начала до Деку‑дерева) с постоянной частотой около 50‑60 fps на мощном железе, однако при первом входе в новые зоны могут возникать «тряпки», а поддержка AMD‑ и Intel‑GPU пока не проверялась. Установка не требует прав администратора, а удаление сведено к удалению папки проекта, что упрощает управление. Этот подход интересен пользователям, желающим играть в Ocarina of Time без эмуляции, сохраняя оригинальные файлы и получая нативную производительность, но требует наличия собственной копии игры и некоторой технической подготовки для сборки.",
+        "joke": "Запускаешь Ocarina, а Windows спрашивает: «Подтвердите, что вы действительно хотите спеть?»",
+        "evidence_quote": "O código do jogo é traduzido para C e compilado como um programa do Windows. Os gráficos do Switch 2 são convertidos para Vulkan. Tudo isso acontece **no seu PC, a partir do seu próprio arquivo do jogo**."
+      },
+      "tangerineturtle1/nx2navi": {
+        "policy_version": 7,
+        "source_description": null,
+        "source_readme": "<p align=\"center\"><img src=\"docs/images/navi.png\" alt=\"NX2navi\" width=\"160\"></p>\n\n# NX2navi\n\n**NX2navi** is a static recompilation of *The Legend of Zelda: Ocarina of Time* for Nintendo Switch 2 (game\nversion 1.1.1) into a native x86-64 application for Windows, with a Vulkan renderer\n([docs/architecture.md](docs/architecture.md)).\n\n> [!IMPORTANT]\n> **No game files are included.** You need your own legally obtained copy of the game, dumped from your own console.\n> Instructions for obtaining those files will not be provided.\n>\n> The game is built from your files on your machine, so the result contains the game. It is for your own use. Do not share it.\n\n## Status\n\nEarly development, playable. Kokiri Forest, Kakariko Village, Death Mountain Trail and its crater, the Temple of\nTime and the Great Fairy fountains play at 60 fps and above on current GPUs, from the title screen and from saves.\nVisual bugs and occasional crashes are still expected ([Known issues](#known-issues)).\n\nReport problems as issues, following [CONTRIBUTING.md](CONTRIBUTING.md).\n\n## Features\n\n- Native code, not emulation\n- 60 fps by default, or a limit of 30 to 240 fps, the display's refresh rate or unlimited\n- Native widescreen and ultrawide (the window's shape, 21:9 or 32:9) with the HUD, menus and movies kept 16:9\n- Resolutions above the game's 1440p: 1800p, 4K, 5K or the window's own size, sharp on high-DPI displays\n- Upscaling and anti-aliasing: NVIDIA DLSS (DLAA, Quality, Balanced, Performance, Ultra Performance; RTX GPUs) or\n  AMD FSR 3.1 (Native AA and the same modes; any GPU), which render the 3D scene at the mode's share and keep the HUD\n  sharp; or AMD FSR 1 or bilinear scaling to the window, with a sharpness setting; black bars or stretch\n- Frame generation with AMD FSR 3.1 (any GPU): a generated frame between every two the game draws, with the HUD kept\n  out of it, for about twice the frame rate on a fast display; in a window of another shape than the picture, frames\n  are generated inside the picture only, so the black bars stay clean\n- HDR on HDR displays: the game's own native HDR, or an enhanced HDR made from its SDR picture\n- Every shader prepared when the game is built, and the pipelines met in play built again in the background at each\n  start, so play does not stop to compile them; a draw that must wait for its pipeline has it built on worker\n  threads, never on the game's drawing thread\n- In-game settings menu (F1, or Minus and Plus together on a gamepad) and performance overlay (F10)\n- Keyboard, mouse and gamepads with remapping, Nintendo or Xbox button layout, rumble and gyro; the game follows\n  whichever connected gamepad you press\n- Stereo or 5.1 surround sound output\n- Docked or handheld console mode\n- The game's textures stay compressed (BC3, about half the video memory at the same speed) unless the PC has 20 GiB of\n  video memory and 48 GiB of RAM, as Windows counts video memory against the system's commit limit\n\n## Installing\n\nDownload `NX2navi-Setup-<version>.exe` from the releases and start it next to your `.nup` dump. It is the only file\nyou need. The launcher it\ninstalls finds the dump, downloads the build tools, builds the game on your PC (10 to 25 minutes, once) and starts\nit; afterwards it keeps the port up to date and rebuilds only what changed ([docs/launcher.md](docs/launcher.md)).\n[docs/README-BuildKit.md](docs/README-BuildKit.md) describes the same build by hand, [docs/building.md](docs/building.md)\nbuilding from source. Settings are in the in-game menu and in `nx2navi.ini` ([nx2navi.ini.example](nx2navi.ini.example)\nlists every key). Controls: [docs/controls.md](docs/controls.md).\n\nRequirements: Windows 10 or later; an x86-64 CPU with SSE4.2 (AVX2/FMA machines get a faster build); 16 GB of RAM; about\n30 GB free for the game and 1.5 GB for the launcher and its tools; a GPU with Vulkan 1.3, `VK_EXT_external_memory_host`\nand `VK_EXT_mesh_shader`. The setup is not signed, so SmartScreen warns on its first start.\n\n## Known issues\n\n- The first start after an install or update, and the first visit to an area, can pause briefly while the graphics\n  driver builds what it has not seen; later starts are smooth.\n- A rare crash in the game's particle code.\n- DLSS Frame Generation is not offered yet: AMD FSR 3.1 frame generation works on every GPU, NVIDIA's included.\n\n## License\n\nThe source is public to read. Its additions and changes are all rights reserved ([LICENSE-ADDITIONS](LICENSE-ADDITIONS)):\nno part of them may be copied or published without written permission. The base import stays under its\n[MIT License](LICENSE), and third-party code keeps its own license ([THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).\nNo license grants anything for Nintendo's game.\n\nNX2navi is an independent, non-commercial fan project, not affiliated with or endorsed by Nintendo. *The Legend\nof Zelda*, *Ocarina of Time* and *Nintendo Switch* are trademarks of Nintendo.\n\n## Building from source\n\n[docs/building.md](docs/building.md) ",
+        "description": "NX2navi — это статическая перекомпиляция версии 1.1.1 игры *The Legend of Zelda: Ocarina of Time* для Nintendo Switch 2 в нативное x86‑64 приложение под Windows с рендерером Vulkan. Проект не включает игровые файлы: пользователь обязан иметь собственный законный дамп, который собирается локально, а полученный исполняемый файл предназначен только для личного использования. В ранней стадии разработки уже доступны основные локации (Kokiri Forest, Kakariko Village, Death Mountain Trail, Temple of Time и фонтан великих фей) с производительностью от 60 fps и выше, однако ожидаются визуальные баги и редкие падения.\n\nКлючевые возможности включают полностью нативный код без эмуляции, гибкую настройку частоты кадров (от 30 до 240 fps или без ограничения), поддержку широких и ультрашироких экранов с сохранением HUD в 16:9, а также масштабирование до 4K‑5K и HDR‑вывод. Для повышения плавности доступны технологии NVIDIA DLSS (включая DLAA и различные режимы) и AMD FSR 3.1, а также генерация кадров FSR 3.1, удваивающая частоту при совместимых дисплеях. Управление реализовано через клавиатуру, мышь и геймпады с ремаппингом, поддерживается вибрация и гироскоп, а звук выводится в стерео или 5.1.\n\nУстановка происходит через единственный установочный exe‑файл, который автоматически скачивает инструменты сборки, компилирует игру (10‑25 минут) и запускает её. Требования: Windows 10+, x86‑64 CPU с SSE4.2 (AVX2/FMA ускоряют сборку), 16 ГБ ОЗУ, около 30 ГБ свободного места и GPU с Vulkan 1.3 и поддержкой `VK_EXT_external_memory_host` и `VK_EXT_mesh_shader`. Лицензия проекта разделена: базовый импорт под MIT, а добавленные файлы защищены авторским правом без права копирования; Nintendo‑содержимое остаётся под собственными правами Nintendo.",
+        "joke": "",
+        "evidence_quote": "**NX2navi** is a static recompilation of *The Legend of Zelda: Ocarina of Time* for Nintendo Switch 2 (game\nversion 1.1.1) into a native x86-64 application for Windows, with a Vulkan renderer\n([docs/architecture.md](docs/architecture.md))."
       },
       "v-modal/awesome-jev-tools": {
         "policy_version": 7,
@@ -274,7 +323,10 @@
     },
     "daily_retry_at": {
       "asokurasu/text-humanizer": "2026-11-09T11:17:54.878005713Z",
+      "blader/humanizer": "2026-11-09T17:58:40.009103841Z",
+      "czjam/gjgjxweb": "2026-11-09T17:59:32.157735009Z",
       "dgreenheck/tidewater": "2026-11-09T11:17:51.623830033Z",
+      "egoist/mygo-music": "2026-11-09T18:00:31.425299177Z",
       "jev-chat/jev-chat-jarvis": "2026-11-09T10:32:23.460442293Z",
       "kryvora-network/kryvora-node": "2026-11-09T10:32:41.310378426Z",
       "newliver666/apk-reverse": "2026-11-09T10:32:37.481788403Z",
@@ -208721,6 +208773,1725 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "AssassinCreator/steam-stash-value-report-card",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 790,
+      "forks": 57,
+      "language": "Python",
+      "description": "Value your Steam stash in the terminal and print it as a share card: per game, per market, what sold and what sits. One Windows portable build, no account.",
+      "html_url": "https://github.com/AssassinCreator/steam-stash-value-report-card",
+      "topics": [
+        "cli",
+        "inventory",
+        "price-check",
+        "python",
+        "report-card",
+        "steam",
+        "steam-market",
+        "valuation"
+      ],
+      "created_at": "2026-11-02T00:40:47Z",
+      "updated_at": "2026-11-08T09:10:13Z",
+      "pushed_at": "2026-11-08T08:17:00Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-02T00:40:47Z",
+          "description": "Value your Steam stash in the terminal and print it as a share card: per game, per market, what sold and what sits. One Windows portable build, no account.",
+          "html_url": "https://github.com/AssassinCreator/steam-stash-value-report-card",
+          "stars": 790,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "CzJam/gjgjxweb",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 1184,
+      "forks": 102,
+      "language": "HTML",
+      "description": "《搞机工具箱》Web移植版",
+      "html_url": "https://github.com/CzJam/gjgjxweb",
+      "topics": [],
+      "created_at": "2026-11-03T02:00:54Z",
+      "updated_at": "2026-11-08T17:55:22Z",
+      "pushed_at": "2026-11-07T12:19:22Z",
+      "license": "GPL-3.0",
+      "open_issues": 0,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-11-03T02:00:54Z",
+          "description": "《搞机工具箱》Web移植版",
+          "html_url": "https://github.com/CzJam/gjgjxweb",
+          "stars": 1184,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "D4Vinci/Scrapling",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 99727,
+      "forks": 10432,
+      "language": "Python",
+      "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+      "html_url": "https://github.com/D4Vinci/Scrapling",
+      "topics": [
+        "ai",
+        "ai-scraping",
+        "automation",
+        "crawler",
+        "crawling",
+        "crawling-python",
+        "data",
+        "data-extraction",
+        "mcp",
+        "mcp-server",
+        "playwright",
+        "python",
+        "scraping",
+        "selectors",
+        "stealth",
+        "web-scraper",
+        "web-scraping",
+        "web-scraping-python",
+        "webscraping",
+        "xpath"
+      ],
+      "created_at": "2024-10-13T20:29:53Z",
+      "updated_at": "2026-11-08T17:56:47Z",
+      "pushed_at": "2026-11-08T13:18:31Z",
+      "license": "BSD-3-Clause",
+      "open_issues": 16,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+          "full_name": "D4Vinci/Scrapling",
+          "language": "Python",
+          "trending_stars_period": 8712,
+          "trending_total_forks": null,
+          "trending_total_stars": 99726,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DIYgod/pinky",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 677,
+      "forks": 44,
+      "language": "Go",
+      "description": "Let AI agents use your phone, with you in the loop.",
+      "html_url": "https://github.com/DIYgod/pinky",
+      "topics": [],
+      "created_at": "2026-11-06T16:53:14Z",
+      "updated_at": "2026-11-08T17:56:09Z",
+      "pushed_at": "2026-11-08T17:56:05Z",
+      "license": "Apache-2.0",
+      "open_issues": 13,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T16:53:14Z",
+          "description": "Let AI agents use your phone, with you in the loop.",
+          "html_url": "https://github.com/DIYgod/pinky",
+          "stars": 677,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Donchitos/Claude-Code-Game-Studios",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 36884,
+      "forks": 4866,
+      "language": "Shell",
+      "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+      "html_url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "topics": [
+        "ai-agents",
+        "ai-assisted-development",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "game-design",
+        "game-development",
+        "gamedev",
+        "godot",
+        "indie-game-dev",
+        "unity",
+        "unreal-engine"
+      ],
+      "created_at": "2026-02-12T05:21:38Z",
+      "updated_at": "2026-11-08T17:43:05Z",
+      "pushed_at": "2026-10-19T02:43:42Z",
+      "license": "MIT",
+      "open_issues": 96,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+          "full_name": "Donchitos/Claude-Code-Game-Studios",
+          "language": "Shell",
+          "trending_stars_period": 5719,
+          "trending_total_forks": null,
+          "trending_total_stars": 36884,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Gezine/CivSwitch",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 654,
+      "forks": 134,
+      "language": "JavaScript",
+      "description": "Nintendo Switch userland code execution using Civilization 7 game cartridge",
+      "html_url": "https://github.com/Gezine/CivSwitch",
+      "topics": [],
+      "created_at": "2026-11-01T13:30:59Z",
+      "updated_at": "2026-11-08T15:23:11Z",
+      "pushed_at": "2026-11-05T08:29:51Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-01T13:30:59Z",
+          "description": "Nintendo Switch userland code execution using Civilization 7 game cartridge",
+          "html_url": "https://github.com/Gezine/CivSwitch",
+          "stars": 654,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JenkinWoo/sheeridVerify",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 1851,
+      "forks": 992,
+      "language": "JavaScript",
+      "description": null,
+      "html_url": "https://github.com/JenkinWoo/sheeridVerify",
+      "topics": [],
+      "created_at": "2026-11-06T09:28:09Z",
+      "updated_at": "2026-11-08T17:30:31Z",
+      "pushed_at": "2026-11-06T09:54:37Z",
+      "license": "ISC",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T09:28:09Z",
+          "description": null,
+          "html_url": "https://github.com/JenkinWoo/sheeridVerify",
+          "stars": 1851,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JosssphZhou/poki",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 587,
+      "forks": 123,
+      "language": "JavaScript",
+      "description": "Let AI agents operate a real iPhone. Local MCP server and agent, no jailbreak, no extra hardware.",
+      "html_url": "https://github.com/JosssphZhou/poki",
+      "topics": [
+        "ai-agents",
+        "automation",
+        "ios",
+        "iphone",
+        "mcp",
+        "model-context-protocol"
+      ],
+      "created_at": "2026-11-05T15:04:31Z",
+      "updated_at": "2026-11-08T17:53:39Z",
+      "pushed_at": "2026-11-08T17:46:12Z",
+      "license": "AGPL-3.0",
+      "open_issues": 22,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T15:04:31Z",
+          "description": "Let AI agents operate a real iPhone. Local MCP server and agent, no jailbreak, no extra hardware.",
+          "html_url": "https://github.com/JosssphZhou/poki",
+          "stars": 587,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "KKKKhazix/agent-autoloop",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 4085,
+      "forks": 744,
+      "language": "TypeScript",
+      "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+      "html_url": "https://github.com/KKKKhazix/agent-autoloop",
+      "topics": [
+        "ai-agents",
+        "automation",
+        "claude-code",
+        "cli",
+        "codex",
+        "event-driven",
+        "mcp",
+        "nodejs",
+        "self-hosted",
+        "typescript",
+        "workflow"
+      ],
+      "created_at": "2026-11-03T08:02:11Z",
+      "updated_at": "2026-11-08T17:24:49Z",
+      "pushed_at": "2026-11-08T13:09:53Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T08:02:11Z",
+          "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+          "html_url": "https://github.com/KKKKhazix/agent-autoloop",
+          "stars": 4085,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Leviidev/Henge",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 1028,
+      "forks": 81,
+      "language": "C",
+      "description": "Emulate macOS on iOS and iPadOS",
+      "html_url": "https://github.com/Leviidev/Henge",
+      "topics": [],
+      "created_at": "2026-11-02T01:13:51Z",
+      "updated_at": "2026-11-08T17:55:39Z",
+      "pushed_at": "2026-11-08T15:21:46Z",
+      "license": "GPL-2.0",
+      "open_issues": 40,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-02T01:13:51Z",
+          "description": "Emulate macOS on iOS and iPadOS",
+          "html_url": "https://github.com/Leviidev/Henge",
+          "stars": 1028,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Minglink/dsh-jailbreak-workflow",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 778,
+      "forks": 255,
+      "language": "TypeScript",
+      "description": "DSH 破甲词制作作工作流 ",
+      "html_url": "https://github.com/Minglink/dsh-jailbreak-workflow",
+      "topics": [],
+      "created_at": "2026-11-01T04:50:41Z",
+      "updated_at": "2026-11-08T16:25:37Z",
+      "pushed_at": "2026-11-05T12:53:38Z",
+      "license": "Other",
+      "open_issues": 4,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-11-01T04:50:41Z",
+          "description": "DSH 破甲词制作作工作流 ",
+          "html_url": "https://github.com/Minglink/dsh-jailbreak-workflow",
+          "stars": 778,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Minireel/HGhub",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 3097,
+      "forks": 1323,
+      "language": "TypeScript",
+      "description": "YellowFruit third-party client",
+      "html_url": "https://github.com/Minireel/HGhub",
+      "topics": [
+        "android",
+        "drama",
+        "free",
+        "movie-web-app",
+        "reels",
+        "windows"
+      ],
+      "created_at": "2026-11-03T14:04:27Z",
+      "updated_at": "2026-11-08T17:55:32Z",
+      "pushed_at": "2026-11-08T02:42:53Z",
+      "license": "Other",
+      "open_issues": 13,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T14:04:27Z",
+          "description": "YellowFruit third-party client",
+          "html_url": "https://github.com/Minireel/HGhub",
+          "stars": 3097,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NVIDIA/auto-ontology",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 10168,
+      "forks": 822,
+      "language": "Python",
+      "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+      "html_url": "https://github.com/NVIDIA/auto-ontology",
+      "topics": [],
+      "created_at": "2026-04-27T21:45:56Z",
+      "updated_at": "2026-11-08T17:52:54Z",
+      "pushed_at": "2026-11-07T21:54:29Z",
+      "license": "Apache-2.0",
+      "open_issues": 87,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+          "full_name": "NVIDIA/auto-ontology",
+          "language": "Python",
+          "trending_stars_period": 9044,
+          "trending_total_forks": null,
+          "trending_total_stars": 10168,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NotRexed/Hookshot",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 2630,
+      "forks": 253,
+      "language": "C++",
+      "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
+      "html_url": "https://github.com/NotRexed/Hookshot",
+      "topics": [],
+      "created_at": "2026-11-05T12:18:58Z",
+      "updated_at": "2026-11-08T17:55:58Z",
+      "pushed_at": "2026-11-08T17:03:30Z",
+      "license": "GPL-3.0",
+      "open_issues": 261,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T12:18:58Z",
+          "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
+          "html_url": "https://github.com/NotRexed/Hookshot",
+          "stars": 2630,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Nutlope/hallmark",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 50781,
+      "forks": 2695,
+      "language": "CSS",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "html_url": "https://github.com/Nutlope/hallmark",
+      "topics": [],
+      "created_at": "2026-04-27T20:47:10Z",
+      "updated_at": "2026-11-08T17:55:31Z",
+      "pushed_at": "2026-11-05T13:16:31Z",
+      "license": "MIT",
+      "open_issues": 46,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+          "full_name": "Nutlope/hallmark",
+          "language": "CSS",
+          "trending_stars_period": 6624,
+          "trending_total_forks": null,
+          "trending_total_stars": 50781,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Renhuai123/ziwei-doushu",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 16918,
+      "forks": 3274,
+      "language": "TypeScript",
+      "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+      "html_url": "https://github.com/Renhuai123/ziwei-doushu",
+      "topics": [
+        "bazi",
+        "chinese-astrology",
+        "divination",
+        "fortune-telling",
+        "nextjs",
+        "open-source",
+        "purple-star-astrology",
+        "typescript",
+        "zi-wei-dou-shu",
+        "ziwei-doushu"
+      ],
+      "created_at": "2026-05-01T05:09:59Z",
+      "updated_at": "2026-11-08T17:50:51Z",
+      "pushed_at": "2026-11-08T13:28:01Z",
+      "license": "MIT",
+      "open_issues": 12,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+          "full_name": "Renhuai123/ziwei-doushu",
+          "language": "TypeScript",
+          "trending_stars_period": 4906,
+          "trending_total_forks": null,
+          "trending_total_stars": 16918,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Sandflow-ai/sand3d",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 1341,
+      "forks": 143,
+      "language": "HTML",
+      "description": "3D modeling in Python, built for LLMs.",
+      "html_url": "https://github.com/Sandflow-ai/sand3d",
+      "topics": [
+        "3d",
+        "blender",
+        "cad",
+        "llm",
+        "procedural-modeling",
+        "python",
+        "usd"
+      ],
+      "created_at": "2026-11-03T08:23:03Z",
+      "updated_at": "2026-11-08T17:52:09Z",
+      "pushed_at": "2026-11-06T11:03:55Z",
+      "license": "Apache-2.0",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T08:23:03Z",
+          "description": "3D modeling in Python, built for LLMs.",
+          "html_url": "https://github.com/Sandflow-ai/sand3d",
+          "stars": 1341,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Th0rgal/satmux",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 879,
+      "forks": 41,
+      "language": "Python",
+      "description": "Accelerate high-latency GEO inflight Wi-Fi via warm BBR TCP multiplexing + 1-RTT Ground-TLS + zlib (zero dependencies)",
+      "html_url": "https://github.com/Th0rgal/satmux",
+      "topics": [],
+      "created_at": "2026-11-07T16:09:41Z",
+      "updated_at": "2026-11-08T17:54:05Z",
+      "pushed_at": "2026-11-07T16:26:20Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T16:09:41Z",
+          "description": "Accelerate high-latency GEO inflight Wi-Fi via warm BBR TCP multiplexing + 1-RTT Ground-TLS + zlib (zero dependencies)",
+          "html_url": "https://github.com/Th0rgal/satmux",
+          "stars": 879,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "The-PR-Agent/pr-agent",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 15566,
+      "forks": 2147,
+      "language": "Python",
+      "description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
+      "html_url": "https://github.com/The-PR-Agent/pr-agent",
+      "topics": [
+        "ai",
+        "anthropic",
+        "code-review",
+        "coding-assistant",
+        "devtools",
+        "ollama",
+        "openai",
+        "pull-request",
+        "pull-requests"
+      ],
+      "created_at": "2023-07-05T21:02:15Z",
+      "updated_at": "2026-11-08T17:42:01Z",
+      "pushed_at": "2026-11-08T10:39:09Z",
+      "license": "MIT",
+      "open_issues": 65,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
+          "full_name": "The-PR-Agent/pr-agent",
+          "language": "Python",
+          "trending_stars_period": 1576,
+          "trending_total_forks": null,
+          "trending_total_stars": 15566,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "WoYun520/gif-factory",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 817,
+      "forks": 98,
+      "language": "Python",
+      "description": "GIF 工厂：按风格制作像素、人物与宠物、粘土吉祥物、光栅卡与动态海报的 GIF Skill。",
+      "html_url": "https://github.com/WoYun520/gif-factory",
+      "topics": [],
+      "created_at": "2026-11-05T04:08:24Z",
+      "updated_at": "2026-11-08T17:56:09Z",
+      "pushed_at": "2026-11-08T11:44:48Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T04:08:24Z",
+          "description": "GIF 工厂：按风格制作像素、人物与宠物、粘土吉祥物、光栅卡与动态海报的 GIF Skill。",
+          "html_url": "https://github.com/WoYun520/gif-factory",
+          "stars": 817,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/claude-quickstarts",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 19297,
+      "forks": 3272,
+      "language": "Python",
+      "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+      "html_url": "https://github.com/anthropics/claude-quickstarts",
+      "topics": [],
+      "created_at": "2024-08-29T19:52:32Z",
+      "updated_at": "2026-11-08T17:54:13Z",
+      "pushed_at": "2026-11-06T19:37:57Z",
+      "license": "MIT",
+      "open_issues": 232,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+          "full_name": "anthropics/claude-quickstarts",
+          "language": "Python",
+          "trending_stars_period": 28,
+          "trending_total_forks": null,
+          "trending_total_stars": 19297,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/skills",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 189375,
+      "forks": 22322,
+      "language": "Python",
+      "description": "Public repository for Agent Skills",
+      "html_url": "https://github.com/anthropics/skills",
+      "topics": [
+        "agent-skills"
+      ],
+      "created_at": "2025-09-22T15:53:31Z",
+      "updated_at": "2026-11-08T17:55:04Z",
+      "pushed_at": "2026-11-06T22:32:32Z",
+      "license": null,
+      "open_issues": 1496,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Public repository for Agent Skills",
+          "full_name": "anthropics/skills",
+          "language": "Python",
+          "trending_stars_period": 2796,
+          "trending_total_forks": null,
+          "trending_total_stars": 189375,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "Public repository for Agent Skills",
+          "full_name": "anthropics/skills",
+          "language": "Python",
+          "trending_stars_period": 793,
+          "trending_total_forks": null,
+          "trending_total_stars": 189375,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "blader/humanizer",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 66314,
+      "forks": 5228,
+      "language": "Python",
+      "description": "Agent skill that removes signs of AI-generated writing from text",
+      "html_url": "https://github.com/blader/humanizer",
+      "topics": [
+        "agent-skills",
+        "ai-humanizer",
+        "ai-writing",
+        "chatgpt",
+        "claude",
+        "claude-code",
+        "codex",
+        "cursor",
+        "humanize-ai-text",
+        "humanizer",
+        "llm",
+        "prompt-engineering",
+        "writing-tools"
+      ],
+      "created_at": "2026-01-18T05:30:15Z",
+      "updated_at": "2026-11-08T17:38:49Z",
+      "pushed_at": "2026-10-28T07:17:33Z",
+      "license": "MIT",
+      "open_issues": 16,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Agent skill that removes signs of AI-generated writing from text",
+          "full_name": "blader/humanizer",
+          "language": "Python",
+          "trending_stars_period": 3067,
+          "trending_total_forks": null,
+          "trending_total_stars": 66314,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "caru-ini/stack-diagram",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 2114,
+      "forks": 103,
+      "language": "TypeScript",
+      "description": "Agent skill: describe your stack in a sentence, get an architecture diagram with official logos",
+      "html_url": "https://github.com/caru-ini/stack-diagram",
+      "topics": [
+        "agent-skills",
+        "architecture-diagram",
+        "claude-code",
+        "claude-skills",
+        "codex",
+        "diagram",
+        "system-architecture",
+        "tech-stack"
+      ],
+      "created_at": "2026-11-01T05:35:12Z",
+      "updated_at": "2026-11-08T17:30:34Z",
+      "pushed_at": "2026-11-03T03:42:46Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-01T05:35:12Z",
+          "description": "Agent skill: describe your stack in a sentence, get an architecture diagram with official logos",
+          "html_url": "https://github.com/caru-ini/stack-diagram",
+          "stars": 2114,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "chadyi/StudyOnTV",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 986,
+      "forks": 230,
+      "language": "Kotlin",
+      "description": "StudyOnTV (Tiledaoti TV) — open-source Android TV app where kids unlock screen time by answering questions. Runs fully on the TV: no server, no account. Parents scan a QR code and manage questions from the LAN. Learn first. Watch later.",
+      "html_url": "https://github.com/chadyi/StudyOnTV",
+      "topics": [
+        "android",
+        "android-tv",
+        "children",
+        "digital-wellbeing",
+        "edtech",
+        "education",
+        "family",
+        "kids",
+        "learn-first",
+        "learning",
+        "learning-app",
+        "open-source",
+        "parental-controls",
+        "parenting",
+        "quiz",
+        "screen-time",
+        "screen-time-management",
+        "smart-tv",
+        "study-app",
+        "tv-box"
+      ],
+      "created_at": "2026-11-01T15:31:22Z",
+      "updated_at": "2026-11-08T17:29:09Z",
+      "pushed_at": "2026-11-08T08:16:57Z",
+      "license": "Other",
+      "open_issues": 45,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-01T15:31:22Z",
+          "description": "StudyOnTV (Tiledaoti TV) — open-source Android TV app where kids unlock screen time by answering questions. Runs fully on the TV: no server, no account. Parents scan a QR code and manage questions from the LAN. Learn first. Watch later.",
+          "html_url": "https://github.com/chadyi/StudyOnTV",
+          "stars": 986,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dsx-ai-factory/nvke",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 764,
+      "forks": 106,
+      "language": "Go",
+      "description": "NVIDIA Kubernetes Engine (NVKE). A management plane for GPU Kubernetes on bare metal.",
+      "html_url": "https://github.com/dsx-ai-factory/nvke",
+      "topics": [
+        "bare-metal",
+        "cluster-api",
+        "gpu",
+        "kubernetes",
+        "nvidia"
+      ],
+      "created_at": "2026-08-04T15:42:58Z",
+      "updated_at": "2026-11-08T17:54:13Z",
+      "pushed_at": "2026-11-07T02:09:56Z",
+      "license": "Apache-2.0",
+      "open_issues": 185,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "NVIDIA Kubernetes Engine (NVKE). A management plane for GPU Kubernetes on bare metal.",
+          "full_name": "dsx-ai-factory/nvke",
+          "language": "Go",
+          "trending_stars_period": 345,
+          "trending_total_forks": null,
+          "trending_total_stars": 764,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "egoist/mygo-music",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 954,
+      "forks": 150,
+      "language": "Go",
+      "description": "A native music player you extend with plugins",
+      "html_url": "https://github.com/egoist/mygo-music",
+      "topics": [],
+      "created_at": "2026-11-04T13:27:14Z",
+      "updated_at": "2026-11-08T17:54:24Z",
+      "pushed_at": "2026-11-08T05:50:42Z",
+      "license": "AGPL-3.0",
+      "open_issues": 69,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-04T13:27:14Z",
+          "description": "A native music player you extend with plugins",
+          "html_url": "https://github.com/egoist/mygo-music",
+          "stars": 954,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "github/spec-kit",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 148641,
+      "forks": 13353,
+      "language": "Python",
+      "description": "💫 Toolkit to help you get started with SDD or any other process!",
+      "html_url": "https://github.com/github/spec-kit",
+      "topics": [
+        "ai",
+        "copilot",
+        "development",
+        "engineering",
+        "prd",
+        "spec",
+        "spec-driven"
+      ],
+      "created_at": "2025-08-21T22:54:31Z",
+      "updated_at": "2026-11-08T17:52:23Z",
+      "pushed_at": "2026-11-07T04:09:22Z",
+      "license": "MIT",
+      "open_issues": 211,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "💫 Toolkit to help you get started with SDD or any other process!",
+          "full_name": "github/spec-kit",
+          "language": "Python",
+          "trending_stars_period": 4280,
+          "trending_total_forks": null,
+          "trending_total_stars": 148641,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-deepmind/mujoco",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 16281,
+      "forks": 1947,
+      "language": "C++",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "html_url": "https://github.com/google-deepmind/mujoco",
+      "topics": [
+        "mujoco",
+        "physics",
+        "robotics"
+      ],
+      "created_at": "2021-08-27T12:25:48Z",
+      "updated_at": "2026-11-08T17:56:34Z",
+      "pushed_at": "2026-11-07T17:07:40Z",
+      "license": "Apache-2.0",
+      "open_issues": 309,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+          "full_name": "google-deepmind/mujoco",
+          "language": "C++",
+          "trending_stars_period": 26,
+          "trending_total_forks": null,
+          "trending_total_stars": 16281,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "govijr/terminal-mac",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 2365,
+      "forks": 157,
+      "language": "Swift",
+      "description": "Entire MacOS running in your terminal.",
+      "html_url": "https://github.com/govijr/terminal-mac",
+      "topics": [
+        "cli",
+        "gui",
+        "macos",
+        "shell",
+        "swift",
+        "terminal",
+        "tui"
+      ],
+      "created_at": "2026-11-03T03:22:56Z",
+      "updated_at": "2026-11-08T17:24:55Z",
+      "pushed_at": "2026-11-07T05:58:26Z",
+      "license": "MIT",
+      "open_issues": 11,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T03:22:56Z",
+          "description": "Entire MacOS running in your terminal.",
+          "html_url": "https://github.com/govijr/terminal-mac",
+          "stars": 2365,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "hyprwm/Hyprland",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 40543,
+      "forks": 2167,
+      "language": "C++",
+      "description": "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.",
+      "html_url": "https://github.com/hyprwm/Hyprland",
+      "topics": [
+        "compositor",
+        "cpp26",
+        "wayland",
+        "wayland-compositor"
+      ],
+      "created_at": "2022-03-16T19:49:13Z",
+      "updated_at": "2026-11-08T17:32:43Z",
+      "pushed_at": "2026-11-08T16:48:15Z",
+      "license": "BSD-3-Clause",
+      "open_issues": 197,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.",
+          "full_name": "hyprwm/Hyprland",
+          "language": "C++",
+          "trending_stars_period": 1436,
+          "trending_total_forks": null,
+          "trending_total_stars": 40543,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jakubkrehel/skills",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 11659,
+      "forks": 452,
+      "language": "Markdown",
+      "description": "A collection of agent skills that help you build great interfaces.",
+      "html_url": "https://github.com/jakubkrehel/skills",
+      "topics": [],
+      "created_at": "2026-07-10T08:58:36Z",
+      "updated_at": "2026-11-08T17:52:07Z",
+      "pushed_at": "2026-11-07T19:37:52Z",
+      "license": "MIT",
+      "open_issues": 11,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A collection of agent skills that help you build great interfaces.",
+          "full_name": "jakubkrehel/skills",
+          "language": "Markdown",
+          "trending_stars_period": 1938,
+          "trending_total_forks": null,
+          "trending_total_stars": 11659,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "libracoder/kiri",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 1148,
+      "forks": 76,
+      "language": "Rust",
+      "description": "A small, fast container runtime for macOS, Windows and Linux",
+      "html_url": "https://github.com/libracoder/kiri",
+      "topics": [],
+      "created_at": "2026-11-02T16:11:30Z",
+      "updated_at": "2026-11-08T17:56:30Z",
+      "pushed_at": "2026-11-08T16:35:21Z",
+      "license": "Apache-2.0",
+      "open_issues": 16,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-02T16:11:30Z",
+          "description": "A small, fast container runtime for macOS, Windows and Linux",
+          "html_url": "https://github.com/libracoder/kiri",
+          "stars": 1148,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "livliv-dev/player",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 1321,
+      "forks": 137,
+      "language": "TypeScript",
+      "description": "A lightweight 2.5D character player for the web, with lip sync and webcam face tracking.",
+      "html_url": "https://github.com/livliv-dev/player",
+      "topics": [
+        "avatar",
+        "character",
+        "face-tracking",
+        "lip-sync",
+        "pngtuber",
+        "vrm",
+        "vtuber",
+        "webgl2"
+      ],
+      "created_at": "2026-11-04T03:28:33Z",
+      "updated_at": "2026-11-08T17:47:19Z",
+      "pushed_at": "2026-11-08T11:11:07Z",
+      "license": "Apache-2.0",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-04T03:28:33Z",
+          "description": "A lightweight 2.5D character player for the web, with lip sync and webcam face tracking.",
+          "html_url": "https://github.com/livliv-dev/player",
+          "stars": 1321,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mattpocock/skills",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 318347,
+      "forks": 26643,
+      "language": "Shell",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "html_url": "https://github.com/mattpocock/skills",
+      "topics": [],
+      "created_at": "2026-02-03T11:15:53Z",
+      "updated_at": "2026-11-08T17:54:14Z",
+      "pushed_at": "2026-11-05T10:40:01Z",
+      "license": "MIT",
+      "open_issues": 223,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Skills for Real Engineers. Straight from my .agents directory.",
+          "full_name": "mattpocock/skills",
+          "language": "Shell",
+          "trending_stars_period": 9664,
+          "trending_total_forks": null,
+          "trending_total_stars": 318347,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "max-sixty/worktrunk",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 12085,
+      "forks": 466,
+      "language": "Rust",
+      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+      "html_url": "https://github.com/max-sixty/worktrunk",
+      "topics": [
+        "agents",
+        "claude-code",
+        "codex",
+        "developer-tools",
+        "git",
+        "worktrees"
+      ],
+      "created_at": "2025-10-17T22:13:14Z",
+      "updated_at": "2026-11-08T17:51:33Z",
+      "pushed_at": "2026-11-08T08:27:09Z",
+      "license": "Other",
+      "open_issues": 53,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+          "full_name": "max-sixty/worktrunk",
+          "language": "Rust",
+          "trending_stars_period": 2292,
+          "trending_total_forks": null,
+          "trending_total_stars": 12085,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "meta/astryx",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 15953,
+      "forks": 1280,
+      "language": "TypeScript",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "html_url": "https://github.com/meta/astryx",
+      "topics": [],
+      "created_at": "2026-01-09T16:20:32Z",
+      "updated_at": "2026-11-08T17:56:31Z",
+      "pushed_at": "2026-11-08T17:56:25Z",
+      "license": "MIT",
+      "open_issues": 683,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open source design system that's fully customizable and agent ready",
+          "full_name": "meta/astryx",
+          "language": "TypeScript",
+          "trending_stars_period": 863,
+          "trending_total_forks": null,
+          "trending_total_stars": 15953,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "milind-soni/OpenMausBot",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 17981,
+      "forks": 2512,
+      "language": "TypeScript",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "html_url": "https://github.com/milind-soni/OpenMausBot",
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "computer-use",
+        "docker",
+        "electron",
+        "grok",
+        "grok-bot",
+        "grok-bot-alternative",
+        "self-hosted",
+        "typescript"
+      ],
+      "created_at": "2026-08-11T18:58:55Z",
+      "updated_at": "2026-11-08T17:55:33Z",
+      "pushed_at": "2026-11-08T15:45:20Z",
+      "license": "Apache-2.0",
+      "open_issues": 818,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "full_name": "milind-soni/OpenMausBot",
+          "language": "TypeScript",
+          "trending_stars_period": 7077,
+          "trending_total_forks": null,
+          "trending_total_stars": 17981,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "full_name": "milind-soni/OpenMausBot",
+          "language": "TypeScript",
+          "trending_stars_period": 1437,
+          "trending_total_forks": null,
+          "trending_total_stars": 17981,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mmdoctor/google-pro-helper",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 1220,
+      "forks": 442,
+      "language": "Python",
+      "description": null,
+      "html_url": "https://github.com/mmdoctor/google-pro-helper",
+      "topics": [],
+      "created_at": "2026-11-05T04:52:28Z",
+      "updated_at": "2026-11-08T17:54:00Z",
+      "pushed_at": "2026-11-05T09:41:40Z",
+      "license": null,
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T04:52:28Z",
+          "description": null,
+          "html_url": "https://github.com/mmdoctor/google-pro-helper",
+          "stars": 1220,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mromidev/claude-animated-shorts",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 2399,
+      "forks": 518,
+      "language": "TypeScript",
+      "description": "Free Claude skill: viral animated story shorts (2D characters in a 3D world) with three.js + Remotion",
+      "html_url": "https://github.com/mromidev/claude-animated-shorts",
+      "topics": [],
+      "created_at": "2026-11-01T05:50:38Z",
+      "updated_at": "2026-11-08T17:56:14Z",
+      "pushed_at": "2026-11-01T05:57:14Z",
+      "license": "MIT",
+      "open_issues": 10,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-01T05:50:38Z",
+          "description": "Free Claude skill: viral animated story shorts (2D characters in a 3D world) with three.js + Remotion",
+          "html_url": "https://github.com/mromidev/claude-animated-shorts",
+          "stars": 2399,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "pingdotgg/t3code",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 52199,
+      "forks": 9979,
+      "language": "TypeScript",
+      "description": null,
+      "html_url": "https://github.com/pingdotgg/t3code",
+      "topics": [],
+      "created_at": "2026-02-08T23:46:22Z",
+      "updated_at": "2026-11-08T17:56:16Z",
+      "pushed_at": "2026-11-08T17:09:51Z",
+      "license": "MIT",
+      "open_issues": 5925,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "",
+          "full_name": "pingdotgg/t3code",
+          "language": "TypeScript",
+          "trending_stars_period": 17100,
+          "trending_total_forks": null,
+          "trending_total_stars": 52199,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ranxianglei/billion-context",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 5016,
+      "forks": 401,
+      "language": "TypeScript",
+      "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
+      "html_url": "https://github.com/ranxianglei/billion-context",
+      "topics": [
+        "dsh-plugin"
+      ],
+      "created_at": "2026-08-06T08:27:34Z",
+      "updated_at": "2026-11-08T17:55:02Z",
+      "pushed_at": "2026-11-08T17:53:30Z",
+      "license": "Other",
+      "open_issues": 927,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
+          "full_name": "ranxianglei/billion-context",
+          "language": "TypeScript",
+          "trending_stars_period": 460,
+          "trending_total_forks": null,
+          "trending_total_stars": 5016,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "s1dashu/quiet-md",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 1331,
+      "forks": 120,
+      "language": "Rust",
+      "description": "Blazing-fast native notes app and rich-text editor for macOS, Windows, and Linux. Built with Rust + GPUI. Local-first and beautifully designed.",
+      "html_url": "https://github.com/s1dashu/quiet-md",
+      "topics": [],
+      "created_at": "2026-11-01T14:22:53Z",
+      "updated_at": "2026-11-08T17:49:17Z",
+      "pushed_at": "2026-11-08T16:39:42Z",
+      "license": "MIT",
+      "open_issues": 39,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-01T14:22:53Z",
+          "description": "Blazing-fast native notes app and rich-text editor for macOS, Windows, and Linux. Built with Rust + GPUI. Local-first and beautifully designed.",
+          "html_url": "https://github.com/s1dashu/quiet-md",
+          "stars": 1331,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sarpstar/cinecode",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 1475,
+      "forks": 271,
+      "language": "Python",
+      "description": "Films made with code. Short films, long YouTube videos, ads, explainers and music videos: an AI coding agent writes the script, builds every frame in code, designs the sound and hands you an MP4.",
+      "html_url": "https://github.com/sarpstar/cinecode",
+      "topics": [],
+      "created_at": "2026-11-03T10:08:16Z",
+      "updated_at": "2026-11-08T17:56:08Z",
+      "pushed_at": "2026-11-03T15:21:18Z",
+      "license": "MIT",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T10:08:16Z",
+          "description": "Films made with code. Short films, long YouTube videos, ads, explainers and music videos: an AI coding agent writes the script, builds every frame in code, designs the sound and hands you an MP4.",
+          "html_url": "https://github.com/sarpstar/cinecode",
+          "stars": 1475,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "shanselman/gputaskman",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 790,
+      "forks": 37,
+      "language": "Python",
+      "description": "A GPU task manager for Windows, Linux, and WSL: per-process VRAM, GPU activity, and LLM model/KV-cache insights (Windows AMD and NVIDIA).",
+      "html_url": "https://github.com/shanselman/gputaskman",
+      "topics": [],
+      "created_at": "2026-11-03T00:49:34Z",
+      "updated_at": "2026-11-08T17:56:47Z",
+      "pushed_at": "2026-11-08T06:27:14Z",
+      "license": "MIT",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T00:49:34Z",
+          "description": "A GPU task manager for Windows, Linux, and WSL: per-process VRAM, GPU activity, and LLM model/KV-cache insights (Windows AMD and NVIDIA).",
+          "html_url": "https://github.com/shanselman/gputaskman",
+          "stars": 789,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sherlock-project/sherlock",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 102772,
+      "forks": 12085,
+      "language": "Python",
+      "description": "Hunt down social media accounts by username across social networks",
+      "html_url": "https://github.com/sherlock-project/sherlock",
+      "topics": [
+        "cli",
+        "cti",
+        "cybersecurity",
+        "forensics",
+        "hacktoberfest",
+        "information-gathering",
+        "infosec",
+        "linux",
+        "osint",
+        "pentesting",
+        "python",
+        "python3",
+        "reconnaissance",
+        "redteam",
+        "sherlock",
+        "tools"
+      ],
+      "created_at": "2018-12-24T14:30:48Z",
+      "updated_at": "2026-11-08T17:55:53Z",
+      "pushed_at": "2026-11-08T05:13:22Z",
+      "license": "MIT",
+      "open_issues": 374,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Hunt down social media accounts by username across social networks",
+          "full_name": "sherlock-project/sherlock",
+          "language": "Python",
+          "trending_stars_period": 2372,
+          "trending_total_forks": null,
+          "trending_total_stars": 102772,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sostenesfreitas/ocarina-recomp",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 925,
+      "forks": 52,
+      "language": "C",
+      "description": "Ocarina of Time running natively on Windows, no emulator. Built on your PC from your own copy. No game files included.",
+      "html_url": "https://github.com/sostenesfreitas/ocarina-recomp",
+      "topics": [],
+      "created_at": "2026-11-06T22:24:03Z",
+      "updated_at": "2026-11-08T17:52:08Z",
+      "pushed_at": "2026-11-08T17:01:19Z",
+      "license": "GPL-3.0",
+      "open_issues": 83,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T22:24:03Z",
+          "description": "Ocarina of Time running natively on Windows, no emulator. Built on your PC from your own copy. No game files included.",
+          "html_url": "https://github.com/sostenesfreitas/ocarina-recomp",
+          "stars": 925,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tangerineturtle1/NX2navi",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 1011,
+      "forks": 46,
+      "language": "C",
+      "description": null,
+      "html_url": "https://github.com/tangerineturtle1/NX2navi",
+      "topics": [],
+      "created_at": "2026-11-07T10:01:23Z",
+      "updated_at": "2026-11-08T17:56:46Z",
+      "pushed_at": "2026-11-08T11:06:00Z",
+      "license": "MIT",
+      "open_issues": 131,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T10:01:23Z",
+          "description": null,
+          "html_url": "https://github.com/tangerineturtle1/NX2navi",
+          "stars": 1011,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "thedotmack/claude-mem",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 114788,
+      "forks": 9965,
+      "language": "TypeScript",
+      "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "html_url": "https://github.com/thedotmack/claude-mem",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-memory",
+        "anthropic",
+        "artificial-intelligence",
+        "chromadb",
+        "claude",
+        "claude-agent-sdk",
+        "claude-agents",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "embeddings",
+        "long-term-memory",
+        "mem0",
+        "memory-engine",
+        "openmemory",
+        "rag",
+        "sqlite",
+        "supermemory"
+      ],
+      "created_at": "2025-08-31T20:50:03Z",
+      "updated_at": "2026-11-08T17:54:24Z",
+      "pushed_at": "2026-11-08T17:53:20Z",
+      "license": "Apache-2.0",
+      "open_issues": 97,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+          "full_name": "thedotmack/claude-mem",
+          "language": "TypeScript",
+          "trending_stars_period": 7482,
+          "trending_total_forks": null,
+          "trending_total_stars": 114788,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 47418,
+      "forks": 3249,
+      "language": "Rust",
+      "description": "Browser automation CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "topics": [],
+      "created_at": "2026-01-11T05:38:15Z",
+      "updated_at": "2026-11-08T17:54:18Z",
+      "pushed_at": "2026-11-08T10:03:53Z",
+      "license": "Apache-2.0",
+      "open_issues": 512,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Browser automation CLI for AI agents",
+          "full_name": "vercel-labs/agent-browser",
+          "language": "Rust",
+          "trending_stars_period": 1476,
+          "trending_total_forks": null,
+          "trending_total_stars": 47418,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "Browser automation CLI for AI agents",
+          "full_name": "vercel-labs/agent-browser",
+          "language": "Rust",
+          "trending_stars_period": 812,
+          "trending_total_forks": null,
+          "trending_total_stars": 47418,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "voyager-so/vork",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 1082,
+      "forks": 81,
+      "language": "Rust",
+      "description": "Headless 3D and VFX engine for agents. Research preview.",
+      "html_url": "https://github.com/voyager-so/vork",
+      "topics": [
+        "3d",
+        "ai-agents",
+        "gpu",
+        "metal",
+        "ray-tracing",
+        "rendering",
+        "rust",
+        "slang",
+        "vfx",
+        "vulkan"
+      ],
+      "created_at": "2026-11-05T22:37:07Z",
+      "updated_at": "2026-11-08T17:56:04Z",
+      "pushed_at": "2026-11-07T20:54:07Z",
+      "license": "Other",
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T22:37:07Z",
+          "description": "Headless 3D and VFX engine for agents. Research preview.",
+          "html_url": "https://github.com/voyager-so/vork",
+          "stars": 1082,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 3217,
+      "forks": 1195,
+      "language": "Python",
+      "description": "Google_AI_Pro_2Year_ZeroCost_Auto",
+      "html_url": "https://github.com/worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto",
+      "topics": [],
+      "created_at": "2026-11-04T14:54:56Z",
+      "updated_at": "2026-11-08T17:51:47Z",
+      "pushed_at": "2026-11-06T03:52:06Z",
+      "license": null,
+      "open_issues": 26,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-04T14:54:56Z",
+          "description": "Google_AI_Pro_2Year_ZeroCost_Auto",
+          "html_url": "https://github.com/worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto",
+          "stars": 3217,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "wquguru/cicada",
+      "captured_at": "2026-11-08T17:56:43Z",
+      "stars": 1873,
+      "forks": 327,
+      "language": "Swift",
+      "description": "知了 Cicada · 任何会议和直播的实时字幕、同声传译、AI 会议纪要，Mac、Windows、Linux、Android 免费开源。Live subtitles, interpreting and meeting notes for any call or stream, on Mac, Windows, Linux and Android.",
+      "html_url": "https://github.com/wquguru/cicada",
+      "topics": [
+        "android",
+        "linux",
+        "live-captions",
+        "macos",
+        "meeting-notes",
+        "menubar-app",
+        "simultaneous-interpretation",
+        "speech-recognition",
+        "subtitles",
+        "swift",
+        "swiftui",
+        "translation",
+        "windows"
+      ],
+      "created_at": "2026-11-01T05:41:23Z",
+      "updated_at": "2026-11-08T17:56:15Z",
+      "pushed_at": "2026-11-08T15:07:23Z",
+      "license": "Apache-2.0",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-01T05:41:23Z",
+          "description": "知了 Cicada · 任何会议和直播的实时字幕、同声传译、AI 会议纪要，Mac、Windows、Linux、Android 免费开源。Live subtitles, interpreting and meeting notes for any call or stream, on Mac, Windows, Linux and Android.",
+          "html_url": "https://github.com/wquguru/cicada",
+          "stars": 1873,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
@@ -208793,14 +210564,16 @@
     "20261001T140350Z": 63,
     "daily-20261103T170529Z": 66,
     "daily-20261104T171701Z": 71,
-    "daily-20261105T212126Z": 76
+    "daily-20261105T212126Z": 76,
+    "daily-20261108T175643Z": 78
   },
   "sent_slots": {
     "2026-09-30-pm": 61,
     "2026-10-01-12": 63,
     "daily:2026-11-03": 66,
     "daily:2026-11-04": 71,
-    "daily:2026-11-05": 76
+    "daily:2026-11-05": 76,
+    "daily:2026-11-08": 78
   },
   "pending_digests": {},
   "llm_daily_requests": {
@@ -208814,7 +210587,7 @@
     "2026-11-05": 12,
     "2026-11-06": 10,
     "2026-11-07": 12,
-    "2026-11-08": 20
+    "2026-11-08": 29
   },
   "delivery_progress": {
     "20260930T143510Z": {
