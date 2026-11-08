@@ -77,7 +77,7 @@ impl<'a> Groq<'a> {
         do_llm: bool,
         run_dir: &Path,
     ) -> Result<Enrichment> {
-        self.enrich_mode(entries, state, do_llm, run_dir)
+        self.enrich_mode(entries, state, do_llm, run_dir, None)
     }
 
     pub(super) fn enrich_daily(
@@ -85,8 +85,9 @@ impl<'a> Groq<'a> {
         entries: &[Ranked],
         state: &mut State,
         run_dir: &Path,
+        readme_sources: &[Value],
     ) -> Result<Enrichment> {
-        self.enrich_mode(entries, state, true, run_dir)
+        self.enrich_mode(entries, state, true, run_dir, Some(readme_sources))
     }
 
     fn enrich_mode(
@@ -95,6 +96,7 @@ impl<'a> Groq<'a> {
         state: &mut State,
         do_llm: bool,
         run_dir: &Path,
+        daily_readme_sources: Option<&[Value]>,
     ) -> Result<Enrichment> {
         let mut descriptions = HashMap::<String, String>::new();
         let mut jokes = HashMap::<String, String>::new();
@@ -107,6 +109,7 @@ impl<'a> Groq<'a> {
         let mut readme_gaps = Vec::<String>::new();
         let mut grounding_failures = Vec::<Value>::new();
         let mut card_failures = Vec::<Value>::new();
+        let mut daily_deferred = Vec::<Value>::new();
         let mut prompts = Vec::<Value>::new();
         let mut bundles = Vec::<Value>::new();
         let mut accepted_jokes = Vec::<String>::new();
@@ -142,6 +145,11 @@ impl<'a> Groq<'a> {
             });
             bundles.push(bundle.clone());
             if let Some(cached) = crate::editions::cached_analysis(state, snapshot) {
+                if daily_readme_sources.is_some()
+                    && crate::editions::clear_daily_retry(state, &snapshot.full_name)
+                {
+                    write_json(self.state_path, state)?;
+                }
                 let joke = select_joke(&cached.joke, &accepted_jokes);
                 if !joke.is_empty() {
                     accepted_jokes.push(joke.clone());
@@ -158,15 +166,44 @@ impl<'a> Groq<'a> {
             if !do_llm || !configured || !stop_reason.is_empty() {
                 continue;
             }
-            let Some(readme) = readme else {
-                // Short metadata remains available to the deterministic renderer;
-                // it cannot substantiate an expanded model card.
-                continue;
-            };
             if calls >= MAX_LLM_REQUESTS {
                 stop_reason = "per-run LLM request cap reached".into();
                 continue;
             }
+            let day = self.clock.now().format("%Y-%m-%d").to_string();
+            if state
+                .llm_daily_requests
+                .get(&day)
+                .is_some_and(|used| *used >= DAILY_LLM_REQUEST_CAP)
+            {
+                stop_reason = format!(
+                    "LLM budget exhausted; delivered {} of {} descriptions",
+                    descriptions.len(),
+                    entries.len()
+                );
+                continue;
+            }
+            let Some(readme) = readme else {
+                // Short metadata remains available to the deterministic renderer;
+                // it cannot substantiate an expanded model card.
+                if daily_readme_sources.is_some_and(|sources| {
+                    sources.iter().any(|source| {
+                        source["candidate"]
+                            .as_str()
+                            .is_some_and(|name| name.eq_ignore_ascii_case(&snapshot.full_name))
+                            && (source["status"] == "included"
+                                || matches!(source["http_status"].as_u64(), Some(404 | 410)))
+                    })
+                }) {
+                    self.defer_daily_card(
+                        state,
+                        &snapshot.full_name,
+                        "unusable_readme",
+                        &mut daily_deferred,
+                    )?;
+                }
+                continue;
+            };
             let primary_sources = serde_json::to_string(&bundle)?;
             let mut request = bundle;
             request["avoid_jokes"] =
@@ -248,6 +285,14 @@ impl<'a> Groq<'a> {
                                 "repair_error":format!("{repair_error:#}"),
                                 "disposition":"retained_for_later_issue"
                             }));
+                            if daily_readme_sources.is_some() {
+                                self.defer_daily_card(
+                                    state,
+                                    &snapshot.full_name,
+                                    "description_rejected_after_repair",
+                                    &mut daily_deferred,
+                                )?;
+                            }
                             continue;
                         }
                     }
@@ -260,6 +305,14 @@ impl<'a> Groq<'a> {
                     "id":snapshot.full_name,"reason":error.to_string(),
                     "fallback":"source metadata","additional_requests":0
                 }));
+                if daily_readme_sources.is_some() {
+                    self.defer_daily_card(
+                        state,
+                        &snapshot.full_name,
+                        "readme_quote_rejected",
+                        &mut daily_deferred,
+                    )?;
+                }
                 continue;
             }
             let description = safe_public_text(&description);
@@ -278,6 +331,9 @@ impl<'a> Groq<'a> {
                     "description":description,"joke":project_joke,"evidence_quote":evidence_quote
                 }]}),
             );
+            if daily_readme_sources.is_some() {
+                crate::editions::clear_daily_retry(state, &snapshot.full_name);
+            }
             write_json(self.state_path, state)?;
             evidence_quotes.insert(snapshot.full_name.clone(), evidence_quote);
             descriptions.insert(snapshot.full_name.clone(), description);
@@ -318,6 +374,7 @@ impl<'a> Groq<'a> {
             "readme_gaps":readme_gaps,
             "grounding_failures":grounding_failures,
             "card_failures":card_failures,
+            "daily_deferred":daily_deferred,
             "evidence_scope":EVIDENCE_SCOPE,
             "factual_review_performed":false,
             "actual_requests":calls,
@@ -342,6 +399,21 @@ impl<'a> Groq<'a> {
             complete,
             budget: llm_budget,
         })
+    }
+
+    fn defer_daily_card(
+        &self,
+        state: &mut State,
+        name: &str,
+        reason: &str,
+        deferred: &mut Vec<Value>,
+    ) -> Result<()> {
+        let retry_at = crate::editions::defer_daily(state, name, self.clock.now());
+        // An all-rejected daily issue fails before main saves state. Persist the
+        // new queue position now, including runs that made no provider requests.
+        write_json(self.state_path, state)?;
+        deferred.push(json!({"id":name,"reason":reason,"retry_at":retry_at}));
+        Ok(())
     }
 
     fn reserve_request(&self, state: &mut State, calls: &mut usize) -> Result<()> {
@@ -472,7 +544,7 @@ fn usable_readme(readme: Option<&str>) -> Option<&str> {
 fn readme_evidence_quote(readme: &str) -> Option<String> {
     // Offer a short exact quote as a hint; the full stored README remains
     // available for the model to select a more representative passage.
-    readme.split("\n\n").find_map(|paragraph| {
+    crate::readme_paragraphs(readme).find_map(|paragraph| {
         exact_evidence_quote(None, Some(paragraph))
             .filter(|quote| quote.chars().count() >= MIN_EVIDENCE_QUOTE_CHARS)
     })

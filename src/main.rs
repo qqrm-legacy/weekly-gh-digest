@@ -351,6 +351,12 @@ fn validate_digest_selection(run_dir: &Path, digest: &Value) -> Result<()> {
     Ok(())
 }
 
+fn readme_paragraphs(readme: &str) -> impl Iterator<Item = &str> {
+    readme
+        .split("\n\n")
+        .flat_map(|paragraph| paragraph.split("\r\n\r\n"))
+}
+
 fn exact_evidence_quote(description: Option<&str>, readme_excerpt: Option<&str>) -> Option<String> {
     if let Some(description) = description
         .map(str::trim)
@@ -359,7 +365,7 @@ fn exact_evidence_quote(description: Option<&str>, readme_excerpt: Option<&str>)
         return Some(description.chars().take(180).collect());
     }
     let readme = readme_excerpt?.trim();
-    let paragraph = readme.split("\n\n").map(str::trim).find(|text| {
+    let paragraph = readme_paragraphs(readme).map(str::trim).find(|text| {
         text.chars().count() >= 12
             && !text.starts_with('#')
             && !text.starts_with("![")
@@ -395,7 +401,7 @@ fn make_digest_for(
     do_llm: bool,
     format: editions::Format,
 ) -> Result<(Value, String)> {
-    let (mut entries, mut selection_excluded) = editions::select(current, state, format);
+    let (mut entries, mut selection_excluded) = editions::select(current, state, format, now);
     let mut selected = entries
         .iter()
         .map(|entry| entry.snapshot.clone())
@@ -415,7 +421,7 @@ fn make_digest_for(
     manifest["sources"]
         .as_array_mut()
         .context("source manifest has no source list")?
-        .extend(evidence_sources);
+        .extend(evidence_sources.iter().cloned());
     manifest["weekly_observed_repositories"] = json!(current.len());
     manifest["weekly_selected_repositories"] = json!(entries.len());
     write_json(
@@ -442,7 +448,12 @@ fn make_digest_for(
         complete,
         budget: llm_budget,
     } = if format == editions::Format::Daily && do_llm {
-        provider.enrich_daily(&entries, state, &runs_dir().join(stamp(now)))?
+        provider.enrich_daily(
+            &entries,
+            state,
+            &runs_dir().join(stamp(now)),
+            &evidence_sources,
+        )?
     } else {
         provider.enrich(&entries, state, do_llm, &runs_dir().join(stamp(now)))?
     };
@@ -1726,6 +1737,16 @@ mod tests {
             Some(paragraph)
         );
         assert!(exact_evidence_quote(None, Some(badges)).is_none());
+    }
+
+    #[test]
+    fn evidence_quotes_preserve_crlf_inside_readme_paragraphs() {
+        let paragraph =
+            "A documented parser for source files.\r\nIt reports their dependency graph.";
+        let readme = format!("<div>Project logo</div>\r\n\r\n# Project\r\n\r\n{paragraph}");
+        let quote = exact_evidence_quote(None, Some(&readme)).unwrap();
+        assert_eq!(quote, paragraph);
+        assert!(readme.contains(&quote));
     }
 
     #[test]

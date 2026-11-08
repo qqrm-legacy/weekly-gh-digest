@@ -29,8 +29,21 @@ acknowledgements consume the other's queue. Identity is case-insensitive
 
 ## Editorial policies
 
-Daily: at most 12 concise discoveries per issue. Oldest discovery date first,
-then daily Trending peak, weekly Trending peak and Search within that date.
+Daily: at most 12 concise discoveries per issue. Earliest queue time first,
+then daily Trending peak, weekly Trending peak and Search when times match.
+Queue time starts at first discovery. A confirmed local explanation failure
+(missing or unusable README, rejected quotation, or invalid description after
+repair) sets `editions.daily_retry_at` to 24 hours after that attempt. The finding
+stays pending, then rejoins at that fixed retry time instead of retaining its old
+position. Existing backlog goes first; later discoveries cannot continually
+overtake a due retry. Matching cached or newly accepted analyses clear the retry.
+Only fetched README content or HTTP 404/410 establishes a local README failure;
+transport errors, authentication/rate-limit failures, exhausted request budgets
+and unvisited candidates do not move queue positions. Weekly and offline
+enrichment never changes daily retries. Retry checkpoints are saved even when
+all selected cards fail, so the next run can reach later candidates. Daily ACKs
+still require complete delivery; the 12-card and 40/run, 100/UTC-day request caps
+are unchanged.
 Overflow remains pending even after leaving Trending. New means new to the feed,
 not necessarily newly created or newly released. With AI enabled, only completed
 Russian explanations are included; raw metadata is not a published daily card.
@@ -146,6 +159,8 @@ validation. Raw README/metadata fallbacks stay in the daily queue. There is no
 issue synopsis or separate summary request. Completed analyses are checkpointed
 individually and reused when
 sources and editorial policy match. Weekly eligibility remains independent.
+README paragraph selection accepts LF and CRLF line endings while preserving
+the original quoted text for exact matching.
 
 Mini-reviews normally use two or three short paragraphs and 800–1200 characters
 (requested maximum 1500; responses up to 2000 are accepted without truncation)
