@@ -171,7 +171,7 @@
         "policy_version": 7,
         "source_description": "A verified, community-maintained catalog of 916 open-source projects built with Jev.",
         "source_readme": "<p align=\"center\">\n  <a href=\"https://jevbest.com\"><img src=\"public/readme/awesome-jev-hero.png\" alt=\"Awesome Jev — 992 verified open-source projects across 11 categories\" width=\"100%\"></a>\n</p>\n\n<p align=\"center\">\n  <img src=\"https://img.shields.io/badge/verified_projects-992-1e63ff?style=flat-square\" alt=\"992 verified projects\">\n  <img src=\"https://img.shields.io/badge/categories-11-111111?style=flat-square\" alt=\"11 categories\">\n  <img src=\"https://img.shields.io/badge/languages-29-676767?style=flat-square\" alt=\"29 languages\">\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-1e63ff?style=flat-square\" alt=\"License: MIT\"></a>\n</p>\n\n<p align=\"center\">\n  <strong>English</strong> · <a href=\"README.zh-Hans.md\">简体中文</a> · <a href=\"README.ja.md\">日本語</a> · <a href=\"README.ko.md\">한국어</a> · <a href=\"README.es.md\">Español</a> · <a href=\"README.pt-BR.md\">Português (Brasil)</a>\n</p>\n\n<p align=\"center\">\n  🌐 <a href=\"https://jevbest.com\"><strong>Explore the website</strong></a>\n  &nbsp;·&nbsp;\n  📜 <a href=\"CHANGELOG.md\"><strong>Changelog</strong></a>\n  &nbsp;·&nbsp;\n  🧠 <a href=\"#jev-like-models\"><strong>Jev-like models</strong></a>\n  &nbsp;·&nbsp;\n  ➕ <a href=\"https://github.com/heyjunpenn/awesome-jev/issues/new?title=%5BSubmission%5D%20\"><strong>Submit a project</strong></a>\n</p>\n\n## About Awesome Jev\n\nAwesome Jev is an independent, community-maintained catalog of **992 open-source projects** built with [Jev](https://typesafe.ai/), TypeSafe AI's System One model for typed decisions inside software. It is not affiliated with or endorsed by TypeSafe AI.\n\n> **What makes this catalog useful?**\n>\n> Every entry identifies the concrete decision Jev makes and links to the strongest public evidence available—so you can evaluate real implementations, not just project claims.\n\n## Contents\n\n- ✅ [Official](#official-6) — **6**\n- 📦 [SDKs & clients](#sdks-clients-61) — **61**\n- 🧠 [Jev-like models](#jev-like-models) — **85**\n- 🧩 [Frameworks & integrations](#frameworks-integrations-89) — **89**\n- 🤖 [Agent tooling](#agent-tooling-238) — **238**\n- 🖥️ [Browser & computer use](#browser-computer-use-77) — **77**\n- 🪟 [Applications](#applications-137) — **137**\n- 🎮 [Games & simulations](#games-simulations-73) — **73**\n- 🧪 [Demos & playgrounds](#demos-playgrounds-67) — **67**\n- 📊 [Benchmarks & research](#benchmarks-research-117) — **117**\n- 📚 [Other lists](#other-lists-42) — **42**\n\nThis README is a dated snapshot of **992 unique public GitHub repositories**. Stars were captured on **2026-09-18–2026-10-19** for discovery, not ranking; verify current behavior, activity, and licensing upstream.\n\n## Added today\n\n<details open>\n<summary><strong>11 projects added on October 19, 2026</strong></summary>\n\n- **SDKs & clients (1):** [pydecide](https://github.com/gopaljigaur/decide)\n- **Jev-like models (2):** [Phocinae-Largha-150M-v1](https://github.com/Phocinae/Phocinae-Largha-150M-v1), [VideoJev](https://github.com/MCG-NJU/VideoJev)\n- **Frameworks & integrations (1):** [vd-jev](https://github.com/ondata/vd-jev)\n- **Agent tooling (2):** [agent-reflex](https://github.com/psygreg/agent-reflex), [local-decider](https://github.com/pusucip25/local-decider)\n- **Applications (3):** [Jev RAG](https://github.com/aifabrice/jev-rag), [jev-research-pipeline](https://github.com/shimo4228/jev-research-pipeline), [DeciFlow](https://github.com/call518/DeciFlow)\n- **Demos & playgrounds (1):** [Trio-Spark demos](https://github.com/machinefi/trio-spark)\n- **Benchmarks & research (1):** [Decision Models as Guardrails](https://github.com/raxITlabs/decision-models-as-guardrails)\n\n</details>\n\n### Official (6)\n\n| Project | Stars | Language | Added | Description |\n|---|---:|---|---|---|\n| [TypeSafe agent skills](https://github.com/typesafe-ai/skills) | ★ 765 | — | 2026-09-19 | Official agent skill for Claude Code, Codex, and compatible agents: primitives, patterns, and how to structure evaluations. |\n| [System One adapter (Python)](https://github.com/typesafe-ai/system-one-adapter-python) | ★ 171 | Python | 2026-09-19 | Official drop-in TypeSafeClient replacement backed by OpenAI, Anthropic, and compatible LLM APIs, for comparing Jev against chat models. |\n| [TypeSafe JavaScript SDK](https://github.com/typesafe-ai/typesafe-sdk-js) | ★ 168 | TypeScript | 2026-09-19 | Official TypeScript/JavaScript client with inferred answer types. npm install @typesafe-ai/sdk. |\n| [TypeSafe Python SDK](https://github.com/typesafe-ai/typesafe-sdk-python) | ★ 128 | Python | 2026-09-19 | Official sync and async Python client. pip install typesafe-sdk. |\n| [TypeSafe Daggerverse](https://github.com/typesafe-ai/daggerverse) | ★ 12 | Python | 2026-09-20 | Official collection of reusable Dagger modules for TypeSafe AI and System One workflows. |\n| [TypeSafe Overwatch](https://github.com/typesafe-ai/Overwatch) | ★ 4 | Python | 2026-09-20 | Official tooling for observing and evaluating System One workflows. |\n\n### SDKs & clients (61)\n\n| Project | Stars | Language | Added | Descripti",
-        "description": "Awesome Jev — это независимый, поддерживаемый сообществом каталог почти тысячи открытых репозиториев, использующих модель Jev от TypeSafe AI. Каждый пункт описывает, какое конкретное решение принимает Jev и содержит ссылки на публичные доказательства, позволяя разработчикам быстро оценить реальное применение технологии, а не только рекламные заявления. Каталог разбит на 11 категорий, среди которых SDK и клиенты, фреймворки, агентные инструменты и демо‑проекты, что упрощает поиск нужного типа интеграции. В разделе «Agent tooling» представлено более 200 проектов, показывающих, как Jev можно включить в многокомпонентные системы, а в «Jev‑like models» собраны альтернативные модели с похожей типизированной логикой. Пользователь, желающий добавить собственный проект, может открыть issue с шаблоном и сразу увидеть, как его репозиторий будет вписан в структуру, где указаны звёздочки, язык и дата добавления. Ограничения: список фиксирован на момент снимка (звёзды собраны в октябре 2026 г.) и не гарантирует актуальность лицензий или активности проектов; также каталог не аффилирован с TypeSafe AI, поэтому любые гарантии от их стороны не распространяются на перечисленные репозитории.",
+        "description": "Awesome Jev — это независимый, поддерживаемый сообществом каталог почти тысячи открытых репозиториев, использующих модель Jev от TypeSafe AI. Каждый пункт описывает, какое конкретное решение принимает Jev, и содержит ссылки на публичные доказательства, позволяя разработчикам быстро оценить реальное применение технологии, а не только рекламные заявления. Каталог разбит на 11 категорий, среди которых SDK и клиенты, фреймворки, агентные инструменты и демо‑проекты, что упрощает поиск нужного типа интеграции. В разделе «Agent tooling» представлено более 200 проектов, показывающих, как Jev можно включить в многокомпонентные системы, а в «Jev‑like models» собраны альтернативные модели с похожей типизированной логикой. Пользователь, желающий добавить собственный проект, может предложить его через issue. Для проектов в каталоге указаны звёзды, язык и дата добавления. README представляет снимок каталога: звёзды собраны с 18 сентября по 19 октября 2026 года; актуальность лицензий, поведения и активности проектов нужно проверять в исходных репозиториях. Каталог не аффилирован с TypeSafe AI и не одобрен этой компанией.",
         "joke": "",
         "evidence_quote": "Awesome Jev is an independent, community-maintained catalog of **992 open-source projects** built with [Jev](https://typesafe.ai/), TypeSafe AI's System One model for typed decisions inside software. It is not affiliated with or endorsed by TypeSafe AI."
       },
@@ -179,7 +179,7 @@
         "policy_version": 7,
         "source_description": "Source code for the Claude Opus 5.5 music video for I'm Upping My P(doom)",
         "source_readme": "# I'm Upping My P(doom)\n\nSource code for the [Claude Opus 5.5 music video for *I'm Upping My P(doom)*](https://youtu.be/8j-hR4fJywU).\n\n\n\n<img width=\"800\" height=\"450\" alt=\"recursion_loop\" src=\"https://github.com/user-attachments/assets/7d6164ff-6706-40bb-bdf5-099d86e583e1\" />\n\n\n[I've also made a new more reliable and general base for making Claude animations with Claude Opus 5.5.](https://github.com/JohnHeibel/ClaudeAnimationBase) \n\n<img width=\"720\" height=\"405\" alt=\"hello_loop\" src=\"https://github.com/user-attachments/assets/d1c91375-3863-45f5-b7da-5e8b9c987b64\" />\n\nHighly recommend checking it out!\n\n## Credits\n\n- **Inspired by:** [this post on X](https://x.com/slimer48484/status/2097752569212756134)\n- **Song:** as far as I could find, it comes from [this YouTube video from 2024](https://www.youtube.com/watch?v=uEB5E67vcPA)\n- **Lyrics** from Osmarks showing the original udio generations and [the interpretation of each lyric](https://docs.osmarks.net/hypha/p(doom)_song_objectively_correct_interpretation)\n\n## How it was made\n\nThe video took two generations, both in Claude Code:\n\n1. **First generation** ([`legacy/`](legacy/)): Claude Opus 5.5 (Medium)\n2. **Second generation** (everything else): Claude Opus 5.5\n\n**Everything in this repository was generated by the model.** No scene ideas were specified. The only direction was to:\n\n- use the Clawd character design\n- give each lyric interesting visuals and transitions\n\n[`ANIMATION_GUIDE.md`](ANIMATION_GUIDE.md) was written by Opus to brief the subagents it ran in parallel.\n\n[`STORYBOARD.md`](STORYBOARD.md) was also written by Opus after the first generation, after being instructed to use P5 brushstrokes, make each scene visually interesting, and make every scene transition into the next.\n## What's here\n\n| Path | What it is |\n|---|---|\n| [`src/ch/`](src/ch/) | The video's nine chapters, one file each |\n| [`src/`](src/) | Shared code: Clawd, the guest characters, props, lyrics and the timeline |\n| [`studio.html`](studio.html) | The page every frame is painted in, using p5.js and p5.brush |\n| [`render.mjs`](render.mjs) | Renders frames in headless Chrome and encodes the MP4 with ffmpeg |\n| [`STORYBOARD.md`](STORYBOARD.md) | Opus's shot-by-shot plan |\n| [`ANIMATION_GUIDE.md`](ANIMATION_GUIDE.md) | Opus's style and code guide for its subagents |\n| [`legacy/`](legacy/) | The first generation |\n\n## Rendering\n\nYou need Node.js, Google Chrome and ffmpeg. The song is included at `assets/pdoom.mp3`.\n\n```bash\nnpm install\nnode render.mjs --frames=0:156.6 --workers=4   # paint every frame into out/frames (resumable)\nnode render.mjs --encode --out=out/pdoom.mp4   # join the frames and the song into an MP4\n```\n\nIf Chrome isn't installed at the default Windows path, add `--chrome=<path to chrome>`.\n",
-        "description": "Проект содержит полностью сгенерированный код для создания анимационного музыкального клипа «I'm Upping My P(doom)», выполненного с помощью модели Claude Opus 5.5. Репозиторий включает девять главных сцен, общие ресурсы (персонажи, реквизит, текст песни и тайм‑лайн) и HTML‑страницу, где каждый кадр рисуется в браузере через p5.js и p5.brush. Для получения готового MP4‑файла предусмотрен скрипт render.mjs, который в headless‑Chrome рендерит отдельные кадры и собирает их в видеоряд с помощью ffmpeg, а также инструкции по запуску с указанием требуемых зависимостей (Node.js, Chrome, ffmpeg) и параметров рендеринга. Особенности проекта: 1) полностью автоматизированный процесс, где все сценарий, раскадровка и стилистические указания написаны самой моделью без человеческого вмешательства; 2) поддержка параллельного рендеринга через параметр --workers, позволяющая ускорить обработку длительных видеороликов; 3) наличие отдельного «legacy»‑каталога, где хранится первая генерация, что позволяет сравнить результаты разных проходов модели. Типичный сценарий использования – разработчик, желающий быстро создать визуализированный музыкальный клип, может склонировать репозиторий, разместить свою аудиодорожку, запустить рендеринг и получить готовый файл без необходимости писать собственный код анимации.",
+        "description": "Проект содержит полностью сгенерированный код для создания анимационного музыкального клипа «I'm Upping My P(doom)», выполненного с помощью модели Claude Opus 5.5. Репозиторий включает девять глав, общие ресурсы (персонажи, реквизит, текст песни и временная шкала) и HTML‑страницу, где каждый кадр рисуется в браузере через p5.js и p5.brush. Для получения готового MP4‑файла предусмотрен скрипт render.mjs, который в headless‑Chrome рендерит отдельные кадры и собирает их в видеоряд с помощью ffmpeg, а также инструкции по запуску с указанием требуемых зависимостей (Node.js, Chrome, ffmpeg) и параметров рендеринга. Особенности проекта: 1) раскадровка и инструкции для субагентов написаны моделью, а автор задал персонажа, визуальный стиль и переходы; 2) поддержка параллельного рендеринга через параметр --workers, позволяющая ускорить обработку длительных видеороликов; 3) наличие отдельного «legacy»‑каталога, где хранится первая генерация, что позволяет сравнить результаты разных проходов модели. Репозиторий подходит для повторного рендеринга этого клипа и изучения сгенерированного кода анимации, раскадровки и организации работы субагентов.",
         "joke": "Когда Claude рисует клип, даже кадр‑по‑кадру не успевает скучать.",
         "evidence_quote": "The video took two generations, both in Claude Code:\n\n1. **First generation** ([`legacy/`](legacy/)): Claude Opus 5.5 (Medium)\n2. **Second generation** (everything else): Claude Opus 5.5\n\n**Everything in this repository was generated by the model.** No scene ideas were specified."
       },
@@ -211,9 +211,9 @@
         "policy_version": 7,
         "source_description": "Turn any LLM into a Jev-style decision model: typed decisions, real probabilities, no training. (continue updating, welcome any issue and PR request)",
         "source_readme": "<div align=\"center\">\n\n<img src=\"https://raw.githubusercontent.com/nokia-applied-research/AnyJev/main/assets/banner.png\" width=\"100%\" alt=\"AnyJev: turn any LLM into a Jev-style decision model. Typed decisions, real probabilities, training-free or self-distilled. Qwen3-8B on BANKING77-20, raw readout to L0 with no labels: order-flip rate 0.230 to 0.073, accuracy 0.747 to 0.803, auto-decidable at 5% risk 7.7% to 46.3%.\">\n\n[![PyPI](https://img.shields.io/pypi/v/anyjev?color=3b82f6)](https://pypi.org/project/anyjev/)\n[![Python](https://img.shields.io/pypi/pyversions/anyjev)](https://pypi.org/project/anyjev/)\n[![CI](https://github.com/nokia-applied-research/AnyJev/actions/workflows/ci.yml/badge.svg)](https://github.com/nokia-applied-research/AnyJev/actions/workflows/ci.yml)\n[![License](https://img.shields.io/badge/license-Apache--2.0-green.svg)](https://github.com/nokia-applied-research/AnyJev/blob/main/LICENSE)\n[![Technical Report](https://img.shields.io/badge/Technical%20Report-PDF-b31b1b?logo=adobeacrobatreader&logoColor=white)](https://arxiv.org/pdf/2610.00831)\n[![Models](https://img.shields.io/badge/%F0%9F%A4%97%20Tacit-models-yellow)](https://huggingface.co/collections/morriszjm/tacit-6ac41d0b50af9e5417c5c234)\n[![Tacitus](https://img.shields.io/badge/%F0%9F%A4%97%20Tacitus-31B-f97316)](https://huggingface.co/morriszjm/AnyJev-Tacitus-31B)\n[![Decision Index](https://img.shields.io/badge/Decision%20Index%200.3-60.22-8b5cf6)](https://huggingface.co/spaces/multimodalart/jev-decision-index)\n[![Decision Index 0.4.1](https://img.shields.io/badge/Decision%20Index%200.4.1-Tacitus%2066.47-6d28d9)](https://huggingface.co/spaces/multimodalart/jev-decision-index)\n\n**English** · [简体中文](https://github.com/nokia-applied-research/AnyJev/blob/main/README.zh-CN.md) · [⚡ Serve it](#-serve-it) · [📊 Results](#-tacit-results) · [🏆 Leaderboard](#-anyjev-tacitus-on-the-decision-index) · [🧭 Roadmap](#-roadmap) · [📖 Levels](https://github.com/nokia-applied-research/AnyJev/blob/main/docs/levels.md)\n\n</div>\n\n<p align=\"center\">\n  <b>Jiamu Zhang</b><sup>1</sup> &nbsp;&nbsp;&nbsp; <b>Tianze Yang</b><sup>1</sup> &nbsp;&nbsp;&nbsp; <b>Yucheng Shi</b><sup>2</sup> &nbsp;&nbsp;&nbsp; <b>Evan Chen</b><sup>1</sup>\n  <br>\n  <b>Zixiang Nie</b><sup>1</sup> &nbsp;&nbsp;&nbsp; <b>Kelly Wan</b><sup>1</sup> &nbsp;&nbsp;&nbsp; <b>Liangjie Hong</b><sup>1</sup> &nbsp;&nbsp;&nbsp; <b>Ninghao Liu</b><sup>3</sup> &nbsp;&nbsp;&nbsp; <b>Liang Wu</b><sup>1</sup>\n</p>\n<p align=\"center\">\n  <sub><sup>1</sup>&nbsp;Nokia, Sunnyvale, CA, USA &nbsp;&nbsp;&nbsp;&nbsp; <sup>2</sup>&nbsp;Tencent Hunyuan &nbsp;&nbsp;&nbsp;&nbsp; <sup>3</sup>&nbsp;The Hong Kong Polytechnic University</sub>\n</p>\n\n<p align=\"center\">\n  <img src=\"https://raw.githubusercontent.com/nokia-applied-research/AnyJev/main/assets/flip.gif\" width=\"100%\" alt=\"Reverse the option order: the raw logit readout flips its answer, AnyJev L0 gives the same answer both ways\">\n  <br>\n  <sub>Qwen3-8B on a real BANKING77 item. Every number is a model output.</sub>\n</p>\n\n> [!TIP]\n> **🆕 Tacit: AnyJev's self-distilled models, 1.7B to 9B, are on\n> [Hugging Face](https://huggingface.co/collections/morriszjm/tacit-6ac41d0b50af9e5417c5c234).** One\n> forward pass per decision. With `adaptive=True`, a capped share of low-confidence decisions goes to\n> the model's own reasoning. They run on transformers, in-process vLLM or a stock `vllm serve`.\n> `pip install \"anyjev[hf]\"`, then `Tacit.from_pretrained(\"morriszjm/Tacit-9B\")`.\n> [Start here ↓](#-serve-it)\n\n> [!NOTE]\n> **🏆 AnyJev Tacitus on the Decision Index 0.4.1.** [AnyJev Tacitus 31B](https://huggingface.co/morriszjm/AnyJev-Tacitus-31B), fine-tuned from\n> Gemma-4-31B and read with AnyJev, has a Full score of **66.47**, tied 3rd on the board on 2026-10-21.\n> [Details ↓](#-anyjev-tacitus-on-the-decision-index)\n\n> [!NOTE]\n> **🏆 No training, on a public leaderboard.** The training-free `Decider` (L0, two rotations) on the\n> unchanged Gemma-4-31B has a Full score of **60.22** on the [Decision Index 0.3](https://huggingface.co/spaces/multimodalart/jev-decision-index),\n> 5th of 149 entries on 2026-10-12. [Details ↓](#-training-free-on-the-decision-index)\n\n## ⚡ Serve it\n\n**A Tacit model, in Python.**\n\n```python\nfrom anyjev import Tacit\n\ntacit = Tacit.from_pretrained(\"morriszjm/Tacit-9B\")          # transformers, one GPU\nd = tacit.decide(state=\"Customer: my package was due last Monday and it still has not arrived.\",\n                 question=\"What does the customer want?\",\n                 options=[\"track_order\", \"cancel_order\", \"refund\", \"change_address\"])\nd[\"answer\"], d[\"probs\"], d[\"route\"]    # an option, {option: probability}, \"one_forward\" or \"cot\"\n```\n\n`kind` is `\"choice\"` (default), `\"yes_no\"` or `\"score\"` (`options` are ordered levels, lowest\nfirst, numbered from 1; `first_level=0` numbers them from 0). `decide_batch([...])` takes a list of such dicts.\n\n**Send the hardest decisions to reasoning, with a cap.**\n\n```python\ntacit = Tacit.from_pretrained(\"morriszjm/Tacit-9B\", adapt",
-        "description": "AnyJev превращает любой крупный языковой модель (LLM) в модель принятия решений в стиле Jev, предоставляя типизированные ответы и реальные вероятности без дополнительного обучения. Пользователь получает готовый Python‑интерфейс — класс Tacit, который загружает предобученную модель (например, Tacit‑9B) и за один проход генерирует решение, вероятность каждого варианта и информацию о том, был ли использован простой вывод или более тяжёлый «chain‑of‑thought»‑режим. Встроенный механизм adaptive позволяет автоматически перенаправлять решения с низкой уверенностью к более глубокему рассуждению, ограничивая долю таких запросов. Проект демонстрирует результаты на публичных бенчмарках: без обучения Decider (L0) на Gemma‑4‑31B достигает Full‑score 60.22, а самодельный Tacitus‑31B — 66.47, занимая топ‑3 на Decision Index 0.4.1. Это делает AnyJev полезным для сервисов, где нужны быстрые, вероятностные ответы (например, классификация запросов клиентов) без затрат на дообучение, при этом сохраняется возможность переключения на более точный рассудочный режим при необходимости.",
+        "description": "AnyJev превращает любую большую языковую модель (LLM) в модель принятия решений в стиле Jev, предоставляя типизированные ответы и реальные вероятности без дополнительного обучения. Пользователь получает готовый Python‑интерфейс — класс Tacit, который загружает предобученную модель (например, Tacit‑9B). По умолчанию решение вычисляется за один проход; результат содержит выбранный ответ, вероятности вариантов и использованный режим: простой вывод или «chain‑of‑thought». Встроенный механизм adaptive позволяет автоматически перенаправлять решения с низкой уверенностью к более глубокему рассуждению, ограничивая долю таких запросов. В README приведены два результата на разных версиях бенчмарка: Decider (L0) без обучения на Gemma‑4‑31B — 60.22 балла Full на Decision Index 0.3 (12 октября 2026 года); дообученный Tacitus‑31B — 66.47 на Decision Index 0.4.1 и разделённое третье место (21 октября 2026 года). Это делает AnyJev полезным для сервисов, где нужны быстрые, вероятностные ответы (например, классификация запросов клиентов) без затрат на дообучение, при этом сохраняется возможность переключения на более глубокое рассуждение при необходимости.",
         "joke": "",
-        "evidence_quote": "**English** · [简体中文](https://github.com/nokia-applied-research/AnyJev/blob/main/README.zh-CN.md) · [⚡ Serve it](#-serve-it) · [📊 Results](#-tacit-results) · [🏆 Leaderboard](#-anyjev-tacitus-on-the-decision-index) · [🧭 Roadmap](#-roadmap) · [📖 Levels](https://github.com/nokia-applied-research/AnyJev/blob/main/docs/levels.md)"
+        "evidence_quote": "**🆕 Tacit: AnyJev's self-distilled models, 1.7B to 9B, are on\n> [Hugging Face](https://huggingface.co/collections/morriszjm/tacit-6ac41d0b50af9e5417c5c234).** One\n> forward pass per decision. With `adaptive=True`, a capped share of low-confidence decisions goes to\n> the model's own reasoning."
       },
       "pallavi-shekhar/ai-engineering-interview-questions-company-wise": {
         "policy_version": 4,
@@ -204944,6 +204944,901 @@
           "description": "OpenAmika: MekaHime's AI companion Amika, open source. Live2D avatar, real-time voice, long-term memory, OpenRouter or Ollama brain.",
           "html_url": "https://github.com/zeekk0/OpenAmika",
           "stars": 515,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "AssassinCreator/steam-stash-value-report-card",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 790,
+      "forks": 57,
+      "language": "Python",
+      "description": "Value your Steam stash in the terminal and print it as a share card: per game, per market, what sold and what sits. One Windows portable build, no account.",
+      "html_url": "https://github.com/AssassinCreator/steam-stash-value-report-card",
+      "topics": [
+        "cli",
+        "inventory",
+        "price-check",
+        "python",
+        "report-card",
+        "steam",
+        "steam-market",
+        "valuation"
+      ],
+      "created_at": "2026-11-02T00:40:47Z",
+      "updated_at": "2026-11-08T09:10:13Z",
+      "pushed_at": "2026-11-08T08:17:00Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-02T00:40:47Z",
+          "description": "Value your Steam stash in the terminal and print it as a share card: per game, per market, what sold and what sits. One Windows portable build, no account.",
+          "html_url": "https://github.com/AssassinCreator/steam-stash-value-report-card",
+          "stars": 790,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "CzJam/gjgjxweb",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 992,
+      "forks": 88,
+      "language": "HTML",
+      "description": "《搞机工具箱》Web移植版",
+      "html_url": "https://github.com/CzJam/gjgjxweb",
+      "topics": [],
+      "created_at": "2026-11-03T02:00:54Z",
+      "updated_at": "2026-11-08T10:23:42Z",
+      "pushed_at": "2026-11-07T12:19:22Z",
+      "license": "GPL-3.0",
+      "open_issues": 2,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-11-03T02:00:54Z",
+          "description": "《搞机工具箱》Web移植版",
+          "html_url": "https://github.com/CzJam/gjgjxweb",
+          "stars": 992,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Gezine/CivSwitch",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 648,
+      "forks": 133,
+      "language": "JavaScript",
+      "description": "Nintendo Switch userland code execution using Civilization 7 game cartridge",
+      "html_url": "https://github.com/Gezine/CivSwitch",
+      "topics": [],
+      "created_at": "2026-11-01T13:30:59Z",
+      "updated_at": "2026-11-08T09:18:36Z",
+      "pushed_at": "2026-11-05T08:29:51Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-01T13:30:59Z",
+          "description": "Nintendo Switch userland code execution using Civilization 7 game cartridge",
+          "html_url": "https://github.com/Gezine/CivSwitch",
+          "stars": 648,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JenkinWoo/sheeridVerify",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 1797,
+      "forks": 963,
+      "language": "JavaScript",
+      "description": null,
+      "html_url": "https://github.com/JenkinWoo/sheeridVerify",
+      "topics": [],
+      "created_at": "2026-11-06T09:28:09Z",
+      "updated_at": "2026-11-08T10:17:00Z",
+      "pushed_at": "2026-11-06T09:54:37Z",
+      "license": "ISC",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T09:28:09Z",
+          "description": null,
+          "html_url": "https://github.com/JenkinWoo/sheeridVerify",
+          "stars": 1797,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JosssphZhou/poki",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 549,
+      "forks": 116,
+      "language": "JavaScript",
+      "description": "Let AI agents operate a real iPhone. Local MCP server and agent, no jailbreak, no extra hardware.",
+      "html_url": "https://github.com/JosssphZhou/poki",
+      "topics": [
+        "ai-agents",
+        "automation",
+        "ios",
+        "iphone",
+        "mcp",
+        "model-context-protocol"
+      ],
+      "created_at": "2026-11-05T15:04:31Z",
+      "updated_at": "2026-11-08T10:18:44Z",
+      "pushed_at": "2026-11-08T10:09:21Z",
+      "license": "AGPL-3.0",
+      "open_issues": 16,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T15:04:31Z",
+          "description": "Let AI agents operate a real iPhone. Local MCP server and agent, no jailbreak, no extra hardware.",
+          "html_url": "https://github.com/JosssphZhou/poki",
+          "stars": 549,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "KKKKhazix/agent-autoloop",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 4034,
+      "forks": 729,
+      "language": "TypeScript",
+      "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+      "html_url": "https://github.com/KKKKhazix/agent-autoloop",
+      "topics": [
+        "ai-agents",
+        "automation",
+        "claude-code",
+        "cli",
+        "codex",
+        "event-driven",
+        "mcp",
+        "nodejs",
+        "self-hosted",
+        "typescript",
+        "workflow"
+      ],
+      "created_at": "2026-11-03T08:02:11Z",
+      "updated_at": "2026-11-08T10:25:46Z",
+      "pushed_at": "2026-11-08T07:04:34Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T08:02:11Z",
+          "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+          "html_url": "https://github.com/KKKKhazix/agent-autoloop",
+          "stars": 4034,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Leviidev/Henge",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 897,
+      "forks": 72,
+      "language": "C",
+      "description": "Emulate macOS on iOS and iPadOS",
+      "html_url": "https://github.com/Leviidev/Henge",
+      "topics": [],
+      "created_at": "2026-11-02T01:13:51Z",
+      "updated_at": "2026-11-08T10:20:42Z",
+      "pushed_at": "2026-11-08T05:52:07Z",
+      "license": "GPL-2.0",
+      "open_issues": 36,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-02T01:13:51Z",
+          "description": "Emulate macOS on iOS and iPadOS",
+          "html_url": "https://github.com/Leviidev/Henge",
+          "stars": 897,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Minglink/dsh-jailbreak-workflow",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 766,
+      "forks": 253,
+      "language": "TypeScript",
+      "description": "DSH 破甲词制作作工作流 ",
+      "html_url": "https://github.com/Minglink/dsh-jailbreak-workflow",
+      "topics": [],
+      "created_at": "2026-11-01T04:50:41Z",
+      "updated_at": "2026-11-08T10:15:20Z",
+      "pushed_at": "2026-11-05T12:53:38Z",
+      "license": "Other",
+      "open_issues": 4,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-11-01T04:50:41Z",
+          "description": "DSH 破甲词制作作工作流 ",
+          "html_url": "https://github.com/Minglink/dsh-jailbreak-workflow",
+          "stars": 766,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Minireel/HGhub",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 2660,
+      "forks": 1210,
+      "language": "TypeScript",
+      "description": "YellowFruit third-party client",
+      "html_url": "https://github.com/Minireel/HGhub",
+      "topics": [
+        "android",
+        "drama",
+        "free",
+        "movie-web-app",
+        "reels",
+        "windows"
+      ],
+      "created_at": "2026-11-03T14:04:27Z",
+      "updated_at": "2026-11-08T10:20:51Z",
+      "pushed_at": "2026-11-08T02:42:53Z",
+      "license": "Other",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T14:04:27Z",
+          "description": "YellowFruit third-party client",
+          "html_url": "https://github.com/Minireel/HGhub",
+          "stars": 2660,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NotRexed/Hookshot",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 2213,
+      "forks": 211,
+      "language": "C++",
+      "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
+      "html_url": "https://github.com/NotRexed/Hookshot",
+      "topics": [],
+      "created_at": "2026-11-05T12:18:58Z",
+      "updated_at": "2026-11-08T10:25:47Z",
+      "pushed_at": "2026-11-08T10:20:24Z",
+      "license": "GPL-3.0",
+      "open_issues": 177,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T12:18:58Z",
+          "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
+          "html_url": "https://github.com/NotRexed/Hookshot",
+          "stars": 2213,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Sandflow-ai/sand3d",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 1187,
+      "forks": 129,
+      "language": "HTML",
+      "description": "3D modeling in Python, built for LLMs.",
+      "html_url": "https://github.com/Sandflow-ai/sand3d",
+      "topics": [
+        "3d",
+        "blender",
+        "cad",
+        "llm",
+        "procedural-modeling",
+        "python",
+        "usd"
+      ],
+      "created_at": "2026-11-03T08:23:03Z",
+      "updated_at": "2026-11-08T10:22:52Z",
+      "pushed_at": "2026-11-06T11:03:55Z",
+      "license": "Apache-2.0",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T08:23:03Z",
+          "description": "3D modeling in Python, built for LLMs.",
+          "html_url": "https://github.com/Sandflow-ai/sand3d",
+          "stars": 1187,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Th0rgal/satmux",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 697,
+      "forks": 32,
+      "language": "Python",
+      "description": "Accelerate high-latency GEO inflight Wi-Fi via warm BBR TCP multiplexing + 1-RTT Ground-TLS + zlib (zero dependencies)",
+      "html_url": "https://github.com/Th0rgal/satmux",
+      "topics": [],
+      "created_at": "2026-11-07T16:09:41Z",
+      "updated_at": "2026-11-08T10:26:02Z",
+      "pushed_at": "2026-11-07T16:26:20Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T16:09:41Z",
+          "description": "Accelerate high-latency GEO inflight Wi-Fi via warm BBR TCP multiplexing + 1-RTT Ground-TLS + zlib (zero dependencies)",
+          "html_url": "https://github.com/Th0rgal/satmux",
+          "stars": 697,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "WoYun520/gif-factory",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 718,
+      "forks": 84,
+      "language": "Python",
+      "description": "GIF 工厂：按风格制作像素、人物与宠物、粘土吉祥物、光栅卡与动态海报的 GIF Skill。",
+      "html_url": "https://github.com/WoYun520/gif-factory",
+      "topics": [],
+      "created_at": "2026-11-05T04:08:24Z",
+      "updated_at": "2026-11-08T10:20:06Z",
+      "pushed_at": "2026-11-08T08:25:11Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T04:08:24Z",
+          "description": "GIF 工厂：按风格制作像素、人物与宠物、粘土吉祥物、光栅卡与动态海报的 GIF Skill。",
+          "html_url": "https://github.com/WoYun520/gif-factory",
+          "stars": 718,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "caru-ini/stack-diagram",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 2095,
+      "forks": 100,
+      "language": "TypeScript",
+      "description": "Agent skill: describe your stack in a sentence, get an architecture diagram with official logos",
+      "html_url": "https://github.com/caru-ini/stack-diagram",
+      "topics": [
+        "agent-skills",
+        "architecture-diagram",
+        "claude-code",
+        "claude-skills",
+        "codex",
+        "diagram",
+        "system-architecture",
+        "tech-stack"
+      ],
+      "created_at": "2026-11-01T05:35:12Z",
+      "updated_at": "2026-11-08T09:59:54Z",
+      "pushed_at": "2026-11-03T03:42:46Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-01T05:35:12Z",
+          "description": "Agent skill: describe your stack in a sentence, get an architecture diagram with official logos",
+          "html_url": "https://github.com/caru-ini/stack-diagram",
+          "stars": 2095,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "chadyi/StudyOnTV",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 929,
+      "forks": 218,
+      "language": "Kotlin",
+      "description": "StudyOnTV (Tiledaoti TV) — open-source Android TV app where kids unlock screen time by answering questions. Runs fully on the TV: no server, no account. Parents scan a QR code and manage questions from the LAN. Learn first. Watch later.",
+      "html_url": "https://github.com/chadyi/StudyOnTV",
+      "topics": [
+        "android",
+        "android-tv",
+        "children",
+        "digital-wellbeing",
+        "edtech",
+        "education",
+        "family",
+        "kids",
+        "learn-first",
+        "learning",
+        "learning-app",
+        "open-source",
+        "parental-controls",
+        "parenting",
+        "quiz",
+        "screen-time",
+        "screen-time-management",
+        "smart-tv",
+        "study-app",
+        "tv-box"
+      ],
+      "created_at": "2026-11-01T15:31:22Z",
+      "updated_at": "2026-11-08T10:24:43Z",
+      "pushed_at": "2026-11-08T08:16:57Z",
+      "license": "Other",
+      "open_issues": 41,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-01T15:31:22Z",
+          "description": "StudyOnTV (Tiledaoti TV) — open-source Android TV app where kids unlock screen time by answering questions. Runs fully on the TV: no server, no account. Parents scan a QR code and manage questions from the LAN. Learn first. Watch later.",
+          "html_url": "https://github.com/chadyi/StudyOnTV",
+          "stars": 929,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "egoist/mygo-music",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 885,
+      "forks": 142,
+      "language": "Go",
+      "description": "A native music player you extend with plugins",
+      "html_url": "https://github.com/egoist/mygo-music",
+      "topics": [],
+      "created_at": "2026-11-04T13:27:14Z",
+      "updated_at": "2026-11-08T10:25:49Z",
+      "pushed_at": "2026-11-08T05:50:42Z",
+      "license": "AGPL-3.0",
+      "open_issues": 64,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-04T13:27:14Z",
+          "description": "A native music player you extend with plugins",
+          "html_url": "https://github.com/egoist/mygo-music",
+          "stars": 885,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "govijr/terminal-mac",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 2314,
+      "forks": 154,
+      "language": "Swift",
+      "description": "Entire MacOS running in your terminal.",
+      "html_url": "https://github.com/govijr/terminal-mac",
+      "topics": [
+        "cli",
+        "gui",
+        "macos",
+        "shell",
+        "swift",
+        "terminal",
+        "tui"
+      ],
+      "created_at": "2026-11-03T03:22:56Z",
+      "updated_at": "2026-11-08T10:25:06Z",
+      "pushed_at": "2026-11-07T05:58:26Z",
+      "license": "MIT",
+      "open_issues": 11,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T03:22:56Z",
+          "description": "Entire MacOS running in your terminal.",
+          "html_url": "https://github.com/govijr/terminal-mac",
+          "stars": 2314,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kevintngo/looseleaf",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 547,
+      "forks": 31,
+      "language": "TypeScript",
+      "description": "shadcn/ui, drawn by hand: 123 accessible React components that look drawn on paper, with a shadcn registry.",
+      "html_url": "https://github.com/kevintngo/looseleaf",
+      "topics": [],
+      "created_at": "2026-11-01T05:16:00Z",
+      "updated_at": "2026-11-08T09:54:35Z",
+      "pushed_at": "2026-11-01T18:25:55Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-01T05:16:00Z",
+          "description": "shadcn/ui, drawn by hand: 123 accessible React components that look drawn on paper, with a shadcn registry.",
+          "html_url": "https://github.com/kevintngo/looseleaf",
+          "stars": 547,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "libracoder/kiri",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 1009,
+      "forks": 64,
+      "language": "Rust",
+      "description": "A small, fast container runtime for macOS, Windows and Linux",
+      "html_url": "https://github.com/libracoder/kiri",
+      "topics": [],
+      "created_at": "2026-11-02T16:11:30Z",
+      "updated_at": "2026-11-08T10:23:36Z",
+      "pushed_at": "2026-11-08T10:14:15Z",
+      "license": "Apache-2.0",
+      "open_issues": 22,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-02T16:11:30Z",
+          "description": "A small, fast container runtime for macOS, Windows and Linux",
+          "html_url": "https://github.com/libracoder/kiri",
+          "stars": 1009,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "livliv-dev/player",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 1289,
+      "forks": 132,
+      "language": "TypeScript",
+      "description": "A lightweight 2.5D character player for the web, with lip sync and webcam face tracking.",
+      "html_url": "https://github.com/livliv-dev/player",
+      "topics": [
+        "avatar",
+        "character",
+        "face-tracking",
+        "lip-sync",
+        "pngtuber",
+        "vrm",
+        "vtuber",
+        "webgl2"
+      ],
+      "created_at": "2026-11-04T03:28:33Z",
+      "updated_at": "2026-11-08T10:23:15Z",
+      "pushed_at": "2026-11-07T09:56:32Z",
+      "license": "Apache-2.0",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-04T03:28:33Z",
+          "description": "A lightweight 2.5D character player for the web, with lip sync and webcam face tracking.",
+          "html_url": "https://github.com/livliv-dev/player",
+          "stars": 1289,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mmdoctor/google-pro-helper",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 1182,
+      "forks": 433,
+      "language": "Python",
+      "description": null,
+      "html_url": "https://github.com/mmdoctor/google-pro-helper",
+      "topics": [],
+      "created_at": "2026-11-05T04:52:28Z",
+      "updated_at": "2026-11-08T10:23:36Z",
+      "pushed_at": "2026-11-05T09:41:40Z",
+      "license": null,
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T04:52:28Z",
+          "description": null,
+          "html_url": "https://github.com/mmdoctor/google-pro-helper",
+          "stars": 1182,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mromidev/claude-animated-shorts",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 2320,
+      "forks": 500,
+      "language": "TypeScript",
+      "description": "Free Claude skill: viral animated story shorts (2D characters in a 3D world) with three.js + Remotion",
+      "html_url": "https://github.com/mromidev/claude-animated-shorts",
+      "topics": [],
+      "created_at": "2026-11-01T05:50:38Z",
+      "updated_at": "2026-11-08T10:22:27Z",
+      "pushed_at": "2026-11-01T05:57:14Z",
+      "license": "MIT",
+      "open_issues": 10,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-01T05:50:38Z",
+          "description": "Free Claude skill: viral animated story shorts (2D characters in a 3D world) with three.js + Remotion",
+          "html_url": "https://github.com/mromidev/claude-animated-shorts",
+          "stars": 2320,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "s1dashu/quiet-md",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 1309,
+      "forks": 119,
+      "language": "Rust",
+      "description": "Blazing-fast native notes app for macOS & Windows. Rust + GPUI, local-first, compatible with Feishu/Lark DocxXML.",
+      "html_url": "https://github.com/s1dashu/quiet-md",
+      "topics": [],
+      "created_at": "2026-11-01T14:22:53Z",
+      "updated_at": "2026-11-08T10:14:23Z",
+      "pushed_at": "2026-11-08T09:32:55Z",
+      "license": "MIT",
+      "open_issues": 38,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-01T14:22:53Z",
+          "description": "Blazing-fast native notes app for macOS & Windows. Rust + GPUI, local-first, compatible with Feishu/Lark DocxXML.",
+          "html_url": "https://github.com/s1dashu/quiet-md",
+          "stars": 1309,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sarpstar/cinecode",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 1188,
+      "forks": 218,
+      "language": "Python",
+      "description": "Films made with code. Short films, long YouTube videos, ads, explainers and music videos: an AI coding agent writes the script, builds every frame in code, designs the sound and hands you an MP4.",
+      "html_url": "https://github.com/sarpstar/cinecode",
+      "topics": [],
+      "created_at": "2026-11-03T10:08:16Z",
+      "updated_at": "2026-11-08T10:25:58Z",
+      "pushed_at": "2026-11-03T15:21:18Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T10:08:16Z",
+          "description": "Films made with code. Short films, long YouTube videos, ads, explainers and music videos: an AI coding agent writes the script, builds every frame in code, designs the sound and hands you an MP4.",
+          "html_url": "https://github.com/sarpstar/cinecode",
+          "stars": 1188,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "shanselman/gputaskman",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 614,
+      "forks": 30,
+      "language": "Python",
+      "description": "A GPU task manager for Windows, Linux, and WSL: per-process VRAM, GPU activity, and LLM model/KV-cache insights (Windows AMD and NVIDIA).",
+      "html_url": "https://github.com/shanselman/gputaskman",
+      "topics": [],
+      "created_at": "2026-11-03T00:49:34Z",
+      "updated_at": "2026-11-08T10:23:21Z",
+      "pushed_at": "2026-11-08T06:27:14Z",
+      "license": "MIT",
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T00:49:34Z",
+          "description": "A GPU task manager for Windows, Linux, and WSL: per-process VRAM, GPU activity, and LLM model/KV-cache insights (Windows AMD and NVIDIA).",
+          "html_url": "https://github.com/shanselman/gputaskman",
+          "stars": 614,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sostenesfreitas/ocarina-recomp",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 860,
+      "forks": 48,
+      "language": "C",
+      "description": "Ocarina of Time running natively on Windows, no emulator. Built on your PC from your own copy. No game files included.",
+      "html_url": "https://github.com/sostenesfreitas/ocarina-recomp",
+      "topics": [],
+      "created_at": "2026-11-06T22:24:03Z",
+      "updated_at": "2026-11-08T10:25:40Z",
+      "pushed_at": "2026-11-08T03:09:46Z",
+      "license": "GPL-3.0",
+      "open_issues": 74,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T22:24:03Z",
+          "description": "Ocarina of Time running natively on Windows, no emulator. Built on your PC from your own copy. No game files included.",
+          "html_url": "https://github.com/sostenesfreitas/ocarina-recomp",
+          "stars": 860,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tangerineturtle1/NX2navi",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 543,
+      "forks": 25,
+      "language": "C",
+      "description": null,
+      "html_url": "https://github.com/tangerineturtle1/NX2navi",
+      "topics": [],
+      "created_at": "2026-11-07T10:01:23Z",
+      "updated_at": "2026-11-08T10:25:46Z",
+      "pushed_at": "2026-11-08T09:27:40Z",
+      "license": "MIT",
+      "open_issues": 64,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T10:01:23Z",
+          "description": null,
+          "html_url": "https://github.com/tangerineturtle1/NX2navi",
+          "stars": 543,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "voyager-so/vork",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 997,
+      "forks": 67,
+      "language": "Rust",
+      "description": "Headless 3D and VFX engine for agents. Research preview.",
+      "html_url": "https://github.com/voyager-so/vork",
+      "topics": [
+        "3d",
+        "ai-agents",
+        "gpu",
+        "metal",
+        "ray-tracing",
+        "rendering",
+        "rust",
+        "slang",
+        "vfx",
+        "vulkan"
+      ],
+      "created_at": "2026-11-05T22:37:07Z",
+      "updated_at": "2026-11-08T10:18:10Z",
+      "pushed_at": "2026-11-07T20:54:07Z",
+      "license": "Other",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T22:37:07Z",
+          "description": "Headless 3D and VFX engine for agents. Research preview.",
+          "html_url": "https://github.com/voyager-so/vork",
+          "stars": 997,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 3167,
+      "forks": 1194,
+      "language": "Python",
+      "description": "Google_AI_Pro_2Year_ZeroCost_Auto",
+      "html_url": "https://github.com/worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto",
+      "topics": [],
+      "created_at": "2026-11-04T14:54:56Z",
+      "updated_at": "2026-11-08T10:24:39Z",
+      "pushed_at": "2026-11-06T03:52:06Z",
+      "license": null,
+      "open_issues": 27,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-04T14:54:56Z",
+          "description": "Google_AI_Pro_2Year_ZeroCost_Auto",
+          "html_url": "https://github.com/worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto",
+          "stars": 3167,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "wquguru/cicada",
+      "captured_at": "2026-11-08T10:25:59Z",
+      "stars": 1731,
+      "forks": 307,
+      "language": "Swift",
+      "description": "知了 Cicada · 任何会议和直播的实时字幕、同声传译、AI 会议纪要，Mac、Windows、Linux、Android 免费开源。Live subtitles, interpreting and meeting notes for any call or stream, on Mac, Windows, Linux and Android.",
+      "html_url": "https://github.com/wquguru/cicada",
+      "topics": [
+        "android",
+        "linux",
+        "live-captions",
+        "macos",
+        "meeting-notes",
+        "menubar-app",
+        "simultaneous-interpretation",
+        "speech-recognition",
+        "subtitles",
+        "swift",
+        "swiftui",
+        "translation",
+        "windows"
+      ],
+      "created_at": "2026-11-01T05:41:23Z",
+      "updated_at": "2026-11-08T10:26:02Z",
+      "pushed_at": "2026-11-08T09:42:11Z",
+      "license": "Apache-2.0",
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-01T05:41:23Z",
+          "description": "知了 Cicada · 任何会议和直播的实时字幕、同声传译、AI 会议纪要，Mac、Windows、Linux、Android 免费开源。Live subtitles, interpreting and meeting notes for any call or stream, on Mac, Windows, Linux and Android.",
+          "html_url": "https://github.com/wquguru/cicada",
+          "stars": 1731,
           "type": "new_repo_search"
         }
       ],
