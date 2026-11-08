@@ -995,27 +995,50 @@ fn telegram_send_reply_to(chat: &str, reply_to: Option<i64>, text: &str) -> Resu
         body["reply_parameters"] =
             json!({"message_id":reply_to,"allow_sending_without_reply":true});
     }
+    let (id, message) = telegram_send_request(
+        &http,
+        &format!("https://api.telegram.org/bot{token}/sendMessage"),
+        &body,
+    )?;
+    test_delivery::receipt(&message, text)?;
+    Ok(id)
+}
+
+/// Keep the transport injectable for loopback fixtures; production constructs
+/// the fixed Telegram endpoint above. Never propagate URLs or response bodies.
+fn telegram_send_request(http: &Client, endpoint: &str, body: &Value) -> Result<(i64, Value)> {
     let response = http
-        .post(format!("https://api.telegram.org/bot{token}/sendMessage"))
-        .json(&body)
+        .post(endpoint)
+        .json(body)
         .send()
         .map_err(|_| anyhow!("Telegram sendMessage transport failed"))?;
     let status = response.status();
-    let resp: Value = response.json()?;
+    let resp: Value = response.json().map_err(|_| {
+        anyhow!("Telegram sendMessage outcome is unconfirmed: invalid JSON response")
+    })?;
+    if status.is_client_error()
+        && resp["ok"] == false
+        && resp["error_code"].as_u64() == Some(u64::from(status.as_u16()))
+        && resp.get("result").is_none()
+    {
+        return Err(delivery::ConfirmedRejection {
+            status: status.as_u16(),
+        }
+        .into());
+    }
     if !status.is_success() || resp["ok"] != true {
-        let description = resp["description"]
-            .as_str()
-            .unwrap_or("Telegram rejected the message without a description");
         return Err(anyhow!(
-            "Telegram sendMessage rejected the message (HTTP {}): {}",
-            status.as_u16(),
-            description.chars().take(200).collect::<String>()
+            "Telegram sendMessage outcome is unconfirmed (HTTP {})",
+            status.as_u16()
         ));
     }
-    test_delivery::receipt(&resp["result"], text)?;
-    resp["result"]["message_id"]
+    let id = resp["result"]["message_id"]
         .as_i64()
-        .ok_or_else(|| anyhow!("Telegram sendMessage response omitted message_id"))
+        .filter(|id| *id > 0)
+        .ok_or_else(|| {
+            anyhow!("Telegram sendMessage outcome is unconfirmed: invalid message_id")
+        })?;
+    Ok((id, resp["result"].clone()))
 }
 
 fn telegram_pin_in(chat: &str, message_id: i64) -> Result<()> {
@@ -1687,6 +1710,219 @@ fn deliver_new_digest(
 mod tests {
     use super::*;
     use crate::providers::parse_project_description;
+    use crate::test_support::TestServer;
+
+    #[test]
+    fn telegram_client_rejections_are_checkpointed_without_receipts_or_secret_errors() {
+        let http = Client::builder().no_proxy().build().unwrap();
+        for status in [400, 401, 403, 404, 409, 429] {
+            let server = TestServer::start(vec![(
+                status,
+                json!({"ok":false, "error_code":status, "description":"fixture-private-response"})
+                    .to_string(),
+            )]);
+            let endpoint = format!("{}/botfixture-private-token/sendMessage", server.url);
+            let mut state = State::default();
+            state
+                .pending_digests
+                .insert("issue".into(), json!({"frozen":true}));
+            let mut remote = Vec::new();
+            let error = delivery::send_chunks(
+                &["card".into()],
+                "issue",
+                &mut state,
+                |text| {
+                    telegram_send_request(&http, &endpoint, &json!({"text":text})).map(|(id, _)| id)
+                },
+                |state| {
+                    remote = serde_json::to_vec(state)?;
+                    Ok(())
+                },
+            )
+            .unwrap_err();
+            assert!(
+                error
+                    .downcast_ref::<delivery::ConfirmedRejection>()
+                    .is_some()
+            );
+            assert!(!format!("{error:#}").contains("fixture-private"));
+            assert!(!format!("{error:#}").contains(&server.url));
+            let restored: State = serde_json::from_slice(&remote).unwrap();
+            assert!(restored.uncertain_delivery.is_none());
+            assert!(
+                restored.delivery_progress["issue"]
+                    .project_message_ids
+                    .is_empty()
+            );
+            assert_eq!(
+                restored.delivery_progress["issue"].message_texts["chunk-00"],
+                "card"
+            );
+            assert_eq!(restored.pending_digests["issue"], json!({"frozen":true}));
+            assert_eq!(server.finish().len(), 1);
+        }
+    }
+
+    #[test]
+    fn telegram_unconfirmed_responses_keep_the_durable_intent_and_block_retries() {
+        let http = Client::builder().no_proxy().build().unwrap();
+        let cases = [
+            (400, "{}".into()),
+            (429, json!({"ok":false, "error_code":400}).to_string()),
+            (
+                400,
+                json!({"ok":true, "result":{"message_id":41}}).to_string(),
+            ),
+            (
+                400,
+                json!({"ok":false, "error_code":400, "result":{"message_id":41}}).to_string(),
+            ),
+            (500, json!({"ok":false, "error_code":500}).to_string()),
+            (503, "fixture-private-response".into()),
+            (200, "fixture-private-response".into()),
+            (200, json!({"ok":false, "error_code":400}).to_string()),
+            (200, json!({"ok":true, "result":{}}).to_string()),
+            (
+                200,
+                json!({"ok":true, "result":{"message_id":0}}).to_string(),
+            ),
+            (
+                200,
+                json!({"ok":true, "result":{"message_id":-1}}).to_string(),
+            ),
+        ];
+        for (status, response) in cases {
+            let server = TestServer::start(vec![(status, response)]);
+            let endpoint = format!("{}/botfixture-private-token/sendMessage", server.url);
+            let mut state = State::default();
+            let mut remote = Vec::new();
+            let error = delivery::send_chunks(
+                &["card".into()],
+                "issue",
+                &mut state,
+                |text| {
+                    telegram_send_request(&http, &endpoint, &json!({"text":text})).map(|(id, _)| id)
+                },
+                |state| {
+                    remote = serde_json::to_vec(state)?;
+                    Ok(())
+                },
+            )
+            .unwrap_err();
+            assert!(
+                error
+                    .downcast_ref::<delivery::ConfirmedRejection>()
+                    .is_none()
+            );
+            assert!(!format!("{error:#}").contains("fixture-private"));
+            assert!(!format!("{error:#}").contains(&server.url));
+            let mut restored: State = serde_json::from_slice(&remote).unwrap();
+            assert_eq!(
+                restored.uncertain_delivery.as_deref(),
+                Some("issue/chunk-00")
+            );
+            assert!(
+                restored.delivery_progress["issue"]
+                    .project_message_ids
+                    .is_empty()
+            );
+            assert!(
+                delivery::send_chunks(
+                    &["card".into()],
+                    "issue",
+                    &mut restored,
+                    |_| panic!("unconfirmed send must not retry"),
+                    |_| panic!("unconfirmed intent must stay unchanged")
+                )
+                .is_err()
+            );
+            assert_eq!(server.finish().len(), 1);
+        }
+    }
+
+    #[test]
+    fn telegram_transport_timeout_keeps_uncertainty_and_does_not_leak_endpoint() {
+        // The listening socket accepts the TCP handshake but never replies to HTTP.
+        let listener = std::net::TcpListener::bind("127.0.0.1:0").unwrap();
+        let endpoint = format!(
+            "http://{}/botfixture-private-token/sendMessage",
+            listener.local_addr().unwrap()
+        );
+        let http = Client::builder()
+            .no_proxy()
+            .timeout(StdDuration::from_millis(50))
+            .build()
+            .unwrap();
+        let mut state = State::default();
+        let mut remote = Vec::new();
+        let error = delivery::send_chunks(
+            &["card".into()],
+            "issue",
+            &mut state,
+            |text| telegram_send_request(&http, &endpoint, &json!({"text":text})).map(|(id, _)| id),
+            |state| {
+                remote = serde_json::to_vec(state)?;
+                Ok(())
+            },
+        )
+        .unwrap_err();
+        assert_eq!(
+            format!("{error:#}"),
+            "Telegram sendMessage transport failed"
+        );
+        let restored: State = serde_json::from_slice(&remote).unwrap();
+        assert_eq!(
+            restored.uncertain_delivery.as_deref(),
+            Some("issue/chunk-00")
+        );
+        assert!(
+            restored.delivery_progress["issue"]
+                .project_message_ids
+                .is_empty()
+        );
+    }
+
+    #[test]
+    fn telegram_success_receipt_is_reused_without_a_second_http_request() {
+        let server = TestServer::start(vec![(
+            200,
+            json!({"ok":true, "result":{"message_id":41}}).to_string(),
+        )]);
+        let http = Client::builder().no_proxy().build().unwrap();
+        let mut state = State::default();
+        let mut remote = Vec::new();
+        assert_eq!(
+            delivery::send_chunks(
+                &["card".into()],
+                "issue",
+                &mut state,
+                |text| {
+                    telegram_send_request(&http, &server.url, &json!({"text":text}))
+                        .map(|(id, _)| id)
+                },
+                |state| {
+                    remote = serde_json::to_vec(state)?;
+                    Ok(())
+                },
+            )
+            .unwrap(),
+            [41]
+        );
+        let mut restored: State = serde_json::from_slice(&remote).unwrap();
+        assert!(restored.uncertain_delivery.is_none());
+        assert_eq!(
+            delivery::send_chunks(
+                &["card".into()],
+                "issue",
+                &mut restored,
+                |_| panic!("already acknowledged message must not be resent"),
+                |_| panic!("already acknowledged message needs no new checkpoint")
+            )
+            .unwrap(),
+            [41]
+        );
+        assert_eq!(server.finish().len(), 1);
+    }
 
     fn snapshot(name: &str, captured_at: &str, source: Value) -> Snapshot {
         Snapshot {
