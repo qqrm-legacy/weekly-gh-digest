@@ -224,13 +224,18 @@ fn project_cards_accept_empty_humour_and_bound_unicode_without_truncation() {
         parse_project_description(&json!({"description":description,"joke":" \n\t "}).to_string())
             .unwrap();
     assert_eq!(parsed, (description.into(), String::new()));
-    let boundary = "я".repeat(MAX_DESCRIPTION_CHARS);
-    assert_eq!(
-        parse_project_description(&json!({"description":boundary,"joke":""}).to_string())
-            .unwrap()
-            .0,
-        boundary
-    );
+    // The prompt requests at most 1500 characters; modest overshoot is accepted.
+    // In particular, the two production responses that blocked quiche are valid.
+    for length in [1500, 1501, 1601, 1659, 1668, 2000] {
+        let description = "я".repeat(length);
+        assert_eq!(
+            parse_project_description(&json!({"description":description,"joke":""}).to_string())
+                .unwrap()
+                .0,
+            description
+        );
+    }
+    let boundary = "я".repeat(2000);
     for invalid in ["Коротко".to_string(), format!("{boundary}я")] {
         assert!(
             parse_project_description(&json!({"description":invalid,"joke":""}).to_string())
@@ -289,6 +294,43 @@ fn partial_enrichment_keeps_confirmed_descriptions_and_original_fallback_contrac
     assert_eq!(result.budget["max_requests_per_run"], 40);
     assert_eq!(*clock.sleeps.borrow(), [StdDuration::from_secs(30)]);
     assert!(dir.path().join("llm-bundle.json").exists());
+}
+
+#[test]
+fn generation_and_repair_request_1500_but_accept_up_to_2000_characters() {
+    for (length, repair) in [(1659, false), (1668, false), (2000, false), (2000, true)] {
+        let clock = FakeClock::at("2026-11-08T15:00:00Z");
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("state.json");
+        let description = "я".repeat(length);
+        let response = json!({
+            "description":description,"joke":"","evidence_quote":README_EVIDENCE
+        })
+        .to_string();
+        let mut responses = Vec::new();
+        if repair {
+            responses.push((200, completion("not JSON")));
+        }
+        responses.push((200, completion(&response)));
+        let server = TestServer::start(responses);
+        let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+        let result = groq
+            .enrich_daily(&[ranked("a/one")], &mut State::default(), dir.path())
+            .unwrap();
+        let requests = server.finish();
+        assert_eq!(requests.len(), if repair { 2 } else { 1 });
+        for request in requests {
+            assert!(
+                body(&request)["messages"][0]["content"]
+                    .as_str()
+                    .unwrap()
+                    .contains("максимум 1500")
+            );
+        }
+        assert_eq!(result.descriptions["a/one"], description);
+        assert!(result.complete);
+        assert_eq!(result.budget["card_failures"], json!([]));
+    }
 }
 
 #[test]
@@ -666,6 +708,160 @@ fn daily_enrichment_resumes_checkpointed_cards_without_summary_or_duplicate_requ
 }
 
 #[test]
+fn rejected_daily_cards_do_not_block_later_cards_or_acknowledge_findings() {
+    let description = "Локально разбирает исходные файлы и показывает граф их зависимостей.";
+    let card = |description: &str| {
+        json!({"description":description,"joke":"","evidence_quote":README_EVIDENCE}).to_string()
+    };
+    let invented = "Инструмент отправляет граф зависимостей в Salesforce для обработки заявок.";
+    for (initial, repaired, expected_error) in [
+        (
+            card(&"я".repeat(2068)),
+            card(&"я".repeat(2059)),
+            "description length",
+        ),
+        (
+            card(invented),
+            card(invented),
+            "named product or integration",
+        ),
+        ("not JSON".into(), "still not JSON".into(), "valid JSON"),
+    ] {
+        let clock = FakeClock::at("2026-11-08T15:00:00Z");
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("state.json");
+        let entries = vec![ranked("org/rejected"), ranked("org/ready")];
+        let mut state = State {
+            snapshots: entries.iter().map(|entry| entry.snapshot.clone()).collect(),
+            ..State::default()
+        };
+        let server = TestServer::start(vec![
+            (200, completion(&initial)),
+            (200, completion(&repaired)),
+            (200, completion(&card(description))),
+        ]);
+        let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+        let result = groq.enrich_daily(&entries, &mut state, dir.path()).unwrap();
+        assert_eq!(server.finish().len(), 3);
+        assert_eq!(result.descriptions.len(), 1);
+        assert_eq!(result.descriptions["org/ready"], description);
+        assert!(!result.descriptions.contains_key("org/rejected"));
+        assert!(!result.complete);
+        assert_eq!(result.budget["actual_requests"], 3);
+        assert_eq!(result.budget["expected_requests"], 2);
+        assert!(
+            result.budget["reason"]
+                .as_str()
+                .unwrap()
+                .contains(expected_error)
+        );
+        let failures = result.budget["card_failures"].as_array().unwrap();
+        assert_eq!(failures.len(), 1);
+        assert_eq!(failures[0]["id"], "org/rejected");
+        assert_eq!(failures[0]["disposition"], "retained_for_later_issue");
+        for field in ["initial_error", "repair_error"] {
+            assert!(
+                failures[0][field]
+                    .as_str()
+                    .unwrap()
+                    .contains(expected_error)
+            );
+        }
+        let artifact: Value =
+            serde_json::from_slice(&std::fs::read(dir.path().join("llm-bundle.json")).unwrap())
+                .unwrap();
+        assert_eq!(
+            artifact["budget"]["card_failures"],
+            result.budget["card_failures"]
+        );
+        let restored: State = StateStore::new(&path).load().unwrap();
+        assert!(crate::editions::cached_analysis(&restored, &entries[0].snapshot).is_none());
+        assert!(crate::editions::cached_analysis(&restored, &entries[1].snapshot).is_some());
+        assert!(restored.covered.is_empty());
+        assert!(restored.editions.daily_covered.is_empty());
+        assert!(restored.sent_slots.is_empty());
+        assert_eq!(
+            crate::editions::pending(&restored, clock.now(), crate::editions::Format::Daily).len(),
+            2,
+            "generating or rejecting a card must not acknowledge a finding"
+        );
+    }
+}
+
+#[test]
+fn provider_or_budget_failure_during_repair_stops_requests_but_preserves_cached_cards() {
+    let invalid = completion("not JSON");
+    for (responses, prior_requests, expected_requests, expected_error) in [
+        (
+            vec![(200, invalid.clone()), (401, "{}".into())],
+            0,
+            2,
+            "HTTP 401",
+        ),
+        (
+            vec![
+                (200, invalid.clone()),
+                (429, "{}".into()),
+                (429, "{}".into()),
+                (429, "{}".into()),
+            ],
+            0,
+            4,
+            "HTTP 429",
+        ),
+        (
+            vec![(200, invalid)],
+            DAILY_LLM_REQUEST_CAP - 1,
+            1,
+            "budget exhausted",
+        ),
+    ] {
+        let clock = FakeClock::at("2026-11-08T15:00:00Z");
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("state.json");
+        let entries = vec![
+            ranked("org/rejected"),
+            ranked("org/deferred"),
+            ranked("org/cached"),
+        ];
+        let mut state = State::default();
+        state
+            .llm_daily_requests
+            .insert("2026-11-08".into(), prior_requests);
+        crate::editions::remember_analyses(
+            &mut state,
+            &json!({"entries":[{
+                "full_name":"org/cached","latest":entries[2].snapshot,"llm_used":true,
+                "description":"Локально разбирает исходные файлы и показывает граф их зависимостей.",
+                "joke":"","evidence_quote":README_EVIDENCE
+            }]}),
+        );
+        let server = TestServer::start(responses);
+        let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+        let result = groq.enrich_daily(&entries, &mut state, dir.path()).unwrap();
+        assert_eq!(server.finish().len(), expected_requests);
+        assert_eq!(result.budget["actual_requests"], expected_requests);
+        assert_eq!(result.budget["card_failures"], json!([]));
+        assert!(
+            result.budget["reason"]
+                .as_str()
+                .unwrap()
+                .contains(expected_error)
+        );
+        assert_eq!(result.descriptions.len(), 1);
+        assert!(result.descriptions.contains_key("org/cached"));
+        assert!(!result.descriptions.contains_key("org/deferred"));
+        assert!(!result.complete);
+        let restored: State = StateStore::new(&path).load().unwrap();
+        assert_eq!(
+            restored.llm_daily_requests["2026-11-08"],
+            prior_requests + expected_requests
+        );
+        assert!(restored.editions.daily_covered.is_empty());
+    }
+}
+
+#[test]
 fn humour_context_is_bounded_and_old_duplicates_and_templates_are_omitted() {
     let clock = FakeClock::at("2026-11-04T15:00:00Z");
     let dir = tempfile::tempdir().unwrap();
@@ -789,7 +985,7 @@ fn previous_jokes_cannot_ground_invented_integrations_in_a_later_card() {
     .unwrap();
     assert_eq!(payload["avoid_jokes"], json!([first_joke]));
     assert!(
-        result.budget["reason"]
+        result.budget["card_failures"][0]["repair_error"]
             .as_str()
             .unwrap()
             .contains("named product or integration")

@@ -28,7 +28,8 @@ publication succeeds. Publication gates and the daily schedule remain separate.
 
 The daily format contains up to 12 substantive, validated Russian AI mini-reviews.
 Each card has a linked repository name, two or three short paragraphs
-(usually 800–1200 characters, at most 1600), and a compact line
+(usually 800–1200 characters, with a requested maximum of 1500; responses up to
+2000 are accepted without truncation), and a compact line
 with a language hashtag and available star metrics. Reviews explain the task,
 mechanism, useful capabilities, practical application, and documented requirements
 or limits. Paragraph breaks are preserved; sparse sources need no padding.
