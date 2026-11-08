@@ -1,0 +1,36 @@
+# Retain all built-in secret detectors. Exceptions below match reviewed public
+# metadata or literal detector source, never an entire directory or rule.
+[extend]
+useDefault = true
+
+# GitHub emits this analytics HMAC on anonymously fetched Trending pages.
+# The reviewed cached components have logged_in=false; this is not an API key.
+[[allowlists]]
+description = "Public GitHub logged-out analytics metadata"
+targetRules = ["generic-api-key"]
+condition = "AND"
+paths = ['''^data/runs/[^/]+/trending-(?:daily|weekly)\.html$''']
+regexTarget = "match"
+regexes = ['''^auth_hydro_click_hmac":"[0-9a-f]{64}"$''']
+
+# These exact public community invitation tokens are advertised in the source
+# READMEs; restrict them to cached copies of those two documents.
+# https://github.com/OpenMOSS/MOSS-Image/blob/main/README.md
+# https://github.com/t8y2/dbx/blob/main/README.md
+[[allowlists]]
+description = "Known public community invitation links in copied READMEs"
+targetRules = ["generic-api-key"]
+condition = "AND"
+paths = ['''^data/runs/[^/]+/readme-(?:OpenMOSS_MOSS-Image|t8y2_dbx)\.md$''']
+regexTarget = "match"
+regexes = ['''^link_token=(?:30cvb14f\-a9b1\-4b12\-adb6\-2ff6d476a227|7a3m2007\-815f\-409b\-9c3d\-a4129f5c058e)"$''']
+
+# credential_markers compares three PEM header strings. This exact expression
+# contains no key material; actual PEM blocks in src/main.rs remain detectable.
+[[allowlists]]
+description = "Literal PEM header comparisons in credential_markers"
+targetRules = ["private-key"]
+condition = "AND"
+paths = ['''^src/main\.rs$''']
+regexTarget = "match"
+regexes = ['''^-----begin private key-----"\)\s*\|\| lower\.contains\("-----begin rsa private key-----"\)\s*\|\| lower\.contains\("-----begin openssh private key-----$''']
