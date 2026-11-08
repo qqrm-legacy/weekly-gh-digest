@@ -1,0 +1,168 @@
+{
+  "archive": {
+    "available": true,
+    "captures_without_manifest": [],
+    "directories_without_manifest": [],
+    "filtered_captures": [],
+    "invalid_manifests": [],
+    "manifest_capture_count": 37,
+    "manifests_without_snapshots": [],
+    "metadata_failure_records": 0,
+    "source_failure_records": 36
+  },
+  "cadence": {
+    "empty_window": false,
+    "interval_count": 36,
+    "intervals_over_three_hours": [
+      {
+        "from": "2026-11-02T00:46:58Z",
+        "seconds": 21724,
+        "to": "2026-11-02T06:49:02Z"
+      },
+      {
+        "from": "2026-11-02T06:49:02Z",
+        "seconds": 15874,
+        "to": "2026-11-02T11:13:36Z"
+      },
+      {
+        "from": "2026-11-02T11:13:36Z",
+        "seconds": 20253,
+        "to": "2026-11-02T16:51:09Z"
+      },
+      {
+        "from": "2026-11-02T16:51:09Z",
+        "seconds": 17597,
+        "to": "2026-11-02T21:44:26Z"
+      },
+      {
+        "from": "2026-11-02T21:56:19Z",
+        "seconds": 19077,
+        "to": "2026-11-03T03:14:16Z"
+      },
+      {
+        "from": "2026-11-03T03:14:16Z",
+        "seconds": 13066,
+        "to": "2026-11-03T06:52:02Z"
+      },
+      {
+        "from": "2026-11-03T07:14:43Z",
+        "seconds": 35446,
+        "to": "2026-11-03T17:05:29Z"
+      },
+      {
+        "from": "2026-11-03T17:05:29Z",
+        "seconds": 13359,
+        "to": "2026-11-03T20:48:08Z"
+      },
+      {
+        "from": "2026-11-03T23:25:31Z",
+        "seconds": 25293,
+        "to": "2026-11-04T06:27:04Z"
+      },
+      {
+        "from": "2026-11-04T06:27:04Z",
+        "seconds": 38997,
+        "to": "2026-11-04T17:17:01Z"
+      },
+      {
+        "from": "2026-11-04T17:17:01Z",
+        "seconds": 13667,
+        "to": "2026-11-04T21:04:48Z"
+      },
+      {
+        "from": "2026-11-04T23:41:59Z",
+        "seconds": 25709,
+        "to": "2026-11-05T06:50:28Z"
+      },
+      {
+        "from": "2026-11-05T06:50:28Z",
+        "seconds": 38145,
+        "to": "2026-11-05T17:26:13Z"
+      },
+      {
+        "from": "2026-11-05T17:26:13Z",
+        "seconds": 14113,
+        "to": "2026-11-05T21:21:26Z"
+      },
+      {
+        "from": "2026-11-05T23:39:28Z",
+        "seconds": 25943,
+        "to": "2026-11-06T06:51:51Z"
+      },
+      {
+        "from": "2026-11-06T06:51:51Z",
+        "seconds": 35730,
+        "to": "2026-11-06T16:47:21Z"
+      },
+      {
+        "from": "2026-11-06T16:47:21Z",
+        "seconds": 14112,
+        "to": "2026-11-06T20:42:33Z"
+      },
+      {
+        "from": "2026-11-06T23:11:44Z",
+        "seconds": 24599,
+        "to": "2026-11-07T06:01:43Z"
+      },
+      {
+        "from": "2026-11-07T06:01:43Z",
+        "seconds": 25443,
+        "to": "2026-11-07T13:05:46Z"
+      },
+      {
+        "from": "2026-11-07T13:05:46Z",
+        "seconds": 22203,
+        "to": "2026-11-07T19:15:49Z"
+      },
+      {
+        "from": "2026-11-07T19:26:35Z",
+        "seconds": 18766,
+        "to": "2026-11-08T00:39:21Z"
+      },
+      {
+        "from": "2026-11-08T00:39:21Z",
+        "seconds": 29037,
+        "to": "2026-11-08T08:43:18Z"
+      },
+      {
+        "from": "2026-11-08T11:16:53Z",
+        "seconds": 23990,
+        "to": "2026-11-08T17:56:43Z"
+      }
+    ],
+    "leading_gap_seconds": 958,
+    "max_interval_seconds": 38997,
+    "median_interval_seconds": 14993.5,
+    "min_interval_seconds": 339,
+    "nominal_cron": "17 */3 * * *",
+    "nominal_slot_boundary": "start_exclusive_end_inclusive",
+    "nominal_slots_in_window": 56,
+    "scheduled_capture_count": null,
+    "target_interval_seconds": 10800,
+    "trailing_gap_seconds": 0,
+    "trigger_note": "Historical snapshots do not identify manual versus scheduled runs; capture counts are not schedule completion counts."
+  },
+  "format_version": 1,
+  "observed": {
+    "capture_count": 37,
+    "duplicate_snapshot_rows": 0,
+    "first_capture_at": "2026-11-01T22:24:44Z",
+    "ignored_future_rows": 0,
+    "invalid_timestamp_rows": 0,
+    "last_capture_at": "2026-11-08T22:08:45Z",
+    "snapshot_rows": 2139,
+    "unique_repositories": 182
+  },
+  "scope": {
+    "global_coverage_known": false,
+    "missing_intervals_reconstructed": false,
+    "note": "No observations are invented, interpolated or restored from aggregated weekly candidates. Leading and trailing gaps describe the observed window, not proven failed triggers.",
+    "search_first_page_limit": 30,
+    "trending": "first returned weekly and daily pages"
+  },
+  "window": {
+    "end": "2026-11-08T22:08:45Z",
+    "kind": "rolling_seven_days",
+    "start": "2026-11-01T22:08:45Z"
+  }
+}
