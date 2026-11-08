@@ -33,8 +33,7 @@ const README_EVIDENCE: &str =
     "This tool parses source files locally and reports their dependency graph.";
 const READY_DESCRIPTION: &str =
     "Локально разбирает исходные файлы и показывает граф их зависимостей.";
-const SCOPED_OCR_DESCRIPTION: &str =
-    "Приложение полностью офлайн обрабатывает скриншоты, а сетевые запросы происходят лишь при вызове моделей.";
+const SCOPED_OCR_DESCRIPTION: &str = "Приложение полностью офлайн обрабатывает скриншоты, а сетевые запросы происходят лишь при вызове моделей.";
 
 fn accepted_daily_digest(entries: &[Ranked], result: &Enrichment) -> Value {
     let accepted: Vec<_> = entries
@@ -1297,7 +1296,10 @@ fn final_payload_rejections_are_repaired_then_deferred_without_blocking_later_ca
         assert_eq!(failures.len(), 1, "{label}");
         for field in ["initial_error", "repair_error"] {
             assert!(
-                failures[0][field].as_str().unwrap().contains(expected_error),
+                failures[0][field]
+                    .as_str()
+                    .unwrap()
+                    .contains(expected_error),
                 "{label}: {}",
                 failures[0][field]
             );

@@ -651,8 +651,12 @@ fn parse_ready_card(
     // The daily guard intentionally sees the full Snapshot, including topics,
     // just as it does after enrichment. Weekly/offline scope stays unchanged.
     crate::editorial::require_synthesis(&single)?;
-    let audit = crate::publication_audit(&single)
-        .with_context(|| format!("project {} public payload rejected", entry.snapshot.full_name))?;
+    let audit = crate::publication_audit(&single).with_context(|| {
+        format!(
+            "project {} public payload rejected",
+            entry.snapshot.full_name
+        )
+    })?;
     anyhow::ensure!(
         audit["approved"] == true,
         "project {} blocked by deterministic credential scan",
