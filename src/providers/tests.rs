@@ -315,7 +315,7 @@ fn generation_and_repair_request_1500_but_accept_up_to_2000_characters() {
         let server = TestServer::start(responses);
         let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
         let result = groq
-            .enrich_daily(&[ranked("a/one")], &mut State::default(), dir.path())
+            .enrich_daily(&[ranked("a/one")], &mut State::default(), dir.path(), &[])
             .unwrap();
         let requests = server.finish();
         assert_eq!(requests.len(), if repair { 2 } else { 1 });
@@ -650,6 +650,194 @@ fn usable_readme_skips_a_short_intro_and_rejects_markup_only() {
 }
 
 #[test]
+fn crlf_readme_paragraphs_keep_exact_multiline_evidence() {
+    let paragraph = "This tool parses source files locally.\r\nIt reports their dependency graph.";
+    let readme = format!(
+        "<div align=\"center\">\r\nProject logo\r\n</div>\r\n\r\n# Project\r\n\r\n[![Build](build.svg)](https://example.com/build)\r\n\r\nShort introduction.\r\n\r\n{paragraph}"
+    );
+    assert_eq!(usable_readme(Some(&readme)), Some(readme.as_str()));
+    let quote = readme_evidence_quote(&readme).unwrap();
+    assert_eq!(quote, paragraph);
+    assert!(readme.contains(&quote));
+    validate_readme_quote(&readme, &quote).unwrap();
+}
+
+#[test]
+fn twelve_local_rejects_are_checkpointed_and_leave_the_next_daily_candidate_eligible() {
+    let clock = FakeClock::at("2026-11-08T15:00:00Z");
+    let retry_at = clock.now() + chrono::Duration::hours(24);
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("state.json");
+    let mut entries: Vec<_> = (0..12).map(|i| ranked(&format!("bad/p{i:02}"))).collect();
+    entries[0].snapshot.readme_excerpt = None;
+    entries[1].snapshot.readme_excerpt = None;
+    entries[2].snapshot.readme_excerpt = Some("<img src=\"project-banner.svg\" />".into());
+    entries[3].snapshot.readme_excerpt = Some("# A project heading without any evidence".into());
+    entries.push(ranked("later/ready"));
+    let mut state = State {
+        snapshots: entries.iter().map(|entry| entry.snapshot.clone()).collect(),
+        ..State::default()
+    };
+    let mut sources: Vec<_> = entries
+        .iter()
+        .map(|entry| json!({"candidate":entry.snapshot.full_name,"status":"included"}))
+        .collect();
+    for (i, status) in [(0, 404), (1, 410)] {
+        sources[i]["status"] = json!("error");
+        sources[i]["http_status"] = json!(status);
+    }
+    let description = "Локально разбирает исходные файлы и показывает граф их зависимостей.";
+    let ungrounded = json!({"description":description,"joke":"",
+        "evidence_quote":"This unsupported quotation does not occur in the README."})
+    .to_string();
+    let mut replies = vec![(200, completion("not JSON")); 8];
+    replies.extend(vec![(200, completion(&ungrounded)); 4]);
+    let server = TestServer::start(replies);
+    let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+    let candidates = crate::editions::pending(&state, clock.now(), crate::editions::Format::Daily);
+    let (selected, _) = crate::editions::select(
+        &candidates,
+        &state,
+        crate::editions::Format::Daily,
+        clock.now(),
+    );
+    assert_eq!(selected.len(), 12);
+    let result = groq
+        .enrich_daily(&selected, &mut state, dir.path(), &sources)
+        .unwrap();
+    assert_eq!(server.finish().len(), 12);
+    assert!(result.descriptions.is_empty());
+    assert_eq!(result.budget["card_failures"].as_array().unwrap().len(), 4);
+    assert_eq!(
+        result.budget["grounding_failures"]
+            .as_array()
+            .unwrap()
+            .len(),
+        4
+    );
+    assert_eq!(
+        result.budget["daily_deferred"].as_array().unwrap().len(),
+        12
+    );
+
+    // This is the checkpoint available even when the caller rejects an empty issue.
+    let mut restored: State = StateStore::new(&path).load().unwrap();
+    for entry in &entries[..12] {
+        assert_eq!(
+            crate::editions::daily_retry_at(&restored, &entry.snapshot.full_name),
+            Some(retry_at)
+        );
+    }
+    assert!(restored.covered.is_empty());
+    assert!(restored.editions.daily_covered.is_empty());
+    assert!(restored.sent_slots.is_empty());
+    assert_eq!(
+        crate::editions::pending(&restored, clock.now(), crate::editions::Format::Daily).len(),
+        13
+    );
+    let (next, excluded) = crate::editions::select(
+        &candidates,
+        &restored,
+        crate::editions::Format::Daily,
+        clock.now(),
+    );
+    assert_eq!(next.len(), 1);
+    assert_eq!(next[0].snapshot.full_name, "later/ready");
+    assert_eq!(excluded.len(), 12);
+    let (before_due, _) = crate::editions::select(
+        &candidates,
+        &restored,
+        crate::editions::Format::Daily,
+        retry_at - chrono::Duration::seconds(1),
+    );
+    assert_eq!(before_due.len(), 1);
+    let (at_due, excluded) = crate::editions::select(
+        &candidates,
+        &restored,
+        crate::editions::Format::Daily,
+        retry_at,
+    );
+    assert_eq!(at_due.len(), 12);
+    assert_eq!(excluded.len(), 1);
+    assert!(excluded[0].get("retry_at").is_none());
+
+    let card =
+        json!({"description":description,"joke":"","evidence_quote":README_EVIDENCE}).to_string();
+    let server = TestServer::start(vec![(200, completion(&card))]);
+    let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+    let next_result = groq
+        .enrich_daily(&next, &mut restored, dir.path(), &sources)
+        .unwrap();
+    assert_eq!(server.finish().len(), 1);
+    assert!(next_result.descriptions.contains_key("later/ready"));
+    assert_eq!(next_result.budget["daily_deferred"], json!([]));
+    assert!(restored.editions.daily_covered.is_empty());
+}
+
+#[test]
+fn transient_readme_failures_configuration_and_budget_stops_do_not_defer() {
+    for (status, configured, used) in [
+        (Some(403), true, 0),
+        (Some(429), true, 0),
+        (Some(500), true, 0),
+        (None, true, 0),
+        (Some(404), false, 0),
+        (Some(404), true, DAILY_LLM_REQUEST_CAP),
+    ] {
+        let clock = FakeClock::at("2026-11-08T15:00:00Z");
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("state.json");
+        let mut entry = ranked("org/missing");
+        entry.snapshot.readme_excerpt = Some("# Stale heading without usable evidence".into());
+        let mut groq = provider(&clock, &path, "http://127.0.0.1:1", "openai/gpt-oss-120b");
+        groq.free_tier_confirmed = configured;
+        let mut state = State::default();
+        state.llm_daily_requests.insert("2026-11-08".into(), used);
+        let before = serde_json::to_value(&state).unwrap();
+        let sources = [json!({"candidate":"org/missing","status":"error","http_status":status})];
+        let result = groq
+            .enrich_daily(&[entry], &mut state, dir.path(), &sources)
+            .unwrap();
+        assert_eq!(result.budget["actual_requests"], 0);
+        assert_eq!(result.budget["daily_deferred"], json!([]));
+        assert_eq!(serde_json::to_value(&state).unwrap(), before);
+    }
+}
+
+#[test]
+fn weekly_and_offline_enrichment_leave_daily_retry_positions_unchanged() {
+    for do_llm in [false, true] {
+        let clock = FakeClock::at("2026-11-08T15:00:00Z");
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("state.json");
+        let entries = vec![ranked("org/cached"), ranked("org/later")];
+        let mut state = State::default();
+        crate::editions::remember_analyses(
+            &mut state,
+            &json!({"entries":[{
+                "full_name":"org/cached","latest":entries[0].snapshot,"llm_used":true,
+                "description":"Локально разбирает исходные файлы и показывает граф зависимостей.",
+                "joke":"","evidence_quote":README_EVIDENCE
+            }]}),
+        );
+        let retry_at = crate::editions::defer_daily(&mut state, "org/cached", clock.now());
+        let mut entries = entries;
+        entries[1].snapshot.readme_excerpt = None;
+        let groq = provider(&clock, &path, "http://127.0.0.1:1", "openai/gpt-oss-120b");
+        let result = groq
+            .enrich(&entries, &mut state, do_llm, dir.path())
+            .unwrap();
+        assert_eq!(result.budget["actual_requests"], 0);
+        assert_eq!(result.budget["daily_deferred"], json!([]));
+        assert_eq!(
+            crate::editions::daily_retry_at(&state, "org/cached"),
+            Some(retry_at)
+        );
+        assert!(crate::editions::daily_retry_at(&state, "org/later").is_none());
+    }
+}
+
+#[test]
 fn daily_enrichment_resumes_checkpointed_cards_without_summary_or_duplicate_requests() {
     let clock = FakeClock::at("2026-11-03T15:00:00Z");
     let dir = tempfile::tempdir().unwrap();
@@ -667,7 +855,9 @@ fn daily_enrichment_resumes_checkpointed_cards_without_summary_or_duplicate_requ
         snapshots: entries.iter().map(|entry| entry.snapshot.clone()).collect(),
         ..State::default()
     };
-    let first = groq.enrich_daily(&entries, &mut state, dir.path()).unwrap();
+    let first = groq
+        .enrich_daily(&entries, &mut state, dir.path(), &[])
+        .unwrap();
     assert_eq!(server.finish().len(), 2);
     assert_eq!(first.descriptions.len(), 1);
     assert!(!first.complete);
@@ -679,7 +869,7 @@ fn daily_enrichment_resumes_checkpointed_cards_without_summary_or_duplicate_requ
     let server = TestServer::start(vec![(200, completion(&card))]);
     let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
     let second = groq
-        .enrich_daily(&entries, &mut restored, dir.path())
+        .enrich_daily(&entries, &mut restored, dir.path(), &[])
         .unwrap();
     let requests = server.finish();
     assert_eq!(requests.len(), 1);
@@ -700,7 +890,7 @@ fn daily_enrichment_resumes_checkpointed_cards_without_summary_or_duplicate_requ
     // Once both cards are cached, even an unavailable endpoint costs nothing.
     let groq = provider(&clock, &path, "http://127.0.0.1:1", "openai/gpt-oss-120b");
     let repeated = groq
-        .enrich_daily(&entries, &mut restored, dir.path())
+        .enrich_daily(&entries, &mut restored, dir.path(), &[])
         .unwrap();
     assert!(repeated.complete);
     assert_eq!(repeated.budget["actual_requests"], 0);
@@ -735,13 +925,20 @@ fn rejected_daily_cards_do_not_block_later_cards_or_acknowledge_findings() {
             snapshots: entries.iter().map(|entry| entry.snapshot.clone()).collect(),
             ..State::default()
         };
+        crate::editions::defer_daily(
+            &mut state,
+            "org/ready",
+            clock.now() - chrono::Duration::hours(48),
+        );
         let server = TestServer::start(vec![
             (200, completion(&initial)),
             (200, completion(&repaired)),
             (200, completion(&card(description))),
         ]);
         let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
-        let result = groq.enrich_daily(&entries, &mut state, dir.path()).unwrap();
+        let result = groq
+            .enrich_daily(&entries, &mut state, dir.path(), &[])
+            .unwrap();
         assert_eq!(server.finish().len(), 3);
         assert_eq!(result.descriptions.len(), 1);
         assert_eq!(result.descriptions["org/ready"], description);
@@ -777,6 +974,11 @@ fn rejected_daily_cards_do_not_block_later_cards_or_acknowledge_findings() {
         let restored: State = StateStore::new(&path).load().unwrap();
         assert!(crate::editions::cached_analysis(&restored, &entries[0].snapshot).is_none());
         assert!(crate::editions::cached_analysis(&restored, &entries[1].snapshot).is_some());
+        assert_eq!(
+            crate::editions::daily_retry_at(&restored, "org/rejected"),
+            crate::parse_time("2026-11-09T15:00:00Z")
+        );
+        assert!(crate::editions::daily_retry_at(&restored, "org/ready").is_none());
         assert!(restored.covered.is_empty());
         assert!(restored.editions.daily_covered.is_empty());
         assert!(restored.sent_slots.is_empty());
@@ -819,11 +1021,13 @@ fn provider_or_budget_failure_during_repair_stops_requests_but_preserves_cached_
         let clock = FakeClock::at("2026-11-08T15:00:00Z");
         let dir = tempfile::tempdir().unwrap();
         let path = dir.path().join("state.json");
-        let entries = vec![
+        let mut entries = vec![
             ranked("org/rejected"),
             ranked("org/deferred"),
             ranked("org/cached"),
+            ranked("org/missing"),
         ];
+        entries[3].snapshot.readme_excerpt = None;
         let mut state = State::default();
         state
             .llm_daily_requests
@@ -836,9 +1040,13 @@ fn provider_or_budget_failure_during_repair_stops_requests_but_preserves_cached_
                 "joke":"","evidence_quote":README_EVIDENCE
             }]}),
         );
+        crate::editions::defer_daily(&mut state, "org/cached", clock.now());
         let server = TestServer::start(responses);
         let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
-        let result = groq.enrich_daily(&entries, &mut state, dir.path()).unwrap();
+        let sources = [json!({"candidate":"org/missing","status":"included"})];
+        let result = groq
+            .enrich_daily(&entries, &mut state, dir.path(), &sources)
+            .unwrap();
         assert_eq!(server.finish().len(), expected_requests);
         assert_eq!(result.budget["actual_requests"], expected_requests);
         assert_eq!(result.budget["card_failures"], json!([]));
@@ -858,6 +1066,12 @@ fn provider_or_budget_failure_during_repair_stops_requests_but_preserves_cached_
             prior_requests + expected_requests
         );
         assert!(restored.editions.daily_covered.is_empty());
+        assert_eq!(result.budget["daily_deferred"], json!([]));
+        for entry in &entries {
+            assert!(
+                crate::editions::daily_retry_at(&restored, &entry.snapshot.full_name).is_none()
+            );
+        }
     }
 }
 

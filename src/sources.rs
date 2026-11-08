@@ -19,6 +19,20 @@ use std::{
 const API: &str = "https://api.github.com";
 const README_LIMIT: usize = 5_000;
 
+#[derive(Debug)]
+struct HttpStatusError {
+    status: reqwest::StatusCode,
+    body: String,
+}
+
+impl std::fmt::Display for HttpStatusError {
+    fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(formatter, "HTTP {}: {}", self.status, self.body)
+    }
+}
+
+impl std::error::Error for HttpStatusError {}
+
 pub(super) trait SourceHttp {
     fn get(&self, url: &str, raw: bool, max_bytes: Option<usize>) -> Result<Vec<u8>>;
 }
@@ -84,10 +98,10 @@ impl SourceHttp for GitHubHttp<'_> {
                 Ok(resp) => {
                     let status = resp.status();
                     let body = resp.text().unwrap_or_default();
-                    let error = anyhow!(
-                        "HTTP {status}: {}",
-                        body.chars().take(300).collect::<String>()
-                    );
+                    let error = anyhow!(HttpStatusError {
+                        status,
+                        body: body.chars().take(300).collect(),
+                    });
                     if status == 403 || status == 429 || !status.is_server_error() {
                         return Err(error);
                     }
@@ -480,6 +494,9 @@ pub(super) fn enrich_readmes(
                             .now()
                             .to_rfc3339_opts(chrono::SecondsFormat::Secs, true)
                     );
+                    if let Some(error) = e.downcast_ref::<HttpStatusError>() {
+                        info["http_status"] = json!(error.status.as_u16());
+                    }
                     info["reason"] = json!(format!("fetch failed: {e:#}"));
                 }
             }

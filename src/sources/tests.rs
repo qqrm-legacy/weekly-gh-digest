@@ -194,11 +194,15 @@ fn http_retries_server_errors_but_raw_requests_never_carry_github_token() {
     );
     assert_eq!(*clock.sleeps.borrow(), [StdDuration::from_secs(1)]);
     let server = TestServer::start(vec![(429, "limited".into())]);
-    assert!(
-        http.get(&server.url, false, None)
-            .unwrap_err()
-            .to_string()
-            .contains("429")
+    let error = http.get(&server.url, false, None).unwrap_err();
+    assert!(error.to_string().contains("429"));
+    assert_eq!(
+        error
+            .downcast_ref::<HttpStatusError>()
+            .unwrap()
+            .status
+            .as_u16(),
+        429
     );
     assert!(
         server.finish()[0]
@@ -206,4 +210,59 @@ fn http_retries_server_errors_but_raw_requests_never_carry_github_token() {
             .contains("authorization: bearer fixture-token")
     );
     assert_eq!(clock.sleeps.borrow().len(), 1);
+}
+
+#[test]
+fn readme_provenance_distinguishes_http_status_from_transport_failure() {
+    struct Reply(Option<u16>);
+    impl SourceHttp for Reply {
+        fn get(&self, _url: &str, _raw: bool, _max_bytes: Option<usize>) -> Result<Vec<u8>> {
+            match self.0 {
+                Some(200) => Ok(b"<img src=\"project-banner.svg\" />".to_vec()),
+                Some(status) => Err(anyhow!(HttpStatusError {
+                    status: reqwest::StatusCode::from_u16(status).unwrap(),
+                    body: "fixture response".into(),
+                })),
+                None => Err(anyhow!("fixture connection timeout")),
+            }
+        }
+    }
+    for status in [
+        Some(200),
+        Some(404),
+        Some(410),
+        Some(403),
+        Some(429),
+        Some(500),
+        None,
+    ] {
+        let clock = FakeClock::at("2026-11-08T15:00:00Z");
+        let dir = tempfile::tempdir().unwrap();
+        let mut snapshots = vec![
+            serde_json::from_value(json!({
+                "full_name":"org/project","captured_at":"2026-11-08T15:00:00Z",
+                "readme_excerpt":"# Previously captured heading"
+            }))
+            .unwrap(),
+        ];
+        let sources = enrich_readmes(&mut snapshots, dir.path(), &Reply(status), &clock).unwrap();
+        if status == Some(200) {
+            assert_eq!(sources[0]["status"], "included");
+            assert!(sources[0].get("http_status").is_none());
+            assert!(
+                snapshots[0]
+                    .readme_excerpt
+                    .as_ref()
+                    .unwrap()
+                    .starts_with("<img")
+            );
+        } else {
+            assert_eq!(sources[0]["status"], "error");
+            assert_eq!(sources[0]["http_status"].as_u64(), status.map(u64::from));
+            assert_eq!(
+                snapshots[0].readme_excerpt.as_deref(),
+                Some("# Previously captured heading")
+            );
+        }
+    }
 }
