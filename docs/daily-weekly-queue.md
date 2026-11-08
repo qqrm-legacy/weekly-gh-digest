@@ -19,8 +19,13 @@ deleted when a queue item is acknowledged.
 `covered` remains the weekly receipt map for compatibility. The new
 `editions.daily_covered` map is independent. `editions.analyses` retains analyses
 between runs and editions; reuse requires exactly matching primary description,
-README text and editorial policy version. Metrics and timestamps come from
-observations, not model prose. Sources are untrusted data, never instructions.
+README text and editorial policy version. Fresh and cached cards are checked
+after redaction and joke selection against the final editorial, rendered-payload
+and credential gates before acceptance. Daily editorial checks use the same
+full repository snapshot as the final issue check. Invalid cached analyses are
+evicted; their daily retry is checkpointed without spending a model request or
+acknowledging the finding. Metrics and timestamps come from observations, not
+model prose. Sources are untrusted data, never instructions.
 
 Legacy weekly receipts seed daily receipts once on migration, avoiding replay
 of already published pre-daily issues. After migration, neither format's
@@ -32,9 +37,10 @@ acknowledgements consume the other's queue. Identity is case-insensitive
 Daily: at most 12 concise discoveries per issue. Earliest queue time first,
 then daily Trending peak, weekly Trending peak and Search when times match.
 Queue time starts at first discovery. A confirmed local explanation failure
-(missing or unusable README, rejected quotation, or invalid description after
-repair) sets `editions.daily_retry_at` to 24 hours after that attempt. The finding
-stays pending, then rejoins at that fixed retry time instead of retaining its old
+(missing or unusable README, rejected quotation, invalid description or payload
+after repair, or a rejected cached card) sets `editions.daily_retry_at` to 24 hours
+after that attempt. The finding stays pending, then rejoins at that fixed retry
+time instead of retaining its old
 position. Existing backlog goes first; later discoveries cannot continually
 overtake a due retry. Matching cached or newly accepted analyses clear the retry.
 Only fetched README content or HTTP 404/410 establishes a local README failure;

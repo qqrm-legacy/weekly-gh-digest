@@ -144,19 +144,72 @@ impl<'a> Groq<'a> {
                 "evidence_source": if readme.is_some() { "readme" } else if source_quote.is_some() { "metadata_only" } else { "missing" },
             });
             bundles.push(bundle.clone());
+            let primary_sources = serde_json::to_string(&bundle)?;
+            let format = if daily_readme_sources.is_some() {
+                crate::editions::Format::Daily
+            } else {
+                crate::editions::Format::Weekly
+            };
+            let parse_card = |text: &str| {
+                parse_ready_card(
+                    text,
+                    entry,
+                    &primary_sources,
+                    &accepted_jokes,
+                    format,
+                    self.clock.now(),
+                )
+            };
             if let Some(cached) = crate::editions::cached_analysis(state, snapshot) {
+                let cached_card = parse_card(
+                    &json!({
+                        "description":cached.description,
+                        "joke":cached.joke,
+                        "evidence_quote":cached.evidence_quote
+                    })
+                    .to_string(),
+                )
+                .and_then(|card| {
+                    validate_readme_quote(
+                        readme.context("cached card has no usable README")?,
+                        &card.2,
+                    )?;
+                    Ok(card)
+                });
+                let (description, joke, evidence_quote) = match cached_card {
+                    Ok(card) => card,
+                    Err(error) => {
+                        crate::editions::forget_analysis(state, &snapshot.full_name);
+                        card_failures.push(json!({
+                            "id":snapshot.full_name,
+                            "stage":"cached_analysis_validation",
+                            "reason":format!("{error:#}"),
+                            "disposition":"retained_for_later_issue"
+                        }));
+                        if daily_readme_sources.is_some() {
+                            self.defer_daily_card(
+                                state,
+                                &snapshot.full_name,
+                                "cached_analysis_rejected",
+                                &mut daily_deferred,
+                            )?;
+                        } else {
+                            write_json(self.state_path, state)?;
+                        }
+                        continue;
+                    }
+                };
                 if daily_readme_sources.is_some()
                     && crate::editions::clear_daily_retry(state, &snapshot.full_name)
                 {
                     write_json(self.state_path, state)?;
                 }
-                let joke = select_joke(&cached.joke, &accepted_jokes);
                 if !joke.is_empty() {
                     accepted_jokes.push(joke.clone());
                 }
-                descriptions.insert(snapshot.full_name.clone(), cached.description);
+                descriptions.insert(snapshot.full_name.clone(), description);
                 jokes.insert(snapshot.full_name.clone(), joke);
-                evidence_quotes.insert(snapshot.full_name.clone(), cached.evidence_quote);
+                evidence_quotes.insert(snapshot.full_name.clone(), evidence_quote);
                 provider_reviews.push(json!({"id":snapshot.full_name,"stage":"cached_analysis", "primary_sources_unchanged":true}));
                 continue;
             }
@@ -204,7 +257,6 @@ impl<'a> Groq<'a> {
                 }
                 continue;
             };
-            let primary_sources = serde_json::to_string(&bundle)?;
             let mut request = bundle;
             request["avoid_jokes"] =
                 json!(&accepted_jokes[accepted_jokes.len().saturating_sub(JOKE_CONTEXT_LIMIT)..]);
@@ -235,13 +287,6 @@ impl<'a> Groq<'a> {
                     };
                     continue;
                 }
-            };
-            let parse_card = |text: &str| -> Result<(String, String, String)> {
-                let parsed = parse_project_response(text)?;
-                // Previous jokes are editorial context, never evidence for a
-                // claim or product name in the current project description.
-                crate::editorial::validate_text(&parsed.0, &primary_sources)?;
-                Ok(parsed)
             };
             let (description, project_joke, evidence_quote) = match parse_card(&response) {
                 Ok(parsed) => parsed,
@@ -315,8 +360,6 @@ impl<'a> Groq<'a> {
                 }
                 continue;
             }
-            let description = safe_public_text(&description);
-            let project_joke = select_joke(&safe_public_text(&project_joke), &accepted_jokes);
             if !project_joke.is_empty() {
                 accepted_jokes.push(project_joke.clone());
             }
@@ -352,10 +395,13 @@ impl<'a> Groq<'a> {
             "LLM disabled for this run; source gaps still recorded".to_string()
         } else if let Some(failure) = card_failures.first() {
             format!(
-                "{} project descriptions rejected after repair; first {}: {}; findings remain queued",
+                "{} project descriptions rejected; first {}: {}; findings remain queued",
                 card_failures.len(),
                 failure["id"].as_str().unwrap_or_default(),
-                failure["repair_error"].as_str().unwrap_or_default()
+                failure["repair_error"]
+                    .as_str()
+                    .or_else(|| failure["reason"].as_str())
+                    .unwrap_or_default()
             )
         } else if !grounding_failures.is_empty() {
             "Unmatched README quotations rejected without extra requests; source fallback retained"
@@ -561,6 +607,58 @@ fn project_description_schema() -> Value {
         "required":["description","joke","evidence_quote"],
         "additionalProperties":false
     })
+}
+
+/// Accept the exact public copy only after the same deterministic checks used
+/// by the completed issue. A bad fresh or cached card stays local to its item.
+fn parse_ready_card(
+    text: &str,
+    entry: &Ranked,
+    primary_sources: &str,
+    accepted_jokes: &[String],
+    format: crate::editions::Format,
+    now: chrono::DateTime<chrono::Utc>,
+) -> Result<(String, String, String)> {
+    let (description, joke, evidence_quote) = parse_project_response(text)?;
+    // Redaction can shorten otherwise valid copy. Recheck the emitted text's
+    // bounds, and omit optional humour before validating its final payload.
+    let (description, joke) = parse_project_description(
+        &json!({
+            "description":safe_public_text(&description),
+            "joke":safe_public_text(&joke)
+        })
+        .to_string(),
+    )?;
+    let joke = select_joke(&joke, accepted_jokes);
+    // Previous jokes are editorial context, never evidence for a claim or
+    // product name in the current project description.
+    crate::editorial::validate_text(&description, primary_sources)?;
+    let single = json!({
+        "format_version":3,
+        "edition":format.name(),
+        "llm_requested":true,
+        "generated_at":now.to_rfc3339(),
+        "entries":[{
+            "full_name":entry.snapshot.full_name,
+            "latest":entry.snapshot,
+            "delta":entry.delta,
+            "source_kind":crate::editions::priority(&entry.snapshot, format).2,
+            "description":description,
+            "joke":joke,
+            "llm_used":true
+        }]
+    });
+    // The daily guard intentionally sees the full Snapshot, including topics,
+    // just as it does after enrichment. Weekly/offline scope stays unchanged.
+    crate::editorial::require_synthesis(&single)?;
+    let audit = crate::publication_audit(&single)
+        .with_context(|| format!("project {} public payload rejected", entry.snapshot.full_name))?;
+    anyhow::ensure!(
+        audit["approved"] == true,
+        "project {} blocked by deterministic credential scan",
+        entry.snapshot.full_name
+    );
+    Ok((description, joke, evidence_quote))
 }
 
 fn parse_project_response(text: &str) -> Result<(String, String, String)> {

@@ -237,6 +237,10 @@ pub(super) fn cached_analysis(state: &State, snapshot: &Snapshot) -> Option<Anal
         .cloned()
 }
 
+pub(super) fn forget_analysis(state: &mut State, name: &str) {
+    state.editions.analyses.remove(&name.to_ascii_lowercase());
+}
+
 pub(super) fn remember_analyses(state: &mut State, digest: &Value) {
     for entry in digest["entries"].as_array().into_iter().flatten() {
         if entry["llm_used"] != true {

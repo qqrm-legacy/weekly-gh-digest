@@ -31,6 +31,34 @@ fn body(request: &str) -> Value {
 
 const README_EVIDENCE: &str =
     "This tool parses source files locally and reports their dependency graph.";
+const READY_DESCRIPTION: &str =
+    "Локально разбирает исходные файлы и показывает граф их зависимостей.";
+const SCOPED_OCR_DESCRIPTION: &str =
+    "Приложение полностью офлайн обрабатывает скриншоты, а сетевые запросы происходят лишь при вызове моделей.";
+
+fn accepted_daily_digest(entries: &[Ranked], result: &Enrichment) -> Value {
+    let accepted: Vec<_> = entries
+        .iter()
+        .filter_map(|entry| {
+            let id = &entry.snapshot.full_name;
+            let description = result.descriptions.get(id)?;
+            Some(json!({
+                "full_name":id,
+                "latest":entry.snapshot,
+                "delta":entry.delta,
+                "source_kind":crate::editions::priority(&entry.snapshot, crate::editions::Format::Daily).2,
+                "description":description,
+                "joke":result.jokes.get(id).map(String::as_str).unwrap_or(""),
+                "evidence_quote":result.evidence_quotes.get(id).map(String::as_str).unwrap_or(""),
+                "llm_used":true
+            }))
+        })
+        .collect();
+    json!({
+        "format_version":3,"edition":"daily","llm_requested":true,
+        "generated_at":"2026-11-08T15:00:00Z","entries":accepted,"catalogue":[]
+    })
+}
 
 #[test]
 fn retries_reserve_each_attempt_and_use_utc_day_at_each_attempt() {
@@ -987,6 +1015,307 @@ fn rejected_daily_cards_do_not_block_later_cards_or_acknowledge_findings() {
             2,
             "generating or rejecting a card must not acknowledge a finding"
         );
+    }
+}
+
+#[test]
+fn full_snapshot_editorial_rejects_stay_local_before_daily_cache_and_publication() {
+    let clock = FakeClock::at("2026-11-08T15:00:00Z");
+    let retry_at = clock.now() + chrono::Duration::hours(24);
+    let dir = tempfile::tempdir().unwrap();
+    let path = dir.path().join("state.json");
+    let mut entries = vec![ranked("org/scoped-ocr"), ranked("org/ready")];
+    entries[0].snapshot.topics = vec!["local-first".into()];
+    entries[0].snapshot.readme_excerpt =
+        Some(format!("# Project\n\n{README_EVIDENCE}\n\n本地离线 OCR"));
+    let primary_sources = json!({
+        "description":entries[0].snapshot.description,
+        "readme_excerpt":entries[0].snapshot.readme_excerpt,
+        "evidence_quote":README_EVIDENCE
+    })
+    .to_string();
+    assert!(!primary_sources.contains("local-first"));
+    // Reproduce the old split: the model bundle passes, while the same final
+    // copy fails the conservative daily policy once Snapshot topics are seen.
+    crate::editorial::validate_text(SCOPED_OCR_DESCRIPTION, &primary_sources).unwrap();
+    let rejected = json!({
+        "description":SCOPED_OCR_DESCRIPTION,"joke":"","evidence_quote":README_EVIDENCE
+    })
+    .to_string();
+    assert!(
+        parse_ready_card(
+            &rejected,
+            &entries[0],
+            &primary_sources,
+            &[],
+            crate::editions::Format::Weekly,
+            clock.now()
+        )
+        .is_ok(),
+        "the daily full-Snapshot guard must not expand weekly editorial scope"
+    );
+    let ready = json!({
+        "description":READY_DESCRIPTION,"joke":"","evidence_quote":README_EVIDENCE
+    })
+    .to_string();
+    let server = TestServer::start(vec![
+        (200, completion(&rejected)),
+        (200, completion(&rejected)),
+        (200, completion(&ready)),
+    ]);
+    let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+    let mut state = State {
+        snapshots: entries.iter().map(|entry| entry.snapshot.clone()).collect(),
+        ..State::default()
+    };
+    let result = groq
+        .enrich_daily(&entries, &mut state, dir.path(), &[])
+        .unwrap();
+    assert_eq!(server.finish().len(), 3);
+    assert_eq!(result.budget["actual_requests"], 3);
+    assert_eq!(result.descriptions.len(), 1);
+    assert_eq!(result.descriptions["org/ready"], READY_DESCRIPTION);
+    let failures = result.budget["card_failures"].as_array().unwrap();
+    assert_eq!(failures.len(), 1);
+    assert_eq!(failures[0]["id"], "org/scoped-ocr");
+    for field in ["initial_error", "repair_error"] {
+        assert!(
+            failures[0][field]
+                .as_str()
+                .unwrap()
+                .contains("local-first does not prove offline operation")
+        );
+    }
+    let restored: State = StateStore::new(&path).load().unwrap();
+    assert!(crate::editions::cached_analysis(&restored, &entries[0].snapshot).is_none());
+    assert!(crate::editions::cached_analysis(&restored, &entries[1].snapshot).is_some());
+    assert_eq!(
+        crate::editions::daily_retry_at(&restored, "org/scoped-ocr"),
+        Some(retry_at)
+    );
+    assert!(restored.covered.is_empty());
+    assert!(restored.editions.daily_covered.is_empty());
+    assert!(restored.sent_slots.is_empty());
+    assert_eq!(
+        crate::editions::pending(&restored, clock.now(), crate::editions::Format::Daily).len(),
+        2
+    );
+    let digest = accepted_daily_digest(&entries, &result);
+    crate::editorial::require_synthesis(&digest).unwrap();
+    assert_eq!(crate::publication_audit(&digest).unwrap()["approved"], true);
+}
+
+#[test]
+fn poisoned_matching_cache_is_evicted_and_deferred_without_blocking_ready_cards() {
+    for (description, quote, expected_error) in [
+        (
+            SCOPED_OCR_DESCRIPTION.to_string(),
+            README_EVIDENCE,
+            "local-first does not prove offline operation",
+        ),
+        (
+            READY_DESCRIPTION.to_string(),
+            "This quotation was never present in the captured README.",
+            "not an exact substring",
+        ),
+        (
+            "я".repeat(MAX_DESCRIPTION_CHARS + 1),
+            README_EVIDENCE,
+            "description length",
+        ),
+    ] {
+        let clock = FakeClock::at("2026-11-08T15:00:00Z");
+        let retry_at = clock.now() + chrono::Duration::hours(24);
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("state.json");
+        let mut entries = vec![
+            ranked("org/poisoned"),
+            ranked("org/ready-cached"),
+            ranked("org/ready-fresh"),
+        ];
+        entries[0].snapshot.topics = vec!["local-first".into()];
+        let mut state = State {
+            snapshots: entries.iter().map(|entry| entry.snapshot.clone()).collect(),
+            ..State::default()
+        };
+        crate::editions::remember_analyses(
+            &mut state,
+            &json!({"entries":[
+                {"full_name":"org/poisoned","latest":entries[0].snapshot,"llm_used":true,
+                 "description":description,"joke":"","evidence_quote":quote},
+                {"full_name":"org/ready-cached","latest":entries[1].snapshot,"llm_used":true,
+                 "description":READY_DESCRIPTION,"joke":"","evidence_quote":README_EVIDENCE}
+            ]}),
+        );
+        crate::editions::defer_daily(&mut state, "org/poisoned", clock.now());
+        StateStore::new(&path).save(&state).unwrap();
+        let mut state: State = StateStore::new(&path).load().unwrap();
+        assert!(crate::editions::cached_analysis(&state, &entries[0].snapshot).is_some());
+        let candidates =
+            crate::editions::pending(&state, clock.now(), crate::editions::Format::Daily);
+        let (before, _) = crate::editions::select(
+            &candidates,
+            &state,
+            crate::editions::Format::Daily,
+            clock.now(),
+        );
+        assert!(
+            before
+                .iter()
+                .any(|entry| entry.snapshot.full_name == "org/poisoned"),
+            "the old matching cache bypasses cooldown until its content is checked"
+        );
+        let fresh = json!({
+            "description":READY_DESCRIPTION,"joke":"","evidence_quote":README_EVIDENCE
+        })
+        .to_string();
+        let server = TestServer::start(vec![(200, completion(&fresh))]);
+        let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+        let result = groq
+            .enrich_daily(&entries, &mut state, dir.path(), &[])
+            .unwrap();
+        let requests = server.finish();
+        assert_eq!(requests.len(), 1);
+        assert_eq!(result.budget["actual_requests"], 1);
+        let requested: Value = serde_json::from_str(
+            body(&requests[0])["messages"][1]["content"]
+                .as_str()
+                .unwrap(),
+        )
+        .unwrap();
+        assert_eq!(requested["id"], "org/ready-fresh");
+        assert_eq!(result.descriptions.len(), 2);
+        assert!(result.descriptions.contains_key("org/ready-cached"));
+        assert!(result.descriptions.contains_key("org/ready-fresh"));
+        assert!(!result.descriptions.contains_key("org/poisoned"));
+        let failures = result.budget["card_failures"].as_array().unwrap();
+        assert_eq!(failures.len(), 1);
+        assert_eq!(failures[0]["id"], "org/poisoned");
+        assert_eq!(failures[0]["stage"], "cached_analysis_validation");
+        assert_eq!(failures[0]["disposition"], "retained_for_later_issue");
+        assert!(
+            failures[0]["reason"]
+                .as_str()
+                .unwrap()
+                .contains(expected_error)
+        );
+        assert_eq!(
+            result.budget["daily_deferred"][0]["reason"],
+            "cached_analysis_rejected"
+        );
+        let restored: State = StateStore::new(&path).load().unwrap();
+        assert!(crate::editions::cached_analysis(&restored, &entries[0].snapshot).is_none());
+        assert!(crate::editions::cached_analysis(&restored, &entries[1].snapshot).is_some());
+        assert!(crate::editions::cached_analysis(&restored, &entries[2].snapshot).is_some());
+        assert_eq!(
+            crate::editions::daily_retry_at(&restored, "org/poisoned"),
+            Some(retry_at)
+        );
+        let (next, excluded) = crate::editions::select(
+            &candidates,
+            &restored,
+            crate::editions::Format::Daily,
+            clock.now(),
+        );
+        assert_eq!(next.len(), 2);
+        assert!(
+            next.iter()
+                .all(|entry| entry.snapshot.full_name != "org/poisoned")
+        );
+        assert_eq!(excluded[0]["full_name"], "org/poisoned");
+        assert!(excluded[0].get("retry_at").is_some());
+        assert!(restored.covered.is_empty());
+        assert!(restored.editions.daily_covered.is_empty());
+        assert!(restored.sent_slots.is_empty());
+        let digest = accepted_daily_digest(&entries, &result);
+        crate::editorial::require_synthesis(&digest).unwrap();
+        assert_eq!(crate::publication_audit(&digest).unwrap()["approved"], true);
+    }
+}
+
+#[test]
+fn final_payload_rejections_are_repaired_then_deferred_without_blocking_later_cards() {
+    let credential = format!("ghs_{}", "a".repeat(36));
+    for (label, description, expected_error) in [
+        (
+            "escaped_size",
+            format!("{READY_DESCRIPTION}{}", ".".repeat(1900)),
+            "Telegram-safe limit",
+        ),
+        (
+            "credential",
+            format!("{READY_DESCRIPTION} {credential}"),
+            "credential scan",
+        ),
+        (
+            "control_character",
+            format!("{READY_DESCRIPTION}\u{0000}"),
+            "unsupported control character",
+        ),
+        (
+            "short_after_redaction",
+            format!("Локальный анализатор. gsk_{}", "a".repeat(48)),
+            "description length",
+        ),
+    ] {
+        let clock = FakeClock::at("2026-11-08T15:00:00Z");
+        let retry_at = clock.now() + chrono::Duration::hours(24);
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("state.json");
+        let entries = vec![ranked("org/rejected"), ranked("org/ready")];
+        assert!(
+            parse_project_description(&json!({"description":description,"joke":""}).to_string())
+                .is_ok(),
+            "fixture {label} must pass the old schema and scalar-length checks"
+        );
+        let rejected = json!({
+            "description":description,"joke":"","evidence_quote":README_EVIDENCE
+        })
+        .to_string();
+        let ready = json!({
+            "description":READY_DESCRIPTION,"joke":"","evidence_quote":README_EVIDENCE
+        })
+        .to_string();
+        let server = TestServer::start(vec![
+            (200, completion(&rejected)),
+            (200, completion(&rejected)),
+            (200, completion(&ready)),
+        ]);
+        let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+        let mut state = State {
+            snapshots: entries.iter().map(|entry| entry.snapshot.clone()).collect(),
+            ..State::default()
+        };
+        let result = groq
+            .enrich_daily(&entries, &mut state, dir.path(), &[])
+            .unwrap();
+        assert_eq!(server.finish().len(), 3, "{label}");
+        assert_eq!(result.budget["actual_requests"], 3, "{label}");
+        assert_eq!(result.descriptions.len(), 1, "{label}");
+        assert_eq!(result.descriptions["org/ready"], READY_DESCRIPTION);
+        let failures = result.budget["card_failures"].as_array().unwrap();
+        assert_eq!(failures.len(), 1, "{label}");
+        for field in ["initial_error", "repair_error"] {
+            assert!(
+                failures[0][field].as_str().unwrap().contains(expected_error),
+                "{label}: {}",
+                failures[0][field]
+            );
+        }
+        assert!(!result.budget.to_string().contains(&credential));
+        let restored: State = StateStore::new(&path).load().unwrap();
+        assert!(crate::editions::cached_analysis(&restored, &entries[0].snapshot).is_none());
+        assert!(crate::editions::cached_analysis(&restored, &entries[1].snapshot).is_some());
+        assert_eq!(
+            crate::editions::daily_retry_at(&restored, "org/rejected"),
+            Some(retry_at)
+        );
+        assert!(restored.covered.is_empty());
+        assert!(restored.editions.daily_covered.is_empty());
+        assert!(restored.sent_slots.is_empty());
+        let digest = accepted_daily_digest(&entries, &result);
+        crate::editorial::require_synthesis(&digest).unwrap();
+        assert_eq!(crate::publication_audit(&digest).unwrap()["approved"], true);
     }
 }
 
