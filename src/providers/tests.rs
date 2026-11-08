@@ -285,6 +285,29 @@ fn project_cards_accept_empty_humour_and_bound_unicode_without_truncation() {
 }
 
 #[test]
+fn malformed_card_json_is_rejected_without_panicking() {
+    for text in [
+        "} broken {",
+        "} кириллица {",
+        "```json\n} broken {\n```",
+        "```json\n{\"description\":\n```",
+        "}",
+        "{",
+    ] {
+        assert!(parse_project_description(text).is_err(), "{text}");
+        assert!(parse_project_response(text).is_err(), "{text}");
+    }
+    let card = json!({
+        "description":READY_DESCRIPTION,"joke":"","evidence_quote":README_EVIDENCE
+    });
+    let (description, joke, quote) =
+        parse_project_response(&format!("```json\n{card}\n```")).unwrap();
+    assert_eq!(description, READY_DESCRIPTION);
+    assert!(joke.is_empty());
+    assert_eq!(quote, README_EVIDENCE);
+}
+
+#[test]
 fn project_descriptions_preserve_paragraphs_and_normalize_line_wrapping() {
     let raw = " \r\n  Локально  строит граф\r\nзависимостей исходных файлов.\r\n \t \r\n\r\nПоказывает связи  между модулями.\n\t\nПомогает оценить\n  объём изменений.  \n\n";
     let expected = "Локально строит граф зависимостей исходных файлов.\n\nПоказывает связи между модулями.\n\nПомогает оценить объём изменений.";
@@ -943,6 +966,11 @@ fn rejected_daily_cards_do_not_block_later_cards_or_acknowledge_findings() {
             "named product or integration",
         ),
         ("not JSON".into(), "still not JSON".into(), "valid JSON"),
+        (
+            "} broken {".into(),
+            "```json\n} still broken {\n```".into(),
+            "valid JSON",
+        ),
     ] {
         let clock = FakeClock::at("2026-11-08T15:00:00Z");
         let dir = tempfile::tempdir().unwrap();

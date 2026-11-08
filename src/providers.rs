@@ -716,7 +716,9 @@ fn model_name(variable: &str, default: &str) -> String {
 fn extract_json(s: &str) -> String {
     let a = s.find('{').unwrap_or(0);
     let b = s.rfind('}').map(|x| x + 1).unwrap_or(s.len());
-    s[a..b].to_string()
+    // Malformed provider text may close an object before opening one. Leave
+    // invalid framing to the JSON parser instead of panicking during slicing.
+    s.get(a..b).unwrap_or(s).to_string()
 }
 
 fn normalized_joke(text: &str) -> String {

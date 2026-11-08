@@ -1,8 +1,28 @@
 use crate::State;
-use anyhow::{Result, ensure};
+use anyhow::{Context, Result, ensure};
 use std::collections::BTreeMap;
 
+/// Only a structured Telegram client-error response proves rejection. Transport
+/// failures and invalid/server responses must never use this marker.
+#[derive(Debug)]
+pub(super) struct ConfirmedRejection {
+    pub(super) status: u16,
+}
+
+impl std::fmt::Display for ConfirmedRejection {
+    fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            formatter,
+            "Telegram sendMessage rejected the message (HTTP {})",
+            self.status
+        )
+    }
+}
+
+impl std::error::Error for ConfirmedRejection {}
+
 /// An ambiguous send leaves a durable intent and requires reconciliation.
+/// A confirmed rejection clears that intent durably before permitting a retry.
 /// A successful acknowledgement and its cursor are checkpointed together.
 pub fn send_one(
     text: &str,
@@ -34,7 +54,23 @@ pub fn send_one(
         .insert(message_key.into(), text.into());
     state.uncertain_delivery = Some(format!("{progress_key}/{message_key}"));
     checkpoint(state)?;
-    let id = send(text)?;
+    let id = match send(text) {
+        Ok(id) => id,
+        Err(error) => {
+            if error.downcast_ref::<ConfirmedRejection>().is_some() {
+                let intent = state.uncertain_delivery.take();
+                if let Err(checkpoint_error) = checkpoint(state) {
+                    // A failed clear must also block another call in this process.
+                    // The remote checkpoint may still contain the original intent.
+                    state.uncertain_delivery = intent;
+                    return Err(checkpoint_error).context(
+                        "cannot checkpoint rejected Telegram send; reconciliation required",
+                    );
+                }
+            }
+            return Err(error);
+        }
+    };
     state
         .delivery_progress
         .get_mut(progress_key)
@@ -122,6 +158,97 @@ mod tests {
             )
             .is_err()
         );
+    }
+
+    #[test]
+    fn confirmed_rejection_preserves_payload_and_resumes_after_acknowledged_chunks() {
+        let chunks = vec!["first".into(), "second".into()];
+        let mut state = State::default();
+        state.pending_digests.insert(
+            "issue".into(),
+            serde_json::json!({"edition":"daily", "entries":["frozen payload"]}),
+        );
+        let pending = state.pending_digests.clone();
+        let mut remote = Vec::new();
+        let error = send_chunks(
+            &chunks,
+            "issue",
+            &mut state,
+            |text| {
+                if text == "first" {
+                    Ok(41)
+                } else {
+                    Err(ConfirmedRejection { status: 429 }.into())
+                }
+            },
+            |state| {
+                remote = serde_json::to_vec(state)?;
+                Ok(())
+            },
+        )
+        .unwrap_err();
+        assert!(error.downcast_ref::<ConfirmedRejection>().is_some());
+        let mut restored: State = serde_json::from_slice(&remote).unwrap();
+        assert!(restored.uncertain_delivery.is_none());
+        assert_eq!(restored.pending_digests, pending);
+        assert!(restored.sent_slots.is_empty());
+        let progress = &restored.delivery_progress["issue"];
+        assert_eq!(progress.project_message_ids.len(), 1);
+        assert_eq!(progress.project_message_ids["chunk-00"], 41);
+        assert_eq!(progress.message_texts["chunk-00"], "first");
+        assert_eq!(progress.message_texts["chunk-01"], "second");
+        let ids = send_chunks(
+            &chunks,
+            "issue",
+            &mut restored,
+            |text| {
+                assert_eq!(text, "second");
+                Ok(42)
+            },
+            |_| Ok(()),
+        )
+        .unwrap();
+        assert_eq!(ids, [41, 42]);
+        assert_eq!(restored.pending_digests, pending);
+    }
+
+    #[test]
+    fn failed_rejection_checkpoint_blocks_local_and_restored_retries() {
+        let mut state = State::default();
+        let mut remote = Vec::new();
+        let mut checkpoints = 0;
+        let error = send_chunks(
+            &["card".into()],
+            "issue",
+            &mut state,
+            |_| Err(ConfirmedRejection { status: 400 }.into()),
+            |state| {
+                checkpoints += 1;
+                if checkpoints == 2 {
+                    bail!("checkpoint unavailable");
+                }
+                remote = serde_json::to_vec(state)?;
+                Ok(())
+            },
+        )
+        .unwrap_err();
+        assert!(error.to_string().contains("reconciliation required"));
+        let restored = serde_json::from_slice(&remote).unwrap();
+        for mut blocked in [state, restored] {
+            assert_eq!(blocked.uncertain_delivery.as_deref(), Some("issue/chunk-00"));
+            assert!(blocked.delivery_progress["issue"].project_message_ids.is_empty());
+            assert_eq!(blocked.delivery_progress["issue"].message_texts["chunk-00"], "card");
+            assert!(
+                send_chunks(
+                    &["card".into()],
+                    "issue",
+                    &mut blocked,
+                    |_| panic!("failed clear checkpoint must block sending"),
+                    |_| panic!("failed clear checkpoint must require reconciliation")
+                )
+                .is_err()
+            );
+        }
     }
 
     #[test]
