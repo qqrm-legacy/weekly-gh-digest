@@ -235,9 +235,19 @@ mod tests {
         assert!(error.to_string().contains("reconciliation required"));
         let restored = serde_json::from_slice(&remote).unwrap();
         for mut blocked in [state, restored] {
-            assert_eq!(blocked.uncertain_delivery.as_deref(), Some("issue/chunk-00"));
-            assert!(blocked.delivery_progress["issue"].project_message_ids.is_empty());
-            assert_eq!(blocked.delivery_progress["issue"].message_texts["chunk-00"], "card");
+            assert_eq!(
+                blocked.uncertain_delivery.as_deref(),
+                Some("issue/chunk-00")
+            );
+            assert!(
+                blocked.delivery_progress["issue"]
+                    .project_message_ids
+                    .is_empty()
+            );
+            assert_eq!(
+                blocked.delivery_progress["issue"].message_texts["chunk-00"],
+                "card"
+            );
             assert!(
                 send_chunks(
                     &["card".into()],

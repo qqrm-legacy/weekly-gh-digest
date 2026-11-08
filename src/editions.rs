@@ -852,7 +852,10 @@ mod tests {
         assert_eq!(selected[0].snapshot.full_name, "org/boundary");
         assert_eq!(selected[1].snapshot.full_name, "ORG/P000");
         assert!(!selected.iter().any(|entry| {
-            matches!(entry.snapshot.full_name.as_str(), "org/too-old" | "org/future")
+            matches!(
+                entry.snapshot.full_name.as_str(),
+                "org/too-old" | "org/future"
+            )
         }));
     }
 

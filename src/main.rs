@@ -1723,15 +1723,16 @@ mod tests {
             )]);
             let endpoint = format!("{}/botfixture-private-token/sendMessage", server.url);
             let mut state = State::default();
-            state.pending_digests.insert("issue".into(), json!({"frozen":true}));
+            state
+                .pending_digests
+                .insert("issue".into(), json!({"frozen":true}));
             let mut remote = Vec::new();
             let error = delivery::send_chunks(
                 &["card".into()],
                 "issue",
                 &mut state,
                 |text| {
-                    telegram_send_request(&http, &endpoint, &json!({"text":text}))
-                        .map(|(id, _)| id)
+                    telegram_send_request(&http, &endpoint, &json!({"text":text})).map(|(id, _)| id)
                 },
                 |state| {
                     remote = serde_json::to_vec(state)?;
@@ -1739,13 +1740,24 @@ mod tests {
                 },
             )
             .unwrap_err();
-            assert!(error.downcast_ref::<delivery::ConfirmedRejection>().is_some());
+            assert!(
+                error
+                    .downcast_ref::<delivery::ConfirmedRejection>()
+                    .is_some()
+            );
             assert!(!format!("{error:#}").contains("fixture-private"));
             assert!(!format!("{error:#}").contains(&server.url));
             let restored: State = serde_json::from_slice(&remote).unwrap();
             assert!(restored.uncertain_delivery.is_none());
-            assert!(restored.delivery_progress["issue"].project_message_ids.is_empty());
-            assert_eq!(restored.delivery_progress["issue"].message_texts["chunk-00"], "card");
+            assert!(
+                restored.delivery_progress["issue"]
+                    .project_message_ids
+                    .is_empty()
+            );
+            assert_eq!(
+                restored.delivery_progress["issue"].message_texts["chunk-00"],
+                "card"
+            );
             assert_eq!(restored.pending_digests["issue"], json!({"frozen":true}));
             assert_eq!(server.finish().len(), 1);
         }
@@ -1757,15 +1769,27 @@ mod tests {
         let cases = [
             (400, "{}".into()),
             (429, json!({"ok":false, "error_code":400}).to_string()),
-            (400, json!({"ok":true, "result":{"message_id":41}}).to_string()),
-            (400, json!({"ok":false, "error_code":400, "result":{"message_id":41}}).to_string()),
+            (
+                400,
+                json!({"ok":true, "result":{"message_id":41}}).to_string(),
+            ),
+            (
+                400,
+                json!({"ok":false, "error_code":400, "result":{"message_id":41}}).to_string(),
+            ),
             (500, json!({"ok":false, "error_code":500}).to_string()),
             (503, "fixture-private-response".into()),
             (200, "fixture-private-response".into()),
             (200, json!({"ok":false, "error_code":400}).to_string()),
             (200, json!({"ok":true, "result":{}}).to_string()),
-            (200, json!({"ok":true, "result":{"message_id":0}}).to_string()),
-            (200, json!({"ok":true, "result":{"message_id":-1}}).to_string()),
+            (
+                200,
+                json!({"ok":true, "result":{"message_id":0}}).to_string(),
+            ),
+            (
+                200,
+                json!({"ok":true, "result":{"message_id":-1}}).to_string(),
+            ),
         ];
         for (status, response) in cases {
             let server = TestServer::start(vec![(status, response)]);
@@ -1777,8 +1801,7 @@ mod tests {
                 "issue",
                 &mut state,
                 |text| {
-                    telegram_send_request(&http, &endpoint, &json!({"text":text}))
-                        .map(|(id, _)| id)
+                    telegram_send_request(&http, &endpoint, &json!({"text":text})).map(|(id, _)| id)
                 },
                 |state| {
                     remote = serde_json::to_vec(state)?;
@@ -1786,12 +1809,23 @@ mod tests {
                 },
             )
             .unwrap_err();
-            assert!(error.downcast_ref::<delivery::ConfirmedRejection>().is_none());
+            assert!(
+                error
+                    .downcast_ref::<delivery::ConfirmedRejection>()
+                    .is_none()
+            );
             assert!(!format!("{error:#}").contains("fixture-private"));
             assert!(!format!("{error:#}").contains(&server.url));
             let mut restored: State = serde_json::from_slice(&remote).unwrap();
-            assert_eq!(restored.uncertain_delivery.as_deref(), Some("issue/chunk-00"));
-            assert!(restored.delivery_progress["issue"].project_message_ids.is_empty());
+            assert_eq!(
+                restored.uncertain_delivery.as_deref(),
+                Some("issue/chunk-00")
+            );
+            assert!(
+                restored.delivery_progress["issue"]
+                    .project_message_ids
+                    .is_empty()
+            );
             assert!(
                 delivery::send_chunks(
                     &["card".into()],
@@ -1825,20 +1859,27 @@ mod tests {
             &["card".into()],
             "issue",
             &mut state,
-            |text| {
-                telegram_send_request(&http, &endpoint, &json!({"text":text}))
-                    .map(|(id, _)| id)
-            },
+            |text| telegram_send_request(&http, &endpoint, &json!({"text":text})).map(|(id, _)| id),
             |state| {
                 remote = serde_json::to_vec(state)?;
                 Ok(())
             },
         )
         .unwrap_err();
-        assert_eq!(format!("{error:#}"), "Telegram sendMessage transport failed");
+        assert_eq!(
+            format!("{error:#}"),
+            "Telegram sendMessage transport failed"
+        );
         let restored: State = serde_json::from_slice(&remote).unwrap();
-        assert_eq!(restored.uncertain_delivery.as_deref(), Some("issue/chunk-00"));
-        assert!(restored.delivery_progress["issue"].project_message_ids.is_empty());
+        assert_eq!(
+            restored.uncertain_delivery.as_deref(),
+            Some("issue/chunk-00")
+        );
+        assert!(
+            restored.delivery_progress["issue"]
+                .project_message_ids
+                .is_empty()
+        );
     }
 
     #[test]
