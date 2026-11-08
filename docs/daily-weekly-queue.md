@@ -148,7 +148,8 @@ individually and reused when
 sources and editorial policy match. Weekly eligibility remains independent.
 
 Mini-reviews normally use two or three short paragraphs and 800–1200 characters
-(at most 1600) to explain the task, user-facing result, mechanism, two or three
+(requested maximum 1500; responses up to 2000 are accepted without truncation)
+to explain the task, user-facing result, mechanism, two or three
 useful capabilities or distinctions, practical use, and material documented
 requirements or limits. Paragraph breaks and useful details are preserved; each
 sentence adds information, and sparse sources need no padding. Humor is optional

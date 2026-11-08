@@ -224,13 +224,18 @@ fn project_cards_accept_empty_humour_and_bound_unicode_without_truncation() {
         parse_project_description(&json!({"description":description,"joke":" \n\t "}).to_string())
             .unwrap();
     assert_eq!(parsed, (description.into(), String::new()));
-    let boundary = "я".repeat(MAX_DESCRIPTION_CHARS);
-    assert_eq!(
-        parse_project_description(&json!({"description":boundary,"joke":""}).to_string())
-            .unwrap()
-            .0,
-        boundary
-    );
+    // The prompt requests at most 1500 characters; modest overshoot is accepted.
+    // In particular, the two production responses that blocked quiche are valid.
+    for length in [1500, 1501, 1601, 1659, 1668, 2000] {
+        let description = "я".repeat(length);
+        assert_eq!(
+            parse_project_description(&json!({"description":description,"joke":""}).to_string())
+                .unwrap()
+                .0,
+            description
+        );
+    }
+    let boundary = "я".repeat(2000);
     for invalid in ["Коротко".to_string(), format!("{boundary}я")] {
         assert!(
             parse_project_description(&json!({"description":invalid,"joke":""}).to_string())
@@ -289,6 +294,43 @@ fn partial_enrichment_keeps_confirmed_descriptions_and_original_fallback_contrac
     assert_eq!(result.budget["max_requests_per_run"], 40);
     assert_eq!(*clock.sleeps.borrow(), [StdDuration::from_secs(30)]);
     assert!(dir.path().join("llm-bundle.json").exists());
+}
+
+#[test]
+fn generation_and_repair_request_1500_but_accept_up_to_2000_characters() {
+    for (length, repair) in [(1659, false), (1668, false), (2000, false), (2000, true)] {
+        let clock = FakeClock::at("2026-11-08T15:00:00Z");
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("state.json");
+        let description = "я".repeat(length);
+        let response = json!({
+            "description":description,"joke":"","evidence_quote":README_EVIDENCE
+        })
+        .to_string();
+        let mut responses = Vec::new();
+        if repair {
+            responses.push((200, completion("not JSON")));
+        }
+        responses.push((200, completion(&response)));
+        let server = TestServer::start(responses);
+        let groq = provider(&clock, &path, &server.url, "openai/gpt-oss-120b");
+        let result = groq
+            .enrich_daily(&[ranked("a/one")], &mut State::default(), dir.path())
+            .unwrap();
+        let requests = server.finish();
+        assert_eq!(requests.len(), if repair { 2 } else { 1 });
+        for request in requests {
+            assert!(
+                body(&request)["messages"][0]["content"]
+                    .as_str()
+                    .unwrap()
+                    .contains("максимум 1500")
+            );
+        }
+        assert_eq!(result.descriptions["a/one"], description);
+        assert!(result.complete);
+        assert_eq!(result.budget["card_failures"], json!([]));
+    }
 }
 
 #[test]
@@ -674,8 +716,8 @@ fn rejected_daily_cards_do_not_block_later_cards_or_acknowledge_findings() {
     let invented = "Инструмент отправляет граф зависимостей в Salesforce для обработки заявок.";
     for (initial, repaired, expected_error) in [
         (
-            card(&"я".repeat(1668)),
-            card(&"я".repeat(1659)),
+            card(&"я".repeat(2068)),
+            card(&"я".repeat(2059)),
             "description length",
         ),
         (

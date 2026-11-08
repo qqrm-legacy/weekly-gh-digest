@@ -363,6 +363,7 @@ fn exact_evidence_quote(description: Option<&str>, readme_excerpt: Option<&str>)
         text.chars().count() >= 12
             && !text.starts_with('#')
             && !text.starts_with("![")
+            && !text.starts_with("[![")
             && !text.starts_with('<')
             && !text.starts_with("---")
     })?;
@@ -1715,6 +1716,19 @@ mod tests {
     }
 
     #[test]
+    fn evidence_quotes_skip_linked_readme_badges() {
+        let badges = "[![Build](build.svg)](https://example.com/build)\n[![Version](version.svg)](https://example.com/version)";
+        let paragraph = "A documented library for parsing and validating structured data.";
+        let readme = format!("# Project\n\n{badges}\n\n{paragraph}");
+
+        assert_eq!(
+            exact_evidence_quote(None, Some(&readme)).as_deref(),
+            Some(paragraph)
+        );
+        assert!(exact_evidence_quote(None, Some(badges)).is_none());
+    }
+
+    #[test]
     fn public_delivery_redacts_credentials_and_builds_private_channel_links() {
         assert_eq!(
             safe_public_text("example sk-abcdefghijklmnopqrstuvwxyz0123456789"),
@@ -1768,7 +1782,7 @@ mod tests {
         );
         assert!(
             parse_project_description(
-                &json!({"description":"я".repeat(1601),"joke":""}).to_string()
+                &json!({"description":"я".repeat(2001),"joke":""}).to_string()
             )
             .is_err()
         );
