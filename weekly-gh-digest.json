@@ -216,6 +216,14 @@
         "joke": "AI‑домофон: «Кто там?», а Home Assistant отвечает «Это я, ваш умный свет».",
         "evidence_quote": "> **Breaking change (v7.3.0):** `ha_config_set_yaml` has been moved to [beta](docs/beta.md)."
       },
+      "janestreet/agent_skills": {
+        "policy_version": 7,
+        "source_description": "Agent skills",
+        "source_readme": "# Agent skills from Jane Street\n\nA collection of skills for AI agents and chatbots.\nEach skill is a directory containing a `SKILL.md` file\nwith instructions for the agent.\n\n## Skills\n\n- **socratic-tutor** — turns an LLM into a strict personal tutor that teaches a\n  topic of your choice using the Socratic method: a diagnostic, a skill map with\n  levels 0-5, one question at a time, spaced review, and a final assessment.\n\n## How to use\n\nWith a coding agent that supports the common `SKILL.md` format, copy the skill\ndirectory into your agent's skills folder, then ask the agent to use it\n(\"teach me X\").\n\nWith a plain chatbot, paste the body of the skill's `SKILL.md` into the chat\n(or into a custom/system prompt), followed by what you want it to do.\n",
+        "description": "Проект — набор готовых «навыков» для AI‑агентов и чат‑ботов, каждый из которых оформлен в виде отдельного каталога с файлом `SKILL.md`. Файл содержит пошаговые инструкции, которые агент может интерпретировать и выполнять, не требуя дополнительного кода. В репозитории уже присутствует, например, навык `socratic-tutor`, превращающий любую большую языковую модель в строгого репетитора: он проводит диагностический тест, строит карту навыков с уровнями от 0 до 5, задаёт по одному вопросу, планирует интервальные повторения и в конце выдаёт итоговую оценку. Чтобы задействовать навык, достаточно скопировать его каталог в папку «skills» у агента, поддерживающего формат `SKILL.md`, и попросить «teach me X», либо вставить содержимое `SKILL.md` в системный запрос у обычного чат‑бота. Такой подход позволяет быстро расширять функциональность существующих агентов без изменения их кода, а также использовать готовые сценарии в простых чат‑интерфейсах. Ограничения: навык работает только при наличии у агента поддержки формата `SKILL.md`; без него требуется ручное копирование текста в запрос, а сложные интерактивные сценарии могут требовать дополнительной логики со стороны модели.",
+        "joke": "",
+        "evidence_quote": "A collection of skills for AI agents and chatbots.\nEach skill is a directory containing a `SKILL.md` file\nwith instructions for the agent."
+      },
       "jev-chat/jev-chat-windows": {
         "policy_version": 7,
         "source_description": "JevChat-Windows：聊天窗口旁挂的回复辅助。窗口截图 + 本地离线 OCR 读对方消息 → Jev 判断意图 → 3 条候选一键填入，发送永远手动",
