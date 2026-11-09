@@ -217491,7 +217491,3162 @@
     "daily:2026-11-05": 76,
     "daily:2026-11-08": 78
   },
-  "pending_digests": {},
+  "pending_digests": {
+    "daily-20261109T195138Z": {
+      "audit": {
+        "approval_scope": "Only local payload-format and credential-pattern checks; not factual, editorial, quality, safety or coverage approval",
+        "approved": true,
+        "deterministic_scan": "passed",
+        "factual_review": "not_performed",
+        "matched_pattern_classes": [],
+        "review": null,
+        "status": "deterministic-only",
+        "telegram_format": {
+          "api_acceptance_tested": false,
+          "message_utf16_units": [
+            3632,
+            2758,
+            3395,
+            3772
+          ],
+          "scope": "Offline emitted MarkdownV2 subset: escaped text, bold/italic, inline code and HTTP(S) links; not the complete Telegram parser or API acceptance",
+          "status": "passed",
+          "utf16_limit": 3800
+        }
+      },
+      "catalogue": [],
+      "coverage": {
+        "archive": {
+          "available": true,
+          "captures_without_manifest": [],
+          "directories_without_manifest": [],
+          "filtered_captures": [],
+          "invalid_manifests": [],
+          "manifest_capture_count": 34,
+          "manifests_without_snapshots": [],
+          "metadata_failure_records": 0,
+          "source_failure_records": 36
+        },
+        "cadence": {
+          "empty_window": false,
+          "interval_count": 33,
+          "intervals_over_three_hours": [
+            {
+              "from": "2026-11-02T21:56:19Z",
+              "seconds": 19077,
+              "to": "2026-11-03T03:14:16Z"
+            },
+            {
+              "from": "2026-11-03T03:14:16Z",
+              "seconds": 13066,
+              "to": "2026-11-03T06:52:02Z"
+            },
+            {
+              "from": "2026-11-03T07:14:43Z",
+              "seconds": 35446,
+              "to": "2026-11-03T17:05:29Z"
+            },
+            {
+              "from": "2026-11-03T17:05:29Z",
+              "seconds": 13359,
+              "to": "2026-11-03T20:48:08Z"
+            },
+            {
+              "from": "2026-11-03T23:25:31Z",
+              "seconds": 25293,
+              "to": "2026-11-04T06:27:04Z"
+            },
+            {
+              "from": "2026-11-04T06:27:04Z",
+              "seconds": 38997,
+              "to": "2026-11-04T17:17:01Z"
+            },
+            {
+              "from": "2026-11-04T17:17:01Z",
+              "seconds": 13667,
+              "to": "2026-11-04T21:04:48Z"
+            },
+            {
+              "from": "2026-11-04T23:41:59Z",
+              "seconds": 25709,
+              "to": "2026-11-05T06:50:28Z"
+            },
+            {
+              "from": "2026-11-05T06:50:28Z",
+              "seconds": 38145,
+              "to": "2026-11-05T17:26:13Z"
+            },
+            {
+              "from": "2026-11-05T17:26:13Z",
+              "seconds": 14113,
+              "to": "2026-11-05T21:21:26Z"
+            },
+            {
+              "from": "2026-11-05T23:39:28Z",
+              "seconds": 25943,
+              "to": "2026-11-06T06:51:51Z"
+            },
+            {
+              "from": "2026-11-06T06:51:51Z",
+              "seconds": 35730,
+              "to": "2026-11-06T16:47:21Z"
+            },
+            {
+              "from": "2026-11-06T16:47:21Z",
+              "seconds": 14112,
+              "to": "2026-11-06T20:42:33Z"
+            },
+            {
+              "from": "2026-11-06T23:11:44Z",
+              "seconds": 24599,
+              "to": "2026-11-07T06:01:43Z"
+            },
+            {
+              "from": "2026-11-07T06:01:43Z",
+              "seconds": 25443,
+              "to": "2026-11-07T13:05:46Z"
+            },
+            {
+              "from": "2026-11-07T13:05:46Z",
+              "seconds": 22203,
+              "to": "2026-11-07T19:15:49Z"
+            },
+            {
+              "from": "2026-11-07T19:26:35Z",
+              "seconds": 18766,
+              "to": "2026-11-08T00:39:21Z"
+            },
+            {
+              "from": "2026-11-08T00:39:21Z",
+              "seconds": 29037,
+              "to": "2026-11-08T08:43:18Z"
+            },
+            {
+              "from": "2026-11-08T11:16:53Z",
+              "seconds": 23990,
+              "to": "2026-11-08T17:56:43Z"
+            },
+            {
+              "from": "2026-11-08T22:08:45Z",
+              "seconds": 30417,
+              "to": "2026-11-09T06:35:42Z"
+            },
+            {
+              "from": "2026-11-09T06:35:42Z",
+              "seconds": 47756,
+              "to": "2026-11-09T19:51:38Z"
+            }
+          ],
+          "leading_gap_seconds": 6767,
+          "max_interval_seconds": 47756,
+          "median_interval_seconds": 14113.0,
+          "min_interval_seconds": 339,
+          "nominal_cron": "17 */3 * * *",
+          "nominal_slot_boundary": "start_exclusive_end_inclusive",
+          "nominal_slots_in_window": 56,
+          "scheduled_capture_count": null,
+          "target_interval_seconds": 10800,
+          "trailing_gap_seconds": 0,
+          "trigger_note": "Historical snapshots do not identify manual versus scheduled runs; capture counts are not schedule completion counts."
+        },
+        "format_version": 1,
+        "observed": {
+          "capture_count": 34,
+          "duplicate_snapshot_rows": 0,
+          "first_capture_at": "2026-11-02T21:44:26Z",
+          "ignored_future_rows": 0,
+          "invalid_timestamp_rows": 0,
+          "last_capture_at": "2026-11-09T19:51:38Z",
+          "snapshot_rows": 1943,
+          "unique_repositories": 175
+        },
+        "scope": {
+          "global_coverage_known": false,
+          "missing_intervals_reconstructed": false,
+          "note": "No observations are invented, interpolated or restored from aggregated weekly candidates. Leading and trailing gaps describe the observed window, not proven failed triggers.",
+          "search_first_page_limit": 30,
+          "trending": "first returned weekly and daily pages"
+        },
+        "window": {
+          "end": "2026-11-09T19:51:38Z",
+          "kind": "rolling_seven_days",
+          "start": "2026-11-02T19:51:38Z"
+        }
+      },
+      "dedup_excluded": [
+        {
+          "full_name": "sassiestrhihno/boxshelf-beta",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "AtomIllusionistDwell/watson-username-footprint-finder",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "heyjunpenn/awesome-jev",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Rizzo-AI-Academy/rizzo-flow",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "anishfn/shapeshift",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Haleclipse/CometixCode",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "InfinityLoop1308/PipePipe",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "vercel-labs/scriptc",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "alexgreensh/anidoodle",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "akitaonrails/ai-memory",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "OnlistTeam/ai-manager",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "JohnHeibel/ClaudeAnimationBase",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Alex314618-create/JevRev",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "yihui-dev/awesome-opus5-5-videos",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "zouyuxuan122/dsh-our-free-model",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "amitshekhariitbhu/ai-system-design",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "feder-cr/dots",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ollaya-dev/ollaya",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "kaankiziltug/logo-design-skill",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "supermemoryai/company-brain",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "wy51ai/floorplan-3d",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "lemomo-ai/lemo-opuscar",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "glanderness/BeefTV",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "angusdevgo/Seep-Reverse-Lab",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Liuziyu77/Valen",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "OpSafari/hypoarena",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "samyost1/3dicon",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Aureliengmz/clearwater",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "wangmingxuan666/Tiersense",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "MadsLorentzen/ai-job-search",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "anomalyco/opencode",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Comfy-Org/ComfyUI",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "YuJunZhiXue/dsh-purge",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "shiyu-coder/Kronos",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ruvnet/ruflo",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "headroomlabs-ai/headroom",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Kruk2/jasna",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "withmarbleapp/os-taxonomy",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "morluto/rea",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "storytold/artcraft",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "boykopovar/AnyPS5",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "cathrynlavery/diagram-design",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "NationalSecurityAgency/ghidra",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "anthropics/claude-plugins-official",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "K-Dense-AI/scientific-agent-skills",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Gathin23/cleanyourtv",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Arekejoker/qwen21-nsfw-pose-skill",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "HeyPuter/everything",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Leonxlnx/earshot",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "OpenMOSS/MOSS-Image",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Caho1/open-claude-ui",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "AjncSystem/ShadowOfTheColossus-PC",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "MyLuxy/overdrive",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "LiCinCan/blender-ai-mcp-addon",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "MaryCache/imozuru",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Noniv/web-ocean",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "CoolkHz/gptibo",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ly05010419/MacNativeGames",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "jhaizhou-ops/d2r-mobile",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "xiaoyang111222/cn-math-taxonomy",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "deeplethe/solid-glass",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "aicodeking/leanrea",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ahwootech/BRUTAL",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "chenglou/handwired",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Supermedo/uncharted_pc",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "alchaincyf/huashu-motion",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "rohit267/net-merge",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Tencent-Hunyuan/Hy-Memory",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "xscreensaver-official/xscreensaver",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "zhuyansen/new-term-radar",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "feder-cr/git-ai",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "outcrawlai/scout",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "seedds/nxnative",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Zfinix/eleven",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "threerocks/sweety-handdraw-video",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "cranebeaker/coop-anything",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "datalab-to/indra",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "mistralai/timestral",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "0xProbabillity/house-control",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "HayatoG/iss_pc",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "solana-classic/solana-classic",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "simbasjungles/free-my-tv",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Ansub/tv-detox",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "humblemuzzu/dumbtv",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Graphify-Labs/graphify",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "msitarzewski/agency-agents",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "vllm-project/vllm",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "sickn33/agentic-awesome-skills",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "android/skills",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "deepseek-ai/DeepInfer",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "JoasASantos/REA-Prompts",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "wshobson/agents",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "pengchujin/aerial-tv",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "reason-machines/reason-network",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "dipa-studio/ios-sweet",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "zcbacxc/mcd-party-planner",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "YOURSJEYO/claude-switcher",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "supabase/supabase",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "strelov1/freehire",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "twentyhq/twenty",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "earthtojake/text-to-cad",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ctresb/leis",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ikow/php2shell-poc",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "eness/php2shell-CVE-2026-109618-CVE-2026-109619-PoC",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ELY-Open-Source/ElyOffice",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "eagle-hq/EAGLE-4",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "stackedlol/ascii-sharks",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "luongnv89/claude-howto",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "php/php-src",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Meloong-Git/PCL",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "fastapi/fastapi",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "tek-sys-hub/Rubix-lang",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "9bie/php2shell-bypass-aslr-exp",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "openai/php2shell-checker",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "oosexgang/hackios-xnu-kernel",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "colinhacks/reylo",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "UniXNU/UniXNU",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Revivedx/SavageWindRecomp",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "NVIDIA/flare-local-inference",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Hugo-Dz/spritefusion-sprite-normals",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Renhuai123/ziwei-doushu",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "SnailSploit/Claude-Red",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "OpenBMB/VoxCPM",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "nodejs/node",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "elie222/rakazo",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "wesbos/3d-model-anything",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "EthanArbuckle/fairplay-decrypt",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Jakeschincariol/day-trader-skill",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "xevrion/hatchzip",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Zagitta/gpu-unlock",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Snapintosh/Snapintosh",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "aicodeking/pandacode",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "dominikmartn/harp",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Nutlope/hallmark",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "makecindy/cindy",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "pollen-robotics/microduck",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "jbiaojerry/ebook-treasure-chest",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "google-gemini/gemini-cli",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "aws/agent-toolkit-for-aws",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "assetnote/php2shell-scanner",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "JustAResearcher/gpu-unlock-ada",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "VictorTaelin/uniichat",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "pingdotgg/t3code",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "TauricResearch/TradingAgents",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "JetBrains/thinkrail",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "multica-ai/andrej-karpathy-skills",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "AgriciDaniel/claude-seo",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "coollabsio/coolify",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "nthnclrk/CleanFrame",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "rddmwmddr/android-ad-cleaner",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "morganlinton/BeautifulRust",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "designfuchen/word-atlas",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "lyramakesmusic/neuron-explorer",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "udhaykumarbala/cleanyourtv-app",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "mizorewww/gdirect",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "nightly-labs/openbot",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "gitroomhq/postiz-app",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Panniantong/Agent-Reach",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "alchaincyf/huashu-design",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "NVIDIA/SkillSpector",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "t3dotgg/tstack",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "enesozturk/dimensional-drawing",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "DenisSergeevitch/ex-ussr-kinship-research",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "KillaBoi/StealMyBitcoin-PoC",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "impacifist/Windows-GPU-UNLOCK",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "unclebob/ub-mode",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "andyhuo520/digital-human-koubo",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "torrentplayer/torrentplayer",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "HKUDS/DeepTutor",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "togg53192-cmd/jailbreaks",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "LNPANDY/NX2Apple",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "surendrapandar/minilytics",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "elayadesign/ai-design-skills",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "anhao/ai-pose-gallery-zh",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "interplains/Zero-Breach-Toolkit",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "DLSS-5-Swaper-New/.github",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ZiChuanLan/agent-purge",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "kargulstudio/calender-app-design",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "zita-ch/supermimic_vibed",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "CopilotKit/OpenDuet",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "hmjz100/LinkSwift",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ruvnet/RuView",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "macro-inc/macro",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "xiaolai/the-craft-of-selfteaching",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "expo/skills",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "jakubkrehel/skills",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Motionsites-AI/claude-skill",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Leonxlnx/taste-skill",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "oosexgang/hakios-xnu-kernel",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "anonnerdfrenzy/survival-llm",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "daveebbelaar/bama",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "DrWhax/unfairplay",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "yaojingang/GEOInflow",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "man15h/tellyscope",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Marker284/yandex-station-extended",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "blakeandersonw/ai-app-playbook",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "rossark0/rossark-motion-skill",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "mirkobrombin/raven",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "songjianyang/xss-audit",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "smithjohn78390/tongjiang-lab",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "milind-soni/OpenMausBot",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "thedotmack/claude-mem",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Donchitos/Claude-Code-Game-Studios",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "CopilotKit/OpenBot",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "qybaihe/bla",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "aschmelyun/print-my-profile-pic",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "hugohe3/ppt-master",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "deepopen-com/deepopen-3d-webs",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "misshexa66/OunceCake",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "valentderah/totk-pc-recomp",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ccch1mneyyy/dsh-Go",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "OpenBMB/MiniCPM-OCR",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "paipiange/nvzhuang",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "anthropics/skills",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "lightpanda-io/browser",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "heydamir/unslop",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "wangzan101/Mika",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "lexifina/global-law",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "BryceYuuu/RUN",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "kevinraymond/florilegium",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "HRuiCcc/RuiC-PoseAtlas",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Orkas-AI/Orkas",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "vorssaint/vorssaint-utils",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "bregman-arie/devops-exercises",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "THU-MAIC/OpenMAIC",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "AstrBotDevs/AstrBot",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Djihads80/Eglantine",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "deepseek-ai/dsh-superagent-prototype",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "patch-gg/pixelfx",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "haydenschmitty/floorplan",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "D3voz/openjutsu",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Arjun-Ingole/hop",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "anomalyco/hex",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "patchy631/ai-engineering-hub",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "FlashML-org/FreeToken",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "hyprwm/Hyprland",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "beenuar/AiSOC",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "kornia/kornia",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "cjpais/Handy",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "public-apis/public-apis",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ghostty-org/ghostty",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "physicsdolphin/nv-uefi-unlocker",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "elvarofficial/teardown",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "storytold/craft-anything",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "NiazMorshed2007/reanimate",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "jacke-pp/open-yoki",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "BookracyFOS/bookracy",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "benderandrew069/deepseek-api-pricing-2026",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "modelflare-ai/AnyModelBot",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "vercel-labs/agent-desktop",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "D4Vinci/Scrapling",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "JustVugg/colibri",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "p-e-w/heretic",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "max-sixty/worktrunk",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "karpathy/nanochat",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Verlintas/NOIR",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "caru-ini/stack-diagram",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "mromidev/claude-animated-shorts",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "hyz317/HairDeck",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "jackwener/DSH-Android",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "joeblau/subvox",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "sleepy-zone/ai-ref-library-cn",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Pika-Labs/Pika-H3-Flex",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "floci-io/floci",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Usagi-org/ai-goofish-monitor",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "spotify/portal-ai-plugins",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "speridlabs/idol-sdk",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "RikiyaT/lm_understand-logs",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "KKKKhazix/agent-autoloop",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "wquguru/cicada",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ramenvr/autopilot",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "AssassinCreator/steam-stash-value-report-card",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "NVIDIA/auto-ontology",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "JiaFeiMiao-K-Cat/DiscImageStudio",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "github/spec-kit",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "scenario-labs/skills",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "garrytan/gstack",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "FareedKhan-dev/kimi-k3-in-c",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "The-PR-Agent/pr-agent",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "MichaelCade/90DaysOfDevOps",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Thysrael/Horizon",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "calesthio/OpenMontage",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "govijr/terminal-mac",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "N1nEmAn/sapper-v2",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "anthropics/FlashProve",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "JuneYaooo/rea-video",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Minireel/HGhub",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "zortos293/Lichii",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "s1dashu/quiet-md",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "vercel-labs/agent-browser",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "google/skills",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "lz4/lz4",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ConardLi/garden-skills",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "microsoft/VibeVoice",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "UncensoredLabs/uncensored-ai-api",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "andrew-babo/muse4ai",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Minglink/dsh-jailbreak-workflow",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "jxy333967/jianxunyun",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "alchaincyf/huashu-bird-sticker",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Gezine/CivSwitch",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "brightsongwrath/personal-data-deletor-osint",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Balanov/uncut",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "arpanjot-coding/AVault",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "zed-industries/zed",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "astral-sh/ruff",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "prometheus/prometheus",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "microsoft/vscode",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "react/react",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "rust-lang/rust",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "nushell/nushell",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "rails/rails",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "angular/angular",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "etcd-io/etcd",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "symfony/symfony",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "mpv-player/mpv",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "openssl/openssl",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Sandflow-ai/sand3d",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "livliv-dev/player",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "mmdoctor/google-pro-helper",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "chadyi/StudyOnTV",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "sqlpxc/airhand",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "jyotipmahes/ML-Interview-Prep",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "JenkinWoo/sheeridVerify",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "libracoder/kiri",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "zhanghao123vip/ai-manju-skills",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "WoYun520/pixel-gif-sticker-pack",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "kevintngo/looseleaf",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Lee-xeo/Claude-Cage",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "smarkyie/NSP-Box",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "sherlock-project/sherlock",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "meta/astryx",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ranxianglei/billion-context",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "dsx-ai-factory/nvke",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "mbillow/localthings",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "tailwindlabs/tailwindcss",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "NotRexed/Hookshot",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Leviidev/Henge",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "voyager-so/vork",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "WoYun520/gif-factory",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "shanselman/gputaskman",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "JosssphZhou/poki",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "majorminorlabs/hermes-voice",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "zeekk0/OpenAmika",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "Th0rgal/satmux",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "DIYgod/pinky",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "jev-chat/jev-chat-jarvis",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "unreallabsai/unreal-agent",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "newliver666/apk-reverse",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "kryvora-network/kryvora-node",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "yukitorido/short-video-generator-AI",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "NVIDIA/Model-Optimizer",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "dgreenheck/tidewater",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "asokurasu/text-humanizer",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "blader/humanizer",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "CzJam/gjgjxweb",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "egoist/mygo-music",
+          "reason": "daily capacity; retained in pending queue"
+        },
+        {
+          "full_name": "ZhuLinsen/daily_stock_analysis",
+          "reason": "AI explanation unavailable; retained for a later daily issue"
+        },
+        {
+          "full_name": "jhaizhou-ops/S2Arm",
+          "reason": "AI explanation unavailable; retained for a later daily issue"
+        },
+        {
+          "full_name": "huamidev/GestaltX",
+          "reason": "AI explanation unavailable; retained for a later daily issue"
+        }
+      ],
+      "delivery_slot": "daily:2026-11-09",
+      "edition": "daily",
+      "entries": [
+        {
+          "baseline": null,
+          "delta": 215,
+          "description": "GBrain — это слой памяти, который можно подключить к уже используемому AI‑агенту, получив контролируемый набор фактов с указанием источников. Система хранит явные утверждения, позволяет их исправлять и отзывать, а затем делает эти данные доступными всем подключённым агентам через простой API. Пользователь может начать с простого ключевого поиска, а при необходимости добавить семантический поиск, синтез ответов и обогащение контекста. Вариант «keyless memory» обеспечивает быстрый поиск по ключевым словам, а синтезный слой формирует полностью сформулированный ответ с цитатами и пометкой о неизвестных областях. Кроме того, GBrain поддерживает типизированный граф знаний: при включённом авто‑линкинге новые страницы автоматически связываются без обращения к LLM, а запросы типа «кто работает в Acme?» обходятся breadth‑first обходом графа за миллисекунды, что повышает точность отношений на benchmark‑тестах.\n\nДля использования есть три сценария: добавить GBrain к существующему агенту без создания отдельного идентификатора, развернуть его на своей машине и открыть через MCP/Tailscale, либо подключиться к облачному хостингу gbrain.io. Первый вариант сохраняет идентичность агента и хранит память в его окружении; второй позволяет обращаться к памяти из любой точки сети; третий упрощает старт за счёт готового хостинга и интеграций с ChatGPT, Claude и Cursor. Проект распространяется под MIT‑лицензией, а платный сервис gbrain.io предоставляет управляемый хостинг и поддержку. Требования включают наличие MCP‑клиента и, при удалённом доступе, работающий Tailscale‑тейннет; безопасность обеспечивается через авторизацию, гранты доступа и фильтры видимости, однако источники данных не изолируют полностью вызывающих, что следует учитывать при настройке компании‑мозга.",
+          "evidence_kind": "provider_selected_exact_readme_quote",
+          "evidence_quote": "**Give the agent you already use a memory you control.** GBrain stores explicit facts with their sources, supports corrections and withdrawal, and makes the same memory available across your agents. Start with keyless memory and keyword retrieval; add semantic search, synthesis, and background enrichment when you need them.",
+          "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+          "full_name": "garrytan/gbrain",
+          "joke": "С GBrain ваш агент будет помнить всё, даже то, что вы забыли спросить.",
+          "latest": {
+            "captured_at": "2026-11-09T19:51:38Z",
+            "created_at": "2026-04-05T14:40:56Z",
+            "default_branch": "master",
+            "description": "Garry's Opinionated OpenClaw/Hermes Agent Brain",
+            "forks": 4761,
+            "full_name": "garrytan/gbrain",
+            "html_url": "https://github.com/garrytan/gbrain",
+            "language": "TypeScript",
+            "license": "MIT",
+            "observation": {
+              "first_seen": "2026-11-09T19:51:38Z",
+              "last_seen": "2026-11-09T19:51:38Z",
+              "observations": 1
+            },
+            "open_issues": 784,
+            "pushed_at": "2026-11-09T19:29:03Z",
+            "readme_excerpt": "<h1><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/images/brand/gbrain-wordmark-light.svg\"><img src=\"docs/images/brand/gbrain-wordmark.svg\" alt=\"GBrain\" height=\"52\"></picture></h1>\n\n**Give the agent you already use a memory you control.** GBrain stores explicit facts with their sources, supports corrections and withdrawal, and makes the same memory available across your agents. Start with keyless memory and keyword retrieval; add semantic search, synthesis, and background enrichment when you need them.\n\nGBrain is MIT-licensed and free to self-host; gbrain.io is optional paid hosting.\n\n> [!TIP]\n> **Need hosted? First time running an agent?** Try **[gbrain.io](https://gbrain.io/?ref=readme)**, hosted GBrain, for the easiest experience: one brain for you and your team, connected to ChatGPT, Claude and Cursor, with nothing to install or keep online. Stuck? Email support@gbrain.io and a person will set it up with you, free.\n\n**Keep skills beside knowledge.** New local brains include memory skills in their\ncontent root. Agents can join an authorized catalog; only approved editors can\npublish. Managed coding-agent installs add an owned native router; restart and\nreal-use verification are separate steps. Staged migration preserves sharing\nchoices and personal edits. See [shared brain skills](docs/guides/shared-brain-skills.md).\n\n## Choose your setup\n\n1. **Add GBrain to my existing agent — recommended.** Keep your agent's identity and save memory inside its environment. No new personal-agent identity or private repository is required. Start with the guide for **[Grok Bot](docs/guides/grok-bot.md)**, **[Muse](docs/guides/muse.md)**, or **[Codex / Claude Code](docs/tutorials/connect-coding-agent.md)**. [Other harnesses](#connect-gbrain-to-your-ai-client-mcp).\n2. **Use the brain on my own computer from everywhere.** One command publishes it over MCP on your Tailscale tailnet and keeps it running: `gbrain mcp expose` (add `--funnel` for cloud agents such as Grok Bot, Muse and ChatGPT). Follow **[use your brain from anywhere over MCP](docs/guides/remote-mcp.md)**. **Say to your agent:** *\"use my brain over mcp\"* — *\"put my brain on tailscale\"*.\n3. **Connect my existing hosted brain.** Follow **[hosted harness access](docs/guides/hosted-harness-access.md)** to choose native OAuth or a private machine connection. For dashboard login, clients, and permissions, use **[MCP administration](docs/mcp/ADMIN.md)** with the server's separate owner credential. Delegation is an explicit choice.\n\nGrok **Bot** and Grok **Build** are different products. Muse's personal agent and **Muse Code** are different products too. Muse already has native editable memory; GBrain adds an explicit, portable record with provenance and shared access. See each guide's dated evidence and remaining verification steps.\n\nI'm Garry Tan, President and CEO of Y Combinator. I built GBrain to run my own AI agents. It's the production brain behind my OpenClaw and Hermes deployments: **155,795 pages, 24,589 people, 5,340 companies**, 66 cron jobs running autonomously. My agent ingests meetings, emails, tweets, voice calls, and original ideas while I sleep. It enriches every person and company it encounters. It fixes its own citations and consolidates memory overnight. I wake up smarter than when I went to bed — and so will you.\n\n**It works as a company brain too.** Authenticated remote clients are constrained by source and operation grants plus visibility filters. Local files and shared database credentials are a different trust boundary: sources alone do not isolate those callers. The authorization tests exercise specific access paths, not a universal no-leak guarantee. Read the [sharing boundaries](docs/architecture/brains-and-sources.md#what-confines-remote-callers-and-what-does-not) and [company-brain tutorial](docs/tutorials/company-brain.md) before setting up shared access.\n\nAlongside keyword and semantic retrieval, GBrain offers two optional ways to use your stored knowledge:\n\n- **A synthesis layer that gives you the actual answer.** Synthesized, well-cited prose across people, companies, deals, and ideas. Not \"here are 10 chunks that mention your query\"; an actual answer with citations and an explicit note on what the brain doesn't know yet. The gap analysis is the part that changes how you use the brain.\n- **A typed knowledge graph.** Trusted local page writes extract supported references without LLM calls when auto-linking is enabled. Remote `put_page` edges arrive later, via sweeps, maintenance or `add_link`. Ask \"who works at acme-example?\": walks are breadth-first, milliseconds on dense clusters ([how](docs/architecture/RETRIEVAL.md#breadth-first-graph-walks)). On BrainBench relationship questions, relationship retrieval lifts production **R@5 from 0.6626 to 0.7241** ([benchmark](docs/architecture/RETRIEVAL.md#the-benchmark)); 0.9791 is the `graph-oracle-parse` upper bound, not a product score.\n\nThe point of building a 150K-page br",
+            "sources": [
+              {
+                "captured_at": "2026-11-09T19:51:38Z",
+                "description": "Garry's Opinionated OpenClaw/Hermes Agent Brain",
+                "full_name": "garrytan/gbrain",
+                "language": "TypeScript",
+                "trending_stars_period": 215,
+                "trending_total_forks": null,
+                "trending_total_stars": 32057,
+                "type": "trending_daily"
+              }
+            ],
+            "stars": 32057,
+            "topics": [],
+            "updated_at": "2026-11-09T19:50:46Z"
+          },
+          "llm_used": true,
+          "metric_captured_at": "2026-11-09T19:51:38Z",
+          "period": "GitHub Trending: максимум наблюдавшихся звёзд за день",
+          "rank": 1,
+          "source_kind": "trending_daily",
+          "total": 9,
+          "trending_source": true
+        },
+        {
+          "baseline": null,
+          "delta": 31,
+          "description": "HA‑MCP — сервер‑интеграция, позволяющая управлять конфигурацией Home Assistant с помощью крупных языковых моделей, таких как Claude и ChatGPT. После установки через HACS или встроенный Маркетплейс HA‑MCP работает «in‑process», то есть запускается внутри самого Home Assistant и поддерживает все типы установок (OS, Supervised, Container, Core) без необходимости отдельного контейнера. Пользователь задаёт токен администратора или отдельный аккаунт‑службу, после чего AI‑клиенты могут отправлять запросы на изменение YAML‑конфигураций, создание автоматизаций или настройку интеграций, а сервер применяет их напрямую в системе. Среди ключевых возможностей — автоматическое генерирование конфигурационных фрагментов по естественному запросу, безопасный режим доступа через «Secret URL» или локальную сеть, а также поддержка нескольких AI‑провайдеров без изменения кода. Пример применения: пользователь описывает голосом «включи свет в гостиной, когда солнце заходит», AI‑модель формирует соответствующую автоматизацию, HA‑MCP записывает её в `automations.yaml` и перезапускает Home Assistant, обеспечивая мгновенный отклик без ручного редактирования файлов. Требования включают Home Assistant 2026.8 или новее и Python‑версию, указанную в `pyproject.toml`; при обновлении до версии 7.3.0 функция `ha_config_set_yaml` была перенесена в бета‑раздел, что может потребовать адаптации скриптов, использующих её.",
+          "evidence_kind": "provider_selected_exact_readme_quote",
+          "evidence_quote": "> **Breaking change (v7.3.0):** `ha_config_set_yaml` has been moved to [beta](docs/beta.md).",
+          "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+          "full_name": "homeassistant-ai/ha-mcp",
+          "joke": "AI‑домофон: «Кто там?», а Home Assistant отвечает «Это я, ваш умный свет».",
+          "latest": {
+            "captured_at": "2026-11-09T19:51:38Z",
+            "created_at": "2025-09-14T13:23:45Z",
+            "default_branch": "master",
+            "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
+            "forks": 285,
+            "full_name": "homeassistant-ai/ha-mcp",
+            "html_url": "https://github.com/homeassistant-ai/ha-mcp",
+            "language": "Python",
+            "license": "MIT",
+            "observation": {
+              "first_seen": "2026-11-09T19:51:38Z",
+              "last_seen": "2026-11-09T19:51:38Z",
+              "observations": 1
+            },
+            "open_issues": 26,
+            "pushed_at": "2026-11-09T19:09:22Z",
+            "readme_excerpt": "> **Breaking change (v7.3.0):** `ha_config_set_yaml` has been moved to [beta](docs/beta.md).\n\n<div align=\"center\">\n  <img src=\"https://raw.githubusercontent.com/homeassistant-ai/ha-mcp/master/docs/img/ha-mcp-logo.png\" alt=\"Home Assistant MCP Server Logo\" width=\"300\"/>\n\n  # HA-MCP — Manage Home Assistant with AI\n\n  <!-- mcp-name: io.github.homeassistant-ai/ha-mcp -->\n\n  <p align=\"center\">\n    <img src=\"https://img.shields.io/badge/tools-87-blue\" alt=\"87 Tools\">\n    <a href=\"https://github.com/homeassistant-ai/ha-mcp/releases\"><img src=\"https://img.shields.io/github/v/release/homeassistant-ai/ha-mcp\" alt=\"Release\"></a>\n    <a href=\"https://github.com/homeassistant-ai/ha-mcp/actions/workflows/e2e-tests.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/homeassistant-ai/ha-mcp/e2e-tests.yml?branch=master&label=E2E%20Tests\" alt=\"E2E Tests\"></a>\n    <a href=\"LICENSE.md\"><img src=\"https://img.shields.io/github/license/homeassistant-ai/ha-mcp.svg\" alt=\"License\"></a>\n    <br>\n    <a href=\"https://github.com/homeassistant-ai/ha-mcp/commits/master\"><img src=\"https://img.shields.io/github/commit-activity/m/homeassistant-ai/ha-mcp.svg\" alt=\"Activity\"></a>\n    <a href=\"https://github.com/jlowin/fastmcp\"><img src=\"https://img.shields.io/badge/Built%20with-FastMCP-purple\" alt=\"Built with FastMCP\"></a>\n    <img src=\"https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Fhomeassistant-ai%2Fha-mcp%2Fmaster%2Fpyproject.toml\" alt=\"Python Version\">\n    <a href=\"https://github.com/sponsors/julienld\"><img src=\"https://img.shields.io/badge/GitHub_Sponsors-☕-blueviolet\" alt=\"GitHub Sponsors\"></a>\n    <a href=\"https://homeassistant-ai.github.io/ha-mcp/\"><img src=\"https://img.shields.io/badge/Website-docs-teal\" alt=\"Website\"></a>\n  </p>\n\n  <p align=\"center\">\n    <em>Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.</em>\n  </p>\n</div>\n\n---\n\n![Demo with Claude Desktop](https://raw.githubusercontent.com/homeassistant-ai/ha-mcp/master/docs/img/demo.webp)\n\n---\n\n## 🚀 Get Started\n\nThe recommended way to run ha-mcp is the **HA-MCP integration**. It installs into Home Assistant through HACS (the built-in Marketplace on Home Assistant 2026.11+), runs the full server **in-process**, and works on **every** Home Assistant installation type — Home Assistant OS, Supervised, Container, and Core — with full feature parity. It is the easiest setup in every case: setup asks for an administrator access token and how clients may connect.\n\n**Add it to Home Assistant via HACS or, on Home Assistant 2026.11+, the Marketplace (the preferred install):**\n\n[![Add HA-MCP to HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=homeassistant-ai&repository=ha-mcp&category=integration)\n\n**Quick start:**\n\n> The setup below is for version 9.0.0 (October 28, 2026) and later; earlier versions show a shorter setup form without the administrator account step.\n\n1. Install the **HA-MCP integration** (requires **Home Assistant 2026.8.0 or newer**; see [compatibility details](docs/in-process-server.md#requirements)). On **Home Assistant 2026.8–2026.10**, open HACS, search for **HA-MCP**, then **Download**.\n   On **Home Assistant 2026.11 or newer**, open **Settings → Marketplace**, accept its first-run warning, and search for **HA-MCP**, then **Install**. HA-MCP is in the default catalog, so installing it and receiving its updates do not require connecting GitHub or adding a custom repository. The badge above also opens its catalog page.\n   Already installed from the earlier `homeassistant-ai/ha-mcp-integration` repository? It keeps receiving the same releases. On the Marketplace, keep GitHub connected for its background checks on that custom repository.\n   Older installed releases may still appear as **HA-MCP Custom Component**; searching for **HA-MCP** matches both names.\n2. **Restart Home Assistant.**\n3. Decide which administrator account the server acts as. Either create a long-lived access token on your own account (your profile → **Security** → **Long-lived access tokens** → **Create token**; it works from anywhere if it leaks, and the server's changes show under your name), or, safer, create an account just for HA-MCP under **Settings → People → Add person** with **Allow login**, **Local access only** and **Administrator** on. Never use your own login for the second option.\n4. Go to **Settings → Devices & Services → Add Integration**, search for **HA-MCP** and choose **HA-MCP Server**. Paste your token, or enter the user name and password of the account you made for HA-MCP (HA-MCP creates its token), pick how clients may connect — **Remote access through Home Assistant** (start with **Secret URL**, the simplest; **Home Assistant sign-in** adds a login) and/or **Network access: Local network** — then click **Submit**. Both start disabled, so a client on another device needs one of them.\n5. Copy the ",
+            "sources": [
+              {
+                "captured_at": "2026-11-09T19:51:38Z",
+                "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
+                "full_name": "homeassistant-ai/ha-mcp",
+                "language": "Python",
+                "trending_stars_period": 31,
+                "trending_total_forks": null,
+                "trending_total_stars": 5809,
+                "type": "trending_daily"
+              }
+            ],
+            "stars": 5809,
+            "topics": [
+              "ai",
+              "claude",
+              "hacs",
+              "home-assistant",
+              "home-automation",
+              "llm",
+              "mcp",
+              "model-context-protocol"
+            ],
+            "updated_at": "2026-11-09T19:50:42Z"
+          },
+          "llm_used": true,
+          "metric_captured_at": "2026-11-09T19:51:38Z",
+          "period": "GitHub Trending: максимум наблюдавшихся звёзд за день",
+          "rank": 2,
+          "source_kind": "trending_daily",
+          "total": 9,
+          "trending_source": true
+        },
+        {
+          "baseline": null,
+          "delta": 1766,
+          "description": "Проект — набор готовых «навыков» для AI‑агентов и чат‑ботов, каждый из которых оформлен в виде отдельного каталога с файлом `SKILL.md`. Файл содержит пошаговые инструкции, которые агент может интерпретировать и выполнять, не требуя дополнительного кода. В репозитории уже присутствует, например, навык `socratic-tutor`, превращающий любую большую языковую модель в строгого репетитора: он проводит диагностический тест, строит карту навыков с уровнями от 0 до 5, задаёт по одному вопросу, планирует интервальные повторения и в конце выдаёт итоговую оценку. Чтобы задействовать навык, достаточно скопировать его каталог в папку «skills» у агента, поддерживающего формат `SKILL.md`, и попросить «teach me X», либо вставить содержимое `SKILL.md` в системный запрос у обычного чат‑бота. Такой подход позволяет быстро расширять функциональность существующих агентов без изменения их кода, а также использовать готовые сценарии в простых чат‑интерфейсах. Ограничения: навык работает только при наличии у агента поддержки формата `SKILL.md`; без него требуется ручное копирование текста в запрос, а сложные интерактивные сценарии могут требовать дополнительной логики со стороны модели.",
+          "evidence_kind": "provider_selected_exact_readme_quote",
+          "evidence_quote": "A collection of skills for AI agents and chatbots.\nEach skill is a directory containing a `SKILL.md` file\nwith instructions for the agent.",
+          "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+          "full_name": "janestreet/agent_skills",
+          "joke": "",
+          "latest": {
+            "captured_at": "2026-11-09T19:51:38Z",
+            "created_at": "2026-11-03T16:50:21Z",
+            "default_branch": "master",
+            "description": "Agent skills",
+            "forks": 96,
+            "full_name": "janestreet/agent_skills",
+            "html_url": "https://github.com/janestreet/agent_skills",
+            "language": null,
+            "license": "MIT",
+            "observation": {
+              "first_seen": "2026-11-09T06:35:42Z",
+              "last_seen": "2026-11-09T19:51:38Z",
+              "observations": 2
+            },
+            "open_issues": 1,
+            "pushed_at": "2026-11-03T18:14:13Z",
+            "readme_excerpt": "# Agent skills from Jane Street\n\nA collection of skills for AI agents and chatbots.\nEach skill is a directory containing a `SKILL.md` file\nwith instructions for the agent.\n\n## Skills\n\n- **socratic-tutor** — turns an LLM into a strict personal tutor that teaches a\n  topic of your choice using the Socratic method: a diagnostic, a skill map with\n  levels 0-5, one question at a time, spaced review, and a final assessment.\n\n## How to use\n\nWith a coding agent that supports the common `SKILL.md` format, copy the skill\ndirectory into your agent's skills folder, then ask the agent to use it\n(\"teach me X\").\n\nWith a plain chatbot, paste the body of the skill's `SKILL.md` into the chat\n(or into a custom/system prompt), followed by what you want it to do.\n",
+            "sources": [
+              {
+                "captured_at": "2026-11-09T19:51:38Z",
+                "created_at": "2026-11-03T16:50:21Z",
+                "description": "Agent skills",
+                "html_url": "https://github.com/janestreet/agent_skills",
+                "stars": 1766,
+                "type": "new_repo_search"
+              }
+            ],
+            "stars": 1766,
+            "topics": [],
+            "updated_at": "2026-11-09T19:50:48Z"
+          },
+          "llm_used": true,
+          "metric_captured_at": "2026-11-09T19:51:38Z",
+          "period": "новый репозиторий: звёзды на момент среза",
+          "rank": 3,
+          "source_kind": "new_repo",
+          "total": 9,
+          "trending_source": false
+        },
+        {
+          "baseline": null,
+          "delta": 1337,
+          "description": "Проект — небольшая bash‑утилита, которая периодически измеряет объём свободной оперативной памяти на Linux‑машине и при превышении заданного порога отправляет одно письмо в день на указанный адрес. Скрипт использует данные из `/proc/meminfo`, рассчитывая использованную память как `MemTotal ‑ MemAvailable`, при этом учитывает page‑cache как потенциально освобождаемый ресурс. При отсутствии поля `MemAvailable` (ядра < 3.14) он приближённо оценивает доступную память через свободную часть и кэш, что делает его совместимым со старыми системами. Встроенный механизм ротации тем письма (8 тем, 10 сообщений, 6 подписей) предотвращает однообразие, а журнал в CSV фиксирует каждую отправку для последующего аудита. Пользователь настраивает получателя, отправителя и порог (по умолчанию 10 % свободной RAM) через переменные окружения, а запуск скрипта можно автоматизировать через cron, где он будет проверять состояние каждые пять минут, но отправлять письмо не чаще одного раза в сутки. Требования к окружению минимальны: Linux, bash и любой из `sendmail`, `msmtp` или `mail`. Таким образом, проект позволяет системным администраторам автоматически информировать заинтересованных лиц о «потерянных» гигабайтах памяти, превращая пассивный ресурс в активный сигнал для дальнейших действий.",
+          "evidence_kind": "provider_selected_exact_readme_quote",
+          "evidence_quote": "**A bash script that writes to Sam Altman once a day to report the RAM he missed.**",
+          "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+          "full_name": "IainKay/ram-altman",
+          "joke": "Сам Алтман получит уведомление, пока вы ещё решаете, что делать с 8 ГБ свободной памяти.",
+          "latest": {
+            "captured_at": "2026-11-09T19:51:38Z",
+            "created_at": "2026-11-05T16:16:41Z",
+            "default_branch": "main",
+            "description": "Monitors your RAM and reports any \"quite terrible\" unused capacity directly to the CEO of OpenAI.",
+            "forks": 34,
+            "full_name": "IainKay/ram-altman",
+            "html_url": "https://github.com/IainKay/ram-altman",
+            "language": "Shell",
+            "license": "Unlicense",
+            "observation": {
+              "first_seen": "2026-11-08T22:08:45Z",
+              "last_seen": "2026-11-09T19:51:38Z",
+              "observations": 3
+            },
+            "open_issues": 17,
+            "pushed_at": "2026-11-06T15:58:11Z",
+            "readme_excerpt": "# Ram-Altman\n\n**A bash script that writes to Sam Altman once a day to report the RAM he missed.**\n\nRead the sample emails at **[ram-altman.lol](https://ram-altman.lol)**, no install needed.\n\n[![Website: ram-altman.lol](https://img.shields.io/badge/website-ram--altman.lol-0f5a43)](https://ram-altman.lol)\n![Global DRAM allocation: quite terrible](https://img.shields.io/badge/global%20DRAM%20allocation-quite%20terrible-red)\n![Utilization: maybe 5%](https://img.shields.io/badge/utilization-maybe%205%25-orange)\n![Emails: 1 per day](https://img.shields.io/badge/emails-1%20per%20day-blue)\n![Written in Bash, not Electron](https://img.shields.io/badge/written%20in-bash%2C%20not%20electron-brightgreen)\n\nThere is RAM in your computer. Right now. Just sitting there, in a *personal* computer, being personal.\n\nYou may have thought of this as \"a computer working normally\". On a recent episode of [Cheeky Pint](https://gizmodo.com/sam-altman-youre-completely-right-about-ram-im-sorry-for-the-confusion-heres-what-happened-2000835208), the CEO of OpenAI offered another view:\n\n> \"From a global allocation perspective, actually, it's quite terrible to have everybody have a bunch of the world's limited supply of DRAM sitting in their own computer\"\n>\n> — Sam Altman\n\nThat RAM, he added, is [\"being used maybe 5% of the time\"](https://www.xda-developers.com/sam-altman-says-its-quite-terrible-that-people-have-ram-in-their-pcs-during-a-shortage/).\n\nWhich raised an obvious question for a certain kind of person: *surely someone should be monitoring this?*\n\nSo we wrote a script. If your machine has more than 10% of its RAM available, it sends one email a day to let Sam know. It seemed only fair. He can't fix the problem if nobody tells him where the RAM is.\n\n## Features\n\n- Tracks total, used and available RAM, plus your standing with the global allocation authorities\n- Handles page cache correctly, which already puts it ahead of most arguments about RAM\n- Sends at most one email per day, because we're hoarders, not animals\n- Rotates 8 subject lines, 10 messages and 6 sign-offs, so the joke gets old at a carefully managed pace\n- Logs every sample to CSV for when the auditors arrive\n- Ships with 14 tests, more than the DRAM market has had sensible outcomes\n- Is written in bash, as an Electron version would have solved the problem by using all the RAM\n\n## A sample of today's correspondence\n\n```text\nSubject: You missed a spot\n\nHi Sam,\n\nPlease don't be alarmed, but there is 8.6 GiB of RAM on my desk that isn't in\na data centre. That's 56.2% of what's installed here, and as far as I can tell\nit has no plans today.\n\nHoarding responsibly,\nA concerned RAM owner\n\n--\nSent automatically, at most once a day, by a small script on one PC.\nReply if you'd like it to stop.\n```\n\nThe figures are real. They come from your machine. That's the worrying part.\n\n## What counts as \"used\"?\n\n```text\nused = MemTotal - MemAvailable\n```\n\n`MemAvailable` is the kernel's own estimate of how much memory programs could claim without swapping. Free RAM counts as available. So does cache the kernel can reclaim. tmpfs and shared memory don't, because they can't simply be handed back.\n\nEvery sysadmin has spent years explaining that [Linux didn't eat your RAM](https://www.linuxatemyram.com/) and that free RAM is wasted RAM. It took decades for someone important to agree with the second part, and he'd like it shipped to him.\n\nStrictly speaking, the page cache is doing useful work, so counting it as available is a generous concession to the other side. Think of it as a plea bargain.\n\nOn kernels older than 3.14, which have no `MemAvailable`, the script estimates it from free memory plus reclaimable cache. If you're on one of those, your RAM may be safe. Nobody's coming for that.\n\n## Installation\n\nYou'll need Linux, bash, and a working `sendmail`, `msmtp` or `mail` command. Your RAM is assumed.\n\n```bash\ngit clone https://github.com/IainKay/ram-altman.git\ncd ram-altman\nchmod +x ram-altman.sh test-ram-altman.sh\n\n./ram-altman.sh --status    # see the evidence against you\n./ram-altman.sh --dry-run   # preview an email without sending it\n```\n\nExample output, from a simulated machine that has confessed to everything:\n\n```text\nTotal:      15.3 GiB\nUsed:       6.7 GiB\nAvailable:  8.6 GiB (56.2%)\n  Free:     0.3 GiB\n  Cache:    8.2 GiB\n```\n\nTo run it for real, add this to your crontab with `crontab -e`:\n\n```cron\nRAM_ALTMAN_TO=recipient@example.com\nRAM_ALTMAN_FROM=you@example.com\nRAM_ALTMAN_FROM_NAME=Your Name\n\n*/5 * * * * /path/to/ram-altman.sh\n```\n\nIt samples every five minutes and emails at most once a day. If a send fails, it tries again on the next run, because this message matters.\n\n| Setting | What it does | Default |\n| --- | --- | --- |\n| `RAM_ALTMAN_TO` | Who receives the bad news | Required |\n| `RAM_ALTMAN_FROM` | A real address you can send from | Required |\n| `RAM_ALTMAN_FROM_NAME` | Your name, or your nom de RAM | Optional |\n| `RAM_ALTMAN_THRESHOLD` | Email when available RAM is ab",
+            "sources": [
+              {
+                "captured_at": "2026-11-09T19:51:38Z",
+                "created_at": "2026-11-05T16:16:41Z",
+                "description": "Monitors your RAM and reports any \"quite terrible\" unused capacity directly to the CEO of OpenAI.",
+                "html_url": "https://github.com/IainKay/ram-altman",
+                "stars": 1337,
+                "type": "new_repo_search"
+              }
+            ],
+            "stars": 1337,
+            "topics": [
+              "bash",
+              "cron",
+              "dram",
+              "email",
+              "humor",
+              "linux",
+              "meminfo",
+              "memory",
+              "monitoring",
+              "openai",
+              "parody",
+              "ram",
+              "ram-altman",
+              "sam-altman",
+              "sam-altman-openai",
+              "shell-script",
+              "sysadmin"
+            ],
+            "updated_at": "2026-11-09T19:49:00Z"
+          },
+          "llm_used": true,
+          "metric_captured_at": "2026-11-09T19:51:38Z",
+          "period": "новый репозиторий: звёзды на момент среза",
+          "rank": 4,
+          "source_kind": "new_repo",
+          "total": 9,
+          "trending_source": false
+        },
+        {
+          "baseline": null,
+          "delta": 1129,
+          "description": "CHIMERA — физико‑моделирующий синтезатор голоса, работающий в браузере через WebAssembly. Звук генерируется не из готовых сэмплов, а из симуляции дыхательных путей: лёгкие, голосовые связки (или сиринкс), разветвлённый голосовой тракт, губы и нос, что позволяет воспроизводить любые типы голоса – от человеческого до птицы, тюленя, аллигатора и слона. Движок написан на Rust, компилируется в wasm‑модуль и исполняется в AudioWorklet, обеспечивая детерминированную работу в реальном времени и возможность запуска того же кода нативно для тестов и CLI‑утилиты.\n\nПользователь может управлять синтезом несколькими способами: интерактивно перетаскивать язык, губы и челюсть в 3‑D‑модели головы, использовать клавиатуру, MIDI‑контроллер или предустановленные «вокальные пад»; вводить английский текст (CMUdict + fallback) или IPA‑транскрипцию, которые преобразуются в жесты и просодию; создавать песни через «piano roll» с отдельными нотами и текстом, где согласные попадают перед ударом; а также программировать битбокс‑ритмы, где каждый удар – отдельный артикуляционный жест. В режиме «Duet» два 3‑D‑голоса могут воспроизводить заранее записанную композицию.\n\nДля разработки требуются Rust с целевым набором wasm32‑unknown‑unknown и пакетный менеджер Bun. Команды `bun install` и `bun run dev` собирают wasm‑модуль и запускают Vite‑сервер, а `bun run test` выполняет тесты как в браузере, так и в Rust‑тестах. Открывать приложение необходимо в безопасном контексте (localhost или HTTPS). CLI‑утилита `chimera-cli` позволяет выполнять офлайн‑рендеринг речи, текста, песен, нот и битбокса, а также диагностировать параметры голоса (утечка носа, форманты, полоса пропускания, высота тона) и сравнивать результаты с реальными данными из наборов Children’s Song Dataset и TSP. Документация включает подробные описания акустической модели, архитектуры движка, UI‑редизайна и процедур настройки голоса. Лицензия проекта – MIT, при этом сторонние файлы (CMUdict, шрифты) сохраняют свои оригинальные лицензии.",
+          "evidence_kind": "provider_selected_exact_readme_quote",
+          "evidence_quote": "A physical-modeling voice synthesizer in the browser. Every sound comes from a simulated\nairway (lungs, vocal folds or syrinx, a branched vocal tract, lips, nose), not from samples",
+          "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+          "full_name": "jamesondh/chimera-vocal-synth",
+          "joke": "",
+          "latest": {
+            "captured_at": "2026-11-09T19:51:38Z",
+            "created_at": "2026-11-05T19:10:42Z",
+            "default_branch": "main",
+            "description": "the ultimate vocal synthesizer - sing, speak, beatbox, and more",
+            "forks": 124,
+            "full_name": "jamesondh/chimera-vocal-synth",
+            "html_url": "https://github.com/jamesondh/chimera-vocal-synth",
+            "language": "Rust",
+            "license": "MIT",
+            "observation": {
+              "first_seen": "2026-11-09T06:35:42Z",
+              "last_seen": "2026-11-09T19:51:38Z",
+              "observations": 2
+            },
+            "open_issues": 21,
+            "pushed_at": "2026-11-09T15:47:15Z",
+            "readme_excerpt": "# CHIMERA\n\nA physical-modeling voice synthesizer in the browser. Every sound comes from a simulated\nairway (lungs, vocal folds or syrinx, a branched vocal tract, lips, nose), not from samples.\nThe engine is Rust, compiled to WebAssembly for an AudioWorklet; the same code runs natively\nfor tests and the `chimera` CLI.\n\n## What it does\n\n- **Play**: drag the tongue, lips and jaw in a live cutaway of the head; vowel pad, encoders,\n  computer keyboard and Web MIDI.\n- **Speak**: English text (CMUdict with a letter-to-sound fallback) or IPA, turned into\n  gestures and prosody, with the gestural score and a consonant chart on screen.\n- **Sing**: piano roll with lyrics per note; consonants land before the beat.\n- **Beatbox**: pads and a step sequencer, every drum an articulatory gesture.\n- **Bestiary**: songbird (two-voice syrinx), seal, alligator and elephant.\n- **Duet** (`?show=<id>`): two 3D heads replay a pre-rendered song.\n\nMale, female and child bodies blend continuously. Everything on screen animates from live\nengine state: pressure in the airway, airflow, the vocal folds, spectra and formants.\n\n## Run it\n\nNeeds Rust with the `wasm32-unknown-unknown` target, and Bun.\n\n```sh\nbun install\nbun run dev        # builds the wasm, then Vite on 127.0.0.1:5317\nbun run test       # wasm build, cargo test --workspace, bun test tests\n```\n\nThe AudioWorklet needs a secure context, so open it on localhost or over HTTPS (for example\n`tailscale serve`). Vercel builds it with `vercel.json`.\n\nOffline renders and measurement:\n\n```sh\ncargo run --release -p chimera-cli -- render speech|text|song|notes|beatbox|creature|vowels …\ncargo run --release -p chimera-cli -- diagnose       # nasal leakage, formants, bandwidths, pitch\ncargo run --release -p chimera-cli -- compare csd    # against a real singer (docs/csd-comparison.md)\ncargo run --release -p chimera-cli -- compare tsp    # against 23 real speakers (docs/speech-comparison.md)\nbun tools/spectrogram.ts in.wav out.png\nbun tools/musicxml-to-notes.ts score.mxl P1 --out p1.json   # a score's part → `render notes` melody\n```\n\n## Docs\n\n- [docs/architecture.md](docs/architecture.md): the acoustic model (FDTD airway, sources,\n  anatomy, gestures).\n- [docs/rust-engine.md](docs/rust-engine.md): the engine's real-time and determinism contract,\n  and the browser boundary.\n- [docs/ui-redesign.md](docs/ui-redesign.md) and [docs/mockups/](docs/mockups/): the vector\n  display look.\n- [docs/csd-comparison.md](docs/csd-comparison.md): scoring the voice against the Children's\n  Song Dataset.\n- [docs/speech-comparison.md](docs/speech-comparison.md): scoring the speech against real\n  speakers, phone by phone (the TSP speech database).\n- [docs/hill-climb/](docs/hill-climb/): the rules and log for tuning the voice one measured\n  step at a time.\n\nAgents: see [AGENTS.md](AGENTS.md).\n\n## License\n\n[MIT](LICENSE). Bundled third-party files keep their own licenses: the CMU Pronouncing\nDictionary ([public/data/CMUDICT-LICENSE.txt](public/data/CMUDICT-LICENSE.txt)) and the fonts\n([public/fonts/](public/fonts/)).\n",
+            "sources": [
+              {
+                "captured_at": "2026-11-09T19:51:38Z",
+                "created_at": "2026-11-05T19:10:42Z",
+                "description": "the ultimate vocal synthesizer - sing, speak, beatbox, and more",
+                "html_url": "https://github.com/jamesondh/chimera-vocal-synth",
+                "stars": 1129,
+                "type": "new_repo_search"
+              }
+            ],
+            "stars": 1129,
+            "topics": [],
+            "updated_at": "2026-11-09T19:46:03Z"
+          },
+          "llm_used": true,
+          "metric_captured_at": "2026-11-09T19:51:38Z",
+          "period": "новый репозиторий: звёзды на момент среза",
+          "rank": 5,
+          "source_kind": "new_repo",
+          "total": 9,
+          "trending_source": false
+        },
+        {
+          "baseline": null,
+          "delta": 606,
+          "description": "Помощник для ответов в WeChat и KakaoTalk на Windows. Он считывает открытое окно чата через локальный OCR: RapidOCR для WeChat и Windows.Media.Ocr для KakaoTalk. Распознанный текст передаётся внешним сервисам: Jev оценивает намерение и напряжённость разговора, а отдельная языковая модель готовит три варианта ответа. Кандидаты ранжируются с помощью Jev; выбранный текст можно вставить в поле ввода, отправляет его пользователь.\n\nИстория, контекст и варианты ответа разделены по беседам. В групповых чатах можно выбрать адресата. Есть просмотр распознанного текста, отладочный экран и выключатель захвата. Модели вызываются при новом сообщении собеседника либо смене адресата в группе. Снимки окна обрабатываются в памяти и не загружаются на сервер; текст чата уходит выбранным API. При запуске также возможен отключаемый GET к GitHub Releases для проверки версии.\n\nТребуются Windows 10 1903+ или 11, открытое и не свёрнутое окно чата и два API-ключа: для Jev через OpenRouter или TypeSafe и для генерации, по умолчанию DeepSeek. Готовая сборка не требует Python. Ключи сохраняются в пользовательских переменных среды Windows через реестр.",
+          "evidence_kind": "provider_selected_exact_readme_quote",
+          "evidence_quote": "聊天窗口旁挂的回复辅助：本地 OCR 读屏上的对话 → Jev 判断意图/情绪 → 给出 3 条候选回复 →\n一键填入输入框。**发送永远手动，程序不替你按发送。**",
+          "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+          "full_name": "jev-chat/jev-chat-windows",
+          "joke": "",
+          "latest": {
+            "captured_at": "2026-09-27T13:02:48Z",
+            "created_at": "2026-09-21T14:37:14Z",
+            "default_branch": "main",
+            "description": "JevChat-Windows：聊天窗口旁挂的回复辅助。窗口截图 + 本地离线 OCR 读对方消息 → Jev 判断意图 → 3 条候选一键填入，发送永远手动",
+            "forks": 132,
+            "full_name": "jev-chat/jev-chat-windows",
+            "html_url": "https://github.com/jev-chat/jev-chat-windows",
+            "language": "Python",
+            "license": null,
+            "observation": {
+              "first_seen": "2026-09-26T18:56:59Z",
+              "last_seen": "2026-09-27T13:02:48Z",
+              "observations": 2
+            },
+            "open_issues": null,
+            "pushed_at": null,
+            "readme_excerpt": "# JevChat-Windows\n\n本仓库只维护当前这一套识别。有能力的人可以 Fork 后自行适配别的聊天窗口，作者不提供这项适配，也不对 Fork 出去的改动负责。\n\n## 公众号\n\n反馈和合作走公众号「恸码奇点」。扫左边的码，或者搜一搜这个名字。\n\n<p align=\"center\"><img src=\"docs/wechat-mp.png\" width=\"640\" alt=\"公众号：恸码奇点\"></p>\n\n聊天窗口旁挂的回复辅助：本地 OCR 读屏上的对话 → Jev 判断意图/情绪 → 给出 3 条候选回复 →\n一键填入输入框。**发送永远手动，程序不替你按发送。**\n\n判断内核来自安卓版 [Finderchangchang/jev-chat-JARVIS](https://github.com/Finderchangchang/jev-chat-JARVIS)，\n这里把采集换成了 Windows 端的窗口截图 + 离线 OCR。\n\n## 下载即用（推荐）\n\n**普通使用直接下载，不用装 Python、不用碰源码。** 后面的「源码运行」是给开发者的。\n\n👉 **[下载最新版](https://github.com/jev-chat/jev-chat-windows/releases/latest)**\n\n1. 在 Releases 页下载 `jev-chat-windows-vX.Y.Z.zip`（约 146 MB）\n2. 解压到一个固定目录（整个文件夹一起，exe 要用旁边那堆文件）\n3. 双击 `jev-chat-windows.exe`\n\n要求：Windows 10 1903+ / 11，聊天窗口开着，两个 API key（判断一个、起草一个，见下）。\n\n首次启动会弹设置页填这两个 key。key 写进 Windows 用户环境变量（注册表 `HKCU\\Environment`）——\n全程只有 `JEV_API_KEY` 和 `LLM_API_KEY` 这两个，不落任何文件；其余设置写在 exe 旁边的\n`config.json`，整个文件夹拷走设置也跟着走。\n\n> exe 没签名，SmartScreen 会拦一下：「更多信息」→「仍要运行」。介意就往下看「自己打包」，自己打的更踏实。\n\n## 使用说明\n\n**界面语言**\n\n设置页顶部可选择「简体中文 / 한국어」，选择后立即生效并自动保存，无需重启。\n切换语言会同步刷新主界面和调试窗口，保留正在填写的设置、聊天记录和回复候选。\n如果设置了 `JEVCHAT_LANG` 环境变量，下次启动仍以该变量指定的语言为准。\n\n**第一次启动**\n\n设置页的「模型」卡片分两节，各填一把 key：\n\n1. **判断 · Jev** —— 判断意图、紧张度，并给三条候选排序。来源选 **OpenRouter**（默认，key 在\n   [openrouter.ai](https://openrouter.ai/) 申请）或 **TypeSafe 直连**（key 在\n   [console.typesafe.ai](https://console.typesafe.ai/) 申请）。填的是哪家的 key 看你上面选了哪家。\n2. **起草 · 语言模型** —— 写那三条候选。默认 **DeepSeek 官网**直连，key 在\n   [platform.deepseek.com](https://platform.deepseek.com/) 申请（很便宜，起草一次几厘钱）。\n   换别家见下面的表，OpenAI / Anthropic / Gemini 三种接口都支持。\n3. 选「你们的关系」（恋人 / 朋友 / 同事 / 家人 / 自定义），保存。可以用了。\n\n两把 key 各管一节，互不相干；同一节里换来源要重填一次 key（只存这一把）。\n\n**为什么起草默认 DeepSeek 官网直连**\n\n起草是两次网络调用里重的那次。OpenRouter 在国外，从国内过去要等好几秒、还时不时抽风；\nDeepSeek 官方 API（`api.deepseek.com`）国内直连，起草基本就是一次 HTTP 请求的时间，体感差好几倍。\n所以起草默认就是它，不用改。\n\n判断那一步比起草轻得多，慢一点无所谓，默认走 OpenRouter 即可；嫌慢就把它也换成 TypeSafe 直连。\n两把 key 都只进注册表，不落文件。\n\n**日常怎么用**\n\n- 聊天窗口开着、别最小化（用别的窗口盖住没事），把要聊的会话点开\n- 对方来一条消息 → 悬浮窗几秒后给判断摘要 + 三条候选（带 Jev 给的胜出概率）\n- 点「填入」→ 文字进输入框 → **你自己看一眼、改一改、按发送**。程序永远不碰发送\n- 你切到哪个会话，悬浮窗就跟到哪个；群聊会带上发言人名，想指定回复给谁去设置里开「群聊指定回复对象」\n- 暂时不想让它读聊天：标题栏开关拨到「已暂停」\n\n**花多少钱**\n\n只有对方来新消息才调一次模型：一次起草（DeepSeek Flash）+ 一次 Jev 判断，十分钟没人说话就是十分钟零调用。\n思考模式默认关，别开——起草三句话用不上，慢好几倍还贵。\n\n## 支持的聊天软件\n\n| 软件 | OCR | 自己的气泡 | 窗口 |\n|---|---|---|---|\n| 微信 | RapidOCR（中英文模型） | 绿色 | 标题为「微信」的主窗口 |\n| KakaoTalk（韩国） | Windows.Media.Ocr（系统语言包，离线） | `#FEE500` | 一个对话一个窗口，主列表窗除外 |\n\nRapidOCR 自带的只有中英文模型，韩文整段都是乱码：同一个 KakaoTalk 窗口实测 8 条气泡 0 条认对，\n一帧 2.0s，而且全被判成对方发的（气泡颜色规则只认微信绿）。韩文界面改走 Windows 自带 OCR 之后\n9 条全认对、自己/对方分得清，一帧 0.20s。做法和实测见 [docs/KOREAN.md](docs/KOREAN.md)；\n新增一个软件只要在 `app/chatapps.py` 里加一行。\n\n## 截图\n\n<table>\n<tr>\n<td width=\"33%\"><img src=\"docs/ui_home.png\" alt=\"回复建议\"></td>\n<td width=\"33%\"><img src=\"docs/ui_settings.png\" alt=\"设置\"></td>\n<td width=\"33%\"><img src=\"docs/ui_toggle_off.png\" alt=\"采集暂停\"></td>\n</tr>\n<tr>\n<td align=\"center\">回复建议：「当前会话」跟随当前窗口、群聊多一行「回复对象」，3 条候选带 Jev 概率百分比，推荐那条置顶</td>\n<td align=\"center\">设置：关系背景、说话风格、参考上下文条数、群聊指定回复对象（往下还有「模型」卡片）</td>\n<td align=\"center\">采集暂停：不再读取聊天，已有候选照样能填入、能复制</td>\n</tr>\n</table>\n\n## 功能\n\n- **跟着当前会话走**：会话名从面板头部 OCR 出来，记录、上下文、候选都按会话分开存；也可以自己\n  在下拉框里选另一个会话，翻它的记录和上次的建议（那会儿只能看不能填）。\n- **群聊**：每条消息前面的发言人名会一起喂给模型，所以它知道哪句是谁说的；打开「群聊指定回复对象」\n  还能选回复给谁，三条候选都按 TA 写，填入时可带「@名字 」前缀（纯文本）。\n- **3 条候选**：每条带 Jev 给的胜出概率百分比，按概率排序，推荐那条置顶并标「推荐回复」；\n  每条都有「填入」和复制按钮。\n- **判断摘要**：建议动作、可能意图、对方可能需要、紧张度 0–9。\n- **采集开关**：标题栏一拨就停，WGC 会话一起停掉（Win10 的黄框跟着消失），已有候选不受影响。\n- **实时聊天记录**：底部展开，看 OCR 到底读出了什么，认错了一眼就能发现。\n- **调试视图**（可选）：另开一个窗口，实时画出截到的画面和每个识别框——绿 = 我、蓝 = 对方、\n  灰 = 过滤掉的灰字、橙 = 当成发言人名、红 = 当成图片丢掉、黄 = 小字丢掉，外加消息区和头部的框、\n  OCR 耗时、这一帧读出来的每一行。识别不对时一眼看出是哪一步的锅。只在内存里画，不存图。\n- **两个模型都能换**：判断走 OpenRouter 或 TypeSafe 直连；起草有 12 家预设（默认 DeepSeek 官网），\n  OpenAI / Anthropic / Gemini 三种协议都支持，也能填自己的 Base URL。全程只要两把 key。\n- **思考模式开关**：默认关；开了模型先想再写，更斟酌但慢好几倍、贵一些。\n- **参考上下文条数**：3~30，默认 10，起草和判断都按它取最近 N 条。\n- **说话风格**：一句话描述自己的口吻，补在「照着你最近发的消息模仿」之上。\n- **响应式悬浮窗**：置顶、可拖可缩，最小 320×360，窄于 400 进紧凑模式。\n- **新版本提示**：启动时（可关）查一次 GitHub 最新版本号，有新版本会在标题栏下面出现一条提示，\n  点「去下载」跳转 Release 页。\n\n## 隐私与边界\n\n这是个人自用工具，下面几条是硬约束，代码里就是这么写的：\n\n- **只读自己电脑上、自己本来就有权查看的对话。** 不代替任何人查看别人的聊天。\n- **只截自己的聊天窗口 + 本地离线 OCR（RapidOCR）。** 不 hook、不注入、不读对方数据库、不解密、\n  不碰对方进程内存。\n- **截图只在内存里。** 捕获到的帧是 numpy 数组，全程不写磁盘、不进日志、不上传；主程序（`app/`、`core/`）\n  里没有 `.save()`。`probe/`、`tools/` 下的开发脚本（人工排查、预览界面用的）会把图存成文件，但这些\n  脚本不在发布包里，普通用户拿到的 exe 不含它们。\n- **调试视图也只在内存里画。** 那个窗口拿到的是子进程缩小后的同一份内存帧（走进程队列，不落盘），\n  画完就丢，不存图、不进日志、不上传；关掉开关子进程连帧都不发。\n- **绝不自动发送。** 只把文字粘进输入框就停手，不发回车、不点发送按钮。发不发、改不改，你来定。\n- **不碰钱。** 转账、红包、收款相关的界面元素一律不碰，起草的 system prompt 里也禁了这几个话题。\n- **只有对方的新消息到来（或你在群里换了回复对象）才调一次模型。** 静默期零调用——十分钟没人说话\n  就是十分钟零 token。\n- **API key 只进环境变量，而且全程只有两个。** `JEV_API_KEY`（判断）和 `LLM_API_KEY`（起草），\n  不管来源选哪家都是这两个槽。都写进注册表 `HKCU\\Environment`（跟 `setx` 同一个地方），任何文件里\n  都不出现 key，也绝不进日志（报错文本一律脱敏）。老版本按来源分开存的 `OPENROUTER_API_KEY` /\n  `DEEPSEEK_API_KEY` 仍然能读到，保存一次就迁到新名字上。\n- **启动时查一次版本号（可关）。** 只向 GitHub Releases API 发一个 GET，带的只有 UA 和当前版本号，\n  不夹带任何聊天内容；设置里「启动时检查更新」关掉就完全不发这个请求，源码直接跑（没有版本号）也\n  不会发。\n\n什么会出网：判断（`JEV_API_KEY`）去你选的 OpenRouter 或 TypeSafe 直连；起草（`LLM_API_KEY`）发给你\n在设置里选的那家接口（DeepSeek",
+            "sources": [
+              {
+                "captured_at": "2026-09-27T13:02:48Z",
+                "type": "new_repo_search"
+              }
+            ],
+            "stars": 606,
+            "topics": [
+              "chat-assistant",
+              "jev",
+              "llm",
+              "local-first",
+              "ocr",
+              "privacy",
+              "pyqt",
+              "python",
+              "wechat",
+              "windows"
+            ],
+            "updated_at": "2026-09-27T13:00:37Z"
+          },
+          "llm_used": true,
+          "metric_captured_at": "2026-09-27T13:02:48Z",
+          "period": "новый репозиторий: звёзды на момент среза",
+          "rank": 6,
+          "source_kind": "new_repo",
+          "total": 9,
+          "trending_source": false
+        },
+        {
+          "baseline": null,
+          "delta": 769,
+          "description": "Quiche — это библиотека, реализующая транспортный протокол QUIC и HTTP/3 в соответствии со спецификацией IETF. Она предоставляет низкоуровневый API, позволяющий приложению самостоятельно управлять ввод‑выводом (например, сокетами) и событийным циклом, а также настраивать параметры соединения, такие как версии протокола, ALPN, контроль потока и тайм‑ауты. Основные возможности включают создание конфигурационного объекта Config, которым можно задавать ограничения на количество потоков, объём данных и параметры TLS, а также использовать функции connect и accept для инициации клиентских и серверных соединений. После установки соединения приложение обрабатывает входящие пакеты через метод recv и формирует исходящие пакеты через соответствующие методы, что даёт полное управление над передачей данных. Quiche уже используется в продакшене: он обслуживает HTTP/3 на Edge‑сети Cloudflare, интегрирован в DNS‑резолвер Android и может быть подключён к curl для поддержки HTTP/3, что демонстрирует его готовность к реальным нагрузкам.",
+          "evidence_kind": "provider_selected_exact_readme_quote",
+          "evidence_quote": "[quiche] is an implementation of the QUIC transport protocol and HTTP/3 as\nspecified by the [IETF]. It provides a low level API for processing QUIC packets\nand handling connection state. The application is responsible for providing I/O\n(e.g. sockets handling) as well as an event loop with support for timers.",
+          "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+          "full_name": "cloudflare/quiche",
+          "joke": "",
+          "latest": {
+            "captured_at": "2026-09-28T20:25:11Z",
+            "created_at": "2018-09-29T18:22:05Z",
+            "default_branch": "master",
+            "description": "🥧 Savoury implementation of the QUIC transport protocol and HTTP/3",
+            "forks": 1152,
+            "full_name": "cloudflare/quiche",
+            "html_url": "https://github.com/cloudflare/quiche",
+            "language": "Rust",
+            "license": "BSD-2-Clause",
+            "observation": {
+              "first_seen": "2026-09-26T19:02:13Z",
+              "last_seen": "2026-09-28T20:25:11Z",
+              "observations": 3
+            },
+            "open_issues": 370,
+            "pushed_at": "2026-09-28T14:46:47Z",
+            "readme_excerpt": "![quiche](quiche.svg)\n\n[![crates.io](https://img.shields.io/crates/v/quiche.svg)](https://crates.io/crates/quiche)\n[![docs.rs](https://docs.rs/quiche/badge.svg)](https://docs.rs/quiche)\n[![license](https://img.shields.io/github/license/cloudflare/quiche.svg)](https://opensource.org/licenses/BSD-2-Clause)\n![build](https://img.shields.io/github/actions/workflow/status/cloudflare/quiche/stable.yml?branch=master)\n\n[quiche] is an implementation of the QUIC transport protocol and HTTP/3 as\nspecified by the [IETF]. It provides a low level API for processing QUIC packets\nand handling connection state. The application is responsible for providing I/O\n(e.g. sockets handling) as well as an event loop with support for timers.\n\nFor more information on how quiche came about and some insights into its design\nyou can read a [post] on Cloudflare's blog that goes into some more detail.\n\n[quiche]: https://docs.quic.tech/quiche/\n[ietf]: https://quicwg.org/\n[post]: https://blog.cloudflare.com/enjoy-a-slice-of-quic-and-rust/\n\nWho uses quiche?\n----------------\n\n### Cloudflare\n\nquiche powers Cloudflare edge network's [HTTP/3 support][cloudflare-http3]. The\n[cloudflare-quic.com](https://cloudflare-quic.com) website can be used for\ntesting and experimentation.\n\n### Android\n\nAndroid's DNS resolver uses quiche to [implement DNS over HTTP/3][android-http3].\n\n### curl\n\nquiche can be [integrated into curl][curl-http3] to provide support for HTTP/3.\n\n[cloudflare-http3]: https://blog.cloudflare.com/http3-the-past-present-and-future/\n[android-http3]: https://security.googleblog.com/2022/07/dns-over-http3-in-android.html\n[curl-http3]: https://github.com/curl/curl/blob/master/docs/HTTP3.md#quiche-version\n\nGetting Started\n---------------\n\n### Command-line apps\n\nBefore diving into the quiche API, here are a few examples on how to use the\nquiche tools provided as part of the [quiche-apps](apps/) crate. These are not\nsuitable for production environments; see [disclaimers and\nnotes](#disclaimers-and-notes).\n\nAfter cloning the project according to the command mentioned in the [building](#building) section, the client can be run as follows:\n\n```bash\n $ cargo run --bin quiche-client -- https://cloudflare-quic.com/\n```\n\nwhile the server can be run as follows:\n\n```bash\n $ cargo run --bin quiche-server -- --cert apps/src/bin/cert.crt --key apps/src/bin/cert.key\n```\n\n(note that the certificate provided is self-signed and should not be used in\nproduction)\n\nUse the `--help` command-line flag to get a more detailed description of each\ntool's options.\n\n### Configuring connections\n\nThe first step in establishing a QUIC connection using quiche is creating a\n[`Config`] object:\n\n```rust\nlet mut config = quiche::Config::new(quiche::PROTOCOL_VERSION)?;\nconfig.set_application_protos(&[b\"example-proto\"]);\n\n// Additional configuration specific to application and use case...\n```\n\nThe [`Config`] object controls important aspects of the QUIC connection such\nas QUIC version, ALPN IDs, flow control, congestion control, idle timeout\nand other properties or features.\n\nQUIC is a general-purpose transport protocol and there are several\nconfiguration properties where there is no reasonable default value. For\nexample, the permitted number of concurrent streams of any particular type\nis dependent on the application running over QUIC, and other use-case\nspecific concerns.\n\nquiche defaults several properties to zero, applications most likely need\nto set these to something else to satisfy their needs using the following:\n\n- [`set_initial_max_streams_bidi()`]\n- [`set_initial_max_streams_uni()`]\n- [`set_initial_max_data()`]\n- [`set_initial_max_stream_data_bidi_local()`]\n- [`set_initial_max_stream_data_bidi_remote()`]\n- [`set_initial_max_stream_data_uni()`]\n\n[`Config`] also holds TLS configuration. This can be changed by mutators on\nthe an existing object, or by constructing a TLS context manually and\ncreating a configuration using [`with_boring_ssl_ctx_builder()`].\n\nA configuration object can be shared among multiple connections.\n\n### Connection setup\n\nOn the client-side the [`connect()`] utility function can be used to create\na new connection, while [`accept()`] is for servers:\n\n```rust\n// Client connection.\nlet conn = quiche::connect(Some(&server_name), &scid, local, peer, &mut config)?;\n\n// Server connection.\nlet conn = quiche::accept(&scid, None, local, peer, &mut config)?;\n```\n\n### Handling incoming packets\n\nUsing the connection's [`recv()`] method the application can process\nincoming packets that belong to that connection from the network:\n\n```rust\nlet to = socket.local_addr().unwrap();\n\nloop {\n    let (read, from) = socket.recv_from(&mut buf).unwrap();\n\n    let recv_info = quiche::RecvInfo { from, to };\n\n    let read = match conn.recv(&mut buf[..read], recv_info) {\n        Ok(v) => v,\n\n        Err(e) => {\n            // An error occurred, handle it.\n            break;\n        },\n    };\n}\n```\n\n### Generating outgoing packets\n\nOutgoing packet are generated using the connection's",
+            "sources": [
+              {
+                "captured_at": "2026-09-26T19:02:13Z",
+                "description": "🥧 Savoury implementation of the QUIC transport protocol and HTTP/3",
+                "full_name": "cloudflare/quiche",
+                "language": "Rust",
+                "trending_stars_period": 769,
+                "trending_total_forks": null,
+                "trending_total_stars": 12625,
+                "type": "trending_weekly"
+              }
+            ],
+            "stars": 12687,
+            "topics": [
+              "http3",
+              "network-programming",
+              "protocol",
+              "quic",
+              "rust"
+            ],
+            "updated_at": "2026-09-28T19:19:08Z"
+          },
+          "llm_used": true,
+          "metric_captured_at": "2026-09-26T19:02:13Z",
+          "period": "GitHub Trending: максимум наблюдавшихся звёзд за неделю",
+          "rank": 7,
+          "source_kind": "trending_weekly",
+          "total": 9,
+          "trending_source": true
+        },
+        {
+          "baseline": null,
+          "delta": 1414,
+          "description": "Проект содержит полностью сгенерированный код для создания анимационного музыкального клипа «I'm Upping My P(doom)», выполненного с помощью модели Claude Opus 5.5. Репозиторий включает девять глав, общие ресурсы (персонажи, реквизит, текст песни и временная шкала) и HTML‑страницу, где каждый кадр рисуется в браузере через p5.js и p5.brush. Для получения готового MP4‑файла предусмотрен скрипт render.mjs, который в headless‑Chrome рендерит отдельные кадры и собирает их в видеоряд с помощью ffmpeg, а также инструкции по запуску с указанием требуемых зависимостей (Node.js, Chrome, ffmpeg) и параметров рендеринга. Особенности проекта: 1) раскадровка и инструкции для субагентов написаны моделью, а автор задал персонажа, визуальный стиль и переходы; 2) поддержка параллельного рендеринга через параметр --workers, позволяющая ускорить обработку длительных видеороликов; 3) наличие отдельного «legacy»‑каталога, где хранится первая генерация, что позволяет сравнить результаты разных проходов модели. Репозиторий подходит для повторного рендеринга этого клипа и изучения сгенерированного кода анимации, раскадровки и организации работы субагентов.",
+          "evidence_kind": "provider_selected_exact_readme_quote",
+          "evidence_quote": "The video took two generations, both in Claude Code:\n\n1. **First generation** ([`legacy/`](legacy/)): Claude Opus 5.5 (Medium)\n2. **Second generation** (everything else): Claude Opus 5.5\n\n**Everything in this repository was generated by the model.** No scene ideas were specified.",
+          "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+          "full_name": "JohnHeibel/PDoomVideo",
+          "joke": "Когда Claude рисует клип, даже кадр‑по‑кадру не успевает скучать.",
+          "latest": {
+            "captured_at": "2026-09-28T20:25:11Z",
+            "created_at": "2026-09-22T23:32:19Z",
+            "default_branch": "main",
+            "description": "Source code for the Claude Opus 5.5 music video for I'm Upping My P(doom)",
+            "forks": 154,
+            "full_name": "JohnHeibel/PDoomVideo",
+            "html_url": "https://github.com/JohnHeibel/PDoomVideo",
+            "language": "JavaScript",
+            "license": null,
+            "observation": {
+              "first_seen": "2026-09-26T19:02:13Z",
+              "last_seen": "2026-09-28T20:25:11Z",
+              "observations": 3
+            },
+            "open_issues": 3,
+            "pushed_at": "2026-09-25T15:11:03Z",
+            "readme_excerpt": "# I'm Upping My P(doom)\n\nSource code for the [Claude Opus 5.5 music video for *I'm Upping My P(doom)*](https://youtu.be/8j-hR4fJywU).\n\n\n\n<img width=\"800\" height=\"450\" alt=\"recursion_loop\" src=\"https://github.com/user-attachments/assets/7d6164ff-6706-40bb-bdf5-099d86e583e1\" />\n\n\n[I've also made a new more reliable and general base for making Claude animations with Claude Opus 5.5.](https://github.com/JohnHeibel/ClaudeAnimationBase) \n\n<img width=\"720\" height=\"405\" alt=\"hello_loop\" src=\"https://github.com/user-attachments/assets/d1c91375-3863-45f5-b7da-5e8b9c987b64\" />\n\nHighly recommend checking it out!\n\n## Credits\n\n- **Inspired by:** [this post on X](https://x.com/slimer48484/status/2097752569212756134)\n- **Song:** as far as I could find, it comes from [this YouTube video from 2024](https://www.youtube.com/watch?v=uEB5E67vcPA)\n- **Lyrics** from Osmarks showing the original udio generations and [the interpretation of each lyric](https://docs.osmarks.net/hypha/p(doom)_song_objectively_correct_interpretation)\n\n## How it was made\n\nThe video took two generations, both in Claude Code:\n\n1. **First generation** ([`legacy/`](legacy/)): Claude Opus 5.5 (Medium)\n2. **Second generation** (everything else): Claude Opus 5.5\n\n**Everything in this repository was generated by the model.** No scene ideas were specified. The only direction was to:\n\n- use the Clawd character design\n- give each lyric interesting visuals and transitions\n\n[`ANIMATION_GUIDE.md`](ANIMATION_GUIDE.md) was written by Opus to brief the subagents it ran in parallel.\n\n[`STORYBOARD.md`](STORYBOARD.md) was also written by Opus after the first generation, after being instructed to use P5 brushstrokes, make each scene visually interesting, and make every scene transition into the next.\n## What's here\n\n| Path | What it is |\n|---|---|\n| [`src/ch/`](src/ch/) | The video's nine chapters, one file each |\n| [`src/`](src/) | Shared code: Clawd, the guest characters, props, lyrics and the timeline |\n| [`studio.html`](studio.html) | The page every frame is painted in, using p5.js and p5.brush |\n| [`render.mjs`](render.mjs) | Renders frames in headless Chrome and encodes the MP4 with ffmpeg |\n| [`STORYBOARD.md`](STORYBOARD.md) | Opus's shot-by-shot plan |\n| [`ANIMATION_GUIDE.md`](ANIMATION_GUIDE.md) | Opus's style and code guide for its subagents |\n| [`legacy/`](legacy/) | The first generation |\n\n## Rendering\n\nYou need Node.js, Google Chrome and ffmpeg. The song is included at `assets/pdoom.mp3`.\n\n```bash\nnpm install\nnode render.mjs --frames=0:156.6 --workers=4   # paint every frame into out/frames (resumable)\nnode render.mjs --encode --out=out/pdoom.mp4   # join the frames and the song into an MP4\n```\n\nIf Chrome isn't installed at the default Windows path, add `--chrome=<path to chrome>`.\n",
+            "sources": [
+              {
+                "captured_at": "2026-09-28T20:25:11Z",
+                "type": "new_repo_search"
+              }
+            ],
+            "stars": 1414,
+            "topics": [],
+            "updated_at": "2026-09-28T20:12:50Z"
+          },
+          "llm_used": true,
+          "metric_captured_at": "2026-09-28T20:25:11Z",
+          "period": "новый репозиторий: звёзды на момент среза",
+          "rank": 8,
+          "source_kind": "new_repo",
+          "total": 9,
+          "trending_source": false
+        },
+        {
+          "baseline": null,
+          "delta": 871,
+          "description": "Нативный инструмент для передачи выбранных сообщений WeChat в Codex, Claude и другие AI-агенты либо в локальную базу Obsidian. В macOS он добавляет Share Extension в меню «转发到其他应用»: пользователь объединяет выбранные сообщения и выбирает целевое приложение или действие. WeChat создаёт ZIP с текстом, изображениями и видео; мост активирует выбранного агента, добавляет сохранённую инструкцию и вставляет архив. Затем пользователь запускает обработку в агенте. Можно также сохранить Markdown с вложениями в Obsidian или выбранную папку либо оставить архив в буфере обмена.\n\nWeChat разрешает переслать до 100 сообщений за раз. Функция «分批收集到微信流» позволяет вручную собрать несколько пакетов и затем передать их вместе. Для разных чатов сохраняются свои сценарии и подсказки; для совместимых агентов можно устанавливать пакеты навыков. Исходные изображения и видео остаются в ZIP. Сам мост работает локально, не читает базу WeChat и не внедряется в приложение; дальнейшая обработка переданного архива выполняется выбранным агентом.\n\nДля описанного сценария на macOS требуются macOS 14+ и WeChat 4.1.13 или новее. Доступна также Windows-сборка с инструкцией в архиве.",
+          "evidence_kind": "provider_selected_exact_readme_quote",
+          "evidence_quote": "macOS 微信 4.1.13 起，多选聊天记录后可以「合并转发」给第三方应用：微信会生成一份包含 TXT、图片和视频的 ZIP，正好适合交给 AI Agent 处理，或沉淀进本地知识库。",
+          "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+          "full_name": "freestylefly/WeChatBridge",
+          "joke": "",
+          "latest": {
+            "captured_at": "2026-09-28T15:27:58Z",
+            "created_at": "2026-09-21T02:54:51Z",
+            "default_branch": "main",
+            "description": "微信聊天记录一键转发到 AI Agent 与 Obsidian 的原生 macOS 工具",
+            "forks": 312,
+            "full_name": "freestylefly/WeChatBridge",
+            "html_url": "https://github.com/freestylefly/WeChatBridge",
+            "language": "Swift",
+            "license": null,
+            "observation": {
+              "first_seen": "2026-09-26T19:02:13Z",
+              "last_seen": "2026-09-28T15:27:58Z",
+              "observations": 3
+            },
+            "open_issues": null,
+            "pushed_at": null,
+            "readme_excerpt": "<div align=\"center\">\n  <img src=\"shared/Screenshots/app-icon-rounded.png\" width=\"128\" alt=\"WeChatBridge 图标\" />\n  <h1>WeChatBridge（微信流）</h1>\n  <p><strong>群里几百条消息没空翻？多选、转发，一步交给 AI 总结，或存进你的知识库。</strong></p>\n  <p>在微信「转发到其他应用」里直接选 Codex、Claude、豆包、千问、Obsidian……不读数据库、不注入微信，全程本地。</p>\n\n  <p>\n    <a href=\"#下载安装\"><img src=\"https://img.shields.io/badge/免费下载-macOS%20%7C%20Windows-07C160?style=flat-square\" alt=\"免费下载\" /></a>\n    <a href=\"#加入交流群\"><img src=\"https://img.shields.io/badge/交流群-微信扫码-07C160?style=flat-square&logo=wechat&logoColor=white\" alt=\"加入交流群\" /></a>\n    <a href=\"https://github.com/freestylefly/WeChatBridge/stargazers\"><img src=\"https://img.shields.io/github/stars/freestylefly/WeChatBridge?style=flat-square\" alt=\"GitHub Stars\" /></a>\n    <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-blue?style=flat-square\" alt=\"MIT License\" /></a>\n  </p>\n\n  <p>\n    <a href=\"#下载安装\"><strong>下载</strong></a> ·\n    <a href=\"#加入交流群\"><strong>交流群</strong></a> ·\n    <a href=\"USAGE.zh-CN.md\">使用指南</a> ·\n    <a href=\"https://render.qmuse.pub/p/muse/2413870555736078\">官网</a> ·\n    <a href=\"README_EN.md\">English</a>\n  </p>\n\n  <img src=\"shared/Screenshots/demo-wechat-to-agent.gif\" width=\"800\" alt=\"演示：在微信多选群聊消息，转发到微信流，选择场景后交给 Codex 总结\" />\n  <br />\n  <sub>多选群聊 → 转发到其他应用 → 选「发给 Codex」和场景 → Agent 收到聊天记录并开始总结</sub>\n</div>\n\n## 它能帮你做什么\n\n<table>\n  <tr>\n    <th align=\"center\" width=\"33%\">群聊一键交给 AI</th>\n    <th align=\"center\" width=\"33%\">沉淀进知识库</th>\n    <th align=\"center\" width=\"33%\">一个群一个场景</th>\n  </tr>\n  <tr>\n    <td align=\"center\"><img src=\"shared/Screenshots/usage-skill-result-top.png\" alt=\"Agent 根据群聊生成的总结\" /></td>\n    <td align=\"center\"><img src=\"shared/Screenshots/usage-obsidian-attachments.png\" alt=\"Obsidian 中的聊天记录与附件\" /></td>\n    <td align=\"center\"><img src=\"shared/Screenshots/usage-scene-picker.png\" alt=\"转发时选择场景\" /></td>\n  </tr>\n  <tr>\n    <td><sub>转发到 Codex、Claude、豆包、千问办公、WorkBuddy 等，自动带上提示词并粘贴好聊天记录，回车就出总结、待办和纪要。</sub></td>\n    <td><sub>一键存成 Obsidian 笔记或任意文件夹里的 Markdown，图片和附件原样保留，按聊天名归档。</sub></td>\n    <td><sub>给不同的群存好各自的提示词，比如「群聊总结」「日常摘要」，转发时选一个就行；还能给 Agent 装技能包，读懂群里的链接和视频。</sub></td>\n  </tr>\n</table>\n\n超过 100 条也不怕：微信一次最多转发 100 条，用「分批收集到微信流」分几批选，收齐后一次发出去。\n\n<div align=\"center\">\n  <img src=\"shared/Screenshots/usage-supported-agents.png\" width=\"520\" alt=\"支持的 Agent：Codex、Claude、豆包、千问办公、WorkBuddy、WeSight、DeepSeek Harness 等\" />\n  <br />\n  <sub>内置十二个入口，还能添加任意应用作为自定义目标</sub>\n</div>\n\n## 三步上手\n\n1. **安装**：从下面的蓝奏云链接下载，macOS 把「微信流」拖进「应用程序」。\n2. **打开入口**：在「微信流 → 设置 → 入口」里勾选要用的目标，例如「发给 Codex」「沉淀到 Obsidian」。\n3. **转发**：在微信里多选聊天记录 →「合并转发」→「转发到其他应用」→ 选择微信流的入口。\n\n需要 macOS 微信 4.1.13 或更高版本。完整步骤、权限说明和常见问题见 [使用指南](USAGE.zh-CN.md)。\n\n## 下载安装\n\n免费下载，全部安装包通过蓝奏云发布，提取密码都是 **`向明`**：\n\n| 平台 | 下载地址 | 提取密码 |\n| --- | --- | --- |\n| macOS 14+（Apple Silicon 与 Intel） | [wwbsr.lanzout.com/b0umjur8h](https://wwbsr.lanzout.com/b0umjur8h) | `向明` |\n| Windows | [wwbsr.lanzout.com/b0umjur4d](https://wwbsr.lanzout.com/b0umjur4d) | `向明` |\n\nmacOS 版打开 DMG，把「微信流」拖入「应用程序」即可；Windows 版解压后按目录内说明运行。iOS 版正在开发中，进群可以第一时间知道进展。\n\n## 加入交流群\n\n<table>\n  <tr>\n    <td width=\"300\" align=\"center\">\n      <img src=\"shared/Screenshots/wechat-community-group.png\" width=\"260\" alt=\"WeChatBridge 微信交流群二维码\" />\n      <br />\n      <sub>微信扫码加入</sub>\n    </td>\n    <td>\n      <strong>进群你可以：</strong>\n      <ul>\n        <li>第一时间拿到新版本和新平台（iOS 等）的消息</li>\n        <li>遇到装不上、找不到入口、粘贴失败，直接问开发者</li>\n        <li>拿到群友在用的场景提示词和技能包，抄作业比自己写快</li>\n        <li>提需求：你想把聊天记录送到哪个应用，告诉我们</li>\n      </ul>\n      二维码过期的话，扫下方「关于我们」里苍何的微信，备注「微信流」。\n    </td>\n  </tr>\n</table>\n\n## 为什么做微信流\n\nmacOS 微信 4.1.13 起，多选聊天记录后可以「合并转发」给第三方应用：微信会生成一份包含 TXT、图片和视频的 ZIP，正好适合交给 AI Agent 处理，或沉淀进本地知识库。\n\n但系统的「转发到其他应用」列表只显示带有 Share Extension 的应用，大多数 AI 工具并不在里面。微信流补上了这层入口，让一次转发直接到达你常用的 Agent、Obsidian、剪贴板或你指定的任何应用。\n\n```mermaid\nflowchart LR\n    A[微信多选聊天记录] --> B[合并转发]\n    B --> C[微信流]\n    C --> D[AI Agent]\n    C --> E[Obsidian / 文件夹]\n    C --> F[剪贴板]\n    C --> G[自定义应用]\n```\n\n## 全部功能\n\n<details>\n<summary><strong>核心能力</strong></summary>\n\n| 能力 | 使用体验 |\n| --- | --- |\n| 十二个原生入口 | 在微信转发菜单直接选择目标，无需打开微信流主窗口 |\n| AI Agent 转发 | 激活目标应用，附加场景指令并自动粘贴聊天归档 |\n| Obsidian 沉淀 | 生成 Markdown 笔记，保存原始 ZIP，并按聊天名组织内容 |\n| 自定义目标 | 添加任意 macOS 应用，终端类应用可只接收文件路径 |\n| 场景与技能 | 为不同群聊保留场景提示词，并管理兼容 Agent 的 `SKILL.md` |\n| 本地记录 | 查看批次状态、重新发送、复制、定位文件和清理历史 |\n| 失败兜底 | 目标未安装或权限不足时，文件仍会保留在剪贴板 |\n| 双语界面 | 完整支持简体中文与 English |\n\n</details>\n\n<details>\n<summary><strong>十二个内置入口</strong></summary>\n\n| 入口 | 行为 |\n| --- | --- |\n| 发给 Codex | 激活 ChatGPT/Codex 并粘贴聊天归档 |\n| 发给 Claude | 激活 Claude 并粘贴聊天归档 |\n| 发给豆包 | 激活豆包并粘贴聊天归档 |\n| 发给千问办公 | 激活千问办公并粘贴聊天归档 |\n| 发给 WorkBuddy | 激活 WorkBuddy 并粘贴聊天归档 |\n| 发给 WeSight | 激活 WeSight 并粘贴聊天归档 |\n| 发给 DeepSeek Harness | 激活 DeepSeek Harness 并粘贴聊天归档 |\n| 沉淀到 Obsidian | 创建 Markdown 笔记并保存原始附件，通知可打开笔记 |\n| 沉淀到文件夹 | 写入选定目录中的 Markdown 与附件，通知可在访达中定位 |\n| 分批收集到微信流 | 连续分享多批原始 ZIP，收齐后一次选择目标和场景 |\n| 复制到剪贴板 | 保留文件，交给用户手动粘贴 |\n| 发送到自定义 | 转发到用户维护的应用列表 |\n\n分批收集时，每批在微信手动选取并分享到「分批收集到微信流」。浮条显示已收批次和上一批首尾参考；收齐后点击「完成并发送」。原始图片、视频保留在 ZIP 中，未完成的收集可在记录页继续，失败可重试。\n\n</details>\n\n<details>\n<summary><strong>更多截图</strong></summa",
+            "sources": [
+              {
+                "captured_at": "2026-09-28T15:27:58Z",
+                "type": "new_repo_search"
+              }
+            ],
+            "stars": 871,
+            "topics": [
+              "ai-agent",
+              "chat-history",
+              "macos",
+              "obsidian",
+              "share-extension",
+              "swift",
+              "wechat"
+            ],
+            "updated_at": "2026-09-28T13:10:16Z"
+          },
+          "llm_used": true,
+          "metric_captured_at": "2026-09-28T15:27:58Z",
+          "period": "новый репозиторий: звёзды на момент среза",
+          "rank": 9,
+          "source_kind": "new_repo",
+          "total": 9,
+          "trending_source": false
+        }
+      ],
+      "format_version": 3,
+      "generated_at": "2026-11-09T19:51:38Z",
+      "joke": "",
+      "llm_budget": {
+        "actual_requests": 13,
+        "all_descriptions_complete": false,
+        "card_failures": [
+          {
+            "disposition": "retained_for_later_issue",
+            "id": "ZhuLinsen/daily_stock_analysis",
+            "initial_error": "named product or integration is absent from the supplied primary sources",
+            "repair_error": "named product or integration is absent from the supplied primary sources",
+            "stage": "project_description_schema_repair"
+          },
+          {
+            "disposition": "retained_for_later_issue",
+            "id": "jhaizhou-ops/S2Arm",
+            "initial_error": "named product or integration is absent from the supplied primary sources",
+            "repair_error": "named product or integration is absent from the supplied primary sources",
+            "stage": "project_description_schema_repair"
+          }
+        ],
+        "daily_deferred": [
+          {
+            "id": "ZhuLinsen/daily_stock_analysis",
+            "reason": "description_rejected_after_repair",
+            "retry_at": "2026-11-10T19:52:26.476929289Z"
+          },
+          {
+            "id": "jhaizhou-ops/S2Arm",
+            "reason": "description_rejected_after_repair",
+            "retry_at": "2026-11-10T19:54:55.651603211Z"
+          },
+          {
+            "id": "huamidev/GestaltX",
+            "reason": "readme_quote_rejected",
+            "retry_at": "2026-11-10T19:55:47.416710463Z"
+          }
+        ],
+        "evidence_scope": "Primary metadata and stored README excerpts contain author claims and may be incomplete. Exact README quotation matching checks provenance only, not claim entailment, factual accuracy, runtime behavior, privacy, security, performance or license rights. Human factual review remains required.",
+        "expected_requests": 8,
+        "factual_review_performed": false,
+        "grounding_failures": [
+          {
+            "additional_requests": 0,
+            "fallback": "source metadata",
+            "id": "huamidev/GestaltX",
+            "reason": "README quotation length is outside 24..=600"
+          }
+        ],
+        "local_inference": false,
+        "max_requests_per_run": 40,
+        "max_requests_per_utc_day": 100,
+        "max_requests_with_retries": 40,
+        "paid_fallback": false,
+        "providers": [
+          {
+            "model": "openai/gpt-oss-120b",
+            "name": "Groq"
+          }
+        ],
+        "readme_gaps": [],
+        "reason": "2 project descriptions rejected; first ZhuLinsen/daily_stock_analysis: named product or integration is absent from the supplied primary sources; findings remain queued",
+        "source_gaps": []
+      },
+      "llm_requested": true,
+      "llm_used": true,
+      "manifest": {
+        "api_repositories": [
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:42Z",
+            "forks": 56,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 788,
+            "status": "included",
+            "url": "https://api.github.com/repos/AssassinCreator/steam-stash-value-report-card"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:43Z",
+            "forks": 102,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 681,
+            "status": "included",
+            "url": "https://api.github.com/repos/AtomIllusionistDwell/watson-username-footprint-finder"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:43Z",
+            "forks": 126,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1445,
+            "status": "included",
+            "url": "https://api.github.com/repos/CzJam/gjgjxweb"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:44Z",
+            "forks": 10499,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 100455,
+            "status": "included",
+            "url": "https://api.github.com/repos/D4Vinci/Scrapling"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:44Z",
+            "forks": 148,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1406,
+            "status": "included",
+            "url": "https://api.github.com/repos/DIYgod/pinky"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:45Z",
+            "forks": 4920,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 37470,
+            "status": "included",
+            "url": "https://api.github.com/repos/Donchitos/Claude-Code-Game-Studios"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:45Z",
+            "forks": 34,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1337,
+            "status": "included",
+            "url": "https://api.github.com/repos/IainKay/ram-altman"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:45Z",
+            "forks": 1032,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1926,
+            "status": "included",
+            "url": "https://api.github.com/repos/JenkinWoo/sheeridVerify"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:46Z",
+            "forks": 155,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 738,
+            "status": "included",
+            "url": "https://api.github.com/repos/JosssphZhou/poki"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:46Z",
+            "forks": 776,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 4266,
+            "status": "included",
+            "url": "https://api.github.com/repos/KKKKhazix/agent-autoloop"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:47Z",
+            "forks": 110,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1556,
+            "status": "included",
+            "url": "https://api.github.com/repos/Leviidev/Henge"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:47Z",
+            "forks": 2097,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 5675,
+            "status": "included",
+            "url": "https://api.github.com/repos/Minireel/HGhub"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:48Z",
+            "forks": 894,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 10964,
+            "status": "included",
+            "url": "https://api.github.com/repos/NVIDIA/auto-ontology"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:48Z",
+            "forks": 408,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 4614,
+            "status": "included",
+            "url": "https://api.github.com/repos/NotRexed/Hookshot"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:49Z",
+            "forks": 2747,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 51674,
+            "status": "included",
+            "url": "https://api.github.com/repos/Nutlope/hallmark"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:49Z",
+            "forks": 180,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1604,
+            "status": "included",
+            "url": "https://api.github.com/repos/Sandflow-ai/sand3d"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:50Z",
+            "forks": 47,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1003,
+            "status": "included",
+            "url": "https://api.github.com/repos/Th0rgal/satmux"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:50Z",
+            "forks": 2161,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 15706,
+            "status": "included",
+            "url": "https://api.github.com/repos/The-PR-Agent/pr-agent"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:50Z",
+            "forks": 123,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1024,
+            "status": "included",
+            "url": "https://api.github.com/repos/WoYun520/gif-factory"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:51Z",
+            "forks": 56369,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 68720,
+            "status": "included",
+            "url": "https://api.github.com/repos/ZhuLinsen/daily_stock_analysis"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:51Z",
+            "forks": 3301,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 19922,
+            "status": "included",
+            "url": "https://api.github.com/repos/anthropics/claude-quickstarts"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:52Z",
+            "forks": 22430,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 190716,
+            "status": "included",
+            "url": "https://api.github.com/repos/anthropics/skills"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:52Z",
+            "forks": 4441,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 67858,
+            "status": "included",
+            "url": "https://api.github.com/repos/cloudflare/security-audit-skill"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:53Z",
+            "forks": 176,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1099,
+            "status": "included",
+            "url": "https://api.github.com/repos/egoist/mygo-music"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:53Z",
+            "forks": 4761,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 32057,
+            "status": "included",
+            "url": "https://api.github.com/repos/garrytan/gbrain"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:53Z",
+            "forks": 1986,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 16846,
+            "status": "included",
+            "url": "https://api.github.com/repos/google-deepmind/mujoco"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:54Z",
+            "forks": 171,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 2500,
+            "status": "included",
+            "url": "https://api.github.com/repos/govijr/terminal-mac"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:54Z",
+            "forks": 285,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 5809,
+            "status": "included",
+            "url": "https://api.github.com/repos/homeassistant-ai/ha-mcp"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:55Z",
+            "forks": 490,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1289,
+            "status": "included",
+            "url": "https://api.github.com/repos/huamidev/GestaltX"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:55Z",
+            "forks": 124,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1129,
+            "status": "included",
+            "url": "https://api.github.com/repos/jamesondh/chimera-vocal-synth"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:56Z",
+            "forks": 96,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1766,
+            "status": "included",
+            "url": "https://api.github.com/repos/janestreet/agent_skills"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:56Z",
+            "forks": 334,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1681,
+            "status": "included",
+            "url": "https://api.github.com/repos/jhaizhou-ops/S2Arm"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:56Z",
+            "forks": 87,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1362,
+            "status": "included",
+            "url": "https://api.github.com/repos/libracoder/kiri"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:57Z",
+            "forks": 146,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1393,
+            "status": "included",
+            "url": "https://api.github.com/repos/livliv-dev/player"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:57Z",
+            "forks": 37,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 610,
+            "status": "included",
+            "url": "https://api.github.com/repos/majorminorlabs/hermes-voice"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:58Z",
+            "forks": 26755,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 319551,
+            "status": "included",
+            "url": "https://api.github.com/repos/mattpocock/skills"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:58Z",
+            "forks": 475,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 12251,
+            "status": "included",
+            "url": "https://api.github.com/repos/max-sixty/worktrunk"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:59Z",
+            "forks": 1489,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 19499,
+            "status": "included",
+            "url": "https://api.github.com/repos/meta/astryx"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:59Z",
+            "forks": 2681,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 19535,
+            "status": "included",
+            "url": "https://api.github.com/repos/milind-soni/OpenMausBot"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:59Z",
+            "forks": 489,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1375,
+            "status": "included",
+            "url": "https://api.github.com/repos/mmdoctor/google-pro-helper"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:00Z",
+            "forks": 10146,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 53838,
+            "status": "included",
+            "url": "https://api.github.com/repos/pingdotgg/t3code"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:00Z",
+            "forks": 13396,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 103341,
+            "status": "included",
+            "url": "https://api.github.com/repos/ruvnet/RuView"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:01Z",
+            "forks": 335,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1881,
+            "status": "included",
+            "url": "https://api.github.com/repos/sarpstar/cinecode"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:01Z",
+            "forks": 18,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 706,
+            "status": "included",
+            "url": "https://api.github.com/repos/sassiestrhihno/boxshelf-beta"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:02Z",
+            "forks": 69,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1442,
+            "status": "included",
+            "url": "https://api.github.com/repos/shanselman/gputaskman"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:02Z",
+            "forks": 12366,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 106727,
+            "status": "included",
+            "url": "https://api.github.com/repos/sherlock-project/sherlock"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:03Z",
+            "forks": 70,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1052,
+            "status": "included",
+            "url": "https://api.github.com/repos/sostenesfreitas/ocarina-recomp"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:03Z",
+            "forks": 135,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 2220,
+            "status": "included",
+            "url": "https://api.github.com/repos/tangerineturtle1/NX2navi"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:04Z",
+            "forks": 10017,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 115333,
+            "status": "included",
+            "url": "https://api.github.com/repos/thedotmack/claude-mem"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:04Z",
+            "forks": 3296,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 48347,
+            "status": "included",
+            "url": "https://api.github.com/repos/vercel-labs/agent-browser"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:05Z",
+            "forks": 1507,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 20324,
+            "status": "included",
+            "url": "https://api.github.com/repos/vercel-labs/agent-desktop"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:05Z",
+            "forks": 94,
+            "pagination": "single repository response",
+            "reason": "metadata captured",
+            "source": "GitHub REST repository metadata",
+            "stars": 1272,
+            "status": "included",
+            "url": "https://api.github.com/repos/voyager-so/vork"
+          }
+        ],
+        "candidate_count": 52,
+        "candidate_policy": "All identities returned by configured Trending pages and bounded Search page are retained, including covered repositories and metadata failures; weekly selection happens later; not a global GitHub census.",
+        "captured_at": "2026-11-09T19:51:38Z",
+        "excluded_candidates": [],
+        "sources": [
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:40Z",
+            "pagination": "HTML first page as returned; no pagination",
+            "parsed_candidates": 14,
+            "reason": "repository rows parsed from first page",
+            "source": "GitHub Trending weekly",
+            "status": "included",
+            "url": "https://github.com/trending?since=weekly"
+          },
+          {
+            "complete": true,
+            "fetched_at": "2026-11-09T19:51:41Z",
+            "pagination": "HTML first page as returned; no pagination",
+            "parsed_candidates": 11,
+            "reason": "repository rows parsed from first page",
+            "source": "GitHub Trending daily",
+            "status": "included",
+            "url": "https://github.com/trending?since=daily"
+          },
+          {
+            "complete": false,
+            "fetched_at": "2026-11-09T19:51:42Z",
+            "incomplete_results": false,
+            "pagination": "per_page=30; first page only; Search API result cap applies",
+            "query": "created:>=2026-11-02",
+            "reason": "first page ingested as candidate source only",
+            "returned": 30,
+            "source": "GitHub REST Search repositories created in last 7 days",
+            "status": "included",
+            "total_count": 2481165,
+            "url": "https://api.github.com/search/repositories?q=created%3A%3E%3D2026-11-02&sort=stars&order=desc&per_page=30"
+          },
+          {
+            "candidate": "ZhuLinsen/daily_stock_analysis",
+            "chars": 5000,
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:10Z",
+            "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+            "reason": "raw README captured; bounded excerpt used for model",
+            "source": "GitHub raw README.md",
+            "status": "included",
+            "url": "https://raw.githubusercontent.com/ZhuLinsen/daily_stock_analysis/main/README.md"
+          },
+          {
+            "candidate": "garrytan/gbrain",
+            "chars": 5000,
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:10Z",
+            "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+            "reason": "raw README captured; bounded excerpt used for model",
+            "source": "GitHub raw README.md",
+            "status": "included",
+            "url": "https://raw.githubusercontent.com/garrytan/gbrain/master/README.md"
+          },
+          {
+            "candidate": "homeassistant-ai/ha-mcp",
+            "chars": 5000,
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:10Z",
+            "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+            "reason": "raw README captured; bounded excerpt used for model",
+            "source": "GitHub raw README.md",
+            "status": "included",
+            "url": "https://raw.githubusercontent.com/homeassistant-ai/ha-mcp/master/README.md"
+          },
+          {
+            "candidate": "janestreet/agent_skills",
+            "chars": 753,
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:10Z",
+            "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+            "reason": "raw README captured; bounded excerpt used for model",
+            "source": "GitHub raw README.md",
+            "status": "included",
+            "url": "https://raw.githubusercontent.com/janestreet/agent_skills/master/README.md"
+          },
+          {
+            "candidate": "jhaizhou-ops/S2Arm",
+            "chars": 5000,
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:11Z",
+            "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+            "reason": "raw README captured; bounded excerpt used for model",
+            "source": "GitHub raw README.md",
+            "status": "included",
+            "url": "https://raw.githubusercontent.com/jhaizhou-ops/S2Arm/main/README.md"
+          },
+          {
+            "candidate": "IainKay/ram-altman",
+            "chars": 5000,
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:11Z",
+            "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+            "reason": "raw README captured; bounded excerpt used for model",
+            "source": "GitHub raw README.md",
+            "status": "included",
+            "url": "https://raw.githubusercontent.com/IainKay/ram-altman/main/README.md"
+          },
+          {
+            "candidate": "huamidev/GestaltX",
+            "chars": 5000,
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:11Z",
+            "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+            "reason": "raw README captured; bounded excerpt used for model",
+            "source": "GitHub raw README.md",
+            "status": "included",
+            "url": "https://raw.githubusercontent.com/huamidev/GestaltX/main/README.md"
+          },
+          {
+            "candidate": "jamesondh/chimera-vocal-synth",
+            "chars": 3064,
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:11Z",
+            "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+            "reason": "raw README captured; bounded excerpt used for model",
+            "source": "GitHub raw README.md",
+            "status": "included",
+            "url": "https://raw.githubusercontent.com/jamesondh/chimera-vocal-synth/main/README.md"
+          },
+          {
+            "candidate": "jev-chat/jev-chat-windows",
+            "chars": 5000,
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:11Z",
+            "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+            "reason": "raw README captured; bounded excerpt used for model",
+            "source": "GitHub raw README.md",
+            "status": "included",
+            "url": "https://raw.githubusercontent.com/jev-chat/jev-chat-windows/main/README.md"
+          },
+          {
+            "candidate": "cloudflare/quiche",
+            "chars": 5000,
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:11Z",
+            "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+            "reason": "raw README captured; bounded excerpt used for model",
+            "source": "GitHub raw README.md",
+            "status": "included",
+            "url": "https://raw.githubusercontent.com/cloudflare/quiche/master/README.md"
+          },
+          {
+            "candidate": "JohnHeibel/PDoomVideo",
+            "chars": 2777,
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:11Z",
+            "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+            "reason": "raw README captured; bounded excerpt used for model",
+            "source": "GitHub raw README.md",
+            "status": "included",
+            "url": "https://raw.githubusercontent.com/JohnHeibel/PDoomVideo/main/README.md"
+          },
+          {
+            "candidate": "freestylefly/WeChatBridge",
+            "chars": 5000,
+            "complete": true,
+            "fetched_at": "2026-11-09T19:52:11Z",
+            "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+            "reason": "raw README captured; bounded excerpt used for model",
+            "source": "GitHub raw README.md",
+            "status": "included",
+            "url": "https://raw.githubusercontent.com/freestylefly/WeChatBridge/main/README.md"
+          }
+        ],
+        "validation_notes": [],
+        "weekly_observed_repositories": 369,
+        "weekly_selected_repositories": 12
+      },
+      "new_repositories_by_total_stars": [
+        {
+          "created_at": "2026-11-03T14:04:27Z",
+          "full_name": "Minireel/HGhub",
+          "stars": 5675,
+          "url": "https://github.com/Minireel/HGhub"
+        },
+        {
+          "created_at": "2026-11-05T12:18:58Z",
+          "full_name": "NotRexed/Hookshot",
+          "stars": 4614,
+          "url": "https://github.com/NotRexed/Hookshot"
+        },
+        {
+          "created_at": "2026-11-03T08:02:11Z",
+          "full_name": "KKKKhazix/agent-autoloop",
+          "stars": 4266,
+          "url": "https://github.com/KKKKhazix/agent-autoloop"
+        },
+        {
+          "created_at": "2026-11-04T14:54:56Z",
+          "full_name": "worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto",
+          "stars": 3292,
+          "url": "https://github.com/worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto"
+        },
+        {
+          "created_at": "2026-11-03T03:22:56Z",
+          "full_name": "govijr/terminal-mac",
+          "stars": 2500,
+          "url": "https://github.com/govijr/terminal-mac"
+        },
+        {
+          "created_at": "2026-11-06T09:28:09Z",
+          "full_name": "JenkinWoo/sheeridVerify",
+          "stars": 1926,
+          "url": "https://github.com/JenkinWoo/sheeridVerify"
+        },
+        {
+          "created_at": "2026-11-03T16:50:21Z",
+          "full_name": "janestreet/agent_skills",
+          "stars": 1766,
+          "url": "https://github.com/janestreet/agent_skills"
+        },
+        {
+          "created_at": "2026-11-08T05:49:46Z",
+          "full_name": "jhaizhou-ops/S2Arm",
+          "stars": 1681,
+          "url": "https://github.com/jhaizhou-ops/S2Arm"
+        },
+        {
+          "created_at": "2026-11-03T08:23:03Z",
+          "full_name": "Sandflow-ai/sand3d",
+          "stars": 1604,
+          "url": "https://github.com/Sandflow-ai/sand3d"
+        },
+        {
+          "created_at": "2026-11-03T02:00:54Z",
+          "full_name": "CzJam/gjgjxweb",
+          "stars": 1445,
+          "url": "https://github.com/CzJam/gjgjxweb"
+        }
+      ],
+      "official_github_trending_weekly": [
+        {
+          "full_name": "morluto/rea",
+          "stars": 379528,
+          "url": "https://github.com/morluto/rea",
+          "weekly_trending_stars": 229268
+        },
+        {
+          "full_name": "pingdotgg/t3code",
+          "stars": 53838,
+          "url": "https://github.com/pingdotgg/t3code",
+          "weekly_trending_stars": 17100
+        },
+        {
+          "full_name": "storytold/artcraft",
+          "stars": 34649,
+          "url": "https://github.com/storytold/artcraft",
+          "weekly_trending_stars": 16379
+        },
+        {
+          "full_name": "boykopovar/AnyPS5",
+          "stars": 45675,
+          "url": "https://github.com/boykopovar/AnyPS5",
+          "weekly_trending_stars": 14224
+        },
+        {
+          "full_name": "vercel-labs/agent-desktop",
+          "stars": 20324,
+          "url": "https://github.com/vercel-labs/agent-desktop",
+          "weekly_trending_stars": 13712
+        },
+        {
+          "full_name": "MadsLorentzen/ai-job-search",
+          "stars": 62728,
+          "url": "https://github.com/MadsLorentzen/ai-job-search",
+          "weekly_trending_stars": 12848
+        },
+        {
+          "full_name": "Nutlope/hallmark",
+          "stars": 51674,
+          "url": "https://github.com/Nutlope/hallmark",
+          "weekly_trending_stars": 12062
+        },
+        {
+          "full_name": "NVIDIA/auto-ontology",
+          "stars": 10964,
+          "url": "https://github.com/NVIDIA/auto-ontology",
+          "weekly_trending_stars": 9327
+        },
+        {
+          "full_name": "thedotmack/claude-mem",
+          "stars": 115333,
+          "url": "https://github.com/thedotmack/claude-mem",
+          "weekly_trending_stars": 9318
+        },
+        {
+          "full_name": "D4Vinci/Scrapling",
+          "stars": 100455,
+          "url": "https://github.com/D4Vinci/Scrapling",
+          "weekly_trending_stars": 8712
+        }
+      ],
+      "period_end": "2026-11-09T19:51:38Z",
+      "period_start": "2026-11-08T19:51:38Z",
+      "queue": {
+        "ack_policy": "Only completed delivery acknowledges this format. Previews, failures and caps acknowledge nothing.",
+        "carried_from_earlier_periods": 359,
+        "catalogue": 0,
+        "detailed": 9,
+        "pending_after_success": 360,
+        "pending_before": 369
+      },
+      "ranking": "Up to 8 discoveries first seen within the last 24 hours, ranked by daily Trending peak, weekly peak, then Search, plus 4 oldest due backlog findings. Either group uses spare capacity, up to 12 total. Backlog order uses first-seen or retry time; local explanation failures wait 24 hours. Deferred and overflow findings stay queued. Daily publication does not exclude weekly publication.",
+      "trend_summary": "До восьми находок, впервые замеченных за последние 24 часа, по популярности в дневном Trending, недельном Trending и поиске; ещё четыре места — для старых находок по времени очереди или повторной попытки. Свободные места передаются другой группе, всего до 12 карточек. Новые для нашей ленты, не обязательно недавно созданные. Дневная публикация не исключает проект из недельного обзора.",
+      "trends": {
+        "forks": [
+          {
+            "delta": 10342,
+            "full_name": "morluto/rea"
+          },
+          {
+            "delta": 5197,
+            "full_name": "debpalash/VoiceStudio"
+          },
+          {
+            "delta": 3857,
+            "full_name": "affaan-m/ECC"
+          },
+          {
+            "delta": 3798,
+            "full_name": "mattpocock/skills"
+          },
+          {
+            "delta": 3702,
+            "full_name": "storytold/craft-anything"
+          },
+          {
+            "delta": 3173,
+            "full_name": "cloudflare/security-audit-skill"
+          },
+          {
+            "delta": 3154,
+            "full_name": "Gathin23/cleanyourtv"
+          },
+          {
+            "delta": 2659,
+            "full_name": "paperclipai/paperclip"
+          },
+          {
+            "delta": 2453,
+            "full_name": "anthropics/claude-code"
+          },
+          {
+            "delta": 2304,
+            "full_name": "deepseek-ai/dsh-superagent-prototype"
+          }
+        ],
+        "percent": [
+          {
+            "delta": 50251,
+            "full_name": "debpalash/VoiceStudio"
+          },
+          {
+            "delta": 46588,
+            "full_name": "mattpocock/skills"
+          },
+          {
+            "delta": 45899,
+            "full_name": "cloudflare/security-audit-skill"
+          },
+          {
+            "delta": 45072,
+            "full_name": "morluto/rea"
+          },
+          {
+            "delta": 33314,
+            "full_name": "pbakaus/impeccable"
+          },
+          {
+            "delta": 28849,
+            "full_name": "affaan-m/ECC"
+          },
+          {
+            "delta": 28778,
+            "full_name": "stablyai/orca"
+          },
+          {
+            "delta": 27290,
+            "full_name": "Gathin23/cleanyourtv"
+          },
+          {
+            "delta": 24658,
+            "full_name": "DietrichGebert/ponytail"
+          },
+          {
+            "delta": 23910,
+            "full_name": "pingdotgg/t3code"
+          }
+        ]
+      }
+    }
+  },
   "llm_daily_requests": {
     "2026-09-28": 21,
     "2026-09-29": 65,
