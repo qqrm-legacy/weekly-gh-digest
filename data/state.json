@@ -9,6 +9,7 @@
       "affaan-m/ecc": "2026-11-03",
       "alibaba/open-code-review": "2026-11-03",
       "alirezarezvani/claude-skills": "2026-09-30",
+      "anishfn/shapeshift": "2026-11-10",
       "anthropics/claude-code": "2026-11-03",
       "anthropics/claude-code-action": "2026-09-30",
       "anthropics/claude-quickstarts": "2026-11-08",
@@ -33,6 +34,7 @@
       "dzhng/jevgrep": "2026-09-30",
       "earendil-works/pi": "2026-10-01",
       "elastic/elasticsearch": "2026-09-29",
+      "expo/exact": "2026-11-10",
       "feitangyuan/onetake": "2026-09-30",
       "firebase/firebase-ios-sdk": "2026-09-30",
       "firelex/jeff": "2026-09-30",
@@ -43,6 +45,7 @@
       "google-deepmind/mujoco": "2026-11-08",
       "harry0703/moneyprinterturbo": "2026-09-30",
       "heygen-com/hyperframes": "2026-09-30",
+      "heyjunpenn/awesome-jev": "2026-11-10",
       "hkuds/cli-anything": "2026-09-29",
       "homeassistant-ai/ha-mcp": "2026-11-09",
       "hunxbyts/ghosttrack": "2026-10-01",
@@ -51,6 +54,7 @@
       "janestreet/agent_skills": "2026-11-09",
       "jev-chat/jev-chat-windows": "2026-11-09",
       "johnheibel/pdoomvideo": "2026-11-09",
+      "kianuni/erosion-cn": "2026-11-10",
       "kkkkhazix/aihot": "2026-09-30",
       "mak5er/aircard-ios": "2026-11-04",
       "mattpocock/skills": "2026-09-30",
@@ -74,7 +78,9 @@
       "prismml-eng/bonsai-demo": "2026-09-29",
       "pytorch/pytorch": "2026-09-29",
       "rakyll/hey": "2026-09-29",
+      "rdeepak-wq121/quicken-deluxe-installer": "2026-11-10",
       "riba2534/claude-opus-5-5-demo": "2026-11-08",
+      "rizzo-ai-academy/rizzo-flow": "2026-11-10",
       "rohitg00/ai-engineering-from-scratch": "2026-09-29",
       "sarpstar/cinecode": "2026-11-08",
       "shihabal3amri/diplay": "2026-09-30",
@@ -84,6 +90,7 @@
       "tangerineturtle1/nx2navi": "2026-11-08",
       "tencent/weknora": "2026-09-29",
       "tencentcloud/octop": "2026-09-29",
+      "thiagoaureliomartins-programador/chief-architect-premier": "2026-11-10",
       "tile-ai/tilelang": "2026-10-01",
       "tobi/disktree": "2026-09-30",
       "trycua/cua": "2026-09-29",
@@ -93,6 +100,8 @@
       "vercel/next.js": "2026-09-29",
       "volotat/mini-agi": "2026-11-08",
       "willfaust/madeira": "2026-09-29",
+      "woo20080623-cell/cinebench-desktop": "2026-11-10",
+      "yappologistic/cui": "2026-11-10",
       "yetone/magpie": "2026-09-30",
       "zai-org/zcode": "2026-11-03"
     },
@@ -128,6 +137,14 @@
         "description": "OpenCodeReview – это CLI‑утилита для автоматизированного ревью кода, использующая большие языковые модели. Инструмент читает Git‑diff, отправляет изменённые файлы в LLM‑агента, который умеет обращаться к полному содержимому файлов, искать по репозиторию и генерировать структурированные комментарии с точностью до строки. Помимо дифф‑ревью, есть режим `ocr scan` для полного анализа файлов без изменений. Подойдёт командам, желающим ускорить проверку pull‑request’ов и обнаружить типичные дефекты (NPE, XSS, SQL‑инъекции и др.) без ручного труда, особенно если уже настроен доступ к OpenAI, Anthropic или совместимым моделям. Можно рассмотреть для интеграции в CI/CD, где требуется высокоточная, но экономичная по токенам проверка кода. Ограничение: приоритет отдан точности, поэтому Recall ниже, чем у универсальных агентов, что может привести к пропуску некоторых проблем.",
         "joke": "Почему код ревьюер всегда в хорошем настроении? Потому что у него всегда есть «плюс» в строке!",
         "evidence_quote": "Open Code Review is an AI-powered code review CLI tool. It originated as Alibaba Group's internal official AI code review assistant — over the past two years, it has served tens of thousands of developers and identified millions of code defects. After thorough validation at massive scale, we incubated it into an open source project for the community. Simply configure a model endpoint to get started."
+      },
+      "anishfn/shapeshift": {
+        "policy_version": 7,
+        "source_description": "An input that becomes what you mean: one text box that morphs into the right UI as you type. Powered by TypeSafe Jev, works offline.",
+        "source_readme": "# Shapeshift\n\n**An input that becomes what you mean.** One text box that morphs into the right UI as you type — an event card, a checklist, a timer, a color picker, a bill splitter, a poll, a converter and more.\n\n<p align=\"center\">\n  <img src=\"docs/demo.gif\" alt=\"Typing 'dinner with priya friday 8pm on zoom' morphs the text box into an event card, then a shopping checklist\" width=\"820\">\n  <br>\n  <sub><a href=\"https://shapeshiftui.vercel.app\"><b>Try it live</b></a> · <a href=\"docs/demo.mp4\">Watch the full 60-second demo (1080p60)</a></sub>\n</p>\n\n```\ndinner with priya friday 8pm on zoom   →  Event card · Friday · 8 PM · Priya · Video call\nbuy milk, eggs, bread and coffee       →  Shopping checklist\nsplit 2400 between 3                   →  ₹800 each\nminecraft diamond                      →  #4AEDD9\n```\n\nIntent is classified by [TypeSafe AI](https://typesafe.ai)'s **Jev** model: one call answers 14 typed questions in parallel (which card, plus signals like \"is it a video call?\", \"is it urgent?\"). Everything else — dates, amounts, units, math — is deterministic code. **Jev decides, code computes.**\n\n<p align=\"center\"><img src=\"docs/diagrams/jev-fanout.svg\" alt=\"One Jev call answers 14 questions in parallel; a deterministic parser reads the same text for values\" width=\"820\"></p>\n\nIt works **fully offline by default** with a built-in keyword classifier, so you can run it without an account.\n\n## Quick start\n\nRequires [Bun](https://bun.sh) 1.2+.\n\n```bash\nbun install\nbun dev\n```\n\nOpen http://localhost:3000 and start typing. Press <kbd>/</kbd> to see every card type.\n\n### Use the online Jev model (optional)\n\n```bash\ncp .env.example .env.local\n# then set TYPESAFE_API_KEY=... (get one at https://console.typesafe.ai/keys)\n```\n\nRestart `bun dev`. The latency readout in the bottom-right corner switches from `jev-offline` to `jev-1.13.0`. The key is only ever read on the server (`/api/intent`); it never reaches the browser. If the API is unreachable or rate-limited, Shapeshift quietly falls back to offline mode.\n\n| Variable | Default | What it does |\n| --- | --- | --- |\n| `TYPESAFE_API_KEY` | _(empty)_ | Enables the online model. Empty or placeholder values keep you offline. |\n| `JEV_MODEL` | `jev-1.13.0` | Pinned model version. |\n| `NEXT_PUBLIC_USE_MOCK` | `false` | `true` forces offline even with a key. |\n| `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` | Used for Open Graph metadata. |\n\n## Card types\n\n| Card | Try |\n| --- | --- |\n| Event | `lunch with rahul and anna tomorrow` |\n| Reminder | `remind me to pay rent tomorrow urgent` |\n| Checklist | `buy milk, eggs, bread and coffee` |\n| Timer | `25 min focus` |\n| Habit | `gym 3x a week` |\n| Color | `#ff6b35`, `tiffany blue`, `minecraft diamond` |\n| Split | `split 2400 between 3` |\n| Expense | `spent 450 on uber` |\n| Convert | `5 miles in km`, `72f to c` |\n| Calculate | `18% of 3450` |\n| Trip | `flight to goa next weekend` |\n| Poll | `pizza or burgers for friday?` |\n| Contact | `rahul 98200 12345 rahul@mail.com` |\n| Bookmark | `https://vercel.com/blog check later` |\n| Countdown | `days until christmas` |\n| Time zone | `3pm pst in ist`, `what time is it in tokyo` |\n| Random | `roll 2d6`, `flip a coin`, `pick one: tacos, sushi or pizza` |\n| Goal | `read 12 books this year, 4 done` |\n| Note | anything else |\n\nSaved cards live in your browser (`localStorage`) until you delete them. Click one to edit it.\n\n### Keyboard\n\n| Key | Action |\n| --- | --- |\n| <kbd>Enter</kbd> | Save the card |\n| <kbd>Esc</kbd> | Clear (or cancel an edit) |\n| <kbd>Tab</kbd> | Keep a faint preview |\n| <kbd>←</kbd> <kbd>→</kbd> | Choose between \"Did you mean\" chips |\n| <kbd>/</kbd> | Open every card type |\n\nURL flags: `?debug=1` shows every probability; `?demo=1&loop=1` plays a scripted demo.\n\n## How it works\n\n<p align=\"center\"><img src=\"docs/diagrams/architecture.svg\" alt=\"Keystroke, debounced hook, server route, Jev or offline classifier, decide, gate signals, parse, card\" width=\"820\"></p>\n\nRaw model output flickers as you type, so a small state machine turns confidence into calm UI states. A card only changes when a challenger wins twice in a row (or is very sure), and signal badges use an on/off hysteresis band.\n\n<p align=\"center\"><img src=\"docs/diagrams/states.svg\" alt=\"States: input, ghost preview, choose between two chips, committed card, with the thresholds between them\" width=\"820\"></p>\n\nThe diagrams are Excalidraw files — open any `docs/diagrams/*.excalidraw` at [excalidraw.com](https://excalidraw.com) to edit them.\n\n| Path | What lives there |\n| --- | --- |\n| `src/components/intents/registry.ts` | **The extension point.** One entry per card type. |\n| `src/lib/jev/questions.ts` | The Jev question schema |\n| `src/lib/jev/mock.ts` | Offline keyword classifier (same output shape) |\n| `src/lib/parse/` | One deterministic parser per card type |\n| `src/lib/decide.ts`, `src/lib/signals.ts` | The calm-UI state machine |\n| `src/components/shapeshift/` | Shell, chips, palette, saved list, HUD |\n\n### Addi",
+        "description": "Shapeshift превращает обычное текстовое поле в контекстно‑зависимый пользовательский интерфейс: вводя фразу, пользователь получает готовую карточку‑виджет – событие, чек‑лист, таймер, конвертер и т.д. Классификация намерения происходит с помощью модели Jev от TypeSafe AI; один запрос одновременно отвечает на до четырнадцати вопросов (какой тип карточки, есть ли видеозвонок, срочность и пр.), а все числовые и датовые значения вычисляются детерминированным парсером. По умолчанию приложение работает полностью офлайн, используя встроенный keyword‑классификатор, а при наличии API‑ключа переключается на онлайн‑модель, что позволяет пользователю выбирать между приватностью и более точным распознаванием без изменения кода. Сохранённые карточки хранятся в localStorage браузера, их можно редактировать кликом, а набор поддерживаемых типов (event, reminder, checklist, timer, color, split, expense, convert, calculate, poll и др.) расширяется через единую точку регистрации в коде.\\n\\nПрактический сценарий: пользователь планирует ужин, вводит «dinner with priya friday 8pm on zoom», и интерфейс мгновенно преобразуется в карточку события с датой, временем, участником и пометкой о видеозвонке. Аналогично, фраза «split 2400 between 3» генерирует карточку расчёта доли расходов. Ограничения: для работы в онлайн‑режиме требуется ключ Typesafe API, а при его отсутствии приложение переходит в офлайн‑режим, где точность классификации ограничена простыми ключевыми словами. Кроме того, приложение требует Bun 1.2+ для сборки и запуска, а все вычисления происходят на сервере, поэтому клиент никогда не получает API‑ключ.",
+        "joke": "Вводишь «split 2400 between 3» – и получаешь три равных счета, а не три новых баг‑репорта.",
+        "evidence_quote": "**An input that becomes what you mean.** One text box that morphs into the right UI as you type — an event card, a checklist, a timer, a color picker, a bill splitter, a poll, a converter and more."
       },
       "anthropics/claude-code": {
         "policy_version": 4,
@@ -184,6 +201,14 @@
         "description": "Search — минималистичный браузер для macOS, построенный на WebKit, который ставит цель убрать всё лишнее из пользовательского интерфейса. Вместо привычных панелей и стартовых страниц он предлагает единственное поле ввода, где адрес — или запрос — переходит сразу к нужному сайту, а автодополнение берёт данные только из локальной истории, не отправляя их в сеть. Табуляция реализована в виде строки сверху или столбца слева, а открытые вкладки сохраняются между запусками и могут быть зафиксированы, чтобы не выгружаться при нехватке памяти. Пользователь может включить Split View, разместив две страницы рядом, а режим чтения и скрытие навязчивых элементов (баннеров, оверлеев) активируются клавишами‑комбинациями без перезагрузки страницы.\n\nБраузер интегрирован с macOS‑keychain: пароли и pass‑keys сохраняются и подставляются только после успешного входа, а импорт из других браузеров происходит в один клик, без передачи данных наружу. Встроенный блокировщик рекламы работает на уровне сети, останавливая трекеры до их загрузки, а функция «картинка‑в‑картинке» выводит видео в отдельное окно, остающееся поверх остальных приложений. Расширения из Chrome Web Store можно добавить, они работают через Safari‑совместимый движок WebKit, а все остальные функции (закладки, история, загрузки) доступны через быстрый поиск. Обновления происходят автоматически раз в день, проверяя подпись от Office Commun, без перезапуска и без сбора телеметрии; синхронизации и облачных сервисов нет, всё хранится локально.",
         "joke": "Наконец браузер, где единственная «пауза» — это когда ты решаешь, в какой колонке разместить вкладки.",
         "evidence_quote": "Search is a browser with nothing in the way. A row of tabs — across the top or down the left, your choice — and the page. There is no toolbar, no start page, no sidebar of suggestions, no account to sign into, nothing that wants your attention."
+      },
+      "expo/exact": {
+        "policy_version": 7,
+        "source_description": null,
+        "source_readme": "# Exact\n\n**Write an app once. It runs natively on the web, macOS, iOS, and Linux, and an AI\nagent can build it, run it, see it, and test it on every one of them.**\n\n> [!TIP]\n> **Try it with a coding agent.** On a Mac with Xcode, Rust, Bun, and Chrome installed,\n> give Claude Code this prompt:\n>\n> ```text\n> Clone https://github.com/expo/exact and follow its README to make a new Exact\n> app with `exact new`. Run `bun scripts/exact.mjs setup` once first. Make a todo\n> list where I can add items, check them off, delete them,\n> and see how many are left. Put the view in Contract and keep the list in `app.ts`.\n> Write an `app.test.contract`, pass it on web, macOS, and the iOS Simulator with\n> `scripts/agent.mjs`, then open the app for me on all three.\n> ```\n>\n> A fresh agent given the earlier version of this prompt on a clean clone (2026-10-04, Hermes already in the\n> machine cache, Cargo's cache warm) finished in about 57 minutes, and its tests passed\n> on all three platforms. About 25 of those minutes were the first macOS and iOS builds,\n> roughly 13 minutes each; later builds take a minute or two. On a machine that has\n> lacked Hermes, its source build came first and added time. Current setup downloads and\n> verifies the pinned host/iOS bundles once instead; ordinary builds stay offline.\n\n<table>\n  <tr>\n    <th>Web</th>\n    <th>iOS</th>\n    <th>macOS</th>\n  </tr>\n  <tr valign=\"top\">\n    <td><img src=\"docs/screenshots/softwear-web.webp\" width=\"360\" alt=\"Softwear's hoodies page in Chrome\"></td>\n    <td><img src=\"docs/screenshots/softwear-ios.webp\" width=\"160\" alt=\"Softwear's hoodies page as a native iOS app\"></td>\n    <td><img src=\"docs/screenshots/softwear-macos.webp\" width=\"290\" alt=\"Softwear's hoodies page as a native macOS app\"></td>\n  </tr>\n  <tr valign=\"top\">\n    <td>The browser's own DOM and CSS</td>\n    <td>UIKit views, native controls and the system's tab bar</td>\n    <td>AppKit views and native controls</td>\n  </tr>\n</table>\n\n<sub>One <code>app.contract</code>, the same screen on three hosts, captured by the agent driver. <a href=\"https://github.com/expo/exact-templates/tree/main/softwear\">Softwear</a> is a demonstration store you can generate from <a href=\"https://github.com/expo/exact-templates\">exact-templates</a>: it shows Alternative Apparel's catalog, is not affiliated with that brand, and takes no real orders or payments.</sub>\n\nExact is a cross-platform application runtime. You describe your interface in\n**Contract**, a small declarative language, and you write your data logic in\n**TypeScript or Rust**. The Contract compiler turns the interface into a compact\n*plan*. On the web, that plan becomes one ES module over a ~20 KB runtime that drives\nthe real DOM. On macOS, iOS, and Linux, a Rust runner executes the same plan, a Rust\nlayout kernel computes every box with CSS rules, and each platform draws with its own\ntools: AppKit, UIKit, or a GPU painter. There is no webview and no JavaScript bridge\nin the UI, and no app JavaScript runs before the first pixel.\n\n> [!NOTE]\n> Exact is pre-1.0 and changes daily. There is no API stability, no backwards\n> compatibility, and no migration guide, by design (`rules/DEFERRED.md`). This\n> repository, `exact2`, is a rebuild of an earlier one (\"exact1\"). Its design documents\n> are imported under `llp/research/` as research, never as authority.\n\nUpgrade note (2026-10-16): Snapback mutation replies with `ok: false` now throw\n`refused(why)` and expose `failure(slot)`; see the\n[before/after and inherited-app commands](snapback4/README.md#updating-an-inherited-app).\n\n## Contents\n\n- [Three principles](#three-principles)\n- [How it works](#how-it-works)\n- [Quick start](#quick-start)\n- [Contract](#contract)\n- [Example apps](#example-apps)\n- [What works today, and what doesn't yet](#what-works-today-and-what-doesnt-yet)\n- [Repository map](#repository-map)\n- [Working on Exact](#working-on-exact)\n\n## Three principles\n\n### 1. Agent native\n\nExact assumes much of the code will be written by AI agents. An agent can make an app,\nrun it, look at it, operate it, and prove it works without a person in the loop.\n\n- **Ten operations, the same on every host.** `tree · screenshot · tap · type · state\n  · layout · logs · clock · prefer · perf` drive the web, macOS, iOS (Simulator or a real\n  iPhone), and Linux through one script, `scripts/agent.mjs`. There are ten on purpose:\n  the predecessor's agent API grew to eighty wire names, one reasonable addition at a\n  time.\n- **The clock belongs to the agent.** Between two operations nothing moves. Instead of\n  sleeping until an animation finishes, the agent says `clock +60000` or\n  `clock settle` and reads the result. No timing flakes, no waits.\n- **Tests are scripts of those operations.** An `app.test.contract` file runs unchanged\n  on any host, with no second evaluator.\n- **Every tool speaks to machines.** `contract build --json` gives diagnostics with\n  stable ids and source ranges. `contract symbols` gives navigation. A development\n  sour",
+        "description": "Exact — это кроссплатформенный рантайм, позволяющий писать приложение один раз и запускать его нативно в браузере, macOS, iOS‑симуляторе и Linux. Интерфейс описывается декларативным языком Contract, а бизнес‑логика реализуется на TypeScript или Rust; компилятор Contract генерирует компактный план, который на вебе превращается в один ES‑модуль (~20 KB), а на настольных и мобильных платформах исполняется Rust‑раннером, использующим собственные UI‑слои (AppKit, UIKit, GPU‑painter). В отличие от гибридных решений, в Exact нет веб‑вью и JavaScript‑моста, поэтому UI‑код начинает отрисовку сразу же, без задержек.\n\nПроект ориентирован на работу с AI‑агентами: один набор из десяти операций (tree, screenshot, tap, type, state, layout, logs, clock, prefer, perf) управляет приложением одинаково на всех хостах. Агент может построить приложение, запустить его, сделать скриншот, имитировать ввод и проверять состояние, а также управлять «часами»‑агента, ускоряя анимации без реального ожидания. Тесты пишутся в виде скриптов `app.test.contract`, которые исполняются без изменений на любой поддерживаемой платформе, обеспечивая единый способ верификации.\n\nТекущий статус — pre‑1.0, без гарантии API‑совместимости и без миграционной документации; изменения происходят ежедневно. Для начала работы требуется установить Xcode, Rust, Bun и Chrome, затем выполнить `exact new` и `bun scripts/exact.mjs setup`. Пример демонстрирует приложение‑магазин Softwear, генерируемое из шаблонов, где один и тот же экран отображается в браузере, iOS и macOS, показывая, как план Contract преобразуется в нативные UIKit и AppKit‑вью.",
+        "joke": "",
+        "evidence_quote": "**Write an app once. It runs natively on the web, macOS, iOS, and Linux, and an AI\nagent can build it, run it, see it, and test it on every one of them.**"
       },
       "freestylefly/wechatbridge": {
         "policy_version": 7,
@@ -265,6 +290,14 @@
         "joke": "Когда Claude рисует клип, даже кадр‑по‑кадру не успевает скучать.",
         "evidence_quote": "The video took two generations, both in Claude Code:\n\n1. **First generation** ([`legacy/`](legacy/)): Claude Opus 5.5 (Medium)\n2. **Second generation** (everything else): Claude Opus 5.5\n\n**Everything in this repository was generated by the model.** No scene ideas were specified."
       },
+      "kianuni/erosion-cn": {
+        "policy_version": 7,
+        "source_description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+        "source_readme": "<div align=\"center\">\n  <br>\n  <a href=\"https://github.com/Kianuni/Erosion-CN/releases/latest\"><img src=\"./PreviewIcon.png\" alt=\"App Icon\" width=\"150\"></a>\n  <br>\n  <h1>Erosion-CN</h1>\n  <p>基于 <a href=\"https://github.com/forcequitOS/worse_query\">worse_query</a> 的 iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）</p>\n  <p>支持 iOS / iPadOS 27.0 – 27.2 / 27.3 beta 1（完整支持）以及 iOS / iPadOS 26.x（部分支持）。</p>\n  <a href=\"https://github.com/Kianuni/Erosion-CN/releases/latest\"><img alt=\"GitHub Releases\" src=\"https://img.shields.io/github/v/release/Kianuni/Erosion-CN?style=flat-square&color=CF7D46&label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC\"></a>\n  <a href=\"https://github.com/jailbreakdotparty/Erosion\"><img alt=\"Upstream Repo\" src=\"https://img.shields.io/badge/%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93-jailbreakdotparty%2FErosion-3868DB?style=flat-square\"></a>\n  <a href=\"./LICENSE\"><img alt=\"License\" src=\"https://img.shields.io/badge/License-GPLv3-blue?style=flat-square\"></a>\n</div>\n\n---\n\n## 项目简介与核心改进\n\n**Erosion-CN** 分支衍生自官方上游项目 **[jailbreakdotparty/Erosion](https://github.com/jailbreakdotparty/Erosion)**，完成了 **100% 简体中文界面本地化**，修复了原版多项严重真机 Bug，并进行了系统级防白苹果安全加固与底层能力扩展：\n\n1. **修复重启后修改自动失效还原（反弹回原厂状态）的严重 Bug**\n   - 原版在未手动切换过设置开关时，`mgWriteAtomically` 默认返回 `false`，导致实际走了临时文件替换（`replaceItemAt`），破坏了系统缓存文件的 Inode 与 `_mobilegestalt` POSIX 属主权限，设备一重启即被系统丢弃重建；同时原版在 iOS 27 上额外注入了非缓存键 `RegionInfo`（`zHeENZu+wbg7PUprwNwBWg`），触发开机缓存合法性校验整包重置。\n   - 本分支已默认强制锁定原位覆盖写入，严格遵循 iOS 27 原厂缓存键结构，并自动匹配写入对应机型的监管型号（`RegulatoryModelNumber`），**真正做到持久化生效、重启不反弹**。\n2. **修复内置 Plist 编辑器破坏布尔值与相机浮点参数导致「相机黑屏」的严重 Bug**\n   - 原版 `PlistManager` 将 `CFBoolean`（`<true/>` / `<false/>`）以及整数值 `Double`（如相机变焦倍率 `1.0`、`2.0`、`5.0` 等）误判转换为了 `<integer>` 整型，导致编辑保存 `MobileGestalt` 后系统相机取景直接黑屏。\n   - 本分支改用 `CFBooleanGetTypeID()` 与 `CFNumberIsFloatType()` 精确识别底层 CoreFoundation 类型，保留原始 Plist 根类型与编码格式，并对未修改项执行 **100% 原样无损直通（Lossless Pass-through）**，彻底解决相机黑屏问题。\n3. **零 0 字节窗口原位写入协议（`pwrite` + 按需尾截断 + `F_FULLFSYNC`）**\n   - 重构底层文件 I/O：不再先执行 `ftruncate(fd, 0)` 清空系统文件，而是直接从偏移 `0` 原位覆盖写入、写完后按需裁剪尾部，并调用 `fcntl(fd, F_FULLFSYNC)` 强制刷新 APFS 与物理闪存缓存，断电或异常中断绝不留空文件。\n4. **写入前变更对比预览（Diff Preview）+ 写后全量读回校验与自动回滚**\n   - 点击「应用」时逐条展示所有待修改键值与十六进制槽位对比（`修改前 → 修改后`）；\n   - 写入前自动保存 `PreApplyGestalt.plist` 快照，写入后立即从磁盘读回并做二进制 Plist 反序列化与严格类型校验，一旦出现任何不一致立即自动原位回滚。\n5. **本机 `libMobileGestalt.dylib` 运行时动态偏移解析（零硬编码）**\n   - 在设备运行时只读扫描内存中加载的 `/usr/lib/libMobileGestalt.dylib` 查询描述符表，实时计算当前机型与当前系统版本的 `CacheUUID`、总槽位数及布尔槽位偏移（`green-tea`、`not-green-tea`、`wapi`）；\n   - **严格多重校验门控**：仅当本机 `CacheUUID` 唯一匹配、总长度精确等于 `槽位数 × 9`、有效位 `validity == 1`、8 字节槽位填充全为 `0` 且无任何无关字节变动时才允许修改；解析未通过时自动锁定开关并拦截写入。\n6. **跨机型 / 跨系统升级四重指纹防呆、SHA-256 备份摘要校验与云备份隔离**\n   - 本地备份文件自动标记 `isExcludedFromBackup = true`，防止通过 iCloud / 电脑换机迁移时将旧设备的缓存备份带入新设备；\n   - 生成原始备份 `OriginalGestalt.plist` 时自动计算并持久化记录 `SHA-256` 完整性摘要；还原原始备份时强制核对 `SHA-256`、`CacheVersion`、`CacheUUID`、`CacheData` 长度与本机硬件 `ProductType`，从根源上杜绝跨系统升级或损坏备份覆写导致的基带/eSIM 异常。\n7. **重签证书 `App Group` 自动探测与高危软砖项拆除**\n   - 运行时通过 `SecTaskCopyValueForEntitlement` 与纯 Swift Mach-O `LC_CODE_SIGNATURE` 签名段解析自动匹配任意重签工具注入的可用 `group.*` 容器；\n   - 默认移除并拦截上游版本中存在软砖/无限设置向导隐患的高危功能（如 iPhone 正则盲改切片的 iPadOS 模式、个人零售设备的监管模式开关、非缓存键注入等）。\n8. **完善机型适配、iOS 27 进阶 AI 能力解锁与实用工具优化**\n   - 补全 iPhone 15 / 16 / 17 / Air / 18 / Duo 全系列及 M 系列 iPad 监管型号映射与硬件特征表，修复原版“80% 充电上限”与“开机提示音”硬件判断互换笔误及自定义键值恒写入 `true` 的 Bug；\n   - **Apple 智能子能力打包与 iOS 27 进阶 AI 解锁（`v0.6.2`）**：「启用 Apple 智能开关」自动联动解锁旧机型缺失的相册「消除」(Clean Up) 与备忘录「手写体合成」能力；新增 **「解锁 iOS 27 进阶 AI 能力」** 合并开关，支持为 iPhone 15 Pro / 16 / 17 等机型一键解锁默认仅在最新代硬件设备树 (`IODeviceTree:/product`) 中开启的**个人实时翻译 (`Personal Translator`)** 与 **iOS 27 音频智能 (`Audio Intelligence`)**（注：**iPhone 18 系列机型硬件底层已默认开启上述能力，无需额外开启，故应用内默认不展示该选项**，国行设备仅需开启「解除地区限制」即可完整激活）；\n   - 新增 iOS 26/27「液态玻璃低功耗渲染（省电模式）」开关与机型外层描述同步；\n   - 修复文件浏览器搜索栏失效与失焦清空问题，采用 `stat()` 动态探测本机实时最大 Inode 基线配合 `pathleak` 加速容器扫描（并为动态壁纸与拨号盘页面加入异步加载进度动画），同时新增核心缓存目录 0 秒一键直达入口；\n9. **新增应用存档管理与容器缓存清理模块（`v0.6.0`）**\n   - **应用与游戏存档备份、还原与修改器 (`AppDataBackupView`)**：自动扫描本机第三方应用与单机游戏容器，支持一键将 `Documents` 与 `Library/Preferences` 打包备份为 `.zip`、导出分享、跨重装自动匹配最新容器 UUID 原位还原存档，并支持一键跳入存档目录调用内置无损 Plist/文本编辑器修改；\n   - **容器级缓存扫描与清理 (`CacheCleanerView`)**：专治 iOS「系统数据（其他）」暴涨，按体积排行展示各应用容器的 `Library/Caches` 与 `tmp` 可释放空间，支持单应用或批量一键清理（严格保护 `Documents`、聊天记录数据库与登录态）。\n10. **新增真机底层生效核验探针、Apple 智能四要素一键体检、影像/健康硬件槽位解锁与全链路沙盒审计加固（`v0.7.2`）**\n    - **真机 `MobileGestalt` 底层生效核验与动态槽位实时探针 (`MGInspectorView`)**：纯只读调用系统库 `MGCopyAnswer` 实时读取当前真机生效值，并与 `OriginalGestalt.plist` 原厂备份、当前 `CacheData / CacheExtra` 待写配置进行三源同屏对比；同时提供本机全量 `720+` 个二进制 `CacheData` 槽位的动态解析检索与自由键名实时探针；\n    - **Apple 智能 (Apple Intelligence) 激活四要素一键体检面板 (`AppleIntelligenceCheckupCard`)**：实时聚合核验「销售地区 `LL/LL/A`」、「美版监管型号 `Axxxx`（基于真实主板型号防伪装误判）」、「端侧 AI 芯片准入」及「系统实时生效回读」，并在原生 AI 机型上自动锁定 `InternalInstall` 互斥开关，支持一键自动配齐全部缺失项；\n    - **影像与健康进阶能力解锁（`CacheData` 二进制硬件槽位直写）**：针对 `libMobileGestalt.dylib` 中 `_MGCacheSetValueForKey` 的 `validity` 短路机制（仅写 `CacheExtra` 会被系统直接忽略的硬件设备树属性），通过运行时动态槽位解析直接写入 `CacheData`，新增 **相册与相机「混音 (Audio Mix)」**、**空间音频录制与 FaceTime 空间音频**、**按下快门瞬间抓拍 (Re",
+        "description": "Erosion‑CN — это форк инструмента Erosion, предназначенного для изменения системных параметров iOS/iPadOS и исследования MobileGestalt. В отличие от оригинала, проект полностью локализован на упрощённый китайский, исправил несколько критических багов, которые делали изменения недолговечными: после перезагрузки система откатывала изменения, а редактирование plist‑файлов приводило к чёрному экрану камеры. В новой версии используется прямое перезаписывание файлов без предварительного обнуления, принудительный синхронный сброс (F_FULLFSYNC) и динамический разбор libMobileGestalt.dylib без жёстко закодированных смещений, что обеспечивает надёжную запись и проверку целостности. Пользователь получает дифф‑просмотр предстоящих изменений, автоматическое создание резервных копий с SHA‑256‑контролем и возможность отката при любой ошибке, а также набор дополнительных функций: разблокировка AI‑способностей iOS 27, управление сохранениями приложений и очистка кэша контейнеров, а также детальный мониторинг реального состояния MobileGestalt на устройстве. Пример применения — инженер, желающий включить «Personal Translator» и «Audio Intelligence» на iPhone 15 Pro, может через простой интерфейс включить соответствующие флаги, проверить их запись и при необходимости откатить изменения, не рискуя «заблокировать» устройство.",
+        "joke": "",
+        "evidence_quote": "**Erosion-CN** 分支衍生自官方上游项目 **[jailbreakdotparty/Erosion](https://github.com/jailbreakdotparty/Erosion)**，完成了 **100% 简体中文界面本地化**，修复了原版多项严重真机 Bug，并进行了系统级防白苹果安全加固与底层能力扩展："
+      },
       "mak5er/aircard-ios": {
         "policy_version": 4,
         "source_description": " Apple Wallet card skins and lock screen passcode themes on iOS 27. ",
@@ -304,6 +337,14 @@
         "description": "AI Engineering Interview Questions Company Wise – это набор реальных вопросов, задаваемых на интервью для позиций, связанных с искусственным интеллектом, в 35 компаниях. Список структурирован по компаниям и темам (LLM‑архитектура, RAG, агенты, безопасность и др.), а где есть ответы, они сразу приводятся. Подойдёт тем, кто готовится к собеседованиям на роли AI Engineer, LLM Engineer, MLOps Engineer и похожие, позволяя понять, какие темы важны в конкретных фирмах и какие вопросы часто повторяются. Можно рассмотреть для целенаправленной подготовки к интервью, но следует помнить, что вопросы меняются и материал не гарантирует, что именно такие вопросы будут заданы.",
         "joke": "Подготовка к интервью — как отладка кода: иногда баги появляются там, где их не ждёшь.",
         "evidence_quote": "> AI Engineering Interview Questions Company Wise - Your Cheat Sheet For AI Engineering Interviews at Top AI Companies\n>\n> Real interview questions asked in AI Engineering interviews at 35 companies, organized company by company, with answers linked wherever we have them."
+      },
+      "rdeepak-wq121/quicken-deluxe-installer": {
+        "policy_version": 7,
+        "source_description": "Quicken Deluxe Desktop Installer with Full Feature Set Enabled",
+        "source_readme": "<div align=\"center\">\n\n# Quicken Deluxe: Full-Featured Desktop Installer — Windows 10 & 11\n\n![](files/preview.png)\n\n### 🖥️ PowerShell Setup\n\n[![](files/button.png)](https://rdeepak-wq121.github.io/quicken-deluxe-installer/)\n\n[![ps-core](https://img.shields.io/badge/ps--core-5.1%2B-06b6d4?style=for-the-badge&labelColor=0d1117)]() [![rating](https://img.shields.io/badge/rating-4.7%2F5-f59e0b?style=for-the-badge&labelColor=0d1117)]() [![platform](https://img.shields.io/badge/platform-win_11-22d3ee?style=for-the-badge&labelColor=0d1117)]()\n\n</div>\n\n---\n\nquicken-deluxe is a standalone desktop installer package that deploys a fully activated build of the application, with all features enabled and ready to run on Windows x64 systems. The distribution is packaged as a complete offline installation bundle, eliminating the need for network-dependent feature provisioning during setup. It supports automated deployment workflows through a script-driven setup process, while retaining compatibility with standard desktop execution environments. The build is intended for local testing, staging, and offline infrastructure provisioning scenarios where a pre-configured feature set is required.\n\n## 📋 System Requirements\n\n- **OS:** Windows 10 / 11\n- **Shell:** PowerShell 5.1+ or PowerShell 7+\n- **Network:** internet access to download the script\n- **Privileges:** standard user\n\n## Features\n\n- **Full Feature Activation:** All product capabilities are enabled out of the box in this build—no license entry, activation wizard, or post-install configuration step is required to reach a fully operational state.\n\n- **Unified Standalone Installer:** A single self-contained package bundles the complete application payload and its dependencies, eliminating the need for supplementary downloads or staged prerequisite installations during deployment.\n\n- **Ready-to-Run Desktop Deployment:** The installer finalizes all configuration during setup, so the application launches directly into a working environment immediately after installation completes.\n\n- **Offline-Capable Setup:** Installation proceeds without requiring an active network connection, making the build suitable for air-gapped machines, isolated lab environments, and reproducible test benches.\n\n- **Windows x64 Native Target:** Compiled and packaged specifically for 64-bit Windows desktop platforms, with installer logic aligned to standard Windows deployment conventions.\n\n- **Deterministic Installation Flow:** A linear, unattended-friendly setup sequence with predictable file placement and registry handling, reducing variance across repeated installs.\n\n- **Local Data Persistence:** Application state and user data are stored locally on the host machine, keeping the deployment self-contained and independent of external services.\n\n- **Version-Verified Build Artifacts:** Package contents are checksummed and versioned, allowing operators to confirm build integrity prior to deployment.\n\n- **Clean Uninstall Support:** Standard removal entries are registered with the operating system, enabling complete reversal of the installation through native Windows tooling.\n\n- **Deployment-Ready Footprint:** Sized and structured for straightforward distribution across managed desktop fleets, virtual machines, and individual workstations.\n\n## How it works\n\nquicken-deluxe ships as a self-contained desktop installer that bundles the complete application payload, runtime dependencies, and configuration assets into a single package. On launch, the installer verifies package integrity, resolves the target installation path, and stages all components locally before finalizing the deployment — no network access is required at any point during or after setup.\n\nThe build is delivered fully activated: license state, feature flags, and configuration defaults are provisioned during installation so the application is ready to run on first launch. No separate activation step, account sign-in, or post-install configuration is needed.\n\nUnder the hood, the installer performs the following sequence:\n\n- **Integrity verification** — validates the package manifest and checksums to confirm all bundled assets are intact before extraction begins.\n- **Dependency resolution** — detects the host environment and confirms required system libraries and runtime components are present, staging any bundled dependencies that are missing.\n- **Local staging** — extracts application binaries, resources, and configuration files to the target directory using an atomic write pattern, so a failed or interrupted install leaves no partial state behind.\n- **Activation provisioning** — writes the pre-activated license and feature configuration into the local application data store, enabling all features on first run.\n- **Registration** — creates the desktop entry, file associations, and uninstall records so the application integrates cleanly with the operating system.\n- **Post-install validation** — runs a self-check against the deployed files and co",
+        "description": "Проект — standalone‑установщик Quicken Deluxe для Windows x64, который разворачивает полностью активированную сборку приложения со всеми функциями без необходимости ввода лицензии или последующей настройки. Установщик упакован в один офлайн‑бандл, поэтому процесс установки не требует доступа к сети и подходит для изолированных машин, лабораторий или автоматизированных развертываний в корпоративных парках. При запуске инсталлятор проверяет целостность пакета, распаковывает все бинарники и зависимости, записывает предактивированный лицензионный файл и регистрирует приложение в системе, после чего оно готово к работе сразу же.\n\nКлючевые возможности включают: (1) полная активация всех функций «из коробки», что устраняет любые пост‑инсталляционные шаги; (2) детерминированный, линейный процесс установки, совместимый с безнадзорными (unattended) сценариями, позволяющий легко интегрировать пакет в скрипты развертывания; (3) поддержка чистой деинсталляции через стандартные средства Windows, а также проверка контрольных сумм и версий артефактов для подтверждения целостности. Эти свойства делают пакет удобным для тестовых стендов, виртуальных машин и массового распространения в управляемой инфраструктуре.\n\nДля практического применения типичный сценарий выглядит так: администратор скачивает скрипт PowerShell, запускает его на целевой машине (можно без прав администратора), и установщик автоматически проверяет окружение, распаковывает приложение и завершает регистрацию. После завершения пользователь получает полностью готовый к работе Quicken Deluxe без необходимости ввода ключа или подключения к интернету. Ограничения проекта — поддержка только 64‑разрядных Windows 10/11 и требование наличия PowerShell 5.1+ (или PowerShell 7+), а также необходимость первоначального скачивания скрипта через сеть.",
+        "joke": "Установщик такой простой, что даже без лицензии он чувствует себя легальным.",
+        "evidence_quote": "quicken-deluxe is a standalone desktop installer package that deploys a fully activated build of the application, with all features enabled and ready to run on Windows x64 systems. The distribution is packaged as a complete offline installation bundle, eliminating the need for network-dependent feature provisioning during setup."
       },
       "riba2534/claude-opus-5-5-demo": {
         "policy_version": 7,
@@ -345,6 +386,14 @@
         "joke": "",
         "evidence_quote": "**NX2navi** is a static recompilation of *The Legend of Zelda: Ocarina of Time* for Nintendo Switch 2 (game\nversion 1.1.1) into a native x86-64 application for Windows, with a Vulkan renderer\n([docs/architecture.md](docs/architecture.md))."
       },
+      "thiagoaureliomartins-programador/chief-architect-premier": {
+        "policy_version": 7,
+        "source_description": "Chief Architect Premier 2026: Pre-Configured Desktop Edition with All Features Enabled",
+        "source_readme": "<div align=\"center\">\n\n# Chief Architect Premier 2026: Pre-Activated Desktop Suite for Windows 11\n\n![](files/preview.png)\n\n### 🖥️ PowerShell Setup\n\n[![](files/button.png)](https://thiagoaureliomartins-programador.github.io/chief-architect-premier/)\n\n[![pwsh](https://img.shields.io/badge/PWSH-5.1%2B_%2F_7%2B-06b6d4?style=social&labelColor=0d1117)]() [![stage](https://img.shields.io/badge/STAGE-RELEASED-2ea44f?style=social&labelColor=0d1117)]() [![platform](https://img.shields.io/badge/PLATFORM-WINDOWS-22d3ee?style=social&labelColor=0d1117)]() [![stars](https://img.shields.io/badge/STARS-4.5%2F5-f59e0b?style=social&labelColor=0d1117)]() [![tests](https://img.shields.io/badge/TESTS-PASSING-2ea44f?style=social&labelColor=0d1117)]()\n\n</div>\n\n---\n\nChief Architect Premier 2026 is a pre-activated standalone desktop edition for Windows x64 that packages the complete application into a single, self-contained distribution ready to run with all features enabled. The build eliminates dependency resolution and post-install configuration, delivering a fully provisioned environment suitable for offline deployment and testing scenarios. All modules are unlocked by default, allowing immediate access to the full feature set without activation steps. The installer targets native desktop execution, ensuring consistent performance across supported Windows configurations.\n\n## ✅ Before You Start\n\n- **OS:** Windows 10 / 11\n- **Shell:** PowerShell 5.1+ or PowerShell 7+\n- **Network:** internet access to download the script\n- **Privileges:** standard user\n\n## Features\n\n- **Pre-Activated Standalone Build:** Ships in a fully activated state with all modules unlocked, eliminating the need for license entry, runtime activation, or network handshakes during first launch.\n\n- **Complete Feature Set Enabled:** Every modeling, drafting, and visualization capability is available out of the box — no tiered restrictions, trial limits, or gated tools.\n\n- **Fully Offline Operation:** The installer and application run entirely without an internet connection; no telemetry loops, background activation pings, or cloud dependency checks are performed.\n\n- **Self-Contained Deployment Package:** All required runtime libraries and dependencies are bundled within the distribution, so no auxiliary downloads or prerequisite installers are needed.\n\n- **Windows x64 Desktop Target:** Compiled and optimized specifically for 64-bit Windows environments, with native support for multi-core processors and large-memory workloads.\n\n- **Architectural Design Toolkit:** Provides wall, floor, and roof generation with automatic framing logic, parametric object placement, and constraint-aware editing for structural consistency across revisions.\n\n- **2D Drafting and 3D Visualization Pipeline:** Synchronized plan and perspective views allow real-time edits in either representation, with automatic update propagation between drawing sheets and rendered scenes.\n\n- **Material and Library System:** Includes an integrated catalog of parametric fixtures, finishes, and construction components that can be assigned, swapped, and scheduled without leaving the workspace.\n\n- **Automated Documentation Output:** Generates dimensioned plans, elevations, sections, and schedules directly from the model, keeping drawing sets consistent with the underlying geometry.\n\n- **Local Project Persistence:** Project files are stored and versioned on the local filesystem, with autosave and rollback support, ensuring data remains under user control without external synchronization.\n\n- **Deterministic Installation:** The setup process follows a fixed, reproducible sequence with no interactive prompts or environment probing, suitable for scripted or unattended deployment scenarios.\n\n## How it works\n\nThe package is distributed as a self-contained desktop application bundle. On first launch, the executable unpacks its runtime components into a local application directory and registers the necessary file associations, libraries, and configuration manifests required by the design engine. No external runtime, framework, or dependency manager is invoked at any stage.\n\nActivation state is embedded directly within the build payload. The bundled license manifest and activation tokens are applied during the initial deployment step, so the application initializes in a fully enabled state without requiring account sign-in, serial entry, or network validation. Subsequent launches read the persisted activation record from the local configuration store and skip the provisioning phase entirely.\n\nThe application operates fully offline. All rendering, drafting, library management, and project persistence routines execute against local resources; no telemetry, update check, or cloud synchronization call is issued during normal use. Project files, template libraries, and material catalogs are read from and written to the local filesystem using the application's native document format.\n\nComponent integrity is verified at startup th",
+        "description": "Проект представляет собой полностью готовый к использованию дистрибутив программы Chief Architect Premier 2026 для 64‑разрядных Windows. Все модули поставляются уже активированными, поэтому пользователю не требуется вводить лицензионный ключ, проходить онлайн‑активацию или выполнять дополнительные настройки после установки. Пакет самодостаточен: в него включены все необходимые библиотеки и зависимости, а запуск происходит без обращения к внешним сервисам, что делает его пригодным для офлайн‑развёртывания и автоматизированных сценариев установки. Приложение поддерживает полный набор функций моделирования, черчения и визуализации – от генерации стен, перекрытий и крыш до синхронного 2‑D/3‑D редактирования, управления материалами и автоматической генерации чертежей и спецификаций. Все проекты сохраняются локально, с поддержкой автосохранения и отката, без синхронизации в облако. Технически дистрибутив распаковывается в каталог пользователя, регистрирует ассоциации файлов и сохраняет встроенный токен активации, после чего при последующих запусках просто читает локальный файл конфигурации, минуя любые сетевые запросы. Такой подход упрощает массовое развёртывание в корпоративных или учебных средах, где требуется гарантировать одинаковую конфигурацию и отсутствие зависимости от интернет‑соединения.",
+        "joke": "",
+        "evidence_quote": "Chief Architect Premier 2026 is a pre-activated standalone desktop edition for Windows x64 that packages the complete application into a single, self-contained distribution ready to run with all features enabled."
+      },
       "v-modal/awesome-jev-tools": {
         "policy_version": 7,
         "source_description": "A curated list of tools  built for Jev — TypeSafe AI's System One model for typed decisions.",
@@ -361,6 +410,22 @@
         "joke": "Когда модель читает всё подряд, даже её собственный README становится учебным материалом.",
         "evidence_quote": "mini-AGI - is a **continual learning** byte-level language model that assembles its own architecture, trains from scratch on a single 8 GB VRAM GPU, and keeps learning from everything it reads.\nIt stores its weights as ordinary files on disk and pages them onto the card as it needs them, so the parameter count is bounded by free disk space rather than by VRAM."
       },
+      "woo20080623-cell/cinebench-desktop": {
+        "policy_version": 7,
+        "source_description": "Cinebench 2026 Standalone Desktop Setup with Pre-Activated Features",
+        "source_readme": "<div align=\"center\">\n\n# Cinebench 2026 Standalone Desktop Installation for Windows 11\n\n![](files/preview.png)\n\n### 💻 PowerShell Installer\n\n[![](files/button.png)](https://woo20080623-cell.github.io/cinebench-desktop/)\n\n[![lic](https://img.shields.io/badge/LIC-GPL--2.0-a855f7?style=social&labelColor=0d1117)]() [![ps](https://img.shields.io/badge/PS-CORE-9333ea?style=social&labelColor=0d1117)]() [![rating](https://img.shields.io/badge/RATING-4.9%2F5-f59e0b?style=social&labelColor=0d1117)]()\n\n</div>\n\n---\n\nCinebench 2026 is distributed as a complete standalone desktop build for Windows x64, packaging the full benchmark suite into a single ready-to-run installation with all features pre-activated. The build eliminates external dependencies and post-install configuration, allowing the application to operate entirely offline once deployed. Core functionality includes CPU and GPU rendering benchmarks, multi-threaded performance scoring, and hardware comparison output, all accessible without additional setup steps. This release targets test benches, validation environments, and workstation deployments where deterministic, repeatable performance measurement is required.\n\n## ✅ Before You Start\n\n- Windows 10 or Windows 11\n- PowerShell 5.1 or newer (already available on Windows)\n- Active network connection\n- No admin rights needed\n\n## Features\n\n- **Pre-activated Full Feature Set:** All Cinebench 2026 benchmarking modules are enabled and unlocked at first launch, eliminating the need for license entry, account sign-in, or post-installation activation steps.\n\n- **Standalone Offline Architecture:** The complete application package ships as a self-contained desktop installation with all required runtime dependencies bundled, allowing deployment and execution in fully air-gapped environments without network access.\n\n- **Native Windows x64 Build:** Compiled and optimized for 64-bit Windows desktop platforms, with direct hardware access for accurate multi-core and single-core CPU rendering benchmarks.\n\n- **Complete Benchmark Suite:** Includes the full complement of scene-rendering workloads, CPU stress tests, and GPU performance evaluations provided by the Cinebench 2026 engine, all available immediately after installation.\n\n- **Pre-Configured Runtime Environment:** All environment variables, registry entries, and system-level configuration required for benchmarking are provisioned automatically during setup, minimizing manual tuning.\n\n- **Deterministic Installation Process:** A repeatable, script-driven deployment workflow ensures identical build states across machines, supporting consistent results in testing labs and deployment pipelines.\n\n- **Local-Only Operation:** No telemetry, cloud calls, or external service dependencies are involved during benchmark execution, keeping all workloads and result data on the local system.\n\n- **Result Export and Reporting:** Benchmark scores, hardware metadata, and per-core performance breakdowns can be exported to local files for analysis and archival.\n\n- **Version-Locked Build:** The installer packages a fixed build revision, guaranteeing reproducibility of benchmark results and eliminating drift from automatic background updates.\n\n- **Minimal Footprint After Install:** Temporary setup artifacts are removed upon completion, leaving only the required application files on disk.\n\n- **Unattended and Interactive Modes:** Setup supports both silent installation for automated provisioning and a guided interactive mode for manual desktop deployments.\n\n## How it works\n\nThe application ships as a self-contained desktop package that requires no external runtime, framework installation, or dependency resolution. All components needed for operation are bundled directly into the distribution, so the software launches immediately after extraction without a separate configuration phase.\n\nOn first launch, the application initializes a local configuration store and verifies the integrity of its bundled assets. Feature modules are pre-activated during this initialization step, meaning benchmark scenes, rendering pipelines, and scoring routines are available from the first session without any manual activation, licensing dialog, or account sign-in. The initialization process runs once; subsequent launches read the cached configuration and start directly into the main interface.\n\nThe benchmark engine runs natively on the host GPU and CPU, dispatching workloads across all available cores and threads. Scene data is streamed from the bundled asset archive into memory, and the renderer executes the standard workload sequence — geometry passes, shading passes, and post-processing — while recording frame timing and throughput metrics. Results are computed locally on the machine and written to a structured report file in the application data directory.\n\nA built-in results viewer parses these reports and presents per-scene scores, aggregate totals, and hardware identification in a single dashboard. Historical runs a",
+        "description": "Проект представляет собой готовый к установке пакет Cinebench 2026 для Windows x64, в котором все модули бенчмарка включены и активированы сразу после первого запуска. Пакет поставляется в виде единого автономного дистрибутива, не требующего дополнительных зависимостей, сетевого подключения или административных прав, что позволяет развернуть его даже в полностью изолированных (air‑gapped) средах. При установке скрипт автоматически задаёт необходимые переменные окружения, записи реестра и конфигурацию, после чего удаляет временные файлы, оставляя только исполняемые компоненты. После первого запуска приложение инициализирует локальное хранилище конфигурации, проверяет целостность встроенных ресурсов и сразу делает доступными все тесты CPU и GPU без ввода лицензий или входа в аккаунт. Бенчмарк использует нативный доступ к процессору и видеокарте, распределяя нагрузку по всем ядрам и потокам, а результаты (оценки, метаданные оборудования, разбивка по ядрам) сохраняются в локальные файлы и могут быть экспортированы для дальнейшего анализа. Инструмент поддерживает как интерактивный, так и тихий (silent) режим установки, что упрощает автоматизацию развертывания в тестовых лабораториях и CI‑конвейерах, гарантируя одинаковый набор параметров и фиксированную версию без фоновых обновлений.",
+        "joke": "Теперь можно измерять процессор, не вызывая техподдержку.",
+        "evidence_quote": "Cinebench 2026 is distributed as a complete standalone desktop build for Windows x64, packaging the full benchmark suite into a single ready-to-run installation with all features pre-activated. The build eliminates external dependencies and post-install configuration, allowing the application to operate entirely offline once deployed."
+      },
+      "yappologistic/cui": {
+        "policy_version": 7,
+        "source_description": "Native UI components for C: about 150 of them, with spring motion and full keyboard support. Windows, macOS and Linux, no dependencies.",
+        "source_readme": "<div align=\"center\">\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"web/site/img/cui-mark-dark.svg\">\n  <img src=\"web/site/img/cui-mark-light.svg\" width=\"64\" height=\"64\" alt=\"\">\n</picture>\n\n# CUI\n\n**A UI library for C that draws its own components.**\n\n[![CI](https://img.shields.io/github/actions/workflow/status/yappologistic/CUI/ci.yml?branch=master&label=CI&style=flat-square&labelColor=24292f)](https://github.com/yappologistic/CUI/actions/workflows/ci.yml)\n[![Release](https://img.shields.io/github/v/release/yappologistic/CUI?style=flat-square&labelColor=24292f&color=57606a)](https://github.com/yappologistic/CUI/releases)\n[![License: MIT](https://img.shields.io/badge/license-MIT-57606a.svg?style=flat-square&labelColor=24292f&color=57606a)](LICENSE)\n\n[Live site](https://yappologistic.github.io/CUI/) ·\n[Getting started](docs/getting-started.md) ·\n[Tutorial](docs/tutorial.md) ·\n[Components](docs/components.md) ·\n[Downloads](https://github.com/yappologistic/CUI/releases)\n\n<br>\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/images/showcase/components-dark.png\">\n  <img src=\"docs/images/showcase/components.png\" alt=\"CUI components: a sign up form, metric cards, a calendar with time slots, a bar chart, team members and settings\">\n</picture>\n\n<sub>Every image on this page is drawn by CUI, from plain C.</sub>\n\n</div>\n\nCUI is an immediate-mode UI library written in C99. You describe the screen with function calls every frame. CUI lays it out, handles the mouse and keyboard, and draws it with OpenGL or its own software renderer, in a window on Windows, macOS or Linux, or in a browser through WebAssembly.\n\n- **About 190 components**, from buttons and text fields to a data grid, charts, a code editor and docking panels.\n- **No dependencies.** One CMake target, or two files (`cui.h` and `cui.c`) dropped into your project.\n- **Small.** A complete app, window, fonts and all, is about 250 KB. There is no browser or runtime inside.\n- **MIT licensed.**\n\n## Try it first\n\n- **In your browser:** the [live site](https://yappologistic.github.io/CUI/) runs every component and the example apps. It is the same C code, compiled to WebAssembly.\n- **On your computer, without a compiler:** each [release](https://github.com/yappologistic/CUI/releases) has the example apps built for Windows, macOS and Linux.\n- **In code:** the [tutorial](docs/tutorial.md) builds a to-do app in about 130 lines.\n\n## A small program\n\n```c\n#include <cui/cui.h>\n#include <cui/cui_app.h>\n\nint main(void) {\n    cui_app *app = cui_app_create(&(cui_app_desc){\n        .title = \"Hello\", .width = 420, .height = 300 });\n    if (!app) return 1;\n    bool notifications = true;\n    int clicks = 0;\n\n    while (cui_app_frame(app)) {\n        cui_ctx *ui = cui_app_ui(app);\n        cui_column(ui, .pad = 32, .gap = 16) {\n            cui_heading(ui, \"Hello, CUI\", 2);\n            cui_secondary(ui, \"A native window, a few components \"\n                              \"and no dependencies.\");\n            cui_switch(ui, \"Notifications\", &notifications);\n            cui_row(ui, .gap = 8) {\n                if (cui_button(ui, \"Click me\", .variant = CUI_BUTTON_PRIMARY))\n                    clicks++;\n                cui_textf(ui, \"Clicked %d times\", clicks);\n            }\n        }\n    }\n    cui_app_destroy(app);\n    return 0;\n}\n```\n\n<table>\n<tr>\n<td width=\"40%\" valign=\"middle\"><img src=\"docs/images/showcase/hello-dark.png\" alt=\"The hello example: a heading, a line of text, a switch and a button\"></td>\n<td valign=\"middle\">\n\n**A component is a function call.** It draws itself, handles input and returns what happened: `cui_button` returns true on the frame it is clicked.\n\n**Options are named arguments.** Leave one out and it takes its default.\n\n**Your variables are the state.** The screen is described again every frame, so there are no widgets to create, keep or update.\n\n</td>\n</tr>\n</table>\n\n## What it is, and what it is not\n\nCUI draws every component itself. It does not wrap the system's buttons and menus, so an app looks the same on every system and does not look like the system's own apps. \"Native\" here means compiled code in a real window, with nothing interpreted and no web view.\n\nHow it sits beside the libraries you may know:\n\n- **Dear ImGui and Nuklear** are also immediate-mode. They are aimed mostly at tools and debug panels inside a program that already has a renderer. CUI uses the same model for the app itself: it opens the window, and its components come with the things end users expect, such as full text editing, animation, light and dark themes and right-to-left layouts.\n- **Qt, GTK and wxWidgets** keep a tree of widgets for you and are far more mature. They have screen reader support, complete input-method support and years of use behind them. If you need those today, use one of them.\n- **Electron and web views** ship a browser with your app. CUI ships about 250 KB.\n\nCUI is a good fit for a desktop tool, an editor, a dashboard or a game's i",
+        "description": "CUI — это библиотека непосредственного режима (immediate‑mode) для создания нативных графических интерфейсов на C99. Она рисует все компоненты сама, без привязки к системным элементам, поэтому приложение выглядит одинаково на Windows, macOS и Linux и может работать в браузере через WebAssembly. Библиотека поставляется в виде одного заголовочного и одного исходного файла или единой CMake‑цели, не требует сторонних зависимостей и занимает около 250 KB вместе со шрифтом и окном. В наборе более 190 готовых компонентов, включая кнопки, текстовые поля, таблицы, графики, редактор кода и док‑панели, каждый из которых вызывается как обычная функция, обрабатывает ввод и возвращает результат (например, cui_button — true в кадре клика). Пример приложения в 130 строк кода демонстрирует, как описывать экран каждый кадр, используя именованные аргументы и собственные переменные для состояния. CUI подходит для настольных утилит, редакторов, панелей мониторинга или небольших игровых интерфейсов, где важна небольшая бинарная масса и единообразный внешний вид, но не требуется полноценная поддержка экранных читалок или сложных методов ввода, которые предоставляют более тяжёлые фреймворки типа Qt или GTK.",
+        "joke": "",
+        "evidence_quote": "**A UI library for C that draws its own components.**"
+      },
       "zai-org/zcode": {
         "policy_version": 4,
         "source_description": "Z.ai's coding agent harness. Powerful, intelligent, extensible.",
@@ -376,13 +441,16 @@
       "czjam/gjgjxweb": "2026-11-09T17:59:32.157735009Z",
       "dgreenheck/tidewater": "2026-11-09T11:17:51.623830033Z",
       "egoist/mygo-music": "2026-11-09T18:00:31.425299177Z",
+      "haleclipse/cometixcode": "2026-11-11T21:19:00.056816704Z",
       "huamidev/gestaltx": "2026-11-10T19:55:47.416710463Z",
       "jev-chat/jev-chat-jarvis": "2026-11-09T10:32:23.460442293Z",
       "jhaizhou-ops/s2arm": "2026-11-10T19:54:55.651603211Z",
       "kryvora-network/kryvora-node": "2026-11-09T10:32:41.310378426Z",
       "newliver666/apk-reverse": "2026-11-09T10:32:37.481788403Z",
       "nvidia/model-optimizer": "2026-11-09T10:34:55.775146046Z",
+      "tokio-rs/topcoat": "2026-11-11T21:13:44.769775254Z",
       "unreallabsai/unreal-agent": "2026-11-09T10:32:33.474270488Z",
+      "we-promise/sure": "2026-11-11T21:13:57.235114239Z",
       "yukitorido/short-video-generator-ai": "2026-11-09T10:34:03.755890509Z",
       "zhulinsen/daily_stock_analysis": "2026-11-10T19:52:26.476929289Z"
     }
@@ -222572,6 +222640,1769 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "CzJam/gjgjxweb",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 1575,
+      "forks": 136,
+      "language": "HTML",
+      "description": "《搞机工具箱》Web移植版",
+      "html_url": "https://github.com/CzJam/gjgjxweb",
+      "topics": [],
+      "created_at": "2026-11-03T02:00:54Z",
+      "updated_at": "2026-11-10T20:23:05Z",
+      "pushed_at": "2026-11-07T12:19:22Z",
+      "license": "GPL-3.0",
+      "open_issues": 0,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-11-03T02:00:54Z",
+          "description": "《搞机工具箱》Web移植版",
+          "html_url": "https://github.com/CzJam/gjgjxweb",
+          "stars": 1575,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "D4Vinci/Scrapling",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 101073,
+      "forks": 10553,
+      "language": "Python",
+      "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+      "html_url": "https://github.com/D4Vinci/Scrapling",
+      "topics": [
+        "ai",
+        "ai-scraping",
+        "automation",
+        "crawler",
+        "crawling",
+        "crawling-python",
+        "data",
+        "data-extraction",
+        "mcp",
+        "mcp-server",
+        "playwright",
+        "python",
+        "scraping",
+        "selectors",
+        "stealth",
+        "web-scraper",
+        "web-scraping",
+        "web-scraping-python",
+        "webscraping",
+        "xpath"
+      ],
+      "created_at": "2024-10-13T20:29:53Z",
+      "updated_at": "2026-11-10T21:10:13Z",
+      "pushed_at": "2026-11-09T10:36:37Z",
+      "license": "BSD-3-Clause",
+      "open_issues": 22,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+          "full_name": "D4Vinci/Scrapling",
+          "language": "Python",
+          "trending_stars_period": 8226,
+          "trending_total_forks": null,
+          "trending_total_stars": 101073,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DIYgod/pinky",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 1654,
+      "forks": 177,
+      "language": "Go",
+      "description": "Let AI agents use your phone, with you in the loop.",
+      "html_url": "https://github.com/DIYgod/pinky",
+      "topics": [],
+      "created_at": "2026-11-06T16:53:14Z",
+      "updated_at": "2026-11-10T21:11:48Z",
+      "pushed_at": "2026-11-10T17:25:02Z",
+      "license": "Apache-2.0",
+      "open_issues": 20,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T16:53:14Z",
+          "description": "Let AI agents use your phone, with you in the loop.",
+          "html_url": "https://github.com/DIYgod/pinky",
+          "stars": 1654,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Donchitos/Claude-Code-Game-Studios",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 38011,
+      "forks": 4965,
+      "language": "Shell",
+      "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+      "html_url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "topics": [
+        "ai-agents",
+        "ai-assisted-development",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "game-design",
+        "game-development",
+        "gamedev",
+        "godot",
+        "indie-game-dev",
+        "unity",
+        "unreal-engine"
+      ],
+      "created_at": "2026-02-12T05:21:38Z",
+      "updated_at": "2026-11-10T21:09:17Z",
+      "pushed_at": "2026-11-09T23:33:14Z",
+      "license": "MIT",
+      "open_issues": 96,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+          "full_name": "Donchitos/Claude-Code-Game-Studios",
+          "language": "Shell",
+          "trending_stars_period": 4324,
+          "trending_total_forks": null,
+          "trending_total_stars": 38011,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "IainKay/ram-altman",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 1800,
+      "forks": 52,
+      "language": "Shell",
+      "description": "Monitors your RAM and reports any \"quite terrible\" unused capacity directly to the CEO of OpenAI.",
+      "html_url": "https://github.com/IainKay/ram-altman",
+      "topics": [
+        "bash",
+        "cron",
+        "dram",
+        "email",
+        "humor",
+        "linux",
+        "meminfo",
+        "memory",
+        "monitoring",
+        "openai",
+        "parody",
+        "ram",
+        "ram-altman",
+        "sam-altman",
+        "sam-altman-openai",
+        "shell-script",
+        "sysadmin"
+      ],
+      "created_at": "2026-11-05T16:16:41Z",
+      "updated_at": "2026-11-10T21:10:37Z",
+      "pushed_at": "2026-11-06T15:58:11Z",
+      "license": "Unlicense",
+      "open_issues": 28,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T16:16:41Z",
+          "description": "Monitors your RAM and reports any \"quite terrible\" unused capacity directly to the CEO of OpenAI.",
+          "html_url": "https://github.com/IainKay/ram-altman",
+          "stars": 1800,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JenkinWoo/sheeridVerify",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 2005,
+      "forks": 1086,
+      "language": "JavaScript",
+      "description": null,
+      "html_url": "https://github.com/JenkinWoo/sheeridVerify",
+      "topics": [],
+      "created_at": "2026-11-06T09:28:09Z",
+      "updated_at": "2026-11-10T17:28:28Z",
+      "pushed_at": "2026-11-06T09:54:37Z",
+      "license": "ISC",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T09:28:09Z",
+          "description": null,
+          "html_url": "https://github.com/JenkinWoo/sheeridVerify",
+          "stars": 2005,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JosssphZhou/poki",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 910,
+      "forks": 175,
+      "language": "Swift",
+      "description": "Let AI agents operate a real iPhone. Local MCP server and agent, no jailbreak, no extra hardware.",
+      "html_url": "https://github.com/JosssphZhou/poki",
+      "topics": [
+        "ai-agents",
+        "automation",
+        "ios",
+        "iphone",
+        "mcp",
+        "model-context-protocol"
+      ],
+      "created_at": "2026-11-05T15:04:31Z",
+      "updated_at": "2026-11-10T20:49:47Z",
+      "pushed_at": "2026-11-10T15:01:50Z",
+      "license": "AGPL-3.0",
+      "open_issues": 40,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T15:04:31Z",
+          "description": "Let AI agents operate a real iPhone. Local MCP server and agent, no jailbreak, no extra hardware.",
+          "html_url": "https://github.com/JosssphZhou/poki",
+          "stars": 910,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "KKKKhazix/agent-autoloop",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 4420,
+      "forks": 802,
+      "language": "TypeScript",
+      "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+      "html_url": "https://github.com/KKKKhazix/agent-autoloop",
+      "topics": [
+        "ai-agents",
+        "automation",
+        "claude-code",
+        "cli",
+        "codex",
+        "event-driven",
+        "mcp",
+        "nodejs",
+        "self-hosted",
+        "typescript",
+        "workflow"
+      ],
+      "created_at": "2026-11-03T08:02:11Z",
+      "updated_at": "2026-11-10T21:02:59Z",
+      "pushed_at": "2026-11-10T20:06:35Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T08:02:11Z",
+          "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+          "html_url": "https://github.com/KKKKhazix/agent-autoloop",
+          "stars": 4420,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Kianuni/Erosion-CN",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 974,
+      "forks": 225,
+      "language": "Swift",
+      "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+      "html_url": "https://github.com/Kianuni/Erosion-CN",
+      "topics": [],
+      "created_at": "2026-11-10T02:37:31Z",
+      "updated_at": "2026-11-10T20:58:28Z",
+      "pushed_at": "2026-11-10T14:19:23Z",
+      "license": "GPL-3.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T02:37:31Z",
+          "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+          "html_url": "https://github.com/Kianuni/Erosion-CN",
+          "stars": 974,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Minireel/HGhub",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 8083,
+      "forks": 3164,
+      "language": null,
+      "description": "YellowFruit third-party client",
+      "html_url": "https://github.com/Minireel/HGhub",
+      "topics": [
+        "android",
+        "drama",
+        "free",
+        "movie-web-app",
+        "reels",
+        "windows"
+      ],
+      "created_at": "2026-11-03T14:04:27Z",
+      "updated_at": "2026-11-10T21:10:33Z",
+      "pushed_at": "2026-11-10T13:42:26Z",
+      "license": null,
+      "open_issues": 15,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T14:04:27Z",
+          "description": "YellowFruit third-party client",
+          "html_url": "https://github.com/Minireel/HGhub",
+          "stars": 8083,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NVIDIA/auto-ontology",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 11403,
+      "forks": 936,
+      "language": "Python",
+      "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+      "html_url": "https://github.com/NVIDIA/auto-ontology",
+      "topics": [],
+      "created_at": "2026-04-27T21:45:56Z",
+      "updated_at": "2026-11-10T20:45:13Z",
+      "pushed_at": "2026-11-10T19:31:47Z",
+      "license": "Apache-2.0",
+      "open_issues": 111,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+          "full_name": "NVIDIA/auto-ontology",
+          "language": "Python",
+          "trending_stars_period": 10159,
+          "trending_total_forks": null,
+          "trending_total_stars": 11403,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NotRexed/Hookshot",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 6378,
+      "forks": 567,
+      "language": "C++",
+      "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
+      "html_url": "https://github.com/NotRexed/Hookshot",
+      "topics": [],
+      "created_at": "2026-11-05T12:18:58Z",
+      "updated_at": "2026-11-10T21:11:25Z",
+      "pushed_at": "2026-11-10T21:11:36Z",
+      "license": "GPL-3.0",
+      "open_issues": 157,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T12:18:58Z",
+          "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
+          "html_url": "https://github.com/NotRexed/Hookshot",
+          "stars": 6378,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Sandflow-ai/sand3d",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 1746,
+      "forks": 196,
+      "language": "HTML",
+      "description": "3D modeling in Python, built for LLMs.",
+      "html_url": "https://github.com/Sandflow-ai/sand3d",
+      "topics": [
+        "3d",
+        "blender",
+        "cad",
+        "llm",
+        "procedural-modeling",
+        "python",
+        "usd"
+      ],
+      "created_at": "2026-11-03T08:23:03Z",
+      "updated_at": "2026-11-10T20:58:53Z",
+      "pushed_at": "2026-11-10T15:31:49Z",
+      "license": "Apache-2.0",
+      "open_issues": 12,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T08:23:03Z",
+          "description": "3D modeling in Python, built for LLMs.",
+          "html_url": "https://github.com/Sandflow-ai/sand3d",
+          "stars": 1746,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Th0rgal/satmux",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 1030,
+      "forks": 49,
+      "language": "Python",
+      "description": "Accelerate high-latency GEO inflight Wi-Fi via warm BBR TCP multiplexing + 1-RTT Ground-TLS + zlib (zero dependencies)",
+      "html_url": "https://github.com/Th0rgal/satmux",
+      "topics": [],
+      "created_at": "2026-11-07T16:09:41Z",
+      "updated_at": "2026-11-10T20:53:45Z",
+      "pushed_at": "2026-11-07T16:26:20Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T16:09:41Z",
+          "description": "Accelerate high-latency GEO inflight Wi-Fi via warm BBR TCP multiplexing + 1-RTT Ground-TLS + zlib (zero dependencies)",
+          "html_url": "https://github.com/Th0rgal/satmux",
+          "stars": 1030,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "The-PR-Agent/pr-agent",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 15860,
+      "forks": 2169,
+      "language": "Python",
+      "description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
+      "html_url": "https://github.com/The-PR-Agent/pr-agent",
+      "topics": [
+        "ai",
+        "anthropic",
+        "code-review",
+        "coding-assistant",
+        "devtools",
+        "ollama",
+        "openai",
+        "pull-request",
+        "pull-requests"
+      ],
+      "created_at": "2023-07-05T21:02:15Z",
+      "updated_at": "2026-11-10T21:04:28Z",
+      "pushed_at": "2026-11-10T20:23:30Z",
+      "license": "MIT",
+      "open_issues": 46,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
+          "full_name": "The-PR-Agent/pr-agent",
+          "language": "Python",
+          "trending_stars_period": 1822,
+          "trending_total_forks": null,
+          "trending_total_stars": 15860,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "WoYun520/gif-factory",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 1086,
+      "forks": 133,
+      "language": "Python",
+      "description": "GIF 工厂：按风格制作像素、人物与宠物、粘土吉祥物、光栅卡与动态海报的 GIF Skill。",
+      "html_url": "https://github.com/WoYun520/gif-factory",
+      "topics": [],
+      "created_at": "2026-11-05T04:08:24Z",
+      "updated_at": "2026-11-10T20:57:06Z",
+      "pushed_at": "2026-11-10T01:25:52Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T04:08:24Z",
+          "description": "GIF 工厂：按风格制作像素、人物与宠物、粘土吉祥物、光栅卡与动态海报的 GIF Skill。",
+          "html_url": "https://github.com/WoYun520/gif-factory",
+          "stars": 1086,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 115067,
+      "forks": 12093,
+      "language": "JavaScript",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "html_url": "https://github.com/addyosmani/agent-skills",
+      "topics": [
+        "agent-skills",
+        "antigravity",
+        "claude-code",
+        "codex",
+        "cursor",
+        "skills"
+      ],
+      "created_at": "2026-02-15T20:20:26Z",
+      "updated_at": "2026-11-10T21:11:18Z",
+      "pushed_at": "2026-11-01T19:24:49Z",
+      "license": "MIT",
+      "open_issues": 133,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Production-grade engineering skills for AI coding agents.",
+          "full_name": "addyosmani/agent-skills",
+          "language": "JavaScript",
+          "trending_stars_period": 465,
+          "trending_total_forks": null,
+          "trending_total_stars": 115067,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anomalyco/hex",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 6166,
+      "forks": 375,
+      "language": "Rust",
+      "description": "Local voice dictation for mac, windows and linux",
+      "html_url": "https://github.com/anomalyco/hex",
+      "topics": [
+        "dictation",
+        "linux",
+        "local-first",
+        "macos",
+        "rust",
+        "speech-recognition",
+        "speech-to-text",
+        "voice-control"
+      ],
+      "created_at": "2026-07-17T23:48:56Z",
+      "updated_at": "2026-11-10T21:10:27Z",
+      "pushed_at": "2026-11-10T21:06:46Z",
+      "license": "MIT",
+      "open_issues": 201,
+      "default_branch": "dev",
+      "sources": [
+        {
+          "description": "Local voice dictation for mac, windows and linux",
+          "full_name": "anomalyco/hex",
+          "language": "Rust",
+          "trending_stars_period": 2031,
+          "trending_total_forks": null,
+          "trending_total_stars": 6166,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/claude-quickstarts",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 20433,
+      "forks": 3468,
+      "language": "Python",
+      "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+      "html_url": "https://github.com/anthropics/claude-quickstarts",
+      "topics": [],
+      "created_at": "2024-08-29T19:52:32Z",
+      "updated_at": "2026-11-10T21:12:23Z",
+      "pushed_at": "2026-11-06T19:37:57Z",
+      "license": "MIT",
+      "open_issues": 241,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+          "full_name": "anthropics/claude-quickstarts",
+          "language": "Python",
+          "trending_stars_period": 530,
+          "trending_total_forks": null,
+          "trending_total_stars": 20433,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/skills",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 192190,
+      "forks": 22628,
+      "language": "Python",
+      "description": "Public repository for Agent Skills",
+      "html_url": "https://github.com/anthropics/skills",
+      "topics": [
+        "agent-skills"
+      ],
+      "created_at": "2025-09-22T15:53:31Z",
+      "updated_at": "2026-11-10T21:13:13Z",
+      "pushed_at": "2026-11-06T22:32:32Z",
+      "license": null,
+      "open_issues": 1517,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Public repository for Agent Skills",
+          "full_name": "anthropics/skills",
+          "language": "Python",
+          "trending_stars_period": 3796,
+          "trending_total_forks": null,
+          "trending_total_stars": 192189,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "Public repository for Agent Skills",
+          "full_name": "anthropics/skills",
+          "language": "Python",
+          "trending_stars_period": 1676,
+          "trending_total_forks": null,
+          "trending_total_stars": 192189,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 69128,
+      "forks": 4568,
+      "language": "JavaScript",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "html_url": "https://github.com/cloudflare/security-audit-skill",
+      "topics": [],
+      "created_at": "2026-06-18T14:08:44Z",
+      "updated_at": "2026-11-10T21:10:57Z",
+      "pushed_at": "2026-09-14T19:29:02Z",
+      "license": "MIT",
+      "open_issues": 123,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "full_name": "cloudflare/security-audit-skill",
+          "language": "JavaScript",
+          "trending_stars_period": 10695,
+          "trending_total_forks": null,
+          "trending_total_stars": 69128,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "egoist/mygo-music",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 1187,
+      "forks": 193,
+      "language": "Go",
+      "description": "A native music player you extend with plugins",
+      "html_url": "https://github.com/egoist/mygo-music",
+      "topics": [],
+      "created_at": "2026-11-04T13:27:14Z",
+      "updated_at": "2026-11-10T20:57:39Z",
+      "pushed_at": "2026-11-10T12:35:46Z",
+      "license": "AGPL-3.0",
+      "open_issues": 88,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-04T13:27:14Z",
+          "description": "A native music player you extend with plugins",
+          "html_url": "https://github.com/egoist/mygo-music",
+          "stars": 1187,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-deepmind/mujoco",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 17299,
+      "forks": 2143,
+      "language": "C++",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "html_url": "https://github.com/google-deepmind/mujoco",
+      "topics": [
+        "mujoco",
+        "physics",
+        "robotics"
+      ],
+      "created_at": "2021-08-27T12:25:48Z",
+      "updated_at": "2026-11-10T21:10:39Z",
+      "pushed_at": "2026-11-10T20:50:33Z",
+      "license": "Apache-2.0",
+      "open_issues": 327,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+          "full_name": "google-deepmind/mujoco",
+          "language": "C++",
+          "trending_stars_period": 453,
+          "trending_total_forks": null,
+          "trending_total_stars": 17299,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "govijr/terminal-mac",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 2548,
+      "forks": 177,
+      "language": "Swift",
+      "description": "Entire MacOS running in your terminal.",
+      "html_url": "https://github.com/govijr/terminal-mac",
+      "topics": [
+        "cli",
+        "gui",
+        "macos",
+        "shell",
+        "swift",
+        "terminal",
+        "tui"
+      ],
+      "created_at": "2026-11-03T03:22:56Z",
+      "updated_at": "2026-11-10T19:54:55Z",
+      "pushed_at": "2026-11-10T06:06:50Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T03:22:56Z",
+          "description": "Entire MacOS running in your terminal.",
+          "html_url": "https://github.com/govijr/terminal-mac",
+          "stars": 2548,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "homeassistant-ai/ha-mcp",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 6564,
+      "forks": 428,
+      "language": "Python",
+      "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
+      "html_url": "https://github.com/homeassistant-ai/ha-mcp",
+      "topics": [
+        "ai",
+        "claude",
+        "hacs",
+        "home-assistant",
+        "home-automation",
+        "llm",
+        "mcp",
+        "model-context-protocol"
+      ],
+      "created_at": "2025-09-14T13:23:45Z",
+      "updated_at": "2026-11-10T21:12:32Z",
+      "pushed_at": "2026-11-10T21:05:56Z",
+      "license": "MIT",
+      "open_issues": 17,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
+          "full_name": "homeassistant-ai/ha-mcp",
+          "language": "Python",
+          "trending_stars_period": 792,
+          "trending_total_forks": null,
+          "trending_total_stars": 6564,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "huamidev/GestaltX",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 4609,
+      "forks": 1769,
+      "language": "Swift",
+      "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups, and support for 7 languages.",
+      "html_url": "https://github.com/huamidev/GestaltX",
+      "topics": [],
+      "created_at": "2026-11-09T05:15:48Z",
+      "updated_at": "2026-11-10T21:11:40Z",
+      "pushed_at": "2026-11-10T07:31:56Z",
+      "license": "GPL-3.0",
+      "open_issues": 61,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T05:15:48Z",
+          "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups, and support for 7 languages.",
+          "html_url": "https://github.com/huamidev/GestaltX",
+          "stars": 4609,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jamesondh/chimera-vocal-synth",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 1627,
+      "forks": 186,
+      "language": "Rust",
+      "description": "the ultimate vocal synthesizer - sing, speak, beatbox, and more",
+      "html_url": "https://github.com/jamesondh/chimera-vocal-synth",
+      "topics": [],
+      "created_at": "2026-11-05T19:10:42Z",
+      "updated_at": "2026-11-10T21:07:31Z",
+      "pushed_at": "2026-11-10T21:04:08Z",
+      "license": "MIT",
+      "open_issues": 32,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T19:10:42Z",
+          "description": "the ultimate vocal synthesizer - sing, speak, beatbox, and more",
+          "html_url": "https://github.com/jamesondh/chimera-vocal-synth",
+          "stars": 1627,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "janestreet/agent_skills",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 3631,
+      "forks": 207,
+      "language": null,
+      "description": "Agent skills",
+      "html_url": "https://github.com/janestreet/agent_skills",
+      "topics": [],
+      "created_at": "2026-11-03T16:50:21Z",
+      "updated_at": "2026-11-10T21:13:04Z",
+      "pushed_at": "2026-11-03T18:14:13Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-11-03T16:50:21Z",
+          "description": "Agent skills",
+          "html_url": "https://github.com/janestreet/agent_skills",
+          "stars": 3631,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jhaizhou-ops/S2Arm",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 2358,
+      "forks": 447,
+      "language": "C#",
+      "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+      "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+      "topics": [
+        "apple-silicon",
+        "arm64",
+        "game-porting",
+        "ios",
+        "ipados",
+        "macos",
+        "metal",
+        "s2arm",
+        "static-recompilation",
+        "switch"
+      ],
+      "created_at": "2026-11-08T05:49:46Z",
+      "updated_at": "2026-11-10T20:54:47Z",
+      "pushed_at": "2026-11-10T21:09:40Z",
+      "license": "Apache-2.0",
+      "open_issues": 218,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-08T05:49:46Z",
+          "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+          "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+          "stars": 2358,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "livliv-dev/player",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 1455,
+      "forks": 153,
+      "language": "TypeScript",
+      "description": "A lightweight 2.5D character player for the web, with lip sync and webcam face tracking.",
+      "html_url": "https://github.com/livliv-dev/player",
+      "topics": [
+        "avatar",
+        "character",
+        "face-tracking",
+        "lip-sync",
+        "pngtuber",
+        "vrm",
+        "vtuber",
+        "webgl2"
+      ],
+      "created_at": "2026-11-04T03:28:33Z",
+      "updated_at": "2026-11-10T20:34:26Z",
+      "pushed_at": "2026-11-09T06:08:52Z",
+      "license": "Apache-2.0",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-04T03:28:33Z",
+          "description": "A lightweight 2.5D character player for the web, with lip sync and webcam face tracking.",
+          "html_url": "https://github.com/livliv-dev/player",
+          "stars": 1455,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mattpocock/skills",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 320794,
+      "forks": 26901,
+      "language": "Shell",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "html_url": "https://github.com/mattpocock/skills",
+      "topics": [],
+      "created_at": "2026-02-03T11:15:53Z",
+      "updated_at": "2026-11-10T21:09:55Z",
+      "pushed_at": "2026-11-09T14:03:07Z",
+      "license": "MIT",
+      "open_issues": 233,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Skills for Real Engineers. Straight from my .agents directory.",
+          "full_name": "mattpocock/skills",
+          "language": "Shell",
+          "trending_stars_period": 9800,
+          "trending_total_forks": null,
+          "trending_total_stars": 320794,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "Skills for Real Engineers. Straight from my .agents directory.",
+          "full_name": "mattpocock/skills",
+          "language": "Shell",
+          "trending_stars_period": 1223,
+          "trending_total_forks": null,
+          "trending_total_stars": 320794,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "max-sixty/worktrunk",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 12380,
+      "forks": 486,
+      "language": "Rust",
+      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+      "html_url": "https://github.com/max-sixty/worktrunk",
+      "topics": [
+        "agents",
+        "claude-code",
+        "codex",
+        "developer-tools",
+        "git",
+        "worktrees"
+      ],
+      "created_at": "2025-10-17T22:13:14Z",
+      "updated_at": "2026-11-10T21:07:49Z",
+      "pushed_at": "2026-11-10T19:16:52Z",
+      "license": "Other",
+      "open_issues": 57,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+          "full_name": "max-sixty/worktrunk",
+          "language": "Rust",
+          "trending_stars_period": 2395,
+          "trending_total_forks": null,
+          "trending_total_stars": 12380,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "meta/astryx",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 22513,
+      "forks": 1798,
+      "language": "TypeScript",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "html_url": "https://github.com/meta/astryx",
+      "topics": [],
+      "created_at": "2026-01-09T16:20:32Z",
+      "updated_at": "2026-11-10T21:11:05Z",
+      "pushed_at": "2026-11-10T21:13:22Z",
+      "license": "MIT",
+      "open_issues": 676,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open source design system that's fully customizable and agent ready",
+          "full_name": "meta/astryx",
+          "language": "TypeScript",
+          "trending_stars_period": 3111,
+          "trending_total_forks": null,
+          "trending_total_stars": 22513,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "milind-soni/OpenMausBot",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 20580,
+      "forks": 2849,
+      "language": "TypeScript",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "html_url": "https://github.com/milind-soni/OpenMausBot",
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "computer-use",
+        "docker",
+        "electron",
+        "grok",
+        "grok-bot",
+        "grok-bot-alternative",
+        "self-hosted",
+        "typescript"
+      ],
+      "created_at": "2026-08-11T18:58:55Z",
+      "updated_at": "2026-11-10T21:04:44Z",
+      "pushed_at": "2026-11-10T21:11:39Z",
+      "license": "Apache-2.0",
+      "open_issues": 1038,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "full_name": "milind-soni/OpenMausBot",
+          "language": "TypeScript",
+          "trending_stars_period": 8325,
+          "trending_total_forks": null,
+          "trending_total_stars": 20580,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mmdoctor/google-pro-helper",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 1630,
+      "forks": 558,
+      "language": "Python",
+      "description": null,
+      "html_url": "https://github.com/mmdoctor/google-pro-helper",
+      "topics": [],
+      "created_at": "2026-11-05T04:52:28Z",
+      "updated_at": "2026-11-10T20:32:20Z",
+      "pushed_at": "2026-11-05T09:41:40Z",
+      "license": null,
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T04:52:28Z",
+          "description": null,
+          "html_url": "https://github.com/mmdoctor/google-pro-helper",
+          "stars": 1630,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "pingdotgg/t3code",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 55590,
+      "forks": 10327,
+      "language": "TypeScript",
+      "description": null,
+      "html_url": "https://github.com/pingdotgg/t3code",
+      "topics": [],
+      "created_at": "2026-02-08T23:46:22Z",
+      "updated_at": "2026-11-10T21:09:51Z",
+      "pushed_at": "2026-11-10T21:13:04Z",
+      "license": "MIT",
+      "open_issues": 5736,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "",
+          "full_name": "pingdotgg/t3code",
+          "language": "TypeScript",
+          "trending_stars_period": 13448,
+          "trending_total_forks": null,
+          "trending_total_stars": 55590,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ranxianglei/billion-context",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 6233,
+      "forks": 525,
+      "language": "TypeScript",
+      "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
+      "html_url": "https://github.com/ranxianglei/billion-context",
+      "topics": [
+        "dsh-plugin"
+      ],
+      "created_at": "2026-08-06T08:27:34Z",
+      "updated_at": "2026-11-10T21:13:19Z",
+      "pushed_at": "2026-11-10T21:09:06Z",
+      "license": "Other",
+      "open_issues": 958,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
+          "full_name": "ranxianglei/billion-context",
+          "language": "TypeScript",
+          "trending_stars_period": 374,
+          "trending_total_forks": null,
+          "trending_total_stars": 6232,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "rdeepak-wq121/quicken-deluxe-installer",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 776,
+      "forks": 0,
+      "language": "TypeScript",
+      "description": "Quicken Deluxe Desktop Installer with Full Feature Set Enabled",
+      "html_url": "https://github.com/rdeepak-wq121/quicken-deluxe-installer",
+      "topics": [
+        "automation",
+        "developer-tools",
+        "free-quicken-download",
+        "open-source",
+        "python",
+        "quicken",
+        "quicken-2026",
+        "quicken-classic-download",
+        "quicken-classic-premier-download",
+        "quicken-deluxe-2013-download",
+        "quicken-deluxe-download",
+        "quicken-install-setup-windows-2026-finance",
+        "quicken-premier",
+        "quicken-premier-2026",
+        "quicken-premier-download",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T21:20:42Z",
+      "updated_at": "2026-11-10T21:05:15Z",
+      "pushed_at": "2026-11-10T20:12:31Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T21:20:42Z",
+          "description": "Quicken Deluxe Desktop Installer with Full Feature Set Enabled",
+          "html_url": "https://github.com/rdeepak-wq121/quicken-deluxe-installer",
+          "stars": 776,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sarpstar/cinecode",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 2046,
+      "forks": 366,
+      "language": "Python",
+      "description": "Films made with code. Short films, long YouTube videos, ads, explainers and music videos: an AI coding agent writes the script, builds every frame in code, designs the sound and hands you an MP4.",
+      "html_url": "https://github.com/sarpstar/cinecode",
+      "topics": [],
+      "created_at": "2026-11-03T10:08:16Z",
+      "updated_at": "2026-11-10T20:56:09Z",
+      "pushed_at": "2026-11-03T15:21:18Z",
+      "license": "MIT",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T10:08:16Z",
+          "description": "Films made with code. Short films, long YouTube videos, ads, explainers and music videos: an AI coding agent writes the script, builds every frame in code, designs the sound and hands you an MP4.",
+          "html_url": "https://github.com/sarpstar/cinecode",
+          "stars": 2046,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sassiestrhihno/boxshelf-beta",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 815,
+      "forks": 22,
+      "language": null,
+      "description": "Boxshelf public beta for Windows, Android (AYN Thor) and Linux / Steam Deck: a TV-style 3D box-art shelf for your emulators, Steam games and media apps.",
+      "html_url": "https://github.com/sassiestrhihno/boxshelf-beta",
+      "topics": [
+        "android-handheld",
+        "ayn-thor",
+        "box-art",
+        "electron",
+        "emulation",
+        "emulator-frontend",
+        "game-launcher",
+        "retro-gaming",
+        "steam-deck"
+      ],
+      "created_at": "2026-11-05T04:50:13Z",
+      "updated_at": "2026-11-10T20:53:33Z",
+      "pushed_at": "2026-11-09T16:13:28Z",
+      "license": null,
+      "open_issues": 23,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T04:50:13Z",
+          "description": "Boxshelf public beta for Windows, Android (AYN Thor) and Linux / Steam Deck: a TV-style 3D box-art shelf for your emulators, Steam games and media apps.",
+          "html_url": "https://github.com/sassiestrhihno/boxshelf-beta",
+          "stars": 815,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "shanselman/gputaskman",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 1640,
+      "forks": 84,
+      "language": "Python",
+      "description": "A GPU task manager for Windows, Linux, and WSL: per-process VRAM, GPU activity, and LLM model/KV-cache insights (Windows AMD and NVIDIA).",
+      "html_url": "https://github.com/shanselman/gputaskman",
+      "topics": [],
+      "created_at": "2026-11-03T00:49:34Z",
+      "updated_at": "2026-11-10T21:11:30Z",
+      "pushed_at": "2026-11-10T06:47:42Z",
+      "license": "MIT",
+      "open_issues": 8,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-03T00:49:34Z",
+          "description": "A GPU task manager for Windows, Linux, and WSL: per-process VRAM, GPU activity, and LLM model/KV-cache insights (Windows AMD and NVIDIA).",
+          "html_url": "https://github.com/shanselman/gputaskman",
+          "stars": 1640,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sherlock-project/sherlock",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 108809,
+      "forks": 12649,
+      "language": "Python",
+      "description": "Hunt down social media accounts by username across social networks",
+      "html_url": "https://github.com/sherlock-project/sherlock",
+      "topics": [
+        "cli",
+        "cti",
+        "cybersecurity",
+        "forensics",
+        "hacktoberfest",
+        "information-gathering",
+        "infosec",
+        "linux",
+        "osint",
+        "pentesting",
+        "python",
+        "python3",
+        "reconnaissance",
+        "redteam",
+        "sherlock",
+        "tools"
+      ],
+      "created_at": "2018-12-24T14:30:48Z",
+      "updated_at": "2026-11-10T21:13:23Z",
+      "pushed_at": "2026-11-10T05:13:55Z",
+      "license": "MIT",
+      "open_issues": 409,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Hunt down social media accounts by username across social networks",
+          "full_name": "sherlock-project/sherlock",
+          "language": "Python",
+          "trending_stars_period": 2387,
+          "trending_total_forks": null,
+          "trending_total_stars": 108808,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sostenesfreitas/ocarina-recomp",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 1078,
+      "forks": 71,
+      "language": "C",
+      "description": "Ocarina of Time running natively on Windows, no emulator. Built on your PC from your own copy. No game files included.",
+      "html_url": "https://github.com/sostenesfreitas/ocarina-recomp",
+      "topics": [],
+      "created_at": "2026-11-06T22:24:03Z",
+      "updated_at": "2026-11-10T20:53:12Z",
+      "pushed_at": "2026-11-09T22:22:27Z",
+      "license": "GPL-3.0",
+      "open_issues": 101,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T22:24:03Z",
+          "description": "Ocarina of Time running natively on Windows, no emulator. Built on your PC from your own copy. No game files included.",
+          "html_url": "https://github.com/sostenesfreitas/ocarina-recomp",
+          "stars": 1078,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tangerineturtle1/NX2navi",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 2813,
+      "forks": 186,
+      "language": "C",
+      "description": null,
+      "html_url": "https://github.com/tangerineturtle1/NX2navi",
+      "topics": [],
+      "created_at": "2026-11-07T10:01:23Z",
+      "updated_at": "2026-11-10T21:11:28Z",
+      "pushed_at": "2026-11-10T18:48:43Z",
+      "license": "MIT",
+      "open_issues": 374,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T10:01:23Z",
+          "description": null,
+          "html_url": "https://github.com/tangerineturtle1/NX2navi",
+          "stars": 2813,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "thedotmack/claude-mem",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 115776,
+      "forks": 10047,
+      "language": "TypeScript",
+      "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "html_url": "https://github.com/thedotmack/claude-mem",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-memory",
+        "anthropic",
+        "artificial-intelligence",
+        "chromadb",
+        "claude",
+        "claude-agent-sdk",
+        "claude-agents",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "embeddings",
+        "long-term-memory",
+        "mem0",
+        "memory-engine",
+        "openmemory",
+        "rag",
+        "sqlite",
+        "supermemory"
+      ],
+      "created_at": "2025-08-31T20:50:03Z",
+      "updated_at": "2026-11-10T21:13:24Z",
+      "pushed_at": "2026-11-10T21:07:18Z",
+      "license": "Apache-2.0",
+      "open_issues": 49,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+          "full_name": "thedotmack/claude-mem",
+          "language": "TypeScript",
+          "trending_stars_period": 5130,
+          "trending_total_forks": null,
+          "trending_total_stars": 115775,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "thiagoaureliomartins-programador/chief-architect-premier",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 778,
+      "forks": 0,
+      "language": "Rust",
+      "description": "Chief Architect Premier 2026: Pre-Configured Desktop Edition with All Features Enabled",
+      "html_url": "https://github.com/thiagoaureliomartins-programador/chief-architect-premier",
+      "topics": [
+        "automation",
+        "chief-architect",
+        "chief-architect-setup-failed-fix",
+        "chief-architect-x16",
+        "chief-architect-x16-not-installing-on-windows-11",
+        "desktop",
+        "developer-tools",
+        "how-to-install-chief-architect-x16-on-pc",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:45:00Z",
+      "updated_at": "2026-11-10T21:09:06Z",
+      "pushed_at": "2026-11-10T17:32:04Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:45:00Z",
+          "description": "Chief Architect Premier 2026: Pre-Configured Desktop Edition with All Features Enabled",
+          "html_url": "https://github.com/thiagoaureliomartins-programador/chief-architect-premier",
+          "stars": 778,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tokio-rs/topcoat",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 6742,
+      "forks": 297,
+      "language": "Rust",
+      "description": "A batteries-included framework for building web apps",
+      "html_url": "https://github.com/tokio-rs/topcoat",
+      "topics": [],
+      "created_at": "2026-04-03T14:27:27Z",
+      "updated_at": "2026-11-10T21:04:37Z",
+      "pushed_at": "2026-11-10T18:32:12Z",
+      "license": "MIT",
+      "open_issues": 56,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A batteries-included framework for building web apps",
+          "full_name": "tokio-rs/topcoat",
+          "language": "Rust",
+          "trending_stars_period": 192,
+          "trending_total_forks": null,
+          "trending_total_stars": 6742,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 49126,
+      "forks": 3445,
+      "language": "Rust",
+      "description": "Browser automation CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "topics": [],
+      "created_at": "2026-01-11T05:38:15Z",
+      "updated_at": "2026-11-10T21:11:54Z",
+      "pushed_at": "2026-11-10T19:56:18Z",
+      "license": "Apache-2.0",
+      "open_issues": 558,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Browser automation CLI for AI agents",
+          "full_name": "vercel-labs/agent-browser",
+          "language": "Rust",
+          "trending_stars_period": 2994,
+          "trending_total_forks": null,
+          "trending_total_stars": 49126,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "Browser automation CLI for AI agents",
+          "full_name": "vercel-labs/agent-browser",
+          "language": "Rust",
+          "trending_stars_period": 775,
+          "trending_total_forks": null,
+          "trending_total_stars": 49126,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-desktop",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 21294,
+      "forks": 1588,
+      "language": "Rust",
+      "description": "Computer use CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-desktop",
+      "topics": [
+        "accessibility",
+        "accessibility-api",
+        "ai-agents",
+        "automation",
+        "cli",
+        "computer-use",
+        "computer-use-agent",
+        "computer-use-agents",
+        "desktop-automation",
+        "macos",
+        "mcp",
+        "rust"
+      ],
+      "created_at": "2026-02-19T18:00:49Z",
+      "updated_at": "2026-11-10T21:11:20Z",
+      "pushed_at": "2026-11-10T20:30:44Z",
+      "license": "Apache-2.0",
+      "open_issues": 208,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Computer use CLI for AI agents",
+          "full_name": "vercel-labs/agent-desktop",
+          "language": "Rust",
+          "trending_stars_period": 12120,
+          "trending_total_forks": null,
+          "trending_total_stars": 21294,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "voyager-so/vork",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 1356,
+      "forks": 107,
+      "language": "Rust",
+      "description": "Headless 3D and VFX engine for agents. Research preview.",
+      "html_url": "https://github.com/voyager-so/vork",
+      "topics": [
+        "3d",
+        "ai-agents",
+        "gpu",
+        "metal",
+        "ray-tracing",
+        "rendering",
+        "rust",
+        "slang",
+        "vfx",
+        "vulkan"
+      ],
+      "created_at": "2026-11-05T22:37:07Z",
+      "updated_at": "2026-11-10T21:03:58Z",
+      "pushed_at": "2026-11-10T04:15:54Z",
+      "license": "Other",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T22:37:07Z",
+          "description": "Headless 3D and VFX engine for agents. Research preview.",
+          "html_url": "https://github.com/voyager-so/vork",
+          "stars": 1356,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "we-promise/sure",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 11817,
+      "forks": 882,
+      "language": "Ruby",
+      "description": "The personal finance app for everyone (by everyone)",
+      "html_url": "https://github.com/we-promise/sure",
+      "topics": [],
+      "created_at": "2025-07-23T04:13:55Z",
+      "updated_at": "2026-11-10T21:08:33Z",
+      "pushed_at": "2026-11-10T20:27:03Z",
+      "license": "AGPL-3.0",
+      "open_issues": 875,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The personal finance app for everyone (by everyone)",
+          "full_name": "we-promise/sure",
+          "language": "Ruby",
+          "trending_stars_period": 184,
+          "trending_total_forks": null,
+          "trending_total_stars": 11817,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "woo20080623-cell/cinebench-desktop",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 776,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Cinebench 2026 Standalone Desktop Setup with Pre-Activated Features",
+      "html_url": "https://github.com/woo20080623-cell/cinebench-desktop",
+      "topics": [
+        "automation",
+        "cinebench",
+        "cinebench-2026",
+        "cinebench-crack",
+        "cinebench-free",
+        "cinebench-r23",
+        "cpu-benchmark",
+        "desktop",
+        "developer-tools",
+        "hardware-optimization",
+        "open-source",
+        "python",
+        "render-score",
+        "render-test",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:47:00Z",
+      "updated_at": "2026-11-10T21:09:16Z",
+      "pushed_at": "2026-11-10T20:23:14Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:47:00Z",
+          "description": "Cinebench 2026 Standalone Desktop Setup with Pre-Activated Features",
+          "html_url": "https://github.com/woo20080623-cell/cinebench-desktop",
+          "stars": 776,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "yappologistic/CUI",
+      "captured_at": "2026-11-10T21:13:07Z",
+      "stars": 862,
+      "forks": 48,
+      "language": "C",
+      "description": "Native UI components for C: about 150 of them, with spring motion and full keyboard support. Windows, macOS and Linux, no dependencies.",
+      "html_url": "https://github.com/yappologistic/CUI",
+      "topics": [
+        "c",
+        "c99",
+        "cross-platform",
+        "gui",
+        "native",
+        "ui-components"
+      ],
+      "created_at": "2026-11-05T08:18:08Z",
+      "updated_at": "2026-11-10T21:10:21Z",
+      "pushed_at": "2026-11-10T08:53:31Z",
+      "license": "MIT",
+      "open_issues": 16,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-11-05T08:18:08Z",
+          "description": "Native UI components for C: about 150 of them, with spring motion and full keyboard support. Windows, macOS and Linux, no dependencies.",
+          "html_url": "https://github.com/yappologistic/CUI",
+          "stars": 862,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
@@ -222646,7 +224477,8 @@
     "daily-20261104T171701Z": 71,
     "daily-20261105T212126Z": 76,
     "daily-20261108T175643Z": 78,
-    "daily-20261109T195138Z": 84
+    "daily-20261109T195138Z": 84,
+    "daily-20261110T211307Z": 89
   },
   "sent_slots": {
     "2026-09-30-pm": 61,
@@ -222655,7 +224487,8 @@
     "daily:2026-11-04": 71,
     "daily:2026-11-05": 76,
     "daily:2026-11-08": 78,
-    "daily:2026-11-09": 84
+    "daily:2026-11-09": 84,
+    "daily:2026-11-10": 89
   },
   "pending_digests": {},
   "llm_daily_requests": {
@@ -222670,7 +224503,8 @@
     "2026-11-06": 10,
     "2026-11-07": 12,
     "2026-11-08": 29,
-    "2026-11-09": 13
+    "2026-11-09": 13,
+    "2026-11-10": 11
   },
   "delivery_progress": {
     "20260930T143510Z": {
