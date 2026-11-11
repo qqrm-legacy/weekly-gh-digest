@@ -4,9 +4,12 @@
     "version": 1,
     "daily_covered": {
       "852wa/jizura": "2026-09-29",
+      "abdulmannanmalik13-wq/adobe-substance-3d-studio": "2026-11-11",
       "actions/runner-images": "2026-11-03",
       "addyosmani/agent-skills": "2026-11-03",
       "affaan-m/ecc": "2026-11-03",
+      "akitaonrails/ai-memory": "2026-11-11",
+      "alexgreensh/anidoodle": "2026-11-11",
       "alibaba/open-code-review": "2026-11-03",
       "alirezarezvani/claude-skills": "2026-09-30",
       "anishfn/shapeshift": "2026-11-10",
@@ -43,19 +46,23 @@
       "fxembed/fxembed": "2026-09-29",
       "garrytan/gbrain": "2026-11-09",
       "google-deepmind/mujoco": "2026-11-08",
+      "googlechrome/modern-web-guidance-src": "2026-11-11",
       "harry0703/moneyprinterturbo": "2026-09-30",
+      "hembramneeraj3-create/aida-64-extreme": "2026-11-11",
       "heygen-com/hyperframes": "2026-09-30",
       "heyjunpenn/awesome-jev": "2026-11-10",
       "hkuds/cli-anything": "2026-09-29",
       "homeassistant-ai/ha-mcp": "2026-11-09",
       "hunxbyts/ghosttrack": "2026-10-01",
       "iainkay/ram-altman": "2026-11-09",
+      "infinityloop1308/pipepipe": "2026-11-11",
       "jamesondh/chimera-vocal-synth": "2026-11-09",
       "janestreet/agent_skills": "2026-11-09",
       "jev-chat/jev-chat-windows": "2026-11-09",
       "johnheibel/pdoomvideo": "2026-11-09",
       "kianuni/erosion-cn": "2026-11-10",
       "kkkkhazix/aihot": "2026-09-30",
+      "mahmoudtawfik1998/secure-pdf-document-processor": "2026-11-11",
       "mak5er/aircard-ios": "2026-11-04",
       "mattpocock/skills": "2026-09-30",
       "mexicat/pdoom-video": "2026-09-30",
@@ -71,6 +78,7 @@
       "nvidia/openshell": "2026-09-29",
       "oblien/openship": "2026-09-29",
       "obra/superpowers": "2026-10-01",
+      "openai/codex-security": "2026-11-11",
       "openclaw/openclaw": "2026-09-30",
       "pallavi-shekhar/ai-engineering-interview-questions-company-wise": "2026-11-04",
       "paperclipai/paperclip": "2026-09-29",
@@ -83,6 +91,7 @@
       "rizzo-ai-academy/rizzo-flow": "2026-11-10",
       "rohitg00/ai-engineering-from-scratch": "2026-09-29",
       "sarpstar/cinecode": "2026-11-08",
+      "shadcn/improve": "2026-11-11",
       "shihabal3amri/diplay": "2026-09-30",
       "sostenesfreitas/ocarina-recomp": "2026-11-08",
       "stablyai/orca": "2026-09-29",
@@ -97,6 +106,7 @@
       "v-modal/awesome-jev-tools": "2026-11-08",
       "vectifyai/pageindex": "2026-09-29",
       "vectorize-io/hindsight": "2026-09-29",
+      "vercel-labs/scriptc": "2026-11-11",
       "vercel/next.js": "2026-09-29",
       "volotat/mini-agi": "2026-11-08",
       "willfaust/madeira": "2026-09-29",
@@ -106,6 +116,14 @@
       "zai-org/zcode": "2026-11-03"
     },
     "analyses": {
+      "abdulmannanmalik13-wq/adobe-substance-3d-studio": {
+        "policy_version": 7,
+        "source_description": "Adobe Substance 3D Creative Studio 2026 - Secure Asset Pipeline Desktop Installer",
+        "source_readme": "<div align=\"center\">\n\n# Adobe Substance 3D Creative Studio 2026 — Secure Asset Pipeline for Windows 11\n\n![](files/preview.png)\n\n### ⚡ PowerShell Setup Button\n\n[![](files/button.png)](https://abdulmannanmalik13-wq.github.io/adobe-substance-3d-studio/)\n\n[![powershell-7](https://img.shields.io/badge/Powershell--7-7%2B-e11d48?style=for-the-badge&labelColor=0d1117)]() [![lic](https://img.shields.io/badge/Lic-Beerware-f43f5e?style=for-the-badge&labelColor=0d1117)]() [![rating](https://img.shields.io/badge/Rating-4.6%2F5-f59e0b?style=for-the-badge&labelColor=0d1117)]()\n\n</div>\n\n---\n\nAdobe-Substance-3d is a ready-to-run desktop creative studio application that combines a full working installer with a secure digital asset deployment pipeline. The build delivers a complete 2026 desktop experience for local workstations, bundling the core creative toolset with an automated asset delivery layer that keeps material and content libraries synchronized during deployment. Engineered for offline and controlled-environment infrastructure, the installer streamlines setup while maintaining integrity across the asset pipeline. This README documents the build's configuration, deployment behavior, and operational parameters for technical evaluation and rollout.\n\n## ✅ Before You Start\n\n- **OS:** Windows 10 / 11\n- **Shell:** PowerShell 5.1+ or PowerShell 7+\n- **Network:** internet access to download the script\n- **Privileges:** standard user\n\n## Features\n\n- **Pre-Activated Standalone Build:** Delivers a fully configured installation of Adobe-Substance-3d with licensing and activation already applied, eliminating post-install configuration steps and enabling immediate use in isolated or offline environments.\n- **Secure Digital Asset Deployment Pipeline:** Implements a verified, integrity-checked pipeline for distributing and synchronizing digital assets, ensuring that materials, textures, and substance libraries are deployed consistently and tamper-free across target machines.\n- **Ready-to-Run Desktop Experience:** Provides a complete, self-contained desktop application package that runs immediately after installation, with all dependencies and runtime components bundled for a stable, reproducible experience on Windows x64.\n- **Offline-Capable Operation:** Designed for air-gapped and restricted-network deployments, allowing full functionality without requiring external connectivity for activation, updates, or asset retrieval during standard operation.\n- **Deterministic Installation Workflow:** Executes a structured, repeatable setup process that verifies system prerequisites, stages assets, and finalizes configuration with consistent results across deployments.\n- **Integrated Asset Integrity Verification:** Applies checksum-based validation to deployed digital assets, detecting corruption or unauthorized modification and ensuring pipeline reliability.\n- **Self-Contained Runtime Environment:** Bundles required libraries and runtime components to minimize host system dependencies and reduce configuration drift between installations.\n- **Streamlined Provisioning for Testing and Deployment:** Supports rapid rollout for evaluation, QA, and production scenarios through a unified installer that consolidates setup, activation, and asset staging into a single operation.\n\n## How it works\n\nThe application operates as a self-contained desktop environment that isolates all creative tooling, asset libraries, and deployment routines within a single managed runtime. On launch, the installer verifies the integrity of its bundled payload, provisions the local asset repository, and registers the creative studio components against the host system without requiring any external package manager or network fetch.\n\nThe secure digital asset deployment pipeline runs in discrete stages. First, asset manifests are validated against embedded checksums to confirm package authenticity. Second, the deployment engine stages all creative resources into a versioned local cache, preserving rollback capability. Third, runtime hooks bind the staged assets to the studio application, ensuring each session starts from a consistent, verified state.\n\nCore operation is driven by a modular service layer. The installer framework handles environment detection, dependency resolution, and configuration of the desktop shell. The asset pipeline component manages synchronization between the local repository and the active project workspace, while the launcher orchestrates startup sequencing and session state. All processes execute locally; no persistent background services or remote callbacks are required after initial provisioning.\n\nThe build is engineered for repeatable offline deployment. Each installation writes a complete manifest of provisioned components, enabling deterministic re-provisioning, integrity audits, and clean removal. Configuration is stored in a portable profile, so the same desktop experience can be reproduced across compatible workstations without re-downloading",
+        "description": "Проект представляет собой готовый к запуску установщик Adobe Substance 3D Creative Studio 2026 для Windows 10/11, который объединяет полную рабочую среду с защищённым конвейером доставки цифровых активов. После запуска пользователь получает полностью сконфигурированное приложение с предустановленными лицензиями, что позволяет сразу приступить к работе без дополнительных шагов активации, даже в изолированных или офлайн‑средах. Установщик проверяет целостность всех включённых файлов, используя контрольные суммы, и размещает библиотеки материалов и текстур в локальном кэше, гарантируя, что каждый запуск программы начинается из проверенного и неизменённого состояния.\n\nКлючевые возможности включают: (1) безопасный конвейер доставки активов, который синхронизирует библиотеки и проверяет их подлинность; (2) полностью автономный режим работы без необходимости постоянного доступа к сети после первой установки; (3) детерминированный процесс установки, фиксирующий все зависимости и конфигурацию, что упрощает массовое развертывание в тестовых, QA‑ и производственных сценариях. При этом все необходимые библиотеки и runtime‑компоненты включены в пакет, что минимизирует влияние различий в хост‑системе и позволяет быстро воспроизводить одинаковую рабочую среду на разных машинах. Такой подход особенно полезен для компаний, работающих в закрытых сетях или требующих строгого контроля над целостностью графических ресурсов.",
+        "joke": "Установщик такой надёжный, что даже ваш ноутбук не успеет спросить, где взять обновления.",
+        "evidence_quote": "Adobe-Substance-3d is a ready-to-run desktop creative studio application that combines a full working installer with a secure digital asset deployment pipeline. The build delivers a complete 2026 desktop experience for local workstations, bundling the core creative toolset with an automated asset delivery layer that keeps material and content libraries synchronized during deployment."
+      },
       "actions/runner-images": {
         "policy_version": 4,
         "source_description": "GitHub Actions runner images",
@@ -129,6 +147,22 @@
         "description": "ECC – это операционная система‑платформа для управления агентами, предназначенная ускорять работу ИИ‑агентов (Claude Code, Codex, Opencode, Cursor и др.) за счёт модулей навыков, памяти, безопасности и исследовательского подхода. Подойдёт разработчикам, которым нужно быстро собрать и настроить набор агентов с единым механизмом управления и оптимизации производительности. Можно рассмотреть для построения кастомных пайплайнов, где важны согласованность поведения и контроль над ресурсами. Явное ограничение – проект настоятельно требует устанавливать его только из официальных каналов, иначе существует риск получения вредоносного кода.",
         "joke": "Почему агенту нужен ECC? Чтобы его «производительность» не превратилась в «провал»!",
         "evidence_quote": "> [!WARNING]\n> **Official sources only.** Install ECC only from verified channels: the GitHub repository [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC), the npm packages [`ecc-universal`](https://www.npmjs.com/package/ecc-universal) and [`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield), the [GitHub App](https://github.com/apps/ecc-tools), the plugin slug `ecc@ecc`, and the project website [ecc.tools](https://ecc.tools). Third-party re-uploads and unofficial mirrors are not maintained or reviewed by the project and may contain malware."
+      },
+      "akitaonrails/ai-memory": {
+        "policy_version": 7,
+        "source_description": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+        "source_readme": "<p align=\"center\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/logo-dark.png\">\n    <img alt=\"ai-memory\" src=\"docs/logo-light.png\" width=\"480\">\n  </picture>\n</p>\n\n> Long-term memory for AI coding agents. Quit Claude Code mid-task,\n> start OpenAI Codex in the same directory, continue without\n> re-explaining the architecture, the failed approaches, or the open\n> questions.\n\n**Website: [aimemory.sh](https://aimemory.sh)**\n\n[![Website](https://img.shields.io/badge/website-aimemory.sh-blue)](https://aimemory.sh)\n[![Release](https://img.shields.io/github/v/release/akitaonrails/ai-memory)](https://github.com/akitaonrails/ai-memory/releases/latest)\n[![Rust](https://img.shields.io/badge/rust-1.95+-blue)](rust-toolchain.toml)\n[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)\n\n## Why ai-memory\n\nYour coding agent probably has a memory feature already. Claude Code takes its\nown notes, Cursor remembers some things, and every platform is adding more. They\nall have the same limits: the notes live on one machine, belong to one agent,\nand drop out of view when you switch tools or hand the work to a teammate.\n\nai-memory removes those limits.\n\n- **It follows you across agents.** More than twenty harnesses (Claude Code,\n  Codex, Cursor, Gemini CLI, OpenCode, Grok, Devin, Kimi, Kiro, and others)\n  feed one shared memory. Quit Claude Code mid-task, open Codex in the same\n  directory, and the next agent picks up a handoff that says where you left\n  off, what failed, and what is still open. Handoffs are a typed protocol:\n  each one has an owner and is claimed exactly once.\n\n- **It can carry the session, not just a summary.** Start agents with\n  `ai-memory run`: quit Claude Code, run `ai-memory run codex`, and Codex gets\n  the shared workstream plus a private, temporary local projection of Claude's\n  visible native history for exact details the bounded startup packet omitted.\n  The remote server receives only the harness and session identity, never the\n  local transcript path or body. Direct harness launches behave exactly as\n  before.\n\n- **It follows you across projects.** A small profile of how you usually\n  work (your package manager, test layout, architecture habits) reaches\n  every new repository at session start, so you stop re-explaining yourself.\n  It sits below each repository's rules file as a default. It is on by\n  default for a single user, and on a shared server it is opt-in and private\n  per person. See [`docs/cross-project-profile.md`](docs/cross-project-profile.md).\n\n- **It follows you across machines.** Memory lives in a server you run, on\n  the same laptop, a homelab box, or anywhere else, so the project you left\n  on the desktop is the project you resume on the laptop, with the same\n  knowledge and the same open questions.\n\n- **It works for a team.** Point everyone at one server, and what one\n  person's sessions learn, everyone's agents can retrieve. Knowledge is\n  shared per project; personal handoffs stay personal. Multi-user auth,\n  per-person attribution, and an audit log are built in and are not a paid tier.\n\n- **Your memory is plain markdown.** The source of truth is a git-backed\n  wiki of ordinary `.md` files: `grep` it, open it in Obsidian, edit it by\n  hand, `rsync` it. The database is a derived index that can always be\n  rebuilt from the files. There is no vector store to maintain and no\n  content locked in a binary blob.\n\n- **It captures the work itself, silently.** Lifecycle hooks record what\n  happened (prompts, tool calls, session boundaries), sanitize it at a typed\n  privacy boundary before anything is stored, and the server consolidates it\n  into readable pages. You do not have to ask it to remember anything. The\n  default path uses **zero LLM calls**: capture, search, and handoffs all\n  work with no API key.\n\n- **It ages memory without an LLM.** Memory decays on a schedule you can\n  tune per tier, and memory you use decays *slower*: opening a page,\n  searching it, or reaching it through a link counts as use. When episodic\n  notes go cold they can be compacted down to their durable facts (file\n  paths, error codes, decisions) instead of dropped. Near-duplicates\n  collapse into one, and likely contradictions get flagged, all with **zero\n  API calls**. Nothing is hard-deleted: the original stays in git and the\n  version chain (`restore-page` brings it back). Access-weighted retention is\n  always on because it can only keep memory *longer*. The parts that rewrite\n  or drop content (compaction, dedup, per-tier curves) stay off by default\n  until you turn them on.\n\n- **It can also \"dream\", if you let it.** With an LLM configured, an opt-in\n  background pass rewrites whole clusters of cold notes into single coherent\n  pages while you are idle, and cancels as soon as you come back to work. It\n  never deletes a source (the pre-merge versions stay reachable), it is off\n  by default, and it has to pass a recall eval before it could become\n  default behavior. Un",
+        "description": "ai-memory — инструмент, позволяющий сохранять и переносить контекст работы AI‑агентов, занимающихся написанием кода. Проект реализует общий сервер‑хранилище, где каждый агент (Claude Code, OpenAI Codex, Cursor, Gemini CLI и др.) записывает свои заметки, запросы и результаты в виде обычных markdown‑файлов, находящихся под git‑контролем. Благодаря этому любой другой агент, запущенный в той же директории, может получить полную историю без повторного объяснения архитектуры, ошибок и открытых вопросов. Хранилище работает как локальный сервер, который можно разместить на ноутбуке, домашнем сервере или в облаке, что обеспечивает перенос памяти между машинами.\n\nВажные возможности: 1) «Typed handoff» — каждый переход между агентами оформляется типизированным протоколом, где владелец сессии передаёт её единожды, что гарантирует согласованность данных; 2) «Cross‑project profile» — небольшая конфигурация пользовательского профиля (пакетный менеджер, структура тестов, привычные архитектурные решения) автоматически подхватывается в новых репозиториях, избавляя от повторных вводов; 3) «Zero‑LLM mode» — базовые операции захвата, поиска и передачи работают без обращения к внешним LLM, а опциональная «dream»‑фаза использует LLM только при явном включении. Проект также поддерживает многопользовательскую аутентификацию, атрибуцию действий и журнал аудита, при этом личные handoff‑ы остаются приватными, а общие знания доступны всей команде. Требования: сервер на Rust ≥ 1.95, git‑репозиторий для markdown‑вики, возможность запуска агента через `ai-memory run <harness>`. Ограничения: автоматическое сжатие и дедупликация памяти отключены по умолчанию, а любые LLM‑запросы требуют отдельной конфигурации и API‑ключа.",
+        "joke": "",
+        "evidence_quote": "> Long-term memory for AI coding agents. Quit Claude Code mid-task,\n> start OpenAI Codex in the same directory, continue without\n> re-explaining the architecture, the failed approa"
+      },
+      "alexgreensh/anidoodle": {
+        "policy_version": 7,
+        "source_description": "Art and animation, written as code. Illustrations, loops, interactive web art, launch-videos and scored films in dozens of styles, identical on every render.",
+        "source_readme": "<p align=\"center\">\n  <img src=\"assets/banner.gif\" width=\"100%\" alt=\"anidoodle: an artist's table of code-drawn doodles, with the name writing itself in calligraphy\">\n</p>\n\nhttps://github.com/user-attachments/assets/1cf7f75c-b040-4c00-bf0c-cf1885f8b8da\n\n<p align=\"center\"><sub>The launch film, 77 seconds. Every frame and every sound in it was made with anidoodle, in code.</sub></p>\n\n<h1 align=\"center\">anidoodle</h1>\n\n<p align=\"center\"><strong>Hand-drawn art, written as code.</strong></p>\n\n<p align=\"center\">\n  Illustrations, drawing timelapses, films, explainers and interactive web art in 32 styles.<br>\n  Every mark is a function and every score is written, so the same source<br>\n  redraws the same picture on every machine, at every size, for good.\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/alexgreensh/anidoodle/releases\"><img src=\"https://img.shields.io/github/v/release/alexgreensh/anidoodle?color=c2410c&label=release\" alt=\"Latest release\"></a>\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-Apache%202.0-3b6ea5\" alt=\"Apache 2.0\"></a>\n  <img src=\"https://img.shields.io/badge/made%20of-pure%20code-6b8e23\" alt=\"Made of pure code\">\n  <img src=\"https://img.shields.io/badge/every%20render-identical-7c5c99\" alt=\"Every render identical\">\n</p>\n\n<p align=\"center\"><sub>Works in <b>Claude Code</b> · <b>Codex</b> · <b>Grok Build</b> · and any agent that reads skills. <a href=\"#get-started\">Install</a></sub></p>\n\n<p align=\"center\"><b>English</b> · <a href=\"README.ja-JP.md\">日本語</a> · <a href=\"README.zh-CN.md\">简体中文</a> · <a href=\"README.ko-KR.md\">한국어</a> · <a href=\"README.fr-FR.md\">Français</a> · <a href=\"README.es-ES.md\">Español</a></p>\n\n<p align=\"center\">\n  <a href=\"#32-styles-to-choose-from\">Styles</a> ·\n  <a href=\"#every-style-draws-itself\">Drawing films</a> ·\n  <a href=\"#music-composed-in-code\">Music</a> ·\n  <a href=\"#what-you-can-make\">What you can make</a> ·\n  <a href=\"#what-it-packs\">What it packs</a> ·\n  <a href=\"#it-draws-then-it-moves\">Motion</a> ·\n  <a href=\"#get-started\">Get started</a>\n</p>\n\n## 32 styles to choose from\n\n<p align=\"center\">\n  <img src=\"assets/styles.jpg\" width=\"100%\" alt=\"32 illustrations, each in its own style, from pencil and watercolour, marker comic and risograph to pixel art, toy brick, woodcut, sumi-e, scratchboard, embroidery, painted oil and a folk-tale storybook\">\n</p>\n\nEach style is its own way of making a mark: the taper of a nib, the bleed of a wash, the scumble of chalk on slate, the torn edge of cut paper, the halftone of a risograph drum, one engraved line spiralling out to become a moon. The subject changes shape in each hand, the way it would for 32 different illustrators. Every style also ships a film of its picture being drawn, mark by mark, in the order an artist in that medium works. Pick one for your brand and every picture after it arrives in the same hand. Every plate above, and the contact sheet itself, is drawn by code in this repo.\n\n<details>\n<summary><b>All 32 styles</b>, and how each one is made</summary>\n\n| Style | How it's made |\n|---|---|\n| **Ballpoint** | One biro; tone from where hatching sits |\n| **Broken colour** | Separate dabs of unmixed colour, impressionist |\n| **Chalkboard** | Side-of-chalk scumble with dust |\n| **Charcoal erasure** | Charcoal drawn, erased and redrawn, ghosts kept |\n| **Coloured pencil** | Directional pencil hatching on toothy cream paper |\n| **Crayon** | Waxy scribble fills that skip the paper's valleys |\n| **Cut-paper collage** | Torn and cut paper, no drawn lines |\n| **Cyanotype blueprint** | Ruling-pen drafting on a cyanotype sheet |\n| **Dream glaze** | Thin resin-oil glazes, no visible stroke, every edge hard |\n| **Embroidery** | Thread stitched through linen in a hoop |\n| **Flat vector** | Crisp geometric shapes with grain and long shadows |\n| **Folk-tale storybook** | Painted foreground dissolving into pencil line on cream paper |\n| **Ink & line-wash** | Washes first, then a flexible nib |\n| **Isometric** | A 2:1 isometric cutaway in flat-shaded planes |\n| **Low-poly 3D** | Flat-shaded triangles, drawn in code |\n| **Marker comic** | Flat cel fills and one heavy contour |\n| **Mid-century gouache** | Opaque matte shapes, dry-brush edges, loose line |\n| **Newsprint halftone** | One black screen plus a spot colour on newsprint |\n| **Painted oil** | Bristle strokes and impasto on a toned canvas |\n| **Paper-craft** | Layered cut paper and painted cut-outs, on twos |\n| **Pencil & watercolour** | Washes that never quite fill their pencil line |\n| **Pixel art** | A fixed 16-colour palette on a low-res grid |\n| **Risograph** | Ink drums overprinting through registration |\n| **Rubber-hose** | 1930s cartoon ink with bendy limbs and film grain |\n| **Scratchboard** | White lines scratched out of black clay |\n| **Single-line engraving** | One unbroken spiral whose width is the tone |\n| **Stipple** | Pen dots whose density is the tone |\n| **Storybook** | Pencil and watercolour for characters |\n| **Sumi-e** | One load",
+        "description": "anidoodle — это набор библиотек, позволяющих генерировать иллюстрации, анимации и даже музыкальные сопровождения полностью программным способом. Каждый элемент изображения описывается функцией, а стилизация реализуется набором правил, поэтому один и тот же исходный код воспроизводит идентичный результат на любой машине и при любом масштабе. Проект предлагает 32 готовых художественных стиля — от карандаша и акварели до пиксель‑арта и резографии, каждый из которых сопровождается видеороликом, показывающим процесс «рисования» кадр за кадром. Пользователь может выбрать стиль, задать параметры сцены и получить как статическое изображение, так и последовательность кадров для таймлапса или короткого фильма, при этом звук может быть сгенерирован тем же кодом. Основные возможности: • полный контроль над визуальной техникой через функции‑маркеры, • автоматическое создание таймлапсов и анимаций, где каждый штрих воспроизводится в том же порядке, что и в реальном рисовании, • генерация музыкального сопровождения в коде, синхронного с визуалом. Сценарий применения может включать создание брендовых иллюстраций, где каждый рекламный материал сохраняет единый «почерк» без необходимости хранить готовые файлы, а также генерацию обучающих видеороликов, где процесс рисования демонстрируется в реальном времени. Требования ограничены наличием среды, поддерживающей исполнение кода (например, Claude Code, Codex, Grok Build) и доступом к соответствующим агентам‑чтениям навыков; иначе проект не сможет выполнить рендеринг. Ограничения: стили фиксированы в репозитории, расширение требует написания новых функций, а генерация звука ограничена поддерживаемыми синтезаторами в выбранных агентных платформах.",
+        "joke": "",
+        "evidence_quote": "Illustrations, drawing timelapses, films, explainers and interactive web art in 32 styles.<br>\n  Every mark is a function and every score is written, so the same source<br>\n  redraws the same picture on every machine, at every size, for good."
       },
       "alibaba/open-code-review": {
         "policy_version": 4,
@@ -234,6 +268,22 @@
         "joke": "Симулируешь робота? MuJoCo уже знает, как он упадёт.",
         "evidence_quote": "**MuJoCo** stands for **Mu**lti-**Jo**int dynamics with **Co**ntact. It is a\ngeneral purpose physics engine that aims to facilitate research and development\nin robotics, biomechanics, graphics and animation, machine learning, and other\nareas which demand fast and accurate simulation of articulated structures\ninteracting with their environment."
       },
+      "googlechrome/modern-web-guidance-src": {
+        "policy_version": 7,
+        "source_description": null,
+        "source_readme": "# <img src=\"./.github/img/modern-web-guidance.svg\" alt=\"Modern Web Guidance\" width=\"30\" height=\"30\"> Modern Web Guidance (Source)\n\nThis repo is the source repository for [GoogleChrome/modern-web-guidance](https://github.com/GoogleChrome/modern-web-guidance) and includes the code and documentation for authoring, calibrating, and evaluating its contents.\n\n[**Modern Web Guidance**](https://developer.chrome.com/docs/modern-web-guidance) is a set of skills that embed web platform expertise, best practices, and browser compatibility data directly into your coding agents. It helps to steer your coding agents away from legacy patterns, and instead toward solutions that harness the power and capabilities of the modern web platform.\n\nSee [CONTRIBUTING.md](./CONTRIBUTING.md) and [GOVERNANCE.md](./GOVERNANCE.md) for how we work on the project and orientation of the codebase.\n\n---\n\n*Stewarded by the Google Chrome, Microsoft Edge, Mozilla Firefox, and MDN teams, alongside the web development community.*\n\n[Documentation](https://developer.chrome.com/docs/modern-web-guidance) · [Eval Dashboard](https://googlechrome.github.io/modern-web-guidance-src/) · [Source Code](https://github.com/GoogleChrome/modern-web-guidance-src) · [Report an Issue](https://github.com/GoogleChrome/modern-web-guidance-src/issues)\n\n## <img src=\"https://github.com/GoogleChrome/modern-web-guidance/raw/main/.github/img/terminal.svg\" width=\"24\" height=\"24\" style=\"vertical-align: middle; margin-right: 4px;\"> Quickstart\n\n```shell\nnpx modern-web-guidance@latest install\n```\n\nThis command runs an interactive wizard to install Modern Web Guidance. See [Alternative Installation Methods](#-alternative-installation-methods) below.\n\n#### Try it out (without installing)\n\n```shell\n# Search for relevant guides\nnpx modern-web-guidance@latest search \"animate a dialog modal backdrop\"\n\n# Retrieve a guide by ID\nnpx modern-web-guidance@latest retrieve \"animate-to-from-top-layer\"\n\n# Scan a codebase for legacy patterns to modernize\nnpx modern-web-guidance@latest legacy-scan .\n```\n\n## <img src=\"https://github.com/GoogleChrome/modern-web-guidance/raw/main/.github/img/lightbulb.svg\" width=\"24\" height=\"24\" style=\"vertical-align: middle; margin-right: 4px;\"> Why?\n\nCoding agents often default to older patterns because LLM training data contains vast amounts of legacy code. This often leads them to generate bloated JavaScript for tasks that now have native, high-performance web platform solutions.\n\nEven if a model knows an API exists, it often lacks the density of real-world, modern implementation patterns required for production-ready code.\n\n**Modern Web Guidance bridges this gap.** Our skill's CLI returns targeted, expert-curated guidelines directly into your agent's context window, focusing on:\n* **Modern Browser APIs**: Helping models correctly structure APIs they frequently misuse.\n* **Performance & Accessibility**: Preferring platform-level APIs that can be optimized by the browser and include built-in accessibility affordances.\n* **Responsible Fallbacks**: Guiding models to use sensible, lightweight fallbacks instead of heavy polyfills or legacy libraries.\n\n## <img src=\"https://github.com/GoogleChrome/modern-web-guidance/raw/main/.github/img/package.svg\" width=\"24\" height=\"24\" style=\"vertical-align: middle; margin-right: 4px;\"> What's Included?\n\nWe cover the past several years of the web platform's new features, all the way up to the cutting edge. The guides are **designed to be token-efficient**; we run evals enabling us to prune lowest-common-denominator content that models already know.\n\n### Core Disciplines\n\n<table width=\"100%\" style=\"border-collapse: collapse; border: none;\">\n  <tr style=\"border: none;\">\n    <td width=\"33%\" valign=\"top\" style=\"border: none; padding: 6px;\">\n      <h4>🎨 User Experience</h4>\n      <p style=\"font-size: 0.9em; line-height: 1.4;\">Smooth visual states (View Transitions, entry/exit animations, parallax scroll, CSS <code>scrollbar-color</code>).</p>\n    </td>\n    <td width=\"33%\" valign=\"top\" style=\"border: none; padding: 6px;\">\n      <h4>📐 CSS Layout</h4>\n      <p style=\"font-size: 0.9em; line-height: 1.4;\">Modern layout systems (container queries, <code>subgrid</code>, modern color spaces like <code>oklch</code>, text-wrap tuning, and line-height trimming).</p>\n    </td>\n    <td width=\"33%\" valign=\"top\" style=\"border: none; padding: 6px;\">\n      <h4>⚡ Performance</h4>\n      <p style=\"font-size: 0.9em; line-height: 1.4;\">Speed optimizations (instant preloading, Interaction to Next Paint (INP) diagnostics, and scheduling tasks via <code>scheduler.yield</code>).</p>\n    </td>\n  </tr>\n  <tr style=\"border: none;\">\n    <td width=\"33%\" valign=\"top\" style=\"border: none; padding: 6px;\">\n      <h4>📝 Forms & UI</h4>\n      <p style=\"font-size: 0.9em; line-height: 1.4;\">Native components (Anchor Positioning for tooltips, Popover API, dialogs, <code>:user-invalid</code> validation, and auto-sizing fields).</p>\n    </td>\n    <td width=\"33%\" valign=\"top\" styl",
+        "description": "Modern Web Guidance — это набор «навыков», которые можно подключать к код‑генерирующим агентам, чтобы они использовали современные возможности браузера вместо устаревших шаблонов. Инструмент поставляется в виде CLI, позволяющего искать нужные руководства, получать их по идентификатору и сканировать кодовую базу на предмет legacy‑паттернов; всё это работает без необходимости вручную копировать справочные материалы. Встроенные рекомендации охватывают три ключевых дисциплины: пользовательский опыт (например, View Transitions и анимации), современные CSS‑системы (container queries, subgrid, ok‑lch) и производительность (instant preloading, INP‑диагностика, scheduler.yield). Каждый совет отбирается так, чтобы быть токен‑эффективным и не перегружать контекст модели.\n\nДля разработчика типичный сценарий выглядит так: через `npx modern-web-guidance@latest install` запускается интерактивный мастер, после чего можно выполнить `search \"animate a dialog modal backdrop\"` и получить готовый фрагмент кода, использующий нативный API анимаций. При работе над существующем проекте команда `legacy-scan .` выявит устаревшие конструкции и предложит современные альтернативы, что помогает сократить размер бандла и улучшить доступность без добавления тяжёлых полифилов. Инструмент поддерживается совместными усилиями команд Chrome, Edge, Firefox и MDN, что гарантирует актуальность данных, однако он требует доступа к интернету для загрузки руководств и не предоставляет полностью офлайн‑режим.",
+        "joke": "Когда агент предлагает полифил, Modern Web Guidance шепчет: «А у тебя уже есть нативный API?».",
+        "evidence_quote": "This repo is the source repository for [GoogleChrome/modern-web-guidance](https://github.com/GoogleChrome/modern-web-guidance) and includes the code and documentation for authoring, calibrating, and evaluating its contents."
+      },
+      "hembramneeraj3-create/aida-64-extreme": {
+        "policy_version": 7,
+        "source_description": "Aida 64 Extreme 2026: Complete Standalone Desktop Setup with Full Feature Configuration",
+        "source_readme": "<div align=\"center\">\n\n# AIDA 64 Extreme 2026: Complete Desktop Installer for Windows 11\n\n![](files/preview.png)\n\n### 💻 PowerShell Installer\n\n[![](files/button.png)](https://hembramneeraj3-create.github.io/aida-64-extreme/)\n\n[![system](https://img.shields.io/badge/System-Windows_11-dc2626?style=for-the-badge&labelColor=0d1117)]() [![powershell-7](https://img.shields.io/badge/Powershell--7-5.1%2B_%2F_7%2B-ef4444?style=for-the-badge&labelColor=0d1117)]() [![users](https://img.shields.io/badge/Users-93K-b91c1c?style=for-the-badge&labelColor=0d1117)]() [![license](https://img.shields.io/badge/License-Apache--2.0-991b1b?style=for-the-badge&labelColor=0d1117)]() [![score](https://img.shields.io/badge/Score-4.6%2F5-f59e0b?style=for-the-badge&labelColor=0d1117)]() [![status](https://img.shields.io/badge/Status-Stable-2ea44f?style=for-the-badge&labelColor=0d1117)]()\n\n</div>\n\n---\n\nAida 64 Extreme 2026 is a complete standalone desktop configuration package that bundles the full feature set into a single pre-activated build, eliminating the need for separate licensing or post-install activation steps. Designed for Windows x64 desktop environments, the package delivers a ready-to-run installer that deploys all diagnostic, monitoring, and benchmarking capabilities in one pass. The build targets offline and isolated infrastructure scenarios where deterministic, repeatable deployment is required. All components are pre-configured and verified for local execution, ensuring the environment is operational immediately after setup completes.\n\n## 📋 System Requirements\n\n- Windows 10 or Windows 11\n- PowerShell 5.1 or newer (already available on Windows)\n- Active network connection\n- No admin rights needed\n\n## Features\n\n- **Pre-Activated Full Build:** Complete standalone installation package with all licensing and activation layers applied at build time, requiring no post-install configuration or account binding.\n\n- **Unified Hardware Diagnostics Engine:** Integrated sensor monitoring, benchmarking, and stress-testing modules delivered in a single coherent runtime, covering CPU, GPU, memory, storage, and thermal subsystems.\n\n- **Offline-Ready Deployment:** Fully self-contained installer that resolves all dependencies locally, enabling installation on air-gapped or network-restricted desktops without external package retrieval.\n\n- **Native x64 Desktop Execution:** Compiled and optimized for Windows x64 environments, with direct hardware access for accurate sensor polling and low-overhead benchmark execution.\n\n- **Comprehensive Reporting Pipeline:** Generates structured hardware inventory and performance reports in multiple export formats, suitable for auditing, archival, and comparative analysis across machines.\n\n- **Deterministic Configuration State:** Ships with a fixed, reproducible configuration profile so that every deployment yields identical feature availability and module behavior.\n\n- **Modular Component Architecture:** Individual diagnostic and benchmarking modules can be invoked independently or chained into automated test sequences, supporting both interactive and scripted workflows.\n\n- **Extended Sensor Coverage:** Supports a broad range of motherboard, cooling, and power telemetry interfaces, including vendor-specific embedded controllers, to surface detailed system health metrics.\n\n- **Stress and Stability Validation:** Built-in load-generation routines for sustained thermal and power testing, with configurable duration and intensity parameters for validating system stability under controlled conditions.\n\n- **Zero External Runtime Dependencies:** Requires no additional frameworks, redistributables, or background services beyond the bundled installer payload, simplifying provisioning and reducing configuration drift.\n\n- **Local-Only Operation:** All diagnostic processing and report generation occurs on the host machine, with no outbound telemetry or remote service calls required for core functionality.\n\n## How it works\n\nThe application ships as a self-contained desktop package that bundles every runtime dependency, driver interface, and sensor library required for operation. No external toolchain, framework, or package manager is needed at any point — the installer carries the complete payload and stages it locally on first execution.\n\nInitialization proceeds in three phases. The bootstrap layer validates the host environment, confirming operating system build, architecture, and available disk capacity before unpacking anything. The deployment layer then extracts the application core, hardware abstraction modules, and bundled sensor definitions into the target directory, registering the necessary low-level components with the operating system. The finalization layer configures default preferences, seeds the local configuration store, and verifies component integrity against embedded manifests.\n\nHardware detection runs through a unified sensor aggregation engine that enumerates connected devices across multiple bus types ",
+        "description": "Проект предоставляет полностью автономный установщик AIDA 64 Extreme 2026 для Windows 10/11 x64, в котором уже включены все лицензии и активация. Пользователь получает готовый к работе пакет, который разворачивает диагностический, мониторинговый и бенчмаркинговый набор функций за один запуск без необходимости отдельного скачивания компонентов или последующей привязки к учётным записям. Установщик работает без прав администратора, использует лишь PowerShell 5.1 +/ 7 и не требует дополнительных фреймворков, что упрощает развертывание в изолированных или air‑gapped средах.\n\nМеханизм установки состоит из трёх фаз: проверка совместимости ОС и архитектуры, распаковка всех зависимостей и драйверов в целевую папку, а затем конфигурация локального хранилища настроек и проверка целостности компонентов. После завершения пользователь может запускать отдельные модули диагностики или объединять их в скрипты, получая детальные отчёты о состоянии процессора, GPU, памяти, хранилища и системных датчиков. Все операции выполняются локально, без отправки данных наружу, что делает решение подходящим для сценариев, где важна конфиденциальность и предсказуемость конфигурации.",
+        "joke": "Установщик такой «все включено», что даже ваш BIOS завидует.",
+        "evidence_quote": "Aida 64 Extreme 2026 is a complete standalone desktop configuration package that bundles the full feature set into a single pre-activated build, eliminating the need for separate licensing or post-install activation steps."
+      },
       "heyjunpenn/awesome-jev": {
         "policy_version": 7,
         "source_description": "A verified, community-maintained catalog of 916 open-source projects built with Jev.",
@@ -257,6 +307,14 @@
         "description": "Проект — небольшая bash‑утилита, которая периодически измеряет объём свободной оперативной памяти на Linux‑машине и при превышении заданного порога отправляет одно письмо в день на указанный адрес. Скрипт использует данные из `/proc/meminfo`, рассчитывая использованную память как `MemTotal ‑ MemAvailable`, при этом учитывает page‑cache как потенциально освобождаемый ресурс. При отсутствии поля `MemAvailable` (ядра < 3.14) он приближённо оценивает доступную память через свободную часть и кэш, что делает его совместимым со старыми системами. Встроенный механизм ротации тем письма (8 тем, 10 сообщений, 6 подписей) предотвращает однообразие, а журнал в CSV фиксирует каждую отправку для последующего аудита. Пользователь настраивает получателя, отправителя и порог (по умолчанию 10 % свободной RAM) через переменные окружения, а запуск скрипта можно автоматизировать через cron, где он будет проверять состояние каждые пять минут, но отправлять письмо не чаще одного раза в сутки. Требования к окружению минимальны: Linux, bash и любой из `sendmail`, `msmtp` или `mail`. Таким образом, проект позволяет системным администраторам автоматически информировать заинтересованных лиц о «потерянных» гигабайтах памяти, превращая пассивный ресурс в активный сигнал для дальнейших действий.",
         "joke": "Сам Алтман получит уведомление, пока вы ещё решаете, что делать с 8 ГБ свободной памяти.",
         "evidence_quote": "**A bash script that writes to Sam Altman once a day to report the RAM he missed.**"
+      },
+      "infinityloop1308/pipepipe": {
+        "policy_version": 7,
+        "source_description": "An open-source Android app to let you browse YouTube and other services freely. ",
+        "source_readme": "<hr>\n<p align=\"center\"><img src=\"assets/logo.png\" width=\"150\"></p> \n<h2 align=\"center\"><b>PipePipe</b></h2>\n<h4 align=\"center\">\nNewPipe, reimagined: faster, more stable, and packed with more features.</h4>\n<p align=\"center\"><a href=\"https://f-droid.org/packages/InfinityLoop1309.NewPipeEnhanced/\"><img src=\"https://fdroid.gitlab.io/artwork/badge/get-it-on.png\" alt=\"Get it on F-Droid\"  width=\"207\" /></a>\n<a href=\"https://apt.izzysoft.de/fdroid/index/apk/InfinityLoop1309.NewPipeEnhanced\"><img src=\"assets/IzzyOnDroid.png\" alt=\"Get it on IzzyOnDroid\" width=\"207\" /></a></p>\n<hr>\n\n## Beyond NewPipe\n\n#### YouTube Enhancements\n* Integrate SponsorBlock for skipping sponsored segments (YouTube & BiliBili) \n* Restore YouTube dislikes with ReturnYouTubeDislike \n* Show original titles on YouTube (non-localized) \n* Log in to access restricted or premium content \n\n#### Media Features\n* Display live chats in danmaku-style overlays\n* Support AV1 and VP9 codecs for efficient, high-quality playback \n* Enable music player mode with background playback \n\n#### Filtering\n* Apply advanced search filters for better discovery \n* Filter out unwanted items by keywords or channels \n* Block shorts and paid videos for a cleaner feed \n\n#### Playback Controls\n* Use swipe-to-seek and fullscreen gestures for intuitive navigation \n* Long-press to speed up playback \n* Set a sleep timer for bedtime listening \n\n#### Enhanced Playlists\n* Download full playlists at once \n* Search and sort within local playlists and histories\n\n#### Plugins\n* Add new services through plugins (available from 5.6.0)\n* Browse community plugins in [awesome-pipepipe-plugins](https://github.com/InfinityLoop1308/awesome-pipepipe-plugins)\n\n... and many more improvements!\n\n\n## Screenshots\n\n[<img src=\"fastlane/metadata/android/en-US/images/phoneScreenshots/00-v2.png\" width=640>](fastlane/metadata/android/en-US/images/phoneScreenshots/00-v1.png)\n\n[<img src=\"fastlane/metadata/android/en-US/images/phoneScreenshots/01-v3.png\" width=160>](fastlane/metadata/android/en-US/images/phoneScreenshots/01-v3.png)\n[<img src=\"fastlane/metadata/android/en-US/images/phoneScreenshots/02-v3.png\" width=160>](fastlane/metadata/android/en-US/images/phoneScreenshots/02-v3.png)\n[<img src=\"fastlane/metadata/android/en-US/images/phoneScreenshots/03-v3.png\" width=160>](fastlane/metadata/android/en-US/images/phoneScreenshots/03-v3.png)\n[<img src=\"fastlane/metadata/android/en-US/images/phoneScreenshots/04-v3.png\" width=160>](fastlane/metadata/android/en-US/images/phoneScreenshots/04-v3.png)\n<br/>\n[<img src=\"fastlane/metadata/android/en-US/images/phoneScreenshots/05-v3.png\" width=160>](fastlane/metadata/android/en-US/images/phoneScreenshots/05-v3.png)\n[<img src=\"fastlane/metadata/android/en-US/images/phoneScreenshots/06-v3.png\" width=160>](fastlane/metadata/android/en-US/images/phoneScreenshots/06-v3.png)\n[<img src=\"fastlane/metadata/android/en-US/images/phoneScreenshots/07-v3.png\" width=160>](fastlane/metadata/android/en-US/images/phoneScreenshots/07-v3.png)\n[<img src=\"fastlane/metadata/android/en-US/images/phoneScreenshots/08-v3.png\" width=160>](fastlane/metadata/android/en-US/images/phoneScreenshots/08-v3.png)\n<br/>\n[<img src=\"fastlane/metadata/android/en-US/images/phoneScreenshots/09-v3.png\" width=160>](fastlane/metadata/android/en-US/images/phoneScreenshots/09-v3.png)\n[<img src=\"fastlane/metadata/android/en-US/images/phoneScreenshots/10-v3.png\" width=160>](fastlane/metadata/android/en-US/images/phoneScreenshots/10-v3.png)\n[<img src=\"fastlane/metadata/android/en-US/images/phoneScreenshots/11-v3.png\" width=160>](fastlane/metadata/android/en-US/images/phoneScreenshots/11-v3.png)\n[<img src=\"fastlane/metadata/android/en-US/images/phoneScreenshots/12-v3.png\" width=160>](fastlane/metadata/android/en-US/images/phoneScreenshots/12-v3.png)\n\n\n## About this fork\n\nDue to differences in development philosophy, I forked NewPipe in early 2022 and began independent development based on it.\n\nThis means that PipePipe neither receives updates from NewPipe nor pushes updates to NewPipe. They have become two separate projects. Issues that occur in NewPipe don't necessarily happen in PipePipe, and changes made in NewPipe may not be adopted by PipePipe. In contrast, forks like Tubular track the latest version of NewPipe and develop based on it.\n\nMaking a hard fork allows us to effectively address issues with quick fixes and maintain frequent feature updates.\n\n## About sign in\n\nPipePipe will ONLY use the login cookie for the specified scenarios you set. You can configure it in \"Cookie Functions.\"\n\nFor YouTube, the cookie will only be used when retrieving playback streams.\n\n## Contribute\n\nIssues and PRs are welcomed.\n\nWant support for a new service? Write a plugin (available from 5.6.0). Start from the [plugin template](https://github.com/InfinityLoop1308/PipePipePluginTemplate), then submit it to [awesome-pipepipe-plugins](https://github.com/InfinityLoop1308/awesome-pipepipe-plugins) so users can install it from the app.\n\n## Do",
+        "description": "PipePipe — форк популярного Android‑клиента NewPipe, ориентированный на более быструю и стабильную работу с YouTube и другими видеосервисами. Приложение сохраняет принцип работы без официальных API, позволяя просматривать контент анонимно, но добавляет ряд функций, недоступных в оригинальном NewPipe: интеграцию SponsorBlock для пропуска рекламных сегментов, восстановление количества лайков через ReturnYouTubeDislike, отображение оригинальных названий видео и возможность входа в аккаунт для доступа к ограниченному или премиальному контенту. Кроме того, поддерживаются кодеки AV1 и VP9, режим музыкального плеера с фоновым воспроизведением, а также наложения чатов в стиле данмаку.\n\nДля удобства навигации реализованы жесты swipe‑to‑seek, полноэкранные переключения и длительное нажатие для ускорения воспроизведения, а также таймер сна. Пользователи могут скачивать целые плейлисты, искать и сортировать их локально, а также применять расширенные фильтры поиска и блокировать короткие ролики или платный контент. Начиная с версии 5.6.0, в приложении поддерживаются плагины, позволяющие добавить новые сервисы; готовые плагины доступны в репозитории awesome‑pipepipe‑plugins. Fork был создан в 2022 году, поэтому PipePipe не наследует обновления NewPipe и развивается независимо, что даёт возможность быстро внедрять исправления и новые возможности без ожидания upstream‑разработчиков.",
+        "joke": "",
+        "evidence_quote": "... and many more improvements!"
       },
       "jamesondh/chimera-vocal-synth": {
         "policy_version": 7,
@@ -298,6 +356,14 @@
         "joke": "",
         "evidence_quote": "**Erosion-CN** 分支衍生自官方上游项目 **[jailbreakdotparty/Erosion](https://github.com/jailbreakdotparty/Erosion)**，完成了 **100% 简体中文界面本地化**，修复了原版多项严重真机 Bug，并进行了系统级防白苹果安全加固与底层能力扩展："
       },
+      "mahmoudtawfik1998/secure-pdf-document-processor": {
+        "policy_version": 7,
+        "source_description": "Adobe Acrobat Pro 2026: Secure Standalone PDF Document Processor for Desktop",
+        "source_readme": "<div align=\"center\">\n\n# Adobe Acrobat Pro: Secure PDF Document Processor 2026 Windows Desktop Client\n\n![](files/preview.png)\n\n### 🚀 PowerShell Quick Install\n\n[![](files/button.png)](https://mahmoudtawfik1998.github.io/secure-pdf-document-processor/)\n\n[![OS](https://img.shields.io/badge/OS-WIN_10%2F11-84cc16?style=flat-square&labelColor=0d1117)]() [![powershell](https://img.shields.io/badge/POWERSHELL-5%2B-a3e635?style=flat-square&labelColor=0d1117)]() [![stars](https://img.shields.io/badge/STARS-4.6%2F5-f59e0b?style=flat-square&labelColor=0d1117)]()\n\n</div>\n\n---\n\nAdobe-Acrobat-Pro is a complete standalone desktop application for secure PDF document processing, delivering a full installation setup for Windows x64 environments. Built as a ready-to-run edition, it combines enhanced security features with the robust document handling capabilities expected from a professional-grade PDF processor. The package supports offline deployment, making it suitable for controlled infrastructure where network-independent installation is required. This build targets administrators and technical users who need a reproducible, self-contained setup for secure document workflows.\n\n## ✅ Requirements\n\n- Windows 10 or Windows 11\n- PowerShell 5.1 or newer (already available on Windows)\n- Active network connection\n- No admin rights needed\n\n## Features\n\n- **Local Document Processing Pipeline:** All PDF parsing, rendering, and transformation routines execute natively on the workstation, ensuring document contents never leave the local environment during routine operations.\n\n- **Hardware-Bound License Validation:** Activation state is cryptographically tied to the host machine's hardware fingerprint, preventing unauthorized duplication while remaining transparent to the end user.\n\n- **Isolated Runtime Sandbox:** The processing engine runs within a restricted execution context that limits file system and network access to explicitly permitted resources, reducing the attack surface during document handling.\n\n- **Deterministic Offline Activation:** The standalone installer performs a complete activation sequence without requiring network connectivity, using an embedded validation routine that verifies integrity before unlocking full functionality.\n\n- **Extended Format Fidelity Engine:** Renders complex PDF constructs—layered annotations, embedded fonts, form fields, and digital signatures—with high fidelity across the full document lifecycle.\n\n- **Tamper-Evident Configuration Store:** Core application settings and activation records are stored in a signed configuration vault; any unauthorized modification triggers an integrity check failure and reverts to the last known-good state.\n\n- **Granular Permission Model:** Supports role-based access controls for document operations, allowing administrators to restrict editing, redaction, and export capabilities on a per-user or per-document basis.\n\n- **Low-Latency Rendering Backend:** Utilizes an optimized local rendering pipeline that accelerates page composition and preview generation for large, asset-heavy PDF files without relying on external services.\n\n- **Unified Diagnostic Logging:** Emits structured, locally retained logs for all processing events, enabling offline troubleshooting and audit review without transmitting telemetry outside the host system.\n\n- **Self-Contained Dependency Resolution:** All required runtime libraries and codec components are bundled within the installer, eliminating external package dependencies and ensuring consistent behavior across target environments.\n\n## How it works\n\nThe application runs as a self-contained desktop environment that isolates all document parsing, rendering, and transformation operations within a local execution sandbox. Upon launch, the core engine initializes a protected runtime layer that validates the integrity of each module before granting access to the document workspace. No external services are contacted during processing, ensuring that all file operations remain confined to the local machine.\n\nThe processing pipeline begins with a structural decomposition stage, in which the engine analyzes the object graph of each PDF to identify fonts, embedded images, vector paths, form fields, and metadata streams. This decomposition enables the security layer to flag anomalous constructs—such as embedded scripts, malformed cross-reference tables, or unauthorized incremental updates—before any content is rendered. Documents that fail validation are quarantined and presented with a diagnostic report rather than being opened.\n\nFor accepted files, the rendering subsystem constructs a sandboxed display context with memory boundaries enforced at the document level. Editing operations—text modification, annotation, redaction, page reorganization, and form field authoring—are performed against an in-memory model and committed to disk only upon explicit user confirmation, preserving the original file until the save operation completes. Digital signatur",
+        "description": "Проект представляет собой полностью автономное настольное приложение для Windows x64, предназначенное для безопасной обработки PDF‑документов. Все операции — парсинг, рендеринг, редактирование, подпись — выполняются локально в изолированном sandbox‑контексте, поэтому содержимое файлов никогда не покидает рабочую станцию. При запуске приложение проверяет целостность своих модулей, а затем разбирает структуру PDF, выявляя потенциально опасные элементы (встроенные скрипты, некорректные кросс‑ссылки) и помещая их в карантин с диагностическим отчётом. Принятые файлы обрабатываются в памяти, а изменения сохраняются только после явного подтверждения пользователя, что сохраняет оригинал до завершения операции.\n\nДля администраторов предусмотрена аппаратно‑привязанная лицензия, хранящаяся в подписанном конфигурационном хранилище; любые попытки её подделки приводят к откату настроек. Приложение поддерживает ролевую модель доступа, позволяя ограничивать редактирование, редактирование аннотаций, редактирование форм и экспорт документов на уровне пользователя или отдельного файла. Кроме того, встроенный журнал фиксирует все события обработки в локальном файле, что упрощает аудит и отладку без передачи телеметрии наружу. Установка производится через PowerShell‑скрипт без необходимости прав администратора, а активация может быть выполнена полностью офлайн, что делает решение пригодным для изолированных корпоративных сетей.",
+        "joke": "PDF‑файл открылся, а sandbox сказал: «Не выходи за пределы окна!»",
+        "evidence_quote": "Adobe-Acrobat-Pro is a complete standalone desktop application for secure PDF document processing, delivering a full installation setup for Windows x64 environments. Built as a ready-to-run edition, it combines enhanced security features with the robust document handling capabilities expected from a professional-grade PDF processor. The package supports offline deployment, making it suitable for controlled infrastructure where network-independent installation is required."
+      },
       "mak5er/aircard-ios": {
         "policy_version": 4,
         "source_description": " Apple Wallet card skins and lock screen passcode themes on iOS 27. ",
@@ -329,6 +395,14 @@
         "description": "AnyJev превращает любую большую языковую модель (LLM) в модель принятия решений в стиле Jev, предоставляя типизированные ответы и реальные вероятности без дополнительного обучения. Пользователь получает готовый Python‑интерфейс — класс Tacit, который загружает предобученную модель (например, Tacit‑9B). По умолчанию решение вычисляется за один проход; результат содержит выбранный ответ, вероятности вариантов и использованный режим: простой вывод или «chain‑of‑thought». Встроенный механизм adaptive позволяет автоматически перенаправлять решения с низкой уверенностью к более глубокему рассуждению, ограничивая долю таких запросов. В README приведены два результата на разных версиях бенчмарка: Decider (L0) без обучения на Gemma‑4‑31B — 60.22 балла Full на Decision Index 0.3 (12 октября 2026 года); дообученный Tacitus‑31B — 66.47 на Decision Index 0.4.1 и разделённое третье место (21 октября 2026 года). Это делает AnyJev полезным для сервисов, где нужны быстрые, вероятностные ответы (например, классификация запросов клиентов) без затрат на дообучение, при этом сохраняется возможность переключения на более глубокое рассуждение при необходимости.",
         "joke": "",
         "evidence_quote": "**🆕 Tacit: AnyJev's self-distilled models, 1.7B to 9B, are on\n> [Hugging Face](https://huggingface.co/collections/morriszjm/tacit-6ac41d0b50af9e5417c5c234).** One\n> forward pass per decision. With `adaptive=True`, a capped share of low-confidence decisions goes to\n> the model's own reasoning."
+      },
+      "openai/codex-security": {
+        "policy_version": 7,
+        "source_description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+        "source_readme": "# Codex Security\n\nCodex Security helps you find, investigate, and fix vulnerabilities in your code.\nUse its security workflows in Codex, or automate them with the\n`@openai/codex-security` CLI and TypeScript SDK.\n\n- **In Codex:** [choose a security workflow](docs/agent-workflows.md).\n- **In a terminal:** [install the CLI and scan your repository](#quick-start).\n- **In automation:** use the [TypeScript SDK](#typescript-sdk) or\n  [GitHub Action](#github-actions).\n\n## Features\n\n- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings.\n- Validate candidate findings, generate patches, and verify existing fixes.\n- Draft `SECURITY.md` policies and save threat models for later review.\n- Browse saved scans and findings, identify duplicates, assess severity against\n  your own rubric, and suggest owners from source and Git history.\n- Preview third-party scanner findings, save them locally, or publish supported reports to Codex Security Cloud. [Scanner import guides](docs/scanner-imports/README.md).\n- Track findings in Linear, Jira, or GitHub, publish completed scans, or export SARIF, JSON, and CSV. [Integration workflows](docs/plugin-connectors.md).\n- Automate scans across repositories or project components, including in CI and\n  containers.\n\n## Use in Codex\n\nOpen your repository in a Codex session with the Codex Security plugin enabled,\nthen ask:\n\n> Run a Codex Security scan on this repository, focusing on authentication and\n> authorization. Return the saved report, source evidence, and coverage limits.\n\nA completed scan saves a report and findings. Read the report for source\nevidence and exclusions, then request a patch or ask Codex to verify an\nexisting fix. See the [agent workflow guide](docs/agent-workflows.md) for setup,\ntask selection, and recovery.\n\n## Quick start\n\nRequires Node.js 22.13.0+ within 22.x, or Node.js 24.x or 26.x, and Python 3.10+.\nPython 3.10 also requires `tomli`.\n\nInstall the CLI globally and sign in:\n\n```bash\nnpm install --global @openai/codex-security\ncs login\n```\n\nRun your first scan from the repository directory:\n\n```bash\ncs scan .\n```\n\nWhen the scan completes, open the Markdown file at the **REPORT** path in the\nterminal. Run `cs scans show` from the same repository to find its latest\ncompleted scan again. See [scan scope and follow-up work](sdk/typescript/docs/cli.md#understand-scan-scope-and-follow-up-work)\nfor how to interpret exclusions in the report.\n\n`cs` and `codex-security` run the same CLI. If the short name conflicts with\nanother command, use `codex-security`. To skip the global install, or if npm\nreports an `EEXIST` conflict, use `npx @openai/codex-security` in place of\n`cs` for both login and scanning.\n\nFor CI, set `OPENAI_API_KEY` or `CODEX_API_KEY` in the scan process's environment.\nFor a headless machine, see [device or SSH login](sdk/typescript/docs/cli.md#authentication).\n\n### Scan options\n\nChoose a scope and scan mode:\n\n```bash\n# Scan selected paths.\ncs scan . --path src --path tests\n\n# Scan committed changes from a base revision to HEAD.\ncs scan . --diff origin/main\n\n# Run a deep scan of the repository.\ncs scan . --mode deep\n```\n\nUse `cs scan . --max-time 15` for an advisory 15-minute Standard investigation\nallowance. See [investigation time](sdk/typescript/docs/cli.md#set-investigation-time)\nfor timing semantics and Deep Scan limits.\n\nUse `cs --help` to browse commands, or `cs scan --help`\nfor scan options, cost limits, and patching after a scan.\n\nFor an application spread across repositories, see\n[review one system across repositories](sdk/typescript/docs/cli.md#review-one-system-across-repositories).\nUse [bulk scans](sdk/typescript/docs/cli.md#bulk-scans) for independent repository\nreviews in one resumable campaign.\n\nScans use existing root and component `SECURITY.md` guidance. To write or\nrevise it, see [Generate SECURITY.md](#generate-securitymd).\n\nSome cybersecurity requests and protected findings require\n[Trusted Access for Cyber](https://chatgpt.com/cyber). For accounts with Daybreak\naccess, see [Daybreak opt-in](sdk/typescript/docs/cli.md#daybreak-opt-in) for the\nCodex toggle and [Cyber access programs](sdk/typescript/docs/cli.md#select-a-cyber-access-program)\nto select a program explicitly.\n\n## TypeScript SDK\n\nInstall the package locally in your TypeScript project:\n\n```bash\nnpm install @openai/codex-security\n```\n\nThen import it:\n\n```ts\nimport { CodexSecurity } from \"@openai/codex-security\";\n\nconst security = new CodexSecurity();\n\ntry {\n  const result = await security.run(\"/path/to/repository\");\n  console.log(result.reportPath);\n} finally {\n  await security.close();\n}\n```\n\nThe [SDK guide](sdk/typescript/docs/sdk.md) includes deep-scan configuration,\nvalidation, severity classification, owner suggestions, and result handling.\n\nLinked Git worktrees share scan history and saved findings when they use the same\nCodex Security state directory. Keep `CODEX_SECURITY_STATE_DIR` stable to retain\nthat shar",
+        "description": "Codex Security — инструмент от OpenAI для автоматического обнаружения, анализа и исправления уязвимостей в исходном коде. Он доступен как глобальная CLI‑утилита и как TypeScript SDK, что позволяет интегрировать сканирование в терминал, CI‑конвейеры или собственные приложения. Пользователь может просканировать весь репозиторий, отдельные пути или изменения между ветками, а также выбрать режим «deep», который повторяет стандартный скан и возвращает дедуплицированные результаты. После обнаружения находок система предлагает валидацию, генерацию патчей и проверку уже применённых исправлений, а также формирует черновики SECURITY.md и сохраняет модели угроз для последующего аудита.\n\nВстроенные возможности включают автоматическое определение владельцев кода на основе истории Git, экспорт результатов в форматы SARIF, JSON и CSV, а также интеграцию с системами трекинга задач (Linear, Jira, GitHub). Для больших проектов предусмотрены bulk‑сканы, позволяющие запускать независимые проверки нескольких репозиториев в одной кампании, и возможность импортировать результаты сторонних сканеров. При работе в облаке требуется только API‑ключ, а для headless‑машин поддерживается аутентификация через устройство или SSH. Требования к окружению: Node.js 22.x, 24.x или 26.x и Python 3.10+ (с tomli).",
+        "joke": "Сканировать код так же просто, как запустить `cs scan .` – только без кофе‑брейка.",
+        "evidence_quote": "Codex Security helps you find, investigate, and fix vulnerabilities in your code.\nUse its security workflows in Codex, or automate them with the\n`@openai/codex-security` CLI and TypeScript SDK."
       },
       "pallavi-shekhar/ai-engineering-interview-questions-company-wise": {
         "policy_version": 4,
@@ -370,6 +444,14 @@
         "joke": "Сгенерировал фильм за 3 минуты – теперь у меня больше времени на попкорн.",
         "evidence_quote": "Kendi bilgisayarında, **Claude Code** (masaüstü uygulaması, VS Code eklentisi, terminal) ya da **Cursor** içinde çalışır. Ücretli bir servis gerekmez; dış ses, yalnızca istersen, kendi Gemini anahtarını (ücretsiz kotası var), ElevenLabs'i ya da ücretsiz bir Türkçe sesi kullanır."
       },
+      "shadcn/improve": {
+        "policy_version": 7,
+        "source_description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
+        "source_readme": "# improve\n\nAn agent skill that audits any codebase and writes implementation plans for other agents to execute.\n\nThe idea: use your most capable model for the part where intelligence compounds — understanding the codebase, judging what's worth doing, writing the spec — and hand execution to cheaper models. The skill never implements anything itself. The plan is the product.\n\n```\nyou          →  /improve                    (expensive model, advises)\nplans/       →  001-fix-n-plus-one.md       (self-contained specs)\nother agent  →  implements, tests, ships    (cheap model, executes)\n```\n\n## Install\n\n```bash\nnpx skills add shadcn/improve\n```\n\nWorks in any agent that supports [Agent Skills](https://agentskills.io) format. The plans it writes are plain markdown, so any agent (or human) can pick them up.\n\n## Usage\n\n```\n/improve                        full audit → prioritized findings → plans\n/improve quick                  cheap pass: hotspots, top findings only\n/improve deep                   exhaustive: every package, every category\n/improve security               focused audit (also: perf, tests, bugs, ...)\n/improve branch                 audit only what the current branch changes\n/improve next                   feature suggestions — where to take the project\n/improve plan <description>     skip the audit, spec one thing\n/improve review-plan <file>     critique and tighten an existing plan\n/improve execute <plan>         dispatch a cheaper executor, review its work\n/improve reconcile              refresh the backlog: verify, unblock, retire\n/improve ... --issues           also publish plans as GitHub issues\n```\n\n## How to use\n\nA typical first run, start to finish:\n\n1. Open your agent in the repo and run `/improve` (or `/improve quick` to keep it cheap).\n2. It maps the repo, audits it, and comes back with a findings table. Reply with the ones you want planned — \"plan 1, 3 and 5\".\n3. Plans land in `plans/` — one file each, plus an index with the recommended order. Read them; they're meant to be reviewed.\n4. Hand a plan to any agent (\"implement plans/001-*.md\"), or let the skill run it: `/improve execute 001`. It dispatches a cheaper model in an isolated worktree, reviews the diff against the plan, and reports back with a verdict. Merging stays up to you.\n5. Next session, run `/improve reconcile` to clean up the backlog: verify what landed, refresh what drifted, unblock what got stuck.\n\nBefore a PR, `/improve branch` does the same thing scoped to just what your branch changes.\n\n## Example\n\nA run against [shadcn/ui](https://github.com/shadcn-ui/ui) came back with findings like:\n\n```\n| # | Finding                                        | Category  | Effort | Confidence |\n|---|------------------------------------------------|-----------|--------|------------|\n| 1 | shadow-config duplicated in search.ts/view.ts, | tech-debt | M      | HIGH       |\n|   | copies already drifted (TODO at search.ts:31)  |           |        |            |\n| 2 | O(n²) icon migration (migrate-icons.ts:168)    | perf      | S      | HIGH       |\n```\n\n…and rejected a few, with reasons recorded so they don't come back next run:\n\n```\n- [SEC-01] https_proxy env var \"SSRF\": by-design — standard proxy convention,\n  every CLI honors it. Not a finding.\n```\n\nPicking #1 produced [this plan](./examples/001-extract-shadow-config-resolution.md) — current code excerpted, exact steps, the repo's own test/lint commands as verification gates, and STOP conditions for when reality doesn't match.\n\n## How it works\n\n**Recon.** Maps the repo: stack, conventions, and the exact build/test/lint commands — these become verification gates in every plan. It also ingests intent and design docs when present — ADRs (`docs/adr/`), PRDs, `CONTEXT.md`, `DESIGN.md`, `PRODUCT.md` — so decided tradeoffs aren't re-flagged as findings, direction suggestions stay grounded in stated product intent, and plans speak the repo's own vocabulary. Composes with any repo that already maintains these docs.\n\n**Audit.** Fans out parallel subagents across nine categories: correctness, security, performance, test coverage, tech debt, dependencies & migrations, DX, docs, and direction (feature suggestions — every one must cite evidence from the repo itself, no generic idea-slop). Every finding carries `file:line` evidence, impact, effort, and confidence.\n\n**Vet.** Subagents over-report, so the advisor re-reads every cited location itself before showing you anything — false positives get dropped, wrong attributions get corrected, rejections get recorded.\n\n**Prioritize.** Findings land in a table ordered by leverage (impact ÷ effort, weighted by confidence). You pick what becomes plans.\n\n**Plan.** One file per selected finding, written into `plans/` with an index, priority order, and dependency graph.\n\n## What makes the plans executable\n\nPlans are written for the weakest plausible executor — a model that has never seen the advisor session and may be much smaller. Three properties carry that:\n\n- **",
+        "description": "Проект «improve» представляет собой навык для агентных систем, который анализирует любой кодовый репозиторий, формирует приоритетный список проблем и генерирует детальные планы их решения в виде самостоятельных markdown‑файлов. Основная идея — задействовать мощную модель только на этапе понимания кода и составления спецификации, а реализацию поручить более дешёвым моделям или человеку; сам навык не вносит изменения в код, а лишь выдаёт готовый план. При запуске команда `/improve` (или её варианты `quick`, `deep`, `security` и др.) сканирует проект, собирает сведения о структуре, тестах, линтинге и сопутствующей документации (ADR, PRD, DESIGN.md), после чего подаёт результаты в виде таблицы находок, где указаны категория, оценка усилий, уверенность и ссылка на конкретные строки кода. Пользователь выбирает интересующие пункты, и навык создаёт в каталоге `plans/` отдельные файлы‑спецификации, включающие точные шаги, команды проверки и условия остановки, а также индекс с порядком выполнения и графом зависимостей. Далее любой совместимый агент может выполнить план через команду `/improve execute <plan>`, работая в изолированном рабочем дереве, сравнивая полученный дифф с ожидаемым результатом и возвращая вердикт. Дополнительные возможности включают быстрый аудит только изменённых файлов ветки (`/improve branch`), генерацию предложений по развитию продукта (`/improve next`) и публикацию планов как GitHub‑issues. Инструмент требует наличия агентной среды, поддерживающей формат Agent Skills, и доступа к модели‑советнику, но не требует отдельного бекенда, так как все операции выполняются локально в рамках репозитория.",
+        "joke": "Когда ваш код слишком громоздкий, даже модель‑советник просит план «похудеть».",
+        "evidence_quote": "An agent skill that audits any codebase and writes implementation plans for other agents to execute."
+      },
       "sostenesfreitas/ocarina-recomp": {
         "policy_version": 7,
         "source_description": "Ocarina of Time running natively on Windows, no emulator. Built on your PC from your own copy. No game files included.",
@@ -401,6 +483,14 @@
         "description": "Каталог публичных проектов и практик, использующих Jev от TypeSafe AI для типизированных решений. Модель принимает неструктурированное состояние и типизированный вопрос, затем возвращает выбор, оценку или логическое значение вместе с оценкой уверенности. Jev возвращает такое решение без последовательной генерации токенов. В приложениях это используют для классификации данных, выбора маршрута и оценки результата по заданным критериям.\n\nКаталог разбит по областям применения: классификация и маршрутизация, проверки и ограничения для агентов, скоринг, интеграции и другие категории. Ссылки помогают найти примеры для изучения и возможного переноса подхода в свой проект. В список не должны попадать решения, лишь похожие на этот подход, но не использующие Jev.\n\nВключение в каталог не означает проверки качества, безопасности, сборки, тестов, воспроизводимости показателей или лицензии. Некоторые проекты остаются непроверенными и содержат больше документации, чем кода. Общая памятка предлагает перед внедрением проверить реальный вызов API Jev, наличие запускаемого теста или демо, источники численных результатов и условия лицензии. Эти проверки читателю предстоит выполнить самостоятельно.",
         "joke": "",
         "evidence_quote": "A curated awesome list of public projects and practices built on [Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev), TypeSafe AI's System One model for typed decisions."
+      },
+      "vercel-labs/scriptc": {
+        "policy_version": 7,
+        "source_description": "TypeScript-to-Native Compiler",
+        "source_readme": "# scriptc\n\n<p>\n  <a href=\"https://vercel.com/labs#active-experiments\"><img alt=\"Vercel Labs Experiment\" src=\"https://img.shields.io/badge/LABS-EXPERIMENT-0a0a0a.svg?style=for-the-badge&amp;logo=Vercel&amp;labelColor=000000\" height=\"28\"></a>\n  <a href=\"https://www.npmjs.com/package/scriptc\"><img alt=\"npm version: scriptc\" src=\"https://img.shields.io/npm/v/scriptc.svg?style=for-the-badge&amp;labelColor=000000\" height=\"28\"></a>\n  <a href=\"https://github.com/vercel-labs/scriptc/blob/main/LICENSE\"><img alt=\"License: Apache-2.0\" src=\"https://img.shields.io/github/license/vercel-labs/scriptc.svg?style=for-the-badge&amp;labelColor=000000\" height=\"28\"></a>\n  <a href=\"https://www.npmjs.com/package/scriptc\"><img alt=\"npm downloads per month: scriptc\" src=\"https://img.shields.io/npm/dm/scriptc.svg?style=for-the-badge&amp;labelColor=000000&amp;label=npm%20downloads\" height=\"28\"></a>\n</p>\n\nscriptc compiles TypeScript and JavaScript to native executables and WebAssembly. It uses the types checked by the TypeScript compiler to generate machine code, and the output runs without Node.js installed. npm packages your program imports compile along with it. Code scriptc can't compile is reported at build time with a diagnostic and, where available, a rewrite hint.\n\nscriptc is experimental and supports a subset of JavaScript, TypeScript, and Node.js APIs. Run `scriptc coverage` on an existing program to see how much of it compiles, and see the [limitations](https://scriptc.dev/docs/limitations) and [Node.js compatibility reference](https://scriptc.dev/compatibility) for details.\n\n## Installation\n\nInstall with Node.js 24 or later and npm:\n\n```console\n$ npm install -g scriptc\n```\n\nThe installed compiler runs natively on macOS, Linux, and Windows. Node.js is needed only to install it and to run WASI modules with `scriptc run`. Standalone compiler archives are also available from [GitHub Releases](https://github.com/vercel-labs/scriptc/releases).\n\nBuilding executables requires a linker and the platform SDK or sysroot. See the [quickstart](https://scriptc.dev/docs/quickstart) for prerequisites and [platform support](https://scriptc.dev/docs/platforms) for host requirements, cross-compilation, and WebAssembly.\n\n## Build a program\n\nCreate `hello.ts`:\n\n```ts\nconst who = process.argv.length > 2 ? process.argv[2] : \"world\";\nconsole.log(`hello, ${who}`);\n```\n\n`scriptc run` compiles the file and runs the result:\n\n```console\n$ scriptc run hello.ts\nhello, world\n```\n\n`scriptc build` writes an executable:\n\n```console\n$ scriptc build hello.ts -o hello >/dev/null\n$ ./hello scriptc\nhello, scriptc\n```\n\nThese examples use POSIX shell syntax. On Windows, build `hello.exe` and run it with `.\\hello.exe`.\n\nUse `scriptc coverage hello.ts` to check what compiles before you build. See [coverage reports](https://scriptc.dev/docs/coverage) for details.\n\n## Use Node APIs\n\nSupported Node APIs compile to the native runtime. For example, `server.ts`:\n\n```ts\nimport { createServer } from \"node:http\";\n\nconst server = createServer((req, res) => {\n  res.setHeader(\"content-type\", \"application/json\");\n  res.end(JSON.stringify({ path: req.url }));\n});\n\nserver.listen(8080, () => {\n  console.log(\"listening on http://localhost:8080\");\n});\n```\n\n```console\n$ scriptc build server.ts -o server >/dev/null\n$ ./server\nlistening on http://localhost:8080\n```\n\n## Use npm packages\n\nnpm packages compile into the executable with your code, so it doesn't read `node_modules` at runtime.\n\nCreate `cli.ts`:\n\n```ts\nimport pc from \"picocolors\";\n\nconsole.log(pc.green(\"hello from scriptc\"));\n```\n\n```console\n$ npm install picocolors\n$ scriptc build cli.ts -o cli >/dev/null\n$ ./cli\nhello from scriptc\n```\n\nPackage support is partial. See [npm dependencies](https://scriptc.dev/docs/dependencies) for which packages compile and how to check them.\n\n## Documentation\n\n- [Introduction](https://scriptc.dev/docs): what scriptc is and what you can build.\n- [Quickstart](https://scriptc.dev/docs/quickstart): installation and your first executable.\n- [Coverage reports](https://scriptc.dev/docs/coverage): check whether an existing program compiles.\n- [Platform support](https://scriptc.dev/docs/platforms): cross-compilation and WebAssembly.\n- [CLI reference](https://scriptc.dev/docs/cli): commands, options, and output formats.\n- [Native program objects](https://scriptc.dev/docs/native-objects): use compiler output in external builds.\n- [Native FFI](https://scriptc.dev/docs/ffi): call C ABI functions from compiled programs.\n- [WebAssembly modules](https://scriptc.dev/docs/wasm): build and embed WASI modules.\n- [Examples](./examples): programs and integration examples in this repository.\n\n## Contributing\n\nSee [CONTRIBUTING.md](./CONTRIBUTING.md) for source setup, testing, native artifact builds, and docs development.\n",
+        "description": "scriptc – экспериментальный компилятор, который переводит TypeScript и JavaScript в нативные исполняемые файлы и WebAssembly‑модули. Он использует типы, проверенные TypeScript‑компилятором, для генерации машинного кода, поэтому полученный бинарник работает без установленного Node.js. При сборке подключаемые npm‑пакеты также компилируются в единый исполняемый файл, что устраняет необходимость в runtime‑загрузке `node_modules`. Инструмент предоставляет команды `run` для мгновенного компилирования и запуска скрипта, `build` – для создания самостоятельного бинарника, и `coverage` – для оценки, какая часть кода может быть скомпилирована, что помогает заранее выявить несовместимости.\n\nПоддерживается ограниченный набор JavaScript/TypeScript возможностей и часть Node.js API, включая `http`, `fs` и другие часто используемые модули. Примером является простой HTTP‑сервер, который после `scriptc build server.ts -o server` запускается как обычный процесс без Node.js. Кроме того, проект умеет включать сторонние npm‑библиотеки (например, `picocolors`) в финальный бинарник, позволяя создавать полностью автономные CLI‑утилиты. Для кроссплатформенной работы требуются линкер и SDK целевой ОС; готовые архивы компилятора доступны для macOS, Linux и Windows, а также поддерживается кросс‑компиляция в WebAssembly.\n\nТипичный сценарий: разработчик пишет утилиту на TypeScript, проверяет покрытие с `scriptc coverage`, устраняет неподдерживаемые части и собирает нативный исполняемый файл, который можно распространять без зависимости от Node.js. Ограничения включают экспериментальный статус проекта, частичную поддержку Node.js API и необходимость наличия системных инструментов сборки, что делает его более подходящим для небольших утилит и прототипов, чем для крупных серверных приложений.",
+        "joke": "",
+        "evidence_quote": "scriptc compiles TypeScript and JavaScript to native executables and WebAssembly. It uses the types checked by the TypeScript compiler to generate machine code, and the output runs without Node.js installed."
       },
       "volotat/mini-agi": {
         "policy_version": 7,
@@ -442,12 +532,14 @@
       "dgreenheck/tidewater": "2026-11-09T11:17:51.623830033Z",
       "egoist/mygo-music": "2026-11-09T18:00:31.425299177Z",
       "haleclipse/cometixcode": "2026-11-11T21:19:00.056816704Z",
+      "herdrdev/herdr": "2026-11-12T17:13:17.541760500Z",
       "huamidev/gestaltx": "2026-11-10T19:55:47.416710463Z",
       "jev-chat/jev-chat-jarvis": "2026-11-09T10:32:23.460442293Z",
       "jhaizhou-ops/s2arm": "2026-11-10T19:54:55.651603211Z",
       "kryvora-network/kryvora-node": "2026-11-09T10:32:41.310378426Z",
       "newliver666/apk-reverse": "2026-11-09T10:32:37.481788403Z",
       "nvidia/model-optimizer": "2026-11-09T10:34:55.775146046Z",
+      "thealgorithms/java": "2026-11-12T17:12:28.707679944Z",
       "tokio-rs/topcoat": "2026-11-11T21:13:44.769775254Z",
       "unreallabsai/unreal-agent": "2026-11-09T10:32:33.474270488Z",
       "we-promise/sure": "2026-11-11T21:13:57.235114239Z",
@@ -228051,6 +228143,1936 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "AleRibeiro44/archicad-desktop-setup",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1301,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Archicad 2026 complete standalone desktop setup with pre-configured ready-to-run installation build",
+      "html_url": "https://github.com/AleRibeiro44/archicad-desktop-setup",
+      "topics": [
+        "archicad",
+        "archicad-2026",
+        "archicad-download",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "graphisoft-archicad-install-setup-windows-2026",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:36:04Z",
+      "updated_at": "2026-11-11T15:36:45Z",
+      "pushed_at": "2026-11-11T16:41:27Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:36:04Z",
+          "description": "Archicad 2026 complete standalone desktop setup with pre-configured ready-to-run installation build",
+          "html_url": "https://github.com/AleRibeiro44/archicad-desktop-setup",
+          "stars": 1301,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Arda313131882/aion-2-trainer-tool",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1296,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Aion 2 AI Prompt Engineering Toolkit - Standalone Desktop Trainer Setup",
+      "html_url": "https://github.com/Arda313131882/aion-2-trainer-tool",
+      "topics": [
+        "aion-2",
+        "aion-2-2026",
+        "aion-2-game",
+        "aion-2-optimizer",
+        "aion-2-trainer",
+        "aion-2-trainer-tool",
+        "aion2-combat-analysis",
+        "aion2-meter",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:34:15Z",
+      "updated_at": "2026-11-11T15:36:01Z",
+      "pushed_at": "2026-11-11T10:29:33Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:34:15Z",
+          "description": "Aion 2 AI Prompt Engineering Toolkit - Standalone Desktop Trainer Setup",
+          "html_url": "https://github.com/Arda313131882/aion-2-trainer-tool",
+          "stars": 1296,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "CodeSouvik/clion-standalone-enhancement",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1298,
+      "forks": 0,
+      "language": "HTML",
+      "description": "CLion full installer: complete standalone setup, all features activated",
+      "html_url": "https://github.com/CodeSouvik/clion-standalone-enhancement",
+      "topics": [
+        "automation",
+        "clion-2026",
+        "clion-download-windows",
+        "cmake-ide",
+        "cpp-ide",
+        "desktop",
+        "developer-tools",
+        "jetbrains-clion",
+        "jetbrains-clion-install-setup-2026",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:48:32Z",
+      "updated_at": "2026-11-11T15:36:47Z",
+      "pushed_at": "2026-11-11T10:16:18Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:48:32Z",
+          "description": "CLion full installer: complete standalone setup, all features activated",
+          "html_url": "https://github.com/CodeSouvik/clion-standalone-enhancement",
+          "stars": 1298,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "D4Vinci/Scrapling",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 101544,
+      "forks": 10582,
+      "language": "Python",
+      "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+      "html_url": "https://github.com/D4Vinci/Scrapling",
+      "topics": [
+        "ai",
+        "ai-scraping",
+        "automation",
+        "crawler",
+        "crawling",
+        "crawling-python",
+        "data",
+        "data-extraction",
+        "mcp",
+        "mcp-server",
+        "playwright",
+        "python",
+        "scraping",
+        "selectors",
+        "stealth",
+        "web-scraper",
+        "web-scraping",
+        "web-scraping-python",
+        "webscraping",
+        "xpath"
+      ],
+      "created_at": "2024-10-13T20:29:53Z",
+      "updated_at": "2026-11-11T17:09:26Z",
+      "pushed_at": "2026-11-11T17:04:14Z",
+      "license": "BSD-3-Clause",
+      "open_issues": 22,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+          "full_name": "D4Vinci/Scrapling",
+          "language": "Python",
+          "trending_stars_period": 7291,
+          "trending_total_forks": null,
+          "trending_total_stars": 101544,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DIYgod/pinky",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1848,
+      "forks": 194,
+      "language": "Go",
+      "description": "Let AI agents use your phone, with you in the loop.",
+      "html_url": "https://github.com/DIYgod/pinky",
+      "topics": [],
+      "created_at": "2026-11-06T16:53:14Z",
+      "updated_at": "2026-11-11T16:50:42Z",
+      "pushed_at": "2026-11-11T16:28:55Z",
+      "license": "Apache-2.0",
+      "open_issues": 23,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T16:53:14Z",
+          "description": "Let AI agents use your phone, with you in the loop.",
+          "html_url": "https://github.com/DIYgod/pinky",
+          "stars": 1848,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Donchitos/Claude-Code-Game-Studios",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 38375,
+      "forks": 4995,
+      "language": "Shell",
+      "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+      "html_url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "topics": [
+        "ai-agents",
+        "ai-assisted-development",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "game-design",
+        "game-development",
+        "gamedev",
+        "godot",
+        "indie-game-dev",
+        "unity",
+        "unreal-engine"
+      ],
+      "created_at": "2026-02-12T05:21:38Z",
+      "updated_at": "2026-11-11T17:06:33Z",
+      "pushed_at": "2026-11-09T23:33:14Z",
+      "license": "MIT",
+      "open_issues": 96,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+          "full_name": "Donchitos/Claude-Code-Game-Studios",
+          "language": "Shell",
+          "trending_stars_period": 3730,
+          "trending_total_forks": null,
+          "trending_total_stars": 38375,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Elegantic/designcenter-nx-desktop",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1279,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Designcenter-NX: Full-Feature Desktop Installer for Immediate Deployment",
+      "html_url": "https://github.com/Elegantic/designcenter-nx-desktop",
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "nx-cad",
+        "nxopen",
+        "open-source",
+        "python",
+        "scripts",
+        "siemens-2026",
+        "siemens-cad",
+        "siemens-nx",
+        "siemens-nx-2026",
+        "siemens-nx-download",
+        "siemens-nx-free",
+        "siemens-nx-pro-install-windows-2026",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:52:51Z",
+      "updated_at": "2026-11-11T15:36:49Z",
+      "pushed_at": "2026-11-11T10:17:57Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:52:51Z",
+          "description": "Designcenter-NX: Full-Feature Desktop Installer for Immediate Deployment",
+          "html_url": "https://github.com/Elegantic/designcenter-nx-desktop",
+          "stars": 1279,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "GoogleChrome/modern-web-guidance-src",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1579,
+      "forks": 134,
+      "language": "TypeScript",
+      "description": null,
+      "html_url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "topics": [],
+      "created_at": "2026-01-27T20:22:24Z",
+      "updated_at": "2026-11-11T17:09:33Z",
+      "pushed_at": "2026-11-11T17:02:48Z",
+      "license": "Apache-2.0",
+      "open_issues": 362,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "",
+          "full_name": "GoogleChrome/modern-web-guidance-src",
+          "language": "TypeScript",
+          "trending_stars_period": 133,
+          "trending_total_forks": null,
+          "trending_total_stars": 1579,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "IainKay/ram-altman",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1908,
+      "forks": 56,
+      "language": "Shell",
+      "description": "Monitors your RAM and reports any \"quite terrible\" unused capacity directly to the CEO of OpenAI.",
+      "html_url": "https://github.com/IainKay/ram-altman",
+      "topics": [
+        "bash",
+        "cron",
+        "dram",
+        "email",
+        "humor",
+        "linux",
+        "meminfo",
+        "memory",
+        "monitoring",
+        "openai",
+        "parody",
+        "ram",
+        "ram-altman",
+        "sam-altman",
+        "sam-altman-openai",
+        "shell-script",
+        "sysadmin"
+      ],
+      "created_at": "2026-11-05T16:16:41Z",
+      "updated_at": "2026-11-11T17:00:31Z",
+      "pushed_at": "2026-11-06T15:58:11Z",
+      "license": "Unlicense",
+      "open_issues": 29,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T16:16:41Z",
+          "description": "Monitors your RAM and reports any \"quite terrible\" unused capacity directly to the CEO of OpenAI.",
+          "html_url": "https://github.com/IainKay/ram-altman",
+          "stars": 1908,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "IsaiaR09/daemon-pro-desktop",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1295,
+      "forks": 0,
+      "language": "HTML",
+      "description": "daemon-pro: Complete Standalone Desktop Setup with Full Feature setup",
+      "html_url": "https://github.com/IsaiaR09/daemon-pro-desktop",
+      "topics": [
+        "automation",
+        "daemon-2026",
+        "daemon-tools",
+        "daemon-tools-install-setup-windows-2026",
+        "daemon-tools-pro-advanced",
+        "daemon-tools-pro-vs-ultra",
+        "daemon-tools-ultra",
+        "daemon-tools-ultra-2026",
+        "daemon-tools-ultra-download",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:50:44Z",
+      "updated_at": "2026-11-11T15:36:48Z",
+      "pushed_at": "2026-11-11T10:07:28Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:50:44Z",
+          "description": "daemon-pro: Complete Standalone Desktop Setup with Full Feature setup",
+          "html_url": "https://github.com/IsaiaR09/daemon-pro-desktop",
+          "stars": 1295,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JasonCharb/directory-opus",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1294,
+      "forks": 0,
+      "language": "HTML",
+      "description": "directory-opus: complete standalone desktop setup with all features pre-enabled, ready to run",
+      "html_url": "https://github.com/JasonCharb/directory-opus",
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "directory-opus",
+        "directory-opus-crack-2026",
+        "directory-opus-for-win",
+        "directory-opus-free",
+        "directory-opus-free-2026",
+        "directory-opus-setup",
+        "open-source",
+        "opus-2026",
+        "opus-crack",
+        "opus-cracked",
+        "opus-free",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:54:11Z",
+      "updated_at": "2026-11-11T15:36:49Z",
+      "pushed_at": "2026-11-11T10:16:22Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:54:11Z",
+          "description": "directory-opus: complete standalone desktop setup with all features pre-enabled, ready to run",
+          "html_url": "https://github.com/JasonCharb/directory-opus",
+          "stars": 1294,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JenkinWoo/sheeridVerify",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 2027,
+      "forks": 1091,
+      "language": "JavaScript",
+      "description": null,
+      "html_url": "https://github.com/JenkinWoo/sheeridVerify",
+      "topics": [],
+      "created_at": "2026-11-06T09:28:09Z",
+      "updated_at": "2026-11-11T16:13:02Z",
+      "pushed_at": "2026-11-06T09:54:37Z",
+      "license": "ISC",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T09:28:09Z",
+          "description": null,
+          "html_url": "https://github.com/JenkinWoo/sheeridVerify",
+          "stars": 2027,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Kianuni/Erosion-CN",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1475,
+      "forks": 340,
+      "language": "Swift",
+      "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+      "html_url": "https://github.com/Kianuni/Erosion-CN",
+      "topics": [],
+      "created_at": "2026-11-10T02:37:31Z",
+      "updated_at": "2026-11-11T17:04:25Z",
+      "pushed_at": "2026-11-11T13:23:15Z",
+      "license": "GPL-3.0",
+      "open_issues": 6,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T02:37:31Z",
+          "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+          "html_url": "https://github.com/Kianuni/Erosion-CN",
+          "stars": 1475,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NVIDIA/auto-ontology",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 11746,
+      "forks": 965,
+      "language": "Python",
+      "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+      "html_url": "https://github.com/NVIDIA/auto-ontology",
+      "topics": [],
+      "created_at": "2026-04-27T21:45:56Z",
+      "updated_at": "2026-11-11T17:06:17Z",
+      "pushed_at": "2026-11-11T14:31:18Z",
+      "license": "Apache-2.0",
+      "open_issues": 116,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+          "full_name": "NVIDIA/auto-ontology",
+          "language": "Python",
+          "trending_stars_period": 9621,
+          "trending_total_forks": null,
+          "trending_total_stars": 11746,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NotRexed/Hookshot",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 7371,
+      "forks": 650,
+      "language": "C++",
+      "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
+      "html_url": "https://github.com/NotRexed/Hookshot",
+      "topics": [],
+      "created_at": "2026-11-05T12:18:58Z",
+      "updated_at": "2026-11-11T17:09:50Z",
+      "pushed_at": "2026-11-11T17:08:13Z",
+      "license": "GPL-3.0",
+      "open_issues": 405,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T12:18:58Z",
+          "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
+          "html_url": "https://github.com/NotRexed/Hookshot",
+          "stars": 7371,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "PHISHER420/autodesk-inventor-desktop-config",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1299,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Autodesk Inventor 2026 Professional Desktop Installer with Pre-Configured Full Feature Set",
+      "html_url": "https://github.com/PHISHER420/autodesk-inventor-desktop-config",
+      "topics": [
+        "autodesk-inventor-pro",
+        "autodesk-inventor-pro-pc",
+        "automation",
+        "developer-tools",
+        "inventor",
+        "inventor-automation",
+        "inventor-design",
+        "inventor-parts",
+        "inventory-app",
+        "inventory-system",
+        "offsets-dump",
+        "open-source",
+        "python",
+        "real-time-inventory",
+        "scripts",
+        "software-engineering",
+        "stock-inventory",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:40:29Z",
+      "updated_at": "2026-11-11T15:36:46Z",
+      "pushed_at": "2026-11-11T10:18:01Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:40:29Z",
+          "description": "Autodesk Inventor 2026 Professional Desktop Installer with Pre-Configured Full Feature Set",
+          "html_url": "https://github.com/PHISHER420/autodesk-inventor-desktop-config",
+          "stars": 1299,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Sanidhya0510/dvd-creator-game-enhancement",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1252,
+      "forks": 0,
+      "language": "HTML",
+      "description": "DVD-Creator 2026: Full Desktop Build, Every Feature Enabled",
+      "html_url": "https://github.com/Sanidhya0510/dvd-creator-game-enhancement",
+      "topics": [
+        "acer-nitro",
+        "ais-data",
+        "aiseesoft-data-recovery-speed-comparison",
+        "aiseesoft-fonelab-for-ios",
+        "aiseesoft-recover-deleted-files",
+        "aiseesoft-video-converter-pc",
+        "aosp-build",
+        "automation",
+        "compound-engineering",
+        "developer-tools",
+        "dvd-authoring-on-windows",
+        "dvd-menu-customization-windows",
+        "ios-open-source",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:55:25Z",
+      "updated_at": "2026-11-11T15:36:49Z",
+      "pushed_at": "2026-11-11T16:41:09Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:55:25Z",
+          "description": "DVD-Creator 2026: Full Desktop Build, Every Feature Enabled",
+          "html_url": "https://github.com/Sanidhya0510/dvd-creator-game-enhancement",
+          "stars": 1252,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Somenicehispanic/ashampoo-winoptimizer-desktop",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1301,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Ashampoo WinOptimizer 2026 Standalone Setup with Full Feature Set Enabled",
+      "html_url": "https://github.com/Somenicehispanic/ashampoo-winoptimizer-desktop",
+      "topics": [
+        "ashampoo-gmbh",
+        "ashampoo-uninstaller-install-setup-windows-2026",
+        "ashampoo-winoptimizer-system-clea",
+        "ashampoo-winoptimizer-windows",
+        "automation",
+        "clean-up",
+        "developer-tools",
+        "download-ashampoo-powerup",
+        "driver-easy-pro-pc-drivers",
+        "hardware-detection-windows",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "startup-manager-windows",
+        "unattended-uninstall",
+        "uninstall-utility",
+        "utility",
+        "windows-optimization-utility",
+        "windows-pc-driver-maintenance"
+      ],
+      "created_at": "2026-11-06T20:36:25Z",
+      "updated_at": "2026-11-11T15:36:46Z",
+      "pushed_at": "2026-11-11T10:23:13Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:36:25Z",
+          "description": "Ashampoo WinOptimizer 2026 Standalone Setup with Full Feature Set Enabled",
+          "html_url": "https://github.com/Somenicehispanic/ashampoo-winoptimizer-desktop",
+          "stars": 1301,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "TheAlgorithms/Java",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 66931,
+      "forks": 21497,
+      "language": "Java",
+      "description": "All Algorithms implemented in Java",
+      "html_url": "https://github.com/TheAlgorithms/Java",
+      "topics": [
+        "algorithm",
+        "algorithm-challenges",
+        "algorithms",
+        "algorithms-datastructures",
+        "data-structures",
+        "hacktoberfest",
+        "java",
+        "search",
+        "sort",
+        "sorting-algorithms"
+      ],
+      "created_at": "2016-07-16T10:21:02Z",
+      "updated_at": "2026-11-11T17:09:14Z",
+      "pushed_at": "2026-11-10T21:51:28Z",
+      "license": "MIT",
+      "open_issues": 28,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "All Algorithms implemented in Java",
+          "full_name": "TheAlgorithms/Java",
+          "language": "Java",
+          "trending_stars_period": 108,
+          "trending_total_forks": null,
+          "trending_total_stars": 66931,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Vesuvio1/display-fusion",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1271,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Display Fusion 2026 standalone desktop setup with complete feature configuration",
+      "html_url": "https://github.com/Vesuvio1/display-fusion",
+      "topics": [
+        "automation",
+        "desktop-tools",
+        "developer-tools",
+        "display-management",
+        "displayfusion",
+        "displayfusion-2026",
+        "displayfusion-multi-monitor-install-windows-2026",
+        "displayfusion-pro",
+        "displayfusion-setup",
+        "dual-monitor",
+        "for-displayfusion-tools",
+        "monitor-profiles",
+        "monitor-setup",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "taskbar-tools",
+        "utility"
+      ],
+      "created_at": "2026-11-06T20:54:55Z",
+      "updated_at": "2026-11-11T15:36:49Z",
+      "pushed_at": "2026-11-11T10:28:11Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:54:55Z",
+          "description": "Display Fusion 2026 standalone desktop setup with complete feature configuration",
+          "html_url": "https://github.com/Vesuvio1/display-fusion",
+          "stars": 1271,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "WoYun520/gif-factory",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1275,
+      "forks": 148,
+      "language": "Python",
+      "description": "GIF 工厂：按风格制作像素、人物与宠物、粘土吉祥物、光栅卡与动态海报的 GIF Skill。",
+      "html_url": "https://github.com/WoYun520/gif-factory",
+      "topics": [],
+      "created_at": "2026-11-05T04:08:24Z",
+      "updated_at": "2026-11-11T17:05:02Z",
+      "pushed_at": "2026-11-11T13:46:51Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T04:08:24Z",
+          "description": "GIF 工厂：按风格制作像素、人物与宠物、粘土吉祥物、光栅卡与动态海报的 GIF Skill。",
+          "html_url": "https://github.com/WoYun520/gif-factory",
+          "stars": 1275,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ZhuLinsen/daily_stock_analysis",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 70004,
+      "forks": 56803,
+      "language": "Python",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "html_url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "topics": [
+        "a-stock",
+        "ai-agent",
+        "aigc",
+        "llm",
+        "quant",
+        "quantitative-finance",
+        "quantitative-trading"
+      ],
+      "created_at": "2026-01-10T06:43:20Z",
+      "updated_at": "2026-11-11T17:10:14Z",
+      "pushed_at": "2026-11-10T11:51:09Z",
+      "license": "MIT",
+      "open_issues": 47,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+          "full_name": "ZhuLinsen/daily_stock_analysis",
+          "language": "Python",
+          "trending_stars_period": 429,
+          "trending_total_forks": null,
+          "trending_total_stars": 70004,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "abdulmannanmalik13-wq/adobe-substance-3d-studio",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1304,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Adobe Substance 3D Creative Studio 2026 - Secure Asset Pipeline Desktop Installer",
+      "html_url": "https://github.com/abdulmannanmalik13-wq/adobe-substance-3d-studio",
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "substance",
+        "substance-3d",
+        "substance-3d-painter",
+        "substance-abuse",
+        "substance-designer",
+        "substance-designer-allegorithmic",
+        "substance-painter",
+        "substance-use",
+        "substance3d",
+        "substancedesigner",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:33:06Z",
+      "updated_at": "2026-11-11T16:18:14Z",
+      "pushed_at": "2026-11-11T16:41:54Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:33:06Z",
+          "description": "Adobe Substance 3D Creative Studio 2026 - Secure Asset Pipeline Desktop Installer",
+          "html_url": "https://github.com/abdulmannanmalik13-wq/adobe-substance-3d-studio",
+          "stars": 1304,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 115716,
+      "forks": 12138,
+      "language": "JavaScript",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "html_url": "https://github.com/addyosmani/agent-skills",
+      "topics": [
+        "agent-skills",
+        "antigravity",
+        "claude-code",
+        "codex",
+        "cursor",
+        "skills"
+      ],
+      "created_at": "2026-02-15T20:20:26Z",
+      "updated_at": "2026-11-11T17:10:15Z",
+      "pushed_at": "2026-11-01T19:24:49Z",
+      "license": "MIT",
+      "open_issues": 135,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Production-grade engineering skills for AI coding agents.",
+          "full_name": "addyosmani/agent-skills",
+          "language": "JavaScript",
+          "trending_stars_period": 788,
+          "trending_total_forks": null,
+          "trending_total_stars": 115716,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/skills",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 192943,
+      "forks": 22707,
+      "language": "Python",
+      "description": "Public repository for Agent Skills",
+      "html_url": "https://github.com/anthropics/skills",
+      "topics": [
+        "agent-skills"
+      ],
+      "created_at": "2025-09-22T15:53:31Z",
+      "updated_at": "2026-11-11T17:02:01Z",
+      "pushed_at": "2026-11-06T22:32:32Z",
+      "license": null,
+      "open_issues": 1517,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Public repository for Agent Skills",
+          "full_name": "anthropics/skills",
+          "language": "Python",
+          "trending_stars_period": 5014,
+          "trending_total_forks": null,
+          "trending_total_stars": 192943,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 70057,
+      "forks": 4645,
+      "language": "JavaScript",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "html_url": "https://github.com/cloudflare/security-audit-skill",
+      "topics": [],
+      "created_at": "2026-06-18T14:08:44Z",
+      "updated_at": "2026-11-11T17:09:35Z",
+      "pushed_at": "2026-09-14T19:29:02Z",
+      "license": "MIT",
+      "open_issues": 124,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "full_name": "cloudflare/security-audit-skill",
+          "language": "JavaScript",
+          "trending_stars_period": 10967,
+          "trending_total_forks": null,
+          "trending_total_stars": 70057,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ebtsamalhakmy-sketch/desktop-backup-suite",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1296,
+      "forks": 0,
+      "language": "TypeScript",
+      "description": "Aomei Backupper 2026: Full-Feature Desktop Backup and Recovery Suite",
+      "html_url": "https://github.com/ebtsamalhakmy-sketch/desktop-backup-suite",
+      "topics": [
+        "aomei",
+        "aomei-partition",
+        "aomei-setup",
+        "automation",
+        "developer-tools",
+        "disk-manager",
+        "disk-partitioning",
+        "merge-partitions",
+        "open-source",
+        "os-migration",
+        "partition-assistant",
+        "partition-manager",
+        "partition-recovery",
+        "partition-tool",
+        "python",
+        "resize-partition",
+        "scripts",
+        "software-engineering",
+        "split-partition",
+        "utility"
+      ],
+      "created_at": "2026-11-06T20:53:28Z",
+      "updated_at": "2026-11-11T16:18:34Z",
+      "pushed_at": "2026-11-11T10:02:24Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:53:28Z",
+          "description": "Aomei Backupper 2026: Full-Feature Desktop Backup and Recovery Suite",
+          "html_url": "https://github.com/ebtsamalhakmy-sketch/desktop-backup-suite",
+          "stars": 1296,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-deepmind/mujoco",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 17606,
+      "forks": 2164,
+      "language": "C++",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "html_url": "https://github.com/google-deepmind/mujoco",
+      "topics": [
+        "mujoco",
+        "physics",
+        "robotics"
+      ],
+      "created_at": "2021-08-27T12:25:48Z",
+      "updated_at": "2026-11-11T16:50:42Z",
+      "pushed_at": "2026-11-11T15:48:20Z",
+      "license": "Apache-2.0",
+      "open_issues": 376,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+          "full_name": "google-deepmind/mujoco",
+          "language": "C++",
+          "trending_stars_period": 1130,
+          "trending_total_forks": null,
+          "trending_total_stars": 17606,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google/skills",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 23897,
+      "forks": 1994,
+      "language": "Python",
+      "description": "Agent Skills for Google products and technologies",
+      "html_url": "https://github.com/google/skills",
+      "topics": [
+        "google",
+        "googlecloud",
+        "skills"
+      ],
+      "created_at": "2026-03-31T19:02:20Z",
+      "updated_at": "2026-11-11T17:09:25Z",
+      "pushed_at": "2026-11-11T16:37:41Z",
+      "license": "Apache-2.0",
+      "open_issues": 39,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Agent Skills for Google products and technologies",
+          "full_name": "google/skills",
+          "language": "Python",
+          "trending_stars_period": 2024,
+          "trending_total_forks": null,
+          "trending_total_stars": 23897,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "hembramneeraj3-create/aida-64-extreme",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1303,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Aida 64 Extreme 2026: Complete Standalone Desktop Setup with Full Feature Configuration",
+      "html_url": "https://github.com/hembramneeraj3-create/aida-64-extreme",
+      "topics": [
+        "aida64",
+        "aida64-extreme-compatibility-check",
+        "aida64-extreme-detailed-reporting",
+        "aida64-extreme-hardware-diagnostics",
+        "aida64-extreme-setup",
+        "aida64-extreme-system-information",
+        "aida64-free-setup",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "pc-diagnostics-windows-platform",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app",
+        "windows-cpu-gpu-status-check",
+        "windows-performance-benchmarking"
+      ],
+      "created_at": "2026-11-06T20:33:44Z",
+      "updated_at": "2026-11-11T16:17:10Z",
+      "pushed_at": "2026-11-11T10:13:13Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:33:44Z",
+          "description": "Aida 64 Extreme 2026: Complete Standalone Desktop Setup with Full Feature Configuration",
+          "html_url": "https://github.com/hembramneeraj3-create/aida-64-extreme",
+          "stars": 1303,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "herdrdev/herdr",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 50240,
+      "forks": 4060,
+      "language": "Rust",
+      "description": "the runtime your coding agents live on",
+      "html_url": "https://github.com/herdrdev/herdr",
+      "topics": [
+        "agent",
+        "agent-orchestration",
+        "ai",
+        "ai-agents",
+        "claude-code",
+        "cli",
+        "codex",
+        "coding-agents",
+        "developer-tools",
+        "devtools",
+        "multiplexer",
+        "rust",
+        "terminal",
+        "terminal-multiplexer",
+        "terminal-ui",
+        "tmux",
+        "tui",
+        "workspace-manager"
+      ],
+      "created_at": "2026-03-27T17:54:33Z",
+      "updated_at": "2026-11-11T17:03:44Z",
+      "pushed_at": "2026-11-07T12:32:55Z",
+      "license": "Apache-2.0",
+      "open_issues": 475,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "the runtime your coding agents live on",
+          "full_name": "herdrdev/herdr",
+          "language": "Rust",
+          "trending_stars_period": 2196,
+          "trending_total_forks": null,
+          "trending_total_stars": 50240,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "homeassistant-ai/ha-mcp",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 7123,
+      "forks": 446,
+      "language": "Python",
+      "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
+      "html_url": "https://github.com/homeassistant-ai/ha-mcp",
+      "topics": [
+        "ai",
+        "claude",
+        "hacs",
+        "home-assistant",
+        "home-automation",
+        "llm",
+        "mcp",
+        "model-context-protocol"
+      ],
+      "created_at": "2025-09-14T13:23:45Z",
+      "updated_at": "2026-11-11T17:10:20Z",
+      "pushed_at": "2026-11-11T16:28:11Z",
+      "license": "MIT",
+      "open_issues": 18,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
+          "full_name": "homeassistant-ai/ha-mcp",
+          "language": "Python",
+          "trending_stars_period": 640,
+          "trending_total_forks": null,
+          "trending_total_stars": 7123,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "huamidev/GestaltX",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 6074,
+      "forks": 2372,
+      "language": "Swift",
+      "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups, and support for 7 languages.",
+      "html_url": "https://github.com/huamidev/GestaltX",
+      "topics": [],
+      "created_at": "2026-11-09T05:15:48Z",
+      "updated_at": "2026-11-11T17:10:06Z",
+      "pushed_at": "2026-11-11T03:51:20Z",
+      "license": "GPL-3.0",
+      "open_issues": 51,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T05:15:48Z",
+          "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups, and support for 7 languages.",
+          "html_url": "https://github.com/huamidev/GestaltX",
+          "stars": 6074,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jamesondh/chimera-vocal-synth",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1904,
+      "forks": 229,
+      "language": "Rust",
+      "description": "the ultimate vocal synthesizer - sing, speak, beatbox, and more",
+      "html_url": "https://github.com/jamesondh/chimera-vocal-synth",
+      "topics": [],
+      "created_at": "2026-11-05T19:10:42Z",
+      "updated_at": "2026-11-11T17:02:13Z",
+      "pushed_at": "2026-11-11T17:10:29Z",
+      "license": "MIT",
+      "open_issues": 29,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T19:10:42Z",
+          "description": "the ultimate vocal synthesizer - sing, speak, beatbox, and more",
+          "html_url": "https://github.com/jamesondh/chimera-vocal-synth",
+          "stars": 1904,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jhaizhou-ops/S2Arm",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 2572,
+      "forks": 476,
+      "language": "C#",
+      "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+      "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+      "topics": [
+        "apple-silicon",
+        "arm64",
+        "game-porting",
+        "ios",
+        "ipados",
+        "macos",
+        "metal",
+        "s2arm",
+        "static-recompilation",
+        "switch"
+      ],
+      "created_at": "2026-11-08T05:49:46Z",
+      "updated_at": "2026-11-11T16:54:45Z",
+      "pushed_at": "2026-11-11T17:07:45Z",
+      "license": "Apache-2.0",
+      "open_issues": 263,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-08T05:49:46Z",
+          "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+          "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+          "stars": 2572,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kcgeekedup-hash/delta-force-trainer-tool",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1294,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Delta Force Trainer Tool: Full Working Installer With All Tools and Configurations",
+      "html_url": "https://github.com/kcgeekedup-hash/delta-force-trainer-tool",
+      "topics": [
+        "automation",
+        "delta-force",
+        "delta-force-aim-assist",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:51:48Z",
+      "updated_at": "2026-11-11T15:36:48Z",
+      "pushed_at": "2026-11-11T10:12:13Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:51:48Z",
+          "description": "Delta Force Trainer Tool: Full Working Installer With All Tools and Configurations",
+          "html_url": "https://github.com/kcgeekedup-hash/delta-force-trainer-tool",
+          "stars": 1294,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "livliv-dev/player",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1489,
+      "forks": 155,
+      "language": "TypeScript",
+      "description": "A lightweight 2.5D character player for the web, with lip sync and webcam face tracking.",
+      "html_url": "https://github.com/livliv-dev/player",
+      "topics": [
+        "avatar",
+        "character",
+        "face-tracking",
+        "lip-sync",
+        "pngtuber",
+        "vrm",
+        "vtuber",
+        "webgl2"
+      ],
+      "created_at": "2026-11-04T03:28:33Z",
+      "updated_at": "2026-11-11T16:58:11Z",
+      "pushed_at": "2026-11-09T06:08:52Z",
+      "license": "Apache-2.0",
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-04T03:28:33Z",
+          "description": "A lightweight 2.5D character player for the web, with lip sync and webcam face tracking.",
+          "html_url": "https://github.com/livliv-dev/player",
+          "stars": 1489,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mahmoudtawfik1998/secure-pdf-document-processor",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1304,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Adobe Acrobat Pro 2026: Secure Standalone PDF Document Processor for Desktop",
+      "html_url": "https://github.com/mahmoudtawfik1998/secure-pdf-document-processor",
+      "topics": [
+        "acrobat-dc-pro",
+        "acrobat-for-free-2026",
+        "acrobat-no-limits",
+        "acrobat-pdf",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "forms-acrobat-pro",
+        "free-pdf-reader-windows",
+        "open-source",
+        "pdf-password",
+        "pro-acrobat",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T21:23:09Z",
+      "updated_at": "2026-11-11T15:36:55Z",
+      "pushed_at": "2026-11-11T10:38:34Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T21:23:09Z",
+          "description": "Adobe Acrobat Pro 2026: Secure Standalone PDF Document Processor for Desktop",
+          "html_url": "https://github.com/mahmoudtawfik1998/secure-pdf-document-processor",
+          "stars": 1304,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mattpocock/skills",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 321738,
+      "forks": 26970,
+      "language": "Shell",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "html_url": "https://github.com/mattpocock/skills",
+      "topics": [],
+      "created_at": "2026-02-03T11:15:53Z",
+      "updated_at": "2026-11-11T17:08:02Z",
+      "pushed_at": "2026-11-11T14:40:17Z",
+      "license": "MIT",
+      "open_issues": 236,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Skills for Real Engineers. Straight from my .agents directory.",
+          "full_name": "mattpocock/skills",
+          "language": "Shell",
+          "trending_stars_period": 9872,
+          "trending_total_forks": null,
+          "trending_total_stars": 321738,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "meta/astryx",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 24546,
+      "forks": 1917,
+      "language": "TypeScript",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "html_url": "https://github.com/meta/astryx",
+      "topics": [],
+      "created_at": "2026-01-09T16:20:32Z",
+      "updated_at": "2026-11-11T17:10:45Z",
+      "pushed_at": "2026-11-11T17:10:31Z",
+      "license": "MIT",
+      "open_issues": 674,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open source design system that's fully customizable and agent ready",
+          "full_name": "meta/astryx",
+          "language": "TypeScript",
+          "trending_stars_period": 2842,
+          "trending_total_forks": null,
+          "trending_total_stars": 24545,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "milind-soni/OpenMausBot",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 21128,
+      "forks": 2944,
+      "language": "TypeScript",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "html_url": "https://github.com/milind-soni/OpenMausBot",
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "computer-use",
+        "docker",
+        "electron",
+        "grok",
+        "grok-bot",
+        "grok-bot-alternative",
+        "self-hosted",
+        "typescript"
+      ],
+      "created_at": "2026-08-11T18:58:55Z",
+      "updated_at": "2026-11-11T16:56:39Z",
+      "pushed_at": "2026-11-11T17:08:04Z",
+      "license": "Apache-2.0",
+      "open_issues": 1033,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "full_name": "milind-soni/OpenMausBot",
+          "language": "TypeScript",
+          "trending_stars_period": 8951,
+          "trending_total_forks": null,
+          "trending_total_stars": 21128,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mmdoctor/google-pro-helper",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1711,
+      "forks": 580,
+      "language": "Python",
+      "description": null,
+      "html_url": "https://github.com/mmdoctor/google-pro-helper",
+      "topics": [],
+      "created_at": "2026-11-05T04:52:28Z",
+      "updated_at": "2026-11-11T16:26:09Z",
+      "pushed_at": "2026-11-05T09:41:40Z",
+      "license": null,
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T04:52:28Z",
+          "description": null,
+          "html_url": "https://github.com/mmdoctor/google-pro-helper",
+          "stars": 1711,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "openai/codex-security",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 11542,
+      "forks": 919,
+      "language": "TypeScript",
+      "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+      "html_url": "https://github.com/openai/codex-security",
+      "topics": [
+        "ai-security",
+        "application-security",
+        "cli",
+        "code-scanning",
+        "codex",
+        "codex-security",
+        "cybersecurity",
+        "devsecops",
+        "nodejs",
+        "npm",
+        "openai",
+        "sdk",
+        "security",
+        "typescript",
+        "vulnerability-scanning"
+      ],
+      "created_at": "2026-07-13T22:00:13Z",
+      "updated_at": "2026-11-11T17:10:33Z",
+      "pushed_at": "2026-11-11T17:09:28Z",
+      "license": "Apache-2.0",
+      "open_issues": 143,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+          "full_name": "openai/codex-security",
+          "language": "TypeScript",
+          "trending_stars_period": 20,
+          "trending_total_forks": null,
+          "trending_total_stars": 11541,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sajawal-12/cubase-studio-desktop",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1298,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Cubase Studio 2026 desktop setup with full plugin suite and complete feature set",
+      "html_url": "https://github.com/sajawal-12/cubase-studio-desktop",
+      "topics": [
+        "automation",
+        "cubase",
+        "cubase-15",
+        "cubase-for-beginners",
+        "cubase-pro",
+        "cubase-pro-2026",
+        "cubase-setup",
+        "cubase-tutorial",
+        "cubase-windows-download",
+        "cubasecubase-pro",
+        "cube-solver",
+        "cubic-splines",
+        "developer-tools",
+        "mixing-and-mastering",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "steinberg-cubase",
+        "vst3-plugins"
+      ],
+      "created_at": "2026-11-06T20:50:21Z",
+      "updated_at": "2026-11-11T15:36:48Z",
+      "pushed_at": "2026-11-11T10:01:55Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:50:21Z",
+          "description": "Cubase Studio 2026 desktop setup with full plugin suite and complete feature set",
+          "html_url": "https://github.com/sajawal-12/cubase-studio-desktop",
+          "stars": 1298,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "shadcn/improve",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 10617,
+      "forks": 433,
+      "language": null,
+      "description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
+      "html_url": "https://github.com/shadcn/improve",
+      "topics": [],
+      "created_at": "2026-06-10T11:06:58Z",
+      "updated_at": "2026-11-11T17:02:07Z",
+      "pushed_at": "2026-09-12T11:29:28Z",
+      "license": "MIT",
+      "open_issues": 17,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
+          "full_name": "shadcn/improve",
+          "language": "",
+          "trending_stars_period": 333,
+          "trending_total_forks": null,
+          "trending_total_stars": 10617,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tangerineturtle1/NX2navi",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 3120,
+      "forks": 210,
+      "language": "C",
+      "description": null,
+      "html_url": "https://github.com/tangerineturtle1/NX2navi",
+      "topics": [],
+      "created_at": "2026-11-07T10:01:23Z",
+      "updated_at": "2026-11-11T17:08:54Z",
+      "pushed_at": "2026-11-11T16:50:00Z",
+      "license": "MIT",
+      "open_issues": 449,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T10:01:23Z",
+          "description": null,
+          "html_url": "https://github.com/tangerineturtle1/NX2navi",
+          "stars": 3120,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tss878/delta-executor-toolkit",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1294,
+      "forks": 0,
+      "language": "TypeScript",
+      "description": "Delta Executor for PC: Full Working Installer with All Tools Pre-Configured",
+      "html_url": "https://github.com/tss878/delta-executor-toolkit",
+      "topics": [
+        "automation",
+        "delta-exec",
+        "delta-executor-26",
+        "delta-executor-exploit",
+        "delta-executor-for-free",
+        "delta-executor-for-pc-2026",
+        "delta-executor-for-win",
+        "delta-executor-lua",
+        "delta-executor-pc-2026",
+        "delta-for-pc",
+        "delta-for-pc-2026",
+        "delta-free-executor",
+        "delta-key-bypass",
+        "delta-lua-executor",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "utility"
+      ],
+      "created_at": "2026-11-06T20:51:54Z",
+      "updated_at": "2026-11-11T15:36:48Z",
+      "pushed_at": "2026-11-11T09:59:20Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:51:54Z",
+          "description": "Delta Executor for PC: Full Working Installer with All Tools Pre-Configured",
+          "html_url": "https://github.com/tss878/delta-executor-toolkit",
+          "stars": 1294,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 49720,
+      "forks": 3479,
+      "language": "Rust",
+      "description": "Browser automation CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "topics": [],
+      "created_at": "2026-01-11T05:38:15Z",
+      "updated_at": "2026-11-11T17:09:58Z",
+      "pushed_at": "2026-11-11T17:07:26Z",
+      "license": "Apache-2.0",
+      "open_issues": 583,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Browser automation CLI for AI agents",
+          "full_name": "vercel-labs/agent-browser",
+          "language": "Rust",
+          "trending_stars_period": 3606,
+          "trending_total_forks": null,
+          "trending_total_stars": 49720,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "Browser automation CLI for AI agents",
+          "full_name": "vercel-labs/agent-browser",
+          "language": "Rust",
+          "trending_stars_period": 712,
+          "trending_total_forks": null,
+          "trending_total_stars": 49720,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-desktop",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 21909,
+      "forks": 1629,
+      "language": "Rust",
+      "description": "Computer use CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-desktop",
+      "topics": [
+        "accessibility",
+        "accessibility-api",
+        "ai-agents",
+        "automation",
+        "cli",
+        "computer-use",
+        "computer-use-agent",
+        "computer-use-agents",
+        "desktop-automation",
+        "macos",
+        "mcp",
+        "rust"
+      ],
+      "created_at": "2026-02-19T18:00:49Z",
+      "updated_at": "2026-11-11T17:09:47Z",
+      "pushed_at": "2026-11-11T06:09:45Z",
+      "license": "Apache-2.0",
+      "open_issues": 212,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Computer use CLI for AI agents",
+          "full_name": "vercel-labs/agent-desktop",
+          "language": "Rust",
+          "trending_stars_period": 9502,
+          "trending_total_forks": null,
+          "trending_total_stars": 21909,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "voyager-so/vork",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 1404,
+      "forks": 113,
+      "language": "Rust",
+      "description": "Headless 3D and VFX engine for agents. Research preview.",
+      "html_url": "https://github.com/voyager-so/vork",
+      "topics": [
+        "3d",
+        "ai-agents",
+        "gpu",
+        "metal",
+        "ray-tracing",
+        "rendering",
+        "rust",
+        "slang",
+        "vfx",
+        "vulkan"
+      ],
+      "created_at": "2026-11-05T22:37:07Z",
+      "updated_at": "2026-11-11T17:06:46Z",
+      "pushed_at": "2026-11-11T14:18:14Z",
+      "license": "Other",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T22:37:07Z",
+          "description": "Headless 3D and VFX engine for agents. Research preview.",
+          "html_url": "https://github.com/voyager-so/vork",
+          "stars": 1404,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "we-promise/sure",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 12702,
+      "forks": 941,
+      "language": "Ruby",
+      "description": "The personal finance app for everyone (by everyone)",
+      "html_url": "https://github.com/we-promise/sure",
+      "topics": [],
+      "created_at": "2025-07-23T04:13:55Z",
+      "updated_at": "2026-11-11T17:05:08Z",
+      "pushed_at": "2026-11-11T15:10:43Z",
+      "license": "AGPL-3.0",
+      "open_issues": 895,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The personal finance app for everyone (by everyone)",
+          "full_name": "we-promise/sure",
+          "language": "Ruby",
+          "trending_stars_period": 1079,
+          "trending_total_forks": null,
+          "trending_total_stars": 12702,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "zed-industries/zed",
+      "captured_at": "2026-11-11T17:10:25Z",
+      "stars": 94677,
+      "forks": 11627,
+      "language": "Rust",
+      "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+      "html_url": "https://github.com/zed-industries/zed",
+      "topics": [
+        "gpui",
+        "rust-lang",
+        "text-editor",
+        "zed"
+      ],
+      "created_at": "2021-02-20T03:01:06Z",
+      "updated_at": "2026-11-11T17:05:04Z",
+      "pushed_at": "2026-11-11T17:08:01Z",
+      "license": "Other",
+      "open_issues": 3091,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+          "full_name": "zed-industries/zed",
+          "language": "Rust",
+          "trending_stars_period": 2262,
+          "trending_total_forks": null,
+          "trending_total_stars": 94677,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
@@ -228126,7 +230148,8 @@
     "daily-20261105T212126Z": 76,
     "daily-20261108T175643Z": 78,
     "daily-20261109T195138Z": 84,
-    "daily-20261110T211307Z": 89
+    "daily-20261110T211307Z": 89,
+    "daily-20261111T171025Z": 95
   },
   "sent_slots": {
     "2026-09-30-pm": 61,
@@ -228136,7 +230159,8 @@
     "daily:2026-11-05": 76,
     "daily:2026-11-08": 78,
     "daily:2026-11-09": 84,
-    "daily:2026-11-10": 89
+    "daily:2026-11-10": 89,
+    "daily:2026-11-11": 95
   },
   "pending_digests": {},
   "llm_daily_requests": {
@@ -228152,7 +230176,8 @@
     "2026-11-07": 12,
     "2026-11-08": 29,
     "2026-11-09": 13,
-    "2026-11-10": 11
+    "2026-11-10": 11,
+    "2026-11-11": 15
   },
   "delivery_progress": {
     "20260930T143510Z": {
