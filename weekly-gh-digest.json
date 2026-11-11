@@ -233517,7 +233517,8 @@
   "delivery_progress": {
     "-1003944093514:daily-20261111T171025Z": {
       "project_message_ids": {
-        "chunk-00": 95
+        "chunk-00": 95,
+        "chunk-01": 96
       },
       "overview_message_id": null,
       "message_texts": {
@@ -233555,5 +233556,5 @@
     "daily-20261103T170529Z": 69,
     "daily-20261104T171701Z": 73
   },
-  "uncertain_delivery": "-1003944093514:daily-20261111T171025Z/chunk-01"
+  "uncertain_delivery": null
 }
