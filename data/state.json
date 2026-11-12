@@ -12,6 +12,7 @@
       "alexgreensh/anidoodle": "2026-11-11",
       "alibaba/open-code-review": "2026-11-03",
       "alirezarezvani/claude-skills": "2026-09-30",
+      "alishahryar1/free-claude-code": "2026-11-12",
       "anishfn/shapeshift": "2026-11-10",
       "anthropics/claude-code": "2026-11-03",
       "anthropics/claude-code-action": "2026-09-30",
@@ -54,11 +55,13 @@
       "hkuds/cli-anything": "2026-09-29",
       "homeassistant-ai/ha-mcp": "2026-11-09",
       "hunxbyts/ghosttrack": "2026-10-01",
+      "hybridrobotics/supermimic": "2026-11-12",
       "iainkay/ram-altman": "2026-11-09",
       "infinityloop1308/pipepipe": "2026-11-11",
       "jamesondh/chimera-vocal-synth": "2026-11-09",
       "janestreet/agent_skills": "2026-11-09",
       "jev-chat/jev-chat-windows": "2026-11-09",
+      "johnheibel/claudeanimationbase": "2026-11-12",
       "johnheibel/pdoomvideo": "2026-11-09",
       "kianuni/erosion-cn": "2026-11-10",
       "kkkkhazix/aihot": "2026-09-30",
@@ -83,13 +86,16 @@
       "pallavi-shekhar/ai-engineering-interview-questions-company-wise": "2026-11-04",
       "paperclipai/paperclip": "2026-09-29",
       "pbakaus/impeccable": "2026-09-29",
+      "pookjw/hermesenabler": "2026-11-12",
       "prismml-eng/bonsai-demo": "2026-09-29",
       "pytorch/pytorch": "2026-09-29",
+      "qwenlm/qwen-code": "2026-11-12",
       "rakyll/hey": "2026-09-29",
       "rdeepak-wq121/quicken-deluxe-installer": "2026-11-10",
       "riba2534/claude-opus-5-5-demo": "2026-11-08",
       "rizzo-ai-academy/rizzo-flow": "2026-11-10",
       "rohitg00/ai-engineering-from-scratch": "2026-09-29",
+      "ryotheone/dxo-photolab-10-config": "2026-11-12",
       "sarpstar/cinecode": "2026-11-08",
       "shadcn/improve": "2026-11-11",
       "shihabal3amri/diplay": "2026-09-30",
@@ -113,6 +119,7 @@
       "woo20080623-cell/cinebench-desktop": "2026-11-10",
       "yappologistic/cui": "2026-11-10",
       "yetone/magpie": "2026-09-30",
+      "yihui-dev/awesome-opus5-5-videos": "2026-11-12",
       "zai-org/zcode": "2026-11-03"
     },
     "analyses": {
@@ -171,6 +178,14 @@
         "description": "OpenCodeReview – это CLI‑утилита для автоматизированного ревью кода, использующая большие языковые модели. Инструмент читает Git‑diff, отправляет изменённые файлы в LLM‑агента, который умеет обращаться к полному содержимому файлов, искать по репозиторию и генерировать структурированные комментарии с точностью до строки. Помимо дифф‑ревью, есть режим `ocr scan` для полного анализа файлов без изменений. Подойдёт командам, желающим ускорить проверку pull‑request’ов и обнаружить типичные дефекты (NPE, XSS, SQL‑инъекции и др.) без ручного труда, особенно если уже настроен доступ к OpenAI, Anthropic или совместимым моделям. Можно рассмотреть для интеграции в CI/CD, где требуется высокоточная, но экономичная по токенам проверка кода. Ограничение: приоритет отдан точности, поэтому Recall ниже, чем у универсальных агентов, что может привести к пропуску некоторых проблем.",
         "joke": "Почему код ревьюер всегда в хорошем настроении? Потому что у него всегда есть «плюс» в строке!",
         "evidence_quote": "Open Code Review is an AI-powered code review CLI tool. It originated as Alibaba Group's internal official AI code review assistant — over the past two years, it has served tens of thousands of developers and identified millions of code defects. After thorough validation at massive scale, we incubated it into an open source project for the community. Simply configure a model endpoint to get started."
+      },
+      "alishahryar1/free-claude-code": {
+        "policy_version": 7,
+        "source_description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+        "source_readme": "<div align=\"center\">\n\n<h1>\n  <picture>\n    <source media=\"(prefers-color-scheme: light)\" srcset=\"assets/free-claude-code-wordmark-light.svg\">\n    <img src=\"assets/free-claude-code-wordmark-dark.svg\" alt=\"Free Claude Code\" width=\"610\">\n  </picture>\n</h1>\n\n[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-2e7d32.svg?style=for-the-badge)](https://github.com/Alishahryar1/free-claude-code/blob/main/LICENSE)\n[![Python 3.14](https://img.shields.io/badge/python-3.14-3776ab.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/)\n[![Package Manager: uv](assets/package-manager-uv.svg)](https://github.com/astral-sh/uv)\n[![Testing: Pytest](https://img.shields.io/badge/Testing-Pytest-ad1457.svg?style=for-the-badge)](https://github.com/Alishahryar1/free-claude-code/actions/workflows/tests.yml)\n[![Type Checker: Ty](https://img.shields.io/badge/Type%20Checker-ty-fdd835.svg?style=for-the-badge)](https://pypi.org/project/ty/)\n[![Formatter: Ruff](https://img.shields.io/badge/Formatter-ruff-bf4b00.svg?style=for-the-badge)](https://github.com/astral-sh/ruff)\n[![Logging: Loguru](https://img.shields.io/badge/logging-loguru-00695c.svg?style=for-the-badge)](https://github.com/Delgan/loguru)\n\n[Quick Start](#quick-start) · [Providers](#choose-a-provider) · [Clients](#connect-your-client) · [Integrations](#optional-integrations) · [Manage](#manage-your-installation)\n\n</div>\n\n<p align=\"center\">\n  <em>Independent open-source project. Not affiliated with or endorsed by Anthropic. Claude and Claude Code are trademarks of Anthropic.</em>\n</p>\n\n## Features\n\n- Route any supported harness to models from any supported provider.\n- 12 supported harnesses: [Claude Code](https://code.claude.com/docs/en/overview), [Codex](https://github.com/openai/codex), [Pi](https://github.com/earendil-works/pi), [OpenCode](https://github.com/anomalyco/opencode), [Cline](https://github.com/cline/cline), [Hermes](https://github.com/NousResearch/hermes-agent), [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), [Grok Build](https://github.com/xai-org/grok-build), [Muse Code](https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2/), [Aider](https://aider.chat/), [Antigravity CLI](https://antigravity.google/docs/getting-started/), or [VS Code Chat](https://code.visualstudio.com/).\n  - Preserved native streaming, tool use, and interleaved thinking for maximum performance.\n  - For Claude Code, route [Fable](https://www.anthropic.com/claude/fable), [Opus](https://www.anthropic.com/claude/opus), [Sonnet](https://www.anthropic.com/claude/sonnet), and [Haiku](https://www.anthropic.com/claude/haiku) to supported models.\n- 61 supported providers, including free, paid, subscription, and local providers.\n  - 1.3B+ free tokens per month.\n  - FCC follows provider TOS and removes integrations if they stop being allowed.\n- Use through the terminal, desktop apps ([Codex App](https://learn.chatgpt.com/docs/app), [Claude Desktop](https://claude.ai/download), and [DeepSeek Desktop](https://github.com/deepseek-ai/deepseek-harness)), IDE extensions ([VS Code](https://code.visualstudio.com/) and [JetBrains](https://www.jetbrains.com/)), your phone ([Discord](https://discord.com/) and [Telegram](https://telegram.org/)), or your browser through native Code sessions.\n  - Voice notes supported for Discord and Telegram using local [Whisper](https://github.com/openai/whisper) or [NVIDIA NIM](https://docs.nvidia.com/nim/speech/latest/asr/deploy-asr-models/whisper.html).\n- Up to 90% lower token usage using [RTK](https://github.com/rtk-ai/rtk) and [Headroom](https://github.com/headroomlabs-ai/headroom).\n- State-of-the-art reliability features so you can keep coding through provider outages:\n  - Automatic retries.\n  - Configurable rate limits.\n  - Configurable concurrency control.\n  - Automatic model/provider fallback.\n  - Automatic multi-API key fallback.\n\nFree-tier availability and limits are controlled by each provider and may change.\n\n<div align=\"center\">\n  <img src=\"assets/pic.png\" alt=\"Claude Code running with Free Claude Code\" width=\"700\">\n  <p><em>Claude Code running with FCC.</em></p>\n</div>\n\n<div align=\"center\">\n  <img src=\"assets/browser-code-session.png\" alt=\"Native Codex browser session in FCC, showing model controls and a repository exploration\" width=\"700\">\n  <p><em>A native Codex session in FCC's browser UI.</em></p>\n</div>\n\n## Quick Start\n\n<a id=\"install\"></a>\n\n### 1. Install\n\nmacOS/Linux:\n\n```bash\ncurl -fsSL \"https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.sh\" | sh\n```\n\nWindows PowerShell:\n\n```powershell\n& ([scriptblock]::Create((irm \"https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.ps1\")))\n```\n\nWhen prompted, choose at least one coding agent and optionally enable [RTK](https://github.com/rtk-ai/rtk) + [Headroom](https://github.com/headroomlabs-ai/headroom) token optimization for supported agents.\n\n### 2. Start FCC\n\n#### Windows",
+        "description": "Free Claude Code (FCC) — это клиент‑агрегатор, позволяющий пользоваться более чем десятком код‑ориентированных LLM‑интерфейсов (Claude Code, Codex, Pi, OpenCode, Antigravity CLI, VS Code Chat и др.) через единый набор команд. Проект поддерживает 61 провайдера, включая бесплатные тарифы, и обещает более 1,3 млрд бесплатных токенов в месяц, автоматически распределяя запросы между моделями и ключами, а также переключаясь на резервные сервисы при сбоях. Для снижения расходов включены оптимизаторы RTK и Headroom, которые могут уменьшить потребление токенов до 90 %.\n\nПользователь может запускать FCC из терминала, настольных приложений, IDE‑расширений, мобильных мессенджеров (Discord, Telegram) и даже из браузера через «native Code sessions», где сохраняются нативные потоки, поддержка инструментов и чередование «thinking». Голосовые заметки обрабатываются локально Whisper или NVIDIA NIM, что расширяет возможности взаимодействия без ввода текста. Конфигурация включает автоматические повторные попытки, ограничение скорости, контроль параллелизма и гибкую настройку провайдеров, что повышает надёжность при перебоях у отдельных сервисов.\n\nСценарий применения: разработчик, работающий над проектом в VS Code, подключает FCC, выбирает бесплатный провайдер и получает доступ к Claude Code, Codex и другим моделям без необходимости менять настройки каждого инструмента. При превышении лимита одного провайдера система автоматически переключается на альтернативный, сохраняя контекст и поток вывода. Основные ограничения — зависимость от условий бесплатных тарифов провайдеров (лимиты могут изменяться) и необходимость установки дополнительных компонентов (Whisper, RTK, Headroom) для полной функциональности.",
+        "joke": "Когда токены заканчиваются, FCC просто меняет провайдера, как будто меняет Wi‑Fi.",
+        "evidence_quote": "[Quick Start](#quick-start) · [Providers](#choose-a-provider) · [Clients](#connect-your-client) · [Integrations](#optional-integrations) · [Manage](#manage-your-installation)"
       },
       "anishfn/shapeshift": {
         "policy_version": 7,
@@ -300,6 +315,14 @@
         "joke": "AI‑домофон: «Кто там?», а Home Assistant отвечает «Это я, ваш умный свет».",
         "evidence_quote": "> **Breaking change (v7.3.0):** `ha_config_set_yaml` has been moved to [beta](docs/beta.md)."
       },
+      "hybridrobotics/supermimic": {
+        "policy_version": 7,
+        "source_description": "Humanoid whole-body motion tracking with one differentiable world model.",
+        "source_readme": "# SuperMimic\n\n[Project page](https://supermimic.github.io) | [Paper](https://arxiv.org/abs/2610.28480)\n\nSuperMimic trains a humanoid whole-body motion tracker with one differentiable world model, built on [mjlab](https://github.com/mujocolab/mjlab).\n\n## Setup\n\nInstall [uv](https://docs.astral.sh/uv/):\n\n```bash\ncurl -LsSf https://astral.sh/uv/install.sh | sh\n```\n\nClone both repos as siblings:\n\n```bash\nmkdir supermimic_ws && cd supermimic_ws\ngit clone git@github.com:HybridRobotics/supermimic.git\ngit clone git@github.com:HybridRobotics/mjlab_research.git\ncd supermimic\n```\n\n## Usage\n\nAvailable task IDs:\n\n- `SuperMimic-GenCoord-G1` — generalized coordinates representation\n- `SuperMimic-MaxCoord-G1` — maximal coordinates representation\n\nTrain a world model and policy:\n\n```bash\nCUDA_VISIBLE_DEVICES=<GPU_ID> uv run src/supermimic/scripts/train.py \\\n  <TASK_ID> --runner.run_name <description>\n```\n\nPlay back a trained model:\n\n```bash\nuv run src/supermimic/scripts/play.py \\\n  <TASK_ID> --wandb-path <RUN_PATH>\n```\n\n## Acknowledgements\n\nSuperMimic contains code inspired by these projects:\n\n- [ControlVAE](https://github.com/heyuanYao-pku/Control-VAE) (BSD-3-Clause)\n- [robotic_world_model](https://github.com/leggedrobotics/robotic_world_model) (Apache-2.0)\n- [DreamerV3](https://github.com/danijar/dreamerv3) (MIT)\n\n## License\n\nCopyright 2026 The SuperMimic Authors.\n\nReleased under the [Apache License 2.0](LICENSE).\n",
+        "description": "SuperMimic — это исследовательская платформа, позволяющая обучать трекер полного тела гуманоидного робота с единой дифференцируемой моделью мира. Проект построен поверх библиотеки mjlab, что обеспечивает физически корректную симуляцию и возможность градиентного обучения через динамику среды. Пользователь выбирает одну из двух предопределённых конфигураций задач: представление в обобщённых координатах (SuperMimic-GenCoord-G1) или в максимальных координатах (SuperMimic-MaxCoord-G1), после чего запускает скрипт train.py для совместного обучения модели мира и политики управления, используя GPU‑ускорение через uv‑runtime. После обучения модель можно воспроизвести с помощью play.py, указав путь к запущенному эксперименту в wandb, что упрощает визуализацию и отладку полученных движений. Платформа поддерживает гибкую интеграцию с внешними репозиториями, требуя лишь клонирования SuperMimic и mjlab_research как соседних каталогов, а установка uv обеспечивает изоляцию зависимостей без необходимости глобального pip. Среди ключевых преимуществ: единая дифференцируемая модель мира, позволяющая одновременно обучать восприятие и контроль; два готовых представления координат, дающих исследователям возможность сравнивать эффективность разных параметризаций; и открытый код, вдохновлённый проектами ControlVAE, robotic_world_model и DreamerV3, что облегчает расширение и адаптацию под собственные задачи. Для работы требуется GPU с поддержкой CUDA и установленный uv; ограничение состоит в том, что текущая реализация ориентирована на симуляцию в MuJoCo и не предоставляет готовых средств для реального робота без дополнительной интеграции.",
+        "joke": "",
+        "evidence_quote": "SuperMimic trains a humanoid whole-body motion tracker with one differentiable world model, built on [mjlab](https://github.com/mujocolab/mjlab)."
+      },
       "iainkay/ram-altman": {
         "policy_version": 7,
         "source_description": "Monitors your RAM and reports any \"quite terrible\" unused capacity directly to the CEO of OpenAI.",
@@ -339,6 +362,14 @@
         "description": "Помощник для ответов в WeChat и KakaoTalk на Windows. Он считывает открытое окно чата через локальный OCR: RapidOCR для WeChat и Windows.Media.Ocr для KakaoTalk. Распознанный текст передаётся внешним сервисам: Jev оценивает намерение и напряжённость разговора, а отдельная языковая модель готовит три варианта ответа. Кандидаты ранжируются с помощью Jev; выбранный текст можно вставить в поле ввода, отправляет его пользователь.\n\nИстория, контекст и варианты ответа разделены по беседам. В групповых чатах можно выбрать адресата. Есть просмотр распознанного текста, отладочный экран и выключатель захвата. Модели вызываются при новом сообщении собеседника либо смене адресата в группе. Снимки окна обрабатываются в памяти и не загружаются на сервер; текст чата уходит выбранным API. При запуске также возможен отключаемый GET к GitHub Releases для проверки версии.\n\nТребуются Windows 10 1903+ или 11, открытое и не свёрнутое окно чата и два API-ключа: для Jev через OpenRouter или TypeSafe и для генерации, по умолчанию DeepSeek. Готовая сборка не требует Python. Ключи сохраняются в пользовательских переменных среды Windows через реестр.",
         "joke": "",
         "evidence_quote": "聊天窗口旁挂的回复辅助：本地 OCR 读屏上的对话 → Jev 判断意图/情绪 → 给出 3 条候选回复 →\n一键填入输入框。**发送永远手动，程序不替你按发送。**"
+      },
+      "johnheibel/claudeanimationbase": {
+        "policy_version": 7,
+        "source_description": "A starter kit for animating hand-painted cartoons with Claude: p5.js + p5.brush, the Clawd character, 31 acted emotions and a guide for the model",
+        "source_readme": "# Claude Animation Base\n\nThis is a small starter kit with code, instructions and assets for animating a character in [p5.js](https://p5js.org) and [p5.brush](https://github.com/acamposuribe/p5.brush) with Claude Opus 5.5. It's based on the code from the music video [I'm Upping My P(doom)](https://github.com/JohnHeibel/PDoomVideo) and an analysis of what the model did and didn't do well. I highly recommend playing around with your prompting: make it give you the storyboard before coding, give it very broad instructions, try being very specific, ask for subagents, and try a bunch of other fun ways of testing the model's capabilities. In my testing, it can do a lot with very little, but it's also quite accurate when you give it more requirements. Also try asking the model to swap out the character or make new emotions or costumes, give it your own reference images, and try many other fun things like that. I've found that the reasoning level corresponds to how \"extravagant\" and detail-oriented the model makes the scene. All test videos were generated with Opus 5.5 on xhigh reasoning in Claude Code.\n\n![Clawd's emotions, animated](docs/emotions.webp)\n\n## Make a video\n\nClone it, open it in Claude Code (or any coding agent) and ask for what you want:\n\n> Read ANIMATION_GUIDE.md, then make a 15-second video of Clawd trying to catch a butterfly.\n\nThe model storyboards first, builds shot by shot, renders contact sheets to check its own work, and writes `out/video.mp4`. [ANIMATION_GUIDE.md](ANIMATION_GUIDE.md) holds the rules it follows: handmade, alive, one piece, no text, transitions always, something happens in every scene, and a solid medium of brush strokes, flat 2D and boiling linework. It also covers timing for the viewer and the core principles of character animation.\n\n## Run it yourself\n\nYou need Node.js, Google Chrome and ffmpeg.\n\nWithout a dedicated GPU, p5.brush's watercolour fills make render times fairly slow, measured in seconds per frame. If you're running on integrated graphics, I recommend asking the model to avoid those fills and replace them with something else appropriate. (I love the look of the watercolours, though.)\n\n```bash\nnpm install\nnode render.mjs --clip --out=out/video.mp4\n```\n\nThat renders the 11-second demo in [src/scenes/demo.js](src/scenes/demo.js). Open [studio.html](studio.html) in Chrome to scrub through it. Add `?loop=emotions` or `?loop=views` to see the model sheets. If Chrome isn't in a standard location, pass `--chrome=<path>` or set `CHROME_PATH`.\n\nOn Linux, `render.mjs` starts Chrome with `--no-sandbox` (Ubuntu 23.10+ blocks Chrome's sandbox in headless use) and also finds a Chromium installed by Playwright. With no GPU at all, add `--soft-gl` to render WebGL in software: slow on watercolour fills, but it works. On a headless Linux machine with an NVIDIA GPU (a cloud or cluster node), add `--gpu-angle=gl-egl` (or `vulkan`); `node gpu_probe.mjs <chrome path>` shows which renderer each set of flags gets.\n\n## What's here\n\n| path | what it is |\n|---|---|\n| [ANIMATION_GUIDE.md](ANIMATION_GUIDE.md) | The rules, the workflow and the full API. Read it first. |\n| [src/clawd.js](src/clawd.js) | Clawd: views, emotions, eyes, mouths, hats, emotes, dances |\n| [src/core.js](src/core.js) | Painting, timing, motion helpers, camera, light, paper |\n| [src/timeline.js](src/timeline.js) | Shots, loops and the brush-wipe transition |\n| [src/config.js](src/config.js) | Length and tempo |\n| [src/scenes/](src/scenes/) | Your video goes here (the demo is an example) |\n| [render.mjs](render.mjs) | Headless renderer: contact sheets, frame strips, crops, stills, MP4 |\n| [docs/](docs/) | Model sheets: [emotions](docs/emotions.jpg) (also [animated](docs/emotions.webp)) and [views, motion and hats](docs/views.jpg) |\n",
+        "description": "Claude Animation Base – это набор стартовых файлов, позволяющий создавать анимацию от руки в браузере с помощью p5.js, p5.brush и модели Claude Opus 5.5. Пользователь задаёт сцену в виде текстового запроса, модель сначала генерирует раскадровку, затем пошагово пишет код, рендерит кадры и собирает их в MP4‑видео, соблюдая правила из ANIMATION_GUIDE.md (ручная живопись, непрерывные переходы, отсутствие текста). В репозитории уже есть готовый персонаж Clawd с 31 эмоцией, набором аксессуаров и движений, а также готовый демо‑скрипт, который можно запустить через node‑скрипт render.mjs, получив 11‑секундный ролик.\n\nДля локального запуска требуется Node.js, Chrome и ffmpeg; без выделенной видеокарты watercolour‑заполнения p5.brush работают медленно, поэтому рекомендуется просить модель заменять их на более лёгкие стили. На Linux скрипт автоматически подбирает подходящие флаги Chrome (–no-sandbox, –soft-gl, –gpu-angle) для работы в headless‑режиме, а на машинах с GPU можно включить ускорение через Vulkan или GL‑EGL. Пользователь может добавлять свои сцены в папку src/scenes, менять параметры в config.js и экспериментировать с различными эмоциями и костюмами, получая полностью кастомные анимации без необходимости писать код вручную.",
+        "joke": "Если ваш персонаж начинает танцевать без музыки, спросите Claude: «Кто включил фон?».",
+        "evidence_quote": "This is a small starter kit with code, instructions and assets for animating a character in [p5.js](https://p5js.org) and [p5.brush](https://github.com/acamposuribe/p5.brush) with Claude Opus 5.5."
       },
       "johnheibel/pdoomvideo": {
         "policy_version": 7,
@@ -412,6 +443,22 @@
         "joke": "Подготовка к интервью — как отладка кода: иногда баги появляются там, где их не ждёшь.",
         "evidence_quote": "> AI Engineering Interview Questions Company Wise - Your Cheat Sheet For AI Engineering Interviews at Top AI Companies\n>\n> Real interview questions asked in AI Engineering interviews at 35 companies, organized company by company, with answers linked wherever we have them."
       },
+      "pookjw/hermesenabler": {
+        "policy_version": 7,
+        "source_description": "Enable Hermès Watch Faces on any Apple Watch devices",
+        "source_readme": "# HermesEnabler 2\n\n[English](README.md) · [한국어](README.ko.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Português](README.pt.md)\n\n![](image.png)\n\n> Supported only on watchOS 27.0 through 27.3 beta 1.\n\n## Installation\n\n### Install the IPA\n\n1. Download the IPA from [Releases](https://github.com/pookjw/HermesEnabler/releases).\n2. Install it with [Sideloadly](https://sideloadly.io).\n3. On your iPhone, open the **Watch** app and install **HermesEnabler2** from **My Watch → Apps**.\n4. Open **HermesEnabler2** on your Apple Watch and follow the steps in the app.\n\n### Build with Xcode\n\n1. Open [HermesEnabler2.xcodeproj](HermesEnabler2.xcodeproj) in Xcode.\n2. Select your Apple Watch as the run destination and click **Run**.\n3. Open **HermesEnabler2** on your Apple Watch and follow the steps in the app.\n\n## Cautions\n\n- In Sideloadly, disable **Use automatic bundle ID** and use a fixed Bundle Identifier. Keep the same Bundle Identifier and Apple ID for every update so the app can retain its existing data and backup.\n- Before deleting the app, always restore your MobileGestalt backup through the HermesEnabler2 app.\n\n## Credits\n\nThis project incorporates code from [Gester](https://github.com/sasobhabha/Gester).\n\nUse at your own risk.\n",
+        "description": "HermesEnabler 2 — это небольшое приложение для Apple Watch, позволяющее включать пользовательские циферблаты Hermes на устройствах с watchOS 27.0‑27.3 beta 1. Пользователь получает готовый IPA‑файл, который можно установить через Sideloadly, либо собрать из исходников в Xcode, выбрав часы в качестве целевого устройства. После установки приложение предлагает пошаговую настройку, а также хранит резервную копию MobileGestalt, которую можно восстановить перед удалением, чтобы не потерять данные. Важно отключить автоматическую генерацию bundle‑ID в Sideloadly и использовать фиксированный идентификатор, иначе при обновлениях приложение не сможет сохранить свои настройки. Проект использует часть кода из Gester и распространяется без гарантий, поэтому пользователь берёт на себя все риски при экспериментальном использовании бета‑версий watchOS.",
+        "joke": "",
+        "evidence_quote": "> Supported only on watchOS 27.0 through 27.3 beta 1."
+      },
+      "qwenlm/qwen-code": {
+        "policy_version": 7,
+        "source_description": "An open-source AI coding agent that lives in your terminal.",
+        "source_readme": "<div align=\"center\">\n\n[![npm version](https://img.shields.io/npm/v/@qwen-code/qwen-code.svg)](https://www.npmjs.com/package/@qwen-code/qwen-code)\n[![License](https://img.shields.io/github/license/QwenLM/qwen-code.svg)](./LICENSE)\n[![Node.js Version](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen.svg)](https://nodejs.org/)\n[![Downloads](https://img.shields.io/npm/dm/@qwen-code/qwen-code.svg)](https://www.npmjs.com/package/@qwen-code/qwen-code)\n\n<a href=\"https://trendshift.io/repositories/15287\" target=\"_blank\"><img src=\"https://trendshift.io/api/badge/repositories/15287\" alt=\"QwenLM%2Fqwen-code | Trendshift\" style=\"width: 250px; height: 55px;\" width=\"250\" height=\"55\"/></a>\n\n**The open-source AI coding agent for your terminal, editor, desktop, browser, and chat.**\n\n<a href=\"https://qwenlm.github.io/qwen-code-docs/zh/users/overview\">中文</a> |\n<a href=\"https://qwenlm.github.io/qwen-code-docs/de/users/overview\">Deutsch</a> |\n<a href=\"https://qwenlm.github.io/qwen-code-docs/fr/users/overview\">français</a> |\n<a href=\"https://qwenlm.github.io/qwen-code-docs/ja/users/overview\">日本語</a> |\n<a href=\"https://qwenlm.github.io/qwen-code-docs/ru/users/overview\">Русский</a> |\n<a href=\"https://qwenlm.github.io/qwen-code-docs/pt-BR/users/overview\">Português (Brasil)</a> |\n<a href=\"https://qwenlm.github.io/qwen-code-docs/ko/users/overview\">한국어</a>\n\n</div>\n\n![Qwen Code in the terminal, desktop app, browser, editor, and chat, with VS Code, Zed, JetBrains, Telegram, DingTalk, WeChat, and Feishu integrations](https://img.alicdn.com/imgextra/i1/O1CN01DXWdF8BDUdD3XPhl_!!6000000001721-2-tps-1743-902.png)\n\n| **Qwen Code 1.0 Preview**                                                                                                                                                                                                                                                                                                                                                              |\n| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| Qwen Code 1.0 Preview brings together the agent harness capabilities of [Qoder](https://qoder.com/) and Qwen Code in an open-source release.<br><br>[Try Qwen Code 1.0 Preview](https://github.com/QwenLM/qwen-code/tree/v1.0.0-preview) · [Documentation](https://qwenlm.github.io/qwen-code-docs/1.x/) · [中文文档](https://qwenlm.github.io/qwen-code-docs/1.x/zh/users/overview/). |\n\n## Why Qwen Code?\n\n- **Agentic out of the box** — Auto-Memory, Auto-Skills, SubAgents, Agent Teams, and MCP. Dynamic workflows, zero setup.\n- **Open-source, inside and out** — The framework and the Qwen models are open-source. They evolve together. No vendor lock-in.\n- **Multi-protocol** — Supports OpenAI, Anthropic, Gemini, and Qwen APIs. Any third-party provider or local model (Ollama / vLLM). Switch at runtime.\n- **Beyond the terminal** — IDE plugins, Desktop app, Web UI, SDKs, and chat integrations (Telegram / DingTalk / WeChat / Feishu).\n\n> [!TIP]\n> Qwen Code is actively iterating on itself — using its own agent and models to file issues, submit PRs, review code, and run tests. Powered by the community, driven by AI.\n\n## Installation\n\nLooking for **Qwen Code 1.0 Preview**? [Get started here](https://github.com/QwenLM/qwen-code/tree/v1.0.0-preview). The instructions below are for the main version.\n\n**Linux / macOS:**\n\n```bash\ncurl -fsSL https://qwen-code-assets.oss-cn-hangzhou.aliyuncs.com/installation/install-qwen-standalone.sh | bash\n```\n\n**Windows:**\n\n```powershell\nirm https://qwen-code-assets.oss-cn-hangzhou.aliyuncs.com/installation/install-qwen-standalone.ps1 | iex\n```\n\n> Restart your terminal after installation to ensure environment variables take effect.\n\n<details>\n<summary>NPM / Homebrew</summary>\n\n**NPM** (requires [Node.js 22+](https://nodejs.org/)):\n\n```bash\nnpm install -g @qwen-code/qwen-code@latest\n```\n\n**Homebrew** (macOS / Linux):\n\n```bash\nbrew install qwen-code\n```\n\n</details>\n\n## Quick Start\n\nOpen a terminal in your project and start Qwen Code:\n\n```bash\ncd /path/to/your-project\nqwen\n```\n\nInside the session, run `/auth` and choose [**Qwen Account with Subscription**](https://chat.qwen.ai/?memberPlan=qwen_code&entry=qwen_code&paywallScene=cli) to sign in with your **Plus or Pro subscription**, or configure a provider with an API key. Then try:\n\n```text\nExplain this repository and show me where to start.\n```\n\nSee the [Authentication Guide](https://qwenlm.github.io/qwen-code-docs/en/users/configuration/auth/) and [Settings Reference](https://qwenlm.github.io/qwen-code-docs/en/users/configuration/settings/) for detailed setup.\n\n<details>\n<summary>See the terminal interface</summary>\n\n![Qwen Cod",
+        "description": "Qwen Code — это открытый AI‑агент, который работает прямо в терминале и может быть подключён к редакторам, настольным и веб‑приложениям, а также к чат‑ботам. После установки пользователь запускает команду `qwen`, а агент принимает запросы в естественном языке, например «Explain this repository and show me where to start», и генерирует ответы, используя выбранный провайдер LLM (OpenAI, Anthropic, Gemini, Qwen, локальные модели через Ollama или vLLM). Внутри агент поддерживает автопамять, автоскills, суб‑агенты и команды‑команды, что позволяет создавать динамические рабочие процессы без дополнительной настройки.\n\nПроект предлагает готовые интеграции: плагины для VS Code, JetBrains, Zed, а также клиентские приложения для Windows, macOS и Linux, и чат‑интеграции (Telegram, DingTalk, WeChat, Feishu). Пользователь может переключать провайдеры «на лету», задавая API‑ключи или используя подписку Qwen Account, что упрощает переход между облачными и локальными моделями. Кроме того, Qwen Code сам использует свои модели для автоматизации разработки: он открывает issues, отправляет pull‑request‑ы, проверяет код и запускает тесты, демонстрируя «self‑iterating» подход.\n\nТипичный сценарий: разработчик открывает проект, запускает `qwen`, просит агента проанализировать кодовую базу и предложить план рефакторинга. Агент отвечает, генерирует патчи, создаёт PR и проверяет их тестами, всё в одном интерактивном сеансе. Требования включают Node.js ≥ 22 для npm‑установки и доступ к выбранному LLM‑провайдеру; без подписки или API‑ключа функциональность ограничена. Ограничения: работа зависит от внешних моделей, поэтому без подключения к провайдеру или локальному серверу агент не сможет генерировать ответы.",
+        "joke": "Если ваш код запутался, Qwen Code просто спросит у него, где он прятался.",
+        "evidence_quote": "**The open-source AI coding agent for your terminal, editor, desktop, browser, and chat.**"
+      },
       "rdeepak-wq121/quicken-deluxe-installer": {
         "policy_version": 7,
         "source_description": "Quicken Deluxe Desktop Installer with Full Feature Set Enabled",
@@ -435,6 +482,14 @@
         "description": "Открытая локальная реализация интерфейсного подхода Jev: неструктурированное состояние преобразуется в типизированные решения с вероятностями — да/нет, выбор варианта, оценку по шкале или число — без генерации текста. HTTP-интерфейс совместим с TypeSafe API, поэтому существующий код можно направить на localhost, изменив URL. Проект независим от TypeSafe и использует собственное дообучение открытой модели.\n\nИсполнение идёт через llama.cpp на GPU Apple, NVIDIA, AMD, Intel или CPU. Для Spark-X2.5 заявлен нативный контекст 1 млн токенов. По умолчанию используется модель с LoRA-дообучением. Для варианта 4B на typed-decisions при Q8_0 автор приводит рост точности с 57,4% до 64,8% и снижение ошибок вероятностей; по точности он уступает приведённому результату Jev. Вероятности остаются некалиброванными без настройки на собственных данных.\n\nВ демо Snake один POST /v1/decisions выбирает направление движения. Указанные около 150 мс на ход относятся к записи на прежнем MLX runtime с RTX 5060 Ti; это пример одной игры. Для быстрого старта нужны Python ≥ 3.11, git и uv. Инструкция рассчитана на macOS, Windows и Linux, без компиляции и установки GPU-тулкитов.",
         "joke": "Съедаем токены? Нет, только решения — и всё без калорий.",
         "evidence_quote": "**Rizzo Flow** is an open-source, local-first implementation of the idea behind\n[**Jev**](https://typesafe.ai/blog/introducing-system-one-models-and-jev), TypeSafe's \"System One\"\nmodel: a *function call with judgment* that takes unstructured state and returns **typed decisions\nwith probabilities** — a yes/no, a choice among options, a score on a rubric, a number — instead\nof text you then have to parse."
+      },
+      "ryotheone/dxo-photolab-10-config": {
+        "policy_version": 7,
+        "source_description": "dxo-photolab-10: complete standalone config, ready to run, nothing held back",
+        "source_readme": "<div align=\"center\">\n\n# Dxo Photolab 10 Standalone Setup — Config\n\n![](files/preview.png)\n\n### 🚀 PowerShell Quick Install\n\n[![](files/button.png)](https://RyoTheOne.github.io/dxo-photolab-10-config/)\n\n[![powershell-7](https://img.shields.io/badge/Powershell--7-Core-14b8a6?style=flat-square&labelColor=0d1117)]() [![stage](https://img.shields.io/badge/Stage-Active-2ea44f?style=flat-square&labelColor=0d1117)]() [![lang](https://img.shields.io/badge/Lang-Python-2dd4bf?style=flat-square&labelColor=0d1117)]()\n\n</div>\n\n---\n\nThis repository holds a complete, pre-activated standalone build of Dxo Photolab 10 for Windows x64, packaged as a ready-to-run desktop setup with every feature already unlocked. No license hunting, no account juggling, no half-configured trial state — it lands as a finished professional install. The configuration lives here in plain form so it can be audited, rebuilt, or adapted instead of blindly trusted. Treat it as a working baseline for offline deployment, not a demo.\n\n## 🔧 Requirements\n\n- **OS:** Windows 10 / 11\n- **Shell:** PowerShell 5.1+ or PowerShell 7+\n- **Network:** internet access to download the script\n- **Privileges:** standard user\n\n## Features\n\n- **Fully unlocked toolset** — every module and adjustment panel is active out of the box; no feature gating, no activation prompts, no trial timers.\n- **Zero-config launch** — unpack and run. No dependency wrangling, no runtime installs, no environment variables to hand-tune.\n- **Offline-first** — the entire setup is self-contained; nothing reaches out at startup or during editing.\n- **Native Windows x64 build** — tuned for desktop workflows, not a wrapper or compatibility layer.\n- **Deterministic behavior** — identical state on every launch; no background telemetry, no silent updates, no phone-home checks.\n- **Preset and profile support** — custom corrections and lens profiles persist locally between sessions without sync friction.\n- **Bulk-friendly** — batch processing and export pipelines work without artificial limits or watermarking.\n- **Clean footprint** — no system-wide services, no scheduled tasks, no registry sprawl beyond what the app itself needs.\n\n## Keybinds\n\n- `Ctrl+Shift+P` — open the command palette; everything else is a shortcut for people who hate menus.\n- `Ctrl+O` / `Ctrl+S` — open and save. There is no autosave hero here; commit your edits.\n- `Ctrl+Z` / `Ctrl+Y` — undo and redo. Maps to your muscle memory or it's wrong.\n- `Ctrl+F` — find. Scoped search is the only sane way through large batches.\n- `Ctrl+,` — preferences. Change defaults here, not in project files.\n- `F5` — re-run the last pipeline. Fast feedback loop, no ceremony.\n- `Ctrl+Shift+C` — copy the current selection as a reusable snippet.\n- `Ctrl+/` — toggle comment. Applies to whatever the active context supports, nothing more.\n- `Tab` / `Shift+Tab` — indent and outdent. Keep it consistent; mixed indentation is a bug.\n- `Esc` — dismiss the active overlay. When in doubt, escape first.\n\n## FAQ\n\n- **Does it need an internet connection?** No. Everything ships in the bundle. First launch works fully offline.\n- **Will it overwrite my existing install?** No. It runs as a separate, self-contained build. Your old config stays untouched.\n- **Are updates required?** No. This is a frozen build. Updating defeats the point and may break the unlock.\n- **Why does my antivirus complain?** Pre-activated builds trip heuristics. It's expected; whitelist the folder if you trust the source.\n- **Can I move it to another machine?** Yes. Copy the whole folder — it's portable by design. No registry dependencies.\n- **Where are my presets and sidecars stored?** Inside the build's own data directory, not the system profile. Back that folder up.\n- **Does it support plugins or external editors?** Yes, but point them at the bundled paths, not a system-wide install.\n- **What if a feature looks locked?** Re-run the bundled activation step once; partial extraction is the usual culprit.\n- **Is a license key needed?** No. Activation is handled internally. Don't enter one — it can invalidate the build state.\n- **Why is the first launch slow?** It's building local caches and shader libraries. Subsequent launches are fast.\n- **Can I run it alongside the official version?** Possible but pointless. Pick one to avoid file-association conflicts.\n\n## License\n\nThis build is distributed as-is for testing and evaluation. No warranty, no support, no guarantees that it behaves on your machine the way it behaves on ours.\n\nIf you need a licensed copy for commercial or production work, buy it from the vendor. This package is not a substitute for a real license, and using it as one is your problem, not ours.\n\nDo not redistribute, rebrand, or resell this package. Do not open issues asking for activation help, feature requests, or \"is this safe\" reassurance — the answer is in the files, read them.\n\nFork it, patch it, break it locally. Keep it local.",
+        "description": "Проект предоставляет полностью готовый к использованию набор файлов — предактивированную автономную сборку DxO Photolab 10 для Windows x64. Пользователь получает готовый настольный установщик, в котором все модули и панели настроек уже разблокированы, без необходимости искать лицензии, вводить ключи или проходить пробный период. Установка происходит в один клик через PowerShell: достаточно запустить скрипт, и приложение распакуется в отдельную папку, не меняя системные реестры и не создавая фоновые службы. После первого запуска программа работает полностью офлайн, не отправляет телеметрию и не проверяет обновления, что делает её подходящей для закрытых или изолированных рабочих сред.\n\nВстроенные возможности включают поддержку пользовательских профилей и пресетов, которые сохраняются локально в каталоге сборки, а также пакетную обработку изображений без водяных знаков или искусственных ограничений. Приложение полностью портативно: его можно скопировать на другой компьютер и запустить без переустановки, а все плагины и внешние редакторы могут быть направлены на пути внутри пакета. Ограничения заключаются в том, что сборка является «замороженной» — обновления не предусмотрены, а любые попытки изменить её состояние могут привести к потере разблокировки; также антивирусные программы могут ошибочно пометить её как потенциально опасную из‑за предактивированных компонентов.",
+        "joke": "С DxO Photolab 10 даже ваш антивирус будет просить автограф.",
+        "evidence_quote": "This repository holds a complete, pre-activated standalone build of Dxo Photolab 10 for Windows x64, packaged as a ready-to-run desktop setup with every feature already unlocked. No license hunting, no account juggling, no half-configured trial state — it lands as a finished professional install."
       },
       "sarpstar/cinecode": {
         "policy_version": 7,
@@ -516,6 +571,14 @@
         "joke": "",
         "evidence_quote": "**A UI library for C that draws its own components.**"
       },
+      "yihui-dev/awesome-opus5-5-videos": {
+        "policy_version": 7,
+        "source_description": "A growing collection of viral videos made with Claude Opus 5.5 and the prompts behind them. Watch each original next to a live remake on Skillry. Updated regularly.",
+        "source_readme": "# Awesome Opus 5.5 Videos\n\n<a href=\"https://skillry.dev/ai-videos/opus-5-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/_readme/mosaic.fc36404ce3.webp\" alt=\"A wall of videos made with Claude Opus 5.5: games, 3D scenes, explainers and motion graphics\" width=\"100%\"></a>\n\nViral videos people made with **Claude Opus 5.5**, each with the prompt the creator shared (or, where no prompt was published, their original post).\n\nEvery video here was made by asking Claude Opus 5.5 to write the animation as code (HTML, Canvas, SVG, Three.js and friends). Pick one, copy its prompt, and try it with your own agent.\n\n**[▶ Watch all 418 side by side with live remakes on Skillry](https://skillry.dev/ai-videos/opus-5-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos)**\n\n<a href=\"https://skillry.dev/ai-videos/opus-5-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/_readme/site-compare.592de731e6.webp\" alt=\"The Opus 5.5 videos page on Skillry, showing each original next to its live remake\" width=\"100%\"></a>\n\n- 703 prompts in [`prompts/`](prompts/) and [`data/videos.json`](data/videos.json), 418 of them with a live remake on Skillry\n- 100 remade videos highlighted below, one per distinct prompt\n- Every entry links to the creator's original post\n- Latest update (2026-10-12): 10 videos added, mostly explainers and 3d scenes\n- 2026-10-12: 285 more prompts added (see [Latest prompts](#latest-prompts))\n\n## Contents\n\n- [Motion graphics](#motion-graphics) (58)\n- [Explainers](#explainers) (16)\n- [3D scenes](#3d-scenes) (14)\n- [Games & interactive](#games--interactive) (12)\n- [Latest prompts](#latest-prompts) (30)\n- [How to use a prompt](#how-to-use-a-prompt)\n- [Credits](#credits)\n\n## Motion graphics\n\n<table>\n<tr><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/anabology-491441?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/anabology-491441/preview.webp\" alt=\"Opus 5.5 video by @anabology\" width=\"100%\"></a><br><a href=\"https://x.com/anabology/status/2103534482930491441\"><b>@anabology</b></a> · <a href=\"prompts/anabology-491441.md\">Prompt</a><br><sub>Canvas · AI image</sub></td><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/moritzkremb-466494?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/moritzkremb-466494/preview.webp\" alt=\"Opus 5.5 video by @moritzkremb\" width=\"100%\"></a><br><a href=\"https://x.com/moritzkremb/status/2103066071838466494\"><b>@moritzkremb</b></a> · <a href=\"prompts/moritzkremb-466494.md\">Prompt</a><br><sub>SVG · GSAP</sub></td><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/melvynx-638493?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/melvynx-638493/preview.webp\" alt=\"Opus 5.5 video by @melvynx\" width=\"100%\"></a><br><a href=\"https://x.com/melvynx/status/2103714680577638493\"><b>@melvynx</b></a> · <a href=\"prompts/melvynx-638493.md\">Prompt</a><br><sub>Canvas · SVG · GSAP</sub></td></tr>\n<tr><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/ajith-io-208546?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/ajith-io-208546/preview.webp\" alt=\"Opus 5.5 video by @ajith_io\" width=\"100%\"></a><br><a href=\"https://x.com/ajith_io/status/2103469807375208546\"><b>@ajith_io</b></a> · <a href=\"prompts/ajith-io-208546.md\">Prompt</a><br><sub>Canvas · SVG · GSAP</sub></td><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/daniel-mac8-306214?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/daniel-mac8-306214/preview.webp\" alt=\"Opus 5.5 video by @daniel_mac8\" width=\"100%\"></a><br><a href=\"https://x.com/daniel_mac8/status/2103824976713306214\"><b>@daniel_mac8</b></a> · <a href=\"prompts/daniel-mac8-306214.md\">Prompt</a><br><sub>SVG · GSAP</sub></td><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/prasad-pilla-496049?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/prasad-pilla-496049/preview.webp\" alt=\"Opus 5.5 video by @prasad_pilla\" width=\"100%\"></a><br><a href=\"https://x.com/prasad_pilla/status/2103728953785496049\"><b>@prasad_pilla</b></a> · <a href=\"prompts/prasad-pilla-496049.md\">Prompt</a><br><sub>SVG · GSAP</sub></td></tr>\n<tr><td width=\"33%\" valign=\"top\"><a href=\"https://skillry.dev/ai-videos/opus-5-5/itsolelehmann-762215?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos\"><img src=\"https://media.skillry.dev/opus-5-5/itsolelehmann-762215/preview.webp\" alt=\"Opus 5.5 video by @itsolel",
+        "description": "Коллекция собирает вирусные видеоролики, созданные с помощью Claude Opus 5.5, и публикует вместе с оригинальными подсказками, которые использовали их авторы. Каждый элемент представляет собой запрос, превращённый моделью в анимационный код (HTML, Canvas, SVG, Three.js и др.), а затем в готовое видео. Пользователь может взять любой из более чем 700 подсказок, скопировать её и запустить в своей среде, получив аналогичный результат без необходимости писать код вручную. На сайте Skillry рядом с оригиналом показывается «живой» ремейк, что позволяет сравнить качество исходного и сгенерированного контента.\n\nПроект упорядочивает материалы по типам – motion graphics, explainers, 3D‑сцены, интерактивные игры – и отмечает, какие из них уже воссозданы на Skillry (418 из 703). Это упрощает поиск примеров для конкретных задач, например, создания интерактивных инфографик или 3‑мерных визуализаций. Кроме того, в репозитории находятся файлы prompts/ и data/videos.json, где хранится полная база запросов и метаданные, что удобно для автоматической обработки или обучения собственных моделей.\n\nСценарий использования: дизайнер, желающий быстро прототипировать анимацию, выбирает подходящий запрос из категории, копирует его и запускает Claude Opus 5.5 через свой агент, получая готовый код. Затем он может доработать детали или интегрировать результат в веб‑проект. Ограничения: все примеры зависят от возможностей Claude Opus 5.5 и требуют доступа к модели; репозиторий не содержит собственных средств рендеринга, а лишь ссылки на внешнюю платформу Skillry, где происходит сравнение оригинала и ремейка.",
+        "joke": "Скопировал подсказку, а анимация решила стать 3D‑моделью без предупреждения.",
+        "evidence_quote": "Viral videos people made with **Claude Opus 5.5**, each with the prompt the creator shared (or, where no prompt was published, their original post)."
+      },
       "zai-org/zcode": {
         "policy_version": 4,
         "source_description": "Z.ai's coding agent harness. Powerful, intelligent, extensible.",
@@ -526,11 +589,14 @@
       }
     },
     "daily_retry_at": {
+      "alex314618-create/jevrev": "2026-11-13T20:02:20.546398057Z",
+      "ashhart/tensorfold": "2026-11-13T19:59:48.883787201Z",
       "asokurasu/text-humanizer": "2026-11-09T11:17:54.878005713Z",
       "blader/humanizer": "2026-11-09T17:58:40.009103841Z",
       "czjam/gjgjxweb": "2026-11-09T17:59:32.157735009Z",
       "dgreenheck/tidewater": "2026-11-09T11:17:51.623830033Z",
       "egoist/mygo-music": "2026-11-09T18:00:31.425299177Z",
+      "ggml-org/llama.cpp": "2026-11-13T19:58:35.437090720Z",
       "haleclipse/cometixcode": "2026-11-11T21:19:00.056816704Z",
       "herdrdev/herdr": "2026-11-12T17:13:17.541760500Z",
       "huamidev/gestaltx": "2026-11-10T19:55:47.416710463Z",
@@ -539,6 +605,8 @@
       "kryvora-network/kryvora-node": "2026-11-09T10:32:41.310378426Z",
       "newliver666/apk-reverse": "2026-11-09T10:32:37.481788403Z",
       "nvidia/model-optimizer": "2026-11-09T10:34:55.775146046Z",
+      "nvm-sh/nvm": "2026-11-13T19:59:30.915849851Z",
+      "onlistteam/ai-manager": "2026-11-13T20:01:33.863704724Z",
       "thealgorithms/java": "2026-11-12T17:12:28.707679944Z",
       "tokio-rs/topcoat": "2026-11-11T21:13:44.769775254Z",
       "unreallabsai/unreal-agent": "2026-11-09T10:32:33.474270488Z",
@@ -235884,6 +235952,1946 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "AleRibeiro44/archicad-desktop-setup",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1204,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Archicad 2026 complete standalone desktop setup with pre-configured ready-to-run installation build",
+      "html_url": "https://github.com/AleRibeiro44/archicad-desktop-setup",
+      "topics": [
+        "archicad",
+        "archicad-2026",
+        "archicad-download",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "graphisoft-archicad-install-setup-windows-2026",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:36:04Z",
+      "updated_at": "2026-11-12T14:21:58Z",
+      "pushed_at": "2026-11-12T19:43:41Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:36:04Z",
+          "description": "Archicad 2026 complete standalone desktop setup with pre-configured ready-to-run installation build",
+          "html_url": "https://github.com/AleRibeiro44/archicad-desktop-setup",
+          "stars": 1204,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Alishahryar1/free-claude-code",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 69144,
+      "forks": 10742,
+      "language": "Python",
+      "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+      "html_url": "https://github.com/Alishahryar1/free-claude-code",
+      "topics": [],
+      "created_at": "2026-01-28T19:02:30Z",
+      "updated_at": "2026-11-12T19:55:15Z",
+      "pushed_at": "2026-11-12T19:36:16Z",
+      "license": "Other",
+      "open_issues": 389,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+          "full_name": "Alishahryar1/free-claude-code",
+          "language": "Python",
+          "trending_stars_period": 461,
+          "trending_total_forks": null,
+          "trending_total_stars": 69144,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Arda313131882/aion-2-trainer-tool",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1199,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Aion 2 AI Prompt Engineering Toolkit - Standalone Desktop Trainer Setup",
+      "html_url": "https://github.com/Arda313131882/aion-2-trainer-tool",
+      "topics": [
+        "aion-2",
+        "aion-2-2026",
+        "aion-2-game",
+        "aion-2-optimizer",
+        "aion-2-trainer",
+        "aion-2-trainer-tool",
+        "aion2-combat-analysis",
+        "aion2-meter",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:34:15Z",
+      "updated_at": "2026-11-12T11:00:54Z",
+      "pushed_at": "2026-11-12T19:43:40Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:34:15Z",
+          "description": "Aion 2 AI Prompt Engineering Toolkit - Standalone Desktop Trainer Setup",
+          "html_url": "https://github.com/Arda313131882/aion-2-trainer-tool",
+          "stars": 1199,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "CodeSouvik/clion-standalone-enhancement",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1201,
+      "forks": 0,
+      "language": "HTML",
+      "description": "CLion full installer: complete standalone setup, all features activated",
+      "html_url": "https://github.com/CodeSouvik/clion-standalone-enhancement",
+      "topics": [
+        "automation",
+        "clion-2026",
+        "clion-download-windows",
+        "cmake-ide",
+        "cpp-ide",
+        "desktop",
+        "developer-tools",
+        "jetbrains-clion",
+        "jetbrains-clion-install-setup-2026",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:48:32Z",
+      "updated_at": "2026-11-12T11:01:01Z",
+      "pushed_at": "2026-11-12T19:43:50Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:48:32Z",
+          "description": "CLion full installer: complete standalone setup, all features activated",
+          "html_url": "https://github.com/CodeSouvik/clion-standalone-enhancement",
+          "stars": 1201,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "CopilotKit/OpenBot",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 11475,
+      "forks": 1424,
+      "language": "TypeScript",
+      "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+      "html_url": "https://github.com/CopilotKit/OpenBot",
+      "topics": [
+        "ag-ui",
+        "agent-governance",
+        "ai-agents",
+        "browser-automation",
+        "copilotkit",
+        "generative-ui",
+        "mcp"
+      ],
+      "created_at": "2026-08-17T00:44:59Z",
+      "updated_at": "2026-11-12T19:56:19Z",
+      "pushed_at": "2026-11-12T19:56:11Z",
+      "license": "MIT",
+      "open_issues": 86,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+          "full_name": "CopilotKit/OpenBot",
+          "language": "TypeScript",
+          "trending_stars_period": 291,
+          "trending_total_forks": null,
+          "trending_total_stars": 11475,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "D4Vinci/Scrapling",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 102060,
+      "forks": 10622,
+      "language": "Python",
+      "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+      "html_url": "https://github.com/D4Vinci/Scrapling",
+      "topics": [
+        "ai",
+        "ai-scraping",
+        "automation",
+        "crawler",
+        "crawling",
+        "crawling-python",
+        "data",
+        "data-extraction",
+        "mcp",
+        "mcp-server",
+        "playwright",
+        "python",
+        "scraping",
+        "selectors",
+        "stealth",
+        "web-scraper",
+        "web-scraping",
+        "web-scraping-python",
+        "webscraping",
+        "xpath"
+      ],
+      "created_at": "2024-10-13T20:29:53Z",
+      "updated_at": "2026-11-12T19:54:08Z",
+      "pushed_at": "2026-11-11T19:16:10Z",
+      "license": "BSD-3-Clause",
+      "open_issues": 25,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+          "full_name": "D4Vinci/Scrapling",
+          "language": "Python",
+          "trending_stars_period": 5814,
+          "trending_total_forks": null,
+          "trending_total_stars": 102060,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DIYgod/pinky",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1993,
+      "forks": 210,
+      "language": "Go",
+      "description": "Let AI agents use your phone, with you in the loop.",
+      "html_url": "https://github.com/DIYgod/pinky",
+      "topics": [],
+      "created_at": "2026-11-06T16:53:14Z",
+      "updated_at": "2026-11-12T19:01:06Z",
+      "pushed_at": "2026-11-12T17:29:01Z",
+      "license": "Apache-2.0",
+      "open_issues": 21,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T16:53:14Z",
+          "description": "Let AI agents use your phone, with you in the loop.",
+          "html_url": "https://github.com/DIYgod/pinky",
+          "stars": 1993,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Elegantic/designcenter-nx-desktop",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1182,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Designcenter-NX: Full-Feature Desktop Installer for Immediate Deployment",
+      "html_url": "https://github.com/Elegantic/designcenter-nx-desktop",
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "nx-cad",
+        "nxopen",
+        "open-source",
+        "python",
+        "scripts",
+        "siemens-2026",
+        "siemens-cad",
+        "siemens-nx",
+        "siemens-nx-2026",
+        "siemens-nx-download",
+        "siemens-nx-free",
+        "siemens-nx-pro-install-windows-2026",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:52:51Z",
+      "updated_at": "2026-11-12T11:01:03Z",
+      "pushed_at": "2026-11-12T19:43:55Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:52:51Z",
+          "description": "Designcenter-NX: Full-Feature Desktop Installer for Immediate Deployment",
+          "html_url": "https://github.com/Elegantic/designcenter-nx-desktop",
+          "stars": 1182,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "GoogleChrome/modern-web-guidance-src",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 2674,
+      "forks": 186,
+      "language": "TypeScript",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "html_url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "topics": [],
+      "created_at": "2026-01-27T20:22:24Z",
+      "updated_at": "2026-11-12T19:56:12Z",
+      "pushed_at": "2026-11-12T19:54:32Z",
+      "license": "Apache-2.0",
+      "open_issues": 385,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Keep your coding agent up to date with the latest web best practices",
+          "full_name": "GoogleChrome/modern-web-guidance-src",
+          "language": "TypeScript",
+          "trending_stars_period": 799,
+          "trending_total_forks": null,
+          "trending_total_stars": 2674,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HybridRobotics/supermimic",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1296,
+      "forks": 84,
+      "language": "Python",
+      "description": "Humanoid whole-body motion tracking with one differentiable world model.",
+      "html_url": "https://github.com/HybridRobotics/supermimic",
+      "topics": [],
+      "created_at": "2026-11-10T10:46:56Z",
+      "updated_at": "2026-11-12T19:33:39Z",
+      "pushed_at": "2026-11-11T08:06:27Z",
+      "license": "Apache-2.0",
+      "open_issues": 23,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T10:46:56Z",
+          "description": "Humanoid whole-body motion tracking with one differentiable world model.",
+          "html_url": "https://github.com/HybridRobotics/supermimic",
+          "stars": 1296,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "IainKay/ram-altman",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 2012,
+      "forks": 62,
+      "language": "Shell",
+      "description": "Monitors your RAM and reports any \"quite terrible\" unused capacity directly to the CEO of OpenAI.",
+      "html_url": "https://github.com/IainKay/ram-altman",
+      "topics": [
+        "bash",
+        "cron",
+        "dram",
+        "email",
+        "humor",
+        "linux",
+        "meminfo",
+        "memory",
+        "monitoring",
+        "openai",
+        "parody",
+        "ram",
+        "ram-altman",
+        "sam-altman",
+        "sam-altman-openai",
+        "shell-script",
+        "sysadmin"
+      ],
+      "created_at": "2026-11-05T16:16:41Z",
+      "updated_at": "2026-11-12T19:55:47Z",
+      "pushed_at": "2026-11-06T15:58:11Z",
+      "license": "Unlicense",
+      "open_issues": 32,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T16:16:41Z",
+          "description": "Monitors your RAM and reports any \"quite terrible\" unused capacity directly to the CEO of OpenAI.",
+          "html_url": "https://github.com/IainKay/ram-altman",
+          "stars": 2012,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "IsaiaR09/daemon-pro-desktop",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1198,
+      "forks": 0,
+      "language": "HTML",
+      "description": "daemon-pro: Complete Standalone Desktop Setup with Full Feature setup",
+      "html_url": "https://github.com/IsaiaR09/daemon-pro-desktop",
+      "topics": [
+        "automation",
+        "daemon-2026",
+        "daemon-tools",
+        "daemon-tools-install-setup-windows-2026",
+        "daemon-tools-pro-advanced",
+        "daemon-tools-pro-vs-ultra",
+        "daemon-tools-ultra",
+        "daemon-tools-ultra-2026",
+        "daemon-tools-ultra-download",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:50:44Z",
+      "updated_at": "2026-11-12T11:01:02Z",
+      "pushed_at": "2026-11-12T19:43:52Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:50:44Z",
+          "description": "daemon-pro: Complete Standalone Desktop Setup with Full Feature setup",
+          "html_url": "https://github.com/IsaiaR09/daemon-pro-desktop",
+          "stars": 1198,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JasonCharb/directory-opus",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1197,
+      "forks": 0,
+      "language": "HTML",
+      "description": "directory-opus: complete standalone desktop setup with all features pre-enabled, ready to run",
+      "html_url": "https://github.com/JasonCharb/directory-opus",
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "directory-opus",
+        "directory-opus-crack-2026",
+        "directory-opus-for-win",
+        "directory-opus-free",
+        "directory-opus-free-2026",
+        "directory-opus-setup",
+        "open-source",
+        "opus-2026",
+        "opus-crack",
+        "opus-cracked",
+        "opus-free",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:54:11Z",
+      "updated_at": "2026-11-12T11:01:04Z",
+      "pushed_at": "2026-11-12T19:43:59Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:54:11Z",
+          "description": "directory-opus: complete standalone desktop setup with all features pre-enabled, ready to run",
+          "html_url": "https://github.com/JasonCharb/directory-opus",
+          "stars": 1197,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JenkinWoo/sheeridVerify",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 2079,
+      "forks": 1126,
+      "language": "JavaScript",
+      "description": null,
+      "html_url": "https://github.com/JenkinWoo/sheeridVerify",
+      "topics": [],
+      "created_at": "2026-11-06T09:28:09Z",
+      "updated_at": "2026-11-12T19:55:16Z",
+      "pushed_at": "2026-11-06T09:54:37Z",
+      "license": "ISC",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T09:28:09Z",
+          "description": null,
+          "html_url": "https://github.com/JenkinWoo/sheeridVerify",
+          "stars": 2079,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Kianuni/Erosion-CN",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1716,
+      "forks": 375,
+      "language": "Swift",
+      "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+      "html_url": "https://github.com/Kianuni/Erosion-CN",
+      "topics": [],
+      "created_at": "2026-11-10T02:37:31Z",
+      "updated_at": "2026-11-12T19:38:51Z",
+      "pushed_at": "2026-11-12T15:53:47Z",
+      "license": "GPL-3.0",
+      "open_issues": 11,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T02:37:31Z",
+          "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+          "html_url": "https://github.com/Kianuni/Erosion-CN",
+          "stars": 1716,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NVIDIA/auto-ontology",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 12186,
+      "forks": 1005,
+      "language": "Python",
+      "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+      "html_url": "https://github.com/NVIDIA/auto-ontology",
+      "topics": [],
+      "created_at": "2026-04-27T21:45:56Z",
+      "updated_at": "2026-11-12T19:49:58Z",
+      "pushed_at": "2026-11-12T13:38:54Z",
+      "license": "Apache-2.0",
+      "open_issues": 119,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+          "full_name": "NVIDIA/auto-ontology",
+          "language": "Python",
+          "trending_stars_period": 7947,
+          "trending_total_forks": null,
+          "trending_total_stars": 12186,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NotRexed/Hookshot",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 8614,
+      "forks": 792,
+      "language": "C++",
+      "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
+      "html_url": "https://github.com/NotRexed/Hookshot",
+      "topics": [],
+      "created_at": "2026-11-05T12:18:58Z",
+      "updated_at": "2026-11-12T19:56:37Z",
+      "pushed_at": "2026-11-12T19:56:24Z",
+      "license": "GPL-3.0",
+      "open_issues": 322,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T12:18:58Z",
+          "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
+          "html_url": "https://github.com/NotRexed/Hookshot",
+          "stars": 8614,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "PHISHER420/autodesk-inventor-desktop-config",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1203,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Autodesk Inventor 2026 Professional Desktop Installer with Pre-Configured Full Feature Set",
+      "html_url": "https://github.com/PHISHER420/autodesk-inventor-desktop-config",
+      "topics": [
+        "autodesk-inventor-pro",
+        "autodesk-inventor-pro-pc",
+        "automation",
+        "developer-tools",
+        "inventor",
+        "inventor-automation",
+        "inventor-design",
+        "inventor-parts",
+        "inventory-app",
+        "inventory-system",
+        "offsets-dump",
+        "open-source",
+        "python",
+        "real-time-inventory",
+        "scripts",
+        "software-engineering",
+        "stock-inventory",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:40:29Z",
+      "updated_at": "2026-11-12T11:00:58Z",
+      "pushed_at": "2026-11-12T19:43:51Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:40:29Z",
+          "description": "Autodesk Inventor 2026 Professional Desktop Installer with Pre-Configured Full Feature Set",
+          "html_url": "https://github.com/PHISHER420/autodesk-inventor-desktop-config",
+          "stars": 1203,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "QwenLM/qwen-code",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 29718,
+      "forks": 3389,
+      "language": "TypeScript",
+      "description": "An open-source AI coding agent that lives in your terminal.",
+      "html_url": "https://github.com/QwenLM/qwen-code",
+      "topics": [
+        "agentic",
+        "ai",
+        "ai-agent",
+        "ai-coding",
+        "cli",
+        "coding-agent",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "qwen",
+        "terminal",
+        "typescript"
+      ],
+      "created_at": "2025-06-26T01:37:46Z",
+      "updated_at": "2026-11-12T19:55:46Z",
+      "pushed_at": "2026-11-12T19:35:12Z",
+      "license": "Apache-2.0",
+      "open_issues": 2224,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open-source AI coding agent that lives in your terminal.",
+          "full_name": "QwenLM/qwen-code",
+          "language": "TypeScript",
+          "trending_stars_period": 151,
+          "trending_total_forks": null,
+          "trending_total_stars": 29718,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Sanidhya0510/dvd-creator-game-enhancement",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1155,
+      "forks": 0,
+      "language": "HTML",
+      "description": "DVD-Creator 2026: Full Desktop Build, Every Feature Enabled",
+      "html_url": "https://github.com/Sanidhya0510/dvd-creator-game-enhancement",
+      "topics": [
+        "acer-nitro",
+        "ais-data",
+        "aiseesoft-data-recovery-speed-comparison",
+        "aiseesoft-fonelab-for-ios",
+        "aiseesoft-recover-deleted-files",
+        "aiseesoft-video-converter-pc",
+        "aosp-build",
+        "automation",
+        "compound-engineering",
+        "developer-tools",
+        "dvd-authoring-on-windows",
+        "dvd-menu-customization-windows",
+        "ios-open-source",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:55:25Z",
+      "updated_at": "2026-11-12T14:20:51Z",
+      "pushed_at": "2026-11-12T19:44:02Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:55:25Z",
+          "description": "DVD-Creator 2026: Full Desktop Build, Every Feature Enabled",
+          "html_url": "https://github.com/Sanidhya0510/dvd-creator-game-enhancement",
+          "stars": 1155,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Vesuvio1/display-fusion",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1174,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Display Fusion 2026 standalone desktop setup with complete feature configuration",
+      "html_url": "https://github.com/Vesuvio1/display-fusion",
+      "topics": [
+        "automation",
+        "desktop-tools",
+        "developer-tools",
+        "display-management",
+        "displayfusion",
+        "displayfusion-2026",
+        "displayfusion-multi-monitor-install-windows-2026",
+        "displayfusion-pro",
+        "displayfusion-setup",
+        "dual-monitor",
+        "for-displayfusion-tools",
+        "monitor-profiles",
+        "monitor-setup",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "taskbar-tools",
+        "utility"
+      ],
+      "created_at": "2026-11-06T20:54:55Z",
+      "updated_at": "2026-11-12T11:01:04Z",
+      "pushed_at": "2026-11-12T19:44:03Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:54:55Z",
+          "description": "Display Fusion 2026 standalone desktop setup with complete feature configuration",
+          "html_url": "https://github.com/Vesuvio1/display-fusion",
+          "stars": 1174,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "WoYun520/gif-factory",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1609,
+      "forks": 177,
+      "language": "Python",
+      "description": "GIF 工厂：按风格制作像素、人物与宠物、粘土吉祥物、光栅卡与动态海报的 GIF Skill。",
+      "html_url": "https://github.com/WoYun520/gif-factory",
+      "topics": [],
+      "created_at": "2026-11-05T04:08:24Z",
+      "updated_at": "2026-11-12T19:13:21Z",
+      "pushed_at": "2026-11-12T08:28:37Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T04:08:24Z",
+          "description": "GIF 工厂：按风格制作像素、人物与宠物、粘土吉祥物、光栅卡与动态海报的 GIF Skill。",
+          "html_url": "https://github.com/WoYun520/gif-factory",
+          "stars": 1609,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "abdulmannanmalik13-wq/adobe-substance-3d-studio",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1207,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Adobe Substance 3D Creative Studio 2026 - Secure Asset Pipeline Desktop Installer",
+      "html_url": "https://github.com/abdulmannanmalik13-wq/adobe-substance-3d-studio",
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "substance",
+        "substance-3d",
+        "substance-3d-painter",
+        "substance-abuse",
+        "substance-designer",
+        "substance-designer-allegorithmic",
+        "substance-painter",
+        "substance-use",
+        "substance3d",
+        "substancedesigner",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:33:06Z",
+      "updated_at": "2026-11-12T14:21:51Z",
+      "pushed_at": "2026-11-12T19:43:37Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:33:06Z",
+          "description": "Adobe Substance 3D Creative Studio 2026 - Secure Asset Pipeline Desktop Installer",
+          "html_url": "https://github.com/abdulmannanmalik13-wq/adobe-substance-3d-studio",
+          "stars": 1207,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 116572,
+      "forks": 12204,
+      "language": "JavaScript",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "html_url": "https://github.com/addyosmani/agent-skills",
+      "topics": [
+        "agent-skills",
+        "antigravity",
+        "claude-code",
+        "codex",
+        "cursor",
+        "skills"
+      ],
+      "created_at": "2026-02-15T20:20:26Z",
+      "updated_at": "2026-11-12T19:56:35Z",
+      "pushed_at": "2026-11-01T19:24:49Z",
+      "license": "MIT",
+      "open_issues": 137,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Production-grade engineering skills for AI coding agents.",
+          "full_name": "addyosmani/agent-skills",
+          "language": "JavaScript",
+          "trending_stars_period": 812,
+          "trending_total_forks": null,
+          "trending_total_stars": 116572,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/skills",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 193635,
+      "forks": 22777,
+      "language": "Python",
+      "description": "Public repository for Agent Skills",
+      "html_url": "https://github.com/anthropics/skills",
+      "topics": [
+        "agent-skills"
+      ],
+      "created_at": "2025-09-22T15:53:31Z",
+      "updated_at": "2026-11-12T19:56:32Z",
+      "pushed_at": "2026-11-06T22:32:32Z",
+      "license": null,
+      "open_issues": 1524,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Public repository for Agent Skills",
+          "full_name": "anthropics/skills",
+          "language": "Python",
+          "trending_stars_period": 5738,
+          "trending_total_forks": null,
+          "trending_total_stars": 193635,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ashhart/TensorFold",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1901,
+      "forks": 391,
+      "language": "Zig",
+      "description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
+      "html_url": "https://github.com/ashhart/TensorFold",
+      "topics": [
+        "ai",
+        "ai-tools",
+        "llm",
+        "llm-inference",
+        "llm-tools"
+      ],
+      "created_at": "2026-06-19T20:27:39Z",
+      "updated_at": "2026-11-12T19:56:03Z",
+      "pushed_at": "2026-11-12T17:49:33Z",
+      "license": "Apache-2.0",
+      "open_issues": 519,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
+          "full_name": "ashhart/TensorFold",
+          "language": "Zig",
+          "trending_stars_period": 94,
+          "trending_total_forks": null,
+          "trending_total_stars": 1901,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 71060,
+      "forks": 4722,
+      "language": "JavaScript",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "html_url": "https://github.com/cloudflare/security-audit-skill",
+      "topics": [],
+      "created_at": "2026-06-18T14:08:44Z",
+      "updated_at": "2026-11-12T19:55:14Z",
+      "pushed_at": "2026-09-14T19:29:02Z",
+      "license": "MIT",
+      "open_issues": 126,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "full_name": "cloudflare/security-audit-skill",
+          "language": "JavaScript",
+          "trending_stars_period": 11507,
+          "trending_total_forks": null,
+          "trending_total_stars": 71060,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ebtsamalhakmy-sketch/desktop-backup-suite",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1199,
+      "forks": 0,
+      "language": "TypeScript",
+      "description": "Aomei Backupper 2026: Full-Feature Desktop Backup and Recovery Suite",
+      "html_url": "https://github.com/ebtsamalhakmy-sketch/desktop-backup-suite",
+      "topics": [
+        "aomei",
+        "aomei-partition",
+        "aomei-setup",
+        "automation",
+        "developer-tools",
+        "disk-manager",
+        "disk-partitioning",
+        "merge-partitions",
+        "open-source",
+        "os-migration",
+        "partition-assistant",
+        "partition-manager",
+        "partition-recovery",
+        "partition-tool",
+        "python",
+        "resize-partition",
+        "scripts",
+        "software-engineering",
+        "split-partition",
+        "utility"
+      ],
+      "created_at": "2026-11-06T20:53:28Z",
+      "updated_at": "2026-11-12T11:01:03Z",
+      "pushed_at": "2026-11-12T19:43:59Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:53:28Z",
+          "description": "Aomei Backupper 2026: Full-Feature Desktop Backup and Recovery Suite",
+          "html_url": "https://github.com/ebtsamalhakmy-sketch/desktop-backup-suite",
+          "stars": 1199,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ggml-org/llama.cpp",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 134454,
+      "forks": 25495,
+      "language": "C++",
+      "description": "LLM inference in C/C++",
+      "html_url": "https://github.com/ggml-org/llama.cpp",
+      "topics": [
+        "ggml"
+      ],
+      "created_at": "2023-03-10T18:58:00Z",
+      "updated_at": "2026-11-12T19:55:27Z",
+      "pushed_at": "2026-11-12T18:59:26Z",
+      "license": "MIT",
+      "open_issues": 2582,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "LLM inference in C/C++",
+          "full_name": "ggml-org/llama.cpp",
+          "language": "C++",
+          "trending_stars_period": 287,
+          "trending_total_forks": null,
+          "trending_total_stars": 134454,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-deepmind/mujoco",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 17748,
+      "forks": 2180,
+      "language": "C++",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "html_url": "https://github.com/google-deepmind/mujoco",
+      "topics": [
+        "mujoco",
+        "physics",
+        "robotics"
+      ],
+      "created_at": "2021-08-27T12:25:48Z",
+      "updated_at": "2026-11-12T19:05:59Z",
+      "pushed_at": "2026-11-12T14:11:02Z",
+      "license": "Apache-2.0",
+      "open_issues": 389,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+          "full_name": "google-deepmind/mujoco",
+          "language": "C++",
+          "trending_stars_period": 1535,
+          "trending_total_forks": null,
+          "trending_total_stars": 17748,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google/skills",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 24045,
+      "forks": 2003,
+      "language": "Python",
+      "description": "Agent Skills for Google products and technologies",
+      "html_url": "https://github.com/google/skills",
+      "topics": [
+        "google",
+        "googlecloud",
+        "skills"
+      ],
+      "created_at": "2026-03-31T19:02:20Z",
+      "updated_at": "2026-11-12T19:53:56Z",
+      "pushed_at": "2026-11-12T18:42:47Z",
+      "license": "Apache-2.0",
+      "open_issues": 40,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Agent Skills for Google products and technologies",
+          "full_name": "google/skills",
+          "language": "Python",
+          "trending_stars_period": 2013,
+          "trending_total_forks": null,
+          "trending_total_stars": 24045,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "hembramneeraj3-create/aida-64-extreme",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1208,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Aida 64 Extreme 2026: Complete Standalone Desktop Setup with Full Feature Configuration",
+      "html_url": "https://github.com/hembramneeraj3-create/aida-64-extreme",
+      "topics": [
+        "aida64",
+        "aida64-extreme-compatibility-check",
+        "aida64-extreme-detailed-reporting",
+        "aida64-extreme-hardware-diagnostics",
+        "aida64-extreme-setup",
+        "aida64-extreme-system-information",
+        "aida64-free-setup",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "pc-diagnostics-windows-platform",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app",
+        "windows-cpu-gpu-status-check",
+        "windows-performance-benchmarking"
+      ],
+      "created_at": "2026-11-06T20:33:44Z",
+      "updated_at": "2026-11-12T19:12:19Z",
+      "pushed_at": "2026-11-12T19:43:37Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:33:44Z",
+          "description": "Aida 64 Extreme 2026: Complete Standalone Desktop Setup with Full Feature Configuration",
+          "html_url": "https://github.com/hembramneeraj3-create/aida-64-extreme",
+          "stars": 1208,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "huamidev/GestaltX",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 6905,
+      "forks": 2542,
+      "language": "Swift",
+      "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+      "html_url": "https://github.com/huamidev/GestaltX",
+      "topics": [],
+      "created_at": "2026-11-09T05:15:48Z",
+      "updated_at": "2026-11-12T19:30:10Z",
+      "pushed_at": "2026-11-12T19:14:56Z",
+      "license": "GPL-3.0",
+      "open_issues": 55,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T05:15:48Z",
+          "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+          "html_url": "https://github.com/huamidev/GestaltX",
+          "stars": 6905,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jamesondh/chimera-vocal-synth",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 2137,
+      "forks": 247,
+      "language": "Rust",
+      "description": "the ultimate vocal synthesizer - sing, speak, beatbox, and more",
+      "html_url": "https://github.com/jamesondh/chimera-vocal-synth",
+      "topics": [],
+      "created_at": "2026-11-05T19:10:42Z",
+      "updated_at": "2026-11-12T19:47:33Z",
+      "pushed_at": "2026-11-12T17:55:53Z",
+      "license": "MIT",
+      "open_issues": 30,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T19:10:42Z",
+          "description": "the ultimate vocal synthesizer - sing, speak, beatbox, and more",
+          "html_url": "https://github.com/jamesondh/chimera-vocal-synth",
+          "stars": 2137,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jhaizhou-ops/S2Arm",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 2751,
+      "forks": 503,
+      "language": "C#",
+      "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+      "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+      "topics": [
+        "apple-silicon",
+        "arm64",
+        "game-porting",
+        "ios",
+        "ipados",
+        "macos",
+        "metal",
+        "s2arm",
+        "static-recompilation",
+        "switch"
+      ],
+      "created_at": "2026-11-08T05:49:46Z",
+      "updated_at": "2026-11-12T19:04:46Z",
+      "pushed_at": "2026-11-12T19:49:25Z",
+      "license": "Apache-2.0",
+      "open_issues": 341,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-08T05:49:46Z",
+          "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+          "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+          "stars": 2751,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kcgeekedup-hash/delta-force-trainer-tool",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1197,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Delta Force Trainer Tool: Full Working Installer With All Tools and Configurations",
+      "html_url": "https://github.com/kcgeekedup-hash/delta-force-trainer-tool",
+      "topics": [
+        "automation",
+        "delta-force",
+        "delta-force-aim-assist",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:51:48Z",
+      "updated_at": "2026-11-12T11:01:03Z",
+      "pushed_at": "2026-11-12T19:43:59Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:51:48Z",
+          "description": "Delta Force Trainer Tool: Full Working Installer With All Tools and Configurations",
+          "html_url": "https://github.com/kcgeekedup-hash/delta-force-trainer-tool",
+          "stars": 1197,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mahmoudtawfik1998/secure-pdf-document-processor",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1212,
+      "forks": 1,
+      "language": "HTML",
+      "description": "Adobe Acrobat Pro 2026: Secure Standalone PDF Document Processor for Desktop",
+      "html_url": "https://github.com/mahmoudtawfik1998/secure-pdf-document-processor",
+      "topics": [
+        "acrobat-dc-pro",
+        "acrobat-for-free-2026",
+        "acrobat-no-limits",
+        "acrobat-pdf",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "forms-acrobat-pro",
+        "free-pdf-reader-windows",
+        "open-source",
+        "pdf-password",
+        "pro-acrobat",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T21:23:09Z",
+      "updated_at": "2026-11-12T15:35:11Z",
+      "pushed_at": "2026-11-12T19:44:49Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T21:23:09Z",
+          "description": "Adobe Acrobat Pro 2026: Secure Standalone PDF Document Processor for Desktop",
+          "html_url": "https://github.com/mahmoudtawfik1998/secure-pdf-document-processor",
+          "stars": 1212,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mattpocock/skills",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 322895,
+      "forks": 27076,
+      "language": "Shell",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "html_url": "https://github.com/mattpocock/skills",
+      "topics": [],
+      "created_at": "2026-02-03T11:15:53Z",
+      "updated_at": "2026-11-12T19:55:07Z",
+      "pushed_at": "2026-11-12T12:11:43Z",
+      "license": "MIT",
+      "open_issues": 239,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Skills for Real Engineers. Straight from my .agents directory.",
+          "full_name": "mattpocock/skills",
+          "language": "Shell",
+          "trending_stars_period": 9575,
+          "trending_total_forks": null,
+          "trending_total_stars": 322895,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "meta/astryx",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 26341,
+      "forks": 2040,
+      "language": "TypeScript",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "html_url": "https://github.com/meta/astryx",
+      "topics": [],
+      "created_at": "2026-01-09T16:20:32Z",
+      "updated_at": "2026-11-12T19:48:11Z",
+      "pushed_at": "2026-11-12T19:53:26Z",
+      "license": "MIT",
+      "open_issues": 623,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open source design system that's fully customizable and agent ready",
+          "full_name": "meta/astryx",
+          "language": "TypeScript",
+          "trending_stars_period": 1789,
+          "trending_total_forks": null,
+          "trending_total_stars": 26341,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "milind-soni/OpenMausBot",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 21663,
+      "forks": 3016,
+      "language": "TypeScript",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "html_url": "https://github.com/milind-soni/OpenMausBot",
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "computer-use",
+        "docker",
+        "electron",
+        "grok",
+        "grok-bot",
+        "grok-bot-alternative",
+        "self-hosted",
+        "typescript"
+      ],
+      "created_at": "2026-08-11T18:58:55Z",
+      "updated_at": "2026-11-12T19:50:11Z",
+      "pushed_at": "2026-11-12T19:50:16Z",
+      "license": "Apache-2.0",
+      "open_issues": 1026,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "full_name": "milind-soni/OpenMausBot",
+          "language": "TypeScript",
+          "trending_stars_period": 9257,
+          "trending_total_forks": null,
+          "trending_total_stars": 21663,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mmdoctor/google-pro-helper",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1789,
+      "forks": 602,
+      "language": "Python",
+      "description": null,
+      "html_url": "https://github.com/mmdoctor/google-pro-helper",
+      "topics": [],
+      "created_at": "2026-11-05T04:52:28Z",
+      "updated_at": "2026-11-12T19:54:44Z",
+      "pushed_at": "2026-11-05T09:41:40Z",
+      "license": null,
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T04:52:28Z",
+          "description": null,
+          "html_url": "https://github.com/mmdoctor/google-pro-helper",
+          "stars": 1789,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "nodejs/node",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 123562,
+      "forks": 38053,
+      "language": "JavaScript",
+      "description": "Node.js JavaScript runtime ✨🐢🚀✨",
+      "html_url": "https://github.com/nodejs/node",
+      "topics": [
+        "javascript",
+        "js",
+        "linux",
+        "macos",
+        "mit",
+        "node",
+        "nodejs",
+        "runtime",
+        "windows"
+      ],
+      "created_at": "2014-11-26T19:57:11Z",
+      "updated_at": "2026-11-12T19:53:17Z",
+      "pushed_at": "2026-11-12T19:15:21Z",
+      "license": "Other",
+      "open_issues": 1337,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Node.js JavaScript runtime ✨🐢🚀✨",
+          "full_name": "nodejs/node",
+          "language": "JavaScript",
+          "trending_stars_period": 133,
+          "trending_total_forks": null,
+          "trending_total_stars": 123562,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "nvm-sh/nvm",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 95981,
+      "forks": 10756,
+      "language": "Shell",
+      "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+      "html_url": "https://github.com/nvm-sh/nvm",
+      "topics": [
+        "bash",
+        "install",
+        "lts",
+        "node",
+        "node-js",
+        "nodejs",
+        "nvm",
+        "nvmrc",
+        "posix",
+        "posix-compliant",
+        "shell",
+        "version-manager",
+        "zsh"
+      ],
+      "created_at": "2010-04-15T17:47:47Z",
+      "updated_at": "2026-11-12T19:40:32Z",
+      "pushed_at": "2026-11-12T05:50:45Z",
+      "license": "MIT",
+      "open_issues": 373,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+          "full_name": "nvm-sh/nvm",
+          "language": "Shell",
+          "trending_stars_period": 107,
+          "trending_total_forks": null,
+          "trending_total_stars": 95981,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "openai/codex-security",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 12294,
+      "forks": 972,
+      "language": "TypeScript",
+      "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+      "html_url": "https://github.com/openai/codex-security",
+      "topics": [
+        "ai-security",
+        "application-security",
+        "cli",
+        "code-scanning",
+        "codex",
+        "codex-security",
+        "cybersecurity",
+        "devsecops",
+        "nodejs",
+        "npm",
+        "openai",
+        "sdk",
+        "security",
+        "typescript",
+        "vulnerability-scanning"
+      ],
+      "created_at": "2026-07-13T22:00:13Z",
+      "updated_at": "2026-11-12T19:55:53Z",
+      "pushed_at": "2026-11-12T10:06:19Z",
+      "license": "Apache-2.0",
+      "open_issues": 143,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+          "full_name": "openai/codex-security",
+          "language": "TypeScript",
+          "trending_stars_period": 663,
+          "trending_total_forks": null,
+          "trending_total_stars": 12294,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "pookjw/HermesEnabler",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1479,
+      "forks": 138,
+      "language": "Objective-C",
+      "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+      "html_url": "https://github.com/pookjw/HermesEnabler",
+      "topics": [],
+      "created_at": "2024-12-14T11:32:03Z",
+      "updated_at": "2026-11-12T19:56:09Z",
+      "pushed_at": "2026-11-12T14:49:08Z",
+      "license": "MIT",
+      "open_issues": 54,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+          "full_name": "pookjw/HermesEnabler",
+          "language": "Objective-C",
+          "trending_stars_period": 300,
+          "trending_total_forks": null,
+          "trending_total_stars": 1479,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sajawal-12/cubase-studio-desktop",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1201,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Cubase Studio 2026 desktop setup with full plugin suite and complete feature set",
+      "html_url": "https://github.com/sajawal-12/cubase-studio-desktop",
+      "topics": [
+        "automation",
+        "cubase",
+        "cubase-15",
+        "cubase-for-beginners",
+        "cubase-pro",
+        "cubase-pro-2026",
+        "cubase-setup",
+        "cubase-tutorial",
+        "cubase-windows-download",
+        "cubasecubase-pro",
+        "cube-solver",
+        "cubic-splines",
+        "developer-tools",
+        "mixing-and-mastering",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "steinberg-cubase",
+        "vst3-plugins"
+      ],
+      "created_at": "2026-11-06T20:50:21Z",
+      "updated_at": "2026-11-12T11:01:02Z",
+      "pushed_at": "2026-11-12T19:43:56Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:50:21Z",
+          "description": "Cubase Studio 2026 desktop setup with full plugin suite and complete feature set",
+          "html_url": "https://github.com/sajawal-12/cubase-studio-desktop",
+          "stars": 1201,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sostenesfreitas/ocarina-recomp",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1157,
+      "forks": 77,
+      "language": "C",
+      "description": "Ocarina of Time running natively on Windows, no emulator. Built on your PC from your own copy. No game files included.",
+      "html_url": "https://github.com/sostenesfreitas/ocarina-recomp",
+      "topics": [],
+      "created_at": "2026-11-06T22:24:03Z",
+      "updated_at": "2026-11-12T19:54:15Z",
+      "pushed_at": "2026-11-11T19:20:58Z",
+      "license": "GPL-3.0",
+      "open_issues": 98,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T22:24:03Z",
+          "description": "Ocarina of Time running natively on Windows, no emulator. Built on your PC from your own copy. No game files included.",
+          "html_url": "https://github.com/sostenesfreitas/ocarina-recomp",
+          "stars": 1157,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tangerineturtle1/NX2navi",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 3501,
+      "forks": 242,
+      "language": "C",
+      "description": null,
+      "html_url": "https://github.com/tangerineturtle1/NX2navi",
+      "topics": [],
+      "created_at": "2026-11-07T10:01:23Z",
+      "updated_at": "2026-11-12T19:56:39Z",
+      "pushed_at": "2026-11-12T19:54:18Z",
+      "license": "MIT",
+      "open_issues": 577,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T10:01:23Z",
+          "description": null,
+          "html_url": "https://github.com/tangerineturtle1/NX2navi",
+          "stars": 3501,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tss878/delta-executor-toolkit",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1198,
+      "forks": 0,
+      "language": "TypeScript",
+      "description": "Delta Executor for PC: Full Working Installer with All Tools Pre-Configured",
+      "html_url": "https://github.com/tss878/delta-executor-toolkit",
+      "topics": [
+        "automation",
+        "delta-exec",
+        "delta-executor-26",
+        "delta-executor-exploit",
+        "delta-executor-for-free",
+        "delta-executor-for-pc-2026",
+        "delta-executor-for-win",
+        "delta-executor-lua",
+        "delta-executor-pc-2026",
+        "delta-for-pc",
+        "delta-for-pc-2026",
+        "delta-free-executor",
+        "delta-key-bypass",
+        "delta-lua-executor",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "utility"
+      ],
+      "created_at": "2026-11-06T20:51:54Z",
+      "updated_at": "2026-11-12T14:26:31Z",
+      "pushed_at": "2026-11-12T19:43:59Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:51:54Z",
+          "description": "Delta Executor for PC: Full Working Installer with All Tools Pre-Configured",
+          "html_url": "https://github.com/tss878/delta-executor-toolkit",
+          "stars": 1198,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 50276,
+      "forks": 3501,
+      "language": "Rust",
+      "description": "Browser automation CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "topics": [],
+      "created_at": "2026-01-11T05:38:15Z",
+      "updated_at": "2026-11-12T19:55:49Z",
+      "pushed_at": "2026-11-12T18:59:27Z",
+      "license": "Apache-2.0",
+      "open_issues": 586,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Browser automation CLI for AI agents",
+          "full_name": "vercel-labs/agent-browser",
+          "language": "Rust",
+          "trending_stars_period": 4183,
+          "trending_total_forks": null,
+          "trending_total_stars": 50276,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-desktop",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 22636,
+      "forks": 1678,
+      "language": "Rust",
+      "description": "Computer use CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-desktop",
+      "topics": [
+        "accessibility",
+        "accessibility-api",
+        "ai-agents",
+        "automation",
+        "cli",
+        "computer-use",
+        "computer-use-agent",
+        "computer-use-agents",
+        "desktop-automation",
+        "macos",
+        "mcp",
+        "rust"
+      ],
+      "created_at": "2026-02-19T18:00:49Z",
+      "updated_at": "2026-11-12T19:49:40Z",
+      "pushed_at": "2026-11-11T06:09:45Z",
+      "license": "Apache-2.0",
+      "open_issues": 222,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Computer use CLI for AI agents",
+          "full_name": "vercel-labs/agent-desktop",
+          "language": "Rust",
+          "trending_stars_period": 7772,
+          "trending_total_forks": null,
+          "trending_total_stars": 22636,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "voyager-so/vork",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 1492,
+      "forks": 125,
+      "language": "Rust",
+      "description": "Headless 3D and VFX engine for agents. Research preview.",
+      "html_url": "https://github.com/voyager-so/vork",
+      "topics": [
+        "3d",
+        "ai-agents",
+        "gpu",
+        "metal",
+        "ray-tracing",
+        "rendering",
+        "rust",
+        "slang",
+        "vfx",
+        "vulkan"
+      ],
+      "created_at": "2026-11-05T22:37:07Z",
+      "updated_at": "2026-11-12T17:52:28Z",
+      "pushed_at": "2026-11-11T20:46:26Z",
+      "license": "Other",
+      "open_issues": 11,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-05T22:37:07Z",
+          "description": "Headless 3D and VFX engine for agents. Research preview.",
+          "html_url": "https://github.com/voyager-so/vork",
+          "stars": 1492,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "we-promise/sure",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 13769,
+      "forks": 1024,
+      "language": "Ruby",
+      "description": "The personal finance app for everyone (by everyone)",
+      "html_url": "https://github.com/we-promise/sure",
+      "topics": [],
+      "created_at": "2025-07-23T04:13:55Z",
+      "updated_at": "2026-11-12T19:55:51Z",
+      "pushed_at": "2026-11-12T19:45:16Z",
+      "license": "AGPL-3.0",
+      "open_issues": 897,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The personal finance app for everyone (by everyone)",
+          "full_name": "we-promise/sure",
+          "language": "Ruby",
+          "trending_stars_period": 974,
+          "trending_total_forks": null,
+          "trending_total_stars": 13769,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "zed-industries/zed",
+      "captured_at": "2026-11-12T19:56:38Z",
+      "stars": 94822,
+      "forks": 11658,
+      "language": "Rust",
+      "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+      "html_url": "https://github.com/zed-industries/zed",
+      "topics": [
+        "gpui",
+        "rust-lang",
+        "text-editor",
+        "zed"
+      ],
+      "created_at": "2021-02-20T03:01:06Z",
+      "updated_at": "2026-11-12T19:49:49Z",
+      "pushed_at": "2026-11-12T19:52:59Z",
+      "license": "Other",
+      "open_issues": 3075,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+          "full_name": "zed-industries/zed",
+          "language": "Rust",
+          "trending_stars_period": 2310,
+          "trending_total_forks": null,
+          "trending_total_stars": 94822,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
@@ -235960,7 +237968,8 @@
     "daily-20261108T175643Z": 78,
     "daily-20261109T195138Z": 84,
     "daily-20261110T211307Z": 89,
-    "daily-20261111T171025Z": 95
+    "daily-20261111T171025Z": 95,
+    "daily-20261112T195638Z": 101
   },
   "sent_slots": {
     "2026-09-30-pm": 61,
@@ -235971,7 +237980,8 @@
     "daily:2026-11-08": 78,
     "daily:2026-11-09": 84,
     "daily:2026-11-10": 89,
-    "daily:2026-11-11": 95
+    "daily:2026-11-11": 95,
+    "daily:2026-11-12": 101
   },
   "pending_digests": {},
   "llm_daily_requests": {
@@ -235988,7 +237998,8 @@
     "2026-11-08": 29,
     "2026-11-09": 13,
     "2026-11-10": 11,
-    "2026-11-11": 15
+    "2026-11-11": 15,
+    "2026-11-12": 13
   },
   "delivery_progress": {
     "20260930T143510Z": {
