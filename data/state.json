@@ -20,6 +20,7 @@
       "anthropics/financial-services": "2026-09-29",
       "anthropics/knowledge-work-plugins": "2026-11-03",
       "averygan/reclip": "2026-09-29",
+      "backnotprop/plannotator": "2026-11-13",
       "block/buzz": "2026-11-03",
       "byoungd/up": "2026-09-30",
       "cloudflare/quiche": "2026-11-09",
@@ -39,6 +40,7 @@
       "earendil-works/pi": "2026-10-01",
       "elastic/elasticsearch": "2026-09-29",
       "expo/exact": "2026-11-10",
+      "feder-cr/dots": "2026-11-13",
       "feitangyuan/onetake": "2026-09-30",
       "firebase/firebase-ios-sdk": "2026-09-30",
       "firelex/jeff": "2026-09-30",
@@ -47,6 +49,7 @@
       "fxembed/fxembed": "2026-09-29",
       "garrytan/gbrain": "2026-11-09",
       "google-deepmind/mujoco": "2026-11-08",
+      "google/elephant-goldfish-model": "2026-11-13",
       "googlechrome/modern-web-guidance-src": "2026-11-11",
       "harry0703/moneyprinterturbo": "2026-09-30",
       "hembramneeraj3-create/aida-64-extreme": "2026-11-11",
@@ -65,6 +68,9 @@
       "johnheibel/pdoomvideo": "2026-11-09",
       "kianuni/erosion-cn": "2026-11-10",
       "kkkkhazix/aihot": "2026-09-30",
+      "likely7/veyra-nrvideo": "2026-11-13",
+      "lobehub/lobehub": "2026-11-13",
+      "louislam/uptime-kuma": "2026-11-13",
       "mahmoudtawfik1998/secure-pdf-document-processor": "2026-11-11",
       "mak5er/aircard-ios": "2026-11-04",
       "mattpocock/skills": "2026-09-30",
@@ -108,6 +114,7 @@
       "thiagoaureliomartins-programador/chief-architect-premier": "2026-11-10",
       "tile-ai/tilelang": "2026-10-01",
       "tobi/disktree": "2026-09-30",
+      "tradermonty/claude-trading-skills": "2026-11-13",
       "trycua/cua": "2026-09-29",
       "v-modal/awesome-jev-tools": "2026-11-08",
       "vectifyai/pageindex": "2026-09-29",
@@ -219,6 +226,14 @@
         "joke": "Почему плагин всегда в хорошем настроении? Потому что у него всегда есть подключённый к нему «слеш»!",
         "evidence_quote": "Plugins that turn Claude into a specialist for your role, team, and company. Built for [Claude Cowork](https://claude.com/product/cowork), also compatible with [Claude Code](https://claude.com/product/claude-code)."
       },
+      "backnotprop/plannotator": {
+        "policy_version": 7,
+        "source_description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+        "source_readme": "<p align=\"center\">\n  <img src=\".github/assets/banner.webp\" alt=\"Plannotator\" width=\"640\" />\n</p>\n\n\n\n<p align=\"center\">\n  <strong>Everything you need to annotate and stay in the loop with your agents</strong><br/>\n  <strong>Inbox Surface • Artifacts • Code Review</strong><br/>\n  <sub>Annotate plans, specs, markdown, HTML, and other interactive artifacts. Review diffs and PRs. Send feedback to your agent.</sub>\n</p>\n\n<p align=\"center\">\n  <img src=\".github/assets/icons/amp.svg\" alt=\"Amp\" title=\"Amp\" height=\"28\" />&nbsp;&nbsp;\n  <img src=\".github/assets/icons/claude.svg\" alt=\"Claude Code\" title=\"Claude Code\" height=\"28\" />&nbsp;&nbsp;\n  <img src=\".github/assets/icons/codex.png\" alt=\"Codex\" title=\"Codex\" height=\"28\" />&nbsp;&nbsp;\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\".github/assets/icons/copilot-dark.svg\" />\n    <img src=\".github/assets/icons/copilot-light.svg\" alt=\"Copilot CLI\" title=\"Copilot CLI\" height=\"28\" />\n  </picture>&nbsp;&nbsp;\n  <img src=\".github/assets/icons/droid.png\" alt=\"Droid\" title=\"Droid\" height=\"28\" />&nbsp;&nbsp;\n  <img src=\".github/assets/icons/gemini.png\" alt=\"Gemini CLI\" title=\"Gemini CLI\" height=\"28\" />&nbsp;&nbsp;\n  <img src=\".github/assets/icons/kiro.svg\" alt=\"Kiro\" title=\"Kiro\" height=\"28\" />&nbsp;&nbsp;\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\".github/assets/icons/opencode-dark.svg\" />\n    <img src=\".github/assets/icons/opencode-light.svg\" alt=\"OpenCode\" title=\"OpenCode\" height=\"28\" />\n  </picture>&nbsp;&nbsp;\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\".github/assets/icons/pi-dark.svg\" />\n    <img src=\".github/assets/icons/pi-light.svg\" alt=\"Pi\" title=\"Pi\" height=\"28\" />\n  </picture>\n</p>\n\n<p align=\"center\">\n  <a href=\"#plannotator-inbox\">Plannotator Inbox</a> · <a href=\"https://plannotator.ai/\">Official site</a> · <a href=\"https://plannotator.ai/code-review\">Code Review</a> · <a href=\"https://github.com/plannotator/effective-html\">Visual HTML Skills</a> · <a href=\"#herdr-annotate-plannotator-in-the-terminal\">Herdr Annotate</a> · <a href=\"https://www.youtube.com/watch?v=a_AT7cEN_9I\">(Legacy) Plan Mode</a>\n</p>\n\n# Plannotator\n\n**⭐️ NEW:** [Plannotator Inbox](https://plannotator.ai/inbox/) is the missing review layer between you and multi-agent work. It surfaces decisions, prototypes, variations, plans, and everything you need to stay in the loop. Works with all coding agents and personal assistants.\n\nPlannotator is a local, browser-based review surface for AI coding agents: Claude Code, Codex, Copilot CLI, Gemini CLI, OpenCode, Kiro, Droid, Amp, DeepSeek Harness, and Pi. Plannotator Inbox also works with personal assistants (Grok Bot, Muse, Hermes, OpenClaw).\n\n**It plugs directly into your agent** through plugins, hooks and commands. When the agent proposes a decision, plan, html, or finishes working, the app opens in your browser and you mark it up, comment, and send feedback directly to the agent for it to act on it.\n\n<table>\n<tr>\n<td width=\"40%\" valign=\"middle\">\n\n### Review documents, plans, and agent messages\n\nAnnotate plans, specs, messages, html, then send the feedback to your agent. \n\n<p><strong>Demo:</strong> <a href=\"https://youtu.be/XqFun9XCXPw\">Plan review with Pi</a></p>\n\n</td>\n<td width=\"60%\">\n\n<img src=\".github/assets/annotate.webp\" alt=\"Annotate UI with inline annotations\" width=\"100%\" />\n\n</td>\n</tr>\n<tr>\n<td width=\"40%\" valign=\"middle\">\n\n### Code Review\n\nReview local changes or remote PRs. Comment on diffs, suggest code. Your comments go back to the agent. Works with Git, GitButler, Jujutsu (`jj`), Perforce (`p4`), GitHub, and GitLab.\n\n</td>\n<td width=\"60%\">\n\n<img src=\".github/assets/review.webp\" alt=\"Code review with file tree and side-by-side diff\" width=\"100%\" />\n\n</td>\n</tr>\n</table>\n\n<p align=\"center\">\n  <sub><strong>AI built in:</strong> ask AI about anything you're reviewing,<br/>or launch AI reviews that post comments to the diff.</sub>\n</p>\n\n## Annotate HTML Artifacts\n\n<p align=\"center\">\n  <img src=\".github/assets/html.webp\" alt=\"Annotating a rendered HTML artifact\" width=\"720\" />\n</p>\n\n## Plannotator Inbox\n\n<p align=\"center\">\n  <a href=\"https://plannotator.ai/inbox/\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\".github/assets/inbox-dark.webp\" />\n      <img src=\".github/assets/inbox-light.webp\" alt=\"Plannotator Inbox: threads from several agents grouped by what each needs, with a question and an attached screenshot open beside the list\" width=\"720\" />\n    </picture>\n  </a>\n</p>\n\nThe Plannotator Inbox is one local window where your agents leave you messages, questions, files, and guided reviews while they keep working. Answer a question with a click, annotate a file, and press Send when you can. Nothing holds an agent session open while you do, and your reply goes back to the session that asked.\n\n```\nplannotator inbox\n```\n\nClaude Code, Pi, and OpenCode connect through Plannotator's plugins, and your replies arrive as their next turn. Any other agen",
+        "description": "Plannotator — локальное браузерное приложение, которое служит посредником между пользователем и множеством AI‑агентов, помогающих писать код. Когда агент генерирует план, прототип, HTML‑артефакт или завершает работу, Plannotator открывается, позволяя аннотировать документ, комментировать изменения и отправлять обратную связь обратно в агент через плагины, хуки и команды. Инструмент поддерживает обзор как обычных файлов и диффов (Git, GitHub, GitLab, Perforce и др.), так и интерактивных артефактов, включая HTML‑страницы, а также предоставляет встроенный AI‑помощник для автоматических комментариев. Особенностью является «Inbox» — единый окно, где агрегируются сообщения, вопросы и файлы от разных агентов; пользователь отвечает одним кликом, а ответ сразу попадает в соответствующую сессию, не удерживая её открытой. Сценарий применения: разработчик запускает генерацию кода через Claude Code, получает предложенный план, открывает его в Plannotator, вносит правки и отправляет их обратно, после чего агент автоматически применяет изменения и продолжает работу.",
+        "joke": "",
+        "evidence_quote": "**⭐️ NEW:** [Plannotator Inbox](https://plannotator.ai/inbox/) is the missing review layer between you and multi-agent work. It surfaces decisions, prototypes, variations, plans, and everything you need to stay in the loop. Works with all coding agents and personal assistants."
+      },
       "block/buzz": {
         "policy_version": 4,
         "source_description": "A hive mind communication platform",
@@ -259,6 +274,14 @@
         "joke": "",
         "evidence_quote": "**Write an app once. It runs natively on the web, macOS, iOS, and Linux, and an AI\nagent can build it, run it, see it, and test it on every one of them.**"
       },
+      "feder-cr/dots": {
+        "policy_version": 7,
+        "source_description": "Open-source dots for the web: an AI agent with its own browser, one that does not get blocked.",
+        "source_readme": "<div align=\"center\">\n<picture>\n  <source media=\"(max-width: 374px) and (prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/feder-cr/Jobs_Applier_AI_Agent/main/assets/banner-small-dark.gif\">\n  <source media=\"(max-width: 374px)\" srcset=\"https://raw.githubusercontent.com/feder-cr/Jobs_Applier_AI_Agent/main/assets/banner-small-light.gif\">\n  <source media=\"(max-width: 1239px) and (prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/feder-cr/Jobs_Applier_AI_Agent/main/assets/banner-phone-dark.gif\">\n  <source media=\"(max-width: 1239px)\" srcset=\"https://raw.githubusercontent.com/feder-cr/Jobs_Applier_AI_Agent/main/assets/banner-phone-light.gif\">\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/feder-cr/Jobs_Applier_AI_Agent/main/assets/banner-dark.gif\">\n  <img alt=\"AIHawk. An animation: the app starts from a terminal and narrows 10 million job postings to the 25 that fit a resume; you pick three and say yes once; a Firefox window fills each form and submits it; the app shows them sent. An illustration, with invented companies and an invented person.\" src=\"https://raw.githubusercontent.com/feder-cr/Jobs_Applier_AI_Agent/main/assets/banner-light.gif\" width=\"100%\">\n</picture>\n<h3 align=\"center\">An AI job application bot: automated job search, then it auto-applies to the jobs that match your resume, while you sleep.</h3>\n\n<sub>FEATURED IN</sub><br>\n<a href=\"https://www.businessinsider.com/aihawk-applies-jobs-for-you-linkedin-risks-inaccuracies-mistakes-2024-11\"><b>Business Insider</b></a> ·\n<a href=\"https://techcrunch.com/2024/10/10/a-reporter-used-ai-to-apply-to-2843-jobs/\"><b>TechCrunch</b></a> ·\n<a href=\"https://www.semafor.com/article/09/12/2024/linkedins-have-nots-and-have-bots\"><b>Semafor</b></a> ·\n<a href=\"https://www.wired.it/article/aihawk-come-automatizzare-ricerca-lavoro/\"><b>Wired</b></a> ·\n<a href=\"https://www.theverge.com/2024/10/10/24266898/ai-is-enabling-job-seekers-to-think-like-spammers\"><b>The Verge</b></a> ·\n<a href=\"https://www.vanityfair.it/article/intelligenza-artificiale-candidature-di-lavoro\"><b>Vanity Fair</b></a> ·\n<a href=\"https://www.404media.co/i-applied-to-2-843-roles-the-rise-of-ai-powered-job-application-bots/\"><b>404 Media</b></a>\n</div>\n\n---\n\n## How it works\n\nGive it your resume. The job search finds the postings that fit, you pick, and it fills in and sends each job application on the company's own form.\n\n| Step | What happens |\n|---|---|\n| **1. Reads your resume** | Turns it into a search: the titles, the skills and the places that fit you. |\n| **2. Searches** | Millions of postings of the last 30 days from 37 public sources, rebuilt every five hours, searched on your computer. |\n| **3. Scores** | Asks of every posting, against your resume, one question: is it in line with you? How sure the answer is makes the score, from 1 to 5. 50 jobs to a page, the next one ready while you read this one. |\n| **4. You pick** | Select the jobs you want and say yes once. |\n| **5. Applies** | First a quick check that the posting is still open, on the sites where that can be told without a browser. Then a real Firefox opens the company's form, fills every required field, attaches your CV and sends. |\n| **6. Keeps the answer** | What each page said, with a screenshot, for every application. |\n\n---\n\n## Install\n\nWindows, in PowerShell:\n\n```powershell\nirm https://raw.githubusercontent.com/feder-cr/Jobs_Applier_AI_Agent/main/run.ps1 | iex\n```\n\nLinux, and macOS (on a Mac AIHawk finds and scores the jobs, but cannot send applications yet: its browser has no Mac version):\n\n```bash\ncurl -LsSf https://raw.githubusercontent.com/feder-cr/Jobs_Applier_AI_Agent/main/run.sh | sh\n```\n\nYou need a key: [get one from OrcaRouter](https://www.orcarouter.ai/ref/ref_accd17afb78fc95ac4d7). Signing up is free, and a new account starts with no credit: add a few dollars there before the first start, or AIHawk cannot read your resume. An application costs a few cents.\n\nThe first start downloads about 250 MB and takes a minute or two; after that it opens in seconds, also without a connection. Nothing else needs installing first (on Linux, `curl`). The first application brings the browser, about 430 MB more, and opens it in a window: on Linux that needs a desktop.\n\n---\n\n[Sites](docs/sites.md) · [Configuration](docs/configuration.md) · [Writing a plugin](docs/plugins.md) · [Wiki](https://github.com/feder-cr/Jobs_Applier_AI_Agent/wiki) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Changelog](CHANGELOG.md)\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://api.star-history.com/svg?repos=feder-cr/Jobs_Applier_AI_Agent&type=Date&theme=dark\">\n  <img alt=\"Star history of AIHawk\" src=\"https://api.star-history.com/svg?repos=feder-cr/Jobs_Applier_AI_Agent&type=Date\" width=\"100%\">\n</picture>\n",
+        "description": "Проект представляет собой автономного AI‑агента, который автоматизирует поиск и подачу заявок на вакансии. Пользователь загружает своё резюме, после чего система преобразует его в набор ключевых слов, ищет подходящие объявления за последние 30 дней на 37 публичных ресурсах и оценивает каждое по соответствию резюме, выдавая оценку от 1 до 5. На этапе выбора пользователь отмечает интересующие вакансии и подтверждает их одним нажатием. Затем бот проверяет, открыта ли вакансия, и открывает реальный Firefox‑браузер, где автоматически заполняет форму компании, прикрепляет резюме и отправляет заявку, сохраняя скриншот ответа для каждой отправки. Инструмент работает локально: поиск и оценка выполняются на компьютере без постоянного подключения к сети, а браузер загружается лишь при отправке заявок. Требуется API‑ключ от OrcaRouter, поскольку модель использует платный сервис для обработки резюме; первая загрузка занимает около 250 МБ, а браузер добавляет ещё ~430 МБ, поэтому на Linux нужен графический интерфейс. Приложение подходит тем, кто хочет автоматизировать рутинный процесс отклика на множество вакансий, но при этом сохраняет контроль над выбором и предоставляет доказательства отправки.",
+        "joke": "",
+        "evidence_quote": "Give it your resume. The job search finds the postings that fit, you pick, and it fills in and sends each job application on the company's own form."
+      },
       "freestylefly/wechatbridge": {
         "policy_version": 7,
         "source_description": "微信聊天记录一键转发到 AI Agent 与 Obsidian 的原生 macOS 工具",
@@ -282,6 +305,14 @@
         "description": "MuJoCo — это физический движок, ориентированный на быстрые и точные симуляции многосоставных систем с контактами. Он предоставляет C‑API, предвыделенные структуры данных и набор утилит для расчёта физических величин, что делает его пригодным для исследований в робототехнике, биомеханике, графике, а также для обучения машинных моделей. Встроенный визуализатор работает как в нативных десктопных окнах, так и в браузерах через WebAssembly, а также доступны Python‑биндинги и плагин для Unity, что упрощает интеграцию в разные среды разработки.\n\nДля пользователя ключевыми возможностями являются: 1) возможность запускать готовые модели в браузере без установки, используя MuJoCo Studio в WebAssembly; 2) поддержка многопоточного модуля `rollout` для ускоренного генерации траекторий; 3) дифференцируемая физика через ветку MJX, позволяющая получать аналитические градиенты прямо из шага симуляции, что полезно при обучении контроллеров. Примером применения может быть разработка контроллера балансировки гуманоидного робота: модель редактируется программно, симуляция запускается в реальном времени, а градиенты используются для оптимизации политики в JAX.\n\nДля работы требуется современная платформа — Linux (x86‑64, AArch64), Windows x86‑64 или macOS (универсальная). Предпочтительно использовать предкомпилированные бинарники из релизов; сборка из исходников возможна, но требует дополнительных зависимостей. Ограничения: WebAssembly‑версия медленнее нативной, а доступ к некоторым функциям (например, низкоуровневый C‑API) ограничен только локальными установками.",
         "joke": "Симулируешь робота? MuJoCo уже знает, как он упадёт.",
         "evidence_quote": "**MuJoCo** stands for **Mu**lti-**Jo**int dynamics with **Co**ntact. It is a\ngeneral purpose physics engine that aims to facilitate research and development\nin robotics, biomechanics, graphics and animation, machine learning, and other\nareas which demand fast and accurate simulation of articulated structures\ninteracting with their environment."
+      },
+      "google/elephant-goldfish-model": {
+        "policy_version": 7,
+        "source_description": "Open-source plugin for designing and reviewing software with agents",
+        "source_readme": "<p align=\"center\">\n  <a href=\"https://egm.dev\"><img src=\"docs/assets/readme-header.svg\" width=\"480\" height=\"116\" alt=\"Elephant-Goldfish Model\"></a>\n</p>\n\n<p align=\"center\">Design with an elephant. Review with a goldfish.</p>\n\n<p align=\"center\">\n  <a href=\"#install\">Install</a> &ensp;·&ensp;\n  <a href=\"#try-your-first-design\">Quickstart</a> &ensp;·&ensp;\n  <a href=\"docs/getting_started.md\">Documentation</a> &ensp;·&ensp;\n  <a href=\"https://egm.dev\">Website</a>\n</p>\n\n<br>\n\nDevelop ideas with context and review documents with fresh eyes. EGM is an open-source plugin for AI assistants.\n\n**Elephant** holds your project context and drafts the specification. **Goldfish** reviewers examine the draft and referenced source material without the earlier conversation, helping expose unstated assumptions and blind spots. **You** make the architectural trade-offs and approve the specification before implementing.\n\nThe built-in draft and design-review workflow targets software specifications. For other documents, choose reviewers and standards with `/egm-review-loop`. Bootstrap and drift reporting apply to software codebases.\n\nhttps://github.com/user-attachments/assets/93c799a2-10a3-4266-af02-eb79dd33a9a2\n\n## Install\n\nChoose your coding agent. Install the complete plugin so its skills can read the reviewer prompts and document standards.\n\n### ChatGPT and Codex desktop\n\nOpen the [published EGM plugin](https://chatgpt.com/plugins/plugins_6aeb90f47ec88191a3c107e01d3eb357) in the desktop app and install it. This listing is desktop-only. For Codex CLI, use the commands below.\n\n### Antigravity CLI\n\n```sh\nagy plugin install https://github.com/google/elephant-goldfish-model\n```\n\nFor the **Antigravity App** and **Antigravity for IDEs** (Visual Studio Code extension), run `/plugin` or see the [installation instructions](docs/harnesses.md#antigravity-app-and-antigravity-for-ides).\n\n### Claude Code\n\n```sh\nclaude plugin marketplace add google/elephant-goldfish-model\nclaude plugin install egm@egm\n```\n\n### Codex CLI\n\n```sh\ncodex plugin marketplace add google/elephant-goldfish-model\ncodex plugin add egm@egm\n```\n\nStart a new session after installation. For **Claude Cowork** and **ChatGPT Work**, see the [setup guide](docs/harnesses.md).\n\n## Try a 60-second review on existing code\n\nReview an existing design document, README, or PR plan against the live code. You do not need to write a new specification. The commands below use the `/egm:` prefix for Antigravity (agy CLI) and Claude Code. In Codex, select the corresponding EGM skill from the skill picker.\n\n<img src=\"skills/egm-review/assets/icon.svg\" width=\"20\" height=\"20\" align=\"top\" alt=\"\"> **Review an existing document**\n\n```text\n/egm:egm-review docs/designs/webhooks.md\n```\n\nUse the path to your design doc, or to a PR plan saved as Markdown. Fresh reviewers check the design, its clarity, its fit with the code, and its implementation plan.\n\n<img src=\"skills/egm-drift-report/assets/icon.svg\" width=\"20\" height=\"20\" align=\"top\" alt=\"\"> **Check for drift**\n\n```text\n/egm:egm-drift-report docs/designs/\n```\n\nThe agent compares each document in the folder with the current source code and reports where they diverge. You decide whether to update the document or the code.\n\n## Try your first design\n\nOpen your project in your coding agent and choose a feature that needs design decisions. This example adds webhook delivery: what should happen when a delivery fails, or the same event arrives twice?\n\nThe commands below are shown without a prefix. In Antigravity (agy CLI) and Claude Code, add the `/egm:` prefix, for example `/egm:egm-brainstorm`. On agy CLI 1.4.10 an unprefixed name is completed to the prefixed command ([#220](https://github.com/google/elephant-goldfish-model/issues/220)), but 1.4.8 does not ([#196](https://github.com/google/elephant-goldfish-model/issues/196)), so keep the prefix. In Codex, select the corresponding EGM skill from the skill picker. Brainstorming and review require a session that can create fresh subagents.\n\n<img src=\"skills/egm-brainstorm/assets/icon.svg\" width=\"20\" height=\"20\" align=\"top\" alt=\"\"> **Explore the idea**\n\n```text\n/egm-brainstorm Add webhook delivery to this project.\n```\n\nDiscuss requirements and trade-offs with the agent. Fresh reviewers challenge the proposal, and the agent saves the agreed direction in `concepts_brief.md`.\n\n<img src=\"skills/egm-draft/assets/icon.svg\" width=\"20\" height=\"20\" align=\"top\" alt=\"\"> **Draft the specification**\n\n```text\n/egm-draft\n```\n\nThe agent turns the brief into `design_draft.md`, pausing after each section for your feedback in chat.\n\n<img src=\"skills/egm-review/assets/icon.svg\" width=\"20\" height=\"20\" align=\"top\" alt=\"\"> **Review the draft**\n\n```text\n/egm-review design_draft.md\n```\n\nUse the draft path returned by the agent.\n\nFresh reviewers check the design, its clarity, its fit with the code, and its implementation plan. Choose which findings to address. When you approve the design, ask your coding agent to implement it.\n\nSee t",
+        "description": "Elephant‑Goldfish Model (EGM) — это плагин‑расширение для AI‑ассистентов, позволяющий вести процесс проектирования и последующего ревью программных спецификаций с помощью специализированных под‑агентов. «Elephant» сохраняет контекст проекта и формирует черновик спецификации, а «Goldfish» выступает в роли независимого ревьюера, проверяя черновик и связанные источники без доступа к исходному диалогу, тем самым выявляя скрытые допущения и несоответствия. Пользователь задаёт архитектурные компромиссы, одобряет полученный документ и передаёт его агенту‑разработчику для реализации.\n\nВстроенный workflow поддерживает три ключевых операции: мозговой штурм (генерация требований), черновик (автоматическое составление design_draft.md) и ревью (проверка черновика и сравнение с текущим кодом). Кроме того, команда `/egm-drift-report` сравнивает документы в указанной папке с реальной кодовой базой, выявляя отклонения и предлагая обновить либо документ, либо код. Плагин интегрируется в несколько сред — ChatGPT, Claude, Codex и Antigravity CLI — через простую установку и последующее использование префикса `/egm:` для вызова соответствующих навыков.\n\nСценарий применения: команда разрабатывает новую функцию веб‑хуков, запускает `/egm-brainstorm` для обсуждения требований, получает от «Elephant» черновик спецификации, затем «Goldfish» проверяет его на полноту и соответствие текущей архитектуре, после чего разработчики получают готовый документ и отчёт о возможных расхождениях с кодом, что ускоряет согласование и снижает риск пропущенных деталей.",
+        "joke": "",
+        "evidence_quote": "Develop ideas with context and review documents with fresh eyes. EGM is an open-source plugin for AI assistants."
       },
       "googlechrome/modern-web-guidance-src": {
         "policy_version": 7,
@@ -386,6 +417,30 @@
         "description": "Erosion‑CN — это форк инструмента Erosion, предназначенного для изменения системных параметров iOS/iPadOS и исследования MobileGestalt. В отличие от оригинала, проект полностью локализован на упрощённый китайский, исправил несколько критических багов, которые делали изменения недолговечными: после перезагрузки система откатывала изменения, а редактирование plist‑файлов приводило к чёрному экрану камеры. В новой версии используется прямое перезаписывание файлов без предварительного обнуления, принудительный синхронный сброс (F_FULLFSYNC) и динамический разбор libMobileGestalt.dylib без жёстко закодированных смещений, что обеспечивает надёжную запись и проверку целостности. Пользователь получает дифф‑просмотр предстоящих изменений, автоматическое создание резервных копий с SHA‑256‑контролем и возможность отката при любой ошибке, а также набор дополнительных функций: разблокировка AI‑способностей iOS 27, управление сохранениями приложений и очистка кэша контейнеров, а также детальный мониторинг реального состояния MobileGestalt на устройстве. Пример применения — инженер, желающий включить «Personal Translator» и «Audio Intelligence» на iPhone 15 Pro, может через простой интерфейс включить соответствующие флаги, проверить их запись и при необходимости откатить изменения, не рискуя «заблокировать» устройство.",
         "joke": "",
         "evidence_quote": "**Erosion-CN** 分支衍生自官方上游项目 **[jailbreakdotparty/Erosion](https://github.com/jailbreakdotparty/Erosion)**，完成了 **100% 简体中文界面本地化**，修复了原版多项严重真机 Bug，并进行了系统级防白苹果安全加固与底层能力扩展："
+      },
+      "likely7/veyra-nrvideo": {
+        "policy_version": 7,
+        "source_description": "Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-generation visual experience.",
+        "source_readme": "<div align=\"center\">\n\n<img src=\"assets/veyra-app-icon.png\" alt=\"Veyra\" width=\"140\">\n\n# Veyra\n\n### Real-time GPU Video Enhancement for Windows\n\n**Super Resolution · Denoising · HDR · Frame Generation · Capture · PS5 / Xbox / PC Streaming**\n\nTurn local video, capture cards and game streaming into one real-time GPU enhancement pipeline.\n\n<br>\n\n[![GitHub Stars](https://img.shields.io/github/stars/Likely7/Veyra-NRVideo?style=for-the-badge&logo=github&label=Stars)](https://github.com/Likely7/Veyra-NRVideo/stargazers)\n[![GitHub Forks](https://img.shields.io/github/forks/Likely7/Veyra-NRVideo?style=for-the-badge&logo=github&label=Forks)](https://github.com/Likely7/Veyra-NRVideo/network/members)\n[![Latest Release](https://img.shields.io/github/v/release/Likely7/Veyra-NRVideo?style=for-the-badge&logo=github&label=Release)](https://github.com/Likely7/Veyra-NRVideo/releases/latest)\n[![Release Asset Downloads](https://img.shields.io/github/downloads/Likely7/Veyra-NRVideo/total?style=for-the-badge&logo=github&label=Release%20Downloads)](https://github.com/Likely7/Veyra-NRVideo/releases)\n[![License](https://img.shields.io/github/license/Likely7/Veyra-NRVideo?style=for-the-badge&label=License)](LICENSE)\n\n<br>\n\n**79K+ cumulative Veyra portable-package downloads** (79,332 as of 2026-11-08) · **103K+ downloads across all GitHub Release assets** (103,337 including source archives, checksums and images). [GitHub Releases](https://github.com/Likely7/Veyra-NRVideo/releases) · Counts are download events, not unique users.\n\n<br>\n\n[**⬇ Download Latest Release**](https://github.com/Likely7/Veyra-NRVideo/releases/latest)\n&nbsp;&nbsp;·&nbsp;&nbsp;\n[**📖 User Guide / Wiki**](https://github.com/Likely7/Veyra-NRVideo/wiki)\n&nbsp;&nbsp;·&nbsp;&nbsp;\n[**🇨🇳 简体中文**](README_CN.md)\n&nbsp;&nbsp;·&nbsp;&nbsp;\n[**🐛 Report an Issue**](https://github.com/Likely7/Veyra-NRVideo/issues)\n\n</div>\n\n<br>\n\n<p align=\"center\">\n  <a href=\"https://github.com/Likely7/Veyra-NRVideo/blob/main/assets/veyra-2.0.0-promo.mp4\">\n    <img src=\"assets/veyra-2.0.0-promo.webp\" alt=\"Veyra 2.0 promo — click to play\" width=\"100%\">\n  </a>\n</p>\n\n<p align=\"center\"><i>One engine. Any source. Real-time enhancement.</i></p>\n\n<br>\n\n<p align=\"center\">\n  <img src=\"docs/images/2.0.0/professional-mode.png\" alt=\"Veyra Professional Mode\" width=\"100%\">\n</p>\n\n<br>\n\n<h2 align=\"center\">⭐ Star History</h2>\n\n<p align=\"center\">\n  <img src=\"assets/star-history.svg\" alt=\"Veyra Star History\" width=\"900\">\n</p>\n\n<p align=\"center\">\n  <sub>Open source · GPL-3.0 · Windows 11 · C++ · DirectX 12 · NVIDIA & AMD</sub>\n</p>\n\n---\n\n**2.1.2 update:** dual SR, SR-then-downsample, NVIDIA Low Latency, experimental RX 7000 NR and capture/FG/audio/volume fixes. [Full update and migration](docs/RELEASE_NOTES_2.1.2.md).\n\n**2.1.1 historical release, 2026-10-27:** processed-picture recording with audio,90° playback rotation, per-layer NR percentage controls and export sizing, event-driven refresh/VRR/HDR queries, AMD HDR+NR handling, AA ordering, capture timestamp handling, NR shutdown, popup layout, screenshots and fullscreen fixes. [All changes since2.1.0](docs/RELEASE_NOTES_2.1.1.md).\n\n\n**New-effect cost examples:** RTX5070 standard4K anti-aliasing fixtures: FXAA~0.15ms, SMAA/MLAA~0.30ms. Final single-face mesh beauty:1080p~0.93ms,4K~1.42ms. Costs vary with content/hardware; no local AMD speedup percentage was measured. [Conditions and limits](docs/history/releases/RELEASE_NOTES_2.1.0.md).\n\n**📖 [English User Guide / GitHub Wiki](https://github.com/Likely7/Veyra-NRVideo/wiki)** — installation, software setup, capture card compatibility, troubleshooting, and community-tested solutions. [中文知识库（飞书）](https://qcnv4i7tnd7l.feishu.cn/wiki/space/7688258025282358221?ccm_open_type=lark_wiki_spaceLink&open_tab_from=wiki_home).\n\n**2.1.5:** Smoother frame pacing after capture deduplication and preview correction for invalid capture timestamps. [Full changes](docs/RELEASE_NOTES_2.1.5.md).\n\n**2.1.4:** Optional VB-CABLE capture audio, DLSS/FSR/RTX dual super resolution, NVIDIA DLAA, HDR wide-gamut restoration, NR inference reuse, 1% low FPS, and recording and compatibility fixes. [Full changes and settings migration](docs/RELEASE_NOTES_2.1.4.md).\n\n**2.1.3:** Three RTX Video SR families and independent second-pass models, medium defaults, inline NR web/list editing, RTX30 VFG compatibility, RX7000 multi-GPU and seeking/menu fixes. [Full changes, comparison and migration](docs/RELEASE_NOTES_2.1.3.md).\n\n## Highlights\n\n**2.0.4 NR controls:** each NR layer's **Enhancement delta → Total strength** now reaches 5. **Picture control** defaults off; enable it and select Automatic or Manual. Automatic values now adapt separately to styles 0/1/2, with an amount slider (0 retains raw strength, 1 applies full correction). The nine manual controls cover hue, chroma, neutral tint, source color retention, lightness retention, shadows, highlights, local compression and temporal stability. **Use this style’s automatic values** provides a manual starting ",
+        "description": "Veyra — это приложение для Windows, которое превращает любой видеопоток, подключённую карту захвата или локальный файл в реальное‑время GPU‑усиленный конвейер обработки. Программа использует авторегрессионные модели супер‑разрешения, денойзинга, HDR‑коррекции и генерации кадров, позволяя повысить чёткость, уменьшить шум и добавить плавность даже при трансляции с консолей PS5, Xbox или ПК. Пользователь может выбрать один из нескольких режимов: чистое супер‑разрешение, двойное SR с последующим даунсемплингом, а также включить DLSS 5, FSR или RTX‑DLAA, что даёт гибкость под разные видеокарты NVIDIA и AMD.\n\nДля работы Veyra требуется DirectX 12 и поддержка аппаратного ускорения, после чего приложение захватывает видеосигнал, применяет выбранные эффекты и выводит улучшенный поток в окно предпросмотра или в файл записи. Среди полезных возможностей — независимая настройка до пяти слоёв шумоподавления, автоматическая адаптация параметров под стили изображения и поддержка многоканального аудио через VB‑CABLE. Приложение также умеет синхронно обрабатывать HDR‑контент, сохранять временную стабильность и выполнять запись с аудио, что делает его пригодным для стримеров, создателей контента и профессиональных видеоредакторов.\n\nТребования к системе включают Windows 11, совместимую видеокарту NVIDIA RTX 20‑серии или новее, а также AMD RX 6000‑серии для альтернативных моделей. Ограничения: ускорение доступно только при наличии поддерживаемого GPU, некоторые функции (например, RTX‑DLSS) требуют подключения к облачным сервисам модели, а локальная работа без интернета возможна лишь для базовых режимов. Лицензия GPL‑3.0 открывает исходный код, но конечный пользователь несёт ответственность за соблюдение условий лицензии и за любые ограничения, наложенные поставщиками видеокарт.",
+        "joke": "",
+        "evidence_quote": "**Super Resolution · Denoising · HDR · Frame Generation · Capture · PS5 / Xbox / PC Streaming**"
+      },
+      "lobehub/lobehub": {
+        "policy_version": 7,
+        "source_description": "🤯 LobeHub - Super-Agents on Your Team. Add super-agents to the chats your team already uses.They take on work by themselves and get better every week.",
+        "source_readme": "<div align=\"center\"><a name=\"readme-top\"></a>\n\n[![][image-banner]][vercel-link]\n\n# LobeHub\n\n**Super-Agents on Your Team**\n\nAdd super-agents to the chats your team already uses.<br/>\nThey take on work by themselves and get better every week.\n\n**English** · [简体中文](./README.zh-CN.md) · [Official Site][official-site] · [Changelog][changelog] · [Documents][docs] · [Blog][blog] · [Feedback][github-issues-link]\n\n<!-- SHIELD GROUP -->\n\n[![][github-release-shield]][github-release-link]\n[![][docker-release-shield]][docker-release-link]\n[![][vercel-shield]][vercel-link]\n[![][discord-shield]][discord-link]<br/>\n[![][codecov-shield]][codecov-link]\n[![][github-action-test-shield]][github-action-test-link]\n[![][github-action-release-shield]][github-action-release-link]\n[![][github-releasedate-shield]][github-releasedate-link]<br/>\n[![][github-contributors-shield]][github-contributors-link]\n[![][github-forks-shield]][github-forks-link]\n[![][github-stars-shield]][github-stars-link]\n[![][github-issues-shield]][github-issues-link]\n[![][github-license-shield]][github-license-link]<br>\n\n**Share LobeHub Repository**\n\n[![][share-x-shield]][share-x-link]\n[![][share-telegram-shield]][share-telegram-link]\n[![][share-whatsapp-shield]][share-whatsapp-link]\n[![][share-reddit-shield]][share-reddit-link]\n[![][share-weibo-shield]][share-weibo-link]\n[![][share-mastodon-shield]][share-mastodon-link]\n[![][share-linkedin-shield]][share-linkedin-link]\n\n<a href=\"https://www.producthunt.com/products/lobehub?embed=true&amp;utm_source=badge-top-post-badge&amp;utm_medium=badge&amp;utm_campaign=badge-lobehub-2\" target=\"_blank\" rel=\"noopener noreferrer\"><img alt=\"LobeHub - Your Chief Agent Operator for multi-agent work | Product Hunt\" width=\"250\" height=\"54\" src=\"https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=1147569&amp;theme=light&amp;period=daily&amp;t=1779247564355\"></a> <a href=\"https://trendshift.io/repositories/19224\" target=\"_blank\"><img src=\"https://trendshift.io/api/badge/repositories/19224\" alt=\"lobehub%2Flobehub | Trendshift\" style=\"width: 250px; height: 55px;\" width=\"250\" height=\"55\"/></a>\n\n[![](https://vercel.com/oss/program-badge.svg)](https://vercel.com/oss)\n\n</div>\n\n<details>\n<summary><kbd>Table of contents</kbd></summary>\n\n#### TOC\n\n- [👋🏻 Getting Started & Join Our Community](#-getting-started--join-our-community)\n- [✨ Features](#-features)\n  - [From new hire to one of the team](#from-new-hire-to-one-of-the-team)\n  - [`Day 1` Welcome to the team](#day-1-welcome-to-the-team)\n  - [`Week 1` Its first task](#week-1-its-first-task)\n  - [`Month 1–2` Settling in as the team grows](#month-12-settling-in-as-the-team-grows)\n  - [`Month 3` It passes its review](#month-3-it-passes-its-review)\n  - [Bring them onto your team](#bring-them-onto-your-team)\n- [🧩 Marketplace](#-marketplace)\n- [📖 Documentation](#-documentation)\n- [🛳 Self Hosting](#-self-hosting)\n  - [`A` Docker Compose (recommended)](#a-docker-compose-recommended)\n  - [`B` One-click deploy](#b-one-click-deploy)\n- [⌨️ Local Development](#️-local-development)\n- [🤝 Contributing](#-contributing)\n- [❤️ Sponsor](#️-sponsor)\n- [🔬 Research](#-research)\n\n####\n\n<br/>\n\n</details>\n\n<br/>\n\n<https://github.com/user-attachments/assets/0a33365f-b786-48b5-9ed6-f8af7927bccb>\n\n## 👋🏻 Getting Started & Join Our Community\n\nWe are a group of e/acc design-engineers, hoping to provide modern design components and tools for AIGC.\n\nWhether for users or professional developers, LobeHub will be your AI Agent playground. Please be aware that LobeHub is currently under active development, and feedback is welcome for any [issues][issues-link] encountered.\n\n| [![](https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1065874&theme=light&t=1769347414733)](https://www.producthunt.com/products/lobehub?launch=lobehub-2&embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-lobehub) | We are live on Product Hunt! We are thrilled to bring LobeHub to the world. If you believe in a future where humans and agents co-evolve, please support our journey. |\n| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| [![][discord-shield-badge]][discord-link]                                                                                                                                                                                                                          | Join our Discord community! This is where you can connect with developers and other enthusiastic users of LobeHub.                                                    |\n\n> \\[!IMPORTANT]\n>\n> **Star Us**, You will receive all release ",
+        "description": "LobeHub представляет собой платформу, позволяющую интегрировать так называемые «super‑agents» в уже используемые командные чаты. Такие агенты способны самостоятельно выполнять задачи, а их эффективность повышается каждую неделю за счёт непрерывного обучения. Проект ориентирован как на конечных пользователей, так и на разработчиков, предлагая готовый набор компонентов и инструменты для создания и настройки AI‑агентов в контексте AIGC.\n\nОсновные возможности включают пошаговый процесс адаптации агента: от «дня‑одного» приветствия до «месяца‑трёх», когда агент проходит внутренний обзор и становится полноценным членом команды. Встроенный маркетплейс позволяет добавлять готовые агенты или публиковать собственные, а документация покрывает сценарии развертывания через Docker Compose, однокнопочный деплой и локальную разработку. Пользователи могут самостоятельно хостить сервис, что упрощает интеграцию в закрытые инфраструктуры, однако некоторые функции могут требовать обращения к внешним API‑моделям.\n\nТипичный сценарий применения — автоматизация рутинных коммуникационных задач в корпоративных мессенджерах: агент принимает запросы, обрабатывает их, обучается на обратной связи и со временем уменьшает нагрузку на человеческих сотрудников. Требования к запуску включают Docker, доступ к выбранным LLM‑провайдерам и базовые навыки работы с командной строкой. Ограничения: проект находится в активной разработке, поэтому стабильность и полнота функций могут варьироваться, а некоторые возможности могут быть доступны только в облачной версии или через платные интеграции.",
+        "joke": "",
+        "evidence_quote": "**Super-Agents on Your Team**"
+      },
+      "louislam/uptime-kuma": {
+        "policy_version": 7,
+        "source_description": "A fancy self-hosted monitoring tool",
+        "source_readme": "<div align=\"center\" width=\"100%\">\n    <img src=\"./public/icon.svg\" width=\"128\" alt=\"Uptime Kuma Logo\" />\n</div>\n\n# Uptime Kuma\n\nUptime Kuma is an easy-to-use self-hosted monitoring tool.\n\n<a target=\"_blank\" href=\"https://github.com/louislam/uptime-kuma\"><img src=\"https://img.shields.io/github/stars/louislam/uptime-kuma?style=flat\" /></a> <a target=\"_blank\" href=\"https://hub.docker.com/r/louislam/uptime-kuma\"><img src=\"https://img.shields.io/docker/pulls/louislam/uptime-kuma\" /></a> <a target=\"_blank\" href=\"https://hub.docker.com/r/louislam/uptime-kuma\"><img src=\"https://img.shields.io/docker/v/louislam/uptime-kuma/2?label=docker%20image%20ver.\" /></a> <a target=\"_blank\" href=\"https://github.com/louislam/uptime-kuma\"><img src=\"https://img.shields.io/github/last-commit/louislam/uptime-kuma\" /></a> <a target=\"_blank\" href=\"https://opencollective.com/uptime-kuma\"><img src=\"https://opencollective.com/uptime-kuma/total/badge.svg?label=Open%20Collective%20Backers&color=brightgreen\" /></a>\n[![GitHub Sponsors](https://img.shields.io/github/sponsors/louislam?label=GitHub%20Sponsors)](https://github.com/sponsors/louislam)\n\n<img src=\"https://user-images.githubusercontent.com/1336778/212262296-e6205815-ad62-488c-83ec-a5b0d0689f7c.jpg\" width=\"700\" alt=\"Uptime Kuma Dashboard Screenshot\" />\n\n## 🥔 Live Demo\n\nTry it!\n\nDemo Server (Location: Frankfurt - Germany): <https://demo.kuma.pet/start-demo>\n\nIt is a temporary live demo, all data will be deleted after 10 minutes. Sponsored by [Uptime Kuma Sponsors](https://github.com/louislam/uptime-kuma#%EF%B8%8F-sponsors).\n\n> [!WARNING]\n> Be careful - the top result in Google, uptimekuma.co, is not our official website, we don't control the website. I recommend following the installation guide in this GitHub repo.\n\n## ⭐ Features\n\n- Monitoring uptime for HTTP(s) / TCP / HTTP(s) Keyword / HTTP(s) Json Query / Websocket / Ping / DNS Record / Push / Steam Game Server / Docker Containers\n- Fancy, Reactive, Fast UI/UX\n- Notifications via Telegram, Discord, Gotify, Slack, Pushover, Email (SMTP), and [90+ notification services, click here for the full list](https://github.com/louislam/uptime-kuma/tree/master/src/components/notifications)\n- 20-second intervals\n- [Multi Languages](https://github.com/louislam/uptime-kuma/tree/master/src/lang)\n- Multiple status pages\n- Map status pages to specific domains\n- Ping chart\n- Certificate info\n- Proxy support\n- 2FA support\n\n## 🔧 How to Install\n\n### 🐳 Docker Compose\n\n```bash\nmkdir uptime-kuma\ncd uptime-kuma\ncurl -o compose.yaml https://raw.githubusercontent.com/louislam/uptime-kuma/master/compose.yaml\ndocker compose up -d\n```\n\nUptime Kuma is now running on all network interfaces (e.g. http://localhost:3001 or http://your-ip:3001).\n\n> [!WARNING]\n> File Systems like **NFS** (Network File System) are **NOT** supported. Please map to a local directory or volume.\n\n### 🐳 Docker Command\n\n```bash\ndocker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:2\n```\n\nUptime Kuma is now running on all network interfaces (e.g. http://localhost:3001 or http://your-ip:3001).\n\nIf you want to limit exposure to localhost only:\n\n```bash\ndocker run ... -p 127.0.0.1:3001:3001 ...\n```\n\n### 💪🏻 Non-Docker\n\nRequirements:\n\n- Platform\n  - ✅ Major Linux distros such as Debian, Ubuntu, Fedora and ArchLinux etc.\n  - ✅ Windows 10 (x64), Windows Server 2012 R2 (x64) or higher\n  - ❌ FreeBSD / OpenBSD / NetBSD\n  - ❌ Replit / Heroku\n- [Node.js](https://nodejs.org/en/download/) >= 20.4\n- [Git](https://git-scm.com/downloads)\n- [pm2](https://pm2.keymetrics.io/) - For running Uptime Kuma in the background\n\n```bash\ngit clone https://github.com/louislam/uptime-kuma.git\ncd uptime-kuma\nnpm run setup\n\n# Option 1. Try it\nnode server/server.js\n\n# (Recommended) Option 2. Run in the background using PM2\n# Install PM2 if you don't have it:\nnpm install pm2 -g && pm2 install pm2-logrotate\n\n# Start Server\npm2 start server/server.js --name uptime-kuma\n```\n\nUptime Kuma is now running on all network interfaces (e.g. http://localhost:3001 or http://your-ip:3001).\n\nMore useful PM2 Commands\n\n```bash\n# If you want to see the current console output\npm2 monit\n\n# If you want to add it to startup\npm2 startup && pm2 save\n```\n\n### Advanced Installation\n\nIf you need more options or need to browse via a reverse proxy, please read:\n\n<https://github.com/louislam/uptime-kuma/wiki/%F0%9F%94%A7-How-to-Install>\n\n## 🆙 How to Update\n\nPlease read:\n\n<https://github.com/louislam/uptime-kuma/wiki/%F0%9F%86%99-How-to-Update>\n\n## 🆕 What's Next?\n\nI will assign requests/issues to the next milestone.\n\n<https://github.com/louislam/uptime-kuma/milestones>\n\n## ❤️ Sponsors\n\nThank you so much for supporting this project!\n\n### Special Sponsors\n\n[<img src=\"https://avatars.githubusercontent.com/u/249862100?s=200&v=4\">](https://www.atlascloud.ai)\n\nAtlas Cloud (https://www.atlascloud.ai) is sponsoring this project USD 400 per month for using their AI models.\n\n[![Powered by Atlas Cloud](https://www.at",
+        "description": "Uptime Kuma — это самодостаточный сервис для мониторинга доступности различных ресурсов, который можно развернуть на собственном сервере. Приложение поддерживает проверку HTTP/HTTPS, TCP, WebSocket, Ping, DNS‑записи, Docker‑контейнеров и даже игровые серверы, а результаты отображаются в реактивном интерфейсе с графиками, сертификатами и статус‑страницами. Пользователи могут настроить оповещения через более 90 каналов, включая Telegram, Discord, Slack, Email и многие другие, а интервал проверок достигает 20 секунд, что позволяет получать почти мгновенную обратную связь о сбоях.\n\nДля запуска достаточно Docker‑композа или одиночного контейнера, но проект также предоставляет «недокерный» путь — Node.js ≥ 20.4, Git и pm2. При установке через Docker сервис слушает все сетевые интерфейсы, а при необходимости его можно ограничить только localhost. Важно помнить, что хранилища типа NFS не поддерживаются, поэтому данные следует монтировать в локальный каталог или том. После запуска пользователь получает веб‑панель по адресу http://localhost:3001, где может добавить мониторы, задать уведомления и сформировать публичные статус‑страницы.\n\nТипичный сценарий: небольшая компания разворачивает Uptime Kuma на VPS, добавляет проверки своих веб‑сайтов и API, а при падении автоматически получает сообщения в Slack‑канал и по электронной почте. Это позволяет быстро реагировать без необходимости обращения к сторонним облачным сервисам. Ограничения включают отсутствие поддержки FreeBSD и необходимость локального хранилища, а также отсутствие официального сайта — все инструкции находятся в репозитории.",
+        "joke": "",
+        "evidence_quote": "Uptime Kuma is an easy-to-use self-hosted monitoring tool."
       },
       "mahmoudtawfik1998/secure-pdf-document-processor": {
         "policy_version": 7,
@@ -531,6 +586,14 @@
         "joke": "",
         "evidence_quote": "Chief Architect Premier 2026 is a pre-activated standalone desktop edition for Windows x64 that packages the complete application into a single, self-contained distribution ready to run with all features enabled."
       },
+      "tradermonty/claude-trading-skills": {
+        "policy_version": 7,
+        "source_description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+        "source_readme": "# Claude Trading Skills\n\nClaude Trading Skills started as a personal project to use AI to improve my own trading process.\n\nClaude Trading Skills is a Claude Skills-based trading workflow toolkit for time-constrained individual investors.\n\nIt is designed for investors who use long-term investing, ETFs, and dividend stocks as their core, while using disciplined swing trading as a satellite strategy when market conditions are favorable.\n\nThe goal is not to outsource buy/sell decisions to AI. The goal is to structure market review, risk management, trade planning, journaling, and continuous improvement. It is open source because the workflows, checklists, and review habits behind better trading decisions can improve through shared practice.\n\nThis is not a signal service or a promise of profitability. It is a toolkit for traders who want to build a better decision process.\n\nThe project follows a **first for self, open for others** stance: it is built first as a practical workflow the author uses, then shared openly for others who face similar constraints.\n\n📖 **Documentation site:** <https://tradermonty.github.io/claude-trading-skills/>\n\n**Project vision:** [`PROJECT_VISION.md`](PROJECT_VISION.md)\n\n日本語版READMEは[`README.ja.md`](README.ja.md)をご覧ください。\n\n## Disclaimer\n\nThis repository is for educational, research, and process-improvement purposes only. It is not financial advice, investment advisory service, tax advice, legal advice, a signal service, or a broker execution platform. Trading and investing involve risk, including loss of principal. Past performance, backtests, screens, reports, and AI-generated analysis do not guarantee future results. All trading decisions, position sizing, tax/regulatory compliance, and broker usage are the user's responsibility.\n\nThe project is provided under the MIT License, **AS IS, WITHOUT WARRANTY**.\n\n## Who This Is For\n\nThis repository is designed for:\n\n- Time-constrained individual investors\n- Long-term investors who also want disciplined swing-trading upside\n- Dividend and ETF investors who want structured portfolio review\n- Traders who want to manage risk before finding trade candidates\n- Investors who want to journal and improve their decision process\n\nIt is not designed for fully automated trading, signal outsourcing, or short-term scalping.\n\n## Recommended Starting Path\n\nNew users should start with one of these operational workflows. Each link points to a machine-readable manifest under [`workflows/`](workflows/) that names the exact skills, decision gates, and artifacts in order.\n\n| Goal | Workflow | Anchor Skills | API Profile |\n| --- | --- | --- | --- |\n| 15-minute daily market check | [`market-regime-daily`](workflows/market-regime-daily.yaml) | market-breadth-analyzer, uptrend-analyzer, exposure-coach | No API for basic path |\n| Weekly long-term portfolio review | [`core-portfolio-weekly`](workflows/core-portfolio-weekly.yaml) ([sample](examples/workflows/core-portfolio-weekly/sample-run/)) | portfolio-manager, kanchi-dividend-review-monitor, trader-memory-core | Alpaca required; manual CSV is a degraded fallback |\n| Find swing candidates only when risk is allowed | [`swing-opportunity-daily`](workflows/swing-opportunity-daily.yaml) ([sample](examples/workflows/swing-opportunity-daily/sample-run/)) | vcp-screener, drawdown-circuit-breaker, technical-analyst, position-sizer, trader-memory-core, pre-trade-discipline-gate | FMP for screeners; local state for risk and discipline gates |\n| Record and learn from every closed trade | [`trade-memory-loop`](workflows/trade-memory-loop.yaml) | trader-memory-core, signal-postmortem | No API for manual path |\n| Review monthly performance and adjust rules | [`monthly-performance-review`](workflows/monthly-performance-review.yaml) ([sample](examples/workflows/monthly-performance-review/sample-run/)) | trader-memory-core, signal-postmortem, backtest-expert | No API for manual path |\n\nSee [`workflows/README.md`](workflows/README.md) for how to read a manifest and run it manually. For a one-page \"which workflow fits my situation?\" guide, see [Find Your Workflow](docs/en/find-your-workflow.md) ([日本語](docs/ja/find-your-workflow.md)).\n\nNew here? Follow [Your First Week](docs/en/your-first-week.md) ([日本語](docs/ja/your-first-week.md)) from installation through a no-paid-data-API market check, first journal entry, and first weekly review.\n\n### See Example Outputs\n\nThese visual excerpts use fictional data to show the kinds of results you can review before setting up a skill. They are illustrations, not live market readings or trading instructions.\n\nSelect a preview to open the full-size SVG; on a phone, zoom after opening.\n\n[![Illustrative Navigator recommendation for a 15-minute daily market check, listing three required skills and a no-paid-API path](docs/assets/previews/navigator-recommendation.svg)](docs/assets/previews/navigator-recommendation.svg)\n\n**Choose a workflow:** [Trading Skills Navigator](docs/en/skills/trading-skills-navigator",
+        "description": "Claude Trading Skills — это набор рабочих процессов, построенных на Claude Skills, предназначенный для индивидуальных инвесторов, у которых ограничено время. Проект предлагает структурировать ежедневный обзор рынка, управление рисками, планирование сделок, ведение журнала и постоянное улучшение стратегии, не полагаясь на ИИ для принятия решений о покупке или продаже. В репозитории описаны готовые манифесты‑workflow, каждый из которых определяет последовательность навыков (например, market‑breadth‑analyzer, vcp‑screener, position‑sizer) и точки контроля, такие как drawdown‑circuit‑breakers, позволяя пользователю быстро собрать нужный набор функций без написания кода. Среди ключевых возможностей: 15‑минутный ежедневный чек‑рынка без платных API, недельный обзор портфеля с поддержкой Alpaca (или локального CSV‑файла) и автоматический цикл «trade‑memory‑loop», фиксирующий результаты закрытых сделок для последующего анализа. Сценарий применения может выглядеть так: инвестор открывает ежедневный workflow, получает сводку рыночного режима, проверяет, разрешён ли риск, и, если да, получает список потенциальных swing‑кандидатов; затем после закрытия позиции запускает workflow‑memory, который сохраняет детали сделки и генерирует постмортем‑отчёт. Требования включают доступ к API‑источникам (Alpaca, FMP) для некоторых workflow, однако каждый процесс имеет «degraded fallback», позволяющий работать с локальными CSV‑файлами, если онлайн‑данные недоступны. Проект распространяется под лицензией MIT и явно заявляет, что не является сигнал‑сервисом и не гарантирует прибыльность, а служит лишь инструментом для улучшения процесса принятия решений.",
+        "joke": "Если ваш брокер спросит, кто подбирает сделки, ответьте: «Это мой Claude, а не я!»",
+        "evidence_quote": "Claude Trading Skills started as a personal project to use AI to improve my own trading process.\n\nClaude Trading Skills is a Claude Skills-based trading workflow toolkit for time-constrained individual investors."
+      },
       "v-modal/awesome-jev-tools": {
         "policy_version": 7,
         "source_description": "A curated list of tools  built for Jev — TypeSafe AI's System One model for typed decisions.",
@@ -590,9 +653,11 @@
     },
     "daily_retry_at": {
       "alex314618-create/jevrev": "2026-11-13T20:02:20.546398057Z",
+      "amitshekhariitbhu/ai-system-design": "2026-11-14T19:51:01.145518500Z",
       "ashhart/tensorfold": "2026-11-13T19:59:48.883787201Z",
       "asokurasu/text-humanizer": "2026-11-09T11:17:54.878005713Z",
       "blader/humanizer": "2026-11-09T17:58:40.009103841Z",
+      "chromedevtools/chrome-devtools-mcp": "2026-11-14T19:46:33.009161748Z",
       "czjam/gjgjxweb": "2026-11-09T17:59:32.157735009Z",
       "dgreenheck/tidewater": "2026-11-09T11:17:51.623830033Z",
       "egoist/mygo-music": "2026-11-09T18:00:31.425299177Z",
@@ -606,13 +671,16 @@
       "newliver666/apk-reverse": "2026-11-09T10:32:37.481788403Z",
       "nvidia/model-optimizer": "2026-11-09T10:34:55.775146046Z",
       "nvm-sh/nvm": "2026-11-13T19:59:30.915849851Z",
+      "ollaya-dev/ollaya": "2026-11-14T19:52:08.528459890Z",
       "onlistteam/ai-manager": "2026-11-13T20:01:33.863704724Z",
+      "tailscale/tailcat": "2026-11-14T19:45:30.200898326Z",
       "thealgorithms/java": "2026-11-12T17:12:28.707679944Z",
       "tokio-rs/topcoat": "2026-11-11T21:13:44.769775254Z",
       "unreallabsai/unreal-agent": "2026-11-09T10:32:33.474270488Z",
       "we-promise/sure": "2026-11-11T21:13:57.235114239Z",
       "yukitorido/short-video-generator-ai": "2026-11-09T10:34:03.755890509Z",
-      "zhulinsen/daily_stock_analysis": "2026-11-10T19:52:26.476929289Z"
+      "zhulinsen/daily_stock_analysis": "2026-11-10T19:52:26.476929289Z",
+      "zouyuxuan122/dsh-our-free-model": "2026-11-14T19:50:34.436919776Z"
     }
   },
   "snapshots": [
@@ -243896,6 +243964,2099 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "Arda313131882/aion-2-trainer-tool",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1199,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Aion 2 AI Prompt Engineering Toolkit - Standalone Desktop Trainer Setup",
+      "html_url": "https://github.com/Arda313131882/aion-2-trainer-tool",
+      "topics": [
+        "aion-2",
+        "aion-2-2026",
+        "aion-2-game",
+        "aion-2-optimizer",
+        "aion-2-trainer",
+        "aion-2-trainer-tool",
+        "aion2-combat-analysis",
+        "aion2-meter",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:34:15Z",
+      "updated_at": "2026-11-12T11:00:54Z",
+      "pushed_at": "2026-11-13T19:16:57Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:34:15Z",
+          "description": "Aion 2 AI Prompt Engineering Toolkit - Standalone Desktop Trainer Setup",
+          "html_url": "https://github.com/Arda313131882/aion-2-trainer-tool",
+          "stars": 1199,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 55377,
+      "forks": 4603,
+      "language": "TypeScript",
+      "description": "Chrome DevTools for coding agents",
+      "html_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "topics": [
+        "browser",
+        "chrome",
+        "chrome-devtools",
+        "debugging",
+        "devtools",
+        "mcp",
+        "mcp-server",
+        "puppeteer"
+      ],
+      "created_at": "2025-09-11T10:39:55Z",
+      "updated_at": "2026-11-13T19:37:26Z",
+      "pushed_at": "2026-11-13T17:28:37Z",
+      "license": "Apache-2.0",
+      "open_issues": 116,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Chrome DevTools for coding agents",
+          "full_name": "ChromeDevTools/chrome-devtools-mcp",
+          "language": "TypeScript",
+          "trending_stars_period": 145,
+          "trending_total_forks": null,
+          "trending_total_stars": 55377,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DIYgod/pinky",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 2078,
+      "forks": 226,
+      "language": "Go",
+      "description": "Let AI use your iPhone or Android phone, with you in the loop: any MCP agent from macOS, Windows or Linux, or Pinky itself, right on the phone.",
+      "html_url": "https://github.com/DIYgod/pinky",
+      "topics": [
+        "ai-agent",
+        "android",
+        "claude-code",
+        "ios",
+        "iphone",
+        "mcp",
+        "mcp-server",
+        "phone-automation"
+      ],
+      "created_at": "2026-11-06T16:53:14Z",
+      "updated_at": "2026-11-13T19:08:57Z",
+      "pushed_at": "2026-11-13T14:18:03Z",
+      "license": "Apache-2.0",
+      "open_issues": 24,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T16:53:14Z",
+          "description": "Let AI use your iPhone or Android phone, with you in the loop: any MCP agent from macOS, Windows or Linux, or Pinky itself, right on the phone.",
+          "html_url": "https://github.com/DIYgod/pinky",
+          "stars": 2078,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Elegantic/designcenter-nx-desktop",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1182,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Designcenter-NX: Full-Feature Desktop Installer for Immediate Deployment",
+      "html_url": "https://github.com/Elegantic/designcenter-nx-desktop",
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "nx-cad",
+        "nxopen",
+        "open-source",
+        "python",
+        "scripts",
+        "siemens-2026",
+        "siemens-cad",
+        "siemens-nx",
+        "siemens-nx-2026",
+        "siemens-nx-download",
+        "siemens-nx-free",
+        "siemens-nx-pro-install-windows-2026",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:52:51Z",
+      "updated_at": "2026-11-12T11:01:03Z",
+      "pushed_at": "2026-11-13T19:17:01Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:52:51Z",
+          "description": "Designcenter-NX: Full-Feature Desktop Installer for Immediate Deployment",
+          "html_url": "https://github.com/Elegantic/designcenter-nx-desktop",
+          "stars": 1182,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "FrigadeHQ/yogurt",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1225,
+      "forks": 51,
+      "language": "TypeScript",
+      "description": "Private AI meeting notes. Free and open source.",
+      "html_url": "https://github.com/FrigadeHQ/yogurt",
+      "topics": [
+        "ai-meeting-assistant",
+        "electron",
+        "linux",
+        "llama-cpp",
+        "local-ai",
+        "macos",
+        "mcp",
+        "meeting-notes",
+        "open-source",
+        "privacy",
+        "speech-to-text",
+        "transcription",
+        "whisper",
+        "whisper-cpp",
+        "windows"
+      ],
+      "created_at": "2026-11-10T20:01:01Z",
+      "updated_at": "2026-11-13T19:36:16Z",
+      "pushed_at": "2026-11-13T19:00:10Z",
+      "license": "MIT",
+      "open_issues": 22,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T20:01:01Z",
+          "description": "Private AI meeting notes. Free and open source.",
+          "html_url": "https://github.com/FrigadeHQ/yogurt",
+          "stars": 1225,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "GoogleChrome/modern-web-guidance-src",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 4620,
+      "forks": 263,
+      "language": "TypeScript",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "html_url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "topics": [],
+      "created_at": "2026-01-27T20:22:24Z",
+      "updated_at": "2026-11-13T19:44:04Z",
+      "pushed_at": "2026-11-13T19:37:41Z",
+      "license": "Apache-2.0",
+      "open_issues": 383,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Keep your coding agent up to date with the latest web best practices",
+          "full_name": "GoogleChrome/modern-web-guidance-src",
+          "language": "TypeScript",
+          "trending_stars_period": 1875,
+          "trending_total_forks": null,
+          "trending_total_stars": 4620,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HybridRobotics/supermimic",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1424,
+      "forks": 92,
+      "language": "Python",
+      "description": "Humanoid whole-body motion tracking with one differentiable world model.",
+      "html_url": "https://github.com/HybridRobotics/supermimic",
+      "topics": [],
+      "created_at": "2026-11-10T10:46:56Z",
+      "updated_at": "2026-11-13T19:31:51Z",
+      "pushed_at": "2026-11-11T08:06:27Z",
+      "license": "Apache-2.0",
+      "open_issues": 23,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T10:46:56Z",
+          "description": "Humanoid whole-body motion tracking with one differentiable world model.",
+          "html_url": "https://github.com/HybridRobotics/supermimic",
+          "stars": 1424,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "IsaiaR09/daemon-pro-desktop",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1198,
+      "forks": 0,
+      "language": "HTML",
+      "description": "daemon-pro: Complete Standalone Desktop Setup with Full Feature setup",
+      "html_url": "https://github.com/IsaiaR09/daemon-pro-desktop",
+      "topics": [
+        "automation",
+        "daemon-2026",
+        "daemon-tools",
+        "daemon-tools-install-setup-windows-2026",
+        "daemon-tools-pro-advanced",
+        "daemon-tools-pro-vs-ultra",
+        "daemon-tools-ultra",
+        "daemon-tools-ultra-2026",
+        "daemon-tools-ultra-download",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:50:44Z",
+      "updated_at": "2026-11-12T11:01:02Z",
+      "pushed_at": "2026-11-13T19:17:11Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:50:44Z",
+          "description": "daemon-pro: Complete Standalone Desktop Setup with Full Feature setup",
+          "html_url": "https://github.com/IsaiaR09/daemon-pro-desktop",
+          "stars": 1198,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JenkinWoo/sheeridVerify",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 2590,
+      "forks": 1333,
+      "language": "JavaScript",
+      "description": null,
+      "html_url": "https://github.com/JenkinWoo/sheeridVerify",
+      "topics": [],
+      "created_at": "2026-11-06T09:28:09Z",
+      "updated_at": "2026-11-13T19:43:01Z",
+      "pushed_at": "2026-11-06T09:54:37Z",
+      "license": "ISC",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T09:28:09Z",
+          "description": null,
+          "html_url": "https://github.com/JenkinWoo/sheeridVerify",
+          "stars": 2590,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Kianuni/Erosion-CN",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1904,
+      "forks": 406,
+      "language": "Swift",
+      "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+      "html_url": "https://github.com/Kianuni/Erosion-CN",
+      "topics": [],
+      "created_at": "2026-11-10T02:37:31Z",
+      "updated_at": "2026-11-13T19:43:03Z",
+      "pushed_at": "2026-11-13T15:38:08Z",
+      "license": "GPL-3.0",
+      "open_issues": 17,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T02:37:31Z",
+          "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+          "html_url": "https://github.com/Kianuni/Erosion-CN",
+          "stars": 1904,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Likely7/Veyra-NRVideo",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1559,
+      "forks": 70,
+      "language": "C++",
+      "description": "Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-generation visual experience.",
+      "html_url": "https://github.com/Likely7/Veyra-NRVideo",
+      "topics": [],
+      "created_at": "2026-09-09T10:58:42Z",
+      "updated_at": "2026-11-13T19:39:49Z",
+      "pushed_at": "2026-11-11T16:43:44Z",
+      "license": "GPL-3.0",
+      "open_issues": 60,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-generation visual experience.",
+          "full_name": "Likely7/Veyra-NRVideo",
+          "language": "C++",
+          "trending_stars_period": 245,
+          "trending_total_forks": null,
+          "trending_total_stars": 1559,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Luk177Master/easy-worship-desktop",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1113,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Easy-Worship 2026: Complete Standalone Desktop Setup with All Features Enabled",
+      "html_url": "https://github.com/Luk177Master/easy-worship-desktop",
+      "topics": [
+        "automation",
+        "church-presentation",
+        "desktop",
+        "developer-tools",
+        "easyworship",
+        "easyworship-pro",
+        "open-source",
+        "praise-worship",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app",
+        "worship",
+        "worship-lyrics"
+      ],
+      "created_at": "2026-11-06T20:57:14Z",
+      "updated_at": "2026-11-12T11:01:06Z",
+      "pushed_at": "2026-11-13T19:17:08Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:57:14Z",
+          "description": "Easy-Worship 2026: Complete Standalone Desktop Setup with All Features Enabled",
+          "html_url": "https://github.com/Luk177Master/easy-worship-desktop",
+          "stars": 1113,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NVIDIA/auto-ontology",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 12515,
+      "forks": 1025,
+      "language": "Python",
+      "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+      "html_url": "https://github.com/NVIDIA/auto-ontology",
+      "topics": [],
+      "created_at": "2026-04-27T21:45:56Z",
+      "updated_at": "2026-11-13T19:28:11Z",
+      "pushed_at": "2026-11-13T18:39:00Z",
+      "license": "Apache-2.0",
+      "open_issues": 122,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+          "full_name": "NVIDIA/auto-ontology",
+          "language": "Python",
+          "trending_stars_period": 5802,
+          "trending_total_forks": null,
+          "trending_total_stars": 12515,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "RolandoV3/metatrader-5-bot",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1110,
+      "forks": 0,
+      "language": "TypeScript",
+      "description": "Community-driven MetaTrader 5 bot with full features ready for desktop use",
+      "html_url": "https://github.com/RolandoV3/metatrader-5-bot",
+      "topics": [
+        "automation",
+        "background-process",
+        "developer-tools",
+        "metatrader5-no-gui",
+        "mt5-api",
+        "mt5-bot",
+        "mt5-ea",
+        "mt5-headless",
+        "mt5-no-gui",
+        "mt5-python",
+        "mt5-run-background",
+        "mt5-stealth",
+        "mt5-stealth-mode",
+        "open-source",
+        "pymt5",
+        "pymt5-application",
+        "python",
+        "scripts",
+        "software-engineering",
+        "xauusd"
+      ],
+      "created_at": "2026-11-06T21:09:36Z",
+      "updated_at": "2026-11-13T13:35:40Z",
+      "pushed_at": "2026-11-13T19:17:19Z",
+      "license": null,
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T21:09:36Z",
+          "description": "Community-driven MetaTrader 5 bot with full features ready for desktop use",
+          "html_url": "https://github.com/RolandoV3/metatrader-5-bot",
+          "stars": 1110,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "RyoTheOne/dxo-photolab-10-config",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1144,
+      "forks": 0,
+      "language": "HTML",
+      "description": "dxo-photolab-10: complete standalone config, ready to run, nothing held back",
+      "html_url": "https://github.com/RyoTheOne/dxo-photolab-10-config",
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "digital-photography",
+        "dxo-photolab-coupon",
+        "dxo-photolab-discount-code",
+        "dxo-photolab-elite",
+        "dxo-photolab-elite-download",
+        "dxo-photolab-essential",
+        "dxo-photolab-pro-install-windows-raw-editor",
+        "dxo-photolab-sale",
+        "open-source",
+        "pro-photo",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:56:41Z",
+      "updated_at": "2026-11-12T11:01:05Z",
+      "pushed_at": "2026-11-13T19:17:11Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:56:41Z",
+          "description": "dxo-photolab-10: complete standalone config, ready to run, nothing held back",
+          "html_url": "https://github.com/RyoTheOne/dxo-photolab-10-config",
+          "stars": 1144,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Sanidhya0510/dvd-creator-game-enhancement",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1155,
+      "forks": 0,
+      "language": "HTML",
+      "description": "DVD-Creator 2026: Full Desktop Build, Every Feature Enabled",
+      "html_url": "https://github.com/Sanidhya0510/dvd-creator-game-enhancement",
+      "topics": [
+        "acer-nitro",
+        "ais-data",
+        "aiseesoft-data-recovery-speed-comparison",
+        "aiseesoft-fonelab-for-ios",
+        "aiseesoft-recover-deleted-files",
+        "aiseesoft-video-converter-pc",
+        "aosp-build",
+        "automation",
+        "compound-engineering",
+        "developer-tools",
+        "dvd-authoring-on-windows",
+        "dvd-menu-customization-windows",
+        "ios-open-source",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:55:25Z",
+      "updated_at": "2026-11-12T14:20:51Z",
+      "pushed_at": "2026-11-13T19:17:05Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:55:25Z",
+          "description": "DVD-Creator 2026: Full Desktop Build, Every Feature Enabled",
+          "html_url": "https://github.com/Sanidhya0510/dvd-creator-game-enhancement",
+          "stars": 1155,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "SirBonney/scrcpy-mirror-control",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1104,
+      "forks": 1,
+      "language": "HTML",
+      "description": "Android Screen Mirroring and Control Workflow, Simplified",
+      "html_url": "https://github.com/SirBonney/scrcpy-mirror-control",
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scrcpy-alternative",
+        "scrcpy-android",
+        "scrcpy-engine",
+        "scrcpy-ui",
+        "scrcpy-web",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T21:21:53Z",
+      "updated_at": "2026-11-12T11:01:19Z",
+      "pushed_at": "2026-11-13T19:17:37Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T21:21:53Z",
+          "description": "Android Screen Mirroring and Control Workflow, Simplified",
+          "html_url": "https://github.com/SirBonney/scrcpy-mirror-control",
+          "stars": 1104,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Vesuvio1/display-fusion",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1175,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Display Fusion 2026 standalone desktop setup with complete feature configuration",
+      "html_url": "https://github.com/Vesuvio1/display-fusion",
+      "topics": [
+        "automation",
+        "desktop-tools",
+        "developer-tools",
+        "display-management",
+        "displayfusion",
+        "displayfusion-2026",
+        "displayfusion-multi-monitor-install-windows-2026",
+        "displayfusion-pro",
+        "displayfusion-setup",
+        "dual-monitor",
+        "for-displayfusion-tools",
+        "monitor-profiles",
+        "monitor-setup",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "taskbar-tools",
+        "utility"
+      ],
+      "created_at": "2026-11-06T20:54:55Z",
+      "updated_at": "2026-11-13T05:07:42Z",
+      "pushed_at": "2026-11-13T19:17:06Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:54:55Z",
+          "description": "Display Fusion 2026 standalone desktop setup with complete feature configuration",
+          "html_url": "https://github.com/Vesuvio1/display-fusion",
+          "stars": 1175,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ZhuLinsen/daily_stock_analysis",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 71490,
+      "forks": 57261,
+      "language": "Python",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "html_url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "topics": [
+        "a-stock",
+        "ai-agent",
+        "aigc",
+        "llm",
+        "quant",
+        "quantitative-finance",
+        "quantitative-trading"
+      ],
+      "created_at": "2026-01-10T06:43:20Z",
+      "updated_at": "2026-11-13T19:40:50Z",
+      "pushed_at": "2026-11-13T16:25:42Z",
+      "license": "MIT",
+      "open_issues": 54,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+          "full_name": "ZhuLinsen/daily_stock_analysis",
+          "language": "Python",
+          "trending_stars_period": 3569,
+          "trending_total_forks": null,
+          "trending_total_stars": 71490,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+          "full_name": "ZhuLinsen/daily_stock_analysis",
+          "language": "Python",
+          "trending_stars_period": 272,
+          "trending_total_forks": null,
+          "trending_total_stars": 71490,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "abdulmannanmalik13-wq/adobe-substance-3d-studio",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1210,
+      "forks": 1,
+      "language": "HTML",
+      "description": "Adobe Substance 3D Creative Studio 2026 - Secure Asset Pipeline Desktop Installer",
+      "html_url": "https://github.com/abdulmannanmalik13-wq/adobe-substance-3d-studio",
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "substance",
+        "substance-3d",
+        "substance-3d-painter",
+        "substance-abuse",
+        "substance-designer",
+        "substance-designer-allegorithmic",
+        "substance-painter",
+        "substance-use",
+        "substance3d",
+        "substancedesigner",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:33:06Z",
+      "updated_at": "2026-11-13T06:42:03Z",
+      "pushed_at": "2026-11-13T19:16:53Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:33:06Z",
+          "description": "Adobe Substance 3D Creative Studio 2026 - Secure Asset Pipeline Desktop Installer",
+          "html_url": "https://github.com/abdulmannanmalik13-wq/adobe-substance-3d-studio",
+          "stars": 1210,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 117090,
+      "forks": 12243,
+      "language": "JavaScript",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "html_url": "https://github.com/addyosmani/agent-skills",
+      "topics": [
+        "agent-skills",
+        "antigravity",
+        "claude-code",
+        "codex",
+        "cursor",
+        "skills"
+      ],
+      "created_at": "2026-02-15T20:20:26Z",
+      "updated_at": "2026-11-13T19:43:15Z",
+      "pushed_at": "2026-11-01T19:24:49Z",
+      "license": "MIT",
+      "open_issues": 140,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Production-grade engineering skills for AI coding agents.",
+          "full_name": "addyosmani/agent-skills",
+          "language": "JavaScript",
+          "trending_stars_period": 3199,
+          "trending_total_forks": null,
+          "trending_total_stars": 117090,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "agentes-chat/agentes-chat",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1326,
+      "forks": 224,
+      "language": "TypeScript",
+      "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+      "html_url": "https://github.com/agentes-chat/agentes-chat",
+      "topics": [
+        "agentic-ai",
+        "ai-agents",
+        "browser-automation",
+        "chat",
+        "claude",
+        "claude-code",
+        "codex",
+        "collaboration",
+        "computer-use",
+        "docker-compose",
+        "gemini",
+        "grok",
+        "human-in-the-loop",
+        "llm",
+        "mcp",
+        "multi-agent",
+        "openai",
+        "self-hosted",
+        "slack-alternative",
+        "team-chat"
+      ],
+      "created_at": "2026-11-09T00:50:28Z",
+      "updated_at": "2026-11-13T19:38:39Z",
+      "pushed_at": "2026-11-13T19:11:05Z",
+      "license": "AGPL-3.0",
+      "open_issues": 168,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T00:50:28Z",
+          "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+          "html_url": "https://github.com/agentes-chat/agentes-chat",
+          "stars": 1326,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "alibaba/open-code-review",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 50467,
+      "forks": 3746,
+      "language": "Go",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "html_url": "https://github.com/alibaba/open-code-review",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "code-review",
+        "code-review-assistant",
+        "harness",
+        "repository-level-context"
+      ],
+      "created_at": "2026-05-18T02:16:36Z",
+      "updated_at": "2026-11-13T19:39:05Z",
+      "pushed_at": "2026-11-13T16:04:43Z",
+      "license": "Apache-2.0",
+      "open_issues": 339,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+          "full_name": "alibaba/open-code-review",
+          "language": "Go",
+          "trending_stars_period": 206,
+          "trending_total_forks": null,
+          "trending_total_stars": 50467,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/claude-quickstarts",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 20855,
+      "forks": 3491,
+      "language": "Python",
+      "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+      "html_url": "https://github.com/anthropics/claude-quickstarts",
+      "topics": [],
+      "created_at": "2024-08-29T19:52:32Z",
+      "updated_at": "2026-11-13T19:12:34Z",
+      "pushed_at": "2026-11-06T19:37:57Z",
+      "license": "MIT",
+      "open_issues": 244,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+          "full_name": "anthropics/claude-quickstarts",
+          "language": "Python",
+          "trending_stars_period": 1710,
+          "trending_total_forks": null,
+          "trending_total_stars": 20855,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/skills",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 194085,
+      "forks": 22824,
+      "language": "Python",
+      "description": "Public repository for Agent Skills",
+      "html_url": "https://github.com/anthropics/skills",
+      "topics": [
+        "agent-skills"
+      ],
+      "created_at": "2025-09-22T15:53:31Z",
+      "updated_at": "2026-11-13T19:44:00Z",
+      "pushed_at": "2026-11-06T22:32:32Z",
+      "license": null,
+      "open_issues": 1527,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Public repository for Agent Skills",
+          "full_name": "anthropics/skills",
+          "language": "Python",
+          "trending_stars_period": 6055,
+          "trending_total_forks": null,
+          "trending_total_stars": 194085,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "apex-compute/ANR",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1395,
+      "forks": 20,
+      "language": "C++",
+      "description": "Apex Neural Rendering (ANR) by Apex Compute",
+      "html_url": "https://github.com/apex-compute/ANR",
+      "topics": [],
+      "created_at": "2026-11-11T04:27:17Z",
+      "updated_at": "2026-11-13T19:43:16Z",
+      "pushed_at": "2026-11-12T18:20:33Z",
+      "license": null,
+      "open_issues": 24,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-11T04:27:17Z",
+          "description": "Apex Neural Rendering (ANR) by Apex Compute",
+          "html_url": "https://github.com/apex-compute/ANR",
+          "stars": 1395,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "backnotprop/plannotator",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 10378,
+      "forks": 782,
+      "language": "TypeScript",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+      "html_url": "https://github.com/backnotprop/plannotator",
+      "topics": [
+        "agents",
+        "claude-code",
+        "code-review",
+        "codex",
+        "obsidian",
+        "opencode",
+        "pi-mono",
+        "plan-mode",
+        "skills"
+      ],
+      "created_at": "2025-12-28T02:09:40Z",
+      "updated_at": "2026-11-13T19:41:13Z",
+      "pushed_at": "2026-11-13T17:58:38Z",
+      "license": "Apache-2.0",
+      "open_issues": 202,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+          "full_name": "backnotprop/plannotator",
+          "language": "TypeScript",
+          "trending_stars_period": 100,
+          "trending_total_forks": null,
+          "trending_total_stars": 10378,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "block/buzz",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 37256,
+      "forks": 4939,
+      "language": "Rust",
+      "description": "A hive mind communication platform",
+      "html_url": "https://github.com/block/buzz",
+      "topics": [],
+      "created_at": "2026-03-06T21:00:56Z",
+      "updated_at": "2026-11-13T19:43:04Z",
+      "pushed_at": "2026-11-13T19:42:29Z",
+      "license": "Apache-2.0",
+      "open_issues": 3856,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A hive mind communication platform",
+          "full_name": "block/buzz",
+          "language": "Rust",
+          "trending_stars_period": 95,
+          "trending_total_forks": null,
+          "trending_total_stars": 37256,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cloudflare/security-audit-skill",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 71785,
+      "forks": 4781,
+      "language": "JavaScript",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "html_url": "https://github.com/cloudflare/security-audit-skill",
+      "topics": [],
+      "created_at": "2026-06-18T14:08:44Z",
+      "updated_at": "2026-11-13T19:45:03Z",
+      "pushed_at": "2026-09-14T19:29:02Z",
+      "license": "MIT",
+      "open_issues": 126,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "full_name": "cloudflare/security-audit-skill",
+          "language": "JavaScript",
+          "trending_stars_period": 10700,
+          "trending_total_forks": null,
+          "trending_total_stars": 71786,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dikshantghimire321-droid/kontakt-8-config",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1104,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Kontakt 8 desktop utility config: opinionated dotfiles, ready to run",
+      "html_url": "https://github.com/dikshantghimire321-droid/kontakt-8-config",
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "kontakt",
+        "kontakt-full-library",
+        "kontakt-full-library-pc",
+        "open-source",
+        "orchestral",
+        "python",
+        "scripts",
+        "software-engineering",
+        "studio-recording",
+        "system",
+        "utility",
+        "virtual-instrument",
+        "vst-plugins",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T21:07:23Z",
+      "updated_at": "2026-11-12T14:26:45Z",
+      "pushed_at": "2026-11-13T19:17:20Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T21:07:23Z",
+          "description": "Kontakt 8 desktop utility config: opinionated dotfiles, ready to run",
+          "html_url": "https://github.com/dikshantghimire321-droid/kontakt-8-config",
+          "stars": 1104,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ebtsamalhakmy-sketch/desktop-backup-suite",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1199,
+      "forks": 0,
+      "language": "TypeScript",
+      "description": "Aomei Backupper 2026: Full-Feature Desktop Backup and Recovery Suite",
+      "html_url": "https://github.com/ebtsamalhakmy-sketch/desktop-backup-suite",
+      "topics": [
+        "aomei",
+        "aomei-partition",
+        "aomei-setup",
+        "automation",
+        "developer-tools",
+        "disk-manager",
+        "disk-partitioning",
+        "merge-partitions",
+        "open-source",
+        "os-migration",
+        "partition-assistant",
+        "partition-manager",
+        "partition-recovery",
+        "partition-tool",
+        "python",
+        "resize-partition",
+        "scripts",
+        "software-engineering",
+        "split-partition",
+        "utility"
+      ],
+      "created_at": "2026-11-06T20:53:28Z",
+      "updated_at": "2026-11-12T11:01:03Z",
+      "pushed_at": "2026-11-13T19:17:12Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:53:28Z",
+          "description": "Aomei Backupper 2026: Full-Feature Desktop Backup and Recovery Suite",
+          "html_url": "https://github.com/ebtsamalhakmy-sketch/desktop-backup-suite",
+          "stars": 1199,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-deepmind/mujoco",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 17853,
+      "forks": 2187,
+      "language": "C++",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "html_url": "https://github.com/google-deepmind/mujoco",
+      "topics": [
+        "mujoco",
+        "physics",
+        "robotics"
+      ],
+      "created_at": "2021-08-27T12:25:48Z",
+      "updated_at": "2026-11-13T19:31:36Z",
+      "pushed_at": "2026-11-13T17:42:32Z",
+      "license": "Apache-2.0",
+      "open_issues": 407,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+          "full_name": "google-deepmind/mujoco",
+          "language": "C++",
+          "trending_stars_period": 1671,
+          "trending_total_forks": null,
+          "trending_total_stars": 17853,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google/elephant-goldfish-model",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 18538,
+      "forks": 1380,
+      "language": "Python",
+      "description": "Open-source plugin for designing and reviewing software with agents",
+      "html_url": "https://github.com/google/elephant-goldfish-model",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "antigravity",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "codex",
+        "codex-plugin",
+        "coding-agents",
+        "context-engineering",
+        "developer-tools",
+        "gemini",
+        "llm",
+        "multi-agent",
+        "prompt-engineering",
+        "spec-driven-development"
+      ],
+      "created_at": "2026-09-13T16:31:06Z",
+      "updated_at": "2026-11-13T19:43:06Z",
+      "pushed_at": "2026-11-13T17:16:33Z",
+      "license": "Apache-2.0",
+      "open_issues": 103,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source plugin for designing and reviewing software with agents",
+          "full_name": "google/elephant-goldfish-model",
+          "language": "Python",
+          "trending_stars_period": 5555,
+          "trending_total_forks": null,
+          "trending_total_stars": 18538,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "hembramneeraj3-create/aida-64-extreme",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1208,
+      "forks": 1,
+      "language": "HTML",
+      "description": "Aida 64 Extreme 2026: Complete Standalone Desktop Setup with Full Feature Configuration",
+      "html_url": "https://github.com/hembramneeraj3-create/aida-64-extreme",
+      "topics": [
+        "aida64",
+        "aida64-extreme-compatibility-check",
+        "aida64-extreme-detailed-reporting",
+        "aida64-extreme-hardware-diagnostics",
+        "aida64-extreme-setup",
+        "aida64-extreme-system-information",
+        "aida64-free-setup",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "pc-diagnostics-windows-platform",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app",
+        "windows-cpu-gpu-status-check",
+        "windows-performance-benchmarking"
+      ],
+      "created_at": "2026-11-06T20:33:44Z",
+      "updated_at": "2026-11-12T19:12:19Z",
+      "pushed_at": "2026-11-13T19:16:56Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:33:44Z",
+          "description": "Aida 64 Extreme 2026: Complete Standalone Desktop Setup with Full Feature Configuration",
+          "html_url": "https://github.com/hembramneeraj3-create/aida-64-extreme",
+          "stars": 1208,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "huamidev/GestaltX",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 7264,
+      "forks": 2593,
+      "language": "Swift",
+      "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+      "html_url": "https://github.com/huamidev/GestaltX",
+      "topics": [],
+      "created_at": "2026-11-09T05:15:48Z",
+      "updated_at": "2026-11-13T19:42:58Z",
+      "pushed_at": "2026-11-13T16:51:22Z",
+      "license": "GPL-3.0",
+      "open_issues": 66,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T05:15:48Z",
+          "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+          "html_url": "https://github.com/huamidev/GestaltX",
+          "stars": 7264,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "janitoff0/ninjatrader-bot",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1104,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Ninjatrader Bot 2026: a friendly, community-driven trading companion packed with powerful features",
+      "html_url": "https://github.com/janitoff0/ninjatrader-bot",
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "ninjatrader",
+        "ninjatrader-8",
+        "ninjatrader-addon",
+        "ninjatrader-indicators",
+        "open-source",
+        "python",
+        "scripts",
+        "snipe-run",
+        "software-engineering",
+        "system",
+        "trade-copier",
+        "utility",
+        "whale-tracker",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T21:13:59Z",
+      "updated_at": "2026-11-12T14:22:26Z",
+      "pushed_at": "2026-11-13T19:17:23Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T21:13:59Z",
+          "description": "Ninjatrader Bot 2026: a friendly, community-driven trading companion packed with powerful features",
+          "html_url": "https://github.com/janitoff0/ninjatrader-bot",
+          "stars": 1104,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jhaizhou-ops/S2Arm",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 2861,
+      "forks": 521,
+      "language": "C#",
+      "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+      "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+      "topics": [
+        "apple-silicon",
+        "arm64",
+        "game-porting",
+        "ios",
+        "ipados",
+        "macos",
+        "metal",
+        "s2arm",
+        "static-recompilation",
+        "switch"
+      ],
+      "created_at": "2026-11-08T05:49:46Z",
+      "updated_at": "2026-11-13T19:25:58Z",
+      "pushed_at": "2026-11-13T19:39:30Z",
+      "license": "Apache-2.0",
+      "open_issues": 363,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-08T05:49:46Z",
+          "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+          "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+          "stars": 2861,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kcgeekedup-hash/delta-force-trainer-tool",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1197,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Delta Force Trainer Tool: Full Working Installer With All Tools and Configurations",
+      "html_url": "https://github.com/kcgeekedup-hash/delta-force-trainer-tool",
+      "topics": [
+        "automation",
+        "delta-force",
+        "delta-force-aim-assist",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T20:51:48Z",
+      "updated_at": "2026-11-12T11:01:03Z",
+      "pushed_at": "2026-11-13T19:17:06Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:51:48Z",
+          "description": "Delta Force Trainer Tool: Full Working Installer With All Tools and Configurations",
+          "html_url": "https://github.com/kcgeekedup-hash/delta-force-trainer-tool",
+          "stars": 1197,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "leanislizarzado/ibm-spss-desktop-suite",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1104,
+      "forks": 0,
+      "language": "HTML",
+      "description": "IBM SPSS Statistics 2026 Standalone Setup with Full Feature Configuration",
+      "html_url": "https://github.com/leanislizarzado/ibm-spss-desktop-suite",
+      "topics": [
+        "analytics-suite",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "ibm-analytics",
+        "ibm-spss",
+        "ibm-spss-install-setup-windows-2026",
+        "ibm-watson-services",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "spss",
+        "spss-2026",
+        "spss-sav",
+        "spss-statistics-2026",
+        "spss-statistics-download",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T21:04:22Z",
+      "updated_at": "2026-11-12T16:02:02Z",
+      "pushed_at": "2026-11-13T19:17:16Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T21:04:22Z",
+          "description": "IBM SPSS Statistics 2026 Standalone Setup with Full Feature Configuration",
+          "html_url": "https://github.com/leanislizarzado/ibm-spss-desktop-suite",
+          "stars": 1104,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "lobehub/lobehub",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 85354,
+      "forks": 16286,
+      "language": "TypeScript",
+      "description": "🤯 LobeHub - Super-Agents on Your Team. Add super-agents to the chats your team already uses.They take on work by themselves and get better every week.",
+      "html_url": "https://github.com/lobehub/lobehub",
+      "topics": [
+        "agent",
+        "agent-collaboration",
+        "agent-harness",
+        "loop-engineering",
+        "mcp",
+        "personal-assistant",
+        "proactive-agent",
+        "skills",
+        "super-agent",
+        "task-management"
+      ],
+      "created_at": "2023-05-21T07:19:12Z",
+      "updated_at": "2026-11-13T19:43:35Z",
+      "pushed_at": "2026-11-13T19:34:15Z",
+      "license": "Other",
+      "open_issues": 1342,
+      "default_branch": "canary",
+      "sources": [
+        {
+          "description": "🤯 LobeHub - Super-Agents on Your Team. Add super-agents to the chats your team already uses.They take on work by themselves and get better every week.",
+          "full_name": "lobehub/lobehub",
+          "language": "TypeScript",
+          "trending_stars_period": 1186,
+          "trending_total_forks": null,
+          "trending_total_stars": 85354,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "louislam/uptime-kuma",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 93782,
+      "forks": 8717,
+      "language": "JavaScript",
+      "description": "A fancy self-hosted monitoring tool",
+      "html_url": "https://github.com/louislam/uptime-kuma",
+      "topics": [
+        "docker",
+        "monitor",
+        "monitoring",
+        "responsive",
+        "self-hosted",
+        "selfhosted",
+        "single-page-app",
+        "socket-io",
+        "uptime",
+        "uptime-monitoring",
+        "webapp",
+        "websocket"
+      ],
+      "created_at": "2021-07-03T01:02:42Z",
+      "updated_at": "2026-11-13T19:39:00Z",
+      "pushed_at": "2026-11-13T17:16:15Z",
+      "license": "MIT",
+      "open_issues": 852,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "A fancy self-hosted monitoring tool",
+          "full_name": "louislam/uptime-kuma",
+          "language": "JavaScript",
+          "trending_stars_period": 61,
+          "trending_total_forks": null,
+          "trending_total_stars": 93782,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mahmoudtawfik1998/secure-pdf-document-processor",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1212,
+      "forks": 2,
+      "language": "HTML",
+      "description": "Adobe Acrobat Pro 2026: Secure Standalone PDF Document Processor for Desktop",
+      "html_url": "https://github.com/mahmoudtawfik1998/secure-pdf-document-processor",
+      "topics": [
+        "acrobat-dc-pro",
+        "acrobat-for-free-2026",
+        "acrobat-no-limits",
+        "acrobat-pdf",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "forms-acrobat-pro",
+        "free-pdf-reader-windows",
+        "open-source",
+        "pdf-password",
+        "pro-acrobat",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "created_at": "2026-11-06T21:23:09Z",
+      "updated_at": "2026-11-12T15:35:11Z",
+      "pushed_at": "2026-11-13T19:17:34Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T21:23:09Z",
+          "description": "Adobe Acrobat Pro 2026: Secure Standalone PDF Document Processor for Desktop",
+          "html_url": "https://github.com/mahmoudtawfik1998/secure-pdf-document-processor",
+          "stars": 1212,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mattpocock/skills",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 323717,
+      "forks": 27167,
+      "language": "Shell",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "html_url": "https://github.com/mattpocock/skills",
+      "topics": [],
+      "created_at": "2026-02-03T11:15:53Z",
+      "updated_at": "2026-11-13T19:40:57Z",
+      "pushed_at": "2026-11-13T12:30:31Z",
+      "license": "MIT",
+      "open_issues": 244,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Skills for Real Engineers. Straight from my .agents directory.",
+          "full_name": "mattpocock/skills",
+          "language": "Shell",
+          "trending_stars_period": 8731,
+          "trending_total_forks": null,
+          "trending_total_stars": 323717,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "milind-soni/OpenMausBot",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 22123,
+      "forks": 3067,
+      "language": "TypeScript",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "html_url": "https://github.com/milind-soni/OpenMausBot",
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "computer-use",
+        "docker",
+        "electron",
+        "grok",
+        "grok-bot",
+        "grok-bot-alternative",
+        "self-hosted",
+        "typescript"
+      ],
+      "created_at": "2026-08-11T18:58:55Z",
+      "updated_at": "2026-11-13T19:35:51Z",
+      "pushed_at": "2026-11-13T19:41:52Z",
+      "license": "Apache-2.0",
+      "open_issues": 1052,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "full_name": "milind-soni/OpenMausBot",
+          "language": "TypeScript",
+          "trending_stars_period": 9104,
+          "trending_total_forks": null,
+          "trending_total_stars": 22123,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "openai/codex-security",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 13022,
+      "forks": 1019,
+      "language": "TypeScript",
+      "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+      "html_url": "https://github.com/openai/codex-security",
+      "topics": [
+        "ai-security",
+        "application-security",
+        "cli",
+        "code-scanning",
+        "codex",
+        "codex-security",
+        "cybersecurity",
+        "devsecops",
+        "nodejs",
+        "npm",
+        "openai",
+        "sdk",
+        "security",
+        "typescript",
+        "vulnerability-scanning"
+      ],
+      "created_at": "2026-07-13T22:00:13Z",
+      "updated_at": "2026-11-13T19:42:02Z",
+      "pushed_at": "2026-11-13T14:52:10Z",
+      "license": "Apache-2.0",
+      "open_issues": 160,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+          "full_name": "openai/codex-security",
+          "language": "TypeScript",
+          "trending_stars_period": 754,
+          "trending_total_forks": null,
+          "trending_total_stars": 13022,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sajawal-12/cubase-studio-desktop",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1201,
+      "forks": 0,
+      "language": "HTML",
+      "description": "Cubase Studio 2026 desktop setup with full plugin suite and complete feature set",
+      "html_url": "https://github.com/sajawal-12/cubase-studio-desktop",
+      "topics": [
+        "automation",
+        "cubase",
+        "cubase-15",
+        "cubase-for-beginners",
+        "cubase-pro",
+        "cubase-pro-2026",
+        "cubase-setup",
+        "cubase-tutorial",
+        "cubase-windows-download",
+        "cubasecubase-pro",
+        "cube-solver",
+        "cubic-splines",
+        "developer-tools",
+        "mixing-and-mastering",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "steinberg-cubase",
+        "vst3-plugins"
+      ],
+      "created_at": "2026-11-06T20:50:21Z",
+      "updated_at": "2026-11-12T11:01:02Z",
+      "pushed_at": "2026-11-13T19:17:01Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:50:21Z",
+          "description": "Cubase Studio 2026 desktop setup with full plugin suite and complete feature set",
+          "html_url": "https://github.com/sajawal-12/cubase-studio-desktop",
+          "stars": 1201,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sherlock-project/sherlock",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 111030,
+      "forks": 12852,
+      "language": "Python",
+      "description": "Hunt down social media accounts by username across social networks",
+      "html_url": "https://github.com/sherlock-project/sherlock",
+      "topics": [
+        "cli",
+        "cti",
+        "cybersecurity",
+        "forensics",
+        "hacktoberfest",
+        "information-gathering",
+        "infosec",
+        "linux",
+        "osint",
+        "pentesting",
+        "python",
+        "python3",
+        "reconnaissance",
+        "redteam",
+        "sherlock",
+        "tools"
+      ],
+      "created_at": "2018-12-24T14:30:48Z",
+      "updated_at": "2026-11-13T19:45:02Z",
+      "pushed_at": "2026-11-13T05:13:46Z",
+      "license": "MIT",
+      "open_issues": 412,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Hunt down social media accounts by username across social networks",
+          "full_name": "sherlock-project/sherlock",
+          "language": "Python",
+          "trending_stars_period": 14381,
+          "trending_total_forks": null,
+          "trending_total_stars": 111031,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sostenesfreitas/ocarina-recomp",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1183,
+      "forks": 77,
+      "language": "C",
+      "description": "Ocarina of Time running natively on Windows, no emulator. Built on your PC from your own copy. No game files included.",
+      "html_url": "https://github.com/sostenesfreitas/ocarina-recomp",
+      "topics": [],
+      "created_at": "2026-11-06T22:24:03Z",
+      "updated_at": "2026-11-13T19:25:32Z",
+      "pushed_at": "2026-11-11T19:20:58Z",
+      "license": "GPL-3.0",
+      "open_issues": 97,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T22:24:03Z",
+          "description": "Ocarina of Time running natively on Windows, no emulator. Built on your PC from your own copy. No game files included.",
+          "html_url": "https://github.com/sostenesfreitas/ocarina-recomp",
+          "stars": 1183,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tailscale/tailcat",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 9364,
+      "forks": 428,
+      "language": "Go",
+      "description": "like netcat, but over Tailscale's data plane, without Tailscale's control plane",
+      "html_url": "https://github.com/tailscale/tailcat",
+      "topics": [],
+      "created_at": "2024-10-29T17:21:12Z",
+      "updated_at": "2026-11-13T19:39:10Z",
+      "pushed_at": "2026-11-05T15:10:23Z",
+      "license": "BSD-3-Clause",
+      "open_issues": 41,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "like netcat, but over Tailscale's data plane, without Tailscale's control plane",
+          "full_name": "tailscale/tailcat",
+          "language": "Go",
+          "trending_stars_period": 324,
+          "trending_total_forks": null,
+          "trending_total_stars": 9364,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tangerineturtle1/NX2navi",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 3828,
+      "forks": 282,
+      "language": "C",
+      "description": null,
+      "html_url": "https://github.com/tangerineturtle1/NX2navi",
+      "topics": [],
+      "created_at": "2026-11-07T10:01:23Z",
+      "updated_at": "2026-11-13T19:41:49Z",
+      "pushed_at": "2026-11-13T17:24:52Z",
+      "license": "MIT",
+      "open_issues": 660,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T10:01:23Z",
+          "description": null,
+          "html_url": "https://github.com/tangerineturtle1/NX2navi",
+          "stars": 3828,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tradermonty/claude-trading-skills",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 4065,
+      "forks": 857,
+      "language": "Python",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "html_url": "https://github.com/tradermonty/claude-trading-skills",
+      "topics": [],
+      "created_at": "2025-10-19T16:37:29Z",
+      "updated_at": "2026-11-13T19:41:14Z",
+      "pushed_at": "2026-11-13T18:26:52Z",
+      "license": "MIT",
+      "open_issues": 76,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+          "full_name": "tradermonty/claude-trading-skills",
+          "language": "Python",
+          "trending_stars_period": 60,
+          "trending_total_forks": null,
+          "trending_total_stars": 4065,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tss878/delta-executor-toolkit",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 1199,
+      "forks": 0,
+      "language": "TypeScript",
+      "description": "Delta Executor for PC: Full Working Installer with All Tools Pre-Configured",
+      "html_url": "https://github.com/tss878/delta-executor-toolkit",
+      "topics": [
+        "automation",
+        "delta-exec",
+        "delta-executor-26",
+        "delta-executor-exploit",
+        "delta-executor-for-free",
+        "delta-executor-for-pc-2026",
+        "delta-executor-for-win",
+        "delta-executor-lua",
+        "delta-executor-pc-2026",
+        "delta-for-pc",
+        "delta-for-pc-2026",
+        "delta-free-executor",
+        "delta-key-bypass",
+        "delta-lua-executor",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "utility"
+      ],
+      "created_at": "2026-11-06T20:51:54Z",
+      "updated_at": "2026-11-13T17:21:21Z",
+      "pushed_at": "2026-11-13T19:17:08Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-06T20:51:54Z",
+          "description": "Delta Executor for PC: Full Working Installer with All Tools Pre-Configured",
+          "html_url": "https://github.com/tss878/delta-executor-toolkit",
+          "stars": 1199,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 50654,
+      "forks": 3523,
+      "language": "Rust",
+      "description": "Browser automation CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "topics": [],
+      "created_at": "2026-01-11T05:38:15Z",
+      "updated_at": "2026-11-13T19:41:07Z",
+      "pushed_at": "2026-11-13T06:29:09Z",
+      "license": "Apache-2.0",
+      "open_issues": 573,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Browser automation CLI for AI agents",
+          "full_name": "vercel-labs/agent-browser",
+          "language": "Rust",
+          "trending_stars_period": 4601,
+          "trending_total_forks": null,
+          "trending_total_stars": 50654,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-desktop",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 23222,
+      "forks": 1720,
+      "language": "Rust",
+      "description": "Computer use CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-desktop",
+      "topics": [
+        "accessibility",
+        "accessibility-api",
+        "ai-agents",
+        "automation",
+        "cli",
+        "computer-use",
+        "computer-use-agent",
+        "computer-use-agents",
+        "desktop-automation",
+        "macos",
+        "mcp",
+        "rust"
+      ],
+      "created_at": "2026-02-19T18:00:49Z",
+      "updated_at": "2026-11-13T19:38:27Z",
+      "pushed_at": "2026-11-13T07:18:38Z",
+      "license": "Apache-2.0",
+      "open_issues": 239,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Computer use CLI for AI agents",
+          "full_name": "vercel-labs/agent-desktop",
+          "language": "Rust",
+          "trending_stars_period": 6414,
+          "trending_total_forks": null,
+          "trending_total_stars": 23222,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "we-promise/sure",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 14607,
+      "forks": 1102,
+      "language": "Ruby",
+      "description": "The personal finance app for everyone (by everyone)",
+      "html_url": "https://github.com/we-promise/sure",
+      "topics": [],
+      "created_at": "2025-07-23T04:13:55Z",
+      "updated_at": "2026-11-13T19:44:34Z",
+      "pushed_at": "2026-11-13T13:24:53Z",
+      "license": "AGPL-3.0",
+      "open_issues": 921,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The personal finance app for everyone (by everyone)",
+          "full_name": "we-promise/sure",
+          "language": "Ruby",
+          "trending_stars_period": 944,
+          "trending_total_forks": null,
+          "trending_total_stars": 14607,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "zed-industries/zed",
+      "captured_at": "2026-11-13T19:44:45Z",
+      "stars": 94944,
+      "forks": 11688,
+      "language": "Rust",
+      "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+      "html_url": "https://github.com/zed-industries/zed",
+      "topics": [
+        "gpui",
+        "rust-lang",
+        "text-editor",
+        "zed"
+      ],
+      "created_at": "2021-02-20T03:01:06Z",
+      "updated_at": "2026-11-13T19:29:55Z",
+      "pushed_at": "2026-11-13T18:17:50Z",
+      "license": "Other",
+      "open_issues": 3060,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+          "full_name": "zed-industries/zed",
+          "language": "Rust",
+          "trending_stars_period": 2339,
+          "trending_total_forks": null,
+          "trending_total_stars": 94944,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
@@ -243973,7 +246134,8 @@
     "daily-20261109T195138Z": 84,
     "daily-20261110T211307Z": 89,
     "daily-20261111T171025Z": 95,
-    "daily-20261112T195638Z": 101
+    "daily-20261112T195638Z": 101,
+    "daily-20261113T194445Z": 106
   },
   "sent_slots": {
     "2026-09-30-pm": 61,
@@ -243985,7 +246147,8 @@
     "daily:2026-11-09": 84,
     "daily:2026-11-10": 89,
     "daily:2026-11-11": 95,
-    "daily:2026-11-12": 101
+    "daily:2026-11-12": 101,
+    "daily:2026-11-13": 106
   },
   "pending_digests": {},
   "llm_daily_requests": {
@@ -244003,7 +246166,8 @@
     "2026-11-09": 13,
     "2026-11-10": 11,
     "2026-11-11": 15,
-    "2026-11-12": 13
+    "2026-11-12": 13,
+    "2026-11-13": 18
   },
   "delivery_progress": {
     "20260930T143510Z": {
