@@ -12,6 +12,8 @@ mod telegram_format;
 mod test_delivery;
 mod test_delivery_review;
 #[cfg(test)]
+mod test_project_messages;
+#[cfg(test)]
 mod test_support;
 
 use anyhow::{Context, Result, anyhow};
@@ -639,19 +641,6 @@ fn safe_public_text(text: &str) -> String {
 /// Telegram caps one message at 4096 chars; stay safely under it.
 const ISSUE_CHUNK_LIMIT: usize = 3_800;
 
-fn ru_count(n: usize, one: &str, few: &str, many: &str) -> String {
-    let n10 = n % 10;
-    let n100 = n % 100;
-    let word = if n10 == 1 && n100 != 11 {
-        one
-    } else if (2..=4).contains(&n10) && !(12..=14).contains(&n100) {
-        few
-    } else {
-        many
-    };
-    format!("{n} {word}")
-}
-
 fn language_hashtag(language: &str) -> Option<String> {
     let language = match language.trim() {
         "C++" => "CPP",
@@ -681,8 +670,8 @@ fn grouped_count(value: i64) -> String {
     text
 }
 
-/// Render the complete source-backed card; never remove its description to
-/// make other cards fit. Chunking happens only between these rendered cards.
+/// Render the complete source-backed card for its own Telegram message.
+/// Never shorten its description or separate it from its repository link.
 fn issue_item(entry: &Value) -> String {
     let id = entry["full_name"].as_str().unwrap_or("unknown/repository");
     let snapshot = &entry["latest"];
@@ -733,8 +722,8 @@ fn issue_item(entry: &Value) -> String {
     card
 }
 
-/// Preserve complete cards and split only between projects. A card that cannot
-/// fit by itself is an explicit error, never a silently shortened description.
+/// Give every repository its own independently forwardable message, including
+/// the edition and date. An oversized card fails without losing its description.
 fn render_issue_messages(digest: &Value) -> Result<Vec<String>> {
     let entries: Vec<&Value> = digest["entries"]
         .as_array()
@@ -754,41 +743,30 @@ fn render_issue_messages(digest: &Value) -> Result<Vec<String>> {
             )
         })
         .unwrap_or_else(|| markdown_v2_escape(generated));
-    let counted = ru_count(entries.len(), "проект", "проекта", "проектов");
     let edition = if digest["edition"] == "daily" {
         "находки дня"
     } else {
         "подборка недели"
     };
-    let date_and_count = if when.is_empty() {
-        markdown_v2_escape(&counted)
+    let header = if when.is_empty() {
+        format!("*GitHub — {edition}*")
     } else {
-        format!("{when} · {}", markdown_v2_escape(&counted))
+        format!("*GitHub — {edition}*\n{when}")
     };
-    let header = format!("*GitHub — {edition}*\n{date_and_count}");
     let header = if env::var("DIGEST_TEST_ONLY").as_deref() == Ok("true") {
         format!("*ТЕСТОВЫЙ ВЫПУСК — наблюдения с 31\\.10\\.2026*\n{header}")
     } else {
         header
     };
-    let continuation = "*GitHub — продолжение*";
-    let mut chunks = Vec::new();
-    let mut current = header.trim_end().to_string();
+    let mut chunks = Vec::with_capacity(entries.len());
     for entry in entries {
-        let item = issue_item(entry);
+        let message = format!("{header}\n\n{}", issue_item(entry));
         anyhow::ensure!(
-            continuation.encode_utf16().count() + 2 + item.encode_utf16().count()
-                <= ISSUE_CHUNK_LIMIT,
+            message.encode_utf16().count() <= ISSUE_CHUNK_LIMIT,
             "a complete project card exceeds the Telegram-safe limit; review its source text"
         );
-        if current.encode_utf16().count() + 2 + item.encode_utf16().count() > ISSUE_CHUNK_LIMIT {
-            chunks.push(current);
-            current = continuation.to_string();
-        }
-        current.push_str("\n\n");
-        current.push_str(&item);
+        chunks.push(message);
     }
-    chunks.push(current);
     editions::append_catalogue(&mut chunks, digest)?;
     Ok(chunks)
 }
@@ -900,7 +878,7 @@ fn render(d: &Value) -> String {
         lines.push(format!("Статус LLM: {reason}"));
     }
     lines.push(
-        "Формат выпуска: полные карточки, разбитые на сообщения (см. telegram-messages.json)."
+        "Формат выпуска: один проект с полным описанием на сообщение (см. telegram-messages.json)."
             .into(),
     );
     lines.join("\n")
@@ -983,9 +961,6 @@ fn telegram_send_to(chat: &str, text: &str) -> Result<i64> {
 /// reply to `reply_to` when given.
 fn telegram_send_reply_to(chat: &str, reply_to: Option<i64>, text: &str) -> Result<i64> {
     test_delivery::guard(chat)?;
-    if env::var("DIGEST_TEST_ONLY").as_deref() == Ok("true") {
-        std::thread::sleep(StdDuration::from_millis(3100));
-    }
     telegram_format::validate_message(text, ISSUE_CHUNK_LIMIT)
         .context("refusing to send invalid emitted Telegram MarkdownV2")?;
     let token = env::var("TELEGRAM_BOT_TOKEN").context("TELEGRAM_BOT_TOKEN missing")?;
@@ -995,6 +970,8 @@ fn telegram_send_reply_to(chat: &str, reply_to: Option<i64>, text: &str) -> Resu
         body["reply_parameters"] =
             json!({"message_id":reply_to,"allow_sending_without_reply":true});
     }
+    // Each repository is a separate post; pace production and test sends alike.
+    std::thread::sleep(StdDuration::from_millis(3100));
     let (id, message) = telegram_send_request(
         &http,
         &format!("https://api.telegram.org/bot{token}/sendMessage"),
@@ -2097,7 +2074,7 @@ mod tests {
     }
 
     #[test]
-    fn issues_split_between_complete_cards_without_compressing_descriptions() {
+    fn every_card_has_its_own_message_without_compressing_descriptions() {
         let entries = (1..=10)
             .map(|rank| {
                 json!({
@@ -2120,9 +2097,8 @@ mod tests {
             "entries":entries
         });
         let chunks = digest_publication_text(&digest).unwrap();
-        assert_eq!(chunks.len(), 1);
+        assert_eq!(chunks.len(), 10);
         assert!(chunks[0].starts_with("*GitHub — подборка недели*"));
-        assert!(chunks[0].contains("10 проектов"));
         assert!(chunks[0].contains("[org/repo\\-1](https://github.com/org/repo-1)"));
         assert!(chunks[0].contains("28\\.09\\.2026"));
         assert!(!chunks.join("\n").contains("Порядок:"));
@@ -2131,8 +2107,7 @@ mod tests {
                 .iter()
                 .all(|chunk| chunk.encode_utf16().count() <= ISSUE_CHUNK_LIMIT)
         );
-        // A large issue keeps every complete description and joke, even when
-        // several messages are required. No 280/140/60/0 compression remains.
+        // Longer cards also remain one message each, with no compression.
         let heavy = json!({
             "format_version":3,
             "llm_used":false,
@@ -2150,7 +2125,7 @@ mod tests {
             }).collect::<Vec<_>>()
         });
         let heavy_chunks = digest_publication_text(&heavy).unwrap();
-        assert!(heavy_chunks.len() > 1);
+        assert_eq!(heavy_chunks.len(), 20);
         assert!(
             heavy_chunks
                 .iter()
@@ -2392,7 +2367,7 @@ mod tests {
         let digest = json!({"format_version":3,"entries":entries,
             "overview":"На этой неделе появились новые инструменты разработки."});
         let messages = digest_publication_text(&digest).unwrap();
-        assert!(messages.len() > 1);
+        assert_eq!(messages.len(), 30);
         assert!(
             messages
                 .iter()

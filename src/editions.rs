@@ -400,7 +400,6 @@ pub(super) fn append_catalogue(chunks: &mut Vec<String>, digest: &Value) -> Resu
         return Ok(());
     };
     let header = "*Остальные накопленные находки*";
-    let mut current = header.to_string();
     for entry in catalogue {
         let name = entry["full_name"]
             .as_str()
@@ -420,21 +419,13 @@ pub(super) fn append_catalogue(chunks: &mut Vec<String>, digest: &Value) -> Resu
             item.push('\n');
             item.push_str(&crate::markdown_v2_escape(&tag));
         }
+        let message = format!("{header}\n\n{item}");
         ensure!(
-            header.encode_utf16().count() + 2 + item.encode_utf16().count()
-                <= crate::ISSUE_CHUNK_LIMIT,
+            message.encode_utf16().count() <= crate::ISSUE_CHUNK_LIMIT,
             "catalogue item exceeds Telegram limit"
         );
-        if current.encode_utf16().count() + 2 + item.encode_utf16().count()
-            > crate::ISSUE_CHUNK_LIMIT
-        {
-            chunks.push(current);
-            current = header.to_string();
-        }
-        current.push_str("\n\n");
-        current.push_str(&item);
+        chunks.push(message);
     }
-    chunks.push(current);
     Ok(())
 }
 
@@ -1031,7 +1022,7 @@ mod tests {
     }
 
     #[test]
-    fn weekly_index_is_published_chunked_validated_and_acknowledged() {
+    fn weekly_index_has_one_message_per_repository_and_is_acknowledged() {
         let mut state = fixture(85);
         let now = time("2026-10-31T08:00:00Z");
         let candidates = pending(&state, now, Format::Weekly);
@@ -1064,10 +1055,11 @@ mod tests {
         validate_catalogue(&digest, &selection).unwrap();
         let mut chunks = Vec::new();
         append_catalogue(&mut chunks, &digest).unwrap();
-        assert!(chunks.len() > 1);
+        assert_eq!(chunks.len(), 55);
         for chunk in &chunks {
             crate::telegram_format::validate_message(chunk, crate::ISSUE_CHUNK_LIMIT).unwrap();
             assert!(!chunk.contains("Впервые замечен"));
+            assert_eq!(chunk.matches("](https://github.com/").count(), 1);
         }
         for entry in digest["catalogue"].as_array().unwrap() {
             assert!(entry["first_seen"].as_str().is_some());
@@ -1099,13 +1091,14 @@ mod tests {
         });
         let mut chunks = Vec::new();
         append_catalogue(&mut chunks, &digest).unwrap();
-        assert_eq!(chunks.len(), 1);
+        assert_eq!(chunks.len(), 2);
         crate::telegram_format::validate_message(&chunks[0], crate::ISSUE_CHUNK_LIMIT).unwrap();
+        crate::telegram_format::validate_message(&chunks[1], crate::ISSUE_CHUNK_LIMIT).unwrap();
         assert!(chunks[0].contains("\\#CSharp"));
-        assert!(chunks[0].ends_with("[org/docs](https://github.com/org/docs)"));
+        assert!(chunks[1].ends_with("[org/docs](https://github.com/org/docs)"));
         let preview = catalogue_markdown(&digest);
         assert!(preview.contains("#CSharp"));
-        for text in [&chunks[0], &preview] {
+        for text in [&chunks[0], &chunks[1], &preview] {
             assert!(!text.contains("Впервые замечен"));
             assert!(!text.contains("Очередь до выпуска"));
             assert!(!text.contains("2026"));

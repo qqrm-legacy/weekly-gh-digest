@@ -25,6 +25,20 @@ paths = ['''^data/runs/[^/]+/readme-(?:OpenMOSS_MOSS-Image|t8y2_dbx)\.md$''']
 regexTarget = "match"
 regexes = ['''^link_token=(?:30cvb14f\-a9b1\-4b12\-adb6\-2ff6d476a227|7a3m2007\-815f\-409b\-9c3d\-a4129f5c058e)"$''']
 
+# The upstream tailcat README publishes these exact WireGuard public keys in
+# ServerPublic examples and the explicitly public output of genkey --client.
+# https://github.com/tailscale/tailcat/blob/main/README.md
+[[allowlists]]
+description = "Known public node-key examples in the copied tailcat README"
+targetRules = ["generic-api-key"]
+condition = "AND"
+paths = ['''^data/runs/[^/]+/readme-tailscale_tailcat\.md$''']
+regexTarget = "match"
+regexes = [
+  '''^nodekey:(?:9c8d2e6728da80a1dd37e275a82595b42d9a838610bc53f74a7670d1610f2e34|8022c28ea8f52ec7a0a51b644ce00fef3aae150731a01c61a3abd3ac26e14a49)"$''',
+  '''^nodekey:cfb6bfa77a0654d7450947fd6acef17d2cd848da1d30b2540b13dac272ddfd16$''',
+]
+
 # credential_markers compares three PEM header strings. This exact expression
 # contains no key material; actual PEM blocks in src/main.rs remain detectable.
 [[allowlists]]
