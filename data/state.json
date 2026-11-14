@@ -8,6 +8,7 @@
       "actions/runner-images": "2026-11-03",
       "addyosmani/agent-skills": "2026-11-03",
       "affaan-m/ecc": "2026-11-03",
+      "ag-ui-protocol/ag-ui": "2026-11-14",
       "akitaonrails/ai-memory": "2026-11-11",
       "alexgreensh/anidoodle": "2026-11-11",
       "alibaba/open-code-review": "2026-11-03",
@@ -33,6 +34,7 @@
       "davila7/claude-code-templates": "2026-09-29",
       "debpalash/voicestudio": "2026-09-29",
       "deepopen-com/deepopen": "2026-11-04",
+      "devedevt/ffmpeg-gui-editor-windows": "2026-11-14",
       "dietrichgebert/ponytail": "2026-09-30",
       "dream-num/univer": "2026-09-29",
       "driceroland/search": "2026-11-05",
@@ -46,6 +48,7 @@
       "firelex/jeff": "2026-09-30",
       "flutter/flutter": "2026-10-01",
       "freestylefly/wechatbridge": "2026-11-09",
+      "frigadehq/yogurt": "2026-11-14",
       "fxembed/fxembed": "2026-09-29",
       "garrytan/gbrain": "2026-11-09",
       "google-deepmind/mujoco": "2026-11-08",
@@ -56,6 +59,7 @@
       "heygen-com/hyperframes": "2026-09-30",
       "heyjunpenn/awesome-jev": "2026-11-10",
       "hkuds/cli-anything": "2026-09-29",
+      "holyarrs/holyarrs": "2026-11-14",
       "homeassistant-ai/ha-mcp": "2026-11-09",
       "hunxbyts/ghosttrack": "2026-10-01",
       "hybridrobotics/supermimic": "2026-11-12",
@@ -66,13 +70,17 @@
       "jev-chat/jev-chat-windows": "2026-11-09",
       "johnheibel/claudeanimationbase": "2026-11-12",
       "johnheibel/pdoomvideo": "2026-11-09",
+      "juliusbrussee/caveman": "2026-11-14",
+      "kaankiziltug/logo-design-skill": "2026-11-14",
       "kianuni/erosion-cn": "2026-11-10",
       "kkkkhazix/aihot": "2026-09-30",
+      "lemomo-ai/lemo-opuscar": "2026-11-14",
       "likely7/veyra-nrvideo": "2026-11-13",
       "lobehub/lobehub": "2026-11-13",
       "louislam/uptime-kuma": "2026-11-13",
       "mahmoudtawfik1998/secure-pdf-document-processor": "2026-11-11",
       "mak5er/aircard-ios": "2026-11-04",
+      "martin-olivier/airgorah": "2026-11-14",
       "mattpocock/skills": "2026-09-30",
       "mexicat/pdoom-video": "2026-09-30",
       "mikehasa/golive-skill": "2026-09-30",
@@ -107,6 +115,7 @@
       "shihabal3amri/diplay": "2026-09-30",
       "sostenesfreitas/ocarina-recomp": "2026-11-08",
       "stablyai/orca": "2026-09-29",
+      "supermemoryai/company-brain": "2026-11-14",
       "t8y2/dbx": "2026-09-29",
       "tangerineturtle1/nx2navi": "2026-11-08",
       "tencent/weknora": "2026-09-29",
@@ -124,6 +133,7 @@
       "volotat/mini-agi": "2026-11-08",
       "willfaust/madeira": "2026-09-29",
       "woo20080623-cell/cinebench-desktop": "2026-11-10",
+      "wy51ai/floorplan-3d": "2026-11-14",
       "yappologistic/cui": "2026-11-10",
       "yetone/magpie": "2026-09-30",
       "yihui-dev/awesome-opus5-5-videos": "2026-11-12",
@@ -161,6 +171,14 @@
         "description": "ECC – это операционная система‑платформа для управления агентами, предназначенная ускорять работу ИИ‑агентов (Claude Code, Codex, Opencode, Cursor и др.) за счёт модулей навыков, памяти, безопасности и исследовательского подхода. Подойдёт разработчикам, которым нужно быстро собрать и настроить набор агентов с единым механизмом управления и оптимизации производительности. Можно рассмотреть для построения кастомных пайплайнов, где важны согласованность поведения и контроль над ресурсами. Явное ограничение – проект настоятельно требует устанавливать его только из официальных каналов, иначе существует риск получения вредоносного кода.",
         "joke": "Почему агенту нужен ECC? Чтобы его «производительность» не превратилась в «провал»!",
         "evidence_quote": "> [!WARNING]\n> **Official sources only.** Install ECC only from verified channels: the GitHub repository [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC), the npm packages [`ecc-universal`](https://www.npmjs.com/package/ecc-universal) and [`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield), the [GitHub App](https://github.com/apps/ecc-tools), the plugin slug `ecc@ecc`, and the project website [ecc.tools](https://ecc.tools). Third-party re-uploads and unofficial mirrors are not maintained or reviewed by the project and may contain malware."
+      },
+      "ag-ui-protocol/ag-ui": {
+        "policy_version": 7,
+        "source_description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+        "source_readme": "\n# <img src=\"https://github.com/user-attachments/assets/ebc0dd08-8732-4519-9b6c-452ce54d8058\" alt=\"ag-ui Logo\" width=\"22\"/> AG-UI: The Agent-User Interaction Protocol\n\n\nAG-UI is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications.\nBuilt for simplicity and flexibility, it enables seamless integration between AI agents, real time user context, and user interfaces.\n\n---\n\n<div align=\"center\">\n<a href=\"https://trendshift.io/repositories/27961?utm_source=repository-badge&utm_medium=badge&utm_campaign=badge-repository-27961\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://trendshift.io/api/badge/repositories/27961\" alt=\"ag-ui-protocol%2Fag-ui | Trendshift\" width=\"250\" height=\"55\"/></a>\n<a href=\"https://trendshift.io/repositories/27961?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-27961\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://trendshift.io/api/badge/trendshift/repositories/27961/daily\" alt=\"ag-ui-protocol%2Fag-ui | Trendshift\" width=\"250\" height=\"55\"/></a>\n</div>\n\n<br>\n\n\n[![Version](https://img.shields.io/npm/v/@ag-ui/core?label=Version&color=6963ff&logo=npm&logoColor=white)](https://www.npmjs.com/package/@ag-ui/core)\n![MIT](https://img.shields.io/github/license/copilotkit/copilotkit?color=%236963ff&label=License)\n![Discord](https://img.shields.io/discord/1379082175625953370?logo=discord&logoColor=%23FFFFFF&label=Discord&color=%236963ff)\n\n<a href=\"https://discord.gg/Jd3FzfdJa8\" target=\"_blank\"> Join our Discord → </a> &nbsp;&nbsp;&nbsp; <a href=\"https://ag-ui.com/\" target=\"_blank\"> Read the Docs → </a> &nbsp;&nbsp;&nbsp; <a href=\"https://dojo.ag-ui.com/\" target=\"_blank\"> Go to the AG-UI Dojo → </a> &nbsp;&nbsp;&nbsp; <a href=\"https://x.com/CopilotKit\" target=\"_blank\"> Follow us → </a>\n\n<img width=\"1600\" height=\"680\" alt=\"1600x680\" src=\"https://github.com/user-attachments/assets/00ec7366-713e-443f-a8f0-8db52ad28ef4\" />\n\n\n\n## 🚀 Getting Started\nCreate a new AG-UI application in seconds:\n```bash\nnpx create-ag-ui-app my-agent-app\n```\n\n<h3> Useful Links:</h3>\n\n- [The AG-UI Dojo](https://dojo.ag-ui.com/)\n- [Build AG-UI-powered applications(Quickstart)](https://docs.ag-ui.com/quickstart/applications)\n- [Build new AG-UI framework integrations (Quickstart)](https://go.copilotkit.ai/agui-contribute)\n- [Book a call to discuss an AG-UI integration with a new framework](https://calendly.com/markus-copilotkit/ag-ui)\n- [Join the Discord Community](https://discord.gg/Jd3FzfdJa8)\n\n## What is AG-UI?\n\nAG-UI is an open, lightweight, event-based protocol for agent-human interaction, designed for simplicity & flexibility:\n\n- During agent executions, agent backends **emit events _compatible_ with one of AG-UI's ~16 standard event types**\n- Agent backends can **accept one of a few simple AG-UI compatible inputs** as arguments\n\n**AG-UI includes a flexible middleware layer** that ensures compatibility across diverse environments:\n\n- Works with **any event transport** (SSE, WebSockets, webhooks, etc.)\n- Allows for **loose event format matching**, enabling broad agent and app interoperability\n\nIt also ships with a **reference HTTP implementation** and **default connector** to help teams get started fast.\n\n\n[Learn more about the specs →](https://go.copilotkit.ai/ag-ui-introduction)\n\n\n## Why AG-UI?\n\nAG-UI was developed based on real-world requirements and practical experience building in-app agent interactions.\n\n\n## Where does AGUI fit in the agentic protocol stack?\nAG-UI is complementary to the other 2 top agentic protocols\n- MCP gives agents tools\n- A2A allows agents to communicate with other agents\n- AG-UI brings agents into user-facing applications\n\n<div align=\"center\">\n  <img width=\"2048\" height=\"1182\" alt=\"The Agent Protocol Stack\" src=\"https://github.com/user-attachments/assets/41138f71-50be-4812-98aa-20e0ad595716\" />\n</div>\n\n## 🚀 Features\n\n- 💬 Real-time agentic chat with streaming\n- 🔄 Bi-directional state synchronization\n- 🧩 Generative UI and structured messages\n- 🧠 Real-time context enrichment\n- 🛠️ Frontend tool integration\n- 🧑‍💻 Human-in-the-loop collaboration\n\n\n## 🛠 Supported Integrations\n\nAG-UI was born from CopilotKit's initial **partnership** with LangChain and CrewAI - and brings the incredibly popular agent-user-interactivity infrastructure to the wider agentic ecosystem.\n\n**1st party** = the platforms that have AG‑UI built in and provide documentation for guidance.\n\n## Frameworks\n\n| Framework                                                          | Status                   | AG-UI Resources                                                                 |\n| ------------------------------------------------------------------ | ------------------------ | -------------------------------------------------------------------------------- |\n| Built-in Agent                                                | ✅ Supported             | ➡️ [Docs](https://docs.copilotkit.ai/direct-to-llm)  |\n\n### 🤝 Partnerships\n| Framework",
+        "description": "AG‑UI — открытый, лёгкий протокол, основанный на событиях, который задаёт единый формат взаимодействия AI‑агентов с пользовательскими интерфейсами. Протокол описывает около 16 стандартных типов событий, которые агент может посылать в процессе выполнения, а также несколько простых входных форматов, принимаемых бекендом агента. Благодаря этому разработчики могут подключать любые бекенды к фронтендам без необходимости писать собственные адаптеры, а также использовать любой транспорт (SSE, WebSocket, webhook) благодаря встроенному слою‑middleware, обеспечивающему гибкое сопоставление форматов сообщений.\n\nДля быстрого старта проект поставляется с референс‑реализацией HTTP‑сервера и готовым коннектором, а также набором CLI‑утилит (npx create‑ag‑ui‑app) и подробной документацией. Среди основных возможностей – потоковый чат‑интерфейс в реальном времени, двунаправленная синхронизация состояния, генеративный UI и структурированные сообщения, обогащение контекста на лету, интеграция с инструментами фронтенда и поддержка сценариев «человек‑в‑цикл». Протокол позиционируется как третий уровень в стеке агентных протоколов: MCP предоставляет инструменты агентам, A2A — их коммуникацию, а AG‑UI — взаимодействие с конечным пользователем.\n\nТипичные сценарии включают встраивание интерактивных помощников в веб‑приложения, создание совместных рабочих пространств, где пользователь и агент совместно редактируют данные, и построение UI‑компонентов, генерируемых моделью в ответ на пользовательские запросы. Требования к использованию ограничиваются наличием среды, поддерживающей выбранный транспорт событий, и совместимости с клиентскими библиотеками AG‑UI. Ограничения связаны с тем, что протокол лишь стандартизирует обмен событиями; конкретные функции агента, безопасность данных и масштабирование остаются задачами разработчика.",
+        "joke": "",
+        "evidence_quote": "AG-UI is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications.\nBuilt for simplicity and flexibility, it enables seamless i"
       },
       "akitaonrails/ai-memory": {
         "policy_version": 7,
@@ -258,6 +276,14 @@
         "joke": "DeepOpen умеет классифицировать запросы быстрее, чем я успеваю решить кроссворд.",
         "evidence_quote": "DeepOpen evaluates predefined questions over text or JSON and returns labels, scores, and probabilities. It does not generate free-form text. Output types are constrained; predictions can still be wrong, and probabilities require validation on your own data."
       },
+      "devedevt/ffmpeg-gui-editor-windows": {
+        "policy_version": 7,
+        "source_description": "Lightweight portable FFmpeg GUI & lossless video trimmer for Windows (ready-to-use .exe). Supports English, Russian, Chinese, German, French & Italian.",
+        "source_readme": "# FFmpeg-GUI-Editor-Windows — Ready-to-Use Free Portable Video Editor (.exe)\n\n**FFmpeg-GUI-Editor-Windows** is a lightweight, fast, and **free open-source video editor for Windows 10 and Windows 11** that works as an intuitive graphical user interface (**FFmpeg GUI**). Built specifically for users who want to **download a ready-to-use `.exe` executable** to trim, crop, compress, and convert videos without touching the command line.\n\nNo installation, no Python setup, no manual `PATH` configuration, and no watermarks. Just download the release files, place them in the same folder, and start editing. Licensed under **GPL v3**.\n\n---\n\n### 📥 Direct Download & Important Setup Instructions (`.exe` + `libvlc.dll`)\nThe release package consists of **two required files**: the main executable (`.exe`) and the media engine library (**`libvlc.dll`**).\n\n1. Open the **[Releases](../../releases)** page of this repository.\n2. Download **both files** from the latest release:\n   * **`FFmpeg-GUI-Editor.exe`** (the main application)\n   * **`libvlc.dll`** (required core video playback & rendering library)\n3. **Important:** Place both files inside the **same folder** on your PC or USB drive (do not separate them).\n4. Double-click the **`.exe`** file to launch the editor immediately — no installation required.\n\n> **⚠️ Note:** Both the `.exe` file and `libvlc.dll` must remain in the exact same directory for the program to start and preview videos properly.\n\n---\n\n### 🖼️ Interface & Quick Visual Guide\n![FFmpeg-GUI-Editor-Windows Visual Guide](blob/main/guide.png)\n\n\n\n---\n\n### 🌍 Multi-Language Interface (6 Languages Built-In)\nSwitch between 6 languages directly in the interface without downloading extra language packs:\n* 🇬🇧 **English**\n* 🇷🇺 **Русский** (Russian)\n* 🇨🇳 **中文** (Chinese)\n* 🇩🇪 **Deutsch** (German)\n* 🇫🇷 **Français** (French)\n* 🇮🇹 **Italiano** (Italiano)\n\n---\n\n### 🎬 Core Video Editing Features\n* **Lossless Video Trimmer & Cutter:** Cut and trim video start/end points with frame-level precision without re-encoding.\n* **Smart Video Crop Tool:** Manual crop selection or automatic black-bar removal (**auto-crop**).\n* **Video Compressor & Resizer:** Downscale 4K, 1440p, 1080p, or 720p videos to shrink file sizes for Discord, Telegram, WhatsApp, and web upload.\n* **Universal Video & Audio Converter:** Convert media files between **MP4, MKV, WebM, AVI, MOV, GIF, APNG, MP3, WAV, FLAC, OGG**, and more.\n* **Rotate & Flip Video:** Fix vertical or upside-down videos in a single click.\n* **Audio Volume Booster & Remover:** Increase/decrease volume or strip audio tracks from video files completely.\n* **Duplicate Frame Remover:** Automatically detect and delete frozen or duplicate frames to reduce output file size.\n* **Playback Speed & FPS Changer:** Speed up, slow down, or change video frame rate (FPS) effortlessly.\n* **Chroma Key (Green Screen Removal):** Remove solid background colors from videos and images.\n\n### ⚙️ Advanced Automation & FFmpeg Tools\n* **Duplicate Scene Finder:** Scan and remove repeated video segments across multiple files.\n* **Image Sequence to Video / GIF:** Turn a folder of PNG or JPG images into an MP4 video or animated GIF.\n* **Built-in Subtitle Editor:** Create, edit, and sync `.srt` subtitles visually on the timeline.\n* **Visual FFmpeg Command Generator:** Configure settings via GUI and copy the exact FFmpeg CLI arguments for your own scripts.\n* **Batch Video Processing (`.bat`):** Export batch scripts to process dozens of videos via simple drag-and-drop.\n* **Frame Extractor & Alpha Blend:** Save individual video frames as images or blend multiple frames together.\n\n---\n\n### 🔍 Popular Search Queries & Use Cases\n`ffmpeg gui windows exe download` • `free portable video editor windows 11` • `ffmpeg frontend with bundled ffmpeg exe` • `lossless video cutter no watermark` • `free video compressor for discord exe` • `mp4 to gif converter portable exe` • `open source video trimmer windows 10` • `multilanguage ffmpeg gui`\n\n---\n\n### 📜 License\nThis software is free and open-source, distributed under the **GNU General Public License v3.0 (GPL-3.0)**.\n",
+        "description": "Проект — портативный графический интерфейс к FFmpeg для Windows 10/11, позволяющий выполнять типичные задачи видеомонтажа без командной строки. Пользователь получает готовый .exe‑файл и обязательную библиотеку libvlc.dll, которые размещаются в одной папке и сразу запускаются, без установки, настройки PATH и без водяных знаков. Основные функции включают безрекодирующее обрезание и кадр‑точную нарезку, автоматическое удаление чёрных полос, сжатие и изменение разрешения (от 4K до 720p), конвертацию между популярными контейнерами и аудиоформатами, а также поворот, зеркалирование и регулировку громкости. Дополнительно доступны инструменты автоматизации: поиск и удаление дублирующихся сцен, генерация видеоряда из последовательности изображений, визуальный редактор субтитров и генератор команд FFmpeg, которые можно экспортировать в бат‑скрипты для пакетной обработки. Интерфейс поддерживает шесть языков (английский, русский, китайский, немецкий, французский, итальянский), что упрощает работу пользователям разных регионов. Пример применения – быстрое создание безводяного клипа для отправки в мессенджер: пользователь открывает .exe, загружает файл, задаёт начальную и конечную точку, выбирает «lossless trim», сохраняет результат и сразу получает готовый файл без потери качества. Требования ограничиваются наличием двух файлов в одной директории; отсутствие установки делает программу удобной для переносных носителей, однако без libvlc.dll приложение не запустится, а все операции всё равно опираются на встроенный FFmpeg, поэтому интернет‑соединение может потребоваться только для загрузки исходных бинарных компонентов.",
+        "joke": "Сократили ролик до нужного кадра — и даже FFmpeg не успел спросить, зачем это нужно.",
+        "evidence_quote": "**FFmpeg-GUI-Editor-Windows** is a lightweight, fast, and **free open-source video editor for Windows 10 and Windows 11** that works as an intuitive graphical user interface (**FFmpeg GUI**). Built specifically for users who want to **download a ready-to-use `.exe` executable** to trim, crop, compress, and convert videos without touching the command line."
+      },
       "driceroland/search": {
         "policy_version": 7,
         "source_description": "A small, fast WebKit browser for macOS, by Office Commun.",
@@ -289,6 +315,14 @@
         "description": "Нативный инструмент для передачи выбранных сообщений WeChat в Codex, Claude и другие AI-агенты либо в локальную базу Obsidian. В macOS он добавляет Share Extension в меню «转发到其他应用»: пользователь объединяет выбранные сообщения и выбирает целевое приложение или действие. WeChat создаёт ZIP с текстом, изображениями и видео; мост активирует выбранного агента, добавляет сохранённую инструкцию и вставляет архив. Затем пользователь запускает обработку в агенте. Можно также сохранить Markdown с вложениями в Obsidian или выбранную папку либо оставить архив в буфере обмена.\n\nWeChat разрешает переслать до 100 сообщений за раз. Функция «分批收集到微信流» позволяет вручную собрать несколько пакетов и затем передать их вместе. Для разных чатов сохраняются свои сценарии и подсказки; для совместимых агентов можно устанавливать пакеты навыков. Исходные изображения и видео остаются в ZIP. Сам мост работает локально, не читает базу WeChat и не внедряется в приложение; дальнейшая обработка переданного архива выполняется выбранным агентом.\n\nДля описанного сценария на macOS требуются macOS 14+ и WeChat 4.1.13 или новее. Доступна также Windows-сборка с инструкцией в архиве.",
         "joke": "",
         "evidence_quote": "macOS 微信 4.1.13 起，多选聊天记录后可以「合并转发」给第三方应用：微信会生成一份包含 TXT、图片和视频的 ZIP，正好适合交给 AI Agent 处理，或沉淀进本地知识库。"
+      },
+      "frigadehq/yogurt": {
+        "policy_version": 7,
+        "source_description": "Private AI meeting notes that stay on your computer. A free, open-source alternative to Granola for Mac, Windows and Linux.",
+        "source_readme": "<p align=\"center\">\n  <a href=\"https://yogurt.so?utm_source=github&utm_medium=readme&utm_campaign=yogurt\">\n    <img src=\"docs/assets/readme-header.svg\" width=\"212\" height=\"86\" alt=\"Yogurt. Take note.\">\n  </a>\n</p>\n\n<p align=\"center\">\n  Private AI meeting notes. A free, open-source alternative to Granola.\n</p>\n\n<p align=\"center\">\n  Download for <a href=\"https://github.com/FrigadeHQ/yogurt/releases/latest/download/Yogurt-mac-arm64.dmg\">Mac</a> · <a href=\"https://github.com/FrigadeHQ/yogurt/releases/latest/download/Yogurt-windows-x64.exe\">Windows</a> · <a href=\"https://github.com/FrigadeHQ/yogurt/releases/latest/download/Yogurt-linux-x86_64.AppImage\">Linux</a>\n</p>\n\n<p align=\"center\">\n  <img src=\"docs/assets/yogurt-screenshot.webp\" width=\"1074\" alt=\"Yogurt showing the Summary of a launch planning meeting: the plan, next steps by person, and your own reminders\">\n</p>\n\n<p align=\"center\">\n  Yogurt records your calls without adding a bot to the meeting.\n</p>\n<p></p>\n<p align=\"center\">\n  <sub>macOS 14.4+ (Apple Silicon) · Windows 10 2004+ (x64) · Ubuntu 22.04+ or similar (x64 AppImage) · 8 GB memory</sub><br><br>\n  <a href=\"https://yogurt.so?utm_source=github&utm_medium=readme&utm_campaign=yogurt\">yogurt.so</a> · <a href=\"docs/README.md\">Help</a> · <a href=\"docs/building.md\">Build and run locally</a> · <a href=\"LICENSE\">MIT license</a><br><br>\n  Made by <a href=\"https://frigade.com?utm_source=github&utm_medium=readme&utm_campaign=yogurt\">Frigade</a>.\n</p>\n\n## What it does\n\n- **Live transcripts.** Yogurt records calls and turns speech into text as you talk.\n- **Meeting summaries.** Yogurt writes up the conversation and any notes you add.\n- **Private by default.** Your audio, transcripts and AI processing stay on your computer.\n- **Free and open source.** You can use Yogurt without an account.\n- **Who said what.** Yogurt names speakers from Zoom, Teams and Meet on Mac only.\n- **Languages.** Multi-language mode transcribes 99 languages.\n- **Recording reminders.** Yogurt offers to record when a supported call starts.\n- **Answers with sources.** Yogurt answers questions across meetings and links to the source.\n- **Folders and search.** You can find meetings by folder, title, notes or transcript.\n- **Copy and export.** You can copy notes or transcripts, or save both as Markdown.\n- **Local MCP server.** Your chosen assistant app can read your notes when you allow access.\n- **Automatic stop.** Yogurt stops recording when the call ends.\n\n## Watch the demo\n\nhttps://github.com/user-attachments/assets/da16b894-beb1-491a-89e1-fd10666dc9b8\n\n## How it works\n\n1. **Record.** Start recording your microphone and call audio; you can add your own notes.\n2. **Transcribe.** Yogurt uses whisper.cpp and, on supported Macs, Apple SpeechAnalyzer.\n3. **Summarize and ask.** A local open-weight model runs through llama.cpp.\n\nMeeting data stays local; Yogurt goes online for model downloads and update checks.\n\n<details><summary>Where your meetings, recordings, settings and models are stored</summary>\n\n- Mac uses `~/Library/Application Support/Yogurt`.\n- Windows uses `%APPDATA%\\Yogurt`.\n- Linux uses `~/.config/Yogurt`, or `$XDG_CONFIG_HOME/Yogurt` if set.\n\n</details>\n\n## FAQ\n\n<details><summary><strong>What kind of computer do I need?</strong></summary>\n\n<br>\n\n> A Mac with Apple silicon and macOS 14.4 or newer, a 64-bit PC with Windows 10 (version 2004) or newer, or a 64-bit Linux computer with Ubuntu 22.04 or newer. Each needs at least 8 GB of memory. If your computer is too slow, Yogurt tells you during setup. Calendar and speaker names from calls are Mac only for now.\n\n</details>\n\n<details><summary><strong>Windows says “Windows protected your PC.” What do I do?</strong></summary>\n\n<br>\n\n> Click More info, then Run anyway. Windows shows this for new apps that aren’t signed with a Microsoft certificate yet. Yogurt is open source, so anyone can check what it does.\n\n</details>\n\n<details><summary><strong>Does Yogurt join my meetings?</strong></summary>\n\n<br>\n\n> No. Yogurt records your microphone and the sound playing on your computer. No bot joins the call, so let the other people on the call know you’re recording.\n\n</details>\n\n<details><summary><strong>Are recordings saved?</strong></summary>\n\n<br>\n\n> Yes. Your recordings, transcripts, and notes are saved locally on your computer.\n\n</details>\n\n<details><summary><strong>Is Yogurt free?</strong></summary>\n\n<br>\n\n> Yes. Yogurt is free and open source under the MIT license. No account is needed.\n\n</details>\n\n<details><summary><strong>Does Yogurt work offline?</strong></summary>\n\n<br>\n\n> Yes. After a one-time download of the AI models, transcription and summaries run locally on your computer.\n\n</details>\n\n<details><summary><strong>How much does setup download?</strong></summary>\n\n<br>\n\n> It depends on your computer. Yogurt downloads a smaller notes model first, about 5 GB, then the best one your computer can run well, which can be 14 GB or more. Recording works once setup finishes, and notes and questions",
+        "description": "Yogurt — приложение для создания приватных AI‑заметок о встречах, которое работает на macOS, Windows и Linux. Оно записывает звук микрофона и системный аудио, преобразует речь в текст в реальном времени с помощью whisper.cpp или Apple SpeechAnalyzer, а затем генерирует сводки и ответы на вопросы, используя локальную модель через llama.cpp. Все данные — аудио, транскрипты, заметки и результаты обработки — сохраняются только на компьютере пользователя; приложение обращается в сеть лишь для загрузки моделей и проверки обновлений.\n\nКлючевые возможности включают живые транскрипции более чем 99 языков, автоматическое определение говорящих (только на macOS), поиск по папкам, заголовкам и содержимому, экспорт в Markdown и возможность подключить стороннее приложение‑ассистент через локальный MCP‑сервер. После однократного скачивания моделей (примерно 5 ГБ для небольшого и 14 ГБ и более для более мощных) все операции происходят офлайн, что позволяет использовать Yogurt без постоянного интернет‑соединения. Требования к системе: macOS 14.4+ (Apple Silicon), Windows 10 2004+ (x64) или Ubuntu 22.04+ (x64) с минимум 8 ГБ ОЗУ; при недостаточной мощности приложение предупреждает пользователя во время установки.",
+        "joke": "",
+        "evidence_quote": "- **Live transcripts.** Yogurt records calls and turns speech into text as you talk.\n- **Meeting summaries.** Yogurt writes up the conversation and any notes you add.\n- **Private b"
       },
       "garrytan/gbrain": {
         "policy_version": 7,
@@ -337,6 +371,14 @@
         "description": "Awesome Jev — это независимый, поддерживаемый сообществом каталог почти тысячи открытых репозиториев, использующих модель Jev от TypeSafe AI. Каждый пункт описывает, какое конкретное решение принимает Jev, и содержит ссылки на публичные доказательства, позволяя разработчикам быстро оценить реальное применение технологии, а не только рекламные заявления. Каталог разбит на 11 категорий, среди которых SDK и клиенты, фреймворки, агентные инструменты и демо‑проекты, что упрощает поиск нужного типа интеграции. В разделе «Agent tooling» представлено более 200 проектов, показывающих, как Jev можно включить в многокомпонентные системы, а в «Jev‑like models» собраны альтернативные модели с похожей типизированной логикой. Пользователь, желающий добавить собственный проект, может предложить его через issue. Для проектов в каталоге указаны звёзды, язык и дата добавления. README представляет снимок каталога: звёзды собраны с 18 сентября по 19 октября 2026 года; актуальность лицензий, поведения и активности проектов нужно проверять в исходных репозиториях. Каталог не аффилирован с TypeSafe AI и не одобрен этой компанией.",
         "joke": "",
         "evidence_quote": "Awesome Jev is an independent, community-maintained catalog of **992 open-source projects** built with [Jev](https://typesafe.ai/), TypeSafe AI's System One model for typed decisions inside software. It is not affiliated with or endorsed by TypeSafe AI."
+      },
+      "holyarrs/holyarrs": {
+        "policy_version": 7,
+        "source_description": "One self-hosted app for your shows, movies and music.",
+        "source_readme": "<p align=\"center\"><b>English</b> · <a href=\".github/readme/README.es.md\">Español</a> · <a href=\".github/readme/README.fr.md\">Français</a> · <a href=\".github/readme/README.it.md\">Italiano</a> · <a href=\".github/readme/README.zh-CN.md\">简体中文</a> · <a href=\".github/readme/README.ko.md\">한국어</a> · <a href=\".github/readme/README.ja.md\">日本語</a> · <a href=\".github/readme/README.hi.md\">हिन्दी</a> · <a href=\".github/readme/README.ar.md\">العربية</a> · <a href=\".github/readme/README.ru.md\">Русский</a> · <a href=\".github/readme/LANGUAGES.md\">More languages</a></p>\n\n<p align=\"center\">\n  <picture>\n    <source media=\"(prefers-color-scheme: light)\" srcset=\"https://raw.githubusercontent.com/HolyArrs/.github/main/profile/banner-light.gif\">\n    <img src=\"https://raw.githubusercontent.com/HolyArrs/.github/main/profile/banner-dark.gif\" alt=\"HolyArrs: one self-hosted app for shows, movies, music and downloads\" width=\"100%\">\n  </picture>\n</p>\n\n<p align=\"center\"><a href=\"https://holyarrs.com\"><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/HolyArrs/.github/main/profile/btn-site-dark.png\"><img src=\"https://raw.githubusercontent.com/HolyArrs/.github/main/profile/btn-site-light.png\" height=\"34\" alt=\"HolyArrs.com\" /></picture></a>&nbsp;<a href=\"https://holyarrs.com/roadmap/\"><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/HolyArrs/.github/main/profile/btn-roadmap-dark.png\"><img src=\"https://raw.githubusercontent.com/HolyArrs/.github/main/profile/btn-roadmap-light.png\" height=\"34\" alt=\"Roadmap\" /></picture></a>&nbsp;<a href=\"https://holyarrs.com/whats-new/\"><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/HolyArrs/.github/main/profile/btn-news-dark.png\"><img src=\"https://raw.githubusercontent.com/HolyArrs/.github/main/profile/btn-news-light.png\" height=\"34\" alt=\"What's new\" /></picture></a></p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/HolyArrs/HolyArrs/actions/workflows/build.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/HolyArrs/HolyArrs/build.yml?branch=main&style=flat-square&logo=github&logoColor=white&label=build\" alt=\"Build\"></a>\n  <a href=\"https://scorecard.dev/viewer/?uri=github.com/HolyArrs/HolyArrs\"><img src=\"https://img.shields.io/ossf-scorecard/github.com/HolyArrs/HolyArrs?style=flat-square&label=scorecard\" alt=\"OpenSSF Scorecard\"></a>\n  <a href=\"https://www.bestpractices.dev/projects/16513\"><img src=\"https://img.shields.io/cii/level/16513?style=flat-square&label=best%20practices\" alt=\"OpenSSF Best Practices\"></a>\n  <a href=\"https://hub.docker.com/r/holyarrs/holyarrs/tags\"><img src=\"https://img.shields.io/docker/v/holyarrs/holyarrs?sort=semver&style=flat-square&logo=docker&logoColor=white&label=version&color=3b82f6\" alt=\"Version\"></a>\n  <a href=\"https://hub.docker.com/r/holyarrs/holyarrs\"><img src=\"https://img.shields.io/docker/pulls/holyarrs/holyarrs?style=flat-square&logo=docker&logoColor=white&label=pulls&color=3b82f6\" alt=\"Docker pulls\"></a>\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/licence-AGPL--3.0-3b82f6?style=flat-square\" alt=\"Licence: AGPL-3.0\"></a>\n</p>\n\n<p align=\"center\"><a href=\"https://news.ycombinator.com/item?id=50439000\"><img src=\"https://hackergit.org/badge/HolyArrs/HolyArrs.svg?style=rank\" alt=\"#1 on Show HN\" width=\"250\" height=\"55\"></a>&nbsp;&nbsp;<a href=\"https://trendshift.io/repositories/347687?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-347687\"><img src=\"https://trendshift.io/api/badge/trendshift/repositories/347687/daily?language=Go\" alt=\"HolyArrs/HolyArrs on Trendshift\" width=\"250\" height=\"55\"></a></p>\n\n> [!NOTE]\n> **HolyArrs 1.1.4: remove any request, and friends' Plex watchlists are read again.** A folder's quality now shows on its card, and Settings got a consistency pass. [See what's new](https://holyarrs.com/whats-new/)\n\n> Every poster, trailer and score in your HolyArrs comes from a server I run and pay for myself, so it stays free for everyone. If HolyArrs made movie night a little better, a sponsor keeps the lights on for all of us 💛\n>\n> <a href=\"https://github.com/sponsors/CoderLuii\"><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/HolyArrs/.github/main/profile/btn-sponsor-dark.png\"><img src=\"https://raw.githubusercontent.com/HolyArrs/.github/main/profile/btn-sponsor-light.png\" height=\"40\" alt=\"Sponsor HolyArrs\" /></picture></a>\n\n> [!TIP]\n> Be with us!\n>\n> | | |\n> |:--|:--|\n> | <a href=\"https://discord.com/invite/mthsvesKpC\"><img src=\"https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Fv9%2Finvites%2FmthsvesKpC%3Fwith_counts%3Dtrue&query=%24.approximate_member_count&suffix=%20members&label=discord&logo=discord&logoColor=white&color=5865F2&style=flat-square\" alt=\"Discord\"></a> | Get help fast and hang out on [Discord](https://discord.com/invite/mthsvesKpC) |\n> | <a href=\"https://reddit.com/r/Ho",
+        "description": "HolyArrs — это самостоятельное серверное приложение, позволяющее собрать в одном интерфейсе сериалы, фильмы, музыку и загрузки, управляемые через собственный Plex‑клиент. Приложение синхронизирует библиотеки с Plex, автоматически восстанавливает списки просмотра друзей и отображает качество каждой папки прямо на карточке, что упрощает навигацию по медиаконтенту. Настройки прошли проверку на согласованность, что снижает риск конфликтов при изменении параметров сервера.\n\nПользователь может разместить HolyArrs в Docker‑контейнере на домашнем сервере, подключить свои Plex‑учётные данные и сразу получить доступ к обложкам, трейлерам и рейтингам, которые предоставляются автором проекта через собственный сервер‑источник. Это избавляет от необходимости искать внешние API‑ключи и платить за метаданные, поскольку все данные бесплатны и поддерживаются спонсорами.\n\nСценарий: семья устанавливает HolyArrs на NAS, импортирует свои Plex‑библиотеки, а затем каждый член может просматривать текущие рекомендации, видеть качество файлов и добавлять новые загрузки через встроенный менеджер. Ограничения: приложение требует доступа к Plex‑API и к интернету для получения постеров и трейлеров; локальное хранение метаданных возможно, но без подключения к серверу‑источнику обложки недоступны. Лицензия AGPL‑3.0 подразумевает открытый код, но любые модификации должны быть опубликованы.",
+        "joke": "HolyArrs: когда ваш Plex‑друзья снова читают ваш список, а вы только что удалили запрос.",
+        "evidence_quote": "**HolyArrs 1.1.4: remove any request, and friends' Plex watchlists are read again.** A folder's quality now shows on its card, and Settings got a consistency pass."
       },
       "homeassistant-ai/ha-mcp": {
         "policy_version": 7,
@@ -410,6 +452,22 @@
         "joke": "Когда Claude рисует клип, даже кадр‑по‑кадру не успевает скучать.",
         "evidence_quote": "The video took two generations, both in Claude Code:\n\n1. **First generation** ([`legacy/`](legacy/)): Claude Opus 5.5 (Medium)\n2. **Second generation** (everything else): Claude Opus 5.5\n\n**Everything in this repository was generated by the model.** No scene ideas were specified."
       },
+      "juliusbrussee/caveman": {
+        "policy_version": 7,
+        "source_description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+        "source_readme": "<div align=\"center\">\n\n## New: Caveman Code. Free.\n\n**The most efficient coding agent.** Same model, same work, smaller bill.\n\n<table>\n<tr>\n<td align=\"center\"><h3>21% cheaper</h3>than Codex<br><sub>Terminal-Bench 4, per solved task</sub></td>\n<td align=\"center\"><h3>14% cheaper</h3>than Claude Code<br><sub>Terminal-Bench 4, 97 vs 83 solved</sub></td>\n<td align=\"center\"><h3>76% cheaper</h3>than Claude Code<br><sub>full workday, 4 connected apps</sub></td>\n</tr>\n</table>\n\n<sub>Same model on both sides: GPT-6.1 Sol against Codex, Opus 5.5 against Claude Code. Our own runs, November 2026, at list prices. <a href=\"https://caveman.so/code\">How we measured</a></sub>\n\nEvery coding agent in one window. Free on the subscriptions and keys you already have.\n\n**[Download Caveman Code for Mac](https://caveman.so/download) · [Read the launch post](https://caveman.so/news/introducing-caveman-code)**\n\n---\n\n<img src=\"docs/assets/caveman-logo-banner.png\" alt=\"Caveman\" width=\"720\">\n\n# why many token when few do trick\n\n**Caveman make your AI agent say less and read less. Code stay exact. Brain still big.**\n\n<a href=\"https://github.com/JuliusBrussee/caveman/stargazers\"><img src=\"https://img.shields.io/github/stars/JuliusBrussee/caveman?style=flat-square&color=F0A63C&label=stars\" alt=\"GitHub stars\"></a>\n<a href=\"https://www.npmjs.com/package/@caveman-ai/cli\"><img src=\"https://img.shields.io/npm/dm/@caveman-ai/cli?style=flat-square&color=F0A63C&label=cli%20downloads\" alt=\"npm downloads\"></a>\n<a href=\"./INSTALL.md\"><img src=\"https://img.shields.io/badge/works_with-30%2B_agents-orange?style=flat-square\" alt=\"30+ agents\"></a>\n<a href=\"#license\"><img src=\"https://img.shields.io/badge/license-Apache--2.0-green?style=flat-square\" alt=\"License\"></a>\n\n<table>\n<tr>\n<td align=\"center\" width=\"25%\"><h3>33.2% fewer</h3>input tokens, whole sessions<br><sub><a href=\"#read-less-332-fewer-input-tokens\">54 Claude Code runs</a>, 18 of 18 answers right</sub></td>\n<td align=\"center\" width=\"25%\"><h3>54% cheaper</h3>with Auto, same score<br><sub><a href=\"#auto-54-cheaper-same-score\">85 coding tasks</a> vs Opus 5.5 at xhigh, interim</sub></td>\n<td align=\"center\" width=\"25%\"><h3>397 → 76</h3>tokens for one test run<br><sub><a href=\"#blocks-code-mode-script-written-once\">Blocks</a> vs <code>| tail -20</code></sub></td>\n<td align=\"center\" width=\"25%\"><h3>1.4 to 2.4× cheaper</h3>with caveman-style output<br><sub><a href=\"https://arxiv.org/abs/2606.24083\">Adobe Research</a>, eight models</sub></td>\n</tr>\n</table>\n\nCited by **[Adobe Research](https://arxiv.org/abs/2606.24083)** · A/B tested by **[JetBrains](https://blog.jetbrains.com/ai/2026/07/speak-to-ai-agents-like-cavemen-tosave-tokens/)** · Remade for Elasticsearch on **[Elasticsearch Labs](https://www.elastic.co/search-labs/blog/elastic-caveman-ai-token-reduction)**<br>\n**#1** on [Hacker News](https://news.ycombinator.com/item?id=47647455) · **#1** on GitHub Trending · *\"No way this actually works.\"* [ThePrimeagen](https://www.youtube.com/watch?v=L29q2LRiMRc)\n\n**[Install](#install) · [Six rocks](#six-rocks-one-install) · [Proof](#proof) · [Say less](#say-less-the-caveman-voice) · [Read less](#read-less-332-fewer-input-tokens) · [Auto](#auto-54-cheaper-same-score) · [Blocks](#blocks-code-mode-script-written-once) · [Commands](#commands) · [Caveman Cloud](#caveman-cloud)**\n\n</div>\n\n---\n\n<table>\n<tr>\n<th width=\"50%\">Normal agent · 63 tokens</th>\n<th width=\"50%\"><img src=\"docs/assets/dancing-rock.svg\" width=\"18\" height=\"18\" alt=\"\"> Caveman agent · 20 tokens</th>\n</tr>\n<tr>\n<td valign=\"top\">\n\n> The reason your React component is re-rendering is likely because you're creating a new object reference on each render cycle. When you pass an inline object as a prop, React's shallow comparison sees it as a different object every time, which triggers a re-render. I'd recommend using useMemo to memoize the object.\n\n</td>\n<td valign=\"top\">\n\n> New object ref each render, so React re-renders. Wrap the prop in `useMemo`.\n\n</td>\n</tr>\n</table>\n\n**Same fix. 63 token become 20. Brain still big.**\n\nPick your club:\n\n| Skill | Same answer | Tokens |\n|---|---|---:|\n| `/caveman` | New object ref each render, so React re-renders. Wrap the prop in `useMemo`. | 20 |\n| `/ultracave` | Inline object prop, new ref, re-render. `useMemo`. | 14 |\n| `/megacave` | 新參照致重繪。`useMemo`。 | **13** |\n\n<sub>Token counts: tiktoken o200k.</sub>\n\n## Install\n\n```bash\nnpx @caveman-ai/cli@latest\n```\n\nOne command. Mac, Linux, Windows. Caveman find your agents and your logins, show what it change. Press Enter. Done. Needs Node.js 22.13+.\n\nAfter that, plain `claude` stays caveman'd. So do Codex, Gemini CLI, OpenCode, and [30+ more](./INSTALL.md). It runs on your machine, with your keys and your Claude Pro/Max login. One rock. That it.\n\n<sub>Had caveman before 4.0? Say <code>@latest</code>, or the old copy on your machine wins. Already set up? <code>caveman setup</code> opens the screen again. Only want shorter answers? <a href=\"#say-less-the-caveman-voice\">Get ",
+        "description": "Caveman Code – это CLI‑утилита, которая «переводит» ответы AI‑агентов в более короткую форму, сохраняя смысл. Инструмент перехватывает запросы к моделям (Codex, Claude, Gemini и др.) и заменяет их ответы на лаконичные варианты, что позволяет сократить количество входных токенов до ≈ 33 % от оригинала и уменьшить стоимость вычислений. При этом поддерживается более 30 популярных агентов, работает локально на машине пользователя с его собственными API‑ключами и требует лишь Node.js 22.13+. Пользователь выбирает стиль вывода (например, /caveman, /ultracave, /megacave), получая ответы в виде коротких фраз, что особенно полезно в сценариях с ограниченными токен‑квотами или при массовой генерации кода. Пример: вместо 63‑токенного объяснения React‑перерендера Caveman выдаёт 20‑токенный вариант, экономя до 54 % стоимости при сохранении точности решения.",
+        "joke": "Сократили ответ до «useMemo», а токены ушли в пещеру.",
+        "evidence_quote": "**The most efficient coding agent.** Same model, same work, smaller bill."
+      },
+      "kaankiziltug/logo-design-skill": {
+        "policy_version": 7,
+        "source_description": "A comprehensive logo-design skill for Claude, Gemini CLI, Codex and other AI agents: principles, process, SVG craft, testing tools and a 1,400+ logo reference library.",
+        "source_readme": "# Logo Design Skill for Claude & AI Agents\n\n[![Sponsor](https://img.shields.io/badge/Sponsor-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/kaankiziltug) [![Tests](https://github.com/kaankiziltug/logo-design-skill/actions/workflows/test.yml/badge.svg)](https://github.com/kaankiziltug/logo-design-skill/actions/workflows/test.yml) [![The New 100: #14](https://www.theagenticleaderboard.com/badges/new/logo-design-skill.svg)](#)\n\n![Twenty-eight example runs of the logo-design skill](docs/images/hero.png)\n\nA comprehensive **logo-design skill** that turns Claude — or any agent that supports Agent Skills, such as Gemini\nCLI, Codex CLI, Cursor or GitHub Copilot — into a disciplined identity designer, from the first brief to\nproduction-ready SVG files and brand guidelines.\n\n- **Principles & process** — discovery and briefs, word mapping, choosing the right mark type, concepting,\n  geometric construction, optical corrections (overshoot, bone effect, irradiation…), colour, typography, lockups,\n  testing, presentation, delivery, redesigns and identity systems.\n- **A reference library of 1,400+ real-world SVG logos**, each visually classified by mark type, technique,\n  geometry, subject, typography, mood and industry — searchable from the command line and browsable in a local\n  gallery. Used to study construction, map category conventions and avoid look-alikes (never to copy).\n- **Dependency-free Python tools** — audit an SVG against logo principles, build concept overview sheets and test\n  sheets (16 px pixel test, one-colour, reversed, squint, mirror, contexts, competitor shelf test), create client\n  presentation boards with industry-specific mockups, render PNGs, and export a complete favicon / app-icon /\n  web-manifest set.\n\n**Contents:** [How it works](#how-it-works) · [Install](#install) · [Examples](#examples) ·\n[Tests](#what-the-tests-catch) · [Use](#use) · [What's inside](#whats-inside) · [Library](#library-at-a-glance)\n\n---\n\n## How it works\n\n```mermaid\nflowchart LR\n    A[Brief<br/>questions or stated assumptions] --> B[Research<br/>category conventions in the library]\n    B --> C[Concepts<br/>8–12 one-liners → build 3 in SVG]\n    C --> D[Test & refine<br/>audit · 16 px · one-colour · shelf test]\n    D --> E{{Checkpoint<br/>show concepts, recommend, stop}}\n    E -- \"you pick a direction<br/>and ask for the kit\" --> F[Kit<br/>colour · lockups · board · icons · guidelines]\n    E -- \"you want changes\" --> C\n```\n\nThe skill always **stops at the checkpoint**: it shows the concepts as one overview image with a recommendation and\noffers the full kit. Nothing else is produced until you choose a direction — the kit is most of the work and only\nmakes sense for an approved idea.\n\n---\n\n## Install\n\n### Claude Code — plugin marketplace (recommended)\n```\n/plugin marketplace add kaankiziltug/logo-design-skill\n/plugin install logo-design@logo-design-skill\n```\n\n### Claude Code — manual\nCopy the skill folder into your personal (all projects) or project skills directory:\n```bash\ngit clone https://github.com/kaankiziltug/logo-design-skill.git\ncp -r logo-design-skill/skills/logo-design ~/.claude/skills/logo-design          # personal\n# or: cp -r logo-design-skill/skills/logo-design .claude/skills/logo-design     # per project\n```\n\n### Claude.ai / Claude Desktop\nDownload `logo-design.zip` from the [Releases](https://github.com/kaankiziltug/logo-design-skill/releases) page (or run\n`python3 tools/package_skill.py`) and upload it under **Settings → Capabilities → Skills**. If your upload has a size\nlimit, use `logo-design-lite.zip` (everything except the SVG files themselves).\n\n### Gemini CLI, Codex CLI and other agents\nThe skill uses the open **Agent Skills** format (a folder with a `SKILL.md`), so it works in any agent that supports\nskills — the instructions are plain Markdown and the tools are plain Python. Clone once, then copy the folder into\nyour agent's skills directory:\n```bash\ngit clone https://github.com/kaankiziltug/logo-design-skill.git\n```\n\n| Agent | Personal (all projects) | Per project |\n|---|---|---|\n| Gemini CLI | `~/.gemini/skills/logo-design` (or `~/.agents/skills/`) | `.gemini/skills/logo-design` |\n| Codex CLI | `~/.codex/skills/logo-design` | `.codex/skills/logo-design` |\n| Cursor, GitHub Copilot, OpenCode, others | see your agent's skills docs | usually a `skills/` folder in the project |\n\n```bash\ncp -r logo-design-skill/skills/logo-design ~/.gemini/skills/logo-design     # Gemini CLI\ncp -r logo-design-skill/skills/logo-design ~/.codex/skills/logo-design      # Codex CLI\n```\nStart a new session and ask for a logo; the agent picks the skill up from its description. The skill works best with\na model that can view images, because it renders its own drafts to PNG and checks them before showing you anything.\nThe `.claude-plugin/` folder is only used by Claude Code and is ignored elsewhere.\n\n---\n\n## Examples\n\n![Covers for all 28 example brands](docs/images/covers-28.png)\n\nTwenty-eight fictional b",
+        "description": "Проект — это набор инструментов, превращающих Claude и любые другие агенты, поддерживающие формат Agent Skills (Gemini CLI, Codex CLI, Cursor, GitHub Copilot), в «дисциплинированного» дизайнера логотипов. Пользователь задаёт бриф, после чего система исследует библиотеку из более чем 1400 реальных SVG‑логотипов, генерирует 8–12 концептуальных идей, отбирает три и представляет их в виде единого обзора с рекомендацией. На этапе «checkpoint» пользователь выбирает направление, и навык формирует полный набор: цветовые варианты, блок‑марк, презентационные доски, набор иконок, фавиконы и веб‑манифест, готовый к доставке клиенту.\n\nВстроенные Python‑утилиты позволяют автоматически проверять SVG‑файлы на соответствие принципам логотипа, создавать тест‑листы (16 px, одноцветный, зеркальный, контекстный и т.д.) и генерировать готовые макеты для разных отраслей. Библиотека логотипов классифицируется по типу знака, технике, геометрии, типографии и настроению, что упрощает изучение конвенций и предотвращает случайное копирование чужих решений. Установка происходит через плагин‑маркетплейс Claude Code, ручное копирование папки в директорию навыков или загрузку zip‑архива в Claude Desktop; для остальных агентов достаточно склонировать репозиторий и разместить папку в их каталоге навыков.\n\nСценарий применения: маркетинговое агентство получает запрос на фирменный стиль нового стартапа, запускает сессию в Claude, задаёт бриф, получает три предварительных концепта, выбирает один и получает готовый бренд‑кит за один цикл работы. Ограничения: навык полагается на модель, способную просматривать изображения, поскольку проверка и визуализация черновиков происходит в PNG; без доступа к таким моделям процесс будет ограничен только текстовыми описаниями.",
+        "joke": "Если ваш логотип выглядит как случайный набор пикселей, значит, агент ещё не прошёл 16 px тест.",
+        "evidence_quote": "A comprehensive **logo-design skill** that turns Claude — or any agent that supports Agent Skills, such as Gemini\nCLI, Codex CLI, Cursor or GitHub Copilot — into a disciplined identity designer, from the first brief to\nproduction-ready SVG files and brand guidelines."
+      },
       "kianuni/erosion-cn": {
         "policy_version": 7,
         "source_description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
@@ -417,6 +475,14 @@
         "description": "Erosion‑CN — это форк инструмента Erosion, предназначенного для изменения системных параметров iOS/iPadOS и исследования MobileGestalt. В отличие от оригинала, проект полностью локализован на упрощённый китайский, исправил несколько критических багов, которые делали изменения недолговечными: после перезагрузки система откатывала изменения, а редактирование plist‑файлов приводило к чёрному экрану камеры. В новой версии используется прямое перезаписывание файлов без предварительного обнуления, принудительный синхронный сброс (F_FULLFSYNC) и динамический разбор libMobileGestalt.dylib без жёстко закодированных смещений, что обеспечивает надёжную запись и проверку целостности. Пользователь получает дифф‑просмотр предстоящих изменений, автоматическое создание резервных копий с SHA‑256‑контролем и возможность отката при любой ошибке, а также набор дополнительных функций: разблокировка AI‑способностей iOS 27, управление сохранениями приложений и очистка кэша контейнеров, а также детальный мониторинг реального состояния MobileGestalt на устройстве. Пример применения — инженер, желающий включить «Personal Translator» и «Audio Intelligence» на iPhone 15 Pro, может через простой интерфейс включить соответствующие флаги, проверить их запись и при необходимости откатить изменения, не рискуя «заблокировать» устройство.",
         "joke": "",
         "evidence_quote": "**Erosion-CN** 分支衍生自官方上游项目 **[jailbreakdotparty/Erosion](https://github.com/jailbreakdotparty/Erosion)**，完成了 **100% 简体中文界面本地化**，修复了原版多项严重真机 Bug，并进行了系统级防白苹果安全加固与底层能力扩展："
+      },
+      "lemomo-ai/lemo-opuscar": {
+        "policy_version": 7,
+        "source_description": "43 film styles, each a reusable style prompt plus a short film made entirely in code by Claude Opus 5.5. Pick a style, bring your own story, and let your agent direct. | Opus5.5 x 43 种影片风格：风格提示词 + 纯代码样片 + 导演与技术指南",
+        "source_readme": "<div align=\"center\">\n\n<a href=\"https://lemomo-ai.github.io/lemo-opuscar/\"><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/readme/cover-en-dark.webp\"><source media=\"(prefers-color-scheme: light)\" srcset=\"docs/readme/cover-en-light.webp\"><img src=\"docs/cover.jpg\" width=\"100%\" alt=\"Lemo-Opuscar: the long workbench at night, OPUSCAR set in wood type\"></picture></a>\n\n# Lemo-Opuscar\n\n**<!--n-->99<!--/n--> film styles for your coding agent. Pick one, bring your story, and the agent makes the film, entirely in code.**\n\n<p><!--n-->99<!--/n--> 种影片风格，每种都配一支完全用代码做出来的短片 · 🇨🇳 中文用户请看 <a href=\"README.zh-CN.md\">简体中文说明</a></p>\n\n[**▶ Open the gallery**](https://lemomo-ai.github.io/lemo-opuscar/) · [中文画廊](https://lemomo-ai.github.io/lemo-opuscar/zh/)\n\n<a href=\"https://trendshift.io/repositories/262645?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-262645\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://trendshift.io/api/badge/trendshift/repositories/262645/daily?language=JavaScript\" alt=\"lemomo-ai%2Flemo-opuscar | Trendshift\" width=\"250\" height=\"55\"/></a>\n\n<sub>Official repo: [github.com/lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) · by Lemomo ([@lemomo_ai](https://x.com/lemomo_ai))</sub>\n\n</div>\n\n> [!IMPORTANT]\n> **This release was audited and improved with Claude Fable 5.2.**\n>\n> **Built for Claude.** Claude Fable, Opus and Sonnet all work; set effort to **high** (in Claude Code, type `/effort high`). Other models may not reproduce the styles well, so use them with care.\n\n## 🆕 New\n\n- **2026-11-12** · **33 new styles**: <!--n-->99<!--/n--> now, in 15 categories sorted by what the picture looks like, and the gallery in [English](https://lemomo-ai.github.io/lemo-opuscar/) and [Chinese](https://lemomo-ai.github.io/lemo-opuscar/zh/), with a page for every style. Some demo films remade, bugs fixed, style prompts improved. [See the styles ↓](#the-styles)\n- **2026-10-22** · Make a style your own: change a style or start blank, and keep it. [See how ↓](#make-a-style-your-own)\n\n## How it works\n\n1. **Pick a style.** Browse the [gallery](https://lemomo-ai.github.io/lemo-opuscar/) by what the picture looks like, or search for what you are making: explainers, launches, news, music videos.\n2. **Watch its demo.** Every style has a short film made in code, and a page with stills, what it suits and the `STYLE.md` your agent follows.\n3. **Ask your agent.** [Install the skill](#install) once, then say it in one sentence:\n\n```text\nMake a film in the Neon Tubes style about the coffee farm my family runs.\n```\n\nName the style in English or Chinese, or by its folder; the [style index](styles/README.md) lists them all. Add a length, a narrator, your own photos or music if you like:\n\n> Make a 45-second film in the **watercolor** style about the coffee farm my family runs. Warm female narrator.\n\n> Make a 40-second **LiDAR Survey** film about the old quarry in the hills behind our town, from public laser-scan data.\n\n### Install\n\n**The skill (recommended).** In your terminal:\n\n```sh\nclaude plugin marketplace add lemomo-ai/lemo-opuscar\nclaude plugin install lemo-opuscar@lemolab\n```\n\nThen use it from any folder. On first use it downloads the guides, tools and style prompts to `~/lemo-opuscar`, shared by all your films; each film's project, from source to finished video, goes in the folder you started from. For other agents, copy [`plugin/skills/lemo-opuscar/`](plugin/skills/lemo-opuscar/) into their skills folder.\n\n**Or clone the repo.** Films go into `films/<name>/` inside it.\n\n```sh\ngit clone https://github.com/lemomo-ai/lemo-opuscar.git\ncd lemo-opuscar\nclaude\n```\n\n### Update or uninstall\n\nUpdate, then restart Claude Code (the library in `~/lemo-opuscar` updates itself on the next film):\n\n```sh\nclaude plugin marketplace update lemolab && claude plugin update lemo-opuscar@lemolab\n```\n\nTo have it update by itself: in Claude Code, type `/plugin`, open **Marketplaces**, pick **lemolab** and choose **Enable auto-update** (third-party marketplaces such as lemolab don't update automatically until you turn this on).\n\nFrom a clone: `git pull`, then run `sh plugin/skills/lemo-opuscar/scripts/setup.sh deps` once (it updates only the core packages that changed; if you installed the voice or music packages, run `… deps voice music` instead).\n\nAfter an update, ask for a film as usual; to make a style your own, see [below](#make-a-style-your-own).\n\nUninstall, then delete `~/lemo-opuscar`:\n\n```sh\nclaude plugin uninstall lemo-opuscar@lemolab\n```\n\nYour own styles in `~/lemo-my-styles/` stay through updates and uninstalls; delete that folder yourself if you don't want them. If a step stays stuck, [open an issue](https://github.com/lemomo-ai/lemo-opuscar/issues).\n\n### What happens next\n\nNot sure yet? With the skill installed, type `/lemo-opuscar:lemo-opuscar` and nothing else. It asks which language to use, then what you'd like to do: a film in a library style, [make a style your own](#",
+        "description": "Lemo‑Opuscar – это набор готовых стилистических шаблонов для создания коротких видеороликов полностью с помощью кода, управляемого агентом Claude. Пользователь выбирает один из 99 представленных стилей (например, Neon Tubes, watercolor или LiDAR Survey), просматривает демо‑фильм и формулирует запрос к агенту в одной фразе, указывая желаемую тематику, длительность, озвучку и при необходимости свои изображения или музыку. После установки плагина в Claude Code система скачивает все руководства, инструменты и текстовые подсказки в каталог ~/lemo‑opuscar, а каждый проект сохраняется в текущей рабочей папке, что упрощает управление несколькими фильмами.\n\nМеханизм работы основан на предопределённых файлах STYLE.md, содержащих авторегрессионные подсказки, которые агент использует для генерации последовательных кадров, аудио‑дорожек и монтажных решений. Поддержка нескольких моделей Claude (Fable, Opus, Sonnet) гарантирует корректное воспроизведение стилей при установленном высоком уровне усилий; другие модели могут давать менее точные результаты. Пользователи могут адаптировать существующий стиль или создать собственный, изменив подсказку и сохранив её в отдельном каталоге ~/lemo‑my‑styles, который сохраняется между обновлениями и удалениями плагина.\n\nПрактический сценарий: маркетолог хочет быстро подготовить 45‑секундный видеоролик в стиле watercolor о семейной кофейной плантации, добавив тёплый женский голос. Он открывает галерею, выбирает стиль, копирует готовый запрос и отправляет его агенту через установленный плагин. Через несколько минут получаются готовые кадры, озвучка и финальный файл, который можно сразу разместить в соцсетях. Требования: установленный Claude Code, доступ к плагинам через marketplace lemolab и интернет‑соединение для загрузки зависимостей; стили оптимизированы под модели Claude, поэтому при использовании других LLM результаты могут отличаться.",
+        "joke": "Спросил Claude снять фильм в стиле «неоновый тубус», а он выдал световое шоу для лампы настольной.",
+        "evidence_quote": "**<!--n-->99<!--/n--> film styles for your coding agent. Pick one, bring your story, and the agent makes the film, entirely in code.**"
       },
       "likely7/veyra-nrvideo": {
         "policy_version": 7,
@@ -457,6 +523,14 @@
         "description": "AirCard-iOS — приложение, позволяющее менять оформление карт в Apple Wallet, темы циферблата блокировки и обои PosterBoard напрямую на iPhone без джейлбрейка. Оно работает через локальный VPN‑туннель и Rust‑библиотеку AirliftFFI, взаимодействуя с внутренними сервисами iOS. Подойдёт пользователям, желающим кастомизировать внешний вид своих карт и экрана блокировки на iOS 18‑27.2 beta 2, при условии наличия корректного pairing‑файла (SideStore, AltStore и пр.) и запущенного LocalDevVPN. Нельзя использовать после обновления выше iOS 27.2 beta 2, так как эксплойт AirTraffic был запатчен.",
         "joke": "Сменить фон на iPhone проще, чем поменять настроение утром!",
         "evidence_quote": "AirCard-iOS customizes Apple Wallet card artwork, lock screen passcode dialers, and lock screen wallpapers on device without a jailbreak."
+      },
+      "martin-olivier/airgorah": {
+        "policy_version": 7,
+        "source_description": "A WiFi security auditing software",
+        "source_readme": "<h1 align=\"center\">\n  <img src=\"crates/gui/icons/app_icon.png\" width=100 height=100/><br>\nAirgorah</h1>\n\n<p align=\"center\">\n  <span>A WiFi security auditing software</span>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/martin-olivier/airgorah/wiki/Installation\">Installation</a>\n  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\n  <a href=\"https://github.com/martin-olivier/airgorah/wiki/Usage\">Usage</a>\n  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\n  <a href=\"https://github.com/martin-olivier/airgorah/wiki/Credits\">Credits</a>\n</p>\n\n![illustration](.github/assets/illustration.png)\n\n[![crates](https://img.shields.io/crates/v/airgorah.svg)](https://crates.io/crates/airgorah)\n[![aur](https://img.shields.io/aur/version/airgorah)](https://aur.archlinux.org/packages/airgorah)\n[![ci](https://github.com/martin-olivier/airgorah/actions/workflows/CI.yml/badge.svg)](https://github.com/martin-olivier/airgorah/actions/workflows/CI.yml)\n\n`Airgorah` is a WiFi security auditing software that can capture nearby WiFi traffic, discover clients connected to access points, perform deauthentication attacks, capture handshakes and PMKIDs, and crack the password of access points.\n\nIt is written in Rust and uses [GTK4](https://github.com/gtk-rs/gtk4-rs) for the graphical part.\n\n`⭐ Don't forget to put a star if you like the project!`\n\n## Legal\n\n⚠️ Airgorah is designed to be used in testing and discovering flaws in networks you are owner of. Performing attacks on WiFi networks you are not owner of is illegal in almost all countries. I am not responsible for whatever damage you may cause by using this software.\n\n## Requirements\n\nThis software only works on `linux`. The graphical interface runs as a normal\nuser (so it works under both `X11` and `Wayland`). When a privileged operation is\nneeded, it launches a small privileged agent (`airgorah-agent`) via `polkit`,\nwhich will prompt for authentication once.\n\nYou will also need a wireless network card that supports `monitor mode` and `packet injection`.\n\n## Installation\n\nThe installation instructions are available [here](https://github.com/martin-olivier/airgorah/wiki/Installation).\n\n## Usage\n\nThe documentation about the usage of the application is available [here](https://github.com/martin-olivier/airgorah/wiki/Usage).\n\n## License\n\nThis project is released under [MIT](LICENSE) license.\n\n## Contributing\n\nIf you have any question about the usage of the application, do not hesitate to open a [discussion](https://github.com/martin-olivier/airgorah/discussions)\n\nIf you want to report a bug or provide a feature, do not hesitate to open an [issue](https://github.com/martin-olivier/airgorah/issues) or submit a [pull request](https://github.com/martin-olivier/airgorah/pulls)\n",
+        "description": "Airgorah — утилита для аудита безопасности Wi‑Fi, написанная на Rust и использующая GTK4 для графического интерфейса. Приложение способно захватывать трафик в радиусе действия адаптера, определять подключённые к точкам доступа клиентские устройства, выполнять деаутентификацию, а также собирать рукопожатия и PMKID‑ы для последующего взлома паролей. Все операции, требующие повышенных привилегий, делегируются небольшому агенту airgorah‑agent, который запускается через polkit и запрашивает аутентификацию у пользователя только один раз.\n\nРаботать приложение можно только под Linux, при этом графика поддерживает как X11, так и Wayland. Для полноценного использования необходим беспроводной адаптер, способный работать в режиме мониторинга и выполнять инъекцию пакетов. Пользователь управляет процессом через удобный GUI, а при необходимости может переключаться в консольный режим, используя те же возможности захвата и анализа трафика. Проект распространяется под лицензией MIT, что позволяет свободно модифицировать код и вносить улучшения, однако автор подчёркивает, что его использование ограничено тестированием собственных сетей, а любые атаки на чужие сети являются незаконными.",
+        "joke": "",
+        "evidence_quote": "`Airgorah` is a WiFi security auditing software that can capture nearby WiFi traffic, discover clients connected to access points, perform deauthentication attacks, capture handshakes and PMKIDs, and crack the password of access points."
       },
       "mizorewww/laya-coreml": {
         "policy_version": 4,
@@ -570,6 +644,14 @@
         "joke": "Запускаешь Ocarina, а Windows спрашивает: «Подтвердите, что вы действительно хотите спеть?»",
         "evidence_quote": "O código do jogo é traduzido para C e compilado como um programa do Windows. Os gráficos do Switch 2 são convertidos para Vulkan. Tudo isso acontece **no seu PC, a partir do seu próprio arquivo do jogo**."
       },
+      "supermemoryai/company-brain": {
+        "policy_version": 7,
+        "source_description": "Open-sourcing our company brain - A teammate in your Slack that remembers everything your team says, and can go do the work.",
+        "source_readme": "<img width=\"4000\" height=\"1405\" alt=\"Company Brain\" src=\"https://github.com/user-attachments/assets/9ee4f71f-0612-452a-8d58-862aee510086\" />\n\n<h1 align=\"center\">Company Brain</h1>\n\n<p align=\"center\">\n  <strong>A teammate in your Slack that truly knows and understands your company, and can do anything.</strong>\n</p>\n\n<p align=\"center\">\n  <a href=\"#deploy-in-five-minutes\">Deploy</a> ·\n  <a href=\"docs/guide/README.md\">User guide</a> ·\n  <a href=\"docs/guide/permissions.md\">Permissions</a> ·\n  <a href=\"docs/guide/use-cases/overview.md\">Use cases</a> ·\n  <a href=\"https://supermemory.link/discord\">Discord</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square\" alt=\"Apache 2.0\" /></a>\n  <a href=\"https://supermemory.ai\"><img src=\"https://img.shields.io/badge/memory-supermemory-blue?style=flat-square\" alt=\"Memory by supermemory\" /></a>\n  <a href=\"https://developers.cloudflare.com/workers/\"><img src=\"https://img.shields.io/badge/runs%20on-Cloudflare%20Workers-f38020?style=flat-square\" alt=\"Runs on Cloudflare Workers\" /></a>\n</p>\n\n<p align=\"center\">\n  <strong>Used to be a paid product with thousands of users. Now it's free and open source.</strong><br/>\n  <a href=\"https://x.com/supermemory/status/2081781184980246897?s=20\">Read the announcement →</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://deploy.workers.cloudflare.com/?url=https://github.com/supermemoryai/company-brain\"><img src=\"https://deploy.workers.cloudflare.com/button\" alt=\"Deploy to Cloudflare\" /></a>\n</p>\n\n---\n\nA few weeks ago, we discontinued our [Company Brain product](https://x.com/supermemory/status/2081781184980246897?s=20) at [supermemory](https://supermemory.ai). This is that product, the whole thing, open sourced and rebuilt to run on your own Cloudflare account.\n\nYour team's knowledge is scattered across Slack threads, docs, tickets and people's heads. Company Brain sits in Slack, remembers what your team says, and answers from it. Then it goes and does the work: opens the issue, reads the PR, digs into the repo. And when a conversation needs something it knows, it speaks up on its own.\n\n> **#eng**\n>\n> **Alex:** is prod down? a couple of customers are pinging me\n>\n> **Company Brain:** Not fully down. `api/search` is elevated, 42 errors in the last 15 minutes, and Kush is already on it. Probably this morning's deploy.\n\nNobody mentioned the bot. It spoke up because it knew the answer.\n\n| | |\n|---|---|\n| 🧠 **Remembers** | Decisions, projects, owners and context from the channels it's in, kept current as people talk. No one has to write anything down. |\n| 💬 **Answers from your team** | Not from the internet, not from guesswork: from your own conversations and connected tools. |\n| 🛠️ **Acts in your tools** | GitHub, Linear, Notion, Google Workspace and hundreds more over MCP. It opens the issue instead of telling you to. |\n| 📣 **Speaks up** | Chimes in when a conversation needs something it knows. You decide how chatty it is, org-wide and per channel. |\n| 💻 **Runs code** | Its own sandbox: clones repos, runs scripts, and hands back charts, CSVs and PDFs right in Slack. |\n| 🌙 **Works while you sleep** | Scheduled digests to a channel or your DMs, plus research it kicks off on its own. |\n| 🎓 **Learns your way** | Skills teach it your processes, formats and voice. A workspace prompt sets how it behaves everywhere. |\n\n---\n\n## Private by design\n\nMemory isn't one big bucket. It's a permissions graph, and the brain only ever reads with the asker's own access.\n\n| Where you ask | What it can draw on |\n|---|---|\n| **A public channel** | The shared brain everyone in the org can see |\n| **A private channel** | That channel's memory, plus the shared brain |\n| **Your DMs** | Your personal memory, every private channel you're in, and the shared brain |\n\nSo it can't leak something you couldn't see yourself. Tool access works the same way: writes always run under your own connection, and when a request needs a tool only a teammate has connected, it asks them first with an approve or deny card. Nothing is granted silently.\n\n---\n\n## Get started\n\n<table>\n<tr>\n<td width=\"50%\" valign=\"top\">\n\n<h3>💬 I want it in my Slack</h3>\n\nOne click to deploy, two API keys, and a setup page that walks you through the Slack app. The database sets itself up.\n\n**[→ Deploy in five minutes](#deploy-in-five-minutes)**\n\n</td>\n<td width=\"50%\" valign=\"top\">\n\n<h3>🔧 I want to hack on it</h3>\n\nTypeScript on Cloudflare Workers, Durable Objects and D1, with memory on [supermemory](https://supermemory.ai). Run it all locally.\n\n**[→ Local development](#local-development)**\n\n</td>\n</tr>\n</table>\n\n---\n\n## Deploy in five minutes\n\n**1. Click deploy.** It asks for two secrets:\n\n- `SUPERMEMORY_API_KEY`: where the brain keeps its memory. Get one at [console.supermemory.ai](https://console.supermemory.ai).\n- `MODEL_API_KEY`: an Anthropic, OpenAI, Google or xAI key, whichever you have. The brain works out the provider from the key. You pa",
+        "description": "Company Brain — это Slack‑бот, который сохраняет и использует корпоративные знания, собранные в чатах, документах и инструментах. Он автоматически запоминает решения, проекты, владельцев и контекст обсуждений, позволяя участникам получать ответы без обращения к внешним источникам. Бот может не только отвечать, но и выполнять действия в подключённых сервисах: открывать задачи в GitHub, создавать карточки в Linear, запрашивать данные из Notion и запускать скрипты в собственном песочном окружении, возвращая результаты прямо в Slack.\n\nДля развертывания предусмотрена однокнопочная установка на Cloudflare Workers: требуется лишь два API‑ключа — один для доступа к памяти Supermemory, другой для выбранного LLM‑провайдера (Anthropic, OpenAI, Google или xAI). После деплоя бот работает в вашем аккаунте, а все операции выполняются под учётными данными запрашивающего, что обеспечивает «private by design»‑модель доступа. Пользователи могут настроить уровень «болтливости», а также обучать бота своим процессам через специальные навыки и промпты. Проект написан на TypeScript, использует Durable Objects и D1 от Cloudflare, и поддерживает локальную разработку, что упрощает кастомизацию и интеграцию в существующие рабочие процессы.",
+        "joke": "",
+        "evidence_quote": "A few weeks ago, we discontinued our [Company Brain product](https://x.com/supermemory/status/2081781184980246897?s=20) at [supermemory](https://supermemory.ai). This is that product, the whole thing, open sourced and rebuilt to run on your own Cloudflare account."
+      },
       "tangerineturtle1/nx2navi": {
         "policy_version": 7,
         "source_description": null,
@@ -626,6 +708,14 @@
         "joke": "Теперь можно измерять процессор, не вызывая техподдержку.",
         "evidence_quote": "Cinebench 2026 is distributed as a complete standalone desktop build for Windows x64, packaging the full benchmark suite into a single ready-to-run installation with all features pre-activated. The build eliminates external dependencies and post-install configuration, allowing the application to operate entirely offline once deployed."
       },
+      "wy51ai/floorplan-3d": {
+        "policy_version": 7,
+        "source_description": null,
+        "source_readme": "# 户型装修设计\n\n中文 | [English](README.en.md)\n\n纯前端的户型装修设计工具：在 2D 平面图上摆放家具、拆改墙体、测量尺寸，一键切换到 Three.js 3D 场景，可以鸟瞰，也可以第一人称漫游。整个应用就是一个 `index.html`，无需构建，打开即用。\n\n## 功能\n\n**2D 平面布置**\n- 按原始户型 1:60 / 1:100 比例显示，尺寸单位 mm\n- 从左侧家具库拖入 60 余种家具家电（卧室、客厅、餐厨、卫浴、家电、书房休闲）\n- 拖动移动、旋转（Shift 自由角度）、调整尺寸，贴墙自动吸附\n- 测量工具（靠近墙面自动吸附，Shift 锁定水平 / 垂直）\n- 拆改非承重墙，承重墙单独标示\n- 图层开关：尺寸标注、房间名、家具、网格、承重墙\n\n**3D 场景**\n- 鸟瞰、斜视、俯视多种视角，点击房间列表可飞到对应房间\n- 漫游模式：桌面端 WASD + 鼠标，触屏设备用虚拟摇杆，可以点门开关\n- 全高墙 / 剖切墙切换，日照时间滑块，夜景灯光\n- 精细家具模型：柜门分缝与拉手、软包床头、带环境反射的金属与陶瓷材质等\n- 在 3D 中也能选中、拖动家具，与 2D 方案实时同步\n\n**方案与统计**\n- 房间面积与套内使用面积自动统计\n- 为每个房间更换地面材料（木地板、地砖、大理石、水磨石、地毯等），按面积加 5% 损耗估算造价\n- 撤销 / 重做，方案自动保存在浏览器本地\n- 中文 / English 界面切换（顶栏右侧按钮，默认中文，选择会记住）\n- 导出 PNG 图片，导出 / 导入方案 JSON\n\n## 快速开始\n\n```bash\ngit clone <仓库地址>\ncd <仓库目录>\n```\n\n然后直接用浏览器打开 `index.html`。也可以起一个本地静态服务器：\n\n```bash\npython3 -m http.server 8000\n# 访问 http://localhost:8000\n```\n\n> Three.js 通过 jsDelivr CDN 加载，首次打开 3D 场景需要联网。\n\n## 快捷键\n\n| 按键 | 作用 |\n| --- | --- |\n| `T` | 切换 2D / 3D |\n| `V` / `M` / `X` | 选择 / 测量 / 拆改墙体 |\n| `R` / `Shift+R` | 选中家具顺时针 / 逆时针旋转 90° |\n| `Delete` / `Backspace` | 删除选中家具 |\n| `Ctrl/⌘ + D` | 复制选中家具 |\n| `Ctrl/⌘ + Z`，`Ctrl/⌘ + Shift + Z` | 撤销，重做 |\n| `F` | 适应窗口 |\n| `+` / `-` | 放大 / 缩小 |\n| `[` / `]` | 展开 / 收起左侧家具库、右侧面板 |\n| `Shift + F` | 全屏 |\n| `Esc` | 取消当前操作 |\n| 漫游：`WASD` / 方向键，`Shift`，`E` | 移动，快走，开关门 |\n\n## 技术栈\n\n- 原生 HTML / CSS / JavaScript，无框架、无构建步骤\n- 2D 平面图用 SVG 绘制\n- 3D 场景用 [Three.js](https://threejs.org/) r160（OrbitControls、PointerLockControls、RoundedBoxGeometry、RoomEnvironment、CSS2DRenderer）\n- 数据保存在 `localStorage`\n\n## 自定义户型\n\n户型数据写在 `index.html` 里：\n\n- `ROOMS`：房间多边形、名称、默认地面材料\n- `WALLS` / `WINS`：墙体与窗洞\n- `MATS`：地面材料名称与单价\n- `LIB`：家具库（类型、名称、默认尺寸、颜色）\n- `buildFurniture()`：各类家具的 3D 模型\n\n改这些数据就能换成自己的户型。\n\n## 社交媒体\n\n- X（Twitter）：[@akokoi1](https://x.com/akokoi1)\n\n## 许可协议\n\n[MIT](LICENSE)\n",
+        "description": "Проект представляет собой полностью клиентское приложение для планировки и визуализации жилых помещений. Пользователь в 2D‑режиме размещает более 60 видов мебели и бытовой техники, меняет размеры, вращает предметы и даже редактирует несущие и ненесущие стены; все действия синхронно отражаются в 3D‑сцене, построенной на Three.js, где доступен как обзор сверху, так и режим первого лица с управлением WASD. Приложение работает без сборки: достаточно открыть единственный файл index.html, а все данные сохраняются в localStorage, что позволяет сохранять и восстанавливать проекты без сервера. Среди ключевых возможностей – автоматический подсчёт площади комнат и примерный расчёт стоимости отделочных материалов с учётом 5 % потерь, экспорт готовых планов в PNG и импорт/экспорт JSON‑файлов, а также поддержка переключения интерфейса между китайским и английским языками. Сценарий применения: дизайнер интерьера быстро создаёт несколько вариантов планировки, проверяя, как изменится освещение при смене времени суток или как будет выглядеть мебель в реальном масштабе, а затем делится готовыми изображениями с клиентом. Требования минимальны – современный браузер и доступ к CDN для загрузки Three.js; первая загрузка 3D‑сцены требует интернет‑соединения, но дальнейшая работа возможна офлайн, поскольку все модели и данные уже находятся в браузере.",
+        "joke": "",
+        "evidence_quote": "纯前端的户型装修设计工具：在 2D 平面图上摆放家具、拆改墙体、测量尺寸，一键切换到 Three.js 3D 场景，可以鸟瞰，也可以第一人称漫游。整个应用就是一个 `index.html`，无需构建，打开即用。"
+      },
       "yappologistic/cui": {
         "policy_version": 7,
         "source_description": "Native UI components for C: about 150 of them, with spring motion and full keyboard support. Windows, macOS and Linux, no dependencies.",
@@ -659,6 +749,7 @@
       "blader/humanizer": "2026-11-09T17:58:40.009103841Z",
       "chromedevtools/chrome-devtools-mcp": "2026-11-14T19:46:33.009161748Z",
       "czjam/gjgjxweb": "2026-11-09T17:59:32.157735009Z",
+      "deepseek-ai/chat-demo": "2026-11-15T18:09:55.766151909Z",
       "dgreenheck/tidewater": "2026-11-09T11:17:51.623830033Z",
       "egoist/mygo-music": "2026-11-09T18:00:31.425299177Z",
       "ggml-org/llama.cpp": "2026-11-13T19:58:35.437090720Z",
@@ -674,6 +765,7 @@
       "ollaya-dev/ollaya": "2026-11-14T19:52:08.528459890Z",
       "onlistteam/ai-manager": "2026-11-13T20:01:33.863704724Z",
       "tailscale/tailcat": "2026-11-14T19:45:30.200898326Z",
+      "tencent/loopforge": "2026-11-15T18:08:36.228165601Z",
       "thealgorithms/java": "2026-11-12T17:12:28.707679944Z",
       "tokio-rs/topcoat": "2026-11-11T21:13:44.769775254Z",
       "unreallabsai/unreal-agent": "2026-11-09T10:32:33.474270488Z",
@@ -251809,6 +251901,1847 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "AIRzZ90/study-materials-fork",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 619,
+      "forks": 757,
+      "language": "TypeScript",
+      "description": "A cross-platform Tauri 2 interface and interaction practice project",
+      "html_url": "https://github.com/AIRzZ90/study-materials-fork",
+      "topics": [],
+      "created_at": "2026-11-12T10:52:32Z",
+      "updated_at": "2026-11-14T17:19:38Z",
+      "pushed_at": "2026-11-12T11:06:34Z",
+      "license": "Other",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T10:52:32Z",
+          "description": "A cross-platform Tauri 2 interface and interaction practice project",
+          "html_url": "https://github.com/AIRzZ90/study-materials-fork",
+          "stars": 619,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 56157,
+      "forks": 4670,
+      "language": "TypeScript",
+      "description": "Chrome DevTools for coding agents",
+      "html_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "topics": [
+        "browser",
+        "chrome",
+        "chrome-devtools",
+        "debugging",
+        "devtools",
+        "mcp",
+        "mcp-server",
+        "puppeteer"
+      ],
+      "created_at": "2025-09-11T10:39:55Z",
+      "updated_at": "2026-11-14T18:01:30Z",
+      "pushed_at": "2026-11-13T17:28:37Z",
+      "license": "Apache-2.0",
+      "open_issues": 123,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Chrome DevTools for coding agents",
+          "full_name": "ChromeDevTools/chrome-devtools-mcp",
+          "language": "TypeScript",
+          "trending_stars_period": 673,
+          "trending_total_forks": null,
+          "trending_total_stars": 56157,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DevedevT/FFmpeg-GUI-Editor-Windows",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 1045,
+      "forks": 0,
+      "language": "Visual Basic .NET",
+      "description": "Lightweight portable FFmpeg GUI & lossless video trimmer for Windows (ready-to-use .exe). Supports English, Russian, Chinese, German, French & Italian.",
+      "html_url": "https://github.com/DevedevT/FFmpeg-GUI-Editor-Windows",
+      "topics": [
+        "converter",
+        "ffmpeg",
+        "ffmpeg-command",
+        "ffmpeg-gui",
+        "ffmpeg-libraries",
+        "ffmpeg-script",
+        "gui",
+        "gui-application",
+        "image-compression",
+        "media-converter",
+        "media-converter-windows",
+        "video-editing",
+        "video-editor",
+        "video-processing",
+        "windows",
+        "windows-10",
+        "windows-11",
+        "windows-app",
+        "windows-package",
+        "windows-tools"
+      ],
+      "created_at": "2026-11-12T20:49:07Z",
+      "updated_at": "2026-11-14T17:00:32Z",
+      "pushed_at": "2026-11-13T09:24:36Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T20:49:07Z",
+          "description": "Lightweight portable FFmpeg GUI & lossless video trimmer for Windows (ready-to-use .exe). Supports English, Russian, Chinese, German, French & Italian.",
+          "html_url": "https://github.com/DevedevT/FFmpeg-GUI-Editor-Windows",
+          "stars": 1045,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Dodaios/ste80-humanizer",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 554,
+      "forks": 35,
+      "language": "Python",
+      "description": "STE80 Humanizer: agent skill that removes AI tells and rewrites text 80% of the way to ASD-STE100 (Simplified Technical English), the method Andrej Karpathy shared.",
+      "html_url": "https://github.com/Dodaios/ste80-humanizer",
+      "topics": [
+        "agent-skills",
+        "ai-writing",
+        "asd-ste100",
+        "claude-code",
+        "claude-skills",
+        "codex",
+        "cursor",
+        "humanize-ai-text",
+        "humanizer",
+        "karpathy",
+        "llm",
+        "plain-language",
+        "simplified-technical-english",
+        "writing"
+      ],
+      "created_at": "2026-11-09T17:18:59Z",
+      "updated_at": "2026-11-14T17:54:33Z",
+      "pushed_at": "2026-11-14T14:20:14Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T17:18:59Z",
+          "description": "STE80 Humanizer: agent skill that removes AI tells and rewrites text 80% of the way to ASD-STE100 (Simplified Technical English), the method Andrej Karpathy shared.",
+          "html_url": "https://github.com/Dodaios/ste80-humanizer",
+          "stars": 554,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "FrigadeHQ/yogurt",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 1414,
+      "forks": 73,
+      "language": "TypeScript",
+      "description": "Private AI meeting notes that stay on your computer. A free, open-source alternative to Granola for Mac, Windows and Linux.",
+      "html_url": "https://github.com/FrigadeHQ/yogurt",
+      "topics": [
+        "ai-meeting-assistant",
+        "ai-notetaker",
+        "electron",
+        "granola-alternative",
+        "linux",
+        "llama-cpp",
+        "local-ai",
+        "local-first",
+        "macos",
+        "mcp",
+        "meeting-minutes",
+        "meeting-notes",
+        "offline-first",
+        "open-source",
+        "privacy",
+        "speech-to-text",
+        "transcription",
+        "whisper",
+        "whisper-cpp",
+        "windows"
+      ],
+      "created_at": "2026-11-10T20:01:01Z",
+      "updated_at": "2026-11-14T18:05:35Z",
+      "pushed_at": "2026-11-14T17:48:41Z",
+      "license": "MIT",
+      "open_issues": 18,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T20:01:01Z",
+          "description": "Private AI meeting notes that stay on your computer. A free, open-source alternative to Granola for Mac, Windows and Linux.",
+          "html_url": "https://github.com/FrigadeHQ/yogurt",
+          "stars": 1414,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Goblinmine/homelab-diagram",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 1034,
+      "forks": 87,
+      "language": "Python",
+      "description": "Renders an r/homelab-style network diagram from a YAML inventory (Python → SVG/PNG). Written with Claude.",
+      "html_url": "https://github.com/Goblinmine/homelab-diagram",
+      "topics": [],
+      "created_at": "2026-11-07T12:45:46Z",
+      "updated_at": "2026-11-14T18:06:18Z",
+      "pushed_at": "2026-11-07T12:51:26Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T12:45:46Z",
+          "description": "Renders an r/homelab-style network diagram from a YAML inventory (Python → SVG/PNG). Written with Claude.",
+          "html_url": "https://github.com/Goblinmine/homelab-diagram",
+          "stars": 1034,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "GoogleChrome/modern-web-guidance-src",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 5698,
+      "forks": 315,
+      "language": "TypeScript",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "html_url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "topics": [],
+      "created_at": "2026-01-27T20:22:24Z",
+      "updated_at": "2026-11-14T18:05:06Z",
+      "pushed_at": "2026-11-14T14:28:09Z",
+      "license": "Apache-2.0",
+      "open_issues": 390,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Keep your coding agent up to date with the latest web best practices",
+          "full_name": "GoogleChrome/modern-web-guidance-src",
+          "language": "TypeScript",
+          "trending_stars_period": 1225,
+          "trending_total_forks": null,
+          "trending_total_stars": 5698,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HolyArrs/HolyArrs",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 1163,
+      "forks": 59,
+      "language": "Go",
+      "description": "One self-hosted app for your shows, movies and music.",
+      "html_url": "https://github.com/HolyArrs/HolyArrs",
+      "topics": [
+        "docker",
+        "homelab",
+        "jellyfin",
+        "media-server",
+        "plex",
+        "self-hosted"
+      ],
+      "created_at": "2026-11-09T23:53:25Z",
+      "updated_at": "2026-11-14T18:03:31Z",
+      "pushed_at": "2026-11-14T05:56:59Z",
+      "license": "AGPL-3.0",
+      "open_issues": 83,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T23:53:25Z",
+          "description": "One self-hosted app for your shows, movies and music.",
+          "html_url": "https://github.com/HolyArrs/HolyArrs",
+          "stars": 1163,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HybridRobotics/supermimic",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 1490,
+      "forks": 101,
+      "language": "Python",
+      "description": "Humanoid whole-body motion tracking with one differentiable world model.",
+      "html_url": "https://github.com/HybridRobotics/supermimic",
+      "topics": [],
+      "created_at": "2026-11-10T10:46:56Z",
+      "updated_at": "2026-11-14T17:51:31Z",
+      "pushed_at": "2026-11-11T08:06:27Z",
+      "license": "Apache-2.0",
+      "open_issues": 23,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T10:46:56Z",
+          "description": "Humanoid whole-body motion tracking with one differentiable world model.",
+          "html_url": "https://github.com/HybridRobotics/supermimic",
+          "stars": 1490,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JDhruv14/line-art-animation",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 739,
+      "forks": 118,
+      "language": "TypeScript",
+      "description": "A Claude skill and TypeScript library for animated line-art SVG components: ink figures that walk and react, scenes with a day/night cycle.",
+      "html_url": "https://github.com/JDhruv14/line-art-animation",
+      "topics": [
+        "claude-skill",
+        "line-art",
+        "svg-animation",
+        "typescript"
+      ],
+      "created_at": "2026-11-10T09:25:25Z",
+      "updated_at": "2026-11-14T17:52:09Z",
+      "pushed_at": "2026-11-10T09:25:38Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T09:25:25Z",
+          "description": "A Claude skill and TypeScript library for animated line-art SVG components: ink figures that walk and react, scenes with a day/night cycle.",
+          "html_url": "https://github.com/JDhruv14/line-art-animation",
+          "stars": 739,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JuliusBrussee/caveman",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 119922,
+      "forks": 6994,
+      "language": "Go",
+      "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+      "html_url": "https://github.com/JuliusBrussee/caveman",
+      "topics": [
+        "ai",
+        "anthropic",
+        "caveman",
+        "claude",
+        "claude-code",
+        "llm",
+        "meme",
+        "prompt-engineering",
+        "skill",
+        "tokens"
+      ],
+      "created_at": "2026-04-04T10:03:00Z",
+      "updated_at": "2026-11-14T18:05:18Z",
+      "pushed_at": "2026-11-14T07:52:12Z",
+      "license": "Apache-2.0",
+      "open_issues": 88,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+          "full_name": "JuliusBrussee/caveman",
+          "language": "Go",
+          "trending_stars_period": 227,
+          "trending_total_forks": null,
+          "trending_total_stars": 119922,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Kianuni/Erosion-CN",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 2046,
+      "forks": 421,
+      "language": "Swift",
+      "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+      "html_url": "https://github.com/Kianuni/Erosion-CN",
+      "topics": [],
+      "created_at": "2026-11-10T02:37:31Z",
+      "updated_at": "2026-11-14T17:47:49Z",
+      "pushed_at": "2026-11-14T06:38:10Z",
+      "license": "GPL-3.0",
+      "open_issues": 20,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T02:37:31Z",
+          "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+          "html_url": "https://github.com/Kianuni/Erosion-CN",
+          "stars": 2046,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "LNPANDY/HGhub-MacOS-iOS-Version",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 516,
+      "forks": 330,
+      "language": null,
+      "description": "HGhub 跨平台客户端 (macOS & iOS 增强版) · 支持 Apple Silicon / Intel 双架构 DMG 与 iOS 免签 IPA · 沉浸式刷剧 / 手势缩放 / 原生横屏全屏 / 多线路镜像测速",
+      "html_url": "https://github.com/LNPANDY/HGhub-MacOS-iOS-Version",
+      "topics": [
+        "apple-silicon",
+        "dmg",
+        "ios",
+        "ipa",
+        "macos",
+        "react",
+        "rust",
+        "tauri"
+      ],
+      "created_at": "2026-11-07T20:39:55Z",
+      "updated_at": "2026-11-14T18:03:02Z",
+      "pushed_at": "2026-11-13T14:35:43Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T20:39:55Z",
+          "description": "HGhub 跨平台客户端 (macOS & iOS 增强版) · 支持 Apple Silicon / Intel 双架构 DMG 与 iOS 免签 IPA · 沉浸式刷剧 / 手势缩放 / 原生横屏全屏 / 多线路镜像测速",
+          "html_url": "https://github.com/LNPANDY/HGhub-MacOS-iOS-Version",
+          "stars": 516,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Likely7/Veyra-NRVideo",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 1984,
+      "forks": 99,
+      "language": "C++",
+      "description": "Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-generation visual experience.",
+      "html_url": "https://github.com/Likely7/Veyra-NRVideo",
+      "topics": [],
+      "created_at": "2026-09-09T10:58:42Z",
+      "updated_at": "2026-11-14T18:06:25Z",
+      "pushed_at": "2026-11-14T05:53:56Z",
+      "license": "GPL-3.0",
+      "open_issues": 63,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-generation visual experience.",
+          "full_name": "Likely7/Veyra-NRVideo",
+          "language": "C++",
+          "trending_stars_period": 423,
+          "trending_total_forks": null,
+          "trending_total_stars": 1982,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "QwenLM/qwen-code",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 30239,
+      "forks": 3434,
+      "language": "TypeScript",
+      "description": "An open-source AI coding agent that lives in your terminal.",
+      "html_url": "https://github.com/QwenLM/qwen-code",
+      "topics": [
+        "agentic",
+        "ai",
+        "ai-agent",
+        "ai-coding",
+        "cli",
+        "coding-agent",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "qwen",
+        "terminal",
+        "typescript"
+      ],
+      "created_at": "2025-06-26T01:37:46Z",
+      "updated_at": "2026-11-14T18:01:16Z",
+      "pushed_at": "2026-11-14T18:01:14Z",
+      "license": "Apache-2.0",
+      "open_issues": 2285,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open-source AI coding agent that lives in your terminal.",
+          "full_name": "QwenLM/qwen-code",
+          "language": "TypeScript",
+          "trending_stars_period": 116,
+          "trending_total_forks": null,
+          "trending_total_stars": 30239,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Robbyant/lingbot-touch",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 525,
+      "forks": 5,
+      "language": "Python",
+      "description": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
+      "html_url": "https://github.com/Robbyant/lingbot-touch",
+      "topics": [],
+      "created_at": "2026-11-09T09:02:29Z",
+      "updated_at": "2026-11-14T17:57:18Z",
+      "pushed_at": "2026-11-11T02:28:03Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T09:02:29Z",
+          "description": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
+          "html_url": "https://github.com/Robbyant/lingbot-touch",
+          "stars": 525,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Tencent/LoopForge",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 797,
+      "forks": 135,
+      "language": "Go",
+      "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+      "html_url": "https://github.com/Tencent/LoopForge",
+      "topics": [
+        "agent-orchestration",
+        "agentic-workflow",
+        "ai-agents",
+        "ai-coding",
+        "claude-code",
+        "code-review",
+        "codebuddy",
+        "codex",
+        "coding-agents",
+        "cursor",
+        "developer-tools",
+        "human-on-the-loop",
+        "llm",
+        "mcp",
+        "multi-agent",
+        "sdlc",
+        "self-hosted",
+        "sop",
+        "workflow-automation",
+        "workflow-engine"
+      ],
+      "created_at": "2026-07-28T03:51:01Z",
+      "updated_at": "2026-11-14T18:01:07Z",
+      "pushed_at": "2026-11-14T17:41:02Z",
+      "license": "Other",
+      "open_issues": 254,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+          "full_name": "Tencent/LoopForge",
+          "language": "Go",
+          "trending_stars_period": 101,
+          "trending_total_forks": null,
+          "trending_total_stars": 797,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Th0rgal/satmux",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 1084,
+      "forks": 51,
+      "language": "Python",
+      "description": "Accelerate high-latency GEO inflight Wi-Fi via warm BBR TCP multiplexing + 1-RTT Ground-TLS + zlib (zero dependencies)",
+      "html_url": "https://github.com/Th0rgal/satmux",
+      "topics": [],
+      "created_at": "2026-11-07T16:09:41Z",
+      "updated_at": "2026-11-14T15:54:04Z",
+      "pushed_at": "2026-11-07T16:26:20Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T16:09:41Z",
+          "description": "Accelerate high-latency GEO inflight Wi-Fi via warm BBR TCP multiplexing + 1-RTT Ground-TLS + zlib (zero dependencies)",
+          "html_url": "https://github.com/Th0rgal/satmux",
+          "stars": 1084,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ZhuLinsen/daily_stock_analysis",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 72202,
+      "forks": 57462,
+      "language": "Python",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "html_url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "topics": [
+        "a-stock",
+        "ai-agent",
+        "aigc",
+        "llm",
+        "quant",
+        "quantitative-finance",
+        "quantitative-trading"
+      ],
+      "created_at": "2026-01-10T06:43:20Z",
+      "updated_at": "2026-11-14T18:05:14Z",
+      "pushed_at": "2026-11-14T14:48:39Z",
+      "license": "MIT",
+      "open_issues": 32,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+          "full_name": "ZhuLinsen/daily_stock_analysis",
+          "language": "Python",
+          "trending_stars_period": 3778,
+          "trending_total_forks": null,
+          "trending_total_stars": 72202,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 117478,
+      "forks": 12286,
+      "language": "JavaScript",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "html_url": "https://github.com/addyosmani/agent-skills",
+      "topics": [
+        "agent-skills",
+        "antigravity",
+        "claude-code",
+        "codex",
+        "cursor",
+        "skills"
+      ],
+      "created_at": "2026-02-15T20:20:26Z",
+      "updated_at": "2026-11-14T18:06:15Z",
+      "pushed_at": "2026-11-14T04:33:56Z",
+      "license": "MIT",
+      "open_issues": 121,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Production-grade engineering skills for AI coding agents.",
+          "full_name": "addyosmani/agent-skills",
+          "language": "JavaScript",
+          "trending_stars_period": 3502,
+          "trending_total_forks": null,
+          "trending_total_stars": 117478,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "adriadam10/mkw-recomp",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 833,
+      "forks": 46,
+      "language": "C",
+      "description": "Static recompilation of Mario Kart World (Nintendo Switch 2) to a native PC program",
+      "html_url": "https://github.com/adriadam10/mkw-recomp",
+      "topics": [],
+      "created_at": "2026-11-09T15:40:06Z",
+      "updated_at": "2026-11-14T17:53:47Z",
+      "pushed_at": "2026-11-14T08:57:44Z",
+      "license": "MIT",
+      "open_issues": 138,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T15:40:06Z",
+          "description": "Static recompilation of Mario Kart World (Nintendo Switch 2) to a native PC program",
+          "html_url": "https://github.com/adriadam10/mkw-recomp",
+          "stars": 833,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ag-ui-protocol/ag-ui",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 17261,
+      "forks": 1590,
+      "language": "TypeScript",
+      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+      "html_url": "https://github.com/ag-ui-protocol/ag-ui",
+      "topics": [
+        "ag-ui-protocol",
+        "agent-frontend",
+        "agent-ui",
+        "agentic-workflow",
+        "ai-agents"
+      ],
+      "created_at": "2025-05-07T12:49:37Z",
+      "updated_at": "2026-11-14T18:05:16Z",
+      "pushed_at": "2026-11-14T16:02:06Z",
+      "license": "MIT",
+      "open_issues": 591,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+          "full_name": "ag-ui-protocol/ag-ui",
+          "language": "TypeScript",
+          "trending_stars_period": 9,
+          "trending_total_forks": null,
+          "trending_total_stars": 17261,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "agentes-chat/agentes-chat",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 1384,
+      "forks": 245,
+      "language": "TypeScript",
+      "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+      "html_url": "https://github.com/agentes-chat/agentes-chat",
+      "topics": [
+        "agentic-ai",
+        "ai-agents",
+        "browser-automation",
+        "chat",
+        "claude",
+        "claude-code",
+        "codex",
+        "collaboration",
+        "computer-use",
+        "docker-compose",
+        "gemini",
+        "grok",
+        "human-in-the-loop",
+        "llm",
+        "mcp",
+        "multi-agent",
+        "openai",
+        "self-hosted",
+        "slack-alternative",
+        "team-chat"
+      ],
+      "created_at": "2026-11-09T00:50:28Z",
+      "updated_at": "2026-11-14T17:57:10Z",
+      "pushed_at": "2026-11-14T18:03:01Z",
+      "license": "AGPL-3.0",
+      "open_issues": 205,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T00:50:28Z",
+          "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+          "html_url": "https://github.com/agentes-chat/agentes-chat",
+          "stars": 1384,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "alexeyw/lot-map",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 802,
+      "forks": 88,
+      "language": "TypeScript",
+      "description": "A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.",
+      "html_url": "https://github.com/alexeyw/lot-map",
+      "topics": [
+        "agent-observability",
+        "ai-agents",
+        "claude",
+        "claude-code",
+        "claude-code-plugin",
+        "developer-tools",
+        "svg-animation",
+        "typescript",
+        "visualization"
+      ],
+      "created_at": "2026-11-09T19:13:52Z",
+      "updated_at": "2026-11-14T18:04:07Z",
+      "pushed_at": "2026-11-13T21:15:05Z",
+      "license": "MIT",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T19:13:52Z",
+          "description": "A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.",
+          "html_url": "https://github.com/alexeyw/lot-map",
+          "stars": 802,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "alibaba/open-code-review",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 51260,
+      "forks": 3834,
+      "language": "Go",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "html_url": "https://github.com/alibaba/open-code-review",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "code-review",
+        "code-review-assistant",
+        "harness",
+        "repository-level-context"
+      ],
+      "created_at": "2026-05-18T02:16:36Z",
+      "updated_at": "2026-11-14T18:05:47Z",
+      "pushed_at": "2026-11-14T16:50:04Z",
+      "license": "Apache-2.0",
+      "open_issues": 340,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+          "full_name": "alibaba/open-code-review",
+          "language": "Go",
+          "trending_stars_period": 897,
+          "trending_total_forks": null,
+          "trending_total_stars": 51260,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/claude-quickstarts",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 20952,
+      "forks": 3494,
+      "language": "Python",
+      "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+      "html_url": "https://github.com/anthropics/claude-quickstarts",
+      "topics": [],
+      "created_at": "2024-08-29T19:52:32Z",
+      "updated_at": "2026-11-14T18:06:20Z",
+      "pushed_at": "2026-11-06T19:37:57Z",
+      "license": "MIT",
+      "open_issues": 244,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+          "full_name": "anthropics/claude-quickstarts",
+          "language": "Python",
+          "trending_stars_period": 1731,
+          "trending_total_forks": null,
+          "trending_total_stars": 20951,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/skills",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 194496,
+      "forks": 22891,
+      "language": "Python",
+      "description": "Public repository for Agent Skills",
+      "html_url": "https://github.com/anthropics/skills",
+      "topics": [
+        "agent-skills"
+      ],
+      "created_at": "2025-09-22T15:53:31Z",
+      "updated_at": "2026-11-14T18:05:47Z",
+      "pushed_at": "2026-11-14T15:16:47Z",
+      "license": null,
+      "open_issues": 1539,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Public repository for Agent Skills",
+          "full_name": "anthropics/skills",
+          "language": "Python",
+          "trending_stars_period": 6169,
+          "trending_total_forks": null,
+          "trending_total_stars": 194496,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "apex-compute/ANR",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 1751,
+      "forks": 29,
+      "language": "C++",
+      "description": "Apex Neural Rendering (ANR) by Apex Compute",
+      "html_url": "https://github.com/apex-compute/ANR",
+      "topics": [],
+      "created_at": "2026-11-11T04:27:17Z",
+      "updated_at": "2026-11-14T18:05:20Z",
+      "pushed_at": "2026-11-14T09:54:33Z",
+      "license": null,
+      "open_issues": 29,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-11T04:27:17Z",
+          "description": "Apex Neural Rendering (ANR) by Apex Compute",
+          "html_url": "https://github.com/apex-compute/ANR",
+          "stars": 1751,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ashhart/TensorFold",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 2118,
+      "forks": 417,
+      "language": "Zig",
+      "description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
+      "html_url": "https://github.com/ashhart/TensorFold",
+      "topics": [
+        "ai",
+        "ai-tools",
+        "llm",
+        "llm-inference",
+        "llm-tools"
+      ],
+      "created_at": "2026-06-19T20:27:39Z",
+      "updated_at": "2026-11-14T17:00:49Z",
+      "pushed_at": "2026-11-14T17:10:14Z",
+      "license": "Apache-2.0",
+      "open_issues": 577,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
+          "full_name": "ashhart/TensorFold",
+          "language": "Zig",
+          "trending_stars_period": 53,
+          "trending_total_forks": null,
+          "trending_total_stars": 2118,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "backnotprop/plannotator",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 10898,
+      "forks": 828,
+      "language": "TypeScript",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+      "html_url": "https://github.com/backnotprop/plannotator",
+      "topics": [
+        "agents",
+        "claude-code",
+        "code-review",
+        "codex",
+        "obsidian",
+        "opencode",
+        "pi-mono",
+        "plan-mode",
+        "skills"
+      ],
+      "created_at": "2025-12-28T02:09:40Z",
+      "updated_at": "2026-11-14T18:04:30Z",
+      "pushed_at": "2026-11-14T18:05:58Z",
+      "license": "Apache-2.0",
+      "open_issues": 228,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+          "full_name": "backnotprop/plannotator",
+          "language": "TypeScript",
+          "trending_stars_period": 511,
+          "trending_total_forks": null,
+          "trending_total_stars": 10898,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+          "full_name": "backnotprop/plannotator",
+          "language": "TypeScript",
+          "trending_stars_period": 412,
+          "trending_total_forks": null,
+          "trending_total_stars": 10898,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dabingfy-dot/solo-to-team-skills",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 876,
+      "forks": 95,
+      "language": null,
+      "description": "Skills for human-led AI teams: delegate tasks, verify evidence, explain steps clearly, and learn from real cases. 一个人统筹 AI 团队：派活、核证、清楚说明、经验复用。",
+      "html_url": "https://github.com/dabingfy-dot/solo-to-team-skills",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "collaboration",
+        "human-in-the-loop",
+        "workflow"
+      ],
+      "created_at": "2026-11-07T01:36:28Z",
+      "updated_at": "2026-11-14T17:23:58Z",
+      "pushed_at": "2026-11-07T01:36:36Z",
+      "license": "MIT",
+      "open_issues": 23,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T01:36:28Z",
+          "description": "Skills for human-led AI teams: delegate tasks, verify evidence, explain steps clearly, and learn from real cases. 一个人统筹 AI 团队：派活、核证、清楚说明、经验复用。",
+          "html_url": "https://github.com/dabingfy-dot/solo-to-team-skills",
+          "stars": 876,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "deepseek-ai/chat-demo",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 1665,
+      "forks": 272,
+      "language": "TypeScript",
+      "description": "Chat Demo",
+      "html_url": "https://github.com/deepseek-ai/chat-demo",
+      "topics": [],
+      "created_at": "2026-11-12T08:08:19Z",
+      "updated_at": "2026-11-14T17:59:29Z",
+      "pushed_at": "2026-11-13T14:33:08Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T08:08:19Z",
+          "description": "Chat Demo",
+          "html_url": "https://github.com/deepseek-ai/chat-demo",
+          "stars": 1665,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dream-num/univer",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 24356,
+      "forks": 2125,
+      "language": "TypeScript",
+      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+      "html_url": "https://github.com/dream-num/univer",
+      "topics": [
+        "board",
+        "collaboration",
+        "doc",
+        "docx",
+        "excel",
+        "offce365",
+        "office",
+        "pdf",
+        "ppt",
+        "pptx",
+        "presentation",
+        "sdk",
+        "sheet",
+        "slides",
+        "spreadsheet",
+        "univer",
+        "word",
+        "wordprocessor",
+        "workspace",
+        "xlsx"
+      ],
+      "created_at": "2022-09-29T12:09:14Z",
+      "updated_at": "2026-11-14T18:06:17Z",
+      "pushed_at": "2026-11-14T17:23:40Z",
+      "license": "Apache-2.0",
+      "open_issues": 165,
+      "default_branch": "dev",
+      "sources": [
+        {
+          "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+          "full_name": "dream-num/univer",
+          "language": "TypeScript",
+          "trending_stars_period": 495,
+          "trending_total_forks": null,
+          "trending_total_stars": 24356,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "faizfahmi77/ScanDot",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 505,
+      "forks": 5,
+      "language": "Kotlin",
+      "description": "Experimental Android 3D scanning and point-cloud viewer",
+      "html_url": "https://github.com/faizfahmi77/ScanDot",
+      "topics": [
+        "3d-scanning",
+        "android",
+        "photogrammetry",
+        "point-cloud"
+      ],
+      "created_at": "2026-11-13T04:07:57Z",
+      "updated_at": "2026-11-14T18:02:06Z",
+      "pushed_at": "2026-11-13T04:27:21Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-13T04:07:57Z",
+          "description": "Experimental Android 3D scanning and point-cloud viewer",
+          "html_url": "https://github.com/faizfahmi77/ScanDot",
+          "stars": 505,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "forcequitOS/worse_query",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 631,
+      "forks": 154,
+      "language": "Objective-C",
+      "description": "A sandbox escape for iOS 26 and 27, again",
+      "html_url": "https://github.com/forcequitOS/worse_query",
+      "topics": [],
+      "created_at": "2026-11-08T17:00:03Z",
+      "updated_at": "2026-11-14T16:20:19Z",
+      "pushed_at": "2026-11-08T20:05:55Z",
+      "license": "GPL-3.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-08T17:00:03Z",
+          "description": "A sandbox escape for iOS 26 and 27, again",
+          "html_url": "https://github.com/forcequitOS/worse_query",
+          "stars": 631,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-deepmind/mujoco",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 17958,
+      "forks": 2197,
+      "language": "C++",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "html_url": "https://github.com/google-deepmind/mujoco",
+      "topics": [
+        "mujoco",
+        "physics",
+        "robotics"
+      ],
+      "created_at": "2021-08-27T12:25:48Z",
+      "updated_at": "2026-11-14T18:02:09Z",
+      "pushed_at": "2026-11-13T17:42:32Z",
+      "license": "Apache-2.0",
+      "open_issues": 411,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+          "full_name": "google-deepmind/mujoco",
+          "language": "C++",
+          "trending_stars_period": 1764,
+          "trending_total_forks": null,
+          "trending_total_stars": 17958,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google/elephant-goldfish-model",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 19014,
+      "forks": 1414,
+      "language": "Python",
+      "description": "Open-source plugin for designing and reviewing software with agents",
+      "html_url": "https://github.com/google/elephant-goldfish-model",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "antigravity",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "codex",
+        "codex-plugin",
+        "coding-agents",
+        "context-engineering",
+        "developer-tools",
+        "gemini",
+        "llm",
+        "multi-agent",
+        "prompt-engineering",
+        "spec-driven-development"
+      ],
+      "created_at": "2026-09-13T16:31:06Z",
+      "updated_at": "2026-11-14T18:02:38Z",
+      "pushed_at": "2026-11-14T09:40:03Z",
+      "license": "Apache-2.0",
+      "open_issues": 105,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source plugin for designing and reviewing software with agents",
+          "full_name": "google/elephant-goldfish-model",
+          "language": "Python",
+          "trending_stars_period": 5560,
+          "trending_total_forks": null,
+          "trending_total_stars": 19014,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "huamidev/GestaltX",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 7536,
+      "forks": 2635,
+      "language": "Swift",
+      "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+      "html_url": "https://github.com/huamidev/GestaltX",
+      "topics": [],
+      "created_at": "2026-11-09T05:15:48Z",
+      "updated_at": "2026-11-14T17:55:49Z",
+      "pushed_at": "2026-11-14T09:27:55Z",
+      "license": "GPL-3.0",
+      "open_issues": 75,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T05:15:48Z",
+          "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+          "html_url": "https://github.com/huamidev/GestaltX",
+          "stars": 7536,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jhaizhou-ops/S2Arm",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 2968,
+      "forks": 541,
+      "language": "C#",
+      "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+      "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+      "topics": [
+        "apple-silicon",
+        "arm64",
+        "game-porting",
+        "ios",
+        "ipados",
+        "macos",
+        "metal",
+        "s2arm",
+        "static-recompilation",
+        "switch"
+      ],
+      "created_at": "2026-11-08T05:49:46Z",
+      "updated_at": "2026-11-14T18:05:37Z",
+      "pushed_at": "2026-11-14T17:59:28Z",
+      "license": "Apache-2.0",
+      "open_issues": 426,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-08T05:49:46Z",
+          "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+          "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+          "stars": 2968,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kolbicz/WQFiles",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 848,
+      "forks": 62,
+      "language": "Objective-C",
+      "description": "File browser, app data manager and cache cleaner for iOS 26 and 27 (worse_query, no jailbreak)",
+      "html_url": "https://github.com/kolbicz/WQFiles",
+      "topics": [],
+      "created_at": "2026-11-09T13:43:40Z",
+      "updated_at": "2026-11-14T17:59:57Z",
+      "pushed_at": "2026-11-14T16:43:44Z",
+      "license": "GPL-3.0",
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T13:43:40Z",
+          "description": "File browser, app data manager and cache cleaner for iOS 26 and 27 (worse_query, no jailbreak)",
+          "html_url": "https://github.com/kolbicz/WQFiles",
+          "stars": 848,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "louislam/uptime-kuma",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 94147,
+      "forks": 8748,
+      "language": "JavaScript",
+      "description": "A fancy self-hosted monitoring tool",
+      "html_url": "https://github.com/louislam/uptime-kuma",
+      "topics": [
+        "docker",
+        "monitor",
+        "monitoring",
+        "responsive",
+        "self-hosted",
+        "selfhosted",
+        "single-page-app",
+        "socket-io",
+        "uptime",
+        "uptime-monitoring",
+        "webapp",
+        "websocket"
+      ],
+      "created_at": "2021-07-03T01:02:42Z",
+      "updated_at": "2026-11-14T18:03:37Z",
+      "pushed_at": "2026-11-14T11:48:02Z",
+      "license": "MIT",
+      "open_issues": 855,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "A fancy self-hosted monitoring tool",
+          "full_name": "louislam/uptime-kuma",
+          "language": "JavaScript",
+          "trending_stars_period": 432,
+          "trending_total_forks": null,
+          "trending_total_stars": 94147,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "luobinger/PerkRadar",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 499,
+      "forks": 101,
+      "language": "TypeScript",
+      "description": "PerkRadar — A self-hosted deals aggregator that fetches freebies, limited-time offers, and discounts from multiple sources every two hours, with source status tracking, expiration handling, and personal bookmarks.",
+      "html_url": "https://github.com/luobinger/PerkRadar",
+      "topics": [],
+      "created_at": "2026-11-08T08:22:48Z",
+      "updated_at": "2026-11-14T17:25:59Z",
+      "pushed_at": "2026-11-14T17:26:15Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-08T08:22:48Z",
+          "description": "PerkRadar — A self-hosted deals aggregator that fetches freebies, limited-time offers, and discounts from multiple sources every two hours, with source status tracking, expiration handling, and personal bookmarks.",
+          "html_url": "https://github.com/luobinger/PerkRadar",
+          "stars": 499,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "lxe/phoneuse",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 658,
+      "forks": 61,
+      "language": "Python",
+      "description": "See and operate an unmodified iPhone from a Linux PC: AirPlay mirror in, Bluetooth HID mouse/keyboard out, plus a CLI and skill for agents.",
+      "html_url": "https://github.com/lxe/phoneuse",
+      "topics": [],
+      "created_at": "2026-11-07T01:28:30Z",
+      "updated_at": "2026-11-14T16:58:07Z",
+      "pushed_at": "2026-11-14T17:25:33Z",
+      "license": "MIT",
+      "open_issues": 9,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-11-07T01:28:30Z",
+          "description": "See and operate an unmodified iPhone from a Linux PC: AirPlay mirror in, Bluetooth HID mouse/keyboard out, plus a CLI and skill for agents.",
+          "html_url": "https://github.com/lxe/phoneuse",
+          "stars": 658,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "makepad/relax",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 535,
+      "forks": 27,
+      "language": "Rust",
+      "description": "Relax Rust JIT",
+      "html_url": "https://github.com/makepad/relax",
+      "topics": [],
+      "created_at": "2026-11-11T19:12:58Z",
+      "updated_at": "2026-11-14T17:13:56Z",
+      "pushed_at": "2026-11-14T17:54:03Z",
+      "license": "MIT",
+      "open_issues": 17,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-11T19:12:58Z",
+          "description": "Relax Rust JIT",
+          "html_url": "https://github.com/makepad/relax",
+          "stars": 535,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "martin-olivier/airgorah",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 5667,
+      "forks": 946,
+      "language": "Rust",
+      "description": "A WiFi security auditing software",
+      "html_url": "https://github.com/martin-olivier/airgorah",
+      "topics": [
+        "gui",
+        "kali",
+        "linux-app",
+        "security",
+        "security-audit",
+        "wifi",
+        "wifi-security",
+        "wireless"
+      ],
+      "created_at": "2022-09-30T09:06:45Z",
+      "updated_at": "2026-11-14T18:06:33Z",
+      "pushed_at": "2026-11-06T19:32:49Z",
+      "license": "MIT",
+      "open_issues": 15,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A WiFi security auditing software",
+          "full_name": "martin-olivier/airgorah",
+          "language": "Rust",
+          "trending_stars_period": 269,
+          "trending_total_forks": null,
+          "trending_total_stars": 5666,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "meta/astryx",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 27938,
+      "forks": 2169,
+      "language": "TypeScript",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "html_url": "https://github.com/meta/astryx",
+      "topics": [],
+      "created_at": "2026-01-09T16:20:32Z",
+      "updated_at": "2026-11-14T18:06:28Z",
+      "pushed_at": "2026-11-14T17:58:53Z",
+      "license": "MIT",
+      "open_issues": 668,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open source design system that's fully customizable and agent ready",
+          "full_name": "meta/astryx",
+          "language": "TypeScript",
+          "trending_stars_period": 13375,
+          "trending_total_forks": null,
+          "trending_total_stars": 27938,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "milind-soni/OpenMausBot",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 22662,
+      "forks": 3151,
+      "language": "TypeScript",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "html_url": "https://github.com/milind-soni/OpenMausBot",
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "computer-use",
+        "docker",
+        "electron",
+        "grok",
+        "grok-bot",
+        "grok-bot-alternative",
+        "self-hosted",
+        "typescript"
+      ],
+      "created_at": "2026-08-11T18:58:55Z",
+      "updated_at": "2026-11-14T18:06:36Z",
+      "pushed_at": "2026-11-14T12:04:43Z",
+      "license": "Apache-2.0",
+      "open_issues": 1145,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "full_name": "milind-soni/OpenMausBot",
+          "language": "TypeScript",
+          "trending_stars_period": 7763,
+          "trending_total_forks": null,
+          "trending_total_stars": 22663,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "opencoredev/islandcn",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 636,
+      "forks": 56,
+      "language": "TypeScript",
+      "description": "The open-source Dynamic Island for React, installed with shadcn.",
+      "html_url": "https://github.com/opencoredev/islandcn",
+      "topics": [
+        "dynamic-island",
+        "nextjs",
+        "react",
+        "shadcn",
+        "typescript",
+        "ui-components"
+      ],
+      "created_at": "2026-11-13T11:50:50Z",
+      "updated_at": "2026-11-14T18:02:10Z",
+      "pushed_at": "2026-11-13T15:14:36Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-13T11:50:50Z",
+          "description": "The open-source Dynamic Island for React, installed with shadcn.",
+          "html_url": "https://github.com/opencoredev/islandcn",
+          "stars": 636,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "rivet-dev/open-orange",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 525,
+      "forks": 19,
+      "language": "TypeScript",
+      "description": "Run Cloudflare Workers and Durable Objects unchanged on AWS, GCP, Azure or your own servers.",
+      "html_url": "https://github.com/rivet-dev/open-orange",
+      "topics": [
+        "cloudflare",
+        "cloudflare-workers",
+        "durable-objects",
+        "nodejs",
+        "rivet",
+        "self-hosted",
+        "serverless",
+        "sqlite",
+        "typescript",
+        "wrangler"
+      ],
+      "created_at": "2026-11-12T00:44:12Z",
+      "updated_at": "2026-11-14T18:01:21Z",
+      "pushed_at": "2026-11-14T16:00:12Z",
+      "license": "Apache-2.0",
+      "open_issues": 10,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T00:44:12Z",
+          "description": "Run Cloudflare Workers and Durable Objects unchanged on AWS, GCP, Azure or your own servers.",
+          "html_url": "https://github.com/rivet-dev/open-orange",
+          "stars": 525,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "serveroshq/panel",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 783,
+      "forks": 63,
+      "language": "PHP",
+      "description": "The open source ServerOS panel: one place to run the Linux servers you already own.",
+      "html_url": "https://github.com/serveroshq/panel",
+      "topics": [
+        "agpl",
+        "control-panel",
+        "devops",
+        "laravel",
+        "open-source",
+        "self-hosted",
+        "server-management",
+        "serveros",
+        "vps"
+      ],
+      "created_at": "2026-11-09T00:47:33Z",
+      "updated_at": "2026-11-14T17:36:24Z",
+      "pushed_at": "2026-11-14T14:46:19Z",
+      "license": "AGPL-3.0",
+      "open_issues": 39,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T00:47:33Z",
+          "description": "The open source ServerOS panel: one place to run the Linux servers you already own.",
+          "html_url": "https://github.com/serveroshq/panel",
+          "stars": 783,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sherlock-project/sherlock",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 111666,
+      "forks": 12924,
+      "language": "Python",
+      "description": "Hunt down social media accounts by username across social networks",
+      "html_url": "https://github.com/sherlock-project/sherlock",
+      "topics": [
+        "cli",
+        "cti",
+        "cybersecurity",
+        "forensics",
+        "hacktoberfest",
+        "information-gathering",
+        "infosec",
+        "linux",
+        "osint",
+        "pentesting",
+        "python",
+        "python3",
+        "reconnaissance",
+        "redteam",
+        "sherlock",
+        "tools"
+      ],
+      "created_at": "2018-12-24T14:30:48Z",
+      "updated_at": "2026-11-14T18:04:15Z",
+      "pushed_at": "2026-11-14T05:13:08Z",
+      "license": "MIT",
+      "open_issues": 415,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Hunt down social media accounts by username across social networks",
+          "full_name": "sherlock-project/sherlock",
+          "language": "Python",
+          "trending_stars_period": 13364,
+          "trending_total_forks": null,
+          "trending_total_stars": 111666,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tangerineturtle1/NX2navi",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 4061,
+      "forks": 312,
+      "language": "C",
+      "description": null,
+      "html_url": "https://github.com/tangerineturtle1/NX2navi",
+      "topics": [],
+      "created_at": "2026-11-07T10:01:23Z",
+      "updated_at": "2026-11-14T18:04:36Z",
+      "pushed_at": "2026-11-14T17:55:43Z",
+      "license": "MIT",
+      "open_issues": 745,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-07T10:01:23Z",
+          "description": null,
+          "html_url": "https://github.com/tangerineturtle1/NX2navi",
+          "stars": 4061,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tradermonty/claude-trading-skills",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 4623,
+      "forks": 911,
+      "language": "Python",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "html_url": "https://github.com/tradermonty/claude-trading-skills",
+      "topics": [],
+      "created_at": "2025-10-19T16:37:29Z",
+      "updated_at": "2026-11-14T18:03:32Z",
+      "pushed_at": "2026-11-14T14:33:41Z",
+      "license": "MIT",
+      "open_issues": 62,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+          "full_name": "tradermonty/claude-trading-skills",
+          "language": "Python",
+          "trending_stars_period": 556,
+          "trending_total_forks": null,
+          "trending_total_stars": 4623,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 51094,
+      "forks": 3564,
+      "language": "Rust",
+      "description": "Browser automation CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "topics": [],
+      "created_at": "2026-01-11T05:38:15Z",
+      "updated_at": "2026-11-14T18:05:45Z",
+      "pushed_at": "2026-11-14T04:29:22Z",
+      "license": "Apache-2.0",
+      "open_issues": 575,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Browser automation CLI for AI agents",
+          "full_name": "vercel-labs/agent-browser",
+          "language": "Rust",
+          "trending_stars_period": 4360,
+          "trending_total_forks": null,
+          "trending_total_stars": 51094,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "we-promise/sure",
+      "captured_at": "2026-11-14T18:06:18Z",
+      "stars": 15158,
+      "forks": 1155,
+      "language": "Ruby",
+      "description": "The personal finance app for everyone (by everyone)",
+      "html_url": "https://github.com/we-promise/sure",
+      "topics": [],
+      "created_at": "2025-07-23T04:13:55Z",
+      "updated_at": "2026-11-14T18:04:37Z",
+      "pushed_at": "2026-11-14T08:14:20Z",
+      "license": "AGPL-3.0",
+      "open_issues": 930,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The personal finance app for everyone (by everyone)",
+          "full_name": "we-promise/sure",
+          "language": "Ruby",
+          "trending_stars_period": 659,
+          "trending_total_forks": null,
+          "trending_total_stars": 15158,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
@@ -251887,7 +253820,8 @@
     "daily-20261110T211307Z": 89,
     "daily-20261111T171025Z": 95,
     "daily-20261112T195638Z": 101,
-    "daily-20261113T194445Z": 106
+    "daily-20261113T194445Z": 106,
+    "daily-20261114T180618Z": 111
   },
   "sent_slots": {
     "2026-09-30-pm": 61,
@@ -251900,7 +253834,8 @@
     "daily:2026-11-10": 89,
     "daily:2026-11-11": 95,
     "daily:2026-11-12": 101,
-    "daily:2026-11-13": 106
+    "daily:2026-11-13": 106,
+    "daily:2026-11-14": 111
   },
   "pending_digests": {},
   "llm_daily_requests": {
@@ -251919,7 +253854,8 @@
     "2026-11-10": 11,
     "2026-11-11": 15,
     "2026-11-12": 13,
-    "2026-11-13": 18
+    "2026-11-13": 18,
+    "2026-11-14": 19
   },
   "delivery_progress": {
     "20260930T143510Z": {

@@ -1,0 +1,22 @@
+{
+  "approval_scope": "Only local payload-format and credential-pattern checks; not factual, editorial, quality, safety or coverage approval",
+  "approved": true,
+  "deterministic_scan": "passed",
+  "factual_review": "not_performed",
+  "matched_pattern_classes": [],
+  "review": null,
+  "status": "deterministic-only",
+  "telegram_format": {
+    "api_acceptance_tested": false,
+    "message_utf16_units": [
+      2406,
+      3307,
+      3430,
+      3332,
+      3563
+    ],
+    "scope": "Offline emitted MarkdownV2 subset: escaped text, bold/italic, inline code and HTTP(S) links; not the complete Telegram parser or API acceptance",
+    "status": "passed",
+    "utf16_limit": 3800
+  }
+}
