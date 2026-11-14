@@ -36,30 +36,49 @@ def verify(binary):
 
         stored = root / "stored"
         stored.mkdir()
-        description = (
-            "Локально показывает зависимости исходных файлов.\n\n"
-            "Помогает оценить объём изменений перед обновлением."
-        )
+        entries = [
+            {
+                "full_name": f"example/{name}",
+                "description": (
+                    f"Локально показывает зависимости {name}.\n\n"
+                    f"Помогает оценить объём изменений {name} перед обновлением."
+                ),
+                "joke": f"Шутка только про {name}.",
+                "latest": {"language": "Rust", "stars": 100},
+            }
+            for name in ("portable", "graph", "report")
+        ]
         digest = {
             "format_version": 3, "edition": "weekly",
             "generated_at": "2026-11-04T15:00:00Z", "llm_used": False,
-            "entries": [{
-                "full_name": "example/portable", "description": description,
-                "joke": "", "latest": {"language": "Rust", "stars": 100},
-            }],
+            "entries": entries,
         }
         (stored / "ranking-input.json").write_text(json.dumps(digest), encoding="utf-8")
         (stored / "selection.json").write_text(
-            json.dumps({"pool": [{"full_name": "example/portable"}]}), encoding="utf-8",
+            json.dumps({"pool": [{"full_name": entry["full_name"]} for entry in entries]}),
+            encoding="utf-8",
         )
         preview = run("preview-stored", str(stored))
         assert preview.returncode == 0, preview.stderr
         refreshed = json.loads((stored / "ranking-input.json").read_text(encoding="utf-8"))
-        assert refreshed["entries"][0]["description"] == description
+        assert refreshed["entries"] == entries
         refresh = json.loads((stored / "format-refresh.json").read_text(encoding="utf-8"))
-        assert refresh["provider_requests"] == 0 and refresh["message_count"] == 1
-        message = (stored / "issue.md").read_text(encoding="utf-8")
-        assert "\\#Rust" in message and "\n\nПомогает" in message
+        assert refresh["provider_requests"] == 0 and refresh["message_count"] == 3
+        messages = json.loads((stored / "telegram-messages.json").read_text(encoding="utf-8"))
+        assert len(messages) == 3, "Each repository must have its own forwardable message"
+        assert (stored / "issue.md").read_text(encoding="utf-8") == "\n\n".join(messages)
+        for entry, message in zip(entries, messages, strict=True):
+            name = entry["full_name"]
+            assert f"[{name}](https://github.com/{name})" in message
+            assert message.count("https://github.com/") == 1
+            assert entry["description"].replace(".", "\\.") in message
+            assert entry["joke"].replace(".", "\\.") in message
+            assert "\\#Rust" in message and "\n\nПомогает" in message
+            for other in entries:
+                if other is not entry:
+                    assert other["full_name"] not in message
+                    assert other["description"].replace(".", "\\.") not in message
+                    assert other["joke"].replace(".", "\\.") not in message
 
         # Corrupt state must be read from this new working directory and stop the
         # delivery path before any credential lookup or possible network access.
@@ -74,7 +93,7 @@ def verify(binary):
         assert "stored state is invalid; refusing empty dedup memory" in rejected.stderr, rejected.stderr
         assert state.read_text(encoding="utf-8") == "{invalid-state"
         assert not (stored / "debug-delivery.json").exists()
-    print("Relocated binary: version, offline paragraph rendering and local-state guard passed.")
+    print("Relocated binary: version, three separate offline project messages and local-state guard passed.")
 
 
 if __name__ == "__main__":
