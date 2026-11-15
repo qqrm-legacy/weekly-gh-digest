@@ -257566,6 +257566,2026 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 56458,
+      "forks": 4780,
+      "language": "TypeScript",
+      "description": "Chrome DevTools for coding agents",
+      "html_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "topics": [
+        "browser",
+        "chrome",
+        "chrome-devtools",
+        "debugging",
+        "devtools",
+        "mcp",
+        "mcp-server",
+        "puppeteer"
+      ],
+      "created_at": "2025-09-11T10:39:55Z",
+      "updated_at": "2026-11-15T06:37:08Z",
+      "pushed_at": "2026-11-15T03:06:25Z",
+      "license": "Apache-2.0",
+      "open_issues": 131,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Chrome DevTools for coding agents",
+          "full_name": "ChromeDevTools/chrome-devtools-mcp",
+          "language": "TypeScript",
+          "trending_stars_period": 664,
+          "trending_total_forks": null,
+          "trending_total_stars": 56458,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DevedevT/FFmpeg-GUI-Editor-Windows",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 1051,
+      "forks": 1,
+      "language": "Visual Basic .NET",
+      "description": "Lightweight portable FFmpeg GUI & lossless video trimmer for Windows (ready-to-use .exe). Supports English, Russian, Chinese, German, French & Italian.",
+      "html_url": "https://github.com/DevedevT/FFmpeg-GUI-Editor-Windows",
+      "topics": [
+        "converter",
+        "ffmpeg",
+        "ffmpeg-command",
+        "ffmpeg-gui",
+        "ffmpeg-libraries",
+        "ffmpeg-script",
+        "gui",
+        "gui-application",
+        "image-compression",
+        "media-converter",
+        "media-converter-windows",
+        "video-editing",
+        "video-editor",
+        "video-processing",
+        "windows",
+        "windows-10",
+        "windows-11",
+        "windows-app",
+        "windows-package",
+        "windows-tools"
+      ],
+      "created_at": "2026-11-12T20:49:07Z",
+      "updated_at": "2026-11-15T05:37:44Z",
+      "pushed_at": "2026-11-13T09:24:36Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T20:49:07Z",
+          "description": "Lightweight portable FFmpeg GUI & lossless video trimmer for Windows (ready-to-use .exe). Supports English, Russian, Chinese, German, French & Italian.",
+          "html_url": "https://github.com/DevedevT/FFmpeg-GUI-Editor-Windows",
+          "stars": 1051,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Eynnzerr/TelemetryCleaner",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 696,
+      "forks": 66,
+      "language": "Kotlin",
+      "description": "基于 Shizuku 免 Root 清除国产安卓 SystemHelper、RegService 等系统预装隐私数据收集模块",
+      "html_url": "https://github.com/Eynnzerr/TelemetryCleaner",
+      "topics": [],
+      "created_at": "2026-11-11T06:25:10Z",
+      "updated_at": "2026-11-15T06:35:21Z",
+      "pushed_at": "2026-11-15T04:47:14Z",
+      "license": "MIT",
+      "open_issues": 10,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-11T06:25:10Z",
+          "description": "基于 Shizuku 免 Root 清除国产安卓 SystemHelper、RegService 等系统预装隐私数据收集模块",
+          "html_url": "https://github.com/Eynnzerr/TelemetryCleaner",
+          "stars": 696,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "FrigadeHQ/yogurt",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 1523,
+      "forks": 87,
+      "language": "TypeScript",
+      "description": "Private AI meeting notes that stay on your computer. A free, open-source alternative to Granola for Mac, Windows and Linux.",
+      "html_url": "https://github.com/FrigadeHQ/yogurt",
+      "topics": [
+        "ai-meeting-assistant",
+        "ai-notetaker",
+        "electron",
+        "granola-alternative",
+        "linux",
+        "llama-cpp",
+        "local-ai",
+        "local-first",
+        "macos",
+        "mcp",
+        "meeting-minutes",
+        "meeting-notes",
+        "offline-first",
+        "open-source",
+        "privacy",
+        "speech-to-text",
+        "transcription",
+        "whisper",
+        "whisper-cpp",
+        "windows"
+      ],
+      "created_at": "2026-11-10T20:01:01Z",
+      "updated_at": "2026-11-15T06:33:13Z",
+      "pushed_at": "2026-11-15T06:36:30Z",
+      "license": "MIT",
+      "open_issues": 16,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T20:01:01Z",
+          "description": "Private AI meeting notes that stay on your computer. A free, open-source alternative to Granola for Mac, Windows and Linux.",
+          "html_url": "https://github.com/FrigadeHQ/yogurt",
+          "stars": 1523,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "GoogleChrome/modern-web-guidance-src",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 6288,
+      "forks": 467,
+      "language": "TypeScript",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "html_url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "topics": [],
+      "created_at": "2026-01-27T20:22:24Z",
+      "updated_at": "2026-11-15T06:37:05Z",
+      "pushed_at": "2026-11-14T14:28:09Z",
+      "license": "Apache-2.0",
+      "open_issues": 393,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Keep your coding agent up to date with the latest web best practices",
+          "full_name": "GoogleChrome/modern-web-guidance-src",
+          "language": "TypeScript",
+          "trending_stars_period": 1231,
+          "trending_total_forks": null,
+          "trending_total_stars": 6288,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HolyArrs/HolyArrs",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 1201,
+      "forks": 61,
+      "language": "Go",
+      "description": "One self-hosted app for your shows, movies and music.",
+      "html_url": "https://github.com/HolyArrs/HolyArrs",
+      "topics": [
+        "docker",
+        "homelab",
+        "jellyfin",
+        "media-server",
+        "plex",
+        "self-hosted"
+      ],
+      "created_at": "2026-11-09T23:53:25Z",
+      "updated_at": "2026-11-15T06:35:37Z",
+      "pushed_at": "2026-11-14T05:56:59Z",
+      "license": "AGPL-3.0",
+      "open_issues": 95,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T23:53:25Z",
+          "description": "One self-hosted app for your shows, movies and music.",
+          "html_url": "https://github.com/HolyArrs/HolyArrs",
+          "stars": 1201,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HybridRobotics/supermimic",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 1513,
+      "forks": 103,
+      "language": "Python",
+      "description": "Humanoid whole-body motion tracking with one differentiable world model.",
+      "html_url": "https://github.com/HybridRobotics/supermimic",
+      "topics": [],
+      "created_at": "2026-11-10T10:46:56Z",
+      "updated_at": "2026-11-15T06:26:56Z",
+      "pushed_at": "2026-11-11T08:06:27Z",
+      "license": "Apache-2.0",
+      "open_issues": 23,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T10:46:56Z",
+          "description": "Humanoid whole-body motion tracking with one differentiable world model.",
+          "html_url": "https://github.com/HybridRobotics/supermimic",
+          "stars": 1513,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JDhruv14/line-art-animation",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 784,
+      "forks": 125,
+      "language": "TypeScript",
+      "description": "A Claude skill and TypeScript library for animated line-art SVG components: ink figures that walk and react, scenes with a day/night cycle.",
+      "html_url": "https://github.com/JDhruv14/line-art-animation",
+      "topics": [
+        "claude-skill",
+        "line-art",
+        "svg-animation",
+        "typescript"
+      ],
+      "created_at": "2026-11-10T09:25:25Z",
+      "updated_at": "2026-11-15T06:22:26Z",
+      "pushed_at": "2026-11-10T09:25:38Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T09:25:25Z",
+          "description": "A Claude skill and TypeScript library for animated line-art SVG components: ink figures that walk and react, scenes with a day/night cycle.",
+          "html_url": "https://github.com/JDhruv14/line-art-animation",
+          "stars": 784,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JuliusBrussee/caveman",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 120174,
+      "forks": 7006,
+      "language": "Go",
+      "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+      "html_url": "https://github.com/JuliusBrussee/caveman",
+      "topics": [
+        "ai",
+        "anthropic",
+        "caveman",
+        "claude",
+        "claude-code",
+        "llm",
+        "meme",
+        "prompt-engineering",
+        "skill",
+        "tokens"
+      ],
+      "created_at": "2026-04-04T10:03:00Z",
+      "updated_at": "2026-11-15T06:33:44Z",
+      "pushed_at": "2026-11-14T07:52:12Z",
+      "license": "Apache-2.0",
+      "open_issues": 88,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+          "full_name": "JuliusBrussee/caveman",
+          "language": "Go",
+          "trending_stars_period": 227,
+          "trending_total_forks": null,
+          "trending_total_stars": 120174,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Kianuni/Erosion-CN",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 2078,
+      "forks": 424,
+      "language": "Swift",
+      "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+      "html_url": "https://github.com/Kianuni/Erosion-CN",
+      "topics": [],
+      "created_at": "2026-11-10T02:37:31Z",
+      "updated_at": "2026-11-15T06:36:41Z",
+      "pushed_at": "2026-11-14T06:38:10Z",
+      "license": "GPL-3.0",
+      "open_issues": 20,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T02:37:31Z",
+          "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+          "html_url": "https://github.com/Kianuni/Erosion-CN",
+          "stars": 2078,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Likely7/Veyra-NRVideo",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 2410,
+      "forks": 201,
+      "language": "C++",
+      "description": "Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-generation visual experience.",
+      "html_url": "https://github.com/Likely7/Veyra-NRVideo",
+      "topics": [],
+      "created_at": "2026-09-09T10:58:42Z",
+      "updated_at": "2026-11-15T06:37:21Z",
+      "pushed_at": "2026-11-15T04:33:04Z",
+      "license": "GPL-3.0",
+      "open_issues": 71,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-generation visual experience.",
+          "full_name": "Likely7/Veyra-NRVideo",
+          "language": "C++",
+          "trending_stars_period": 420,
+          "trending_total_forks": null,
+          "trending_total_stars": 2409,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "QwenLM/qwen-code",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 30417,
+      "forks": 3523,
+      "language": "TypeScript",
+      "description": "An open-source AI coding agent that lives in your terminal.",
+      "html_url": "https://github.com/QwenLM/qwen-code",
+      "topics": [
+        "agentic",
+        "ai",
+        "ai-agent",
+        "ai-coding",
+        "cli",
+        "coding-agent",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "qwen",
+        "terminal",
+        "typescript"
+      ],
+      "created_at": "2025-06-26T01:37:46Z",
+      "updated_at": "2026-11-15T06:33:26Z",
+      "pushed_at": "2026-11-15T06:34:11Z",
+      "license": "Apache-2.0",
+      "open_issues": 2296,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open-source AI coding agent that lives in your terminal.",
+          "full_name": "QwenLM/qwen-code",
+          "language": "TypeScript",
+          "trending_stars_period": 64,
+          "trending_total_forks": null,
+          "trending_total_stars": 30417,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Tencent/LoopForge",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 1009,
+      "forks": 232,
+      "language": "Go",
+      "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+      "html_url": "https://github.com/Tencent/LoopForge",
+      "topics": [
+        "agent-orchestration",
+        "agentic-workflow",
+        "ai-agents",
+        "ai-coding",
+        "claude-code",
+        "code-review",
+        "codebuddy",
+        "codex",
+        "coding-agents",
+        "cursor",
+        "developer-tools",
+        "human-on-the-loop",
+        "llm",
+        "mcp",
+        "multi-agent",
+        "sdlc",
+        "self-hosted",
+        "sop",
+        "workflow-automation",
+        "workflow-engine"
+      ],
+      "created_at": "2026-07-28T03:51:01Z",
+      "updated_at": "2026-11-15T06:35:23Z",
+      "pushed_at": "2026-11-15T05:24:09Z",
+      "license": "Other",
+      "open_issues": 68,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+          "full_name": "Tencent/LoopForge",
+          "language": "Go",
+          "trending_stars_period": 33,
+          "trending_total_forks": null,
+          "trending_total_stars": 1009,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Titanlushrink/IPTV_Player_2.0",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 665,
+      "forks": 12,
+      "language": "Rust",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+      "html_url": "https://github.com/Titanlushrink/IPTV_Player_2.0",
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools",
+        "m3u",
+        "mag",
+        "mpegts",
+        "plex",
+        "streaming",
+        "tv",
+        "xtream",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:25:19Z",
+      "updated_at": "2026-11-14T23:32:19Z",
+      "pushed_at": "2026-11-15T06:26:17Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:25:19Z",
+          "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+          "html_url": "https://github.com/Titanlushrink/IPTV_Player_2.0",
+          "stars": 665,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Topkiflare74/ai--manus2.0",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 678,
+      "forks": 5,
+      "language": null,
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "html_url": "https://github.com/Topkiflare74/ai--manus2.0",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai",
+        "llm",
+        "multimodal",
+        "openai",
+        "react",
+        "solidjs",
+        "streaming",
+        "svelte",
+        "tanstack",
+        "tool-calling",
+        "typescript",
+        "typescript-sdk",
+        "vue"
+      ],
+      "created_at": "2026-11-14T19:15:24Z",
+      "updated_at": "2026-11-15T02:16:23Z",
+      "pushed_at": "2026-11-15T06:26:22Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:15:24Z",
+          "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+          "html_url": "https://github.com/Topkiflare74/ai--manus2.0",
+          "stars": 678,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "TradesmanRecord/GitHub-Copilot-app",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 665,
+      "forks": 12,
+      "language": null,
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+      "html_url": "https://github.com/TradesmanRecord/GitHub-Copilot-app",
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest",
+        "microsoft-copilot",
+        "openai",
+        "prompts",
+        "vue",
+        "xcode",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:16:41Z",
+      "updated_at": "2026-11-14T23:32:13Z",
+      "pushed_at": "2026-11-15T06:26:22Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:16:41Z",
+          "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+          "html_url": "https://github.com/TradesmanRecord/GitHub-Copilot-app",
+          "stars": 665,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "TrapAccountant/GitHub-Copilot-app",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 670,
+      "forks": 12,
+      "language": null,
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+      "html_url": "https://github.com/TrapAccountant/GitHub-Copilot-app",
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest",
+        "microsoft-copilot",
+        "openai",
+        "prompts",
+        "vue",
+        "xcode",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:16:47Z",
+      "updated_at": "2026-11-14T23:32:14Z",
+      "pushed_at": "2026-11-15T06:26:03Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:16:47Z",
+          "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+          "html_url": "https://github.com/TrapAccountant/GitHub-Copilot-app",
+          "stars": 670,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Trapbraneedle/IPTV_Player_2.0",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 666,
+      "forks": 12,
+      "language": "Go",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+      "html_url": "https://github.com/Trapbraneedle/IPTV_Player_2.0",
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools",
+        "m3u",
+        "mag",
+        "mpegts",
+        "plex",
+        "streaming",
+        "tv",
+        "xtream",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:25:19Z",
+      "updated_at": "2026-11-14T23:32:18Z",
+      "pushed_at": "2026-11-15T06:26:07Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:25:19Z",
+          "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+          "html_url": "https://github.com/Trapbraneedle/IPTV_Player_2.0",
+          "stars": 666,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "TurquoiseDetective/IPTV_Player_2.0",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 669,
+      "forks": 12,
+      "language": "Rust",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+      "html_url": "https://github.com/TurquoiseDetective/IPTV_Player_2.0",
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools",
+        "m3u",
+        "mag",
+        "mpegts",
+        "plex",
+        "streaming",
+        "tv",
+        "xtream",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:25:17Z",
+      "updated_at": "2026-11-14T23:32:17Z",
+      "pushed_at": "2026-11-15T06:26:07Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:25:17Z",
+          "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+          "html_url": "https://github.com/TurquoiseDetective/IPTV_Player_2.0",
+          "stars": 669,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "WarriorRemember/IPTV_Player_2.0",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 673,
+      "forks": 12,
+      "language": "Rust",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+      "html_url": "https://github.com/WarriorRemember/IPTV_Player_2.0",
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools",
+        "m3u",
+        "mag",
+        "mpegts",
+        "plex",
+        "streaming",
+        "tv",
+        "xtream",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:25:25Z",
+      "updated_at": "2026-11-15T04:50:49Z",
+      "pushed_at": "2026-11-15T06:26:07Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:25:25Z",
+          "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+          "html_url": "https://github.com/WarriorRemember/IPTV_Player_2.0",
+          "stars": 673,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "WattBeetleLearn/IPTV_Player_2.0",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 667,
+      "forks": 12,
+      "language": "Rust",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+      "html_url": "https://github.com/WattBeetleLearn/IPTV_Player_2.0",
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools",
+        "m3u",
+        "mag",
+        "mpegts",
+        "plex",
+        "streaming",
+        "tv",
+        "xtream",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:25:28Z",
+      "updated_at": "2026-11-14T23:32:20Z",
+      "pushed_at": "2026-11-15T06:26:14Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:25:28Z",
+          "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+          "html_url": "https://github.com/WattBeetleLearn/IPTV_Player_2.0",
+          "stars": 667,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ZhuLinsen/daily_stock_analysis",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 72306,
+      "forks": 57500,
+      "language": "Python",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "html_url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "topics": [
+        "a-stock",
+        "ai-agent",
+        "aigc",
+        "llm",
+        "quant",
+        "quantitative-finance",
+        "quantitative-trading"
+      ],
+      "created_at": "2026-01-10T06:43:20Z",
+      "updated_at": "2026-11-15T06:29:14Z",
+      "pushed_at": "2026-11-14T14:48:39Z",
+      "license": "MIT",
+      "open_issues": 36,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+          "full_name": "ZhuLinsen/daily_stock_analysis",
+          "language": "Python",
+          "trending_stars_period": 4526,
+          "trending_total_forks": null,
+          "trending_total_stars": 72306,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 117658,
+      "forks": 12311,
+      "language": "JavaScript",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "html_url": "https://github.com/addyosmani/agent-skills",
+      "topics": [
+        "agent-skills",
+        "antigravity",
+        "claude-code",
+        "codex",
+        "cursor",
+        "skills"
+      ],
+      "created_at": "2026-02-15T20:20:26Z",
+      "updated_at": "2026-11-15T06:35:43Z",
+      "pushed_at": "2026-11-14T04:33:56Z",
+      "license": "MIT",
+      "open_issues": 124,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Production-grade engineering skills for AI coding agents.",
+          "full_name": "addyosmani/agent-skills",
+          "language": "JavaScript",
+          "trending_stars_period": 3670,
+          "trending_total_forks": null,
+          "trending_total_stars": 117658,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "adriadam10/mkw-recomp",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 978,
+      "forks": 54,
+      "language": "C",
+      "description": "Static recompilation of Mario Kart World (Nintendo Switch 2) to a native PC program",
+      "html_url": "https://github.com/adriadam10/mkw-recomp",
+      "topics": [],
+      "created_at": "2026-11-09T15:40:06Z",
+      "updated_at": "2026-11-15T06:36:48Z",
+      "pushed_at": "2026-11-14T08:57:44Z",
+      "license": "MIT",
+      "open_issues": 154,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T15:40:06Z",
+          "description": "Static recompilation of Mario Kart World (Nintendo Switch 2) to a native PC program",
+          "html_url": "https://github.com/adriadam10/mkw-recomp",
+          "stars": 978,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ag-ui-protocol/ag-ui",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 17456,
+      "forks": 1716,
+      "language": "TypeScript",
+      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+      "html_url": "https://github.com/ag-ui-protocol/ag-ui",
+      "topics": [
+        "ag-ui-protocol",
+        "agent-frontend",
+        "agent-ui",
+        "agentic-workflow",
+        "ai-agents"
+      ],
+      "created_at": "2025-05-07T12:49:37Z",
+      "updated_at": "2026-11-15T06:34:57Z",
+      "pushed_at": "2026-11-15T02:26:33Z",
+      "license": "MIT",
+      "open_issues": 589,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+          "full_name": "ag-ui-protocol/ag-ui",
+          "language": "TypeScript",
+          "trending_stars_period": 9,
+          "trending_total_forks": null,
+          "trending_total_stars": 17456,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "agentes-chat/agentes-chat",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 1417,
+      "forks": 250,
+      "language": "TypeScript",
+      "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+      "html_url": "https://github.com/agentes-chat/agentes-chat",
+      "topics": [
+        "agentic-ai",
+        "ai-agents",
+        "browser-automation",
+        "chat",
+        "claude",
+        "claude-code",
+        "codex",
+        "collaboration",
+        "computer-use",
+        "docker-compose",
+        "gemini",
+        "grok",
+        "human-in-the-loop",
+        "llm",
+        "mcp",
+        "multi-agent",
+        "openai",
+        "self-hosted",
+        "slack-alternative",
+        "team-chat"
+      ],
+      "created_at": "2026-11-09T00:50:28Z",
+      "updated_at": "2026-11-15T06:19:48Z",
+      "pushed_at": "2026-11-15T06:22:40Z",
+      "license": "AGPL-3.0",
+      "open_issues": 220,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T00:50:28Z",
+          "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+          "html_url": "https://github.com/agentes-chat/agentes-chat",
+          "stars": 1417,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "alexeyw/lot-map",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 840,
+      "forks": 88,
+      "language": "TypeScript",
+      "description": "A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.",
+      "html_url": "https://github.com/alexeyw/lot-map",
+      "topics": [
+        "agent-observability",
+        "ai-agents",
+        "claude",
+        "claude-code",
+        "claude-code-plugin",
+        "developer-tools",
+        "svg-animation",
+        "typescript",
+        "visualization"
+      ],
+      "created_at": "2026-11-09T19:13:52Z",
+      "updated_at": "2026-11-15T04:54:50Z",
+      "pushed_at": "2026-11-15T01:41:20Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T19:13:52Z",
+          "description": "A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.",
+          "html_url": "https://github.com/alexeyw/lot-map",
+          "stars": 840,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "alibaba/open-code-review",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 51566,
+      "forks": 3974,
+      "language": "Go",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "html_url": "https://github.com/alibaba/open-code-review",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "code-review",
+        "code-review-assistant",
+        "harness",
+        "repository-level-context"
+      ],
+      "created_at": "2026-05-18T02:16:36Z",
+      "updated_at": "2026-11-15T06:28:45Z",
+      "pushed_at": "2026-11-15T02:41:14Z",
+      "license": "Apache-2.0",
+      "open_issues": 341,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+          "full_name": "alibaba/open-code-review",
+          "language": "Go",
+          "trending_stars_period": 893,
+          "trending_total_forks": null,
+          "trending_total_stars": 51566,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/claude-quickstarts",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 21006,
+      "forks": 3497,
+      "language": "Python",
+      "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+      "html_url": "https://github.com/anthropics/claude-quickstarts",
+      "topics": [],
+      "created_at": "2024-08-29T19:52:32Z",
+      "updated_at": "2026-11-15T06:27:39Z",
+      "pushed_at": "2026-11-06T19:37:57Z",
+      "license": "MIT",
+      "open_issues": 244,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+          "full_name": "anthropics/claude-quickstarts",
+          "language": "Python",
+          "trending_stars_period": 1794,
+          "trending_total_forks": null,
+          "trending_total_stars": 21006,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/skills",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 194720,
+      "forks": 22906,
+      "language": "Python",
+      "description": "Public repository for Agent Skills",
+      "html_url": "https://github.com/anthropics/skills",
+      "topics": [
+        "agent-skills"
+      ],
+      "created_at": "2025-09-22T15:53:31Z",
+      "updated_at": "2026-11-15T06:35:34Z",
+      "pushed_at": "2026-11-14T21:52:49Z",
+      "license": null,
+      "open_issues": 1543,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Public repository for Agent Skills",
+          "full_name": "anthropics/skills",
+          "language": "Python",
+          "trending_stars_period": 6220,
+          "trending_total_forks": null,
+          "trending_total_stars": 194720,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "apex-compute/ANR",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 1880,
+      "forks": 29,
+      "language": "C++",
+      "description": "Apex Neural Rendering (ANR) by Apex Compute",
+      "html_url": "https://github.com/apex-compute/ANR",
+      "topics": [],
+      "created_at": "2026-11-11T04:27:17Z",
+      "updated_at": "2026-11-15T06:28:48Z",
+      "pushed_at": "2026-11-14T23:54:24Z",
+      "license": null,
+      "open_issues": 16,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-11T04:27:17Z",
+          "description": "Apex Neural Rendering (ANR) by Apex Compute",
+          "html_url": "https://github.com/apex-compute/ANR",
+          "stars": 1880,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ashhart/TensorFold",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 2200,
+      "forks": 517,
+      "language": "Zig",
+      "description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
+      "html_url": "https://github.com/ashhart/TensorFold",
+      "topics": [
+        "ai",
+        "ai-tools",
+        "llm",
+        "llm-inference",
+        "llm-tools"
+      ],
+      "created_at": "2026-06-19T20:27:39Z",
+      "updated_at": "2026-11-15T06:27:57Z",
+      "pushed_at": "2026-11-15T04:07:33Z",
+      "license": "Apache-2.0",
+      "open_issues": 602,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
+          "full_name": "ashhart/TensorFold",
+          "language": "Zig",
+          "trending_stars_period": 37,
+          "trending_total_forks": null,
+          "trending_total_stars": 2200,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "backnotprop/plannotator",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 11346,
+      "forks": 970,
+      "language": "TypeScript",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+      "html_url": "https://github.com/backnotprop/plannotator",
+      "topics": [
+        "agents",
+        "claude-code",
+        "code-review",
+        "codex",
+        "obsidian",
+        "opencode",
+        "pi-mono",
+        "plan-mode",
+        "skills"
+      ],
+      "created_at": "2025-12-28T02:09:40Z",
+      "updated_at": "2026-11-15T06:36:46Z",
+      "pushed_at": "2026-11-15T06:35:44Z",
+      "license": "Apache-2.0",
+      "open_issues": 229,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+          "full_name": "backnotprop/plannotator",
+          "language": "TypeScript",
+          "trending_stars_period": 818,
+          "trending_total_forks": null,
+          "trending_total_stars": 11346,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+          "full_name": "backnotprop/plannotator",
+          "language": "TypeScript",
+          "trending_stars_period": 408,
+          "trending_total_forks": null,
+          "trending_total_stars": 11346,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "deepseek-ai/chat-demo",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 1889,
+      "forks": 314,
+      "language": "TypeScript",
+      "description": "Chat Demo",
+      "html_url": "https://github.com/deepseek-ai/chat-demo",
+      "topics": [],
+      "created_at": "2026-11-12T08:08:19Z",
+      "updated_at": "2026-11-15T06:36:39Z",
+      "pushed_at": "2026-11-13T14:33:08Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T08:08:19Z",
+          "description": "Chat Demo",
+          "html_url": "https://github.com/deepseek-ai/chat-demo",
+          "stars": 1889,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dream-num/univer",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 25085,
+      "forks": 2295,
+      "language": "TypeScript",
+      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+      "html_url": "https://github.com/dream-num/univer",
+      "topics": [
+        "board",
+        "collaboration",
+        "doc",
+        "docx",
+        "excel",
+        "offce365",
+        "office",
+        "pdf",
+        "ppt",
+        "pptx",
+        "presentation",
+        "sdk",
+        "sheet",
+        "slides",
+        "spreadsheet",
+        "univer",
+        "word",
+        "wordprocessor",
+        "workspace",
+        "xlsx"
+      ],
+      "created_at": "2022-09-29T12:09:14Z",
+      "updated_at": "2026-11-15T06:36:58Z",
+      "pushed_at": "2026-11-15T03:11:29Z",
+      "license": "Apache-2.0",
+      "open_issues": 166,
+      "default_branch": "dev",
+      "sources": [
+        {
+          "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+          "full_name": "dream-num/univer",
+          "language": "TypeScript",
+          "trending_stars_period": 495,
+          "trending_total_forks": null,
+          "trending_total_stars": 25085,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-deepmind/mujoco",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 18005,
+      "forks": 2204,
+      "language": "C++",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "html_url": "https://github.com/google-deepmind/mujoco",
+      "topics": [
+        "mujoco",
+        "physics",
+        "robotics"
+      ],
+      "created_at": "2021-08-27T12:25:48Z",
+      "updated_at": "2026-11-15T06:27:41Z",
+      "pushed_at": "2026-11-15T04:54:37Z",
+      "license": "Apache-2.0",
+      "open_issues": 415,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+          "full_name": "google-deepmind/mujoco",
+          "language": "C++",
+          "trending_stars_period": 1859,
+          "trending_total_forks": null,
+          "trending_total_stars": 18005,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google/elephant-goldfish-model",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 19300,
+      "forks": 1431,
+      "language": "Python",
+      "description": "Open-source plugin for designing and reviewing software with agents",
+      "html_url": "https://github.com/google/elephant-goldfish-model",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "antigravity",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "codex",
+        "codex-plugin",
+        "coding-agents",
+        "context-engineering",
+        "developer-tools",
+        "gemini",
+        "llm",
+        "multi-agent",
+        "prompt-engineering",
+        "spec-driven-development"
+      ],
+      "created_at": "2026-09-13T16:31:06Z",
+      "updated_at": "2026-11-15T06:33:51Z",
+      "pushed_at": "2026-11-14T09:40:03Z",
+      "license": "Apache-2.0",
+      "open_issues": 108,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source plugin for designing and reviewing software with agents",
+          "full_name": "google/elephant-goldfish-model",
+          "language": "Python",
+          "trending_stars_period": 5539,
+          "trending_total_forks": null,
+          "trending_total_stars": 19300,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "huamidev/GestaltX",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 7622,
+      "forks": 2647,
+      "language": "Swift",
+      "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+      "html_url": "https://github.com/huamidev/GestaltX",
+      "topics": [],
+      "created_at": "2026-11-09T05:15:48Z",
+      "updated_at": "2026-11-15T06:37:28Z",
+      "pushed_at": "2026-11-14T09:27:55Z",
+      "license": "GPL-3.0",
+      "open_issues": 78,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T05:15:48Z",
+          "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+          "html_url": "https://github.com/huamidev/GestaltX",
+          "stars": 7621,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jhaizhou-ops/S2Arm",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 3055,
+      "forks": 552,
+      "language": "C#",
+      "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+      "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+      "topics": [
+        "apple-silicon",
+        "arm64",
+        "game-porting",
+        "ios",
+        "ipados",
+        "macos",
+        "metal",
+        "s2arm",
+        "static-recompilation",
+        "switch"
+      ],
+      "created_at": "2026-11-08T05:49:46Z",
+      "updated_at": "2026-11-15T06:34:52Z",
+      "pushed_at": "2026-11-15T06:28:08Z",
+      "license": "Apache-2.0",
+      "open_issues": 438,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-08T05:49:46Z",
+          "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+          "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+          "stars": 3055,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kolbicz/WQFiles",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 870,
+      "forks": 64,
+      "language": "Objective-C",
+      "description": "File browser, app data manager and cache cleaner for iOS 26 and 27 (worse_query, no jailbreak)",
+      "html_url": "https://github.com/kolbicz/WQFiles",
+      "topics": [],
+      "created_at": "2026-11-09T13:43:40Z",
+      "updated_at": "2026-11-15T06:16:42Z",
+      "pushed_at": "2026-11-14T18:14:22Z",
+      "license": "GPL-3.0",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T13:43:40Z",
+          "description": "File browser, app data manager and cache cleaner for iOS 26 and 27 (worse_query, no jailbreak)",
+          "html_url": "https://github.com/kolbicz/WQFiles",
+          "stars": 870,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "louislam/uptime-kuma",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 94318,
+      "forks": 8835,
+      "language": "JavaScript",
+      "description": "A fancy self-hosted monitoring tool",
+      "html_url": "https://github.com/louislam/uptime-kuma",
+      "topics": [
+        "docker",
+        "monitor",
+        "monitoring",
+        "responsive",
+        "self-hosted",
+        "selfhosted",
+        "single-page-app",
+        "socket-io",
+        "uptime",
+        "uptime-monitoring",
+        "webapp",
+        "websocket"
+      ],
+      "created_at": "2021-07-03T01:02:42Z",
+      "updated_at": "2026-11-15T06:32:26Z",
+      "pushed_at": "2026-11-15T00:04:55Z",
+      "license": "MIT",
+      "open_issues": 855,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "A fancy self-hosted monitoring tool",
+          "full_name": "louislam/uptime-kuma",
+          "language": "JavaScript",
+          "trending_stars_period": 430,
+          "trending_total_forks": null,
+          "trending_total_stars": 94318,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "martin-olivier/airgorah",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 6015,
+      "forks": 1043,
+      "language": "Rust",
+      "description": "A WiFi security auditing software",
+      "html_url": "https://github.com/martin-olivier/airgorah",
+      "topics": [
+        "gui",
+        "kali",
+        "linux-app",
+        "security",
+        "security-audit",
+        "wifi",
+        "wifi-security",
+        "wireless"
+      ],
+      "created_at": "2022-09-30T09:06:45Z",
+      "updated_at": "2026-11-15T06:37:13Z",
+      "pushed_at": "2026-11-06T19:32:49Z",
+      "license": "MIT",
+      "open_issues": 16,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A WiFi security auditing software",
+          "full_name": "martin-olivier/airgorah",
+          "language": "Rust",
+          "trending_stars_period": 270,
+          "trending_total_forks": null,
+          "trending_total_stars": 6015,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "meta/astryx",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 28298,
+      "forks": 2200,
+      "language": "TypeScript",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "html_url": "https://github.com/meta/astryx",
+      "topics": [],
+      "created_at": "2026-01-09T16:20:32Z",
+      "updated_at": "2026-11-15T06:37:29Z",
+      "pushed_at": "2026-11-15T06:36:27Z",
+      "license": "MIT",
+      "open_issues": 674,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open source design system that's fully customizable and agent ready",
+          "full_name": "meta/astryx",
+          "language": "TypeScript",
+          "trending_stars_period": 13660,
+          "trending_total_forks": null,
+          "trending_total_stars": 28296,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "milind-soni/OpenMausBot",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 22901,
+      "forks": 3189,
+      "language": "TypeScript",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "html_url": "https://github.com/milind-soni/OpenMausBot",
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "computer-use",
+        "docker",
+        "electron",
+        "grok",
+        "grok-bot",
+        "grok-bot-alternative",
+        "self-hosted",
+        "typescript"
+      ],
+      "created_at": "2026-08-11T18:58:55Z",
+      "updated_at": "2026-11-15T06:33:31Z",
+      "pushed_at": "2026-11-15T06:37:02Z",
+      "license": "Apache-2.0",
+      "open_issues": 1082,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "full_name": "milind-soni/OpenMausBot",
+          "language": "TypeScript",
+          "trending_stars_period": 6413,
+          "trending_total_forks": null,
+          "trending_total_stars": 22901,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "opencoredev/islandcn",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 689,
+      "forks": 56,
+      "language": "TypeScript",
+      "description": "The open-source Dynamic Island for React, installed with shadcn.",
+      "html_url": "https://github.com/opencoredev/islandcn",
+      "topics": [
+        "dynamic-island",
+        "nextjs",
+        "react",
+        "shadcn",
+        "typescript",
+        "ui-components"
+      ],
+      "created_at": "2026-11-13T11:50:50Z",
+      "updated_at": "2026-11-15T06:17:49Z",
+      "pushed_at": "2026-11-13T15:14:36Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-13T11:50:50Z",
+          "description": "The open-source Dynamic Island for React, installed with shadcn.",
+          "html_url": "https://github.com/opencoredev/islandcn",
+          "stars": 689,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "serveroshq/panel",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 817,
+      "forks": 63,
+      "language": "PHP",
+      "description": "The open source ServerOS panel: one place to run the Linux servers you already own.",
+      "html_url": "https://github.com/serveroshq/panel",
+      "topics": [
+        "agpl",
+        "control-panel",
+        "devops",
+        "laravel",
+        "open-source",
+        "self-hosted",
+        "server-management",
+        "serveros",
+        "vps"
+      ],
+      "created_at": "2026-11-09T00:47:33Z",
+      "updated_at": "2026-11-15T06:28:03Z",
+      "pushed_at": "2026-11-15T06:24:42Z",
+      "license": "AGPL-3.0",
+      "open_issues": 20,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T00:47:33Z",
+          "description": "The open source ServerOS panel: one place to run the Linux servers you already own.",
+          "html_url": "https://github.com/serveroshq/panel",
+          "stars": 817,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sherlock-project/sherlock",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 111924,
+      "forks": 12949,
+      "language": "Python",
+      "description": "Hunt down social media accounts by username across social networks",
+      "html_url": "https://github.com/sherlock-project/sherlock",
+      "topics": [
+        "cli",
+        "cti",
+        "cybersecurity",
+        "forensics",
+        "hacktoberfest",
+        "information-gathering",
+        "infosec",
+        "linux",
+        "osint",
+        "pentesting",
+        "python",
+        "python3",
+        "reconnaissance",
+        "redteam",
+        "sherlock",
+        "tools"
+      ],
+      "created_at": "2018-12-24T14:30:48Z",
+      "updated_at": "2026-11-15T06:33:39Z",
+      "pushed_at": "2026-11-15T05:13:15Z",
+      "license": "MIT",
+      "open_issues": 415,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Hunt down social media accounts by username across social networks",
+          "full_name": "sherlock-project/sherlock",
+          "language": "Python",
+          "trending_stars_period": 12401,
+          "trending_total_forks": null,
+          "trending_total_stars": 111924,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "topapothecarycanal/ai--manus2.0",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 666,
+      "forks": 12,
+      "language": null,
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "html_url": "https://github.com/topapothecarycanal/ai--manus2.0",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai",
+        "llm",
+        "multimodal",
+        "openai",
+        "react",
+        "solidjs",
+        "streaming",
+        "svelte",
+        "tanstack",
+        "tool-calling",
+        "typescript",
+        "typescript-sdk",
+        "vue"
+      ],
+      "created_at": "2026-11-14T19:15:24Z",
+      "updated_at": "2026-11-14T23:32:11Z",
+      "pushed_at": "2026-11-15T06:26:07Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:15:24Z",
+          "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+          "html_url": "https://github.com/topapothecarycanal/ai--manus2.0",
+          "stars": 666,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "toppatronweave/ai--manus2.0",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 665,
+      "forks": 5,
+      "language": null,
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "html_url": "https://github.com/toppatronweave/ai--manus2.0",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai",
+        "llm",
+        "multimodal",
+        "openai",
+        "react",
+        "solidjs",
+        "streaming",
+        "svelte",
+        "tanstack",
+        "tool-calling",
+        "typescript",
+        "typescript-sdk",
+        "vue"
+      ],
+      "created_at": "2026-11-14T19:15:25Z",
+      "updated_at": "2026-11-14T23:32:12Z",
+      "pushed_at": "2026-11-15T06:26:30Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:15:25Z",
+          "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+          "html_url": "https://github.com/toppatronweave/ai--manus2.0",
+          "stars": 665,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tornadonovicewhirl40/IPTV_Player_2.0",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 669,
+      "forks": 12,
+      "language": "Rust",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+      "html_url": "https://github.com/tornadonovicewhirl40/IPTV_Player_2.0",
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools",
+        "m3u",
+        "mag",
+        "mpegts",
+        "plex",
+        "streaming",
+        "tv",
+        "xtream",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:15:43Z",
+      "updated_at": "2026-11-14T23:32:12Z",
+      "pushed_at": "2026-11-15T06:26:46Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:15:43Z",
+          "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+          "html_url": "https://github.com/tornadonovicewhirl40/IPTV_Player_2.0",
+          "stars": 669,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "trackboatwrightplan/GitHub-Copilot-app",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 672,
+      "forks": 12,
+      "language": null,
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+      "html_url": "https://github.com/trackboatwrightplan/GitHub-Copilot-app",
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest",
+        "microsoft-copilot",
+        "openai",
+        "prompts",
+        "vue",
+        "xcode",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:16:41Z",
+      "updated_at": "2026-11-14T23:32:13Z",
+      "pushed_at": "2026-11-15T06:26:47Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:16:41Z",
+          "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+          "html_url": "https://github.com/trackboatwrightplan/GitHub-Copilot-app",
+          "stars": 672,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "trackersnailgrip/GitHub-Copilot-app",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 666,
+      "forks": 12,
+      "language": null,
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+      "html_url": "https://github.com/trackersnailgrip/GitHub-Copilot-app",
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest",
+        "microsoft-copilot",
+        "openai",
+        "prompts",
+        "vue",
+        "xcode",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:16:41Z",
+      "updated_at": "2026-11-14T23:32:13Z",
+      "pushed_at": "2026-11-15T06:26:22Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:16:41Z",
+          "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+          "html_url": "https://github.com/trackersnailgrip/GitHub-Copilot-app",
+          "stars": 666,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tradermonty/claude-trading-skills",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 4987,
+      "forks": 1043,
+      "language": "Python",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "html_url": "https://github.com/tradermonty/claude-trading-skills",
+      "topics": [],
+      "created_at": "2025-10-19T16:37:29Z",
+      "updated_at": "2026-11-15T06:36:36Z",
+      "pushed_at": "2026-11-15T05:17:45Z",
+      "license": "MIT",
+      "open_issues": 74,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+          "full_name": "tradermonty/claude-trading-skills",
+          "language": "Python",
+          "trending_stars_period": 553,
+          "trending_total_forks": null,
+          "trending_total_stars": 4987,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 51307,
+      "forks": 3583,
+      "language": "Rust",
+      "description": "Browser automation CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "topics": [],
+      "created_at": "2026-01-11T05:38:15Z",
+      "updated_at": "2026-11-15T06:29:23Z",
+      "pushed_at": "2026-11-15T03:21:45Z",
+      "license": "Apache-2.0",
+      "open_issues": 576,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Browser automation CLI for AI agents",
+          "full_name": "vercel-labs/agent-browser",
+          "language": "Rust",
+          "trending_stars_period": 4601,
+          "trending_total_forks": null,
+          "trending_total_stars": 51307,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "we-promise/sure",
+      "captured_at": "2026-11-15T06:37:14Z",
+      "stars": 15421,
+      "forks": 1314,
+      "language": "Ruby",
+      "description": "The personal finance app for everyone (by everyone)",
+      "html_url": "https://github.com/we-promise/sure",
+      "topics": [],
+      "created_at": "2025-07-23T04:13:55Z",
+      "updated_at": "2026-11-15T06:31:25Z",
+      "pushed_at": "2026-11-15T04:58:28Z",
+      "license": "AGPL-3.0",
+      "open_issues": 944,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The personal finance app for everyone (by everyone)",
+          "full_name": "we-promise/sure",
+          "language": "Ruby",
+          "trending_stars_period": 659,
+          "trending_total_forks": null,
+          "trending_total_stars": 15421,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
