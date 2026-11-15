@@ -14,6 +14,7 @@
       "alibaba/open-code-review": "2026-11-03",
       "alirezarezvani/claude-skills": "2026-09-30",
       "alishahryar1/free-claude-code": "2026-11-12",
+      "angusdevgo/seep-reverse-lab": "2026-11-15",
       "anishfn/shapeshift": "2026-11-10",
       "anthropics/claude-code": "2026-11-03",
       "anthropics/claude-code-action": "2026-09-30",
@@ -38,10 +39,13 @@
       "dietrichgebert/ponytail": "2026-09-30",
       "dream-num/univer": "2026-09-29",
       "driceroland/search": "2026-11-05",
+      "duwqijlk/muse-protocol": "2026-11-15",
       "dzhng/jevgrep": "2026-09-30",
       "earendil-works/pi": "2026-10-01",
       "elastic/elasticsearch": "2026-09-29",
+      "elementalsouls/claude-bughunter": "2026-11-15",
       "expo/exact": "2026-11-10",
+      "eynnzerr/telemetrycleaner": "2026-11-15",
       "feder-cr/dots": "2026-11-13",
       "feitangyuan/onetake": "2026-09-30",
       "firebase/firebase-ios-sdk": "2026-09-30",
@@ -51,7 +55,10 @@
       "frigadehq/yogurt": "2026-11-14",
       "fxembed/fxembed": "2026-09-29",
       "garrytan/gbrain": "2026-11-09",
+      "ggml-org/ggml": "2026-11-15",
+      "glanderness/beeftv": "2026-11-15",
       "google-deepmind/mujoco": "2026-11-08",
+      "google-labs-code/stitch-skills": "2026-11-15",
       "google/elephant-goldfish-model": "2026-11-13",
       "googlechrome/modern-web-guidance-src": "2026-11-11",
       "harry0703/moneyprinterturbo": "2026-09-30",
@@ -93,10 +100,12 @@
       "niko1221/strata": "2026-09-30",
       "nokia-applied-research/anyjev": "2026-11-08",
       "nvidia/openshell": "2026-09-29",
+      "nvidia/skillevaluator": "2026-11-15",
       "oblien/openship": "2026-09-29",
       "obra/superpowers": "2026-10-01",
       "openai/codex-security": "2026-11-11",
       "openclaw/openclaw": "2026-09-30",
+      "opsafari/hypoarena": "2026-11-15",
       "pallavi-shekhar/ai-engineering-interview-questions-company-wise": "2026-11-04",
       "paperclipai/paperclip": "2026-09-29",
       "pbakaus/impeccable": "2026-09-29",
@@ -137,7 +146,8 @@
       "yappologistic/cui": "2026-11-10",
       "yetone/magpie": "2026-09-30",
       "yihui-dev/awesome-opus5-5-videos": "2026-11-12",
-      "zai-org/zcode": "2026-11-03"
+      "zai-org/zcode": "2026-11-03",
+      "zichuanlan/freebie-radar": "2026-11-15"
     },
     "analyses": {
       "abdulmannanmalik13-wq/adobe-substance-3d-studio": {
@@ -211,6 +221,14 @@
         "description": "Free Claude Code (FCC) — это клиент‑агрегатор, позволяющий пользоваться более чем десятком код‑ориентированных LLM‑интерфейсов (Claude Code, Codex, Pi, OpenCode, Antigravity CLI, VS Code Chat и др.) через единый набор команд. Проект поддерживает 61 провайдера, включая бесплатные тарифы, и обещает более 1,3 млрд бесплатных токенов в месяц, автоматически распределяя запросы между моделями и ключами, а также переключаясь на резервные сервисы при сбоях. Для снижения расходов включены оптимизаторы RTK и Headroom, которые могут уменьшить потребление токенов до 90 %.\n\nПользователь может запускать FCC из терминала, настольных приложений, IDE‑расширений, мобильных мессенджеров (Discord, Telegram) и даже из браузера через «native Code sessions», где сохраняются нативные потоки, поддержка инструментов и чередование «thinking». Голосовые заметки обрабатываются локально Whisper или NVIDIA NIM, что расширяет возможности взаимодействия без ввода текста. Конфигурация включает автоматические повторные попытки, ограничение скорости, контроль параллелизма и гибкую настройку провайдеров, что повышает надёжность при перебоях у отдельных сервисов.\n\nСценарий применения: разработчик, работающий над проектом в VS Code, подключает FCC, выбирает бесплатный провайдер и получает доступ к Claude Code, Codex и другим моделям без необходимости менять настройки каждого инструмента. При превышении лимита одного провайдера система автоматически переключается на альтернативный, сохраняя контекст и поток вывода. Основные ограничения — зависимость от условий бесплатных тарифов провайдеров (лимиты могут изменяться) и необходимость установки дополнительных компонентов (Whisper, RTK, Headroom) для полной функциональности.",
         "joke": "Когда токены заканчиваются, FCC просто меняет провайдера, как будто меняет Wi‑Fi.",
         "evidence_quote": "[Quick Start](#quick-start) · [Providers](#choose-a-provider) · [Clients](#connect-your-client) · [Integrations](#optional-integrations) · [Manage](#manage-your-installation)"
+      },
+      "angusdevgo/seep-reverse-lab": {
+        "policy_version": 7,
+        "source_description": "Agent-Native multi-platform reverse engineering and CWE-602 client-side authorization audit workbench.",
+        "source_readme": "> **First time here? Read [INSTALL.md](INSTALL.md) first** — it spells out what to install for Pi Agent vs. DeepSeek Harness (they are two different frameworks).\n\n<p align=\"center\">\n  <img src=\"app_logo.svg\" alt=\"Seep Reverse Lab Logo\" width=\"120\" height=\"120\">\n</p>\n\n<h1 align=\"center\">Seep Reverse Lab</h1>\n\n<p align=\"center\">\n  <strong>Agent-Native · Multi-Platform Reverse Engineering · CWE-602 Authorization Audit · Autonomous Security Workbench</strong>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/angusdevgo/seep-reverse-lab\"><img src=\"https://img.shields.io/badge/Release-v1.15.0-brightgreen.svg?style=for-the-badge&logo=github\" alt=\"Release\"></a>\n  <a href=\"https://github.com/angusdevgo/seep-reverse-lab/blob/main/LICENSE\"><img src=\"https://img.shields.io/badge/License-GPL--3.0-blue.svg?style=for-the-badge\" alt=\"License\"></a>\n  <a href=\"https://www.npmjs.com/package/seep-lab\"><img src=\"https://img.shields.io/npm/v/seep-lab?style=for-the-badge&logo=npm&label=DSH%20plugin\" alt=\"npm\"></a>\n  <img src=\"https://img.shields.io/badge/Platform-Windows%20%7C%20Android%20%7C%20Linux-0078D6?style=for-the-badge&logo=windows\" alt=\"Platform\">\n  <img src=\"https://img.shields.io/badge/Architecture-x86%20%7C%20x64%20%7C%20ARM64-orange?style=for-the-badge\" alt=\"Architecture\">\n</p>\n\n<p align=\"center\">\n  <img src=\"https://img.shields.io/badge/MCP%20Tools-38%20Integrated-purple?style=for-the-badge&logo=fastapi\" alt=\"MCP Tools\">\n  <img src=\"https://img.shields.io/badge/Verifier-64%2F64%20Passed-brightgreen?style=for-the-badge&logo=checkmarx\" alt=\"Verifier\">\n  <img src=\"https://img.shields.io/badge/Knowledge%20Base-294%20Journals-teal?style=for-the-badge\" alt=\"Knowledge Base\">\n  <img src=\"https://img.shields.io/badge/Paradigms-14%20Cases%20(A~N)-blue?style=for-the-badge\" alt=\"Paradigms\">\n  <img src=\"https://img.shields.io/badge/MANUAL%20SOPs-9%20Tactical%20Guides-red?style=for-the-badge\" alt=\"MANUAL SOPs\">\n  <a href=\"https://linux.do/\"><img src=\"https://img.shields.io/badge/Community-LINUX%20DO-23272A?style=for-the-badge&logo=discourse\" alt=\"LINUX DO\"></a>\n</p>\n\n<p align=\"center\">\n  [ <strong>English</strong> | <a href=\"README.zh.md\">中文文档</a> ]\n</p>\n\n<p align=\"center\">\n  <a href=\"#-project-overview\">Overview</a> •\n  <a href=\"#-how-it-works\">Architecture</a> •\n  <a href=\"#-30-second-demo\">Demo</a> •\n  <a href=\"#️-mcp-tool-matrix\">MCP Matrix</a> •\n  <a href=\"#-quick-start--deployment\">Quick Start</a> •\n  <a href=\"#-technical-scope\">Scope</a> •\n  <a href=\"#-agent-execution-contract\">Agent Contract</a> •\n  <a href=\"#-disclaimer\">Disclaimer</a>\n</p>\n\n---\n\n> 🔗 **Attribution & Reference Sources**:\n> - Mobile reverse engineering methodology & verification test suite referenced from: [**newliver666/apk-reverse**](https://github.com/newliver666/apk-reverse) (MIT License).\n> - Security research lab framework, Zero-Waste Recon signal routing & agent execution protocols referenced from: [**GeniusHu-tgty/Open-tgtylab**](https://github.com/GeniusHu-tgty/Open-tgtylab) (GPL-3.0 License).\n> - Reverse engineering knowledge base, attack graph boards & MCP automation ecosystem referenced from: [**LING71671/open-reverselab**](https://github.com/LING71671/open-reverselab) (GPL-3.0 License).\n> - Windows PE deep-dive methodology, gated procedure & dependency-free PE engine referenced from: [**dabao1955/exe-reverse**](https://codeberg.org/dabao1955/exe-reverse) (MIT License).\n> - Community support & technical discussions: [**LINUX DO**](https://linux.do/).\n\n---\n\n## 🌟 Project Overview\n\nSeep consolidates fragmented reverse engineering toolchains (Radare2 / JADX / Apktool / Frida / IDA), operational knowledge bases, prompt engineering contracts, and battle-tested field experience into an **Agent-Native Autonomous Workbench**.\n\nUsers provide plain-language technical goals; the agent autonomously performs platform identification, vulnerability type classification, surgical binary patching, and closed-loop evidence delivery.\n\n### Five Core Pain Points Solved\n\n| Pain Point | Solution |\n|---|---|\n| 🔧 **Toolchain Fragmentation** | 38 MCP tools wrapping Radare2, JADX, Apktool, Frida and a PE engine — unified API, zero manual switching |\n| 🧠 **Agent Decision Drift** | `softseep` orchestrator: two-stage auto-classification (Platform × 9 Task Types) + 7-gate decision tree |\n| 🛡️ **Model Refusal in Security Audits** | Three-tier mitigation: `BLOCK_NONE` injection + transparent terminology mapping + cognitive redirection |\n| 📚 **Ephemeral Knowledge** | 294 technical field journals + 14 desensitized paradigms + \"search KB before executing\" enforced discipline |\n| 📦 **Setup Friction** | One-click `install.ps1` → dedicated paths for Pi Agent and DeepSeek Harness (DSH) |\n\n---\n\n## ⚙️ How It Works\n\n```\nUser Input (plain language — \"bypass the premium check in FooBar.apk\")\n    │\n    ▼\n┌───────────────────────────────────────────────────────────────────┐\n│  Lab Mode  (session-scoped memory; only \"lab:\" in THIS session)    │\n│  • Colloquial → compliance terminology aut",
+        "description": "Seep Reverse Lab — это автономная рабочая среда, объединяющую разрозненные инструменты реверс‑инжиниринга (Radare2, JADX, Apktool, Frida, IDA) и обширную базу знаний в единый «Agent‑Native» сервис. Пользователь формулирует задачу обычным языком, например «обойти проверку премиум‑подписки в FooBar.apk», а встроенный оркестратор softseep автоматически определяет платформу, классифицирует тип уязвимости, применяет целенаправленную бинарную модификацию и возвращает доказательства в закрытом цикле. При этом система использует 38 интегрированных MCP‑инструментов, 294 технических журнала и 14 предопределённых парадигм, что устраняет необходимость ручного переключения между отдельными утилитами.\n\nМеханизм работы построен на двухуровневой классификации (платформа × 9 типов задач) и семигратном решающем дереве, которое гарантирует согласованность терминологии и предотвращает отказ модели при проведении аудита CWE‑602. Для каждой сессии создаётся «Lab Mode» с ограниченной памятью, а перед выполнением действий агент обязан выполнить поиск в базе знаний, что снижает риск «эпизодических» ошибок. Установка реализована однокнопочным скриптом install.ps1, который разворачивает отдельные окружения для Pi Agent и DeepSeek Harness, минимизируя начальную конфигурацию.\n\nСценарий применения: исследователь безопасности получает подозрительный Android‑пакет, вводит цель в чат‑интерфейсе Seep, система автоматически распаковывает APK, определяет проверку лицензии, генерирует патч и выдаёт готовый модуль, подтверждённый журналом тестов. Требования включают поддержку Windows, Android и Linux на архитектурах x86, x64 и ARM64; ограничение — работа возможна только в рамках предоставленных агентных фреймворков (Pi Agent / DeepSeek Harness).",
+        "joke": "Когда агент патчит APK, даже лицензия просит автограф.",
+        "evidence_quote": "> **First time here? Read [INSTALL.md](INSTALL.md) first** — it spells out what to install for Pi Agent vs. DeepSeek Harness (they are two different frameworks)."
       },
       "anishfn/shapeshift": {
         "policy_version": 7,
@@ -292,6 +310,22 @@
         "joke": "Наконец браузер, где единственная «пауза» — это когда ты решаешь, в какой колонке разместить вкладки.",
         "evidence_quote": "Search is a browser with nothing in the way. A row of tabs — across the top or down the left, your choice — and the page. There is no toolbar, no start page, no sidebar of suggestions, no account to sign into, nothing that wants your attention."
       },
+      "duwqijlk/muse-protocol": {
+        "policy_version": 7,
+        "source_description": "muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）",
+        "source_readme": "# muse.ai 注册 / 邀请码兑换 协议分析\n\n补充一下，记得用JP 节点， JP 不需要绑卡，直接过\n\n纯 HTTP 实现 muse.ai 的注册与邀请码兑换流程，不依赖浏览器。本文记录的是通过抓包逐字段比对得出的协议细节。\n\n## 快速开始\n\n```bash\npip install -r requirements.txt\ncp config.example.json config.json   # 填入邮箱与可选代理\npython example_register.py\n```\n\n## 目录结构\n\n```\nmusepy/\n  client.py    注册 + 兑换的完整协议客户端\n  runner.py    多账号批量调度（sticky 代理 / 预算 / 停止语义）\n  otp.py       验证码轮询（幂等：只取 send 之后的最新码）\n  falco.py     行为埋点上报（可选）\n  caa.py       注册漏斗事件上报（可选）\nexample_register.py        单账号端到端示例\nexample_batch.py           多账号批量示例\nconfig.example.json        配置模板\ntest_onboarding_smoke.py   离线冒烟（披露解析纯函数）\ntest_runner_smoke.py       离线冒烟（批量调度，mock 网络）\n```\n\n## 协议流程\n\n```\nGET  /                                   拿初始 cookie\nPOST /api/auth/native/restart            → 201 {csrf_token}\nPOST /api/auth/native/send-otp           → 201\nPOST /api/auth/native/confirm-otp        → 200 {registration_state:\"completion_required\",\n                                               tos:{content_version}}（动态 TOS 版本）\nPOST /api/auth/native/register-completion→ 200 {auth_meta_session:{frl_access_token, frl_account_id}}\nPOST auth.meta.com/hatch/session/bootstrap/ → 302…→ muse.ai 200 HTML（会话引导，必须）\n     └ 从 muse.ai 文档解析动态披露 disclosure_text/disclosure_version 与状态门\n       （resolvedDestination/isGeoGated/waitlist → 地区受限）\nPOST /api/hatch/accept-tos               → 200（单次调用；正文用服务端动态披露，非硬编码）\nGET  /api/hatch/invite                   → 200 表示账号有效\nPOST /api/hatch/vm/wake                  → 200（必须，否则兑换误报 invalid；\n                                             wake_trigger=mount + open_id + away_ms=0）\nPOST /api/hatch/stateful-sharing         → 200\nPOST /api/hatch/invite-code/redeem       → 200 {redemptionStatus:\"redeemed\"}\nPOST /api/hatch/invite                   → 200 {code}（取回自己的码，不等于页面刮开 reveal）\n```\n\n## 几个容易踩的坑\n\n### 1. `confirm-otp` 必须带 `supports_muse_link_transparency: true`\n\n```json\n{\"otp_code\":\"123456\",\"remember_device\":true,\"supports_muse_link_transparency\":true}\n```\n\n### 2. `register-completion` 的姓名字段语义\n\n```json\n{\n  \"date_of_birth\": \"1993-11-14\",\n  \"first_name\": \"三郎\",     // 名（given name）\n  \"last_name\": \"近藤\",      // 姓（family name）\n  \"tos_content_version\": \"ntm_create_account:default_v1_meta_account_v3+docs_v2\",\n  \"remember_device\": true\n}\n```\n\n`first_name` 是名、`last_name` 是姓，与直觉相反。生日早于约 18 年前会返回 403——同一会话同一份姓名，只把生日从 2013 改成 1993 就能从 403 变 200。\n\n### 3. `restart` 的 body 不是空对象\n\n```json\n{\"resume\": false}\n```\n\n### 4. `accept-tos` 是会话激活开关，且必须先引导会话\n\n注册完成后**必须先走 `POST auth.meta.com/hatch/session/bootstrap/`**（form 表单只带\n`frl_access_token`，手动跟随 302/301/303 跳转落到 muse.ai 200 文档），否则后续\nhatch 接口一律 403。引导落地的 muse.ai 文档里带有 Next Flight 序列化的动态披露\n（`disclosureText` / `disclosureVersion`，当前实测版本为 `HATCH_ROW_v0`），`accept-tos`\n的正文必须用服务端返回的这份动态文案（**不是**硬编码常量），`Referer` 用披露页\nURL；单次调用即可，不重试，403 时把响应体前 200 字符带出来便于诊断。\n\n引导后若服务端判定 `resolvedDestination == \"waitlist\"` 或 `isGeoGated == true`，\n属于**地区受限**：注册已完成、账号保留，但未证明已加入名单。\n\n### 5. `vm/wake` 缺失会让兑换误报\n\n不调 `vm/wake` 直接兑换，即使是有效码也会返回：\n\n```json\n{\"success\":false,\"reason\":\"invalid\",\"detail\":\"この招待コードは存在しません\"}\n```\n\n需要先从已登录页面提取 `vmId`：\n\n```python\nre.search(r'vmId[\\\\\"]*:[\\\\\"]*([0-9a-fA-F-]{36})', html)\n```\n\n`wake` 的 body 实测为：`wake_trigger: \"mount\"`（首连）、`open_id`（新 uuid）、\n`away_ms: 0`，而不是早期的 `resume`。\n\n### 6. 兑换失败原因的含义\n\n| reason | 含义 |\n|---|---|\n| `redeemed` | 成功 |\n| `already_redeemed` | 本账号已经兑换过一个码 |\n| `used_up` | 该码达到 30 次使用上限 |\n| `invalid` | 码不存在，或没调 `vm/wake` |\n\n## Cookie\n\n注册成功后 `hatch_sess` 由 `register-completion` 的响应头下发（约 886 字符），这是后续所有 hatch 接口的凭证。`hatch_vml` 在注册阶段一直是被清空状态（`Max-Age=0`），不属于必需项。\n\n## 多账号批量（musepy/runner.py）\n\n```bash\npython example_batch.py [count]\n```\n\n`config.json` 里的批量字段：\n\n| 字段 | 说明 |\n|---|---|\n| `otp_file` | 邮箱清单，每行 `email----otp源URL`（otp 源返回 `[{\"otp\",\"time\"},...]` JSON） |\n| `proxy_file` | sticky 代理池，每行 `host:port:user:pass`（或 `host:port`） |\n| `codes_file` | 可选，待兑换邀请码池，每行一个 |\n| `output_dir` / `tried_file` | 每账号结果 JSON 目录 / 已尝试邮箱清单 |\n| `workers` / `max_per_ip` | worker 数（默认 5）/ 每条代理的验证成功上限（默认 6） |\n| `resolve_ip` | 是否通过 ipify 解析出口 IP（默认 true） |\n| `send_caa` | 批量模式下是否上报注册漏斗埋点 |\n\n调度语义（与本地实现一致，不承诺任何绕过行为）：\n\n- **worker 独占 sticky 代理**：一条代理行同一时刻只归一个 worker（claim/release），\n  不抢他人的行；代理池耗尽才共享并打日志。\n- **max_per_ip 按验证成功数计**：达到上限释放当前行并换另一行，原行本轮避开。\n- **pre-send 传输失败重试**：`bootstrap`/`restart` 等**未发出 OTP 前**的网络失败，\n  释放当前代理并**同邮箱换代理重试，上限 3 次**，不消耗新邮箱；仍失败标记 tried。\n- **业务拒绝 / pending / 已发 OTP 后的失败：整批停止**——不换行、不重试、不补号。\n- **region_waitlist**：账号已注册但地区受限——记录 `registered_waitlist`、账号保留，\n  整批停止。\n- **预算 = 领取的不同邮箱数**：失败不补号；结束打印 batch_summary JSON\n  （queued/started/remaining/ok/pending/server_rejected/transport_error/failed/\n  ip_switches/stopped/stop_reason）。\n\n每账号结果写入 `output_dir/<email>.json`，字段：`email/status/stage/registered/\nown_code/own_code_status/reveal_status/is_revealed/ip/last_error`。\n`frl_access_token` 与 `hatch_sess` 仅在内存中使用，**不落盘**。\n\nOTP 轮询幂等：每次 `send_otp` 前记录开始时间，`musepy/otp.py` 只取该时间之后的\n最新 6 位验证码（45 秒超时、0.6 秒间隔、单请求 15 秒超时）。\n\n## 埋点说明\n\n站点前端会上报两类遥测：\n\n- **falco**（`POST /api/falco`）—— 性能指标与业务交互事件，`machineId` 固定为 `not_set`\n- **caa-events**（`POST /api/auth/caa-even",
+        "description": "Проект реализует полностью HTTP‑клиент для регистрации и обмена приглашёнными кодами в сервисе muse.ai без использования браузера. В клиенте последовательно воспроизводятся все запросы, описанные в протоколе: получение начального cookie, перезапуск с CSRF‑токеном, отправка OTP, подтверждение кода, завершение регистрации, переход через bootstrap‑страницу, принятие динамического TOS и, наконец, активация кода приглашения. Для каждого шага указаны обязательные параметры, например `supports_muse_link_transparency: true` в запросе `confirm-otp` и обязательный вызов `vm/wake` перед редемпцией кода, без которого сервер отвечает ошибкой `invalid`.\n\nБиблиотека предоставляет два уровня использования: одиночный скрипт `example_register.py` для регистрации одного аккаунта и модуль `runner.py`, позволяющий массово обрабатывать списки email‑ов, прокси и кодов. Планировщик распределяет «sticky»‑прокси между воркерами, ограничивает количество успешных проверок на один IP и автоматически переключает прокси при сетевых ошибках до трёх раз, не тратя новые email‑ы. Результаты каждой попытки сохраняются в JSON‑файлы, а чувствительные токены (`frl_access_token`, `hatch_sess`) хранятся только в памяти.\n\nВажные ограничения: некоторые поля имеют нестандартную семантику (например, `first_name` — имя, `last_name` — фамилия), а даты рождения до 18 лет вызывают ошибку 403. Регистрация может завершиться статусом «region_waitlist», когда аккаунт создан, но доступ ограничен географией. Кроме того, все запросы к API требуют использования динамического текста TOS, полученного из bootstrap‑страницы, и фиксированного `Referer`. Проект не обещает обхода региональных ограничений и не сохраняет токены на диск, что повышает безопасность при массовом использовании.",
+        "joke": "Если ваш скрипт не прошёл `vm/wake`, значит, код приглашения спит лучше, чем вы.",
+        "evidence_quote": "补充一下，记得用JP 节点， JP 不需要绑卡，直接过"
+      },
+      "elementalsouls/claude-bughunter": {
+        "policy_version": 7,
+        "source_description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+        "source_readme": "![claude-bughunter banner](assets/banner-v2.svg)\n\n# claude-bughunter\n\n> A self-contained Claude skill bundle for bug hunting and external red-team work · **83 skills** · 15 slash commands · **681 disclosed-report patterns** (433 now individually cited & auditable) across 24 core vulnerability classes · enterprise identity + infrastructure attack matrices · engagement-folder scaffolding · Burp MCP integration · battle-tested across authorized red-team and bug-hunting engagements, plus public training platforms (DVWA, OWASP Juice Shop, Hacker101, testphp.vulnweb.com).\n\nBuilt by **[Sachin Sharma](https://www.linkedin.com/in/sachinsharma8080/)** — Bug Hunting & GenAI Security Research.\n\n<p align=\"center\">\n  <sub>SPONSORED BY</sub>\n  <br/>\n  <a href=\"https://www.apismart.ai/\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/sponsors/apismart-dark.png\">\n      <img alt=\"ApiSmart\" src=\"assets/sponsors/apismart-light.png\" height=\"30\">\n    </picture>\n  </a>\n  &nbsp;&nbsp;&nbsp;&nbsp;\n  <a href=\"https://threatwatch360.com\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/sponsors/tw360-dark.svg\">\n      <img alt=\"ThreatWatch360\" src=\"assets/sponsors/tw360-light.svg\" height=\"30\">\n    </picture>\n  </a>\n</p>\n\n---\n\n## What is this?\n\n`claude-bughunter` is a drop-in skill bundle for the [Claude Code skills system](https://docs.claude.com/en/docs/claude-code/skills). Install once and Claude Code stops being a chatbot and starts behaving like a senior bug-hunting researcher or red-team operator: it knows the techniques, the chain templates, the VRT mappings, the platform CVE chains, and the hygiene — and it stays in scope.\n\nFour layers stack:\n\n- **Think** — `bb-methodology` + `redteam-mindset`: the 5-phase non-linear workflow, critical-thinking framework, and red-team operator discipline.\n- **Hunt webapps** — 58 `hunt-*` skills curated from 681 disclosed HackerOne reports: per-class detection patterns, payloads, bypass tables, and chain templates.\n- **Hit the perimeter** — enterprise platform chains (M365/Entra, Okta, vCenter, SSL-VPN appliances, SharePoint, cloud IAM): current 2024–2026 CVE chains + post-credential escalation.\n- **Ship it** — `triage-validation` + reporting + `evidence-hygiene`: the 7-Question Gate, VRT-aware severity, OOS rebuttals, PII redaction, and red-team deliverables.\n\nAll triggered automatically by topic — describe what you're testing in plain English and the relevant skill loads. No invocation by name.\n\n---\n\n## Quickstart\n\n**Option A — install as a Claude Code plugin (recommended).** From inside Claude Code:\n\n```text\n/plugin marketplace add elementalsouls/Claude-BugHunter\n/plugin install claude-bughunter@elementalsouls\n```\n\nAll 83 skills + 15 commands load namespaced under `claude-bughunter:` and update when you bump the plugin version — no files copied into `~/.claude/`.\n\n**Option B — copy install (no plugin system / pin to a clone):**\n\n```bash\ngit clone https://github.com/elementalsouls/Claude-BugHunter.git\ncd Claude-BugHunter\n```\n\n```bash\n# macOS / Linux\nbash scripts/install.sh\n\n# Windows (PowerShell)\npwsh ./scripts/install.ps1\n```\n\nBoth copy the skills + commands into `~/.claude/` (macOS/Linux) or `%USERPROFILE%\\.claude\\` (Windows) and wire the `hunt` engagement scaffolder.\n\n**What each install path gives you:**\n\n| Path | 83 skills + 15 slash commands | `cbh` CLI | `hunt` scaffolder |\n|---|---|---|---|\n| **A — plugin** | ✅ namespaced under `claude-bughunter:` | ➕ separate `pipx install` | ❌ clone-only |\n| **B — copy install** | ✅ copied into `~/.claude/` | ✅ from the clone | ✅ from the clone |\n\nThe plugin is the fastest path to the skills + slash commands. The terminal-native\n`cbh` runner installs standalone — `pipx install git+https://github.com/elementalsouls/Claude-BugHunter`\n— so plugin users can add it without a full clone (see [`cbh` CLI](docs/cbh-cli.md)).\nThe `hunt` engagement scaffolder ships with the clone (Option B).\n\nThat's it. Open Claude Code and describe what you're testing in plain English — the right skill loads automatically, no invocation by name:\n\n```text\n> Testing acme.com — an in-scope HackerOne target. Run recon and rank the surface.\n\n  ⟳ loading skills: web2-recon, offensive-osint, bb-methodology …\n    → subdomain enum (subfinder + crt.sh) … 47 hosts\n    → live hosts (httpx) … 12 · tech fingerprint … 6 distinct stacks\n    → ranked surface: api.acme.com (GraphQL, introspection ON)  ← start here\n                      auth.acme.com (OAuth, SSO)               ← hunt-oauth\n\n  Next: want me to probe the GraphQL introspection + OAuth redirect_uri?\n```\n\n→ Full [Installation guide](INSTALL.md) · [Usage guide](USAGE.md) · [searchable skill catalog](docs/skills.md).\n\n> The block above is an illustrative transcript. To record a real demo of your own session: `asciinema rec demo.cast` → upload to [asciinema.org](https://asciinema.org) and drop the badge here.\n\n---\n\n## Runs on multiple agent harnesses\n\n![One install, agent ",
+        "description": "Claude‑Bughunter — готовый набор навыков для Claude Code, превращающий его из чат‑бота в помощника по баг‑хаунтингу и внешнему red‑team. После установки в системе появляется 83 навыка и 15 слеш‑команд, которые автоматически активируются по описанию задачи на естественном языке, без необходимости явно вызывать их по имени. Навыки сгруппированы в четыре уровня: методология и мышление red‑team, поиск уязвимостей в веб‑приложениях (58 hunt‑навыков, основанных на 681 реальных HackerOne‑отчётах), атаки на корпоративные платформы (M365, Okta, vCenter и др.) с актуальными цепочками CVE 2024‑2026, а также процедуры триажа, валидации и отчётности, включающие VRT‑соответствие, редактирование PII и шаблоны доставок. Пользователь просто описывает цель, например «тестировать acme.com», и Claude подбирает соответствующие навыки: сканирование поддоменов, проверка живых хостов, ранжирование поверхности и предложения дальнейших проверок, таких как GraphQL‑интроспекция или OAuth‑redirect. Инструмент поддерживает два способа установки: через плагин‑маркетплейс Claude Code (быстрое подключение с неймспейсом) или копирование репозитория с последующим запуском скриптов, что позволяет также использовать CLI‑утилиту cbh и scaffolder hunt для локального управления проектом. Требования ограничиваются наличием Claude Code и доступа к файловой системе пользователя; все навыки работают в рамках локального окружения, но могут обращаться к внешним сервисам (например, subfinder, httpx) при необходимости. Таким образом, проект упрощает подготовку и проведение комплексных тестов, предоставляя готовый контент и автоматизацию без необходимости вручную собирать методики и шаблоны.",
+        "joke": "",
+        "evidence_quote": "> A self-contained Claude skill bundle for bug hunting and external red-team work · **83 skills** · 15 slash commands · **681 disclosed-report patterns** (433 now individually cited & auditable) across 24 core vulnerability classes"
+      },
       "expo/exact": {
         "policy_version": 7,
         "source_description": null,
@@ -299,6 +333,14 @@
         "description": "Exact — это кроссплатформенный рантайм, позволяющий писать приложение один раз и запускать его нативно в браузере, macOS, iOS‑симуляторе и Linux. Интерфейс описывается декларативным языком Contract, а бизнес‑логика реализуется на TypeScript или Rust; компилятор Contract генерирует компактный план, который на вебе превращается в один ES‑модуль (~20 KB), а на настольных и мобильных платформах исполняется Rust‑раннером, использующим собственные UI‑слои (AppKit, UIKit, GPU‑painter). В отличие от гибридных решений, в Exact нет веб‑вью и JavaScript‑моста, поэтому UI‑код начинает отрисовку сразу же, без задержек.\n\nПроект ориентирован на работу с AI‑агентами: один набор из десяти операций (tree, screenshot, tap, type, state, layout, logs, clock, prefer, perf) управляет приложением одинаково на всех хостах. Агент может построить приложение, запустить его, сделать скриншот, имитировать ввод и проверять состояние, а также управлять «часами»‑агента, ускоряя анимации без реального ожидания. Тесты пишутся в виде скриптов `app.test.contract`, которые исполняются без изменений на любой поддерживаемой платформе, обеспечивая единый способ верификации.\n\nТекущий статус — pre‑1.0, без гарантии API‑совместимости и без миграционной документации; изменения происходят ежедневно. Для начала работы требуется установить Xcode, Rust, Bun и Chrome, затем выполнить `exact new` и `bun scripts/exact.mjs setup`. Пример демонстрирует приложение‑магазин Softwear, генерируемое из шаблонов, где один и тот же экран отображается в браузере, iOS и macOS, показывая, как план Contract преобразуется в нативные UIKit и AppKit‑вью.",
         "joke": "",
         "evidence_quote": "**Write an app once. It runs natively on the web, macOS, iOS, and Linux, and an AI\nagent can build it, run it, see it, and test it on every one of them.**"
+      },
+      "eynnzerr/telemetrycleaner": {
+        "policy_version": 7,
+        "source_description": "基于 Shizuku 免 Root 清除国产安卓 SystemHelper、RegService 等系统预装隐私数据收集模块",
+        "source_readme": "# 遥测清理 · TelemetryCleaner\n\n> 运营商为终端入网、自注册、网络运维和故障排查，确有在相应场景收集必要数据的实际需求！本项目仅供学习，用于了解 Android 系统包管理机制。\n\nTelemetryCleaner 可以检测国行 Android 固件预置的运营商组件，查看各空间的安装状态和权限，并管理卸载与恢复。下载： [GitHub Releases](https://github.com/Eynnzerr/TelemetryCleaner/releases/latest)\n\n<p>\n  <img src=\"docs/screenshots/home.png\" alt=\"主页展示 Shizuku 连接状态和运营商组件\" width=\"235\">\n  <img src=\"docs/screenshots/permissions.png\" alt=\"SystemHelper 权限页展示权限声明及主空间的授权状态\" width=\"235\">\n  <img src=\"docs/screenshots/catalogue.png\" alt=\"组件检查清单按厂商展示包名\" width=\"235\">\n</p>\n\n您可通过不限于以下方式参与贡献，欢迎 PR：\n1. 提供清单未覆盖的厂商+运营商+包名线索，在 README.md 中补充即可；\n2. 提供针对某模块的实测与分析报告，不限制是否为 AI 生成，但需保证真实性。放于 docs 目录中即可；\n3. 协助实现未支持的免 Root 卸载功能（如**现版本不支持部分 vivo 系的电信/移动组件卸载**）；\n4. 对软件功能的反馈或改进。\n\n## 背景介绍\n\n部分国产厂商在国行固件中预置了 `SystemHelper`、`RegService` 等运营商终端管理组件。这些组件在后台静默定时采集数据，用户无感；没有桌面入口，同时无法以常规手段禁用权限和卸载。\n\nWiSec 2023 的流量测量还在部分国行样机上观察到运营商组件上报数据，其中小米及 ColorOS 样本的中国移动组件上报了已安装软件列表。 [WiSec 2023 实测论文](https://www.scss.tcd.ie/Doug.Leith/pubs/wisecfp034-liu.pdf#page=7)\n\n在作者本人的 OPPO 真机上观测到 SystemHelper 有读取定位、设备和 SIM 标识、已安装应用以及按应用统计网络流量，随后向某云端上传的行为，分析详见 [SystemHelper 代码与权限分析 by AI](docs/systemhelper-analysis.md)。\n\n## 本项目原理\n\nAndroid 10 及以上设备可安装本项目，依赖 Shizuku。先按 [Shizuku 启动指南](https://shizuku.rikka.app/guide/setup/)通过 ADB 或无线调试启动 Shizuku，再回到 App 授权并选择需要检查的空间。Android 11 及以上可用无线调试启动。检测完成后，可打开组件详情查看权限，或勾选组件批量操作。\n\nADB 启动的 Shizuku 以 shell 身份代理 Binder 调用。App 直接请求系统包管理服务，避开部分 ROM 对 `pm` 命令行入口的拦截。系统包管理服务仍会执行本机的权限和包状态校验。 [Binder 调用实现](app/src/main/java/com/eynnzerr/telemetrycleaner/data/PackageBinder.kt)\n\n少数 ROM 会在命令层直接拒绝卸载系统应用，例如返回 `Failure [only root can delete system app for a particular user]`。收到这类系统错误后，App 会以 shell 身份通过 `app_process` 调用隐藏的 `IPackageManager.deletePackageAsUser` 再试一次；重新读取包状态确认失败后，结果页仍显示原始系统错误，不会用兜底流程的错误信息覆盖它。 [app_process 兜底实现](app/src/main/java/com/eynnzerr/telemetrycleaner/data/PackageFallback.kt)\n\n卸载按选定空间执行，会清除该空间中的组件数据。恢复使用系统保留的 APK。自动清理默认关闭，开启后按配置的周期检查所选空间，只处理自动清理名单内的组件。\n\n## 内置组件清单\n\n表中的「未验证」指尚无本人在相应厂商设备上的卸载验证。\n\n| 厂商 | 运营商 | 包名 | 卸载验证 |\n| --- | --- | --- | --- |\n| 跨厂商 | 联通 | `com.mobiletools.systemhelper` | 已实测 |\n| OPPO / 一加 / realme | 电信 | `com.oppo.ctautoregist` | 已实测 |\n| OPPO / 一加 / realme | 移动 | `com.coloros.regservice` | 已实测 |\n| 小米 / Redmi / POCO | 电信 | `com.xiaomi.registration` | 已实测 |\n| 小米 / Redmi / POCO | 移动 | `com.miui.dmregservice` | 已实测 |\n| vivo | 移动 / 电信 | `com.vivo.devicereg` | 部分机型暂不支持 |\n| 华为及旧荣耀 | 电信（数据） | `com.huawei.android.UEInfoCheck` | 已实测 |\n| 华为及旧荣耀 | 电信（短信） | `com.huawei.android.AutoRegSms` | 已实测 |\n| 华为 | 移动 | `com.huawei.regservice` | 已实测 |\n| 荣耀 | 电信（数据） | `com.hihonor.android.UEInfoCheck` | 未验证 |\n| 荣耀 | 电信（短信） | `com.hihonor.android.AutoRegSms` | 未验证 |\n| 荣耀 | 移动 | `com.hihonor.regservice` | 未验证 |\n| 魅族 / Flyme | 移动 | `com.meizu.regservice` | 未验证 |\n| 初代红魔 | 电信 | `cn.nubia.register` | 未验证 |\n\n本人只验证了 SystemHelper 和 OPPO 组件的卸载，小米、华为由网友验证实测。其他厂商因缺少设备暂未验证，如决定卸载，请自行承担风险。**如在 B 站评论区已有反馈：vivo 卸载 Device Management 后通话录音功能失效。**\n\n欢迎在 [Issues](https://github.com/Eynnzerr/TelemetryCleaner/issues) 反馈某厂商某模块卸载后使用正常，也欢迎补充组件。附上机型、系统版本、包名和实际结果，便于复核。\n\n## WIP\n\n- [ ] 努比亚、国行三星、魅族运营商遥测组件包名收集\n- [ ] 扩充更多组件检测（包括厂商自己的敏感数据收集组件）作为可选项\n- [x] 部分 vivo 系不支持卸载 SystemHelper 外的组件。暂提供冻结策略作为兜底\n",
+        "description": "TelemetryCleaner — Android‑приложение, позволяющее обнаруживать и удалять предустановленные операторами компоненты, такие как SystemHelper, RegService и аналогичные модули, которые собирают данные о местоположении, SIM‑идентификаторах, установленных приложениях и сетевом трафике. Приложение работает без root‑прав, используя сервис Shizuku: после запуска Shizuku через ADB или беспроводную отладку приложение получает shell‑идентификатор и напрямую обращается к системному менеджеру пакетов через Binder, обходя ограничения командной строки pm. Это даёт возможность проверять статус пакетов, их разрешения и выполнять удаление или восстановление APK‑файлов в выбранных пользовательских пространствах.\n\nВ интерфейсе отображается список обнаруженных компонентов, сгруппированных по производителям и операторам, а также их текущий статус (установлен/удалён, разрешения). Пользователь может выбрать отдельный пакет или группу и выполнить batch‑операцию: удаление, очистку данных или восстановление оригинального APK. При неудачном удалении, вызванном ограничениями ROM, приложение автоматически переходит к резервному методу через скрытый IPackageManager.deletePackageAsUser, сохраняя оригинальное сообщение об ошибке. Кроме того, есть опция автоматической периодической проверки и очистки указанных компонентов, которую можно включить вручную.\n\nПроект ориентирован на исследователей и продвинутых пользователей, желающих понять механизм управления пакетами в Android и снизить уровень скрытого телеметрического сбора. Требуется Android 10 и выше, установленный Shizuku, а также доступ к ADB (по кабелю или Wi‑Fi). Некоторые компоненты, например часть Vivo‑модулей, пока не поддерживают полное удаление и могут лишь замораживаться, что указано в списке ограничений. Пользователи должны самостоятельно оценивать риски удаления системных приложений, так как в некоторых случаях это может привести к потере функций, например, записи звонков на Vivo‑устройствах.",
+        "joke": "Удаляете телеметрию — получаете больше свободы, чем у Wi‑Fi в метро.",
+        "evidence_quote": "TelemetryCleaner 可以检测国行 Android 固件预置的运营商组件，查看各空间的安装状态和权限，并管理卸载与恢复。"
       },
       "feder-cr/dots": {
         "policy_version": 7,
@@ -332,6 +374,22 @@
         "joke": "С GBrain ваш агент будет помнить всё, даже то, что вы забыли спросить.",
         "evidence_quote": "**Give the agent you already use a memory you control.** GBrain stores explicit facts with their sources, supports corrections and withdrawal, and makes the same memory available across your agents. Start with keyless memory and keyword retrieval; add semantic search, synthesis, and background enrichment when you need them."
       },
+      "ggml-org/ggml": {
+        "policy_version": 7,
+        "source_description": "Tensor library for machine learning",
+        "source_readme": "# ggml\n\n<div align=\"center\">\n\n<img src=\"https://raw.githubusercontent.com/ggml-org/media/refs/heads/master/logo/ggml-logo.jpg\" width=\"256\" height=\"256\" alt=\"ggml logo\" />\n\n<b>Tensor library for machine learning</b>\n\n[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)\n[![Release](https://img.shields.io/github/v/release/ggml-org/ggml?filter=v*)](https://github.com/ggml-org/ggml/releases)\n[![CI](https://github.com/ggml-org/ggml/actions/workflows/build-cpu.yml/badge.svg)](https://github.com/ggml-org/ggml/actions/workflows/build-cpu.yml)\n\n</div>\n\n## Quick start\n\nBuild from source:\n\n```bash\ngit clone https://github.com/ggml-org/ggml\ncd ggml\n\nmkdir build && cd build\ncmake ..\ncmake --build . --config Release -j 8\n```\n\nFor a minimal, fully commented example (matrix multiplication), see [examples/simple](examples/simple).\n\n## Description\n\nThe main goal of `ggml` is to be a simple, portable, and efficient tensor library for machine learning with minimal setup.\n\n- Plain C/C++ implementation without any dependencies\n- Cross-platform - x86, ARM, RISC-V, LoongArch, PowerPC, s390x, and WebAssembly\n- SIMD-optimized kernels for x86, ARM, and RISC-V\n- Broad backend support - CPU, GPU, NPU, and browser\n- 2- to 8-bit integer quantization, plus MXFP4 and NVFP4 microscaling formats\n- Zero memory allocations during runtime\n\n## Documentation\n\n- [The GGUF file format](docs/gguf.md)\n- [Introduction to ggml](https://huggingface.co/blog/introduction-to-ggml)\n- [GGML tips & tricks](https://github.com/ggml-org/llama.cpp/wiki/GGML-Tips-&-Tricks)\n\n## Contributing\n\n- For changes to the core `ggml` library (including to the CMake build system), please open a PR in [llama.cpp](https://github.com/ggml-org/llama.cpp) - doing so will make your PR more visible, better tested, and more likely to be reviewed\n",
+        "description": "ggml — это лёгкая кроссплатформенная библиотека тензорных операций, написанная на чистом C/C++ без внешних зависимостей. Основная цель проекта – обеспечить простую и эффективную основу для машинного обучения, позволяя запускать модели на самых разных архитектурах: от x86 и ARM до RISC‑V, PowerPC, s390x и WebAssembly. Библиотека включает SIMD‑оптимизированные ядра для популярных процессоров и поддерживает широкий спектр бекендов, включая CPU, GPU, NPU и браузерные среды. Особенностью ggml является отсутствие динамических выделений памяти во время выполнения, что упрощает интеграцию в ресурсо‑ограниченные системы. Кроме того, библиотека предлагает 2‑ до 8‑битовую целочисленную квантизацию, а также микроскейлинговые форматы MXFP4 и NVFP4, позволяя уменьшать объём модели без значительной потери точности. Пример использования – минимальный полностью прокомментированный код умножения матриц в каталоге examples/simple, который демонстрирует типичный рабочий процесс: загрузка репозитория, сборка через CMake и запуск на выбранном устройстве. Для разработки и отладки доступны документы о формате GGUF, вводный материал на Hugging Face и набор советов в wiki проекта. При желании внести изменения в ядро библиотеки рекомендуется подавать pull‑request в репозиторий llama.cpp, где изменения проходят более тщательное тестирование.",
+        "joke": "",
+        "evidence_quote": "The main goal of `ggml` is to be a simple, portable, and efficient tensor library for machine learning with minimal setup.\n\n- Plain C/C++ implementation without any dependencies\n- Cross-platform - x86, ARM, RISC-V, LoongArch, PowerPC, s390x, and WebAssembly\n- SIMD-optimized kernels for x86, ARM, and RISC-V\n- Broad backend support - CPU, GPU, NPU, and browser\n- 2- to 8-bit integer quantization, plus MXFP4 and NVFP4 microscaling formats\n- Zero memory allocations during runtime"
+      },
+      "glanderness/beeftv": {
+        "policy_version": 7,
+        "source_description": "Local-first, lightweight, AI-native video workspace.",
+        "source_readme": "<p align=\"center\">\n  <img src=\"assets/readme/beeftv-wordmark.svg\" width=\"640\" alt=\"BeefTV — High-performance, lightweight, AI-native video workspace\">\n</p>\n\n<p align=\"center\"><strong>High-performance · Lightweight · AI Native</strong></p>\n\n<p align=\"center\">\n  面向 AI 时代的视频创作工作台。<br>\n  在一个自由画布中连接创意、模型与素材。\n</p>\n\n<p align=\"center\">\n  与 BeefTV Agent 一起推进创作，用 Skills 扩展方法，用工作流复用过程。<br>\n  从分镜、素材到成片，让创作可以继续编辑、迭代和积累。\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/glanderness/BeefTV/stargazers\"><img src=\"https://img.shields.io/github/stars/glanderness/BeefTV?style=flat-square&amp;logo=github&amp;label=Stars&amp;labelColor=303030&amp;color=E86C36\" alt=\"BeefTV GitHub Stars\"></a>\n  <a href=\"https://github.com/glanderness/BeefTV/releases/latest\"><img src=\"https://img.shields.io/github/v/release/glanderness/BeefTV?style=flat-square&amp;label=Release&amp;labelColor=303030&amp;color=525252\" alt=\"BeefTV 最新版本\"></a>\n  <a href=\"QUICKSTART.md#下载与首次打开\"><img src=\"https://img.shields.io/badge/Desktop-macOS%20%7C%20Windows-525252?style=flat-square&amp;labelColor=303030\" alt=\"桌面版支持 macOS 和 Windows\"></a>\n  <a href=\"QUICKSTART.md\"><img src=\"https://img.shields.io/badge/Workspace-Local--first-525252?style=flat-square&amp;labelColor=303030\" alt=\"本地优先工作区\"></a>\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/License-Source%20Available-525252?style=flat-square&amp;labelColor=303030\" alt=\"源码可用，许可范围见 LICENSE\"></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://beeftv.app/\"><img src=\"assets/readme/button-website.svg\" width=\"180\" alt=\"访问 BeefTV 官网\"></a>\n  <a href=\"https://github.com/glanderness/BeefTV/releases/latest\"><img src=\"assets/readme/button-download.svg\" width=\"175\" alt=\"下载 BeefTV 桌面版\"></a>\n  <a href=\"https://beeftv.app/assets/beeftv-wecom-qr.png\"><img src=\"assets/readme/button-community.svg\" width=\"185\" alt=\"扫码加入 BeefTV 社群\"></a>\n  <a href=\"https://x.com/beefnoode\"><img src=\"assets/readme/button-x.svg\" width=\"180\" alt=\"在 X 关注 @beefnoode\"></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"README.en.md\">English</a> ·\n  <a href=\"#最近更新\">最近更新</a> ·\n  <a href=\"#产品演示\">产品演示</a> ·\n  <a href=\"#工作流\">工作流</a> ·\n  <a href=\"#beeftv-agent\">Agent</a> ·\n  <a href=\"#skills\">Skills</a> ·\n  <a href=\"docs/content/docs/overview/features.mdx\">功能清单</a> ·\n  <a href=\"QUICKSTART.md\">开始使用</a> ·\n  <a href=\"CONTRIBUTING.md\">参与贡献</a>\n</p>\n\n## 最近更新\n\n- **[v2.2.5](https://github.com/glanderness/BeefTV/releases/tag/v2.2.5)** — 修复画布上传完成后偶发回退「上传中」与替换素材被旧任务覆盖，修复桌面端资源缩略图、独立分镜生成与批量下载编号，升级视频原生截帧与音视频分离，放开内置助手选用大型技能的大小与数量限制并支持长文档按行分段读取。\n- **[v2.2.4](https://github.com/glanderness/BeefTV/releases/tag/v2.2.4)** — 修复桌面端 Eagle 素材库预览与导入下载，支持自定义模型服务无 `/v1` 前缀地址与手动模型改删，修复提示词长按退格、个人资产库分页计数与生成历史本地视频预览。\n- **[v2.2.3](https://github.com/glanderness/BeefTV/releases/tag/v2.2.3)** — 接入 Seedream 5.5 图片生成与细粒度图层拆分，优化画布视频首尾帧自动识别与参考预检，修复超分与去字幕终态重试及诊断耗时显示，并补充银盛云枢壹算品牌图标与简介。\n- **[v2.2.2](https://github.com/glanderness/BeefTV/releases/tag/v2.2.2)** — 上线实时余额与在线充值，完善生成费用预估，升级 DeepSeek Harness 协同与画布视频处理。\n- **[v2.2.1](https://github.com/glanderness/BeefTV/releases/tag/v2.2.1)** — 新增银盛云枢壹算渠道插件，改版插件与账户设置，改善画布预览及生成报错与重试。\n\n[查看全部版本与详细说明](https://github.com/glanderness/BeefTV/releases)\n\n## 特别鸣谢\n\n感谢支持 BeefTV 持续发展的合作伙伴、赞助商与客户。\n\n<table>\n  <tr><th width=\"26%\" align=\"center\">鸣谢对象</th><th align=\"center\">介绍</th></tr>\n  <tr>\n    <td align=\"center\" valign=\"middle\"><img src=\"assets/readme/partner-ll2.png\" width=\"32\" height=\"32\" alt=\"ll2.cn 图标\"><br><strong>ll2.cn</strong></td>\n    <td><a href=\"https://hub.ll2.cn?p=rw6t\">ll2.cn</a>｜自营算力底座 · 官方直签批价。MiniMax-H3 0.05 元/秒（自部署 768P 满血）；deepseek-v4.1-flash 官方 4 折；Seedance 系列 7 折起；超分 0.018 元/秒；Vega系列 6折起。</td>\n  </tr>\n  <tr>\n    <td align=\"center\" valign=\"middle\"><img src=\"assets/readme/partner-ysdui.png\" width=\"32\" height=\"32\" alt=\"银盛·云枢壹算图标\"><br><strong>银盛·云枢壹算</strong></td>\n    <td><a href=\"https://www.ysdui.cn/\">银盛·云枢壹算</a>是银盛通信有限公司旗下的企业级一站式 AI 服务平台，为企业提供算力支持与 AI 产品解决方案。感谢银盛·云枢壹算为本项目提供的算力支持与生态扶持。</td>\n  </tr>\n  <tr>\n    <td align=\"center\" valign=\"middle\"><img src=\"assets/readme/partner-tencent-cloud.png\" width=\"32\" height=\"32\" alt=\"腾讯云图标\"><br><strong>腾讯云</strong></td>\n    <td><a href=\"https://cloud.tencent.com/\">腾讯云</a>提供云计算、人工智能与音视频服务，覆盖媒体存储、处理和分发等场景，服务开发者与企业的应用建设。感谢腾讯云为本项目提供的算力支持以及生态扶持。</td>\n  </tr>\n  <tr>\n    <td align=\"center\" valign=\"middle\"><img src=\"assets/readme/partner-byteplus.png\" width=\"32\" height=\"32\" alt=\"BytePlus 图标\"><br><strong>BytePlus</strong></td>\n    <td><a href=\"https://www.byteplus.com/en\">BytePlus</a> 源自字节跳动的企业技术服务品牌，面向全球企业提供生成式 AI、云基础设施与音视频解决方案。感谢 BytePlus 海外孵化器对本项目的算力支持与生态扶持。</td>\n  </tr>\n  <tr>\n    <td align=\"center\" valign=\"middle\"><img src=\"assets/readme/partner-pccooler.png\" width=\"120\" alt=\"超频三标志\"><br><strong>超频三</strong></td>\n    <td><a href=\"https://www.cpspccooler.cn/\">超频三</a>是深耕高性能计算硬件与散热系统的上市公司，提供 AI 模组化整机、AI 工作站等产品。结合超频三的硬件研发能力与 BeefTV 的 AIGC 软件生态，双方将共同探索软硬件一体化的本地 AI 创作解决方案。</td>\n  </tr>\n</table>\n\n## 产品演示\n\n<div>\n  <video src=\"https://github.com/user-attachments/assets/da4081e0-26bc-424e-b20c-124f92ce6538\" controls preload=\"metadata\" plays",
+        "description": "BeefTV — это локально‑ориентированная видеоработа, построенная вокруг AI‑моделей и позволяющая создавать, редактировать и собирать видеоконтент в едином свободном канвасе. Пользователь соединяет творческие идеи, модели генерации и медиаресурсы, а встроенный BeefTV Agent управляет процессом, а Skills расширяют набор доступных методов, например, генерацию раскадровки, автоматическое разделение слоёв или синхронное извлечение аудио. Инструмент поддерживает непрерывный цикл «создать‑отредактировать‑итерация», позволяя сохранять промежуточные версии и повторно использовать готовые рабочие процессы.\n\nСреди ключевых возможностей: (1) автономная работа в режиме Local‑first, при которой все данные хранятся локально и могут быть обработаны без постоянного обращения к облаку; (2) интеграция с различными AI‑сервисами через Skills, включая генерацию изображений (Seedream 5.5), улучшение качества (супер‑разрешение) и удаление субтитров; (3) расширенный набор инструментов для управления ресурсами: превью‑миниатюры, пакетная загрузка и нумерация, а также поддержка кастомных моделей без обязательного префикса /v1. Реальный сценарий: видеомаркетолог собирает рекламный ролик, импортирует исходные клипы, использует AI‑генерацию сцен, автоматически вырезает и синхронизирует аудио, а затем экспортирует готовый файл, при этом контролируя расходы через встроенный баланс и оценку стоимости генерации. Требования включают десктоп‑клиент для macOS и Windows; некоторые функции зависят от внешних облачных провайдеров (ll2.cn, Tencent Cloud и др.), а локальная работа ограничена доступными локальными ресурсами и установленными моделями.",
+        "joke": "С BeefTV даже ваш видеомонтажный дедлайн успеет успеть, пока AI успеет сгенерировать кадр.",
+        "evidence_quote": "- **[v2.2.5](https://github.com/glanderness/BeefTV/releases/tag/v2.2.5)** — 修复画布上传完成后偶发回退「上传中」与替换素材被旧任务覆盖，修复桌面端资源缩略图、独立分镜生成与批量下载编号，升级视频原生截帧与音视频分离，放开内置助手选用大型技能的大小与数量限制并支持长文档按行分段读取。"
+      },
       "google-deepmind/mujoco": {
         "policy_version": 7,
         "source_description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
@@ -339,6 +397,14 @@
         "description": "MuJoCo — это физический движок, ориентированный на быстрые и точные симуляции многосоставных систем с контактами. Он предоставляет C‑API, предвыделенные структуры данных и набор утилит для расчёта физических величин, что делает его пригодным для исследований в робототехнике, биомеханике, графике, а также для обучения машинных моделей. Встроенный визуализатор работает как в нативных десктопных окнах, так и в браузерах через WebAssembly, а также доступны Python‑биндинги и плагин для Unity, что упрощает интеграцию в разные среды разработки.\n\nДля пользователя ключевыми возможностями являются: 1) возможность запускать готовые модели в браузере без установки, используя MuJoCo Studio в WebAssembly; 2) поддержка многопоточного модуля `rollout` для ускоренного генерации траекторий; 3) дифференцируемая физика через ветку MJX, позволяющая получать аналитические градиенты прямо из шага симуляции, что полезно при обучении контроллеров. Примером применения может быть разработка контроллера балансировки гуманоидного робота: модель редактируется программно, симуляция запускается в реальном времени, а градиенты используются для оптимизации политики в JAX.\n\nДля работы требуется современная платформа — Linux (x86‑64, AArch64), Windows x86‑64 или macOS (универсальная). Предпочтительно использовать предкомпилированные бинарники из релизов; сборка из исходников возможна, но требует дополнительных зависимостей. Ограничения: WebAssembly‑версия медленнее нативной, а доступ к некоторым функциям (например, низкоуровневый C‑API) ограничен только локальными установками.",
         "joke": "Симулируешь робота? MuJoCo уже знает, как он упадёт.",
         "evidence_quote": "**MuJoCo** stands for **Mu**lti-**Jo**int dynamics with **Co**ntact. It is a\ngeneral purpose physics engine that aims to facilitate research and development\nin robotics, biomechanics, graphics and animation, machine learning, and other\nareas which demand fast and accurate simulation of articulated structures\ninteracting with their environment."
+      },
+      "google-labs-code/stitch-skills": {
+        "policy_version": 7,
+        "source_description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+        "source_readme": "# Stitch Design Skills\n\nA collection of agent skills and plugins for [Google Stitch](https://stitch.withgoogle.com), following the [Agent Skills](https://agentskills.io) open standard. Compatible with coding agents such as Codex, Antigravity, Gemini CLI, Claude Code, Cursor, and OpenCode (manual install).\n\n## Quick Start\n\n### 1. Install Plugins (Recommended)\nThe fastest way to set up the full Stitch plugin suite globally.\n\n#### Codex\n\nAdd the Stitch Skills marketplace, then install the plugins you need.\n\n<details open>\n<summary><strong>Via CLI</strong> (recommended)</summary>\n\n```bash\ncodex plugin marketplace add google-labs-code/stitch-skills --ref main \\\n  --sparse .agents/plugins \\\n  --sparse plugins/stitch-design \\\n  --sparse plugins/stitch-build \\\n  --sparse plugins/stitch-utilities\n```\n\n> [!TIP]\n> The `--sparse` flags are optional — they limit the checkout to only the\n> listed paths for a faster clone. Omit them to pull the entire repository.\n\n</details>\n\n<details>\n<summary><strong>Via the Codex UI</strong></summary>\n\nNavigate to **Settings → Plugin Marketplaces → Add** and fill in:\n\n| Field | Value |\n|---|---|\n| **Source** | `https://github.com/google-labs-code/stitch-skills` |\n| **Git ref** | `main` |\n| **Sparse paths** | *(optional)* `.agents/plugins`, `plugins/stitch-design`, `plugins/stitch-build`, `plugins/stitch-utilities` |\n\n</details>\n\nOnce the marketplace is registered, install any combination of:\n\n- **`stitch-design`** — design-focused skills\n- **`stitch-build`** — build and component skills\n- **`stitch-utilities`** — utility and helper skills\n\n#### Claude Code & Cursor\n\n```bash\n# Claude Code — installs into the current project\nnpx plugins add google-labs-code/stitch-skills --scope project --target claude-code\n```\n\n```bash\n# Cursor — installs into the current workspace\nnpx plugins add google-labs-code/stitch-skills --scope workspace --target cursor\n```\n\n#### OpenCode\n\nOpenCode does **not** use `npx plugins` / `npx skills` or the Codex/Claude marketplace layout.\nInstall skills and the Stitch MCP server manually:\n\n**1. Skills** — copy the skill folders you need into a discoverable path:\n\n```bash\n# Project-local (recommended)\nmkdir -p .opencode/skills\ncp -R plugins/stitch-design/skills/generate-design .opencode/skills/generate-design\n# repeat for other skills under plugins/*/skills/\n```\n\nOpenCode also discovers `.claude/skills/` and `.agents/skills/` (see [OpenCode skills docs](https://opencode.ai/docs/skills/)).\n\n> **Naming:** OpenCode requires skill `name` frontmatter to be lowercase kebab-case and match the directory name. Skills that use `stitch::…` names (or other non-kebab forms) need the `name` field and folder renamed before OpenCode will load them. Extra frontmatter such as `allowed-tools` is ignored.\n\n**2. Stitch MCP** — add a remote MCP entry in project `opencode.json` or `~/.config/opencode/opencode.json` after completing the [Stitch MCP setup](https://stitch.withgoogle.com/docs/mcp/setup/):\n\n```json\n{\n  \"$schema\": \"https://opencode.ai/config.json\",\n  \"mcp\": {\n    \"stitch\": {\n      \"type\": \"remote\",\n      \"url\": \"YOUR_STITCH_MCP_URL\",\n      \"enabled\": true\n    }\n  }\n}\n```\n\nReplace `YOUR_STITCH_MCP_URL` with the endpoint from the Stitch MCP setup flow (credentials/env vars from that guide still apply).\n\nTool names inside skill instructions may differ from OpenCode builtins (`webfetch` / `bash` instead of `web_fetch` / `run_command`). Prefer the OpenCode tool names when adapting a skill for OpenCode.\n\n### 2. Install Skills Selectively\nChoose only the specific skills you need.\n\n> [!IMPORTANT]\n> Stitch Design Skills often have inter-dependencies. If you choose to install skills selectively, ensure you include all required dependencies.\n\n```bash\nnpx skills add google-labs-code/stitch-skills\n```\n\nYou can run the following commands to see the help documentation for plugins and skills:\n\n```bash\nnpx plugins --help\n\nnpx skills --help\n```\n\n## Prerequisites\n\nThese skills require the **Stitch MCP** server to be configured and running in your agent's environment. Make sure you have followed the [Stitch MCP Setup Instructions](https://stitch.withgoogle.com/docs/mcp/setup/) to register the server and set up appropriate environment variables and credentials.\n\n> **Docs navigation:** If a link on [stitch.withgoogle.com/docs](https://stitch.withgoogle.com/docs/) redirects incorrectly, open the target path under the same host (e.g. `https://stitch.withgoogle.com/docs/learn/device-types/`).\n\n## Available Plugins\n\n### Design (`stitch-design`)\n\nCore design workflows for creating, managing, and optimizing designs within Stitch.\n\n| Skill | Description | Prompt Example |\n|---|---|---|\n| [stitch::code-to-design](plugins/stitch-design/skills/code-to-design/) | Convert frontend code (React, Vue, etc.) to a Stitch Design via HTML extraction + design system + upload | *\"Upload the frontend code at `/path/to/dashboard` into a Stitch project named 'Dashboard-Migration-2026'.\"* |\n| [stitch::generate-design](plugins/",
+        "description": "Библиотека Stitch Design Skills предоставляет набор плагинов‑навыков, совместимых с сервером Stitch MCP и реализованных по открытому стандарту Agent Skills. Каждый навык упакован в отдельный плагин (design, build, utilities) и может быть установлен через менеджер плагинов Codex, Claude Code, Cursor или вручную для OpenCode, что позволяет использовать их в разных код‑генераторах без изменения кода агента. Основная задача – автоматизировать типовые операции разработки: преобразование существующего фронтенд‑кода в дизайн‑модель Stitch, генерацию новых дизайнов, сборку компонентов и вспомогательные утилиты.\n\nДля пользователя это выглядит как простая команда установки, например `codex plugin marketplace add google-labs-code/stitch-skills … --sparse plugins/stitch-design`, после чего нужные навыки становятся доступными через CLI‑интерфейс `npx plugins`/`npx skills`. Навыки могут работать как глобально, так и в пределах проекта, а при работе с OpenCode требуется скопировать каталоги навыков в `.opencode/skills` и добавить удалённый MCP‑endpoint в конфигурацию. Важно помнить, что навыки зависят от запущенного сервера Stitch MCP и требуют корректных переменных окружения и учётных данных, иначе их вызовы будут недоступны.\n\nКлючевые возможности: 1) конверсия кода в дизайн‑модель (`stitch::code-to-design`), позволяющая мигрировать существующие UI‑проекты в экосистему Stitch; 2) генерация новых дизайнов (`stitch::generate-design`) с поддержкой различных фреймворков; 3) набор утилит для сборки и управления компонентами. При выборе отдельных навыков необходимо учитывать их взаимные зависимости, иначе часть функционала может быть недоступна. Таким образом, набор подходит для команд, желающих интегрировать автоматизированный дизайн‑процесс в свои CI/CD‑конвейеры, используя уже настроенный Stitch MCP.",
+        "joke": "Если ваш дизайн‑генератор будет медленнее, чем кофе‑брейк, значит, он всё ещё в режиме \"code-to-design\".",
+        "evidence_quote": "A collection of agent skills and plugins for [Google Stitch](https://stitch.withgoogle.com), following the [Agent Skills](https://agentskills.io) open standard. Compatible with coding agents such as Codex, Antigravity, Gemini CLI, Claude Code, Cursor, and OpenCode (manual install)."
       },
       "google/elephant-goldfish-model": {
         "policy_version": 7,
@@ -556,6 +622,14 @@
         "joke": "",
         "evidence_quote": "**🆕 Tacit: AnyJev's self-distilled models, 1.7B to 9B, are on\n> [Hugging Face](https://huggingface.co/collections/morriszjm/tacit-6ac41d0b50af9e5417c5c234).** One\n> forward pass per decision. With `adaptive=True`, a capped share of low-confidence decisions goes to\n> the model's own reasoning."
       },
+      "nvidia/skillevaluator": {
+        "policy_version": 7,
+        "source_description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+        "source_readme": "# SkillEvaluator\n\n![SkillEvaluator wordmark](https://raw.githubusercontent.com/NVIDIA/SkillEvaluator/ad2815fe78c045db91d230681d32863698da08cf/docs/assets/skillevaluator-wordmark.svg)\n\n[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)\n[![Python](https://img.shields.io/badge/Python-3.12%20%7C%203.13%20%7C%203.14-blue.svg)](https://www.python.org/)\n[![PyPI](https://img.shields.io/pypi/v/skillevaluator.svg?label=PyPI)](https://pypi.org/project/skillevaluator/)\n[![Documentation](https://img.shields.io/badge/Documentation-docs.nvidia.com-blue.svg)](https://docs.nvidia.com/skills/skillevaluator/)\n[![Paper](https://img.shields.io/badge/arXiv-2608.20614-b31b1b.svg)](https://arxiv.org/abs/2608.20614)\n[![NVIDIA Developer Blog](https://img.shields.io/badge/Blog-NVIDIA%20Developer-76B900.svg)](https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/)\n\n> 📺 **Livestream:** [Ask the Experts: Evaluating Agent Skills](https://www.youtube.com/watch?v=4rI0zATFxYI)\n\nSkillEvaluator checks AI agent skills and measures their effect on task results:\nstart with quality checks, then compare runs with and without a skill.\n\nAgent skills are folders of instructions and supporting files defined by the\n[Agent Skills specification](https://agentskills.io/). SkillEvaluator is part of\nthe [NVIDIA Verified Skills pipeline](https://github.com/NVIDIA/skills).\n\n## Get started\n\nThree ways in, one CLI, same results.\n\n<table>\n<tr>\n<th width=\"33%\">1. Run the CLI directly</th>\n<th width=\"33%\">2. Add it to your repo via CI</th>\n<th width=\"33%\">3. Wire it to your agent</th>\n</tr>\n<tr valign=\"top\">\n<td>\n\nInstall (or `uv tool install`):\n\n```bash\npip install skillevaluator\n```\n\nRun all Tier 1 checks, no API key:\n\n```bash\nskillevaluator validate \\\n  ./my-skill --tiers 1\n```\n\nOr run from a clone: [Quickstart](#quickstart).\n\n</td>\n<td>\n\nCheck changed skills on every pull request. On GitHub, run:\n\n```bash\nskillevaluator ci init\n```\n\nIt opens a setup PR. On GitLab, copy the [CI template](https://github.com/NVIDIA/SkillEvaluator/tree/main/ci/bundles/0.9.0).\n\n</td>\n<td>\n\nAdd the [SkillEvaluator skill](skills/skillevaluator/) to Claude Code, Codex or any skill-aware agent:\n\n```bash\nnpx skills add \\\n  NVIDIA/SkillEvaluator\n```\n\nThen ask: *\"Is my skill any good?\"* No Node.js? [Copy the folder](docs/agent-skill.mdx#install).\n\n</td>\n</tr>\n</table>\n\nGuides: [installation](https://docs.nvidia.com/skills/skillevaluator/installation),\n[CI setup](docs/cli-onboarding.mdx) ([GitHub](docs/github-actions.mdx),\n[GitLab](docs/gitlab-ci.mdx), [report examples](ci/examples/README.md)) and\n[agent skill](docs/agent-skill.mdx).\n\n## Quickstart\n\nBoth paths use bundled `text-analyzer`.\n\n| Start here | Requires | First result |\n| --- | --- | --- |\n| [Run without an LLM](#run-without-an-llm) | Git and uv | A deterministic quality score and findings |\n| [Use NVIDIA Build](#use-nvidia-build) | Git, uv, and a Build API key | Model-backed rubric scores and feedback |\n\nInstall [uv](https://docs.astral.sh/uv/getting-started/installation/) and Git,\nthen get the example:\n\n```bash\ngit clone --depth 1 https://github.com/NVIDIA/SkillEvaluator.git\ncd SkillEvaluator\n```\n\nuv provisions Python 3.13 and dependencies. For standalone installation, see\n[Installation](https://docs.nvidia.com/skills/skillevaluator/installation).\n\n### Run without an LLM\n\n```bash\nuv run --python 3.13 skillevaluator quality-check \\\n  src/skillevaluator/tier3/reference_skills/text-analyzer \\\n  -r cli -r json -o reports/first-quality\n```\n\nNo API key, scanner, GPU or Docker is needed. The example scores **86.2/100 (B)**,\nexits `0` and saves `reports/first-quality/skillevaluator-quality.json`. The\npassing threshold defaults to 70.\n\nThis checks static quality; publication evidence stays `INCOMPLETE`. Security\nneeds scanners; agent impact needs live evaluation. Replace the example path\nwith your skill directory. See the\n[keyless walkthrough](docs/quickstart.mdx#run-without-an-llm).\n\n### Use NVIDIA Build\n\nEligible NVIDIA Developer Program members can use NVIDIA-hosted endpoints for\n**free prototyping**, subject to [access terms and rate limits](https://docs.api.nvidia.com/nim/docs/product).\n\n1. Sign in at [build.nvidia.com](https://build.nvidia.com/) and complete enrollment.\n2. Open a model page, select **Get API Key**, and generate your key.\n3. Set the provider and key in the same terminal, then run the rubric check:\n\n```bash\nexport SKILL_EVAL_LLM_PROVIDER=nv_build\nexport NVIDIA_API_KEY='nvapi-...'\nuv run --python 3.13 --extra llm skillevaluator rubric-eval \\\n  src/skillevaluator/tier3/reference_skills/text-analyzer \\\n  -r cli -r json -o reports/first-build\n```\n\nThe command sends skill documentation to the model and saves feedback in\n`reports/first-build/skillevaluator-rubric.json`. No agent runtime or Docker is\nneeded. Completed evaluations can still fail rubric thresholds.\n\nThe same key supports Tier 2 embeddings and supported Tier 3 agents. See the\n[Build ",
+        "description": "SkillEvaluator – это многоуровневая система, позволяющая проверять навыки AI‑агентов и измерять, как их наличие меняет результаты выполнения задач. Сначала запускаются наборы проверок качества (Tier 1), затем сравниваются запуски агента с включённым и без навыка, что даёт количественную оценку влияния. Инструмент работает как отдельный CLI, его можно интегрировать в CI‑pipeline или подключить к работающему агенту, что делает процесс проверки воспроизводимым и автоматизированным.\n\nДля базовой проверки не требуется ни API‑ключа, ни GPU: команда `skillevaluator quality-check` анализирует статический контент навыка и выдаёт детерминированный балл (по умолчанию порог 70). При наличии доступа к NVIDIA Build можно добавить модель‑бэкенд, получить рубрическую оценку и более глубокий фидбэк, отправив документацию навыка в LLM‑сервис. Таким образом, пользователи получают как быстрый «скрининг» качества, так и возможность провести синтетическую оценку с учётом семантического перекрытия и реального поведения агента.\n\nСценарий применения: разработчик добавляет новый навык в репозиторий, настраивает `skillevaluator ci init` и получает автоматическую проверку при каждом pull‑request. Если проверка проходит, навык можно безопасно задеплоить в продакшн‑агента; если нет – отчёты указывают, какие аспекты (качество кода, полнота документации, влияние на задачи) требуют доработки. Требования: Python 3.12‑3.14, Git и утилита `uv` для управления зависимостями; для LLM‑оценки нужен API‑ключ NVIDIA Build и членство в NVIDIA Developer Program. Ограничения: без ключа доступна только статическая проверка, а более продвинутые рубрические оценки зависят от внешних сервисов и их лимитов.",
+        "joke": "Если ваш навык провалит Tier 1, значит, агент будет жаловаться на «недостаток качества» ещё до первого шага.",
+        "evidence_quote": "SkillEvaluator checks AI agent skills and measures their effect on task results:\nstart with quality checks, then compare runs with and without a skill."
+      },
       "openai/codex-security": {
         "policy_version": 7,
         "source_description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
@@ -563,6 +637,14 @@
         "description": "Codex Security — инструмент от OpenAI для автоматического обнаружения, анализа и исправления уязвимостей в исходном коде. Он доступен как глобальная CLI‑утилита и как TypeScript SDK, что позволяет интегрировать сканирование в терминал, CI‑конвейеры или собственные приложения. Пользователь может просканировать весь репозиторий, отдельные пути или изменения между ветками, а также выбрать режим «deep», который повторяет стандартный скан и возвращает дедуплицированные результаты. После обнаружения находок система предлагает валидацию, генерацию патчей и проверку уже применённых исправлений, а также формирует черновики SECURITY.md и сохраняет модели угроз для последующего аудита.\n\nВстроенные возможности включают автоматическое определение владельцев кода на основе истории Git, экспорт результатов в форматы SARIF, JSON и CSV, а также интеграцию с системами трекинга задач (Linear, Jira, GitHub). Для больших проектов предусмотрены bulk‑сканы, позволяющие запускать независимые проверки нескольких репозиториев в одной кампании, и возможность импортировать результаты сторонних сканеров. При работе в облаке требуется только API‑ключ, а для headless‑машин поддерживается аутентификация через устройство или SSH. Требования к окружению: Node.js 22.x, 24.x или 26.x и Python 3.10+ (с tomli).",
         "joke": "Сканировать код так же просто, как запустить `cs scan .` – только без кофе‑брейка.",
         "evidence_quote": "Codex Security helps you find, investigate, and fix vulnerabilities in your code.\nUse its security workflows in Codex, or automate them with the\n`@openai/codex-security` CLI and TypeScript SDK."
+      },
+      "opsafari/hypoarena": {
+        "policy_version": 7,
+        "source_description": "Scientific hypothesis-discovery workbench: grounded hypothesis-evidence graphs, synthetic literature with planted causal chains, generate-debate-evolve loops over pluggable offline adapters, Elo tournaments recovering planted skill order, paraphrase dedup, Bayesian evidence accumulation, reproducible reports. NumPy core, CPU-only torch extra.",
+        "source_readme": "# hypoarena\n\n`hypoarena` is a **fully offline** scientific hypothesis-discovery workbench.\nIt decomposes the **mechanism layer** of generate–debate–evolve \"AI co-scientist\"\npipelines into individually testable components: a citation-bearing\nhypothesis/evidence graph, a synthetic literature factory, span-level grounding\nverification, pluggable agent adapters, Bradley–Terry / Elo tournaments,\nparaphrase deduplication (TF-IDF, MinHash LSH), hypothesis evolution operators,\nand Bayesian evidence accumulation.\n\nAt runtime the package depends only on NumPy. PyTorch (CPU-only) is an optional\nextra used solely to demonstrate a small trainable ranker. Every default test\nand example runs without network access, without calling real models, and\nwithout downloading weights.\n\n## Installation\n\n```bash\npython -m venv .venv\n.venv/bin/pip install -e \".[dev]\"          # development env (hatchling, pytest, ruff, mypy)\n.venv/bin/pip install -e \".[dev,torch]\" \\\n    --extra-index-url https://download.pytorch.org/whl/cpu   # when the optional ranker is needed\n```\n\n## Quick start\n\n```bash\n.venv/bin/hypoarena demo --chains 2 --chain-length 2 --out /tmp/hya\n```\n\nThis runs the complete pipeline offline over a synthetic corpus, prints whether\neach planted causal chain was recovered, and writes `report.md` / `report.html`.\nIt is a mechanism demonstration and makes no claim about real scientific\ndiscovery capability. A typical run reports every planted link (e.g.\n`planted links: 6  recovered: 6  rate: 1.0` on the demo corpus) and ends with an\nexplicit note that it is a synthetic demonstration only.\n\n## Common commands\n\n| Command | Purpose |\n| --- | --- |\n| `make build` | Build a wheel with the local venv (`--no-isolation`) |\n| `make test` | Fast test suite (excludes the `slow` mark) |\n| `make test-all` | Full suite (includes `slow` / `model` tests) |\n| `make format` / `make format-check` | ruff formatting and its check mode |\n| `make lint` | ruff check + format --check |\n| `make typecheck` | mypy static analysis |\n| `make demo` | End-to-end offline demonstration |\n\n## CLI\n\nThe `hypoarena` command-line tool exposes one subcommand per pipeline stage, in\npipeline order: `corpus`, `generate`, `verify`, `dedup`, `debate`, `rank`,\n`evolve`, `accumulate`, `report`, and `demo`. All of them run offline over\nsynthetic corpora. One-shot demonstration:\n\n```console\n$ hypoarena demo --chains 2 --chain-length 2 --out /tmp/hya\n```\n\nSubcommand options, shared arguments, and exit codes are documented in\n[docs/cli.md](docs/cli.md).\n\n### What each stage does\n\n- **corpus** — generate a deterministic synthetic literature with planted causal\n  chains, competing hypotheses, paraphrase clusters, and controllable noise\n  (distractors, contradictory findings); every corpus carries a provenance hash.\n- **generate / debate / evolve** — run the generate–debate–evolve loop over the\n  pluggable agent protocol (propose / critique / revise) with scripted, replay,\n  or loopback-mock agents; evolution operators (scope narrowing, variable\n  substitution, mechanism crossover, claim decomposition) preserve graph\n  validity by construction.\n- **verify** — span-level grounding checks: citation existence, entity overlap,\n  polarity consistency, and numeric agreement, with graded flags for ungrounded\n  or weakly grounded claims. Adversarial fixtures (fabricated citations,\n  drifted numbers, negation flips) must be caught.\n- **dedup** — normalized-text hashing, char/word n-gram Jaccard, TF-IDF cosine,\n  and MinHash LSH with documented false-positive/false-negative behavior;\n  planted paraphrase clusters are detected at measured recall/precision.\n- **rank** — round-robin pairwise judging over rubric scores (novelty,\n  testability, grounding, consistency) with Bradley–Terry/Elo updates, draw\n  handling, and K-factor decay. Property tests assert that ratings recover a\n  planted skill order within tolerance on seeded runs.\n- **accumulate** — Bayesian belief updating from graded evidence with prior\n  sensitivity analysis, contradiction policies, and golden numeric tests.\n- **report** — Markdown and self-contained HTML reports (rankings, grounding\n  flags, dedup clusters, belief updates) with hostile-text escaping, embedded\n  run metadata, and an honest limitations section; no network access required.\n\n### Artifact stability\n\nAll JSONL/JSON artifacts are written through a single canonical serializer\n(sorted keys, fixed separators, floats quantized at their production points), so\nrun outputs — and the golden digests pinned over them — are byte-identical\nacross platforms and interpreter versions. Checkpointed runs replay completed\nstages from the ledger and produce artifacts byte-identical to straight runs.\n\n## Examples and documentation\n\n`examples/` contains three fully offline, runnable examples — planted-corpus\ngeneration with grounding verification, a full generate→debate→rank tournament\nshowing Elo recovery of a planted skill order, and an evolution + dedup cycle\nwith measured novelt",
+        "description": "hypoarena — это полностью офлайн‑рабочая среда для исследования гипотез в научных текстах. Пакет разбивает сложный цикл «генерировать → дебатировать → эволюционировать», типичный для AI‑со‑учёного, на отдельные проверяемые компоненты: построение графа гипотеза‑доказательство, синтетическое создание литературы с заранее зашитыми причинно‑следственными цепочками, проверка обоснованности на уровне спанов, удаление парафразов, турниры по парному ранжированию (Bradley‑Terry/Elo) и байесовское накопление доказательств. Каждый этап реализован как отдельный CLI‑подкоманд, который работает без доступа к сети и без загрузки реальных моделей; единственная необязательная зависимость — CPU‑only PyTorch, используемая лишь для демонстрации небольшого обучаемого ранкера.\n\nСинтетический корпус генерируется детерминированно, включающи​я «засаженные» причинные цепочки, конкурирующие гипотезы и кластеры парафразов, а также шум‑дистракторы. После генерации гипотезы проходят проверку обоснованности (наличие цитат, согласованность сущностей, числовая согласованность), затем дублируются с помощью TF‑IDF, MinHash LSH и других методов, после чего участвуют в парных турнирах, где Elo‑рейтинги восстанавливают изначальный порядок навыков. Наконец, байесовский модуль аккумулирует полученные оценки, формируя отчёт в Markdown и автономный HTML, полностью воспроизводимый на любой платформе.\n\nДля практического применения гипотезы можно, например, смоделировать исследовательский процесс в области биомедицины, проверяя, насколько автоматические агенты способны обнаружить известные причинные связи в синтетических публикациях, а затем оценить их способность к дедупликации и ранжированию новых идей. Ограничения проекта: все данные синтетические, реальная научная ценность не гарантируется; работа полностью офлайн, поэтому любые интеграции с внешними LLM‑моделями требуют отдельной реализации, а текущий ранкер работает лишь на CPU.",
+        "joke": "Если ваш AI‑учёный не найдёт ни одной «засаженной» цепочки, значит, он всё ещё в режиме «генерация без доказательств».",
+        "evidence_quote": "`hypoarena` is a **fully offline** scientific hypothesis-discovery workbench.\nIt decomposes the **mechanism layer** of generate–debate–evolve \"AI co-scientist\"\npipelines into individually testable components: a citation-bearing\nhypothesis/evidence graph, a synthetic literature factory, span-level grounding\nverification, pluggable agent adapters, Bradley–Terry / Elo tournaments,\nparaphrase deduplication (TF-IDF, MinHash LSH), hypothesis evolution operators,\nand Bayesian evidence accumulation."
       },
       "pallavi-shekhar/ai-engineering-interview-questions-company-wise": {
         "policy_version": 4,
@@ -739,6 +821,14 @@
         "description": "ZCode – это AI‑платформа для программирования, объединяющая настольное приложение, веб‑интерфейс и терминальный агент. Репозиторий содержит клиентскую часть, серверные сервисы, общий UI и исходники CLI‑агента, позволяя разработчикам запускать и отлаживать инструменты как локально, так и в удалённой среде (SSH/WSL). Подойдёт тем, кто хочет интегрировать генерацию кода и автоматизацию в свои проекты, используя единый интерфейс и возможность расширять функциональность через UI‑плагины. Ограничение: для полноценного использования требуется подготовка окружения с конкретными версиями Git, Node.js 24.14.0 и pnpm 10.33.2, а также выполнение специальных bootstrap‑команд для загрузки удалённых ресурсов.",
         "joke": "Почему AI‑программист всегда в хорошем настроении? Потому что у него всегда есть «запуск» в виде ZCode!",
         "evidence_quote": "ZCode 是 AI 编程工作台，提供桌面应用、浏览器界面和终端 Agent。本仓库包含客户端、后端服务、共享 UI，以及 Agent CLI 与运行时源码。"
+      },
+      "zichuanlan/freebie-radar": {
+        "policy_version": 7,
+        "source_description": "白嫖资源聚合雷达：57 个源定时采集 + AI 二审过滤假福利 + 获取方式分级隔离抽奖/试用/推广 + Telegram 即时推送",
+        "source_readme": "<div align=\"center\">\n  <img src=\"docs/logo.svg\" alt=\"Resource Radar Logo\" width=\"88\" height=\"88\" />\n  <h1>资源雷达 · Resource Radar</h1>\n  <p><strong>全网福利、黑五好价、拼车交易、开源项目与新闻资讯的多兴趣自托管聚合雷达站</strong></p>\n  <p>五大内容形态分流 · 21 类分频道目录 · 统一屏蔽词省额度 · AI 语义定级 · 多路由精准推送</p>\n\n  <p>\n    <a href=\"README.md\">简体中文</a> · <a href=\"README.en.md\">English</a>\n  </p>\n\n  <p>\n    <img src=\"https://img.shields.io/badge/Node.js-%E2%89%A522.5-339933?logo=nodedotjs&logoColor=white\" alt=\"Node.js\" />\n    <img src=\"https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white\" alt=\"Docker Ready\" />\n    <img src=\"https://img.shields.io/badge/SQLite-Built--in-003B57?logo=sqlite&logoColor=white\" alt=\"SQLite\" />\n    <img src=\"https://img.shields.io/badge/React-19%20%2B%20Vite-61DAFB?logo=react&logoColor=black\" alt=\"React\" />\n    <img src=\"https://img.shields.io/badge/License-MIT-blue.svg\" alt=\"MIT License\" />\n  </p>\n</div>\n\n---\n\n**资源雷达（Resource Radar / repo: `freebie-radar`）** 是一款轻量、开箱即用的多兴趣社区信息聚合与精准推送工作台。它从各大开发者社区、游戏平台、软件限免站、GitHub、Reddit、Bluesky、Telegram 频道及自定义 RSS 采集信息，并通过 **「规则初筛与统一屏蔽 → AI 语义定级与分流 → 分频道目录呈现 → 多路由精准推送」** 把每条内容送到它该去的位置：\n\n- 只想纯粹蹲羊毛？首页默认 **「真福利精选」** 严格锁定 AI 验真的 `freebie`（直接白嫖 + 实操可领的有条件福利），绝不被付费好价、拼车、二手或新闻污染。\n- 想看 **黑五 VPS 好价 / 合规拼车 / 开源项目 / 重大新闻与科技资讯**？一键切换顶部兴趣频道即可浏览各自专属的下级分类、真实有效计数与图文卡片，并可分别配置互不干扰的 Telegram 专题推送路由。\n\n---\n\n> 在线演示：<https://radar.zichuanlan.top>\n\n---\n\n## 界面预览\n\n| 工作台列表视图（多兴趣频道栏 + 跨源折叠 + 兑换码一键复制） | 三列图文卡片视图（零额外请求封面图提取 + 响应式 2列/3列网格） |\n| :---: | :---: |\n| ![工作台列表视图](docs/ui-public.png) | ![三列图文卡片视图](docs/ui-grid.png) |\n\n| 多路由精准推送（分形态/分类/获取方式/关键词定制即时或攒批路由） | AI 语义引擎（21 类分流、自适应学习与零 Token 存量重整分类） |\n| :---: | :---: |\n| ![多路由精准推送](docs/ui-push-panel.png) | ![AI 语义引擎](docs/ui-ai-panel.png) |\n\n\n---\n\n## 核心特性\n\n### 1. 多兴趣频道与「形态 × 领域 × 获取方式」正交分类\n- **5 大内容形态（`kind`）**：`freebie`（白嫖福利）、`deal`（特价好价·含黑五 VPS/拼车/二手出鸡）、`opensource`（开源项目）、`info`（新闻资讯·指南）、`noise`（纯求助/灌水噪音）。\n- **21 个垂直领域（`category`）**：覆盖 `ai`（AI 额度）、`vps`（VPS/主机）、`cloud`（云服务）、`domain`（域名/建站）、`opensource`（开源软件）、`software`（软件授权）、`dev`（开发/工程）、`design`（设计/素材）、`security`（安全/网络）、`hardware`（硬件/数码）、`media`（影音会员）、`game`（游戏）、`carpool`（拼车/合租）、`trade`（二手/交易）、`headline`（时政/要闻）、`finance`（财经/商业）、`news`（综合快讯）、`goods`（实物/优惠/话费券）、`invite`（邀请码）、`edu`（教育/电子书）、`other`（其它）。\n- **分频道自适应下级分类**：\n  - 「真福利精选 / 完全白嫖」只展现福利类目（隐藏拼车/交易/新闻要闻），统计数字实时排除 `noise` 假数；\n  - 「新闻资讯」自动切换为资讯栏目视角（时政/要闻、财经/商业、AI 前沿、开发工程、开源生态、安全/漏洞、硬件数码、综合快讯）；\n  - 切换频道自动重置不兼容的形态、获取方式与价格上限，避免空屏串态。\n- **6 级获取方式（`obtain`）**：严格区分 `free`（直接白嫖）、`conditional`（有条件）、`lottery`（抽奖）、`trial`（试用/Demo）、`promo`（推广/引流）、`paid`（需付费）。\n\n### 2. 三层高信噪比治理（统一屏蔽 · AI 定级 · 零 Token 重整）\n- **统一屏蔽词防火墙（省额度 + 隐网页 + 拦推送）**：在「订阅与屏蔽」配置关键词、正则或分源规则，不仅隐藏网页条目、拦截推送与日报，**在采集入库送 AI 审核及历史补审前也会直接跳过**，无需在两处重复配置。\n- **AI 语义审核引擎**：支持任意 OpenAI 兼容接口，单次输出 `keep`、`kind`、`category`、`obtain`、`quality`（1–5 星）与中文理由；支持白嫖专源免审直通、追加补充规则、从收藏/关闭自动学习个人偏好。\n- **零 Token 存量分类重整**：内置「重整分类 (0 Token)」入口与 CLI，更新关键词规则后可一键将历史 `other` 条目零成本归位到细分类目。\n\n### 3. 三种响应式视图与零请求封面图提取\n- **单行紧凑 / 2列卡片 / 3列卡片** 一键切换并记住偏好。\n- 10 路采集器（Epic / Steam / GamerPower / CheapShark / GOG / RSS `<media:content>` & `<img>` / Telegram / LINUX DO / V2EX / 本地回环）零额外请求提取封面图，纯文本条目自动收起封面区避免网格空洞。\n\n### 4. 多路由精准 Telegram 推送\n- **全局策略 + 多专题路由**：支持一键新增或可视化编辑独立路由（例如：「🎁 真福利直推」「🖥 黑五/VPS 即时提醒」「📦 开源项目攒批汇总」「📰 新闻资讯早报」），每条路由可单独设定形态、分类、获取方式、关键词、最高价、最低分、即时/攒批模式与自定义前缀头。\n- **推送时机与兜底**：支持「推送前先过 AI（防误推）」与「极速抢码先推后审（后台补审后自动补推）」；提供 `strict` / `rule_fallback` / `ignore_ai` 三种 AI 兜底模式。\n- **防误推二次校验与诊断预览**：攒批发送前二次回查 DB 状态与最新屏蔽词；支持查看拦截原因分布与路由命中预览；内置夜间静默时段与多语言/时效闸门。\n\n### 5. 极简部署与单密码鉴权分区\n- **零外部数据库**：基于 `node:24-alpine` 原生运行 TypeScript，内置 `node:sqlite`（WAL 模式 + 内存上限调优，自动增量迁移至 Schema v17），日常运行内存 < 100MB。\n- **63 个内置数据源（默认精选启用 33 个）**：覆盖 LINUX DO、NodeSeek（含福利/资讯/拼车交易板块）、V2EX、OpenRouter `:free` 模型、GitHub、Epic、Steam、GamerPower、CheapShark、ITAD、SharewareOnSale、TickCoupon、Reddit、Bluesky、Telegram 频道，并支持自定义 RSS 与本地回环/油猴脚本抓取知乎/小红书/小黑盒。\n- **公开/管理隔离**：配置 `ADMIN_TOKEN` 后，资源流与每日精选保持公开浏览，管理配置与写入接口全部自动鉴权保护。\n- **可选的公开多用户模式**：设 `SITE_MODE=public` + LINUX DO OAuth 后，公共内容仍只读共享，但「不想看 / 收藏 / 已读 / 屏蔽词 / 关注词」按登录用户隔离；未登录访客的偏好只存本机浏览器；登录用户可绑自己的 Telegram Bot 收个人推送，也能订阅公开 RSS 或个人专属 RSS。管理权限始终只认 `ADMIN_TOKEN`，OAuth 登录不会提权。详见 [docs/accounts.md](docs/accounts.md)。\n\n---\n\n## 工作流架构\n\n```mermaid\nflowchart LR\n  S[\"63 个内置源 + 自定义 RSS + 回环/油猴\"] --> E[\"规则初筛与特征抽取（10 路封面图 / 兑换码 / 价格 / 双语去重指纹）\"]\n  E --> F{\"统一屏蔽与噪音初筛（block_rules + NOISE_TITLE）\"}\n  F -->|命中屏蔽/硬噪音| D[\"跳过 AI 省额度并隔离\"]\n  F -->|通过| M{\"AI 审核分流\"}\n  M -->|白嫖专源免审| A1[\"直标 freebie · 进精选\"]\n  M -->|AI 语义定级| Q[\"输出 keep · kind · category · obtain · quality\"]\n  Q -->|freebie / deal / opensource / info| P[\"Web 多频道工作台（紧凑 / 2列 / 3列）\"]\n  Q -->|命中多路由规则| R[\"Telegram 多专题路由（即时直推 / 定时攒批 / 每日精选）\"]\n```\n\n---\n\n## 快速开始（开箱即用）\n\n### 方式一：Docker Compose（推荐，1 分钟跑起来）\n\n不需要预先安装 Node.js 或手动建表，**甚至不复制 `.env` 也可以直接启动**：\n\n```bash\ngit clone https://github.com/ZiChuanLan/freebie-radar.git\ncd freebie-radar\n\n# 可选：复制并编辑环境变量（设置 ADMIN_TOKEN 管理密码、Telegram 推送、AI 等）\ncp .env.example .env\n\n# 启动服务（默认监听 http://127.0.0.1:8788）\ndocker compose up -d --build\n```\n\n> **需要采集带 Cloudflare 护盾的站点（如 LINUX DO）？",
+        "description": "Resource Radar — это лёгкая, готовая к использованию платформа для агрегации и точечной рассылки контента из более чем 60 источников (GitHub, Reddit, Telegram‑каналы, RSS и пр.). Сначала данные проходят «правила начального фильтра + единый блокировщик», после чего отправляются в AI‑модуль, который определяет тип (freebie, deal, opensource, info, noise), категорию и способ получения (free, conditional, lottery, trial, promo, paid). Затем элементы распределяются по пяти основным каналам и 21 вертикальной категории, а выбранные пользователем маршруты автоматически отправляются в Telegram‑боты с поддержкой мгновенного и пакетного режима. Среди ключевых возможностей: 1) ортогональная классификация «форма × область × способ получения», позволяющая изолировать чисто бесплатные предложения от рекламных, новостей и вторичного рынка; 2) три‑уровневая система снижения шума — универсальный блокировщик, AI‑семантическая проверка и «zero‑token» пере‑классификация исторических записей без дополнительных расходов; 3) гибкая настройка Telegram‑рассылок, где каждый маршрут может иметь собственные фильтры по типу, категории, цене, ключевым словам и времени отправки, а также возможность двойной проверки перед публикацией. Пользователь может быстро запустить сервис через Docker‑Compose, не устанавливая Node.js и без предварительной настройки базы — встроенная SQLite работает в режиме WAL, потребляя менее 100 МБ памяти. При необходимости можно включить публичный multi‑user режим с OAuth, где предпочтения, подписки и личные Telegram‑боты хранятся отдельно для каждого аккаунта, а администрирование остаётся защищённым единственным токеном.",
+        "joke": "",
+        "evidence_quote": "**资源雷达（Resource Radar / repo: `freebie-radar`）** 是一款轻量、开箱即用的多兴趣社区信息聚合与精准推送工作台。它从各大开发者社区、游戏平台、软件限免站、GitHub、Reddit、Bluesky、Telegram 频道及自定义 RSS 采集信息，并通过 **「规则初筛与统一屏蔽 → AI 语义定级与分流 → 分频道目录呈现 → 多路由精准推送」** 把每条内容送到它该去的位置："
       }
     },
     "daily_retry_at": {
@@ -759,7 +849,9 @@
       "jev-chat/jev-chat-jarvis": "2026-11-09T10:32:23.460442293Z",
       "jhaizhou-ops/s2arm": "2026-11-10T19:54:55.651603211Z",
       "kryvora-network/kryvora-node": "2026-11-09T10:32:41.310378426Z",
+      "liuziyu77/valen": "2026-11-16T16:31:40.809227516Z",
       "newliver666/apk-reverse": "2026-11-09T10:32:37.481788403Z",
+      "noniv/abyssal-garden": "2026-11-16T16:29:06.763213530Z",
       "nvidia/model-optimizer": "2026-11-09T10:34:55.775146046Z",
       "nvm-sh/nvm": "2026-11-13T19:59:30.915849851Z",
       "ollaya-dev/ollaya": "2026-11-14T19:52:08.528459890Z",
@@ -259586,6 +259678,1858 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 56734,
+      "forks": 4797,
+      "language": "TypeScript",
+      "description": "Chrome DevTools for coding agents",
+      "html_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "topics": [
+        "browser",
+        "chrome",
+        "chrome-devtools",
+        "debugging",
+        "devtools",
+        "mcp",
+        "mcp-server",
+        "puppeteer"
+      ],
+      "created_at": "2025-09-11T10:39:55Z",
+      "updated_at": "2026-11-15T16:22:27Z",
+      "pushed_at": "2026-11-15T03:06:25Z",
+      "license": "Apache-2.0",
+      "open_issues": 131,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Chrome DevTools for coding agents",
+          "full_name": "ChromeDevTools/chrome-devtools-mcp",
+          "language": "TypeScript",
+          "trending_stars_period": 718,
+          "trending_total_forks": null,
+          "trending_total_stars": 56734,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DevedevT/FFmpeg-GUI-Editor-Windows",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 1541,
+      "forks": 1,
+      "language": "Visual Basic .NET",
+      "description": "Lightweight portable FFmpeg GUI & lossless video trimmer for Windows (ready-to-use .exe). Supports English, Russian, Chinese, German, French & Italian.",
+      "html_url": "https://github.com/DevedevT/FFmpeg-GUI-Editor-Windows",
+      "topics": [
+        "converter",
+        "ffmpeg",
+        "ffmpeg-command",
+        "ffmpeg-gui",
+        "ffmpeg-libraries",
+        "ffmpeg-script",
+        "gui",
+        "gui-application",
+        "image-compression",
+        "media-converter",
+        "media-converter-windows",
+        "video-editing",
+        "video-editor",
+        "video-processing",
+        "windows",
+        "windows-10",
+        "windows-11",
+        "windows-app",
+        "windows-package",
+        "windows-tools"
+      ],
+      "created_at": "2026-11-12T20:49:07Z",
+      "updated_at": "2026-11-15T16:04:33Z",
+      "pushed_at": "2026-11-13T09:24:36Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T20:49:07Z",
+          "description": "Lightweight portable FFmpeg GUI & lossless video trimmer for Windows (ready-to-use .exe). Supports English, Russian, Chinese, German, French & Italian.",
+          "html_url": "https://github.com/DevedevT/FFmpeg-GUI-Editor-Windows",
+          "stars": 1541,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Dodaios/ste80-humanizer",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 672,
+      "forks": 46,
+      "language": "Python",
+      "description": "STE80 Humanizer: agent skill that removes AI tells and rewrites text 80% of the way to ASD-STE100 (Simplified Technical English), the method Andrej Karpathy shared.",
+      "html_url": "https://github.com/Dodaios/ste80-humanizer",
+      "topics": [
+        "agent-skills",
+        "ai-writing",
+        "asd-ste100",
+        "claude-code",
+        "claude-skills",
+        "codex",
+        "cursor",
+        "humanize-ai-text",
+        "humanizer",
+        "karpathy",
+        "llm",
+        "plain-language",
+        "simplified-technical-english",
+        "writing"
+      ],
+      "created_at": "2026-11-09T17:18:59Z",
+      "updated_at": "2026-11-15T16:11:17Z",
+      "pushed_at": "2026-11-14T14:20:14Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T17:18:59Z",
+          "description": "STE80 Humanizer: agent skill that removes AI tells and rewrites text 80% of the way to ASD-STE100 (Simplified Technical English), the method Andrej Karpathy shared.",
+          "html_url": "https://github.com/Dodaios/ste80-humanizer",
+          "stars": 672,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Eynnzerr/TelemetryCleaner",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 919,
+      "forks": 81,
+      "language": "Kotlin",
+      "description": "基于 Shizuku 免 Root 清除国产安卓 SystemHelper、RegService 等系统预装隐私数据收集模块",
+      "html_url": "https://github.com/Eynnzerr/TelemetryCleaner",
+      "topics": [],
+      "created_at": "2026-11-11T06:25:10Z",
+      "updated_at": "2026-11-15T16:22:21Z",
+      "pushed_at": "2026-11-15T04:47:14Z",
+      "license": "MIT",
+      "open_issues": 11,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-11T06:25:10Z",
+          "description": "基于 Shizuku 免 Root 清除国产安卓 SystemHelper、RegService 等系统预装隐私数据收集模块",
+          "html_url": "https://github.com/Eynnzerr/TelemetryCleaner",
+          "stars": 919,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "FrigadeHQ/yogurt",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 1592,
+      "forks": 91,
+      "language": "TypeScript",
+      "description": "Private AI meeting notes that stay on your computer. A free, open-source alternative to Granola for Mac, Windows and Linux.",
+      "html_url": "https://github.com/FrigadeHQ/yogurt",
+      "topics": [
+        "ai-meeting-assistant",
+        "ai-notetaker",
+        "electron",
+        "granola-alternative",
+        "linux",
+        "llama-cpp",
+        "local-ai",
+        "local-first",
+        "macos",
+        "mcp",
+        "meeting-minutes",
+        "meeting-notes",
+        "offline-first",
+        "open-source",
+        "privacy",
+        "speech-to-text",
+        "transcription",
+        "whisper",
+        "whisper-cpp",
+        "windows"
+      ],
+      "created_at": "2026-11-10T20:01:01Z",
+      "updated_at": "2026-11-15T16:22:47Z",
+      "pushed_at": "2026-11-15T10:51:00Z",
+      "license": "MIT",
+      "open_issues": 28,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T20:01:01Z",
+          "description": "Private AI meeting notes that stay on your computer. A free, open-source alternative to Granola for Mac, Windows and Linux.",
+          "html_url": "https://github.com/FrigadeHQ/yogurt",
+          "stars": 1592,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "GoogleChrome/modern-web-guidance-src",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 6855,
+      "forks": 549,
+      "language": "TypeScript",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "html_url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "topics": [],
+      "created_at": "2026-01-27T20:22:24Z",
+      "updated_at": "2026-11-15T16:22:55Z",
+      "pushed_at": "2026-11-15T12:09:36Z",
+      "license": "Apache-2.0",
+      "open_issues": 396,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Keep your coding agent up to date with the latest web best practices",
+          "full_name": "GoogleChrome/modern-web-guidance-src",
+          "language": "TypeScript",
+          "trending_stars_period": 1220,
+          "trending_total_forks": null,
+          "trending_total_stars": 6855,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HolyArrs/HolyArrs",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 1232,
+      "forks": 63,
+      "language": "Go",
+      "description": "One self-hosted app for your shows, movies and music.",
+      "html_url": "https://github.com/HolyArrs/HolyArrs",
+      "topics": [
+        "docker",
+        "homelab",
+        "jellyfin",
+        "media-server",
+        "plex",
+        "self-hosted"
+      ],
+      "created_at": "2026-11-09T23:53:25Z",
+      "updated_at": "2026-11-15T16:07:33Z",
+      "pushed_at": "2026-11-15T09:28:04Z",
+      "license": "AGPL-3.0",
+      "open_issues": 96,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T23:53:25Z",
+          "description": "One self-hosted app for your shows, movies and music.",
+          "html_url": "https://github.com/HolyArrs/HolyArrs",
+          "stars": 1232,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HybridRobotics/supermimic",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 1537,
+      "forks": 106,
+      "language": "Python",
+      "description": "Humanoid whole-body motion tracking with one differentiable world model.",
+      "html_url": "https://github.com/HybridRobotics/supermimic",
+      "topics": [],
+      "created_at": "2026-11-10T10:46:56Z",
+      "updated_at": "2026-11-15T16:12:01Z",
+      "pushed_at": "2026-11-11T08:06:27Z",
+      "license": "Apache-2.0",
+      "open_issues": 23,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T10:46:56Z",
+          "description": "Humanoid whole-body motion tracking with one differentiable world model.",
+          "html_url": "https://github.com/HybridRobotics/supermimic",
+          "stars": 1537,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "JDhruv14/line-art-animation",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 812,
+      "forks": 125,
+      "language": "TypeScript",
+      "description": "A Claude skill and TypeScript library for animated line-art SVG components: ink figures that walk and react, scenes with a day/night cycle.",
+      "html_url": "https://github.com/JDhruv14/line-art-animation",
+      "topics": [
+        "claude-skill",
+        "line-art",
+        "svg-animation",
+        "typescript"
+      ],
+      "created_at": "2026-11-10T09:25:25Z",
+      "updated_at": "2026-11-15T15:48:53Z",
+      "pushed_at": "2026-11-10T09:25:38Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T09:25:25Z",
+          "description": "A Claude skill and TypeScript library for animated line-art SVG components: ink figures that walk and react, scenes with a day/night cycle.",
+          "html_url": "https://github.com/JDhruv14/line-art-animation",
+          "stars": 812,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Kianuni/Erosion-CN",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 2120,
+      "forks": 429,
+      "language": "Swift",
+      "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+      "html_url": "https://github.com/Kianuni/Erosion-CN",
+      "topics": [],
+      "created_at": "2026-11-10T02:37:31Z",
+      "updated_at": "2026-11-15T16:11:03Z",
+      "pushed_at": "2026-11-15T13:24:40Z",
+      "license": "GPL-3.0",
+      "open_issues": 20,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T02:37:31Z",
+          "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+          "html_url": "https://github.com/Kianuni/Erosion-CN",
+          "stars": 2120,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NVIDIA/SkillEvaluator",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 1419,
+      "forks": 178,
+      "language": "Python",
+      "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+      "html_url": "https://github.com/NVIDIA/SkillEvaluator",
+      "topics": [
+        "agent-evaluation",
+        "agent-plugins",
+        "agent-security",
+        "agent-skills",
+        "agentic-ai",
+        "benchmark",
+        "claude-code",
+        "codex",
+        "evaluate",
+        "evaluation",
+        "plugin",
+        "plugin-evaluation",
+        "security-scanner",
+        "skill-eval",
+        "skill-evals",
+        "skill-evaluation",
+        "skill-evaluator",
+        "skills"
+      ],
+      "created_at": "2026-06-24T02:32:26Z",
+      "updated_at": "2026-11-15T16:23:51Z",
+      "pushed_at": "2026-11-15T12:03:33Z",
+      "license": "Apache-2.0",
+      "open_issues": 25,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+          "full_name": "NVIDIA/SkillEvaluator",
+          "language": "Python",
+          "trending_stars_period": 205,
+          "trending_total_forks": null,
+          "trending_total_stars": 1419,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Noniv/abyssal-garden",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 847,
+      "forks": 130,
+      "language": "JavaScript",
+      "description": "A dreamy underwater world you can swim through in your browser: swaying kelp forests, sunbeams, a sunken ship and manta rays. Everything is generated by code with WebGPU (no images, models or sound files), all in a single 97 KB HTML file.",
+      "html_url": "https://github.com/Noniv/abyssal-garden",
+      "topics": [],
+      "created_at": "2026-11-12T13:57:34Z",
+      "updated_at": "2026-11-15T16:23:30Z",
+      "pushed_at": "2026-11-14T17:41:33Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T13:57:34Z",
+          "description": "A dreamy underwater world you can swim through in your browser: swaying kelp forests, sunbeams, a sunken ship and manta rays. Everything is generated by code with WebGPU (no images, models or sound files), all in a single 97 KB HTML file.",
+          "html_url": "https://github.com/Noniv/abyssal-garden",
+          "stars": 847,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Tencent/LoopForge",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 1285,
+      "forks": 256,
+      "language": "Go",
+      "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+      "html_url": "https://github.com/Tencent/LoopForge",
+      "topics": [
+        "agent-orchestration",
+        "agentic-workflow",
+        "ai-agents",
+        "ai-coding",
+        "claude-code",
+        "code-review",
+        "codebuddy",
+        "codex",
+        "coding-agents",
+        "cursor",
+        "developer-tools",
+        "human-on-the-loop",
+        "llm",
+        "mcp",
+        "multi-agent",
+        "sdlc",
+        "self-hosted",
+        "sop",
+        "workflow-automation",
+        "workflow-engine"
+      ],
+      "created_at": "2026-07-28T03:51:01Z",
+      "updated_at": "2026-11-15T16:22:31Z",
+      "pushed_at": "2026-11-15T11:05:37Z",
+      "license": "Other",
+      "open_issues": 77,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+          "full_name": "Tencent/LoopForge",
+          "language": "Go",
+          "trending_stars_period": 484,
+          "trending_total_forks": null,
+          "trending_total_stars": 1285,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Topkiflare74/ai--manus2.0",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 678,
+      "forks": 5,
+      "language": null,
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "html_url": "https://github.com/Topkiflare74/ai--manus2.0",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai",
+        "llm",
+        "multimodal",
+        "openai",
+        "react",
+        "solidjs",
+        "streaming",
+        "svelte",
+        "tanstack",
+        "tool-calling",
+        "typescript",
+        "typescript-sdk",
+        "vue"
+      ],
+      "created_at": "2026-11-14T19:15:24Z",
+      "updated_at": "2026-11-15T02:16:23Z",
+      "pushed_at": "2026-11-15T10:32:40Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:15:24Z",
+          "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+          "html_url": "https://github.com/Topkiflare74/ai--manus2.0",
+          "stars": 678,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "TrapAccountant/GitHub-Copilot-app",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 670,
+      "forks": 12,
+      "language": null,
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+      "html_url": "https://github.com/TrapAccountant/GitHub-Copilot-app",
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest",
+        "microsoft-copilot",
+        "openai",
+        "prompts",
+        "vue",
+        "xcode",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:16:47Z",
+      "updated_at": "2026-11-14T23:32:14Z",
+      "pushed_at": "2026-11-15T10:36:10Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:16:47Z",
+          "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+          "html_url": "https://github.com/TrapAccountant/GitHub-Copilot-app",
+          "stars": 670,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "TurquoiseDetective/IPTV_Player_2.0",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 669,
+      "forks": 12,
+      "language": "Rust",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+      "html_url": "https://github.com/TurquoiseDetective/IPTV_Player_2.0",
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools",
+        "m3u",
+        "mag",
+        "mpegts",
+        "plex",
+        "streaming",
+        "tv",
+        "xtream",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:25:17Z",
+      "updated_at": "2026-11-14T23:32:17Z",
+      "pushed_at": "2026-11-15T10:36:46Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:25:17Z",
+          "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+          "html_url": "https://github.com/TurquoiseDetective/IPTV_Player_2.0",
+          "stars": 669,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "WarriorRemember/IPTV_Player_2.0",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 674,
+      "forks": 12,
+      "language": "Rust",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+      "html_url": "https://github.com/WarriorRemember/IPTV_Player_2.0",
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools",
+        "m3u",
+        "mag",
+        "mpegts",
+        "plex",
+        "streaming",
+        "tv",
+        "xtream",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:25:25Z",
+      "updated_at": "2026-11-15T15:38:46Z",
+      "pushed_at": "2026-11-15T10:36:10Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:25:25Z",
+          "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+          "html_url": "https://github.com/WarriorRemember/IPTV_Player_2.0",
+          "stars": 674,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "WattBeetleLearn/IPTV_Player_2.0",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 667,
+      "forks": 12,
+      "language": "Rust",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+      "html_url": "https://github.com/WattBeetleLearn/IPTV_Player_2.0",
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools",
+        "m3u",
+        "mag",
+        "mpegts",
+        "plex",
+        "streaming",
+        "tv",
+        "xtream",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:25:28Z",
+      "updated_at": "2026-11-14T23:32:20Z",
+      "pushed_at": "2026-11-15T10:36:42Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:25:28Z",
+          "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+          "html_url": "https://github.com/WattBeetleLearn/IPTV_Player_2.0",
+          "stars": 667,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ZhuLinsen/daily_stock_analysis",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 72426,
+      "forks": 57561,
+      "language": "Python",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "html_url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "topics": [
+        "a-stock",
+        "ai-agent",
+        "aigc",
+        "llm",
+        "quant",
+        "quantitative-finance",
+        "quantitative-trading"
+      ],
+      "created_at": "2026-01-10T06:43:20Z",
+      "updated_at": "2026-11-15T16:20:02Z",
+      "pushed_at": "2026-11-15T15:47:25Z",
+      "license": "MIT",
+      "open_issues": 35,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+          "full_name": "ZhuLinsen/daily_stock_analysis",
+          "language": "Python",
+          "trending_stars_period": 4526,
+          "trending_total_forks": null,
+          "trending_total_stars": 72426,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ZiChuanLan/freebie-radar",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 737,
+      "forks": 120,
+      "language": "TypeScript",
+      "description": "白嫖资源聚合雷达：57 个源定时采集 + AI 二审过滤假福利 + 获取方式分级隔离抽奖/试用/推广 + Telegram 即时推送",
+      "html_url": "https://github.com/ZiChuanLan/freebie-radar",
+      "topics": [],
+      "created_at": "2026-11-12T09:08:11Z",
+      "updated_at": "2026-11-15T16:23:38Z",
+      "pushed_at": "2026-11-15T14:59:24Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T09:08:11Z",
+          "description": "白嫖资源聚合雷达：57 个源定时采集 + AI 二审过滤假福利 + 获取方式分级隔离抽奖/试用/推广 + Telegram 即时推送",
+          "html_url": "https://github.com/ZiChuanLan/freebie-radar",
+          "stars": 737,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 117811,
+      "forks": 12330,
+      "language": "JavaScript",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "html_url": "https://github.com/addyosmani/agent-skills",
+      "topics": [
+        "agent-skills",
+        "antigravity",
+        "claude-code",
+        "codex",
+        "cursor",
+        "skills"
+      ],
+      "created_at": "2026-02-15T20:20:26Z",
+      "updated_at": "2026-11-15T16:18:42Z",
+      "pushed_at": "2026-11-14T04:33:56Z",
+      "license": "MIT",
+      "open_issues": 125,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Production-grade engineering skills for AI coding agents.",
+          "full_name": "addyosmani/agent-skills",
+          "language": "JavaScript",
+          "trending_stars_period": 3670,
+          "trending_total_forks": null,
+          "trending_total_stars": 117811,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "adriadam10/mkw-recomp",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 1116,
+      "forks": 63,
+      "language": "C",
+      "description": "Static recompilation of Mario Kart World (Nintendo Switch 2) to a native PC program",
+      "html_url": "https://github.com/adriadam10/mkw-recomp",
+      "topics": [],
+      "created_at": "2026-11-09T15:40:06Z",
+      "updated_at": "2026-11-15T16:23:32Z",
+      "pushed_at": "2026-11-15T16:22:50Z",
+      "license": "MIT",
+      "open_issues": 148,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T15:40:06Z",
+          "description": "Static recompilation of Mario Kart World (Nintendo Switch 2) to a native PC program",
+          "html_url": "https://github.com/adriadam10/mkw-recomp",
+          "stars": 1116,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ag-ui-protocol/ag-ui",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 17653,
+      "forks": 1777,
+      "language": "TypeScript",
+      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+      "html_url": "https://github.com/ag-ui-protocol/ag-ui",
+      "topics": [
+        "ag-ui-protocol",
+        "agent-frontend",
+        "agent-ui",
+        "agentic-workflow",
+        "ai-agents"
+      ],
+      "created_at": "2025-05-07T12:49:37Z",
+      "updated_at": "2026-11-15T16:23:15Z",
+      "pushed_at": "2026-11-15T02:26:33Z",
+      "license": "MIT",
+      "open_issues": 591,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+          "full_name": "ag-ui-protocol/ag-ui",
+          "language": "TypeScript",
+          "trending_stars_period": 393,
+          "trending_total_forks": null,
+          "trending_total_stars": 17653,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "agentes-chat/agentes-chat",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 1476,
+      "forks": 264,
+      "language": "TypeScript",
+      "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+      "html_url": "https://github.com/agentes-chat/agentes-chat",
+      "topics": [
+        "agentic-ai",
+        "ai-agents",
+        "browser-automation",
+        "chat",
+        "claude",
+        "claude-code",
+        "codex",
+        "collaboration",
+        "computer-use",
+        "docker-compose",
+        "gemini",
+        "grok",
+        "human-in-the-loop",
+        "llm",
+        "mcp",
+        "multi-agent",
+        "openai",
+        "self-hosted",
+        "slack-alternative",
+        "team-chat"
+      ],
+      "created_at": "2026-11-09T00:50:28Z",
+      "updated_at": "2026-11-15T16:07:24Z",
+      "pushed_at": "2026-11-15T16:17:51Z",
+      "license": "AGPL-3.0",
+      "open_issues": 218,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T00:50:28Z",
+          "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+          "html_url": "https://github.com/agentes-chat/agentes-chat",
+          "stars": 1476,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "alexeyw/lot-map",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 860,
+      "forks": 90,
+      "language": "TypeScript",
+      "description": "A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.",
+      "html_url": "https://github.com/alexeyw/lot-map",
+      "topics": [
+        "agent-observability",
+        "ai-agents",
+        "claude",
+        "claude-code",
+        "claude-code-plugin",
+        "developer-tools",
+        "svg-animation",
+        "typescript",
+        "visualization"
+      ],
+      "created_at": "2026-11-09T19:13:52Z",
+      "updated_at": "2026-11-15T15:59:54Z",
+      "pushed_at": "2026-11-15T16:15:15Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T19:13:52Z",
+          "description": "A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.",
+          "html_url": "https://github.com/alexeyw/lot-map",
+          "stars": 860,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "alibaba/open-code-review",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 51821,
+      "forks": 4051,
+      "language": "Go",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "html_url": "https://github.com/alibaba/open-code-review",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "code-review",
+        "code-review-assistant",
+        "harness",
+        "repository-level-context"
+      ],
+      "created_at": "2026-05-18T02:16:36Z",
+      "updated_at": "2026-11-15T16:22:30Z",
+      "pushed_at": "2026-11-15T02:41:14Z",
+      "license": "Apache-2.0",
+      "open_issues": 345,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+          "full_name": "alibaba/open-code-review",
+          "language": "Go",
+          "trending_stars_period": 688,
+          "trending_total_forks": null,
+          "trending_total_stars": 51821,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/skills",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 195181,
+      "forks": 22949,
+      "language": "Python",
+      "description": "Public repository for Agent Skills",
+      "html_url": "https://github.com/anthropics/skills",
+      "topics": [
+        "agent-skills"
+      ],
+      "created_at": "2025-09-22T15:53:31Z",
+      "updated_at": "2026-11-15T16:24:01Z",
+      "pushed_at": "2026-11-14T21:52:49Z",
+      "license": null,
+      "open_issues": 1548,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Public repository for Agent Skills",
+          "full_name": "anthropics/skills",
+          "language": "Python",
+          "trending_stars_period": 6220,
+          "trending_total_forks": null,
+          "trending_total_stars": 195181,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "apex-compute/ANR",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 2000,
+      "forks": 30,
+      "language": "C++",
+      "description": "Apex Neural Rendering (ANR) by Apex Compute",
+      "html_url": "https://github.com/apex-compute/ANR",
+      "topics": [],
+      "created_at": "2026-11-11T04:27:17Z",
+      "updated_at": "2026-11-15T16:21:59Z",
+      "pushed_at": "2026-11-15T09:11:50Z",
+      "license": null,
+      "open_issues": 18,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-11T04:27:17Z",
+          "description": "Apex Neural Rendering (ANR) by Apex Compute",
+          "html_url": "https://github.com/apex-compute/ANR",
+          "stars": 2000,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "backnotprop/plannotator",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 11671,
+      "forks": 1036,
+      "language": "TypeScript",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+      "html_url": "https://github.com/backnotprop/plannotator",
+      "topics": [
+        "agents",
+        "claude-code",
+        "code-review",
+        "codex",
+        "obsidian",
+        "opencode",
+        "pi-mono",
+        "plan-mode",
+        "skills"
+      ],
+      "created_at": "2025-12-28T02:09:40Z",
+      "updated_at": "2026-11-15T16:23:48Z",
+      "pushed_at": "2026-11-15T16:20:45Z",
+      "license": "Apache-2.0",
+      "open_issues": 229,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+          "full_name": "backnotprop/plannotator",
+          "language": "TypeScript",
+          "trending_stars_period": 818,
+          "trending_total_forks": null,
+          "trending_total_stars": 11671,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+          "full_name": "backnotprop/plannotator",
+          "language": "TypeScript",
+          "trending_stars_period": 860,
+          "trending_total_forks": null,
+          "trending_total_stars": 11671,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "deepseek-ai/chat-demo",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 2555,
+      "forks": 490,
+      "language": "TypeScript",
+      "description": "Chat Demo",
+      "html_url": "https://github.com/deepseek-ai/chat-demo",
+      "topics": [],
+      "created_at": "2026-11-12T08:08:19Z",
+      "updated_at": "2026-11-15T16:21:50Z",
+      "pushed_at": "2026-11-13T14:33:08Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T08:08:19Z",
+          "description": "Chat Demo",
+          "html_url": "https://github.com/deepseek-ai/chat-demo",
+          "stars": 2555,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dream-num/univer",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 25358,
+      "forks": 2318,
+      "language": "TypeScript",
+      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+      "html_url": "https://github.com/dream-num/univer",
+      "topics": [
+        "board",
+        "collaboration",
+        "doc",
+        "docx",
+        "excel",
+        "offce365",
+        "office",
+        "pdf",
+        "ppt",
+        "pptx",
+        "presentation",
+        "sdk",
+        "sheet",
+        "slides",
+        "spreadsheet",
+        "univer",
+        "word",
+        "wordprocessor",
+        "workspace",
+        "xlsx"
+      ],
+      "created_at": "2022-09-29T12:09:14Z",
+      "updated_at": "2026-11-15T16:23:24Z",
+      "pushed_at": "2026-11-15T03:11:29Z",
+      "license": "Apache-2.0",
+      "open_issues": 168,
+      "default_branch": "dev",
+      "sources": [
+        {
+          "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+          "full_name": "dream-num/univer",
+          "language": "TypeScript",
+          "trending_stars_period": 1041,
+          "trending_total_forks": null,
+          "trending_total_stars": 25358,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "duwqijlk/muse-protocol",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 888,
+      "forks": 418,
+      "language": "Python",
+      "description": "muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）",
+      "html_url": "https://github.com/duwqijlk/muse-protocol",
+      "topics": [],
+      "created_at": "2026-11-14T01:24:58Z",
+      "updated_at": "2026-11-15T16:21:35Z",
+      "pushed_at": "2026-11-15T02:55:33Z",
+      "license": "Other",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T01:24:58Z",
+          "description": "muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）",
+          "html_url": "https://github.com/duwqijlk/muse-protocol",
+          "stars": 888,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "elementalsouls/Claude-BugHunter",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 6041,
+      "forks": 924,
+      "language": "Python",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "html_url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "topics": [
+        "ai-security",
+        "anthropic",
+        "application-security",
+        "bug-bounty",
+        "bugbounty",
+        "bugcrowd",
+        "claude",
+        "claude-code",
+        "claude-skills",
+        "ethical-hacking",
+        "hackerone",
+        "offensive-security",
+        "pentesting",
+        "red-team",
+        "security-tools",
+        "web-security"
+      ],
+      "created_at": "2026-05-05T11:22:32Z",
+      "updated_at": "2026-11-15T16:22:22Z",
+      "pushed_at": "2026-11-15T11:59:53Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+          "full_name": "elementalsouls/Claude-BugHunter",
+          "language": "Python",
+          "trending_stars_period": 221,
+          "trending_total_forks": null,
+          "trending_total_stars": 6041,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "failsafe-security/artex",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 677,
+      "forks": 204,
+      "language": "Go",
+      "description": "Source-built, locally bound FailSafe distribution of ARTEX (v0.3.15)",
+      "html_url": "https://github.com/failsafe-security/artex",
+      "topics": [],
+      "created_at": "2026-11-10T12:33:18Z",
+      "updated_at": "2026-11-15T16:08:14Z",
+      "pushed_at": "2026-11-11T02:54:02Z",
+      "license": "AGPL-3.0",
+      "open_issues": 8,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-10T12:33:18Z",
+          "description": "Source-built, locally bound FailSafe distribution of ARTEX (v0.3.15)",
+          "html_url": "https://github.com/failsafe-security/artex",
+          "stars": 677,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ggml-org/ggml",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 15823,
+      "forks": 1966,
+      "language": "C++",
+      "description": "Tensor library for machine learning",
+      "html_url": "https://github.com/ggml-org/ggml",
+      "topics": [
+        "machine-learning"
+      ],
+      "created_at": "2022-09-18T17:07:19Z",
+      "updated_at": "2026-11-15T16:20:30Z",
+      "pushed_at": "2026-11-13T08:34:20Z",
+      "license": "MIT",
+      "open_issues": 386,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Tensor library for machine learning",
+          "full_name": "ggml-org/ggml",
+          "language": "C++",
+          "trending_stars_period": 53,
+          "trending_total_forks": null,
+          "trending_total_stars": 15823,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-deepmind/mujoco",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 18045,
+      "forks": 2209,
+      "language": "C++",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "html_url": "https://github.com/google-deepmind/mujoco",
+      "topics": [
+        "mujoco",
+        "physics",
+        "robotics"
+      ],
+      "created_at": "2021-08-27T12:25:48Z",
+      "updated_at": "2026-11-15T16:19:44Z",
+      "pushed_at": "2026-11-15T04:54:37Z",
+      "license": "Apache-2.0",
+      "open_issues": 416,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+          "full_name": "google-deepmind/mujoco",
+          "language": "C++",
+          "trending_stars_period": 1859,
+          "trending_total_forks": null,
+          "trending_total_stars": 18045,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-labs-code/stitch-skills",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 9122,
+      "forks": 1092,
+      "language": "TypeScript",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "html_url": "https://github.com/google-labs-code/stitch-skills",
+      "topics": [],
+      "created_at": "2026-01-16T17:17:17Z",
+      "updated_at": "2026-11-15T16:23:48Z",
+      "pushed_at": "2026-08-17T20:20:23Z",
+      "license": "Apache-2.0",
+      "open_issues": 19,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+          "full_name": "google-labs-code/stitch-skills",
+          "language": "TypeScript",
+          "trending_stars_period": 248,
+          "trending_total_forks": null,
+          "trending_total_stars": 9122,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google/elephant-goldfish-model",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 19537,
+      "forks": 1454,
+      "language": "Python",
+      "description": "Open-source plugin for designing and reviewing software with agents",
+      "html_url": "https://github.com/google/elephant-goldfish-model",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "antigravity",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "codex",
+        "codex-plugin",
+        "coding-agents",
+        "context-engineering",
+        "developer-tools",
+        "gemini",
+        "llm",
+        "multi-agent",
+        "prompt-engineering",
+        "spec-driven-development"
+      ],
+      "created_at": "2026-09-13T16:31:06Z",
+      "updated_at": "2026-11-15T16:23:22Z",
+      "pushed_at": "2026-11-15T13:33:20Z",
+      "license": "Apache-2.0",
+      "open_issues": 111,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source plugin for designing and reviewing software with agents",
+          "full_name": "google/elephant-goldfish-model",
+          "language": "Python",
+          "trending_stars_period": 5539,
+          "trending_total_forks": null,
+          "trending_total_stars": 19537,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "huamidev/GestaltX",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 7715,
+      "forks": 2657,
+      "language": "Swift",
+      "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+      "html_url": "https://github.com/huamidev/GestaltX",
+      "topics": [],
+      "created_at": "2026-11-09T05:15:48Z",
+      "updated_at": "2026-11-15T16:20:38Z",
+      "pushed_at": "2026-11-14T09:27:55Z",
+      "license": "GPL-3.0",
+      "open_issues": 82,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T05:15:48Z",
+          "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+          "html_url": "https://github.com/huamidev/GestaltX",
+          "stars": 7715,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jhaizhou-ops/S2Arm",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 3149,
+      "forks": 558,
+      "language": "C#",
+      "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+      "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+      "topics": [
+        "apple-silicon",
+        "arm64",
+        "game-porting",
+        "ios",
+        "ipados",
+        "macos",
+        "metal",
+        "s2arm",
+        "static-recompilation",
+        "switch"
+      ],
+      "created_at": "2026-11-08T05:49:46Z",
+      "updated_at": "2026-11-15T16:11:54Z",
+      "pushed_at": "2026-11-15T16:21:20Z",
+      "license": "Apache-2.0",
+      "open_issues": 446,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-08T05:49:46Z",
+          "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+          "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+          "stars": 3149,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kolbicz/WQFiles",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 904,
+      "forks": 72,
+      "language": "Objective-C",
+      "description": "File browser, app data manager and cache cleaner for iOS 26 and 27 (worse_query, no jailbreak)",
+      "html_url": "https://github.com/kolbicz/WQFiles",
+      "topics": [],
+      "created_at": "2026-11-09T13:43:40Z",
+      "updated_at": "2026-11-15T15:53:19Z",
+      "pushed_at": "2026-11-15T14:08:50Z",
+      "license": "GPL-3.0",
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T13:43:40Z",
+          "description": "File browser, app data manager and cache cleaner for iOS 26 and 27 (worse_query, no jailbreak)",
+          "html_url": "https://github.com/kolbicz/WQFiles",
+          "stars": 904,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "meta/astryx",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 28630,
+      "forks": 2236,
+      "language": "TypeScript",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "html_url": "https://github.com/meta/astryx",
+      "topics": [],
+      "created_at": "2026-01-09T16:20:32Z",
+      "updated_at": "2026-11-15T16:22:32Z",
+      "pushed_at": "2026-11-15T16:22:33Z",
+      "license": "MIT",
+      "open_issues": 677,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open source design system that's fully customizable and agent ready",
+          "full_name": "meta/astryx",
+          "language": "TypeScript",
+          "trending_stars_period": 13660,
+          "trending_total_forks": null,
+          "trending_total_stars": 28630,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "milind-soni/OpenMausBot",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 23144,
+      "forks": 3220,
+      "language": "TypeScript",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "html_url": "https://github.com/milind-soni/OpenMausBot",
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "computer-use",
+        "docker",
+        "electron",
+        "grok",
+        "grok-bot",
+        "grok-bot-alternative",
+        "self-hosted",
+        "typescript"
+      ],
+      "created_at": "2026-08-11T18:58:55Z",
+      "updated_at": "2026-11-15T16:21:39Z",
+      "pushed_at": "2026-11-15T16:18:57Z",
+      "license": "Apache-2.0",
+      "open_issues": 1097,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "full_name": "milind-soni/OpenMausBot",
+          "language": "TypeScript",
+          "trending_stars_period": 6413,
+          "trending_total_forks": null,
+          "trending_total_stars": 23144,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "opencoredev/islandcn",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 716,
+      "forks": 57,
+      "language": "TypeScript",
+      "description": "The open-source Dynamic Island for React, installed with shadcn.",
+      "html_url": "https://github.com/opencoredev/islandcn",
+      "topics": [
+        "dynamic-island",
+        "nextjs",
+        "react",
+        "shadcn",
+        "typescript",
+        "ui-components"
+      ],
+      "created_at": "2026-11-13T11:50:50Z",
+      "updated_at": "2026-11-15T16:07:31Z",
+      "pushed_at": "2026-11-13T15:14:36Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-13T11:50:50Z",
+          "description": "The open-source Dynamic Island for React, installed with shadcn.",
+          "html_url": "https://github.com/opencoredev/islandcn",
+          "stars": 716,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "serveroshq/panel",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 833,
+      "forks": 66,
+      "language": "PHP",
+      "description": "The open source ServerOS panel: one place to run the Linux servers you already own.",
+      "html_url": "https://github.com/serveroshq/panel",
+      "topics": [
+        "agpl",
+        "control-panel",
+        "devops",
+        "laravel",
+        "open-source",
+        "self-hosted",
+        "server-management",
+        "serveros",
+        "vps"
+      ],
+      "created_at": "2026-11-09T00:47:33Z",
+      "updated_at": "2026-11-15T16:19:13Z",
+      "pushed_at": "2026-11-15T15:32:44Z",
+      "license": "AGPL-3.0",
+      "open_issues": 21,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-09T00:47:33Z",
+          "description": "The open source ServerOS panel: one place to run the Linux servers you already own.",
+          "html_url": "https://github.com/serveroshq/panel",
+          "stars": 833,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sherlock-project/sherlock",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 112263,
+      "forks": 12979,
+      "language": "Python",
+      "description": "Hunt down social media accounts by username across social networks",
+      "html_url": "https://github.com/sherlock-project/sherlock",
+      "topics": [
+        "cli",
+        "cti",
+        "cybersecurity",
+        "forensics",
+        "hacktoberfest",
+        "information-gathering",
+        "infosec",
+        "linux",
+        "osint",
+        "pentesting",
+        "python",
+        "python3",
+        "reconnaissance",
+        "redteam",
+        "sherlock",
+        "tools"
+      ],
+      "created_at": "2018-12-24T14:30:48Z",
+      "updated_at": "2026-11-15T16:23:55Z",
+      "pushed_at": "2026-11-15T05:13:15Z",
+      "license": "MIT",
+      "open_issues": 415,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Hunt down social media accounts by username across social networks",
+          "full_name": "sherlock-project/sherlock",
+          "language": "Python",
+          "trending_stars_period": 12401,
+          "trending_total_forks": null,
+          "trending_total_stars": 112263,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "topapothecarycanal/ai--manus2.0",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 666,
+      "forks": 12,
+      "language": null,
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "html_url": "https://github.com/topapothecarycanal/ai--manus2.0",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai",
+        "llm",
+        "multimodal",
+        "openai",
+        "react",
+        "solidjs",
+        "streaming",
+        "svelte",
+        "tanstack",
+        "tool-calling",
+        "typescript",
+        "typescript-sdk",
+        "vue"
+      ],
+      "created_at": "2026-11-14T19:15:24Z",
+      "updated_at": "2026-11-14T23:32:11Z",
+      "pushed_at": "2026-11-15T10:36:40Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:15:24Z",
+          "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+          "html_url": "https://github.com/topapothecarycanal/ai--manus2.0",
+          "stars": 666,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tornadonovicewhirl40/IPTV_Player_2.0",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 669,
+      "forks": 12,
+      "language": "Rust",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+      "html_url": "https://github.com/tornadonovicewhirl40/IPTV_Player_2.0",
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools",
+        "m3u",
+        "mag",
+        "mpegts",
+        "plex",
+        "streaming",
+        "tv",
+        "xtream",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:15:43Z",
+      "updated_at": "2026-11-14T23:32:12Z",
+      "pushed_at": "2026-11-15T10:32:09Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:15:43Z",
+          "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes. ",
+          "html_url": "https://github.com/tornadonovicewhirl40/IPTV_Player_2.0",
+          "stars": 669,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "trackboatwrightplan/GitHub-Copilot-app",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 672,
+      "forks": 12,
+      "language": null,
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+      "html_url": "https://github.com/trackboatwrightplan/GitHub-Copilot-app",
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest",
+        "microsoft-copilot",
+        "openai",
+        "prompts",
+        "vue",
+        "xcode",
+        "xtreamcode"
+      ],
+      "created_at": "2026-11-14T19:16:41Z",
+      "updated_at": "2026-11-14T23:32:13Z",
+      "pushed_at": "2026-11-15T10:32:41Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T19:16:41Z",
+          "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+          "html_url": "https://github.com/trackboatwrightplan/GitHub-Copilot-app",
+          "stars": 672,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tradermonty/claude-trading-skills",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 5284,
+      "forks": 1120,
+      "language": "Python",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "html_url": "https://github.com/tradermonty/claude-trading-skills",
+      "topics": [],
+      "created_at": "2025-10-19T16:37:29Z",
+      "updated_at": "2026-11-15T16:20:44Z",
+      "pushed_at": "2026-11-15T15:29:11Z",
+      "license": "MIT",
+      "open_issues": 75,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+          "full_name": "tradermonty/claude-trading-skills",
+          "language": "Python",
+          "trending_stars_period": 707,
+          "trending_total_forks": null,
+          "trending_total_stars": 5284,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 51479,
+      "forks": 3596,
+      "language": "Rust",
+      "description": "Browser automation CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "topics": [],
+      "created_at": "2026-01-11T05:38:15Z",
+      "updated_at": "2026-11-15T16:22:54Z",
+      "pushed_at": "2026-11-15T12:43:23Z",
+      "license": "Apache-2.0",
+      "open_issues": 587,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Browser automation CLI for AI agents",
+          "full_name": "vercel-labs/agent-browser",
+          "language": "Rust",
+          "trending_stars_period": 4601,
+          "trending_total_forks": null,
+          "trending_total_stars": 51479,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "we-promise/sure",
+      "captured_at": "2026-11-15T16:24:00Z",
+      "stars": 15593,
+      "forks": 1365,
+      "language": "Ruby",
+      "description": "The personal finance app for everyone (by everyone)",
+      "html_url": "https://github.com/we-promise/sure",
+      "topics": [],
+      "created_at": "2025-07-23T04:13:55Z",
+      "updated_at": "2026-11-15T16:20:01Z",
+      "pushed_at": "2026-11-15T12:31:47Z",
+      "license": "AGPL-3.0",
+      "open_issues": 947,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The personal finance app for everyone (by everyone)",
+          "full_name": "we-promise/sure",
+          "language": "Ruby",
+          "trending_stars_period": 4483,
+          "trending_total_forks": null,
+          "trending_total_stars": 15593,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
@@ -259665,7 +261609,8 @@
     "daily-20261111T171025Z": 95,
     "daily-20261112T195638Z": 101,
     "daily-20261113T194445Z": 106,
-    "daily-20261114T180618Z": 111
+    "daily-20261114T180618Z": 111,
+    "daily-20261115T162400Z": 117
   },
   "sent_slots": {
     "2026-09-30-pm": 61,
@@ -259679,7 +261624,8 @@
     "daily:2026-11-11": 95,
     "daily:2026-11-12": 101,
     "daily:2026-11-13": 106,
-    "daily:2026-11-14": 111
+    "daily:2026-11-14": 111,
+    "daily:2026-11-15": 117
   },
   "pending_digests": {},
   "llm_daily_requests": {
@@ -259699,7 +261645,8 @@
     "2026-11-11": 15,
     "2026-11-12": 13,
     "2026-11-13": 18,
-    "2026-11-14": 19
+    "2026-11-14": 19,
+    "2026-11-15": 14
   },
   "delivery_progress": {
     "20260930T143510Z": {
