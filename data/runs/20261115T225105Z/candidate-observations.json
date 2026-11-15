@@ -1,0 +1,1767 @@
+[
+  {
+    "full_name": "AIRzZ90/study-materials-fork",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 668,
+    "forks": 896,
+    "language": "TypeScript",
+    "description": "A cross-platform Tauri 2 interface and interaction practice project",
+    "html_url": "https://github.com/AIRzZ90/study-materials-fork",
+    "topics": [],
+    "created_at": "2026-11-12T10:52:32Z",
+    "updated_at": "2026-11-15T20:59:00Z",
+    "pushed_at": "2026-11-12T11:06:34Z",
+    "license": "Other",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-12T10:52:32Z",
+        "description": "A cross-platform Tauri 2 interface and interaction practice project",
+        "html_url": "https://github.com/AIRzZ90/study-materials-fork",
+        "stars": 668,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "ChromeDevTools/chrome-devtools-mcp",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 56878,
+    "forks": 4808,
+    "language": "TypeScript",
+    "description": "Chrome DevTools for coding agents",
+    "html_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "topics": [
+      "browser",
+      "chrome",
+      "chrome-devtools",
+      "debugging",
+      "devtools",
+      "mcp",
+      "mcp-server",
+      "puppeteer"
+    ],
+    "created_at": "2025-09-11T10:39:55Z",
+    "updated_at": "2026-11-15T22:45:04Z",
+    "pushed_at": "2026-11-15T03:06:25Z",
+    "license": "Apache-2.0",
+    "open_issues": 133,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "Chrome DevTools for coding agents",
+        "full_name": "ChromeDevTools/chrome-devtools-mcp",
+        "language": "TypeScript",
+        "trending_stars_period": 718,
+        "trending_total_forks": null,
+        "trending_total_stars": 56878,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "DevedevT/FFmpeg-GUI-Editor-Windows",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 1227,
+    "forks": 1,
+    "language": "Visual Basic .NET",
+    "description": "Lightweight portable FFmpeg GUI & lossless video trimmer for Windows (ready-to-use .exe). Supports English, Russian, Chinese, German, French & Italian.",
+    "html_url": "https://github.com/DevedevT/FFmpeg-GUI-Editor-Windows",
+    "topics": [
+      "converter",
+      "ffmpeg",
+      "ffmpeg-command",
+      "ffmpeg-gui",
+      "ffmpeg-libraries",
+      "ffmpeg-script",
+      "gui",
+      "gui-application",
+      "image-compression",
+      "media-converter",
+      "media-converter-windows",
+      "video-editing",
+      "video-editor",
+      "video-processing",
+      "windows",
+      "windows-10",
+      "windows-11",
+      "windows-app",
+      "windows-package",
+      "windows-tools"
+    ],
+    "created_at": "2026-11-12T20:49:07Z",
+    "updated_at": "2026-11-15T21:51:28Z",
+    "pushed_at": "2026-11-13T09:24:36Z",
+    "license": "MIT",
+    "open_issues": 2,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-12T20:49:07Z",
+        "description": "Lightweight portable FFmpeg GUI & lossless video trimmer for Windows (ready-to-use .exe). Supports English, Russian, Chinese, German, French & Italian.",
+        "html_url": "https://github.com/DevedevT/FFmpeg-GUI-Editor-Windows",
+        "stars": 1227,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "Dodaios/ste80-humanizer",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 690,
+    "forks": 46,
+    "language": "Python",
+    "description": "STE80 Humanizer: agent skill that removes AI tells and rewrites text 80% of the way to ASD-STE100 (Simplified Technical English), the method Andrej Karpathy shared.",
+    "html_url": "https://github.com/Dodaios/ste80-humanizer",
+    "topics": [
+      "agent-skills",
+      "ai-writing",
+      "asd-ste100",
+      "claude-code",
+      "claude-skills",
+      "codex",
+      "cursor",
+      "humanize-ai-text",
+      "humanizer",
+      "karpathy",
+      "llm",
+      "plain-language",
+      "simplified-technical-english",
+      "writing"
+    ],
+    "created_at": "2026-11-09T17:18:59Z",
+    "updated_at": "2026-11-15T22:29:41Z",
+    "pushed_at": "2026-11-14T14:20:14Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-09T17:18:59Z",
+        "description": "STE80 Humanizer: agent skill that removes AI tells and rewrites text 80% of the way to ASD-STE100 (Simplified Technical English), the method Andrej Karpathy shared.",
+        "html_url": "https://github.com/Dodaios/ste80-humanizer",
+        "stars": 690,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "Eynnzerr/TelemetryCleaner",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 970,
+    "forks": 85,
+    "language": "Kotlin",
+    "description": "基于 Shizuku 免 Root 清除国产安卓 SystemHelper、RegService 等系统预装隐私数据收集模块",
+    "html_url": "https://github.com/Eynnzerr/TelemetryCleaner",
+    "topics": [],
+    "created_at": "2026-11-11T06:25:10Z",
+    "updated_at": "2026-11-15T22:46:09Z",
+    "pushed_at": "2026-11-15T04:47:14Z",
+    "license": "MIT",
+    "open_issues": 11,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-11T06:25:10Z",
+        "description": "基于 Shizuku 免 Root 清除国产安卓 SystemHelper、RegService 等系统预装隐私数据收集模块",
+        "html_url": "https://github.com/Eynnzerr/TelemetryCleaner",
+        "stars": 970,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "FrigadeHQ/yogurt",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 1635,
+    "forks": 92,
+    "language": "TypeScript",
+    "description": "Private AI meeting notes that stay on your computer. A free, open-source alternative to Granola for Mac, Windows and Linux.",
+    "html_url": "https://github.com/FrigadeHQ/yogurt",
+    "topics": [
+      "ai-meeting-assistant",
+      "ai-notetaker",
+      "electron",
+      "granola-alternative",
+      "linux",
+      "llama-cpp",
+      "local-ai",
+      "local-first",
+      "macos",
+      "mcp",
+      "meeting-minutes",
+      "meeting-notes",
+      "offline-first",
+      "open-source",
+      "privacy",
+      "speech-to-text",
+      "transcription",
+      "whisper",
+      "whisper-cpp",
+      "windows"
+    ],
+    "created_at": "2026-11-10T20:01:01Z",
+    "updated_at": "2026-11-15T22:40:33Z",
+    "pushed_at": "2026-11-15T20:09:57Z",
+    "license": "MIT",
+    "open_issues": 28,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-10T20:01:01Z",
+        "description": "Private AI meeting notes that stay on your computer. A free, open-source alternative to Granola for Mac, Windows and Linux.",
+        "html_url": "https://github.com/FrigadeHQ/yogurt",
+        "stars": 1635,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "GoogleChrome/modern-web-guidance-src",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 7088,
+    "forks": 596,
+    "language": "TypeScript",
+    "description": "Keep your coding agent up to date with the latest web best practices",
+    "html_url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+    "topics": [],
+    "created_at": "2026-01-27T20:22:24Z",
+    "updated_at": "2026-11-15T22:50:47Z",
+    "pushed_at": "2026-11-15T12:09:36Z",
+    "license": "Apache-2.0",
+    "open_issues": 398,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "Keep your coding agent up to date with the latest web best practices",
+        "full_name": "GoogleChrome/modern-web-guidance-src",
+        "language": "TypeScript",
+        "trending_stars_period": 1220,
+        "trending_total_forks": null,
+        "trending_total_stars": 7088,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "HolyArrs/HolyArrs",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 1255,
+    "forks": 65,
+    "language": "Go",
+    "description": "One self-hosted app for your shows, movies and music.",
+    "html_url": "https://github.com/HolyArrs/HolyArrs",
+    "topics": [
+      "docker",
+      "homelab",
+      "jellyfin",
+      "media-server",
+      "plex",
+      "self-hosted"
+    ],
+    "created_at": "2026-11-09T23:53:25Z",
+    "updated_at": "2026-11-15T22:44:16Z",
+    "pushed_at": "2026-11-15T20:18:24Z",
+    "license": "AGPL-3.0",
+    "open_issues": 105,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-09T23:53:25Z",
+        "description": "One self-hosted app for your shows, movies and music.",
+        "html_url": "https://github.com/HolyArrs/HolyArrs",
+        "stars": 1255,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "HybridRobotics/supermimic",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 1551,
+    "forks": 108,
+    "language": "Python",
+    "description": "Humanoid whole-body motion tracking with one differentiable world model.",
+    "html_url": "https://github.com/HybridRobotics/supermimic",
+    "topics": [],
+    "created_at": "2026-11-10T10:46:56Z",
+    "updated_at": "2026-11-15T21:58:01Z",
+    "pushed_at": "2026-11-11T08:06:27Z",
+    "license": "Apache-2.0",
+    "open_issues": 23,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-10T10:46:56Z",
+        "description": "Humanoid whole-body motion tracking with one differentiable world model.",
+        "html_url": "https://github.com/HybridRobotics/supermimic",
+        "stars": 1551,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "JDhruv14/line-art-animation",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 826,
+    "forks": 128,
+    "language": "TypeScript",
+    "description": "A Claude skill and TypeScript library for animated line-art SVG components: ink figures that walk and react, scenes with a day/night cycle.",
+    "html_url": "https://github.com/JDhruv14/line-art-animation",
+    "topics": [
+      "claude-skill",
+      "line-art",
+      "svg-animation",
+      "typescript"
+    ],
+    "created_at": "2026-11-10T09:25:25Z",
+    "updated_at": "2026-11-15T22:26:44Z",
+    "pushed_at": "2026-11-10T09:25:38Z",
+    "license": "MIT",
+    "open_issues": 1,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-10T09:25:25Z",
+        "description": "A Claude skill and TypeScript library for animated line-art SVG components: ink figures that walk and react, scenes with a day/night cycle.",
+        "html_url": "https://github.com/JDhruv14/line-art-animation",
+        "stars": 826,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "Kianuni/Erosion-CN",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 2125,
+    "forks": 430,
+    "language": "Swift",
+    "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+    "html_url": "https://github.com/Kianuni/Erosion-CN",
+    "topics": [],
+    "created_at": "2026-11-10T02:37:31Z",
+    "updated_at": "2026-11-15T22:51:06Z",
+    "pushed_at": "2026-11-15T13:24:40Z",
+    "license": "GPL-3.0",
+    "open_issues": 22,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-10T02:37:31Z",
+        "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+        "html_url": "https://github.com/Kianuni/Erosion-CN",
+        "stars": 2125,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "NVIDIA/SkillEvaluator",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 1616,
+    "forks": 227,
+    "language": "Python",
+    "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+    "html_url": "https://github.com/NVIDIA/SkillEvaluator",
+    "topics": [
+      "agent-evaluation",
+      "agent-plugins",
+      "agent-security",
+      "agent-skills",
+      "agentic-ai",
+      "benchmark",
+      "claude-code",
+      "codex",
+      "evaluate",
+      "evaluation",
+      "plugin",
+      "plugin-evaluation",
+      "security-scanner",
+      "skill-eval",
+      "skill-evals",
+      "skill-evaluation",
+      "skill-evaluator",
+      "skills"
+    ],
+    "created_at": "2026-06-24T02:32:26Z",
+    "updated_at": "2026-11-15T22:46:18Z",
+    "pushed_at": "2026-11-15T22:34:47Z",
+    "license": "Apache-2.0",
+    "open_issues": 31,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+        "full_name": "NVIDIA/SkillEvaluator",
+        "language": "Python",
+        "trending_stars_period": 205,
+        "trending_total_forks": null,
+        "trending_total_stars": 1616,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "Noniv/abyssal-garden",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 1035,
+    "forks": 151,
+    "language": "JavaScript",
+    "description": "A dreamy underwater world you can swim through in your browser: swaying kelp forests, sunbeams, a sunken ship and manta rays. Everything is generated by code with WebGPU (no images, models or sound files), all in a single 97 KB HTML file.",
+    "html_url": "https://github.com/Noniv/abyssal-garden",
+    "topics": [],
+    "created_at": "2026-11-12T13:57:34Z",
+    "updated_at": "2026-11-15T22:47:39Z",
+    "pushed_at": "2026-11-14T17:41:33Z",
+    "license": "MIT",
+    "open_issues": 3,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-12T13:57:34Z",
+        "description": "A dreamy underwater world you can swim through in your browser: swaying kelp forests, sunbeams, a sunken ship and manta rays. Everything is generated by code with WebGPU (no images, models or sound files), all in a single 97 KB HTML file.",
+        "html_url": "https://github.com/Noniv/abyssal-garden",
+        "stars": 1035,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "Robbyant/lingbot-touch",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 606,
+    "forks": 8,
+    "language": "Python",
+    "description": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
+    "html_url": "https://github.com/Robbyant/lingbot-touch",
+    "topics": [],
+    "created_at": "2026-11-09T09:02:29Z",
+    "updated_at": "2026-11-15T22:43:02Z",
+    "pushed_at": "2026-11-11T02:28:03Z",
+    "license": "Apache-2.0",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-09T09:02:29Z",
+        "description": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
+        "html_url": "https://github.com/Robbyant/lingbot-touch",
+        "stars": 606,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "Tencent/LoopForge",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 1432,
+    "forks": 263,
+    "language": "Go",
+    "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+    "html_url": "https://github.com/Tencent/LoopForge",
+    "topics": [
+      "agent-orchestration",
+      "agentic-workflow",
+      "ai-agents",
+      "ai-coding",
+      "claude-code",
+      "code-review",
+      "codebuddy",
+      "codex",
+      "coding-agents",
+      "cursor",
+      "developer-tools",
+      "human-on-the-loop",
+      "llm",
+      "mcp",
+      "multi-agent",
+      "sdlc",
+      "self-hosted",
+      "sop",
+      "workflow-automation",
+      "workflow-engine"
+    ],
+    "created_at": "2026-07-28T03:51:01Z",
+    "updated_at": "2026-11-15T22:47:27Z",
+    "pushed_at": "2026-11-15T11:05:37Z",
+    "license": "Other",
+    "open_issues": 85,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+        "full_name": "Tencent/LoopForge",
+        "language": "Go",
+        "trending_stars_period": 484,
+        "trending_total_forks": null,
+        "trending_total_stars": 1432,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "ZhuLinsen/daily_stock_analysis",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 72485,
+    "forks": 57571,
+    "language": "Python",
+    "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+    "html_url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+    "topics": [
+      "a-stock",
+      "ai-agent",
+      "aigc",
+      "llm",
+      "quant",
+      "quantitative-finance",
+      "quantitative-trading"
+    ],
+    "created_at": "2026-01-10T06:43:20Z",
+    "updated_at": "2026-11-15T22:31:11Z",
+    "pushed_at": "2026-11-15T15:47:25Z",
+    "license": "MIT",
+    "open_issues": 36,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+        "full_name": "ZhuLinsen/daily_stock_analysis",
+        "language": "Python",
+        "trending_stars_period": 4526,
+        "trending_total_forks": null,
+        "trending_total_stars": 72485,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "ZiChuanLan/freebie-radar",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 787,
+    "forks": 129,
+    "language": "TypeScript",
+    "description": "白嫖资源聚合雷达：57 个源定时采集 + AI 二审过滤假福利 + 获取方式分级隔离抽奖/试用/推广 + Telegram 即时推送",
+    "html_url": "https://github.com/ZiChuanLan/freebie-radar",
+    "topics": [],
+    "created_at": "2026-11-12T09:08:11Z",
+    "updated_at": "2026-11-15T22:34:35Z",
+    "pushed_at": "2026-11-15T19:40:35Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-12T09:08:11Z",
+        "description": "白嫖资源聚合雷达：57 个源定时采集 + AI 二审过滤假福利 + 获取方式分级隔离抽奖/试用/推广 + Telegram 即时推送",
+        "html_url": "https://github.com/ZiChuanLan/freebie-radar",
+        "stars": 787,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "addyosmani/agent-skills",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 117921,
+    "forks": 12338,
+    "language": "JavaScript",
+    "description": "Production-grade engineering skills for AI coding agents.",
+    "html_url": "https://github.com/addyosmani/agent-skills",
+    "topics": [
+      "agent-skills",
+      "antigravity",
+      "claude-code",
+      "codex",
+      "cursor",
+      "skills"
+    ],
+    "created_at": "2026-02-15T20:20:26Z",
+    "updated_at": "2026-11-15T22:45:19Z",
+    "pushed_at": "2026-11-14T04:33:56Z",
+    "license": "MIT",
+    "open_issues": 126,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "Production-grade engineering skills for AI coding agents.",
+        "full_name": "addyosmani/agent-skills",
+        "language": "JavaScript",
+        "trending_stars_period": 3670,
+        "trending_total_forks": null,
+        "trending_total_stars": 117921,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "adriadam10/mkw-recomp",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 1211,
+    "forks": 72,
+    "language": "C",
+    "description": "Static recompilation of Mario Kart World (Nintendo Switch 2) to a native PC program",
+    "html_url": "https://github.com/adriadam10/mkw-recomp",
+    "topics": [],
+    "created_at": "2026-11-09T15:40:06Z",
+    "updated_at": "2026-11-15T22:44:12Z",
+    "pushed_at": "2026-11-15T21:00:35Z",
+    "license": "MIT",
+    "open_issues": 146,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-09T15:40:06Z",
+        "description": "Static recompilation of Mario Kart World (Nintendo Switch 2) to a native PC program",
+        "html_url": "https://github.com/adriadam10/mkw-recomp",
+        "stars": 1211,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "ag-ui-protocol/ag-ui",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 17803,
+    "forks": 1818,
+    "language": "TypeScript",
+    "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+    "html_url": "https://github.com/ag-ui-protocol/ag-ui",
+    "topics": [
+      "ag-ui-protocol",
+      "agent-frontend",
+      "agent-ui",
+      "agentic-workflow",
+      "ai-agents"
+    ],
+    "created_at": "2025-05-07T12:49:37Z",
+    "updated_at": "2026-11-15T22:47:28Z",
+    "pushed_at": "2026-11-15T02:26:33Z",
+    "license": "MIT",
+    "open_issues": 593,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+        "full_name": "ag-ui-protocol/ag-ui",
+        "language": "TypeScript",
+        "trending_stars_period": 393,
+        "trending_total_forks": null,
+        "trending_total_stars": 17803,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "agentes-chat/agentes-chat",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 1500,
+    "forks": 268,
+    "language": "TypeScript",
+    "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+    "html_url": "https://github.com/agentes-chat/agentes-chat",
+    "topics": [
+      "agentic-ai",
+      "ai-agents",
+      "browser-automation",
+      "chat",
+      "claude",
+      "claude-code",
+      "codex",
+      "collaboration",
+      "computer-use",
+      "docker-compose",
+      "gemini",
+      "grok",
+      "human-in-the-loop",
+      "llm",
+      "mcp",
+      "multi-agent",
+      "openai",
+      "self-hosted",
+      "slack-alternative",
+      "team-chat"
+    ],
+    "created_at": "2026-11-09T00:50:28Z",
+    "updated_at": "2026-11-15T22:46:54Z",
+    "pushed_at": "2026-11-15T22:47:05Z",
+    "license": "AGPL-3.0",
+    "open_issues": 161,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-09T00:50:28Z",
+        "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+        "html_url": "https://github.com/agentes-chat/agentes-chat",
+        "stars": 1500,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "alexeyw/lot-map",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 885,
+    "forks": 94,
+    "language": "TypeScript",
+    "description": "A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.",
+    "html_url": "https://github.com/alexeyw/lot-map",
+    "topics": [
+      "agent-observability",
+      "ai-agents",
+      "claude",
+      "claude-code",
+      "claude-code-plugin",
+      "developer-tools",
+      "svg-animation",
+      "typescript",
+      "visualization"
+    ],
+    "created_at": "2026-11-09T19:13:52Z",
+    "updated_at": "2026-11-15T22:47:37Z",
+    "pushed_at": "2026-11-15T16:15:15Z",
+    "license": "MIT",
+    "open_issues": 5,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-09T19:13:52Z",
+        "description": "A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.",
+        "html_url": "https://github.com/alexeyw/lot-map",
+        "stars": 885,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "alibaba/open-code-review",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 52007,
+    "forks": 4105,
+    "language": "Go",
+    "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+    "html_url": "https://github.com/alibaba/open-code-review",
+    "topics": [
+      "agent",
+      "agent-skills",
+      "code-review",
+      "code-review-assistant",
+      "harness",
+      "repository-level-context"
+    ],
+    "created_at": "2026-05-18T02:16:36Z",
+    "updated_at": "2026-11-15T22:50:57Z",
+    "pushed_at": "2026-11-15T02:41:14Z",
+    "license": "Apache-2.0",
+    "open_issues": 349,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+        "full_name": "alibaba/open-code-review",
+        "language": "Go",
+        "trending_stars_period": 688,
+        "trending_total_forks": null,
+        "trending_total_stars": 52007,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "anthropics/skills",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 195330,
+    "forks": 22959,
+    "language": "Python",
+    "description": "Public repository for Agent Skills",
+    "html_url": "https://github.com/anthropics/skills",
+    "topics": [
+      "agent-skills"
+    ],
+    "created_at": "2025-09-22T15:53:31Z",
+    "updated_at": "2026-11-15T22:42:46Z",
+    "pushed_at": "2026-11-14T21:52:49Z",
+    "license": null,
+    "open_issues": 1548,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "Public repository for Agent Skills",
+        "full_name": "anthropics/skills",
+        "language": "Python",
+        "trending_stars_period": 6220,
+        "trending_total_forks": null,
+        "trending_total_stars": 195330,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "apex-compute/ANR",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 2182,
+    "forks": 38,
+    "language": "C++",
+    "description": "Apex Neural Rendering (ANR) by Apex Compute",
+    "html_url": "https://github.com/apex-compute/ANR",
+    "topics": [],
+    "created_at": "2026-11-11T04:27:17Z",
+    "updated_at": "2026-11-15T22:47:28Z",
+    "pushed_at": "2026-11-15T09:11:50Z",
+    "license": null,
+    "open_issues": 24,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-11T04:27:17Z",
+        "description": "Apex Neural Rendering (ANR) by Apex Compute",
+        "html_url": "https://github.com/apex-compute/ANR",
+        "stars": 2182,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "backnotprop/plannotator",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 11794,
+    "forks": 1081,
+    "language": "TypeScript",
+    "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+    "html_url": "https://github.com/backnotprop/plannotator",
+    "topics": [
+      "agents",
+      "claude-code",
+      "code-review",
+      "codex",
+      "obsidian",
+      "opencode",
+      "pi-mono",
+      "plan-mode",
+      "skills"
+    ],
+    "created_at": "2025-12-28T02:09:40Z",
+    "updated_at": "2026-11-15T22:48:28Z",
+    "pushed_at": "2026-11-15T22:21:30Z",
+    "license": "Apache-2.0",
+    "open_issues": 224,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+        "full_name": "backnotprop/plannotator",
+        "language": "TypeScript",
+        "trending_stars_period": 818,
+        "trending_total_forks": null,
+        "trending_total_stars": 11794,
+        "type": "trending_weekly"
+      },
+      {
+        "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+        "full_name": "backnotprop/plannotator",
+        "language": "TypeScript",
+        "trending_stars_period": 860,
+        "trending_total_forks": null,
+        "trending_total_stars": 11794,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "deepseek-ai/chat-demo",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 2897,
+    "forks": 561,
+    "language": "TypeScript",
+    "description": "Chat Demo",
+    "html_url": "https://github.com/deepseek-ai/chat-demo",
+    "topics": [],
+    "created_at": "2026-11-12T08:08:19Z",
+    "updated_at": "2026-11-15T22:49:32Z",
+    "pushed_at": "2026-11-13T14:33:08Z",
+    "license": "MIT",
+    "open_issues": 1,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-12T08:08:19Z",
+        "description": "Chat Demo",
+        "html_url": "https://github.com/deepseek-ai/chat-demo",
+        "stars": 2897,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "dream-num/univer",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 25558,
+    "forks": 2333,
+    "language": "TypeScript",
+    "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+    "html_url": "https://github.com/dream-num/univer",
+    "topics": [
+      "board",
+      "collaboration",
+      "doc",
+      "docx",
+      "excel",
+      "offce365",
+      "office",
+      "pdf",
+      "ppt",
+      "pptx",
+      "presentation",
+      "sdk",
+      "sheet",
+      "slides",
+      "spreadsheet",
+      "univer",
+      "word",
+      "wordprocessor",
+      "workspace",
+      "xlsx"
+    ],
+    "created_at": "2022-09-29T12:09:14Z",
+    "updated_at": "2026-11-15T22:48:23Z",
+    "pushed_at": "2026-11-15T17:20:06Z",
+    "license": "Apache-2.0",
+    "open_issues": 175,
+    "default_branch": "dev",
+    "sources": [
+      {
+        "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+        "full_name": "dream-num/univer",
+        "language": "TypeScript",
+        "trending_stars_period": 1041,
+        "trending_total_forks": null,
+        "trending_total_stars": 25558,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "duwqijlk/muse-protocol",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 985,
+    "forks": 441,
+    "language": "Python",
+    "description": "muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）",
+    "html_url": "https://github.com/duwqijlk/muse-protocol",
+    "topics": [],
+    "created_at": "2026-11-14T01:24:58Z",
+    "updated_at": "2026-11-15T22:39:10Z",
+    "pushed_at": "2026-11-15T02:55:33Z",
+    "license": "Other",
+    "open_issues": 1,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-14T01:24:58Z",
+        "description": "muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）",
+        "html_url": "https://github.com/duwqijlk/muse-protocol",
+        "stars": 985,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "elementalsouls/Claude-BugHunter",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 6351,
+    "forks": 966,
+    "language": "Python",
+    "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+    "html_url": "https://github.com/elementalsouls/Claude-BugHunter",
+    "topics": [
+      "ai-security",
+      "anthropic",
+      "application-security",
+      "bug-bounty",
+      "bugbounty",
+      "bugcrowd",
+      "claude",
+      "claude-code",
+      "claude-skills",
+      "ethical-hacking",
+      "hackerone",
+      "offensive-security",
+      "pentesting",
+      "red-team",
+      "security-tools",
+      "web-security"
+    ],
+    "created_at": "2026-05-05T11:22:32Z",
+    "updated_at": "2026-11-15T22:48:56Z",
+    "pushed_at": "2026-11-15T11:59:53Z",
+    "license": "MIT",
+    "open_issues": 6,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+        "full_name": "elementalsouls/Claude-BugHunter",
+        "language": "Python",
+        "trending_stars_period": 221,
+        "trending_total_forks": null,
+        "trending_total_stars": 6351,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "failsafe-security/artex",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 703,
+    "forks": 212,
+    "language": "Go",
+    "description": "Source-built, locally bound FailSafe distribution of ARTEX (v0.3.15)",
+    "html_url": "https://github.com/failsafe-security/artex",
+    "topics": [],
+    "created_at": "2026-11-10T12:33:18Z",
+    "updated_at": "2026-11-15T22:29:46Z",
+    "pushed_at": "2026-11-11T02:54:02Z",
+    "license": "AGPL-3.0",
+    "open_issues": 8,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-10T12:33:18Z",
+        "description": "Source-built, locally bound FailSafe distribution of ARTEX (v0.3.15)",
+        "html_url": "https://github.com/failsafe-security/artex",
+        "stars": 703,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "forcequitOS/worse_query",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 662,
+    "forks": 157,
+    "language": "Objective-C",
+    "description": "A sandbox escape for iOS 26 and 27, again",
+    "html_url": "https://github.com/forcequitOS/worse_query",
+    "topics": [],
+    "created_at": "2026-11-08T17:00:03Z",
+    "updated_at": "2026-11-15T22:06:57Z",
+    "pushed_at": "2026-11-08T20:05:55Z",
+    "license": "GPL-3.0",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-08T17:00:03Z",
+        "description": "A sandbox escape for iOS 26 and 27, again",
+        "html_url": "https://github.com/forcequitOS/worse_query",
+        "stars": 662,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "ggml-org/ggml",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 15888,
+    "forks": 2018,
+    "language": "C++",
+    "description": "Tensor library for machine learning",
+    "html_url": "https://github.com/ggml-org/ggml",
+    "topics": [
+      "machine-learning"
+    ],
+    "created_at": "2022-09-18T17:07:19Z",
+    "updated_at": "2026-11-15T22:46:33Z",
+    "pushed_at": "2026-11-13T08:34:20Z",
+    "license": "MIT",
+    "open_issues": 386,
+    "default_branch": "master",
+    "sources": [
+      {
+        "description": "Tensor library for machine learning",
+        "full_name": "ggml-org/ggml",
+        "language": "C++",
+        "trending_stars_period": 53,
+        "trending_total_forks": null,
+        "trending_total_stars": 15888,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "google-deepmind/mujoco",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 18064,
+    "forks": 2213,
+    "language": "C++",
+    "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+    "html_url": "https://github.com/google-deepmind/mujoco",
+    "topics": [
+      "mujoco",
+      "physics",
+      "robotics"
+    ],
+    "created_at": "2021-08-27T12:25:48Z",
+    "updated_at": "2026-11-15T22:51:05Z",
+    "pushed_at": "2026-11-15T18:40:47Z",
+    "license": "Apache-2.0",
+    "open_issues": 416,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+        "full_name": "google-deepmind/mujoco",
+        "language": "C++",
+        "trending_stars_period": 1859,
+        "trending_total_forks": null,
+        "trending_total_stars": 18064,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "google-labs-code/stitch-skills",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 9259,
+    "forks": 1125,
+    "language": "TypeScript",
+    "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+    "html_url": "https://github.com/google-labs-code/stitch-skills",
+    "topics": [],
+    "created_at": "2026-01-16T17:17:17Z",
+    "updated_at": "2026-11-15T22:49:00Z",
+    "pushed_at": "2026-08-17T20:20:23Z",
+    "license": "Apache-2.0",
+    "open_issues": 19,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+        "full_name": "google-labs-code/stitch-skills",
+        "language": "TypeScript",
+        "trending_stars_period": 248,
+        "trending_total_forks": null,
+        "trending_total_stars": 9259,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "google/elephant-goldfish-model",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 19712,
+    "forks": 1460,
+    "language": "Python",
+    "description": "Open-source plugin for designing and reviewing software with agents",
+    "html_url": "https://github.com/google/elephant-goldfish-model",
+    "topics": [
+      "agent-skills",
+      "ai-agents",
+      "antigravity",
+      "claude-code",
+      "claude-code-plugin",
+      "claude-skills",
+      "codex",
+      "codex-plugin",
+      "coding-agents",
+      "context-engineering",
+      "developer-tools",
+      "gemini",
+      "llm",
+      "multi-agent",
+      "prompt-engineering",
+      "spec-driven-development"
+    ],
+    "created_at": "2026-09-13T16:31:06Z",
+    "updated_at": "2026-11-15T22:50:25Z",
+    "pushed_at": "2026-11-15T18:47:38Z",
+    "license": "Apache-2.0",
+    "open_issues": 111,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "Open-source plugin for designing and reviewing software with agents",
+        "full_name": "google/elephant-goldfish-model",
+        "language": "Python",
+        "trending_stars_period": 5539,
+        "trending_total_forks": null,
+        "trending_total_stars": 19712,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "hitkeeen/blender-ai-mcp-addon",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 910,
+    "forks": 24,
+    "language": null,
+    "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration.",
+    "html_url": "https://github.com/hitkeeen/blender-ai-mcp-addon",
+    "topics": [
+      "ai-agents",
+      "ai-assistant",
+      "blender",
+      "blender-addon",
+      "blender-ai",
+      "blender-automation",
+      "blender-mcp",
+      "blender-plugin",
+      "blender-scripting",
+      "bpy",
+      "chatgpt",
+      "claude",
+      "gemini",
+      "llm",
+      "mcp",
+      "mcp-for-blender",
+      "mcp-server",
+      "model-context-protocol",
+      "ollama",
+      "opencode"
+    ],
+    "created_at": "2026-11-12T14:32:15Z",
+    "updated_at": "2026-11-15T22:50:49Z",
+    "pushed_at": "2026-11-12T14:33:16Z",
+    "license": "MIT",
+    "open_issues": 56,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-12T14:32:15Z",
+        "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration.",
+        "html_url": "https://github.com/hitkeeen/blender-ai-mcp-addon",
+        "stars": 910,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "huamidev/GestaltX",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 7731,
+    "forks": 2661,
+    "language": "Swift",
+    "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+    "html_url": "https://github.com/huamidev/GestaltX",
+    "topics": [],
+    "created_at": "2026-11-09T05:15:48Z",
+    "updated_at": "2026-11-15T22:10:42Z",
+    "pushed_at": "2026-11-14T09:27:55Z",
+    "license": "GPL-3.0",
+    "open_issues": 82,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-09T05:15:48Z",
+        "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+        "html_url": "https://github.com/huamidev/GestaltX",
+        "stars": 7731,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "imnotsharingmyname/pcportastrobot",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 601,
+    "forks": 16,
+    "language": "C#",
+    "description": null,
+    "html_url": "https://github.com/imnotsharingmyname/pcportastrobot",
+    "topics": [],
+    "created_at": "2026-11-08T20:22:33Z",
+    "updated_at": "2026-11-15T22:41:18Z",
+    "pushed_at": "2026-11-15T01:32:03Z",
+    "license": null,
+    "open_issues": 44,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-08T20:22:33Z",
+        "description": null,
+        "html_url": "https://github.com/imnotsharingmyname/pcportastrobot",
+        "stars": 601,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "jhaizhou-ops/S2Arm",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 3186,
+    "forks": 561,
+    "language": "C#",
+    "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+    "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+    "topics": [
+      "apple-silicon",
+      "arm64",
+      "game-porting",
+      "ios",
+      "ipados",
+      "macos",
+      "metal",
+      "s2arm",
+      "static-recompilation",
+      "switch"
+    ],
+    "created_at": "2026-11-08T05:49:46Z",
+    "updated_at": "2026-11-15T22:27:46Z",
+    "pushed_at": "2026-11-15T22:51:06Z",
+    "license": "Apache-2.0",
+    "open_issues": 449,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-08T05:49:46Z",
+        "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+        "html_url": "https://github.com/jhaizhou-ops/S2Arm",
+        "stars": 3186,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "kolbicz/WQFiles",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 921,
+    "forks": 75,
+    "language": "Objective-C",
+    "description": "File browser, app data manager and cache cleaner for iOS 26 and 27 (worse_query, no jailbreak)",
+    "html_url": "https://github.com/kolbicz/WQFiles",
+    "topics": [],
+    "created_at": "2026-11-09T13:43:40Z",
+    "updated_at": "2026-11-15T22:45:31Z",
+    "pushed_at": "2026-11-15T22:14:34Z",
+    "license": "GPL-3.0",
+    "open_issues": 2,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-09T13:43:40Z",
+        "description": "File browser, app data manager and cache cleaner for iOS 26 and 27 (worse_query, no jailbreak)",
+        "html_url": "https://github.com/kolbicz/WQFiles",
+        "stars": 921,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "linknimiball1974/ai-texture-forge",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 682,
+    "forks": 31,
+    "language": null,
+    "description": "An AI-powered texture forge for Blender — turn text prompts into seamless PBR materials, concept art and scene-wide projections with local or cloud diffusion models, straight inside the 3D viewport on Windows. · dream textures · dream textures blender · dream textures addon · dream textures ai · dream textures seamless · dream textures pbr",
+    "html_url": "https://github.com/linknimiball1974/ai-texture-forge",
+    "topics": [
+      "dream-textures",
+      "dream-textures-addon",
+      "dream-textures-ai",
+      "dream-textures-blender",
+      "dream-textures-diffusion",
+      "dream-textures-generation",
+      "dream-textures-gpu",
+      "dream-textures-history",
+      "dream-textures-inpainting",
+      "dream-textures-local",
+      "dream-textures-material",
+      "dream-textures-outpainting",
+      "dream-textures-pbr",
+      "dream-textures-projection",
+      "dream-textures-prompt",
+      "dream-textures-python",
+      "dream-textures-render",
+      "dream-textures-seamless",
+      "dream-textures-upscaling",
+      "dream-textures-windows"
+    ],
+    "created_at": "2026-11-11T19:09:18Z",
+    "updated_at": "2026-11-15T19:26:40Z",
+    "pushed_at": "2026-11-15T13:26:27Z",
+    "license": "MIT",
+    "open_issues": 48,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-11T19:09:18Z",
+        "description": "An AI-powered texture forge for Blender — turn text prompts into seamless PBR materials, concept art and scene-wide projections with local or cloud diffusion models, straight inside the 3D viewport on Windows. · dream textures · dream textures blender · dream textures addon · dream textures ai · dream textures seamless · dream textures pbr",
+        "html_url": "https://github.com/linknimiball1974/ai-texture-forge",
+        "stars": 682,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "makepad/relax",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 558,
+    "forks": 30,
+    "language": "Rust",
+    "description": "Relax Rust JIT",
+    "html_url": "https://github.com/makepad/relax",
+    "topics": [],
+    "created_at": "2026-11-11T19:12:58Z",
+    "updated_at": "2026-11-15T21:37:17Z",
+    "pushed_at": "2026-11-15T22:29:34Z",
+    "license": "MIT",
+    "open_issues": 32,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-11T19:12:58Z",
+        "description": "Relax Rust JIT",
+        "html_url": "https://github.com/makepad/relax",
+        "stars": 558,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "meta/astryx",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 28810,
+    "forks": 2250,
+    "language": "TypeScript",
+    "description": "An open source design system that's fully customizable and agent ready",
+    "html_url": "https://github.com/meta/astryx",
+    "topics": [],
+    "created_at": "2026-01-09T16:20:32Z",
+    "updated_at": "2026-11-15T22:50:44Z",
+    "pushed_at": "2026-11-15T22:48:39Z",
+    "license": "MIT",
+    "open_issues": 702,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "An open source design system that's fully customizable and agent ready",
+        "full_name": "meta/astryx",
+        "language": "TypeScript",
+        "trending_stars_period": 13660,
+        "trending_total_forks": null,
+        "trending_total_stars": 28810,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "milind-soni/OpenMausBot",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 23325,
+    "forks": 3238,
+    "language": "TypeScript",
+    "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+    "html_url": "https://github.com/milind-soni/OpenMausBot",
+    "topics": [
+      "ai-agents",
+      "claude-code",
+      "codex",
+      "computer-use",
+      "docker",
+      "electron",
+      "grok",
+      "grok-bot",
+      "grok-bot-alternative",
+      "self-hosted",
+      "typescript"
+    ],
+    "created_at": "2026-08-11T18:58:55Z",
+    "updated_at": "2026-11-15T22:50:20Z",
+    "pushed_at": "2026-11-15T22:47:10Z",
+    "license": "Apache-2.0",
+    "open_issues": 1101,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+        "full_name": "milind-soni/OpenMausBot",
+        "language": "TypeScript",
+        "trending_stars_period": 6413,
+        "trending_total_forks": null,
+        "trending_total_stars": 23325,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "opencoredev/islandcn",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 732,
+    "forks": 57,
+    "language": "TypeScript",
+    "description": "The open-source Dynamic Island for React, installed with shadcn.",
+    "html_url": "https://github.com/opencoredev/islandcn",
+    "topics": [
+      "dynamic-island",
+      "nextjs",
+      "react",
+      "shadcn",
+      "typescript",
+      "ui-components"
+    ],
+    "created_at": "2026-11-13T11:50:50Z",
+    "updated_at": "2026-11-15T22:10:49Z",
+    "pushed_at": "2026-11-13T15:14:36Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-13T11:50:50Z",
+        "description": "The open-source Dynamic Island for React, installed with shadcn.",
+        "html_url": "https://github.com/opencoredev/islandcn",
+        "stars": 732,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "rivet-dev/open-orange",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 588,
+    "forks": 21,
+    "language": "TypeScript",
+    "description": "Run Cloudflare Workers and Durable Objects unchanged on AWS, GCP, Azure or your own servers.",
+    "html_url": "https://github.com/rivet-dev/open-orange",
+    "topics": [
+      "cloudflare",
+      "cloudflare-workers",
+      "durable-objects",
+      "nodejs",
+      "rivet",
+      "self-hosted",
+      "serverless",
+      "sqlite",
+      "typescript",
+      "wrangler"
+    ],
+    "created_at": "2026-11-12T00:44:12Z",
+    "updated_at": "2026-11-15T22:15:50Z",
+    "pushed_at": "2026-11-14T23:37:44Z",
+    "license": "Apache-2.0",
+    "open_issues": 11,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-12T00:44:12Z",
+        "description": "Run Cloudflare Workers and Durable Objects unchanged on AWS, GCP, Azure or your own servers.",
+        "html_url": "https://github.com/rivet-dev/open-orange",
+        "stars": 588,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "serveroshq/panel",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 846,
+    "forks": 66,
+    "language": "PHP",
+    "description": "The open source ServerOS panel: one place to run the Linux servers you already own.",
+    "html_url": "https://github.com/serveroshq/panel",
+    "topics": [
+      "agpl",
+      "control-panel",
+      "devops",
+      "laravel",
+      "open-source",
+      "self-hosted",
+      "server-management",
+      "serveros",
+      "vps"
+    ],
+    "created_at": "2026-11-09T00:47:33Z",
+    "updated_at": "2026-11-15T21:57:04Z",
+    "pushed_at": "2026-11-15T20:01:06Z",
+    "license": "AGPL-3.0",
+    "open_issues": 19,
+    "default_branch": "main",
+    "sources": [
+      {
+        "created_at": "2026-11-09T00:47:33Z",
+        "description": "The open source ServerOS panel: one place to run the Linux servers you already own.",
+        "html_url": "https://github.com/serveroshq/panel",
+        "stars": 846,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "sherlock-project/sherlock",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 112448,
+    "forks": 12986,
+    "language": "Python",
+    "description": "Hunt down social media accounts by username across social networks",
+    "html_url": "https://github.com/sherlock-project/sherlock",
+    "topics": [
+      "cli",
+      "cti",
+      "cybersecurity",
+      "forensics",
+      "hacktoberfest",
+      "information-gathering",
+      "infosec",
+      "linux",
+      "osint",
+      "pentesting",
+      "python",
+      "python3",
+      "reconnaissance",
+      "redteam",
+      "sherlock",
+      "tools"
+    ],
+    "created_at": "2018-12-24T14:30:48Z",
+    "updated_at": "2026-11-15T22:49:25Z",
+    "pushed_at": "2026-11-15T05:13:15Z",
+    "license": "MIT",
+    "open_issues": 415,
+    "default_branch": "master",
+    "sources": [
+      {
+        "description": "Hunt down social media accounts by username across social networks",
+        "full_name": "sherlock-project/sherlock",
+        "language": "Python",
+        "trending_stars_period": 12401,
+        "trending_total_forks": null,
+        "trending_total_stars": 112448,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "tradermonty/claude-trading-skills",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 5478,
+    "forks": 1169,
+    "language": "Python",
+    "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+    "html_url": "https://github.com/tradermonty/claude-trading-skills",
+    "topics": [],
+    "created_at": "2025-10-19T16:37:29Z",
+    "updated_at": "2026-11-15T22:48:59Z",
+    "pushed_at": "2026-11-15T22:48:00Z",
+    "license": "MIT",
+    "open_issues": 72,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+        "full_name": "tradermonty/claude-trading-skills",
+        "language": "Python",
+        "trending_stars_period": 707,
+        "trending_total_forks": null,
+        "trending_total_stars": 5478,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "vercel-labs/agent-browser",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 51589,
+    "forks": 3606,
+    "language": "Rust",
+    "description": "Browser automation CLI for AI agents",
+    "html_url": "https://github.com/vercel-labs/agent-browser",
+    "topics": [],
+    "created_at": "2026-01-11T05:38:15Z",
+    "updated_at": "2026-11-15T22:49:52Z",
+    "pushed_at": "2026-11-15T12:43:23Z",
+    "license": "Apache-2.0",
+    "open_issues": 587,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "Browser automation CLI for AI agents",
+        "full_name": "vercel-labs/agent-browser",
+        "language": "Rust",
+        "trending_stars_period": 4601,
+        "trending_total_forks": null,
+        "trending_total_stars": 51589,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null
+  },
+  {
+    "full_name": "we-promise/sure",
+    "captured_at": "2026-11-15T22:51:05Z",
+    "stars": 15683,
+    "forks": 1371,
+    "language": "Ruby",
+    "description": "The personal finance app for everyone (by everyone)",
+    "html_url": "https://github.com/we-promise/sure",
+    "topics": [],
+    "created_at": "2025-07-23T04:13:55Z",
+    "updated_at": "2026-11-15T22:48:45Z",
+    "pushed_at": "2026-11-15T22:08:56Z",
+    "license": "AGPL-3.0",
+    "open_issues": 943,
+    "default_branch": "main",
+    "sources": [
+      {
+        "description": "The personal finance app for everyone (by everyone)",
+        "full_name": "we-promise/sure",
+        "language": "Ruby",
+        "trending_stars_period": 4483,
+        "trending_total_forks": null,
+        "trending_total_stars": 15683,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null
+  }
+]
