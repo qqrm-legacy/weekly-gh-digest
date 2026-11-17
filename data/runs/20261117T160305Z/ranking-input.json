@@ -1,0 +1,3322 @@
+{
+  "catalogue": [],
+  "coverage": {
+    "archive": {
+      "available": true,
+      "captures_without_manifest": [],
+      "directories_without_manifest": [],
+      "filtered_captures": [],
+      "invalid_manifests": [],
+      "manifest_capture_count": 27,
+      "manifests_without_snapshots": [],
+      "metadata_failure_records": 0,
+      "source_failure_records": 2
+    },
+    "cadence": {
+      "empty_window": false,
+      "interval_count": 26,
+      "intervals_over_three_hours": [
+        {
+          "from": "2026-11-10T21:20:53Z",
+          "seconds": 32783,
+          "to": "2026-11-11T06:27:16Z"
+        },
+        {
+          "from": "2026-11-11T06:27:16Z",
+          "seconds": 38589,
+          "to": "2026-11-11T17:10:25Z"
+        },
+        {
+          "from": "2026-11-11T17:10:25Z",
+          "seconds": 16497,
+          "to": "2026-11-11T21:45:22Z"
+        },
+        {
+          "from": "2026-11-11T21:45:22Z",
+          "seconds": 10839,
+          "to": "2026-11-12T00:46:01Z"
+        },
+        {
+          "from": "2026-11-12T00:46:01Z",
+          "seconds": 37827,
+          "to": "2026-11-12T11:16:28Z"
+        },
+        {
+          "from": "2026-11-12T11:16:28Z",
+          "seconds": 31210,
+          "to": "2026-11-12T19:56:38Z"
+        },
+        {
+          "from": "2026-11-12T21:45:19Z",
+          "seconds": 14736,
+          "to": "2026-11-13T01:50:55Z"
+        },
+        {
+          "from": "2026-11-13T01:50:55Z",
+          "seconds": 33082,
+          "to": "2026-11-13T11:02:17Z"
+        },
+        {
+          "from": "2026-11-13T11:02:17Z",
+          "seconds": 31348,
+          "to": "2026-11-13T19:44:45Z"
+        },
+        {
+          "from": "2026-11-13T21:13:13Z",
+          "seconds": 15281,
+          "to": "2026-11-14T01:27:54Z"
+        },
+        {
+          "from": "2026-11-14T01:27:54Z",
+          "seconds": 32504,
+          "to": "2026-11-14T10:29:38Z"
+        },
+        {
+          "from": "2026-11-14T10:29:38Z",
+          "seconds": 27400,
+          "to": "2026-11-14T18:06:18Z"
+        },
+        {
+          "from": "2026-11-14T22:27:46Z",
+          "seconds": 29368,
+          "to": "2026-11-15T06:37:14Z"
+        },
+        {
+          "from": "2026-11-15T06:37:14Z",
+          "seconds": 35206,
+          "to": "2026-11-15T16:24:00Z"
+        },
+        {
+          "from": "2026-11-15T16:24:00Z",
+          "seconds": 13601,
+          "to": "2026-11-15T20:10:41Z"
+        },
+        {
+          "from": "2026-11-15T22:51:05Z",
+          "seconds": 27753,
+          "to": "2026-11-16T06:33:38Z"
+        },
+        {
+          "from": "2026-11-16T06:33:38Z",
+          "seconds": 47064,
+          "to": "2026-11-16T19:38:02Z"
+        },
+        {
+          "from": "2026-11-16T19:38:02Z",
+          "seconds": 14479,
+          "to": "2026-11-16T23:39:21Z"
+        },
+        {
+          "from": "2026-11-16T23:39:21Z",
+          "seconds": 15381,
+          "to": "2026-11-17T03:55:42Z"
+        },
+        {
+          "from": "2026-11-17T03:55:42Z",
+          "seconds": 43643,
+          "to": "2026-11-17T16:03:05Z"
+        }
+      ],
+      "leading_gap_seconds": 18601,
+      "max_interval_seconds": 47064,
+      "median_interval_seconds": 21948.5,
+      "min_interval_seconds": 466,
+      "nominal_cron": "17 */3 * * *",
+      "nominal_slot_boundary": "start_exclusive_end_inclusive",
+      "nominal_slots_in_window": 56,
+      "scheduled_capture_count": null,
+      "target_interval_seconds": 10800,
+      "trailing_gap_seconds": 0,
+      "trigger_note": "Historical snapshots do not identify manual versus scheduled runs; capture counts are not schedule completion counts."
+    },
+    "format_version": 1,
+    "observed": {
+      "capture_count": 27,
+      "duplicate_snapshot_rows": 0,
+      "first_capture_at": "2026-11-10T21:13:07Z",
+      "ignored_future_rows": 0,
+      "invalid_timestamp_rows": 0,
+      "last_capture_at": "2026-11-17T16:03:05Z",
+      "snapshot_rows": 1464,
+      "unique_repositories": 195
+    },
+    "scope": {
+      "global_coverage_known": false,
+      "missing_intervals_reconstructed": false,
+      "note": "No observations are invented, interpolated or restored from aggregated weekly candidates. Leading and trailing gaps describe the observed window, not proven failed triggers.",
+      "search_first_page_limit": 30,
+      "trending": "first returned weekly and daily pages"
+    },
+    "window": {
+      "end": "2026-11-17T16:03:05Z",
+      "kind": "rolling_seven_days",
+      "start": "2026-11-10T16:03:05Z"
+    }
+  },
+  "dedup_excluded": [
+    {
+      "full_name": "mvanhorn/last30days-skill",
+      "reason": "daily explanation retry deferred; retained in pending queue",
+      "retry_at": "2026-11-17T19:40:54.429510665Z"
+    },
+    {
+      "full_name": "samyost1/3dicon",
+      "reason": "daily explanation retry deferred; retained in pending queue",
+      "retry_at": "2026-11-17T19:43:48.769846146Z"
+    },
+    {
+      "full_name": "sveltejs/svelte",
+      "reason": "daily explanation retry deferred; retained in pending queue",
+      "retry_at": "2026-11-17T19:41:15.903845038Z"
+    },
+    {
+      "full_name": "wangmingxuan666/Tiersense",
+      "reason": "daily explanation retry deferred; retained in pending queue",
+      "retry_at": "2026-11-17T19:44:49.204812568Z"
+    },
+    {
+      "full_name": "n4ze3m/tiny-voca",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "yetanotherbrowser/yab",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mit-han-lab/pear",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "BigPizzaV3/ClaudeMom",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "huggingface/pybot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "higurashi-ai/Haru",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "meshy-dev/ThreeRT",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "racdeufindurch198812/Blender-AI-MCP-Studio",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tiobeharxi1987/blender-ai-copilot-flow",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zovulrira1974/blender-ai-copilot-assets",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ruvnet/ruflo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "headroomlabs-ai/headroom",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Kruk2/jasna",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "withmarbleapp/os-taxonomy",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "morluto/rea",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "storytold/artcraft",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "boykopovar/AnyPS5",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "cathrynlavery/diagram-design",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "NationalSecurityAgency/ghidra",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "anthropics/claude-plugins-official",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "K-Dense-AI/scientific-agent-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Gathin23/cleanyourtv",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Arekejoker/qwen21-nsfw-pose-skill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "HeyPuter/everything",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Leonxlnx/earshot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "OpenMOSS/MOSS-Image",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Caho1/open-claude-ui",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AjncSystem/ShadowOfTheColossus-PC",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "MyLuxy/overdrive",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "LiCinCan/blender-ai-mcp-addon",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "MaryCache/imozuru",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Noniv/web-ocean",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "CoolkHz/gptibo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ly05010419/MacNativeGames",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jhaizhou-ops/d2r-mobile",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "xiaoyang111222/cn-math-taxonomy",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "deeplethe/solid-glass",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "aicodeking/leanrea",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ahwootech/BRUTAL",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "chenglou/handwired",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Supermedo/uncharted_pc",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "alchaincyf/huashu-motion",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "rohit267/net-merge",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Tencent-Hunyuan/Hy-Memory",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "xscreensaver-official/xscreensaver",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zhuyansen/new-term-radar",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "feder-cr/git-ai",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "outcrawlai/scout",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "seedds/nxnative",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Zfinix/eleven",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "threerocks/sweety-handdraw-video",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "cranebeaker/coop-anything",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "datalab-to/indra",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mistralai/timestral",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "0xProbabillity/house-control",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "HayatoG/iss_pc",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "solana-classic/solana-classic",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "simbasjungles/free-my-tv",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Ansub/tv-detox",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "humblemuzzu/dumbtv",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Graphify-Labs/graphify",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "msitarzewski/agency-agents",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "vllm-project/vllm",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sickn33/agentic-awesome-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "android/skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "deepseek-ai/DeepInfer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JoasASantos/REA-Prompts",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "wshobson/agents",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "pengchujin/aerial-tv",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "reason-machines/reason-network",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "dipa-studio/ios-sweet",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zcbacxc/mcd-party-planner",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "YOURSJEYO/claude-switcher",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "supabase/supabase",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "strelov1/freehire",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "twentyhq/twenty",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "earthtojake/text-to-cad",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ctresb/leis",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ikow/php2shell-poc",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "eness/php2shell-CVE-2026-109618-CVE-2026-109619-PoC",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ELY-Open-Source/ElyOffice",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "eagle-hq/EAGLE-4",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "stackedlol/ascii-sharks",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "luongnv89/claude-howto",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "php/php-src",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Meloong-Git/PCL",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "fastapi/fastapi",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tek-sys-hub/Rubix-lang",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "9bie/php2shell-bypass-aslr-exp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "openai/php2shell-checker",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "oosexgang/hackios-xnu-kernel",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "colinhacks/reylo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "UniXNU/UniXNU",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Revivedx/SavageWindRecomp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "NVIDIA/flare-local-inference",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Hugo-Dz/spritefusion-sprite-normals",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Renhuai123/ziwei-doushu",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "SnailSploit/Claude-Red",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "OpenBMB/VoxCPM",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "nodejs/node",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "elie222/rakazo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "wesbos/3d-model-anything",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "EthanArbuckle/fairplay-decrypt",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Jakeschincariol/day-trader-skill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "xevrion/hatchzip",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Zagitta/gpu-unlock",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Snapintosh/Snapintosh",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "aicodeking/pandacode",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "dominikmartn/harp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Nutlope/hallmark",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "makecindy/cindy",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "pollen-robotics/microduck",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jbiaojerry/ebook-treasure-chest",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "google-gemini/gemini-cli",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "aws/agent-toolkit-for-aws",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "assetnote/php2shell-scanner",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JustAResearcher/gpu-unlock-ada",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "VictorTaelin/uniichat",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "pingdotgg/t3code",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TauricResearch/TradingAgents",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JetBrains/thinkrail",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "multica-ai/andrej-karpathy-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AgriciDaniel/claude-seo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "coollabsio/coolify",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "nthnclrk/CleanFrame",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "rddmwmddr/android-ad-cleaner",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "morganlinton/BeautifulRust",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "designfuchen/word-atlas",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "lyramakesmusic/neuron-explorer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "udhaykumarbala/cleanyourtv-app",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mizorewww/gdirect",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "nightly-labs/openbot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "gitroomhq/postiz-app",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Panniantong/Agent-Reach",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "alchaincyf/huashu-design",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "NVIDIA/SkillSpector",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "t3dotgg/tstack",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "enesozturk/dimensional-drawing",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "DenisSergeevitch/ex-ussr-kinship-research",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "KillaBoi/StealMyBitcoin-PoC",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "impacifist/Windows-GPU-UNLOCK",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "unclebob/ub-mode",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "andyhuo520/digital-human-koubo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "torrentplayer/torrentplayer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "HKUDS/DeepTutor",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "togg53192-cmd/jailbreaks",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "LNPANDY/NX2Apple",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "surendrapandar/minilytics",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "elayadesign/ai-design-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "anhao/ai-pose-gallery-zh",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "interplains/Zero-Breach-Toolkit",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "DLSS-5-Swaper-New/.github",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ZiChuanLan/agent-purge",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kargulstudio/calender-app-design",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zita-ch/supermimic_vibed",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "CopilotKit/OpenDuet",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "hmjz100/LinkSwift",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ruvnet/RuView",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "macro-inc/macro",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "xiaolai/the-craft-of-selfteaching",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "expo/skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jakubkrehel/skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Motionsites-AI/claude-skill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Leonxlnx/taste-skill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "oosexgang/hakios-xnu-kernel",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "anonnerdfrenzy/survival-llm",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "daveebbelaar/bama",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "DrWhax/unfairplay",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "yaojingang/GEOInflow",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "man15h/tellyscope",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Marker284/yandex-station-extended",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "blakeandersonw/ai-app-playbook",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "rossark0/rossark-motion-skill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mirkobrombin/raven",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "songjianyang/xss-audit",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "smithjohn78390/tongjiang-lab",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "milind-soni/OpenMausBot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "thedotmack/claude-mem",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Donchitos/Claude-Code-Game-Studios",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "CopilotKit/OpenBot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "qybaihe/bla",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "aschmelyun/print-my-profile-pic",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "hugohe3/ppt-master",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "deepopen-com/deepopen-3d-webs",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "misshexa66/OunceCake",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "valentderah/totk-pc-recomp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ccch1mneyyy/dsh-Go",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "OpenBMB/MiniCPM-OCR",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "paipiange/nvzhuang",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "anthropics/skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "lightpanda-io/browser",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "heydamir/unslop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "wangzan101/Mika",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "lexifina/global-law",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "BryceYuuu/RUN",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kevinraymond/florilegium",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "HRuiCcc/RuiC-PoseAtlas",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Orkas-AI/Orkas",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "vorssaint/vorssaint-utils",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "bregman-arie/devops-exercises",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "THU-MAIC/OpenMAIC",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AstrBotDevs/AstrBot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Djihads80/Eglantine",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "deepseek-ai/dsh-superagent-prototype",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "patch-gg/pixelfx",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "haydenschmitty/floorplan",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "D3voz/openjutsu",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Arjun-Ingole/hop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "anomalyco/hex",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "patchy631/ai-engineering-hub",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "FlashML-org/FreeToken",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "hyprwm/Hyprland",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "beenuar/AiSOC",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kornia/kornia",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "cjpais/Handy",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "public-apis/public-apis",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ghostty-org/ghostty",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "physicsdolphin/nv-uefi-unlocker",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "elvarofficial/teardown",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "storytold/craft-anything",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "NiazMorshed2007/reanimate",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jacke-pp/open-yoki",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "BookracyFOS/bookracy",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "benderandrew069/deepseek-api-pricing-2026",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "modelflare-ai/AnyModelBot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "vercel-labs/agent-desktop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "D4Vinci/Scrapling",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JustVugg/colibri",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "p-e-w/heretic",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "max-sixty/worktrunk",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "karpathy/nanochat",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Verlintas/NOIR",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "caru-ini/stack-diagram",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mromidev/claude-animated-shorts",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "hyz317/HairDeck",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jackwener/DSH-Android",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "joeblau/subvox",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sleepy-zone/ai-ref-library-cn",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Pika-Labs/Pika-H3-Flex",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "floci-io/floci",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Usagi-org/ai-goofish-monitor",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "spotify/portal-ai-plugins",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "speridlabs/idol-sdk",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "RikiyaT/lm_understand-logs",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "KKKKhazix/agent-autoloop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "wquguru/cicada",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ramenvr/autopilot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AssassinCreator/steam-stash-value-report-card",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "NVIDIA/auto-ontology",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JiaFeiMiao-K-Cat/DiscImageStudio",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "github/spec-kit",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "scenario-labs/skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "garrytan/gstack",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "FareedKhan-dev/kimi-k3-in-c",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "The-PR-Agent/pr-agent",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "MichaelCade/90DaysOfDevOps",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Thysrael/Horizon",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "calesthio/OpenMontage",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "govijr/terminal-mac",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "N1nEmAn/sapper-v2",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "anthropics/FlashProve",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JuneYaooo/rea-video",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Minireel/HGhub",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zortos293/Lichii",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "s1dashu/quiet-md",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "google/skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "lz4/lz4",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ConardLi/garden-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "microsoft/VibeVoice",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "UncensoredLabs/uncensored-ai-api",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "andrew-babo/muse4ai",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Minglink/dsh-jailbreak-workflow",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jxy333967/jianxunyun",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "alchaincyf/huashu-bird-sticker",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Gezine/CivSwitch",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "brightsongwrath/personal-data-deletor-osint",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Balanov/uncut",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "arpanjot-coding/AVault",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zed-industries/zed",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "astral-sh/ruff",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "prometheus/prometheus",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "microsoft/vscode",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "react/react",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "rust-lang/rust",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "nushell/nushell",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "rails/rails",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "angular/angular",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "etcd-io/etcd",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "symfony/symfony",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mpv-player/mpv",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "openssl/openssl",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mmdoctor/google-pro-helper",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Sandflow-ai/sand3d",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "livliv-dev/player",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "chadyi/StudyOnTV",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sqlpxc/airhand",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jyotipmahes/ML-Interview-Prep",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JenkinWoo/sheeridVerify",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "libracoder/kiri",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zhanghao123vip/ai-manju-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "WoYun520/pixel-gif-sticker-pack",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kevintngo/looseleaf",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Lee-xeo/Claude-Cage",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "smarkyie/NSP-Box",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sherlock-project/sherlock",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "meta/astryx",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ranxianglei/billion-context",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "dsx-ai-factory/nvke",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mbillow/localthings",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tailwindlabs/tailwindcss",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "NotRexed/Hookshot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "WoYun520/gif-factory",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Leviidev/Henge",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "voyager-so/vork",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "shanselman/gputaskman",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JosssphZhou/poki",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "majorminorlabs/hermes-voice",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zeekk0/OpenAmika",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Th0rgal/satmux",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "DIYgod/pinky",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sassiestrhihno/boxshelf-beta",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AtomIllusionistDwell/watson-username-footprint-finder",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jev-chat/jev-chat-jarvis",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "unreallabsai/unreal-agent",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "newliver666/apk-reverse",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kryvora-network/kryvora-node",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "yukitorido/short-video-generator-AI",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "NVIDIA/Model-Optimizer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "dgreenheck/tidewater",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "asokurasu/text-humanizer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "blader/humanizer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "CzJam/gjgjxweb",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "egoist/mygo-music",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kubai087/kubai-icons",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ZhuLinsen/daily_stock_analysis",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jhaizhou-ops/S2Arm",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "huamidev/GestaltX",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "RolandoV3/metatrader-5-bot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "leanislizarzado/ibm-spss-desktop-suite",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ayanprob/coreldraw-desktop-installer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "SK-Dev666/rust-external-trainer-tool",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "bipro45/actual-multi-display-configurator",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "daiphu2708-crypto/melodyne-5-desktop-setup",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "shayannazar84-hero/honkai-star-rail-companion-suite",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Somenicehispanic/ashampoo-winoptimizer-desktop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AleRibeiro44/archicad-desktop-setup",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "PHISHER420/autodesk-inventor-desktop-config",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "CodeSouvik/clion-standalone-enhancement",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sajawal-12/cubase-studio-desktop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Arda313131882/aion-2-trainer-tool",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ebtsamalhakmy-sketch/desktop-backup-suite",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tss878/delta-executor-toolkit",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "IsaiaR09/daemon-pro-desktop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JasonCharb/directory-opus",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kcgeekedup-hash/delta-force-trainer-tool",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Elegantic/designcenter-nx-desktop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Vesuvio1/display-fusion",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Sanidhya0510/dvd-creator-game-enhancement",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tokio-rs/topcoat",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "we-promise/sure",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Haleclipse/CometixCode",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TheAlgorithms/Java",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "herdrdev/herdr",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "agentes-chat/agentes-chat",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Luk177Master/easy-worship-desktop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "dikshantghimire321-droid/kontakt-8-config",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "janitoff0/ninjatrader-bot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "apex-compute/ANR",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "SirBonney/scrcpy-mirror-control",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ggml-org/llama.cpp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "nvm-sh/nvm",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ashhart/TensorFold",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "OnlistTeam/ai-manager",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Alex314618-create/JevRev",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "adriadam10/mkw-recomp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "serveroshq/panel",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Goblinmine/homelab-diagram",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kolbicz/WQFiles",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JDhruv14/line-art-animation",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "alexeyw/lot-map",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "dabingfy-dot/solo-to-team-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AIRzZ90/study-materials-fork",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Dodaios/ste80-humanizer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Goldoire/fefw-recomp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Robbyant/lingbot-touch",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "forcequitOS/worse_query",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "lxe/phoneuse",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "makepad/relax",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "LNPANDY/HGhub-MacOS-iOS-Version",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "luobinger/PerkRadar",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "21stware/bowel",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TooonyChen/finallyshell",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "opencoredev/islandcn",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "rivet-dev/open-orange",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "faizfahmi77/ScanDot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "failsafe-security/artex",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tailscale/tailcat",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zouyuxuan122/dsh-our-free-model",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "amitshekhariitbhu/ai-system-design",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ollaya-dev/ollaya",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Topkiflare74/ai--manus2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "WarriorRemember/IPTV_Player_2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "trackboatwrightplan/GitHub-Copilot-app",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TrapAccountant/GitHub-Copilot-app",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TurquoiseDetective/IPTV_Player_2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tornadonovicewhirl40/IPTV_Player_2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "WattBeetleLearn/IPTV_Player_2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Trapbraneedle/IPTV_Player_2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "topapothecarycanal/ai--manus2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "trackersnailgrip/GitHub-Copilot-app",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Titanlushrink/IPTV_Player_2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TradesmanRecord/GitHub-Copilot-app",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "toppatronweave/ai--manus2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Tencent/LoopForge",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "deepseek-ai/chat-demo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "imnotsharingmyname/pcportastrobot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Moh4696/cinematic-skill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "credoksopho1984/blender-ai-copilot-studio",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Noniv/abyssal-garden",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Liuziyu77/Valen",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "CzzzzzzJ/mdldm-maitian",
+      "reason": "AI explanation unavailable; retained for a later daily issue"
+    },
+    {
+      "full_name": "haziqahmedqasmi/PeakCut",
+      "reason": "AI explanation unavailable; retained for a later daily issue"
+    },
+    {
+      "full_name": "joshpuckett/allo",
+      "reason": "AI explanation unavailable; retained for a later daily issue"
+    },
+    {
+      "full_name": "sybil-solutions/inference-optimisation-skill",
+      "reason": "AI explanation unavailable; retained for a later daily issue"
+    },
+    {
+      "full_name": "Comfy-Org/ComfyUI",
+      "reason": "AI explanation unavailable; retained for a later daily issue"
+    },
+    {
+      "full_name": "YuJunZhiXue/dsh-purge",
+      "reason": "AI explanation unavailable; retained for a later daily issue"
+    }
+  ],
+  "delivery_slot": "daily:2026-11-17",
+  "edition": "daily",
+  "entries": [
+    {
+      "baseline": null,
+      "delta": 188,
+      "description": "MiniMind – это полностью открытый набор кода, позволяющий обучить собственный LLM с 64 млн параметров за два часа на одной видеокарте 3090, затратив около трёх долларов аренды GPU. Проект предоставляет минималистичную архитектуру, совместимую с Qwen3, а также реализацию MoE‑модели, токенизатора с поддержкой специальных шаблонов (<tool_call>, <think> и др.) и весь тренировочный пайплайн от предобучения до RLHF‑DPO, LoRA и дистилляции, написанный на чистом PyTorch без сторонних абстракций. Пользователь может запустить предобучение, SFT или RL‑обучение как в однокарточном режиме, так и в распределённом (DDP, DeepSpeed), а готовую модель легко интегрировать в сервисы, совместимые с OpenAI API, или в локальные UI‑интерфейсы на Streamlit. Пример применения – разработчик, желающий экспериментировать с инструмент‑вызовами и агентным поведением, разворачивает MiniMind‑сервер, подключает чат‑интерфейс и в течение нескольких часов получает работающего 64 М‑модельного ассистента, способного генерировать ответы, вызывать внешние инструменты и демонстрировать «мышление» в реальном времени. Ограничения: модель остаётся небольшого размера, поэтому её качество уступает крупным коммерческим LLM; обучение измерено на одной 3090 и может потребовать больше ресурсов при масштабировании, а стоимость указана только для аренды GPU в конкретный период.",
+      "evidence_kind": "provider_selected_exact_readme_quote",
+      "evidence_quote": "此开源项目旨在完全从 0 开始，仅用 3 块钱成本与 2 小时训练时间，即可训练出规模约为 64M 的超小语言模型 MiniMind。",
+      "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+      "full_name": "jingyaogong/minimind",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-11-17T16:03:05Z",
+        "created_at": "2024-07-27T04:34:12Z",
+        "default_branch": "master",
+        "description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+        "forks": 8636,
+        "full_name": "jingyaogong/minimind",
+        "html_url": "https://github.com/jingyaogong/minimind",
+        "language": "Python",
+        "license": "Apache-2.0",
+        "observation": {
+          "first_seen": "2026-11-17T16:03:05Z",
+          "last_seen": "2026-11-17T16:03:05Z",
+          "observations": 1
+        },
+        "open_issues": 64,
+        "pushed_at": "2026-10-27T06:57:09Z",
+        "readme_excerpt": "<div align=\"center\">\n\n![logo](./images/logo.png)\n\n</div>\n\n<div align=\"center\">\n\n![visitors](https://visitor-badge.laobi.icu/badge?page_id=jingyaogong/minimind)\n[![GitHub Repo stars](https://img.shields.io/github/stars/jingyaogong/minimind?style=social)](https://github.com/jingyaogong/minimind/stargazers)\n[![GitHub Code License](https://img.shields.io/github/license/jingyaogong/minimind)](LICENSE)\n[![GitHub last commit](https://img.shields.io/github/last-commit/jingyaogong/minimind)](https://github.com/jingyaogong/minimind/commits/master)\n[![GitHub pull request](https://img.shields.io/badge/PRs-welcome-blue)](https://github.com/jingyaogong/minimind/pulls)\n[![Collection](https://img.shields.io/badge/🤗-MiniMind%20%20Collection-blue)](https://huggingface.co/collections/jingyaogong/minimind-66caf8d999f5c7fa64f399e5)\n\n</div>\n\n<div align=\"center\">\n\n![GitHub Trend](https://trendshift.io/api/badge/repositories/12586)\n\n</div>\n\n<div align=\"center\">\n  <h3>\"大道至简\"</h3>\n</div>\n\n<div align=\"center\">\n\n中文 | [English](./README_en.md)\n\n</div>\n\n* 此开源项目旨在完全从 0 开始，仅用 3 块钱成本与 2 小时训练时间，即可训练出规模约为 64M 的超小语言模型 MiniMind。\n* MiniMind 系列极其轻量，主线最小版本体积约为 GPT-3 的 $\\frac{1}{2700}$，力求让普通个人 GPU 也能快速完成训练与复现。\n* 项目同时开源了大模型的极简结构与完整训练链路，覆盖 MoE、数据清洗、预训练（Pretrain）、监督微调（SFT）、LoRA、RLHF（DPO）、RLAIF（PPO / GRPO / CISPO）、Tool Use、Agentic RL、自适应思考与模型蒸馏等全过程代码。\n* MiniMind 同时拓展了视觉模态模型 [MiniMind-V](https://github.com/jingyaogong/minimind-v)、多模态 Omni 模型 [MiniMind-O](https://github.com/jingyaogong/minimind-o)、扩散语言模型（MiniMind-dLM）、线性模型（MiniMind-Linear），详见 [Discussion](https://github.com/jingyaogong/minimind/discussions)。\n* 项目所有核心算法代码均从 0 使用 PyTorch 原生实现，不依赖第三方库提供的高层抽象接口。\n* 这不仅是一个大语言模型全阶段开源复现项目，也是一套面向 LLM 入门与实践的教程。\n* 希望此项目能为更多人提供一个可复现、可理解、可扩展的起点，一起感受创造的乐趣，并推动更广泛 AI 社区的进步。\n\n> 注：本项目基于 Apache 2.0 协议开源，完全免费。“2 小时” 指 SFT 阶段在单张 NVIDIA 3090 上跑完 `1 epoch` 的实测耗时，“3 块钱” 指对应时段的 GPU 租用成本。\n\n---\n\n<div align=\"center\">\n\n![minimind-3](./images/minimind-3.gif)\n\n[🔗 在线体验](https://www.modelscope.cn/studios/gongjy/MiniMind) | [🔗 视频介绍](https://www.bilibili.com/video/BV12dHPeqE72)\n\n\n<div align=\"center\">\n  <table>\n    <tr>\n      <td align=\"center\">\n        <a href=\"https://huggingface.co/collections/jingyaogong/minimind\" style=\"text-decoration: none;\">\n          <img src=\"./images/with_huggingface.png\" alt=\"Hugging Face Logo\" style=\"vertical-align: middle; width: auto; max-width: 100%;\" />\n        </a>\n      </td>\n      <td align=\"center\">\n        <a href=\"https://www.modelscope.cn/profile/gongjy\" style=\"text-decoration: none;\">\n          <img src=\"./images/with_modelscope.png\" alt=\"ModelScope Logo\" style=\"vertical-align: middle; width: auto; max-width: 100%;\" />\n        </a>\n      </td>\n    </tr>\n  </table>\n</div>\n\n\n</div>\n\n---\n\n# 📌 项目介绍\n\n大语言模型（Large Language Model, LLM）的出现，引发了全球范围内对 AI 的空前关注。无论是 ChatGPT、DeepSeek 还是 Qwen，都以惊艳的效果让人真切感受到这场技术浪潮的冲击力。然而，动辄数百亿参数的模型规模，使得它们对个人设备而言不仅难以训练，甚至连部署都显得遥不可及。打开大模型的“黑盒子”，真正去理解其内部运作机制，本应是一件令人心潮澎湃的事。遗憾的是，绝大多数探索最终都止步于使用 LoRA 等技术对现有大模型做少量微调，学习一些新指令或特定任务。这更像是在教牛顿如何使用 21 世纪的智能手机——虽然有趣，却偏离了理解物理本质的初衷。\n\n与此同时，第三方的大模型框架与工具库，如 `transformers` / `trl` / `peft` 等，往往只暴露出高度抽象的接口。只需短短十几行代码，就可以完成“加载模型 + 加载数据集 + 推理 + 强化学习”的全流程训练。这种高效封装固然便利，却也在一定程度上把开发者与底层实现隔离开来，削弱了深入理解 LLM 核心代码的机会。我认为 “用乐高自己拼出一架飞机，远比坐在头等舱里飞行更让人兴奋”，然而更现实的问题是，互联网上充斥着大量付费课程和营销内容，用漏洞百出、一知半解的讲解包装所谓的 AI 教程。正因如此，本项目的初衷就是尽可能降低 LLM 的学习门槛，让每个人都能从理解每一行代码开始，从 0 开始亲手训练一个极小的语言模型。是的，从**零开始训练**，而不是仅仅停留在**推理**层面。最低只需不到 3 块钱的服务器成本，就能亲身体验从 0 到 1 构建一个语言模型的全过程。\n\n😊 一起感受创造的乐趣吧！\n\n---\n\n#### 🎉 本项目包含以下内容\n\n- 提供完整的 MiniMind-LLM 结构代码（Dense + MoE），当前主线结构对齐 `Qwen3 / Qwen3-MoE` 生态。\n- 提供 Tokenizer 与分词器训练代码，支持 `<tool_call>`、`<tool_response>`、`<think>` 等模板标记。\n- 覆盖 Pretrain、SFT、LoRA、RLHF-DPO、RLAIF（PPO / GRPO / CISPO）、Tool Use、Agentic RL、自适应思考与模型蒸馏等完整训练流程。\n- 提供全阶段开源数据，覆盖收集、蒸馏、清洗与去重后的高质量数据集。\n- 关键训练算法与核心模块均从 0 实现，不依赖第三方框架封装。\n- 兼容 `transformers`、`trl`、`peft` 等主流框架，以及 `llama.cpp`、`vllm`、`ollama` 等常用推理引擎与 `Llama-Factory` 等训练框架。\n- 支持单机单卡与单机多卡（DDP、DeepSpeed）训练，支持 wandb / swanlab 可视化与动态启停训练。\n- 支持在 C-Eval、C-MMLU、OpenBookQA 等第三方测评集上进行评测，并支持通过 YaRN 实现 RoPE 长文本外推。\n- 提供兼容 OpenAI API 协议的极简服务端，便于接入 FastGPT、Open-WebUI 等第三方 Chat UI，并支持 `reasoning_content`、`tool_calls`、`open_thinking`。\n- 提供基于 Streamlit 的极简聊天 WebUI，支持思考展示、工具选择与多轮 Tool Call。\n- 包含实验性拓展：离散扩散语言模型（[dLM](https://github.com/jingyaogong/minimind/discussions/618)）与线性注意力模型（[Linear Attention](https://github.com/jingyaogong/minimind/discussions/704)），均可基于主线 AR 模型进行续训。\n\n#### 🎉 已发布模型列表\n\n| 模型 | 参数量 | Release |\n|------|--------|---------|\n| minimind-3 | 64M | 2026.04.01 |\n| minimind-3-moe | 198M-A64M | 2026.04.01 |\n| minimind2-small | 26M | 2025.04.26 |\n| minimind2-moe | 145M | 2025.04.26 |\n| minimind2 | 104M | 2025.04.26 |\n| minimind-v1-small | 26M | 2024.08.28 |\n| minimind-v1-moe | 4×26M | 2024.09.17 |\n| minimind-v1 | 108M | 2024.09.01 |\n\n\n---\n\n#### 📝 更新日志\n\n<details> \n<summary> <b>🔥 2026-04-01</b> </summary>\n\n - 发布 `minimind-3` / `minimind-3-moe`：结构、Tokenizer、训练链路、推理接口与默认配置全面更新\n- 结构主线对齐 `Qwen3 / Qwen3-MoE` 生态：Dense 约 `64M`，MoE 约 `198M-A64M`，并移除了 shared expert 设计\n- 默认训练数据切换为 `pretrain_t2t(_mini).jsonl`、`sft_t2t(_mi",
+        "sources": [
+          {
+            "captured_at": "2026-11-17T16:03:05Z",
+            "description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+            "full_name": "jingyaogong/minimind",
+            "language": "Python",
+            "trending_stars_period": 188,
+            "trending_total_forks": null,
+            "trending_total_stars": 65760,
+            "type": "trending_daily"
+          }
+        ],
+        "stars": 65760,
+        "topics": [
+          "artificial-intelligence",
+          "large-language-model"
+        ],
+        "updated_at": "2026-11-17T15:58:03Z"
+      },
+      "llm_used": true,
+      "metric_captured_at": "2026-11-17T16:03:05Z",
+      "period": "GitHub Trending: максимум наблюдавшихся звёзд за день",
+      "rank": 1,
+      "source_kind": "trending_daily",
+      "total": 6,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 1799,
+      "description": "Приложение выводит уровень заряда беспроводных мышей, клавиатур, гарнитур и игровых контроллеров прямо в системный трей Windows 10/11, заменяя громоздкое фирменное ПО. Оно написано на чистом C++/Win32, занимает около 350 KB и использует ~2 МБ ОЗУ, не требует установки сервисов и работает без прав администратора, поэтому его можно быстро запустить на любой машине. Программа напрямую опрашивает устройства через HID‑протоколы, поддерживая широкий спектр брендов – от Logitech и Razer до SteelSeries, Corsair, HyperX, Glorious и даже Bluetooth‑устройств, которые Windows уже умеет определять, а также все гарнитуры, совместимые с HeadsetControl.\n\nОтображение происходит в виде иконок и текста рядом с областью уведомлений: «🎧 30% 🖱 93%», где красный цвет сигнализирует о уровне ≤ 15 %, синий ⚡ – о зарядке, а затемнённый текст указывает, что устройство спит и показано последнее известное значение. Обновление происходит каждые 60 секунд и мгновенно при подключении устройства или пробуждении ПК. Пользователь может переключать режимы отображения, скрывать отдельные устройства, включать автозапуск и получать уведомления о низком заряде, что делает мониторинг батареи удобным даже при работе с несколькими периферийными гаджетами одновременно.",
+      "evidence_kind": "provider_selected_exact_readme_quote",
+      "evidence_quote": "Battery levels of your wireless mouse, headset, keyboard and controller, right on the Windows taskbar.",
+      "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+      "full_name": "krisgfx9/Wireless-Device-Battery-Monitor",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-11-17T16:03:05Z",
+        "created_at": "2026-11-16T19:28:29Z",
+        "default_branch": "main",
+        "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
+        "forks": 138,
+        "full_name": "krisgfx9/Wireless-Device-Battery-Monitor",
+        "html_url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor",
+        "language": "C++",
+        "license": "GPL-3.0",
+        "observation": {
+          "first_seen": "2026-11-17T16:03:05Z",
+          "last_seen": "2026-11-17T16:03:05Z",
+          "observations": 1
+        },
+        "open_issues": 114,
+        "pushed_at": "2026-11-17T15:55:20Z",
+        "readme_excerpt": "# Wireless Battery\n\nBattery levels of your wireless mouse, headset, keyboard and controller, right on the Windows taskbar.\n\n![Wireless Battery on the taskbar](docs/screenshot.png)\n\n> **Just want it working?** Download **[WirelessBattery-Setup](https://github.com/krisgfx9/Wireless-Device-Battery-Monitor/releases/latest)** from the latest release, run it and click through. That's it.\n>\n> **Experienced users** can grab the portable zip, use the [command-line options](#command-line), or [build it from source](#build) with `make` or `build.bat`.\n\n- **Tiny**: a ~350 KB app using about 2 MB of RAM. It's plain C++/Win32, with no runtime and no background service, and installs in seconds without admin rights.\n- **No vendor software needed**: it talks to the devices directly. G HUB, Synapse, iCUE, GG and NGenuity can stay closed (or keep running; they don't conflict).\n- **Many brands**: Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, Jabra, JBL, PlayStation and Xbox controllers, Samsung Galaxy Buds, any Bluetooth device Windows knows a battery level for, and every headset the bundled [HeadsetControl](https://github.com/Sapd/HeadsetControl) supports.\n\n## Display\n\n**On the taskbar (default):** `🎧 30%  🖱 93%` next to the notification area, drawn with the Windows icon font.\n- **Low battery:** a red number means 15% or less.\n- **Charging:** a blue ⚡ appears next to the number.\n- **Asleep:** dimmed text means the device is asleep and the last known value is shown.\n- **Theme:** it follows light/dark mode and DPI scaling.\n- **Transparent taskbar themes** (e.g. Windhawk's Taskbar Styler): turn on *Background behind taskbar text* in the menu to keep the text readable over the wallpaper.\n\n**Tray icons:** one icon per device with the number drawn in it, plus a \"Low battery\" notification at 15%. The app switches to this automatically when the taskbar is vertical or can't be found.\n\nHover for details. Click for the menu: every device (click one to hide or show it), display mode, *Refresh now*, *Start with Windows*, and *Exit*. Levels refresh every 60 seconds, and right away when a device is plugged in or the PC wakes up.\n\n## Supported devices\n\n| Vendor | Devices | How |\n|---|---|---|\n| **Logitech** | Mice and keyboards on Unifying, Bolt, Lightspeed (including the PRO X3 SUPERSTRIKE dongle `046D:C54F`) and Nano receivers, over USB or Bluetooth; G headsets (G533, G535, G633/G635/G733/G933/G935, G PRO/PRO X); G435 on the newer `046D:0ADF` dongle | HID++ 1.0 / 2.0 with feature discovery: unified battery, battery level, voltage, ADC; G435: CRC-16 framed vendor reports, `GET_BATTERY` in mV |\n| **Razer** | Wireless mice, keyboards and dongles; BlackShark V2 HyperSpeed, V2 Pro (2023), V3 / V3 Pro / V3 X headsets; Barracuda X (2022) on its 2.4 GHz receiver (`1532:0550`) | Razer feature-report protocol; BlackShark vendor protocols (V3 / V3 Pro / V3 X queried every 5 min); Barracuda X: Airoha battery and cable queries through the receiver |\n| **SteelSeries** | Arctis 1/7/7+/9/Pro/Pro Wireless, Arctis Nova 3P/5/7/7X/7P/Pro Wireless, GameBuds; Aerox 3/5/9 Wireless, Prime Wireless, Rival 3 Wireless (Gen 2), Rival 650, Rival Pro | Vendor HID reports |\n| **SteelSeries** | Arctis 1/7/7+/9/Pro/Pro Wireless, Arctis Nova 3P/5/7/7X/7P/Pro Wireless (including `1038:225D`), GameBuds; Aerox 3/5/9 Wireless, Prime Wireless, Rival 3 Wireless (Gen 2), Rival 650, Rival Pro | Vendor HID reports |\n| **Corsair** | Void / Void Pro / Void Elite / HS70 / HS80 wireless; Bragi devices (Virtuoso, Void V2, HS80 MAX, Slipstream mice and keyboards, including the newer Slipstream receiver `1B1C:2B00`, e.g. Scimitar Elite SE Wireless) | Vendor HID reports, Bragi `GET` (read-only) |\n| **Corsair** | Void / Void Pro / Void Elite / HS70 / HS80 wireless; Bragi devices (Virtuoso, Void V2, HS80 MAX, Slipstream mice and keyboards, e.g. Dark Core RGB Pro SE) | Vendor HID reports, Bragi `GET` (read-only) |\n| **Cooler Master** | MM712, MM731 (2.4 GHz dongle or USB cable) | Vendor HID status report (read-only) |\n| **HyperX** | Cloud III Wireless, Cloud III S Wireless, Cloud II Wireless (HP, Kingston, DTS), Cloud II Core Wireless, Cloud Alpha Wireless, Cloud Alpha 2 Wireless, Cloud Flight, Cloud Flight S, Cloud Stinger Core Wireless | Vendor HID reports |\n| **Glorious** | Model O / O- / D / D- Wireless, Model O 2 / D 2 PRO | Vendor feature report |\n| **Hitscan** | Hyperlight X, Hyperlight N | Vendor feature report (same protocol as Glorious) |\n| **Kysona / Pulsar / ATK (VXE) / Hitscan** | Kysona M600 / Mercury, Pulsar and ATK VXE wireless mice (e.g. VXE X3 Pro, VXE Dragonfly R1 / R1 Pro Max / R1 SE+, ATK F1 Extreme), Hitscan Hyperlight | Shared vendor protocol with checksummed replies |\n| **Pulsar X2 V3** | X2 V3 on the 1K dongle (`3710:5402`) or USB cable (`3710:3402`); X2 V3 eS on the 8K dongle (`3710:5403`) or USB cable (`3710:3406`) | 64-byte vendor feature report, battery register `08 81 01` (read-only) |\n| **ATK / VXE NK** | VXE R1 NK and other NearLink mice on the NK mo",
+        "sources": [
+          {
+            "captured_at": "2026-11-17T16:03:05Z",
+            "created_at": "2026-11-16T19:28:29Z",
+            "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
+            "html_url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor",
+            "stars": 1798,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 1799,
+        "topics": [],
+        "updated_at": "2026-11-17T16:03:31Z"
+      },
+      "llm_used": true,
+      "metric_captured_at": "2026-11-17T16:03:05Z",
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 2,
+      "source_kind": "new_repo",
+      "total": 6,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 1324,
+      "description": "Lastbook — это офлайн‑библиотека выживания, объединяющая руководства, видеоматериалы, энциклопедические ZIM‑файлы, карты и локальный ИИ в одном настольном приложении для macOS, Windows и Linux. После однократного скачивания пользователь выбирает размер набора (Small, Medium или All) и штатную карту выбранного штата, после чего все данные сохраняются локально и работают без подключения к сети. Приложение предоставляет боковую панель с быстрым доступом к видео, карте и чату, где ИИ отвечает на запросы, ссылаясь на конкретные страницы библиотеки, а без ИИ чат всё равно умеет находить нужные материалы.\n\nКлючевые возможности: 1) полнотекстовый поиск по всем типам контента (PDF, видео, ZIM‑энциклопедии) и смысловой поиск на Windows; 2) офлайн‑карта с детализированными улицами, зданиями и ресурсными точками выбранного штата, позволяющая искать адреса без интернета; 3) опциональный локальный ИИ, работающий полностью на процессоре пользователя, который генерирует ответы с цитатами из библиотеки. Приложение не открывает сетевые порты и использует сеть только при явном запросе пользователя – для загрузки контента во время установки или проверки обновлений.\n\nСценарий применения: человек, оказавшийся в зоне без доступа к интернету после стихийного бедствия, устанавливает Lastbook на ноутбук, скачивает набор «Medium» с картой своего региона и включённым локальным ИИ. Затем он может искать инструкции по первой помощи, смотреть обучающие видео, находить ближайшие источники воды на карте и задавать вопросы ИИ, получая ответы с указанием страниц, что ускоряет принятие решений в условиях ограниченных ресурсов. Требования включают совместимость с macOS 14+ (Apple Silicon), Windows 10+ (64‑бит) и Ubuntu 24.04/26.04 LTS (x86_64); другие дистрибутивы и GPU‑ускорение ИИ не гарантированы.",
+      "evidence_kind": "provider_selected_exact_readme_quote",
+      "evidence_quote": "Lastbook is an offline survival library for Mac, Windows and Linux. It puts manuals, videos, encyclopedias, an offline map and\nshort practical guides on one computer. After setup, it works offline.",
+      "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+      "full_name": "Immortal-Protocols/lastbook",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-11-17T16:03:05Z",
+        "created_at": "2026-11-12T23:49:03Z",
+        "default_branch": "main",
+        "description": "Offline knowledge AI, maps and videos for survival and rebuilding",
+        "forks": 159,
+        "full_name": "Immortal-Protocols/lastbook",
+        "html_url": "https://github.com/Immortal-Protocols/lastbook",
+        "language": "Python",
+        "license": "MIT",
+        "observation": {
+          "first_seen": "2026-11-17T03:55:42Z",
+          "last_seen": "2026-11-17T16:03:05Z",
+          "observations": 2
+        },
+        "open_issues": 82,
+        "pushed_at": "2026-11-17T10:09:09Z",
+        "readme_excerpt": "# Lastbook\n\nLastbook is an offline survival library for Mac, Windows and Linux. It puts manuals, videos, encyclopedias, an offline map and\nshort practical guides on one computer. After setup, it works offline. The desktop sidebar opens Videos, Map and Chat.\nChat answers questions using the library and links to its sources.\n\nWebsite: <https://lastbook.org>. Contact: hello@lastbook.org.\n\n> Lastbook’s original code and documentation are licensed under the [MIT License](LICENSE).\n> Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) to get started.\n\n## Release status\n\n| Platform | Version | Status |\n|---|---|---|\n| macOS (Apple Silicon, macOS 14 or later) | 1.1.11 | Live on lastbook.org, signed and notarized |\n| Windows (64-bit, Windows 10 or later) | 1.1.11 | Live on lastbook.org, Authenticode signed |\n| Linux (Ubuntu 24.04 or 26.04 LTS, x86_64) | 1.1.11 | Ubuntu packages; installation instructions below |\n\n## iPad (development preview, source only)\n\nA native iPad app (Videos, Map and Chat, offline, with optional on-device AI) is in [`mobile/ipad/`](mobile/ipad/).\n- It is source for contributors to build and sign themselves.\n- There is no App Store, TestFlight or downloadable iPad build.\n- See [mobile/ipad/README.md](mobile/ipad/README.md) for what works, the current limitations and how to build it.\n\n## Install on Linux\n\nThe Linux packages target **Ubuntu 24.04 LTS and Ubuntu 26.04 LTS on Intel/AMD x86_64 computers**, one package for each. Download\n[Lastbook for Ubuntu 24.04](https://downloads.lastbook.org/Lastbook_1.1.11_amd64.deb) (or [for Ubuntu 26.04](https://downloads.lastbook.org/Lastbook_1.1.11_ubuntu26.04_amd64.deb)), then install it with apt so Ubuntu resolves its dependencies.\n\n```bash\nsudo apt install ./Lastbook_1.1.11_amd64.deb                  # Ubuntu 24.04\nsudo apt install ./Lastbook_1.1.11_ubuntu26.04_amd64.deb      # Ubuntu 26.04\n```\n\nOpen Lastbook from the application menu. First-run setup downloads your chosen library, state map and optional local AI.\nThe app uses Ubuntu's GTK, WebKitGTK and media codecs. Its own files install under `/opt/lastbook`, and your library and\nsettings stay in your home folder. Removing the package leaves those downloaded files and settings in place.\n\nThe Linux release was tested on Ubuntu 24.04.5 in WSL2, including installation, setup, video playback, maps, address search,\nPDF reading, offline AI with citations, shutdown and uninstall. AI tests used the CPU. Native Linux GPU performance and\nother Linux distributions have not been validated for this release.\n\n## What it does\n\n- **Guides first.** Short, curated guides for urgent needs (`content/topics/`), each pointing to real pages in the library\n  with page numbers, plus what curators looked for and did not find (`content/gaps.json`).\n- **The full library.** Manuals and PDFs (with a whole-PDF view), videos, and offline encyclopedias (ZIM files), with\n  keyword search everywhere and meaning-based search on Windows.\n- **Offline map.** A base map of the world and the US, plus a detailed map for the state selected during setup: local streets,\n  buildings, terrain, crops, and water, help and resource points. Addresses in that state can be found offline. The person\n  picks the state; Lastbook never detects location.\n- **Optional local AI.** Ask questions in plain words and get answers that cite library pages, from a model that runs on\n  the computer itself (see \"The local AI\" below). Without it, Chat still finds the right pages.\n- **One-download setup.** On first run, setup defaults to Small and selects local AI when the computer can run it.\n  The person can choose Small, Medium or All, selects a state map, and starts the checked downloads. A library already on the\n  computer (a folder or a pack zip) can be used instead of downloading.\n- **Check for updates, only when asked.** About has a Check for updates button (and the Mac menu has Lastbook > Check for\n  Updates…). It only says whether a newer version is on the website; nothing is downloaded or installed.\n\n## Privacy and network use\n\n- **No listening port.** The desktop app opens no network port. The window and the engine talk through an in-memory bridge\n  (`app/bridge.py`): WKURLSchemeHandler on macOS (`app/shell_macos.py`), WebView2 `WebResourceRequested` on Windows\n  (`app/shell_windows.py`), and WebKitGTK `URISchemeRequest` on Linux (`app/shell_linux.py`). The local AI runner speaks JSON lines on standard input and output and opens no socket either.\n- **Two uses of the network, both started by the person.** (1) Setup's downloader (`engine/setup/`), when the person\n  starts or resumes a download. (2) The update check (`engine/update.py`, `web/update.js`), when the person presses\n  the button. Both go through `engine/setup/download.py`, the only module that opens a connection: HTTPS on port 443 only,\n  to allow-listed hosts only (`downloads.lastbook.org` for packs, maps, the manifest and update information; Hugging Face's\n  download hosts for the AI m",
+        "sources": [
+          {
+            "captured_at": "2026-11-17T16:03:05Z",
+            "created_at": "2026-11-12T23:49:03Z",
+            "description": "Offline knowledge AI, maps and videos for survival and rebuilding",
+            "html_url": "https://github.com/Immortal-Protocols/lastbook",
+            "stars": 1324,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 1324,
+        "topics": [],
+        "updated_at": "2026-11-17T16:02:32Z"
+      },
+      "llm_used": true,
+      "metric_captured_at": "2026-11-17T16:03:05Z",
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 3,
+      "source_kind": "new_repo",
+      "total": 6,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 734,
+      "description": "Проект google-ultra автоматизирует получение 12‑месячного бесплатного пробного периода Google One AI Ultra, который скрыт в ответах BillingClient и недоступен обычному пользователю. Скрипт использует процесс Google One и Frida для внедрения собственного кода в BillingClient, без необходимости Xposed или модификации APK, и последовательно выполняет: добавление аккаунта на устройство, переключение Play‑аккаунта, запрос доступных offer‑ов, выбор самого длительного бесплатного (12 мес) и подтверждение подписки только при цене 0 USD. Доступны два варианта: простая веб‑страница, работающая в браузере без установки Python и без root, и полноценный скрипт ultra0.py, требующий root‑устройства, Frida и Python 3.9+, позволяющий обрабатывать списки аккаунтов и выполнять массовое открытие пробных подписок. Пользователь получает бесплатный план Ultra 5× (20 TB) на год; после активации подписку необходимо отменить вручную, иначе будет списана полная цена $99.99 в месяц. Требования включают root‑устройство (Magisk, KernelSU или APatch), подключённое по USB, установленный adb и frida‑server, а также действующую банковскую карту (можно использовать одну карту для всех аккаунтов). Ограничения: бесплатный offer доступен только один раз на аккаунт, большинство аккаунтов не получат 30 TB‑план из‑за двойной проверки, а скрипт не будет работать, если Play‑аккаунт уже не соответствует условиям пробного периода.",
+      "evidence_kind": "provider_selected_exact_readme_quote",
+      "evidence_quote": "Google One 的 AI Ultra 有个 12 个月免费试用的 offer，任何页面上都看不到，只存在于 Play 结算库（BillingClient）的返回值里。这个脚本把「查 offer → 拉起 Play 收银台 → 确认 0 元 → 开通」串成了一条命令。",
+      "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+      "full_name": "gylive/google-ultra",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-11-17T16:03:05Z",
+        "created_at": "2026-11-17T10:21:54Z",
+        "default_branch": "main",
+        "description": null,
+        "forks": 439,
+        "full_name": "gylive/google-ultra",
+        "html_url": "https://github.com/gylive/google-ultra",
+        "language": "Python",
+        "license": "MIT",
+        "observation": {
+          "first_seen": "2026-11-17T16:03:05Z",
+          "last_seen": "2026-11-17T16:03:05Z",
+          "observations": 1
+        },
+        "open_issues": 4,
+        "pushed_at": "2026-11-17T16:03:35Z",
+        "readme_excerpt": "# google-ultra\n\n简体中文 | [English](README.en.md)\n\nGoogle One 的 AI Ultra 有个 12 个月免费试用的 offer，任何页面上都看不到，只存在于 Play 结算库（BillingClient）的返回值里。这个脚本把「查 offer → 拉起 Play 收银台 → 确认 0 元 → 开通」串成了一条命令。\n\n原理是借 Google One 自己的进程调 BillingClient，不需要 Xposed，不需要改 APK。\n\n## 两个版本\n\n**简单版**：一个网页，双击 `web/index.html` 打开，登录 → 绑卡 → 点一下，完事。不用装 Python，不用 root，不用数据线。\n\n**脚本版**：`ultra0.py`，要一台 root 手机和 frida。优点是 offer 从真实客户端取，不依赖浏览器指纹，能批量跑。\n\n先试简单版，不行再上脚本。\n\n## 能拿到什么\n\n拿到的是 **Ultra 5x，20TB，12 个月 $0**，到期前取消就不用付钱。开通后 Play 订阅页会写「即将扣款 2027-11-17 US$99.99/月」，这是试用结束后的价格，不是现在扣。\n\n30TB 那档（20x）也查得到 offer，但 Play 结算时会二次校验，大部分号会弹「您不符合免费试用条件」。这个脚本不会去点它。\n\n## 需要什么\n\n一台 root 过的安卓手机，USB 连着电脑。Magisk、KernelSU、APatch 都行，模拟器也行。\n\n电脑上要 Python 3.9 以上，外加两个包：\n\n```bash\npip3 install frida\n```\n\nadb 用 Android SDK 里的 platform-tools。装好后 `adb devices` 能看到手机就行。没装过的话，Mac 上 `brew install android-platform-tools`，Windows 去下 platform-tools 压缩包，解压后把目录加进 PATH。\n\n手机上要开「开发者选项 → USB 调试」，插上后在弹窗里点允许。\n\n## 用法\n\n### 简单版怎么用\n\n源码在 `web/index.html`，单文件，下载后双击就能用，浏览器会打开一个页面：\n\n1. 点「去登录」，用要开的谷歌账号登进去\n2. 点「去绑卡」，绑一张卡，卡里留 1 美元就行，试用期间不扣\n3. 回页面，点「Ultra 20 TB」那张卡片\n\n跳到 Google 的结算页之后，确认金额是 0，点订阅即可。\n\n不想下仓库的话，也可以直接访问在线版：https://gylive.github.io/google-ultra/web/\n\n### 脚本版怎么用\n\n先自检一遍环境，它会检查设备、root、frida-server、推送计费模块，还会顺手关掉会拦截 Play 网络的代理和 Clash：\n\n```bash\npython3 ultra0.py --check\n```\n\n全绿就可以跑号了。\n\n账号写成一个文本文件，一行一个，字段用四个短横线隔开：\n\n```\n邮箱----密码----辅助邮箱----2FA密钥----卡号----有效期----CVC----持卡人----邮编\n```\n\n后面几项留空也行。刚买的新号一般没有 2FA，那就留空：\n\n```\nabc123@gmail.com----mypassword----\n```\n\n带卡的话：\n\n```\nabc123@gmail.com----mypassword--------4242424242424242----10/29----326----ZHANG SAN----97201\n```\n\n地址不填会默认用 `123 Main St, Portland, OR 97201`，俄勒冈免消费税。\n\n跑：\n\n```bash\npython3 ultra0.py accounts.txt\n```\n\n单个号也可以：\n\n```bash\npython3 ultra0.py --account \"abc@gmail.com:密码:2FA密钥\"\n```\n\n想看结果，开订阅页确认一下：\n\n```\nPlay 商店 → 头像 → 付款和订阅 → 订阅\n```\n\n## 它内部干了什么\n\n1. 把账号加到手机（没有就加，有就跳过）\n2. 切 Play 账号。切完一定从头像面板读回来核对，对不上直接退出，不会跑到别的号上\n3. 启动 Google One，用 Frida 挂进去，`DexClassLoader` 加载计费模块\n4. `queryProductDetailsAsync` 查 `g1.play.20tb`，拿回 5 个 offer\n5. 挑免费期最长的那个（`eft-12month`，P1Y），在主线程调 `launchBillingFlow`\n6. 盯着收银台。看到价格是 0 或者「免费试用 12 个月」才点订阅；看到「不符合免费试用条件」就关掉，绝不点\n7. Play 有时会要求重新输密码，脚本自己填\n8. 打开订阅页核对，结果写进 `ultra0-report/`\n\n## 失败的时候是什么情况\n\n**账号不符合资格。** Play 会说「您不符合免费试用条件，尽管如此，您仍能订阅」。一个号基本只有一次机会：试用一旦发起过，哪怕没确认，offer 也会消失。所以别拿主力号试。\n\n**没有付款方式。** 订阅必须有卡。Play 的加卡页是 WebView，adb 填不进去，脚本会停下来提示你在手机上填完再按回车。每台设备手动绑一次，之后所有号共用这张卡。\n\n**Play 账号没切过来。** 脚本会打印当前实际登录的是哪个号，然后退出。这时手动在 Play 里切一下，加上 `--no-switch` 重跑，让它只做校验不再尝试切换：\n\n```bash\npython3 ultra0.py accounts.txt --no-switch\n```\n\n**收银台没弹出来。** 重跑一次。连续两次都不弹，检查一下设备的网络：`settings get global http_proxy`，不是 `null` 就清掉；Clash 这类 VPN 会劫持 DNS，也会让 Play 连不上。\n\n## 一些参数\n\n```bash\n--plan 5x      # 只开 20TB\n--plan 20x     # 只查 30TB（多数号拿不到试用）\n--plan auto    # 默认，两档都查，挑免费期最长的\n--no-add       # 账号已经在手机上，跳过加号\n--no-switch    # 不自动切账号，只校验当前账号\n```\n\n## 几个说明\n\n试完之后记得去 Play 里取消订阅，不然到期会扣 $99.99。\n\n脚本只在本地跑，账号密码和卡号不联网，也不上传任何地方。报告文件在 `ultra0-report/`，里面有 offer 明细和每步结果。\n\n这段代码只对 Play 结算流程里「客户端能拿到试用 offer」这件事做了利用，没有改任何服务端数据。\n\n## 交流\n\n有问题进群问。六个群随便进一个，都满了就加我微信，备注「Ultra」，我拉你。\n\n<table>\n<tr>\n<td align=\"center\"><b>2 群</b><br><img src=\"assets/wechat-group.jpg\" width=\"240\" alt=\"2 群\"></td>\n<td align=\"center\"><b>3 群</b><br><img src=\"assets/wechat-group3.jpg\" width=\"240\" alt=\"3 群\"></td>\n<td align=\"center\"><b>4 群</b><br><img src=\"assets/wechat-group4.jpg\" width=\"240\" alt=\"4 群\"></td>\n</tr>\n<tr>\n<td align=\"center\"><b>5 群</b><br><img src=\"assets/wechat-group5.jpg\" width=\"240\" alt=\"5 群\"></td>\n<td align=\"center\"><b>6 群</b><br><img src=\"assets/wechat-group6.jpg\" width=\"240\" alt=\"6 群\"></td>\n<td align=\"center\"><b>都满了加我</b><br><img src=\"assets/wechat-admin.jpg\" width=\"240\" alt=\"微信\"></td>\n</tr>\n</table>\n\n## 友链\n\n本项目在 [LINUX DO](https://linux.do) 社区发布与讨论，感谢社区的支持。\n\n- [LINUX DO](https://linux.do) —— 新的理想主义者社区\n- [LINUX DO 开源推广](https://linux.do/tag/1014) —— 开源项目推广板块\n\n[![LINUX DO](https://img.shields.io/badge/LINUX%20DO-%E7%A4%BE%E5%8C%BA-1f6feb)](https://linux.do)\n\n## 仓库结构\n\n```\nweb/index.html      简单版：单文件网页，在线版就是它\nsimple/ultra.py     脚本版极简实现（带内嵌模块）\nsimple/README.md    脚本版教程\nultra0.py           脚本版完整实现（批量、选档、切号）\nassets/             群二维码\n```\n\n在线版地址：https://gylive.github.io/google-ultra/web/\n\n## 许可\n\nMIT，见 [LICENSE](LICENSE)。\n",
+        "sources": [
+          {
+            "captured_at": "2026-11-17T16:03:05Z",
+            "created_at": "2026-11-17T10:21:54Z",
+            "description": null,
+            "html_url": "https://github.com/gylive/google-ultra",
+            "stars": 733,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 734,
+        "topics": [],
+        "updated_at": "2026-11-17T16:03:28Z"
+      },
+      "llm_used": true,
+      "metric_captured_at": "2026-11-17T16:03:05Z",
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 4,
+      "source_kind": "new_repo",
+      "total": 6,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 1311,
+      "description": "OpenCode — открытый AI‑агент, предназначенный для помощи в написании и анализе кода. После установки через скрипт, npm, Homebrew или другие менеджеры пользователь получает консольный интерфейс, который может выполнять команды, редактировать файлы и запускать bash‑скрипты. Внутри продукта реализованы два основных режима: «build» — полнофункциональный агент с правом изменять код и выполнять любые операции, и «plan» — ограниченный режим, который только читает проект, запрашивает подтверждение перед запуском команд и подходит для изучения чужих репозиториев или планирования изменений. Кроме того, существует суб‑агент «@general», позволяющий выполнять сложные поисковые запросы и многошаговые задачи. Примером применения может быть ситуация, когда разработчик получает новую кодовую базу, переключается в режим «plan», исследует структуру и зависимости, а затем, убедившись в необходимости правок, переключается в «build» и автоматически генерирует или исправляет файлы. Требования к системе минимальны: нужен доступ к интернету для загрузки скрипта и, при использовании «build», права на запись в каталог проекта; в случае desktop‑версии приложение ставится в домашний каталог ~/.opencode/bin. Ограничения включают необходимость удаления устаревших версий (< 0.1.x) перед установкой и то, что «plan» по умолчанию запрещает изменения, требуя явного согласия пользователя.",
+      "evidence_kind": "provider_selected_exact_readme_quote",
+      "evidence_quote": "OpenCode includes two built-in agents you can switch between with the `Tab` key.\n\n- **build** - Default, full-access agent for development work\n- **plan** - Read-only agent for analysis and code exploration\n  - Denies file edits by default\n  - Asks permission before running bash commands\n  - Ideal for exploring unfamiliar codebases or planning changes",
+      "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+      "full_name": "anomalyco/opencode",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-29T10:01:37Z",
+        "created_at": "2025-04-30T20:08:00Z",
+        "default_branch": "dev",
+        "description": "The open source coding agent.",
+        "forks": 29871,
+        "full_name": "anomalyco/opencode",
+        "html_url": "https://github.com/anomalyco/opencode",
+        "language": "TypeScript",
+        "license": "MIT",
+        "observation": {
+          "first_seen": "2026-10-19T18:16:51Z",
+          "last_seen": "2026-10-29T10:01:37Z",
+          "observations": 53
+        },
+        "open_issues": 3891,
+        "pushed_at": "2026-10-29T09:59:48Z",
+        "readme_excerpt": "<p align=\"center\">\n  <a href=\"https://opencode.ai\">\n    <picture>\n      <source srcset=\".github/assets/logo-ornate-dark.svg\" media=\"(prefers-color-scheme: dark)\">\n      <source srcset=\".github/assets/logo-ornate-light.svg\" media=\"(prefers-color-scheme: light)\">\n      <img src=\".github/assets/logo-ornate-light.svg\" alt=\"OpenCode logo\">\n    </picture>\n  </a>\n</p>\n<p align=\"center\">The open source AI coding agent.</p>\n<p align=\"center\">\n  <a href=\"https://opencode.ai/discord\"><img alt=\"Discord\" src=\"https://img.shields.io/discord/1391832426048651334?style=flat-square&label=discord\" /></a>\n  <a href=\"https://www.npmjs.com/package/@opencode/cli\"><img alt=\"npm\" src=\"https://img.shields.io/npm/v/@opencode/cli?style=flat-square\" /></a>\n  <a href=\"https://github.com/anomalyco/opencode/actions/workflows/release.yml\"><img alt=\"Build status\" src=\"https://img.shields.io/github/actions/workflow/status/anomalyco/opencode/release.yml?style=flat-square&branch=dev\" /></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"README.md\">English</a> |\n  <a href=\"README.zh.md\">简体中文</a> |\n  <a href=\"README.zht.md\">繁體中文</a> |\n  <a href=\"README.ko.md\">한국어</a> |\n  <a href=\"README.de.md\">Deutsch</a> |\n  <a href=\"README.es.md\">Español</a> |\n  <a href=\"README.fr.md\">Français</a> |\n  <a href=\"README.it.md\">Italiano</a> |\n  <a href=\"README.da.md\">Dansk</a> |\n  <a href=\"README.ja.md\">日本語</a> |\n  <a href=\"README.pl.md\">Polski</a> |\n  <a href=\"README.ru.md\">Русский</a> |\n  <a href=\"README.bs.md\">Bosanski</a> |\n  <a href=\"README.ar.md\">العربية</a> |\n  <a href=\"README.no.md\">Norsk</a> |\n  <a href=\"README.br.md\">Português (Brasil)</a> |\n  <a href=\"README.th.md\">ไทย</a> |\n  <a href=\"README.tr.md\">Türkçe</a> |\n  <a href=\"README.uk.md\">Українська</a> |\n  <a href=\"README.bn.md\">বাংলা</a> |\n  <a href=\"README.gr.md\">Ελληνικά</a> |\n  <a href=\"README.vi.md\">Tiếng Việt</a>\n</p>\n\n[![OpenCode Terminal UI](services/site/public/v1/docs/assets/lander/screenshot.png)](https://opencode.ai)\n\n---\n\n### Installation\n\n```bash\n# YOLO\ncurl -fsSL https://opencode.ai/v2/install | bash\n\n# Package managers\nnpm i -g @opencode/cli@latest      # or bun/pnpm/yarn\nbrew install anomalyco/tap/opencode-v2 # macOS and Linux (recommended, always up to date)\nbrew install opencode              # macOS and Linux (official brew formula, updated less)\nsudo pacman -S opencode            # Arch Linux (Stable)\nparu -S opencode-beta              # Arch Linux (Latest from AUR)\nmise use -g opencode               # Any OS\nnix run github:anomalyco/opencode  # Nix\n```\n\n> [!TIP]\n> Remove versions older than 0.1.x before installing.\n\n### Desktop App (BETA)\n\nOpenCode is also available as a desktop application. Download it from [opencode.ai/download](https://opencode.ai/download).\n\n| Platform              | Download                           |\n| --------------------- | ---------------------------------- |\n| macOS (Apple Silicon) | `opencode-desktop-mac-arm64.dmg`   |\n| macOS (Intel)         | `opencode-desktop-mac-x64.dmg`     |\n| Windows               | `opencode-desktop-win-x64.exe`     |\n| Linux                 | `.deb`, `.rpm`, or `.AppImage`     |\n\n```bash\n# macOS (Homebrew)\nbrew install --cask opencode-desktop\n```\n\n#### Installation Directory\n\nThe install script installs OpenCode to `$HOME/.opencode/bin`.\n\n### Agents\n\nOpenCode includes two built-in agents you can switch between with the `Tab` key.\n\n- **build** - Default, full-access agent for development work\n- **plan** - Read-only agent for analysis and code exploration\n  - Denies file edits by default\n  - Asks permission before running bash commands\n  - Ideal for exploring unfamiliar codebases or planning changes\n\nAlso included is a **general** subagent for complex searches and multistep tasks.\nThis is used internally and can be invoked using `@general` in messages.\n\nLearn more about [agents](https://opencode.ai/docs/agents).\n\n### Documentation\n\nFor more info on how to configure OpenCode, [**head over to our docs**](https://opencode.ai/docs).\n\n### Contributing\n\nIf you're interested in contributing to OpenCode, please read our [contributing docs](./CONTRIBUTING.md) before submitting a pull request.\n\n### Building on OpenCode\n\nIf you are working on a project that's related to OpenCode and is using \"opencode\" as part of its name, for example \"opencode-dashboard\" or \"opencode-mobile\", please add a note to your README to clarify that it is not built by the OpenCode team and is not affiliated with us in any way.\n\n---\n\n**Join our community** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)\n",
+        "sources": [
+          {
+            "captured_at": "2026-10-20T08:36:16Z",
+            "description": "The open source coding agent.",
+            "full_name": "anomalyco/opencode",
+            "language": "TypeScript",
+            "trending_stars_period": 1311,
+            "trending_total_forks": null,
+            "trending_total_stars": 218218,
+            "type": "trending_daily"
+          },
+          {
+            "captured_at": "2026-10-25T23:18:08Z",
+            "description": "The open source coding agent.",
+            "full_name": "anomalyco/opencode",
+            "language": "TypeScript",
+            "trending_stars_period": 6857,
+            "trending_total_forks": null,
+            "trending_total_stars": 221503,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 222899,
+        "topics": [],
+        "updated_at": "2026-10-29T10:01:21Z"
+      },
+      "llm_used": true,
+      "metric_captured_at": "2026-10-20T08:36:16Z",
+      "period": "GitHub Trending: максимум наблюдавшихся звёзд за день",
+      "rank": 5,
+      "source_kind": "trending_daily",
+      "total": 6,
+      "trending_source": true
+    },
+    {
+      "baseline": null,
+      "delta": 857,
+      "description": "Kronos — это семейство декодер‑only моделей‑основ, обученных специально для «языка» финансовых рынков: последовательностей свечных графиков (K‑lines). В отличие от общих временных моделей, Kronos использует двухэтапный подход: сначала специализированный токенизатор преобразует многомерные OHLCV‑данные в иерархические дискретные токены, затем большой авторегрессионный трансформер предобучается на этих токенах, что позволяет применять одну модель к различным количественным задачам, от прогнозирования цен до генерации торговых стратегий. В наборе доступны модели разного размера – от мини‑модели с 4,1 М параметров и контекстом 2048 токенов до крупной модели в 499,2 М параметров, что даёт пользователям возможность подобрать вариант под свои вычислительные ресурсы.\n\nДля практического использования предусмотрен класс `KronosPredictor`, который автоматически обрабатывает входные данные, нормализует их и генерирует прогнозы. Пример демонстрации – 24‑часовой прогноз цены BTC/USDT, доступный в онлайн‑демо. Все модели и токенизаторы размещены в Hugging Face Hub, что упрощает загрузку и интеграцию в существующие пайплайны. При необходимости можно дообучать модели на собственных данных, используя опубликованные скрипты fine‑tuning, что открывает путь к кастомным финансовым задачам.\n\nТипичный сценарий: аналитик собирает исторические свечные данные с нескольких бирж, передаёт их `KronosPredictor`, получает вероятностные распределения будущих цен и использует их в риск‑менеджменте или автоматических торговых системах. Ограничения: крупные модели (например, Kronos‑large) не открыты в открытом доступе, а все модели требуют предобученного токенизатора и работают в режиме онлайн‑вызовов к Hugging Face, поэтому полностью автономный offline‑режим не гарантируется.",
+      "evidence_kind": "provider_selected_exact_readme_quote",
+      "evidence_quote": "> Kronos is the **first open-source foundation model** for financial candlesticks (K-lines), \r\n> trained on data from over **45 global exchanges**.",
+      "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+      "full_name": "shiyu-coder/Kronos",
+      "joke": "Если ваш портфель шипит, дайте ему Kronos – он умеет читать свечи лучше любого гадалка.",
+      "latest": {
+        "captured_at": "2026-11-08T11:16:53Z",
+        "created_at": "2025-07-01T02:54:32Z",
+        "default_branch": "master",
+        "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+        "forks": 7820,
+        "full_name": "shiyu-coder/Kronos",
+        "html_url": "https://github.com/shiyu-coder/Kronos",
+        "language": "Python",
+        "license": "MIT",
+        "observation": {
+          "first_seen": "2026-10-19T18:16:51Z",
+          "last_seen": "2026-11-08T11:16:53Z",
+          "observations": 39
+        },
+        "open_issues": 297,
+        "pushed_at": "2026-04-13T12:38:49Z",
+        "readme_excerpt": "<div align=\"center\">\r\n  <h2><b>Kronos: A Foundation Model for the Language of Financial Markets </b></h2>\r\n</div>\r\n\r\n\r\n<div align=\"center\">\r\n\r\n</a> \r\n<a href=\"https://huggingface.co/NeoQuasar\"> \r\n<img src=\"https://img.shields.io/badge/🤗-Hugging_Face-yellow\" alt=\"Hugging Face\"> \r\n</a> \r\n<a href=\"https://shiyu-coder.github.io/Kronos-demo/\"> <img src=\"https://img.shields.io/badge/🚀-Live_Demo-brightgreen\" alt=\"Live Demo\"> </a>\r\n<a href=\"https://github.com/shiyu-coder/Kronos/graphs/commit-activity\"> \r\n<img src=\"https://img.shields.io/github/last-commit/shiyu-coder/Kronos?color=blue\" alt=\"Last Commit\"> \r\n</a> \r\n<a href=\"https://github.com/shiyu-coder/Kronos/stargazers\"> \r\n<img src=\"https://img.shields.io/github/stars/shiyu-coder/Kronos?color=lightblue\" alt=\"GitHub Stars\"> \r\n</a> \r\n<a href=\"https://github.com/shiyu-coder/Kronos/network/members\"> \r\n<img src=\"https://img.shields.io/github/forks/shiyu-coder/Kronos?color=yellow\" alt=\"GitHub Forks\"> \r\n</a> \r\n<a href=\"./LICENSE\"> \r\n<img src=\"https://img.shields.io/github/license/shiyu-coder/Kronos?color=green\" alt=\"License\"> \r\n</a>\r\n\r\n</div>\r\n\r\n<div align=\"center\">\r\n  <!-- Keep these links. Translations will automatically update with the README. -->\r\n  <a href=\"https://zdoc.app/de/shiyu-coder/Kronos\">Deutsch</a> | \r\n  <a href=\"https://zdoc.app/es/shiyu-coder/Kronos\">Español</a> | \r\n  <a href=\"https://zdoc.app/fr/shiyu-coder/Kronos\">Français</a> | \r\n  <a href=\"https://zdoc.app/ja/shiyu-coder/Kronos\">日本語</a> | \r\n  <a href=\"https://zdoc.app/ko/shiyu-coder/Kronos\">한국어</a> | \r\n  <a href=\"https://zdoc.app/pt/shiyu-coder/Kronos\">Português</a> | \r\n  <a href=\"https://zdoc.app/ru/shiyu-coder/Kronos\">Русский</a> | \r\n  <a href=\"https://zdoc.app/zh/shiyu-coder/Kronos\">中文</a>\r\n</div>\r\n\r\n<p align=\"center\">\r\n\r\n<img src=\"./figures/logo.png\" width=\"100\">\r\n\r\n</p>\r\n\r\n> Kronos is the **first open-source foundation model** for financial candlesticks (K-lines), \r\n> trained on data from over **45 global exchanges**.\r\n\r\n\r\n</div>\r\n\r\n## 📰 News\r\n*   🚩 **[2025.11.10]** Kronos has been accpeted by AAAI 2026.\r\n*   🚩 **[2025.08.17]** We have released the scripts for fine-tuning! Check them out to adapt Kronos to your own tasks.\r\n*   🚩 **[2025.08.02]** Our paper is now available on [arXiv](https://arxiv.org/abs/2508.02739)!\r\n\r\n<p align=\"center\">\r\n\r\n## 📜 Introduction\r\n\r\n**Kronos** is a family of decoder-only foundation models, pre-trained specifically for the \"language\" of financial markets—K-line sequences. Unlike general-purpose TSFMs, Kronos is designed to handle the unique, high-noise characteristics of financial data. It leverages a novel two-stage framework: \r\n1. A specialized tokenizer first quantizes continuous, multi-dimensional K-line data (OHLCV) into **hierarchical discrete tokens**. \r\n2. A large, autoregressive Transformer is then pre-trained on these tokens, enabling it to serve as a unified model for diverse quantitative tasks.\r\n\r\n<p align=\"center\">\r\n    <img src=\"figures/overview.png\" alt=\"\" align=\"center\" width=\"700px\" />\r\n</p>\r\n\r\n## ✨ Live Demo \r\nWe have set up a live demo to visualize Kronos's forecasting results. The webpage showcases a forecast for the **BTC/USDT** trading pair over the next 24 hours. \r\n\r\n**👉 [Access the Live Demo Here](https://shiyu-coder.github.io/Kronos-demo/)** \r\n\r\n## 📦 Model Zoo \r\nWe release a family of pre-trained models with varying capacities to suit different computational and application needs. All models are readily accessible from the Hugging Face Hub.\r\n\r\n| Model        | Tokenizer                                                                       | Context length | Params  | Open-source                                                               |\r\n|--------------|---------------------------------------------------------------------------------| -------------- | ------ |---------------------------------------------------------------------------|\r\n| Kronos-mini  | [Kronos-Tokenizer-2k](https://huggingface.co/NeoQuasar/Kronos-Tokenizer-2k)     | 2048           | 4.1M   | ✅ [NeoQuasar/Kronos-mini](https://huggingface.co/NeoQuasar/Kronos-mini)  |\r\n| Kronos-small | [Kronos-Tokenizer-base](https://huggingface.co/NeoQuasar/Kronos-Tokenizer-base) | 512            | 24.7M  | ✅ [NeoQuasar/Kronos-small](https://huggingface.co/NeoQuasar/Kronos-small) |\r\n| Kronos-base  | [Kronos-Tokenizer-base](https://huggingface.co/NeoQuasar/Kronos-Tokenizer-base) | 512            | 102.3M | ✅ [NeoQuasar/Kronos-base](https://huggingface.co/NeoQuasar/Kronos-base)   |\r\n| Kronos-large | [Kronos-Tokenizer-base](https://huggingface.co/NeoQuasar/Kronos-Tokenizer-base) | 512            | 499.2M | ❌                                                                         |\r\n\r\n\r\n## 🚀 Getting Started\r\n\r\n### Installation\r\n\r\n1. Install Python 3.10+, and then install the dependencies:\r\n\r\n```shell\r\npip install -r requirements.txt\r\n```\r\n\r\n### 📈 Making Forecasts\r\n\r\nForecasting with Kronos is straightforward using the `KronosPredictor` class. It handles data preprocessing, normalization, predi",
+        "sources": [
+          {
+            "captured_at": "2026-11-03T07:14:43Z",
+            "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+            "full_name": "shiyu-coder/Kronos",
+            "language": "Python",
+            "trending_stars_period": 857,
+            "trending_total_forks": null,
+            "trending_total_stars": 46125,
+            "type": "trending_daily"
+          },
+          {
+            "captured_at": "2026-11-07T19:26:35Z",
+            "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+            "full_name": "shiyu-coder/Kronos",
+            "language": "Python",
+            "trending_stars_period": 2984,
+            "trending_total_forks": null,
+            "trending_total_stars": 47207,
+            "type": "trending_weekly"
+          }
+        ],
+        "stars": 47306,
+        "topics": [],
+        "updated_at": "2026-11-08T11:16:42Z"
+      },
+      "llm_used": true,
+      "metric_captured_at": "2026-11-03T07:14:43Z",
+      "period": "GitHub Trending: максимум наблюдавшихся звёзд за день",
+      "rank": 6,
+      "source_kind": "trending_daily",
+      "total": 6,
+      "trending_source": true
+    }
+  ],
+  "format_version": 3,
+  "generated_at": "2026-11-17T16:03:05Z",
+  "joke": "",
+  "llm_budget": {
+    "actual_requests": 15,
+    "all_descriptions_complete": false,
+    "card_failures": [
+      {
+        "disposition": "retained_for_later_issue",
+        "id": "CzzzzzzJ/mdldm-maitian",
+        "initial_error": "named product or integration is absent from the supplied primary sources",
+        "repair_error": "named product or integration is absent from the supplied primary sources",
+        "stage": "project_description_schema_repair"
+      },
+      {
+        "disposition": "retained_for_later_issue",
+        "id": "sybil-solutions/inference-optimisation-skill",
+        "initial_error": "Groq description length 2117 is outside 40..=2000",
+        "repair_error": "Groq description length 2064 is outside 40..=2000",
+        "stage": "project_description_schema_repair"
+      }
+    ],
+    "daily_deferred": [
+      {
+        "id": "CzzzzzzJ/mdldm-maitian",
+        "reason": "description_rejected_after_repair",
+        "retry_at": "2026-11-18T16:06:25.489050709Z"
+      },
+      {
+        "id": "haziqahmedqasmi/PeakCut",
+        "reason": "readme_quote_rejected",
+        "retry_at": "2026-11-18T16:06:54.365282129Z"
+      },
+      {
+        "id": "joshpuckett/allo",
+        "reason": "readme_quote_rejected",
+        "retry_at": "2026-11-18T16:07:06.763012023Z"
+      },
+      {
+        "id": "sybil-solutions/inference-optimisation-skill",
+        "reason": "description_rejected_after_repair",
+        "retry_at": "2026-11-18T16:08:33.979943993Z"
+      },
+      {
+        "id": "Comfy-Org/ComfyUI",
+        "reason": "readme_quote_rejected",
+        "retry_at": "2026-11-18T16:09:39.213394709Z"
+      },
+      {
+        "id": "YuJunZhiXue/dsh-purge",
+        "reason": "unusable_readme",
+        "retry_at": "2026-11-18T16:09:49.425209703Z"
+      }
+    ],
+    "evidence_scope": "Primary metadata and stored README excerpts contain author claims and may be incomplete. Exact README quotation matching checks provenance only, not claim entailment, factual accuracy, runtime behavior, privacy, security, performance or license rights. Human factual review remains required.",
+    "expected_requests": 11,
+    "factual_review_performed": false,
+    "grounding_failures": [
+      {
+        "additional_requests": 0,
+        "fallback": "source metadata",
+        "id": "haziqahmedqasmi/PeakCut",
+        "reason": "Model evidence_quote is not an exact substring of the stored README excerpt"
+      },
+      {
+        "additional_requests": 0,
+        "fallback": "source metadata",
+        "id": "joshpuckett/allo",
+        "reason": "Model evidence_quote is not an exact substring of the stored README excerpt"
+      },
+      {
+        "additional_requests": 0,
+        "fallback": "source metadata",
+        "id": "Comfy-Org/ComfyUI",
+        "reason": "Model evidence_quote is not an exact substring of the stored README excerpt"
+      }
+    ],
+    "local_inference": false,
+    "max_requests_per_run": 40,
+    "max_requests_per_utc_day": 100,
+    "max_requests_with_retries": 40,
+    "paid_fallback": false,
+    "providers": [
+      {
+        "model": "openai/gpt-oss-120b",
+        "name": "Groq"
+      }
+    ],
+    "readme_gaps": [
+      "YuJunZhiXue/dsh-purge"
+    ],
+    "reason": "2 project descriptions rejected; first CzzzzzzJ/mdldm-maitian: named product or integration is absent from the supplied primary sources; findings remain queued",
+    "source_gaps": []
+  },
+  "llm_requested": true,
+  "llm_used": true,
+  "manifest": {
+    "api_repositories": [
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:25Z",
+        "forks": 1229,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 745,
+        "status": "included",
+        "url": "https://api.github.com/repos/AIRzZ90/study-materials-fork"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:25Z",
+        "forks": 122,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 585,
+        "status": "included",
+        "url": "https://api.github.com/repos/BigPizzaV3/ClaudeMom"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:26Z",
+        "forks": 4867,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 57982,
+        "status": "included",
+        "url": "https://api.github.com/repos/ChromeDevTools/chrome-devtools-mcp"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:26Z",
+        "forks": 306,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 895,
+        "status": "included",
+        "url": "https://api.github.com/repos/CzzzzzzJ/mdldm-maitian"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:27Z",
+        "forks": 122,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1445,
+        "status": "included",
+        "url": "https://api.github.com/repos/Eynnzerr/TelemetryCleaner"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:27Z",
+        "forks": 122,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1968,
+        "status": "included",
+        "url": "https://api.github.com/repos/FrigadeHQ/yogurt"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:28Z",
+        "forks": 715,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 8319,
+        "status": "included",
+        "url": "https://api.github.com/repos/GoogleChrome/modern-web-guidance-src"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:28Z",
+        "forks": 129,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1736,
+        "status": "included",
+        "url": "https://api.github.com/repos/HybridRobotics/supermimic"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:28Z",
+        "forks": 159,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1324,
+        "status": "included",
+        "url": "https://api.github.com/repos/Immortal-Protocols/lastbook"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:29Z",
+        "forks": 145,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 970,
+        "status": "included",
+        "url": "https://api.github.com/repos/JDhruv14/line-art-animation"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:29Z",
+        "forks": 442,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2305,
+        "status": "included",
+        "url": "https://api.github.com/repos/Kianuni/Erosion-CN"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:30Z",
+        "forks": 305,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2050,
+        "status": "included",
+        "url": "https://api.github.com/repos/Noniv/abyssal-garden"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:30Z",
+        "forks": 426,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2932,
+        "status": "included",
+        "url": "https://api.github.com/repos/Tencent/LoopForge"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:31Z",
+        "forks": 57759,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 73031,
+        "status": "included",
+        "url": "https://api.github.com/repos/ZhuLinsen/daily_stock_analysis"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:31Z",
+        "forks": 237,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1389,
+        "status": "included",
+        "url": "https://api.github.com/repos/ZiChuanLan/freebie-radar"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:31Z",
+        "forks": 12371,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 118573,
+        "status": "included",
+        "url": "https://api.github.com/repos/addyosmani/agent-skills"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:32Z",
+        "forks": 44939,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 305160,
+        "status": "included",
+        "url": "https://api.github.com/repos/affaan-m/ECC"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:32Z",
+        "forks": 2052,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 19853,
+        "status": "included",
+        "url": "https://api.github.com/repos/ag-ui-protocol/ag-ui"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:33Z",
+        "forks": 4405,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 53518,
+        "status": "included",
+        "url": "https://api.github.com/repos/alibaba/open-code-review"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:33Z",
+        "forks": 23057,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 196528,
+        "status": "included",
+        "url": "https://api.github.com/repos/anthropics/skills"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:33Z",
+        "forks": 55,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2558,
+        "status": "included",
+        "url": "https://api.github.com/repos/apex-compute/ANR"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:34Z",
+        "forks": 1298,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 12950,
+        "status": "included",
+        "url": "https://api.github.com/repos/backnotprop/plannotator"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:34Z",
+        "forks": 1817,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 16793,
+        "status": "included",
+        "url": "https://api.github.com/repos/cursor/plugins"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:35Z",
+        "forks": 970,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 4475,
+        "status": "included",
+        "url": "https://api.github.com/repos/deepseek-ai/chat-demo"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:35Z",
+        "forks": 2611,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 28734,
+        "status": "included",
+        "url": "https://api.github.com/repos/dream-num/univer"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:36Z",
+        "forks": 620,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1566,
+        "status": "included",
+        "url": "https://api.github.com/repos/duwqijlk/muse-protocol"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:36Z",
+        "forks": 1301,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 8539,
+        "status": "included",
+        "url": "https://api.github.com/repos/elementalsouls/Claude-BugHunter"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:36Z",
+        "forks": 250,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 812,
+        "status": "included",
+        "url": "https://api.github.com/repos/failsafe-security/artex"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:37Z",
+        "forks": 491,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 9142,
+        "status": "included",
+        "url": "https://api.github.com/repos/getarcaneapp/arcane"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:37Z",
+        "forks": 1309,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 9977,
+        "status": "included",
+        "url": "https://api.github.com/repos/google-labs-code/stitch-skills"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:38Z",
+        "forks": 365,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2518,
+        "status": "included",
+        "url": "https://api.github.com/repos/google-research/paper-orchestra"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:39Z",
+        "forks": 439,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 734,
+        "status": "included",
+        "url": "https://api.github.com/repos/gylive/google-ultra"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:39Z",
+        "forks": 271,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 789,
+        "status": "included",
+        "url": "https://api.github.com/repos/haziqahmedqasmi/PeakCut"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:39Z",
+        "forks": 42,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 558,
+        "status": "included",
+        "url": "https://api.github.com/repos/higurashi-ai/Haru"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:40Z",
+        "forks": 48,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 561,
+        "status": "included",
+        "url": "https://api.github.com/repos/huggingface/pybot"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:40Z",
+        "forks": 8636,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 65760,
+        "status": "included",
+        "url": "https://api.github.com/repos/jingyaogong/minimind"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:41Z",
+        "forks": 18,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 758,
+        "status": "included",
+        "url": "https://api.github.com/repos/joshpuckett/allo"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:41Z",
+        "forks": 138,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1799,
+        "status": "included",
+        "url": "https://api.github.com/repos/krisgfx9/Wireless-Device-Battery-Monitor"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:41Z",
+        "forks": 31,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 685,
+        "status": "included",
+        "url": "https://api.github.com/repos/linknimiball1974/ai-texture-forge"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:42Z",
+        "forks": 33,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 589,
+        "status": "included",
+        "url": "https://api.github.com/repos/makepad/relax"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:42Z",
+        "forks": 42,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 553,
+        "status": "included",
+        "url": "https://api.github.com/repos/meshy-dev/ThreeRT"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:43Z",
+        "forks": 2339,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 29991,
+        "status": "included",
+        "url": "https://api.github.com/repos/meta/astryx"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:44Z",
+        "forks": 38,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 598,
+        "status": "included",
+        "url": "https://api.github.com/repos/mit-han-lab/pear"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:46Z",
+        "forks": 6126,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 68733,
+        "status": "included",
+        "url": "https://api.github.com/repos/mvanhorn/last30days-skill"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:46Z",
+        "forks": 83,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 673,
+        "status": "included",
+        "url": "https://api.github.com/repos/n4ze3m/tiny-voca"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:47Z",
+        "forks": 28446,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 319084,
+        "status": "included",
+        "url": "https://api.github.com/repos/obra/superpowers"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:47Z",
+        "forks": 1090,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 13899,
+        "status": "included",
+        "url": "https://api.github.com/repos/openai/codex-security"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:48Z",
+        "forks": 65,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 791,
+        "status": "included",
+        "url": "https://api.github.com/repos/opencoredev/islandcn"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:48Z",
+        "forks": 25,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 651,
+        "status": "included",
+        "url": "https://api.github.com/repos/rivet-dev/open-orange"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:49Z",
+        "forks": 6208,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 89417,
+        "status": "included",
+        "url": "https://api.github.com/repos/sveltejs/svelte"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:49Z",
+        "forks": 63,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 690,
+        "status": "included",
+        "url": "https://api.github.com/repos/sybil-solutions/inference-optimisation-skill"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:49Z",
+        "forks": 1394,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 6782,
+        "status": "included",
+        "url": "https://api.github.com/repos/tradermonty/claude-trading-skills"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:50Z",
+        "forks": 3653,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 52272,
+        "status": "included",
+        "url": "https://api.github.com/repos/vercel-labs/agent-browser"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:50Z",
+        "forks": 1411,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 16200,
+        "status": "included",
+        "url": "https://api.github.com/repos/we-promise/sure"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:51Z",
+        "forks": 57,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 655,
+        "status": "included",
+        "url": "https://api.github.com/repos/yetanotherbrowser/yab"
+      }
+    ],
+    "candidate_count": 55,
+    "candidate_policy": "All identities returned by configured Trending pages and bounded Search page are retained, including covered repositories and metadata failures; weekly selection happens later; not a global GitHub census.",
+    "captured_at": "2026-11-17T16:03:05Z",
+    "excluded_candidates": [],
+    "sources": [
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:14Z",
+        "pagination": "HTML first page as returned; no pagination",
+        "parsed_candidates": 14,
+        "reason": "repository rows parsed from first page",
+        "source": "GitHub Trending weekly",
+        "status": "included",
+        "url": "https://github.com/trending?since=weekly"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:23Z",
+        "pagination": "HTML first page as returned; no pagination",
+        "parsed_candidates": 15,
+        "reason": "repository rows parsed from first page",
+        "source": "GitHub Trending daily",
+        "status": "included",
+        "url": "https://github.com/trending?since=daily"
+      },
+      {
+        "complete": false,
+        "fetched_at": "2026-11-17T16:03:25Z",
+        "incomplete_results": false,
+        "pagination": "per_page=30; first page only; Search API result cap applies",
+        "query": "created:>=2026-11-10",
+        "reason": "first page ingested as candidate source only",
+        "returned": 30,
+        "source": "GitHub REST Search repositories created in last 7 days",
+        "status": "included",
+        "total_count": 2606002,
+        "url": "https://api.github.com/search/repositories?q=created%3A%3E%3D2026-11-10&sort=stars&order=desc&per_page=30"
+      },
+      {
+        "candidate": "jingyaogong/minimind",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/jingyaogong/minimind/master/README.md"
+      },
+      {
+        "candidate": "krisgfx9/Wireless-Device-Battery-Monitor",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/krisgfx9/Wireless-Device-Battery-Monitor/main/README.md"
+      },
+      {
+        "candidate": "Immortal-Protocols/lastbook",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/Immortal-Protocols/lastbook/main/README.md"
+      },
+      {
+        "candidate": "CzzzzzzJ/mdldm-maitian",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/CzzzzzzJ/mdldm-maitian/main/README.md"
+      },
+      {
+        "candidate": "haziqahmedqasmi/PeakCut",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/haziqahmedqasmi/PeakCut/main/README.md"
+      },
+      {
+        "candidate": "joshpuckett/allo",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/joshpuckett/allo/main/README.md"
+      },
+      {
+        "candidate": "gylive/google-ultra",
+        "chars": 4176,
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/gylive/google-ultra/main/README.md"
+      },
+      {
+        "candidate": "sybil-solutions/inference-optimisation-skill",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:57Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/sybil-solutions/inference-optimisation-skill/main/README.md"
+      },
+      {
+        "candidate": "anomalyco/opencode",
+        "chars": 4541,
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:58Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/anomalyco/opencode/dev/README.md"
+      },
+      {
+        "candidate": "Comfy-Org/ComfyUI",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:58Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/master/README.md"
+      },
+      {
+        "candidate": "YuJunZhiXue/dsh-purge",
+        "complete": false,
+        "fetched_at": "2026-11-17T16:03:58Z",
+        "http_status": 404,
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "fetch failed: HTTP 404 Not Found: 404: Not Found",
+        "source": "GitHub raw README.md",
+        "status": "error",
+        "url": "https://raw.githubusercontent.com/YuJunZhiXue/dsh-purge/master/README.md"
+      },
+      {
+        "candidate": "shiyu-coder/Kronos",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-17T16:03:58Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/shiyu-coder/Kronos/master/README.md"
+      }
+    ],
+    "validation_notes": [],
+    "weekly_observed_repositories": 439,
+    "weekly_selected_repositories": 12
+  },
+  "new_repositories_by_total_stars": [
+    {
+      "created_at": "2026-11-12T08:08:19Z",
+      "full_name": "deepseek-ai/chat-demo",
+      "stars": 4475,
+      "url": "https://github.com/deepseek-ai/chat-demo"
+    },
+    {
+      "created_at": "2026-11-11T04:27:17Z",
+      "full_name": "apex-compute/ANR",
+      "stars": 2558,
+      "url": "https://github.com/apex-compute/ANR"
+    },
+    {
+      "created_at": "2026-11-12T13:57:34Z",
+      "full_name": "Noniv/abyssal-garden",
+      "stars": 2050,
+      "url": "https://github.com/Noniv/abyssal-garden"
+    },
+    {
+      "created_at": "2026-11-16T19:28:29Z",
+      "full_name": "krisgfx9/Wireless-Device-Battery-Monitor",
+      "stars": 1799,
+      "url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor"
+    },
+    {
+      "created_at": "2026-11-12T23:49:03Z",
+      "full_name": "Immortal-Protocols/lastbook",
+      "stars": 1324,
+      "url": "https://github.com/Immortal-Protocols/lastbook"
+    },
+    {
+      "created_at": "2026-11-14T03:59:22Z",
+      "full_name": "CzzzzzzJ/mdldm-maitian",
+      "stars": 895,
+      "url": "https://github.com/CzzzzzzJ/mdldm-maitian"
+    },
+    {
+      "created_at": "2026-11-13T11:50:50Z",
+      "full_name": "opencoredev/islandcn",
+      "stars": 791,
+      "url": "https://github.com/opencoredev/islandcn"
+    },
+    {
+      "created_at": "2026-11-14T07:38:20Z",
+      "full_name": "haziqahmedqasmi/PeakCut",
+      "stars": 789,
+      "url": "https://github.com/haziqahmedqasmi/PeakCut"
+    },
+    {
+      "created_at": "2026-11-15T17:33:42Z",
+      "full_name": "joshpuckett/allo",
+      "stars": 758,
+      "url": "https://github.com/joshpuckett/allo"
+    },
+    {
+      "created_at": "2026-11-12T10:52:32Z",
+      "full_name": "AIRzZ90/study-materials-fork",
+      "stars": 745,
+      "url": "https://github.com/AIRzZ90/study-materials-fork"
+    }
+  ],
+  "official_github_trending_weekly": [
+    {
+      "full_name": "morluto/rea",
+      "stars": 379528,
+      "url": "https://github.com/morluto/rea",
+      "weekly_trending_stars": 229268
+    },
+    {
+      "full_name": "pingdotgg/t3code",
+      "stars": 56045,
+      "url": "https://github.com/pingdotgg/t3code",
+      "weekly_trending_stars": 17100
+    },
+    {
+      "full_name": "storytold/artcraft",
+      "stars": 34649,
+      "url": "https://github.com/storytold/artcraft",
+      "weekly_trending_stars": 16379
+    },
+    {
+      "full_name": "sherlock-project/sherlock",
+      "stars": 113263,
+      "url": "https://github.com/sherlock-project/sherlock",
+      "weekly_trending_stars": 14381
+    },
+    {
+      "full_name": "boykopovar/AnyPS5",
+      "stars": 45675,
+      "url": "https://github.com/boykopovar/AnyPS5",
+      "weekly_trending_stars": 14224
+    },
+    {
+      "full_name": "vercel-labs/agent-desktop",
+      "stars": 23524,
+      "url": "https://github.com/vercel-labs/agent-desktop",
+      "weekly_trending_stars": 13712
+    },
+    {
+      "full_name": "meta/astryx",
+      "stars": 29991,
+      "url": "https://github.com/meta/astryx",
+      "weekly_trending_stars": 13660
+    },
+    {
+      "full_name": "Nutlope/hallmark",
+      "stars": 51876,
+      "url": "https://github.com/Nutlope/hallmark",
+      "weekly_trending_stars": 12062
+    },
+    {
+      "full_name": "NVIDIA/auto-ontology",
+      "stars": 12683,
+      "url": "https://github.com/NVIDIA/auto-ontology",
+      "weekly_trending_stars": 10159
+    },
+    {
+      "full_name": "thedotmack/claude-mem",
+      "stars": 115926,
+      "url": "https://github.com/thedotmack/claude-mem",
+      "weekly_trending_stars": 9318
+    }
+  ],
+  "period_end": "2026-11-17T16:03:05Z",
+  "period_start": "2026-11-16T16:03:05Z",
+  "queue": {
+    "ack_policy": "Only completed delivery acknowledges this format. Previews, failures and caps acknowledge nothing.",
+    "carried_from_earlier_periods": 419,
+    "catalogue": 0,
+    "detailed": 6,
+    "pending_after_success": 433,
+    "pending_before": 439
+  },
+  "ranking": "Up to 8 discoveries first seen within the last 24 hours, ranked by daily Trending peak, weekly peak, then Search, plus 4 oldest due backlog findings. Either group uses spare capacity, up to 12 total. Backlog order uses first-seen or retry time; local explanation failures wait 24 hours. Deferred and overflow findings stay queued. Daily publication does not exclude weekly publication.",
+  "trend_summary": "До восьми находок, впервые замеченных за последние 24 часа, по популярности в дневном Trending, недельном Trending и поиске; ещё четыре места — для старых находок по времени очереди или повторной попытки. Свободные места передаются другой группе, всего до 12 карточек. Новые для нашей ленты, не обязательно недавно созданные. Дневная публикация не исключает проект из недельного обзора.",
+  "trends": {
+    "forks": [
+      {
+        "delta": 10342,
+        "full_name": "morluto/rea"
+      },
+      {
+        "delta": 5197,
+        "full_name": "debpalash/VoiceStudio"
+      },
+      {
+        "delta": 4924,
+        "full_name": "affaan-m/ECC"
+      },
+      {
+        "delta": 4246,
+        "full_name": "mattpocock/skills"
+      },
+      {
+        "delta": 3702,
+        "full_name": "storytold/craft-anything"
+      },
+      {
+        "delta": 3542,
+        "full_name": "cloudflare/security-audit-skill"
+      },
+      {
+        "delta": 3154,
+        "full_name": "Gathin23/cleanyourtv"
+      },
+      {
+        "delta": 2659,
+        "full_name": "paperclipai/paperclip"
+      },
+      {
+        "delta": 2453,
+        "full_name": "anthropics/claude-code"
+      },
+      {
+        "delta": 2407,
+        "full_name": "Minireel/HGhub"
+      }
+    ],
+    "percent": [
+      {
+        "delta": 51124,
+        "full_name": "mattpocock/skills"
+      },
+      {
+        "delta": 50251,
+        "full_name": "debpalash/VoiceStudio"
+      },
+      {
+        "delta": 50213,
+        "full_name": "cloudflare/security-audit-skill"
+      },
+      {
+        "delta": 45072,
+        "full_name": "morluto/rea"
+      },
+      {
+        "delta": 37311,
+        "full_name": "affaan-m/ECC"
+      },
+      {
+        "delta": 33314,
+        "full_name": "pbakaus/impeccable"
+      },
+      {
+        "delta": 28778,
+        "full_name": "stablyai/orca"
+      },
+      {
+        "delta": 27290,
+        "full_name": "Gathin23/cleanyourtv"
+      },
+      {
+        "delta": 26117,
+        "full_name": "pingdotgg/t3code"
+      },
+      {
+        "delta": 25360,
+        "full_name": "obra/superpowers"
+      }
+    ]
+  }
+}
