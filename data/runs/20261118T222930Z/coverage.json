@@ -1,0 +1,148 @@
+{
+  "archive": {
+    "available": true,
+    "captures_without_manifest": [],
+    "directories_without_manifest": [],
+    "filtered_captures": [],
+    "invalid_manifests": [],
+    "manifest_capture_count": 27,
+    "manifests_without_snapshots": [],
+    "metadata_failure_records": 0,
+    "source_failure_records": 2
+  },
+  "cadence": {
+    "empty_window": false,
+    "interval_count": 26,
+    "intervals_over_three_hours": [
+      {
+        "from": "2026-11-12T00:46:01Z",
+        "seconds": 37827,
+        "to": "2026-11-12T11:16:28Z"
+      },
+      {
+        "from": "2026-11-12T11:16:28Z",
+        "seconds": 31210,
+        "to": "2026-11-12T19:56:38Z"
+      },
+      {
+        "from": "2026-11-12T21:45:19Z",
+        "seconds": 14736,
+        "to": "2026-11-13T01:50:55Z"
+      },
+      {
+        "from": "2026-11-13T01:50:55Z",
+        "seconds": 33082,
+        "to": "2026-11-13T11:02:17Z"
+      },
+      {
+        "from": "2026-11-13T11:02:17Z",
+        "seconds": 31348,
+        "to": "2026-11-13T19:44:45Z"
+      },
+      {
+        "from": "2026-11-13T21:13:13Z",
+        "seconds": 15281,
+        "to": "2026-11-14T01:27:54Z"
+      },
+      {
+        "from": "2026-11-14T01:27:54Z",
+        "seconds": 32504,
+        "to": "2026-11-14T10:29:38Z"
+      },
+      {
+        "from": "2026-11-14T10:29:38Z",
+        "seconds": 27400,
+        "to": "2026-11-14T18:06:18Z"
+      },
+      {
+        "from": "2026-11-14T22:27:46Z",
+        "seconds": 29368,
+        "to": "2026-11-15T06:37:14Z"
+      },
+      {
+        "from": "2026-11-15T06:37:14Z",
+        "seconds": 35206,
+        "to": "2026-11-15T16:24:00Z"
+      },
+      {
+        "from": "2026-11-15T16:24:00Z",
+        "seconds": 13601,
+        "to": "2026-11-15T20:10:41Z"
+      },
+      {
+        "from": "2026-11-15T22:51:05Z",
+        "seconds": 27753,
+        "to": "2026-11-16T06:33:38Z"
+      },
+      {
+        "from": "2026-11-16T06:33:38Z",
+        "seconds": 47064,
+        "to": "2026-11-16T19:38:02Z"
+      },
+      {
+        "from": "2026-11-16T19:38:02Z",
+        "seconds": 14479,
+        "to": "2026-11-16T23:39:21Z"
+      },
+      {
+        "from": "2026-11-16T23:39:21Z",
+        "seconds": 15381,
+        "to": "2026-11-17T03:55:42Z"
+      },
+      {
+        "from": "2026-11-17T03:55:42Z",
+        "seconds": 43643,
+        "to": "2026-11-17T16:03:05Z"
+      },
+      {
+        "from": "2026-11-17T16:03:05Z",
+        "seconds": 24298,
+        "to": "2026-11-17T22:48:03Z"
+      },
+      {
+        "from": "2026-11-18T00:58:58Z",
+        "seconds": 38825,
+        "to": "2026-11-18T11:46:03Z"
+      },
+      {
+        "from": "2026-11-18T11:46:03Z",
+        "seconds": 31732,
+        "to": "2026-11-18T20:34:55Z"
+      }
+    ],
+    "leading_gap_seconds": 8190,
+    "max_interval_seconds": 47064,
+    "median_interval_seconds": 25849.0,
+    "min_interval_seconds": 5308,
+    "nominal_cron": "17 */3 * * *",
+    "nominal_slot_boundary": "start_exclusive_end_inclusive",
+    "nominal_slots_in_window": 56,
+    "scheduled_capture_count": null,
+    "target_interval_seconds": 10800,
+    "trailing_gap_seconds": 0,
+    "trigger_note": "Historical snapshots do not identify manual versus scheduled runs; capture counts are not schedule completion counts."
+  },
+  "format_version": 1,
+  "observed": {
+    "capture_count": 27,
+    "duplicate_snapshot_rows": 0,
+    "first_capture_at": "2026-11-12T00:46:01Z",
+    "ignored_future_rows": 0,
+    "invalid_timestamp_rows": 0,
+    "last_capture_at": "2026-11-18T22:29:30Z",
+    "snapshot_rows": 1500,
+    "unique_repositories": 182
+  },
+  "scope": {
+    "global_coverage_known": false,
+    "missing_intervals_reconstructed": false,
+    "note": "No observations are invented, interpolated or restored from aggregated weekly candidates. Leading and trailing gaps describe the observed window, not proven failed triggers.",
+    "search_first_page_limit": 30,
+    "trending": "first returned weekly and daily pages"
+  },
+  "window": {
+    "end": "2026-11-18T22:29:30Z",
+    "kind": "rolling_seven_days",
+    "start": "2026-11-11T22:29:30Z"
+  }
+}
