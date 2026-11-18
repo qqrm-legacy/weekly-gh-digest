@@ -22,6 +22,7 @@
       "anthropics/claude-quickstarts": "2026-11-08",
       "anthropics/financial-services": "2026-09-29",
       "anthropics/knowledge-work-plugins": "2026-11-03",
+      "astral-sh/uv": "2026-11-18",
       "aureliengmz/clearwater": "2026-11-16",
       "averygan/reclip": "2026-09-29",
       "backnotprop/plannotator": "2026-11-13",
@@ -47,6 +48,7 @@
       "earendil-works/pi": "2026-10-01",
       "elastic/elasticsearch": "2026-09-29",
       "elementalsouls/claude-bughunter": "2026-11-15",
+      "erkamyaman/rust-anything": "2026-11-18",
       "expo/exact": "2026-11-10",
       "eynnzerr/telemetrycleaner": "2026-11-15",
       "feder-cr/dots": "2026-11-13",
@@ -92,6 +94,7 @@
       "kianuni/erosion-cn": "2026-11-10",
       "kkkkhazix/aihot": "2026-09-30",
       "krisgfx9/wireless-device-battery-monitor": "2026-11-17",
+      "kruk2/jasna": "2026-11-18",
       "lemomo-ai/lemo-opuscar": "2026-11-14",
       "likely7/veyra-nrvideo": "2026-11-13",
       "linknimiball1974/ai-texture-forge": "2026-11-16",
@@ -109,6 +112,7 @@
       "mksglu/context-mode": "2026-09-30",
       "modelcontextprotocol/servers": "2026-09-30",
       "mvschwarz/openrig": "2026-09-29",
+      "n8n-io/n8n": "2026-11-18",
       "nawfalmotii79/plfm_radar": "2026-09-30",
       "niko1221/strata": "2026-09-30",
       "nokia-applied-research/anyjev": "2026-11-08",
@@ -118,12 +122,14 @@
       "obra/superpowers": "2026-10-01",
       "openai/codex-security": "2026-11-11",
       "openclaw/openclaw": "2026-09-30",
+      "openvinotoolkit/openvino": "2026-11-18",
       "opsafari/hypoarena": "2026-11-15",
       "pallavi-shekhar/ai-engineering-interview-questions-company-wise": "2026-11-04",
       "paperclipai/paperclip": "2026-09-29",
       "pbakaus/impeccable": "2026-09-29",
       "pookjw/hermesenabler": "2026-11-12",
       "prismml-eng/bonsai-demo": "2026-09-29",
+      "punkpeye/awesome-mcp-servers": "2026-11-18",
       "pytorch/pytorch": "2026-09-29",
       "qwenlm/qwen-code": "2026-11-12",
       "rakyll/hey": "2026-09-29",
@@ -136,6 +142,7 @@
       "shadcn/improve": "2026-11-11",
       "shihabal3amri/diplay": "2026-09-30",
       "shiyu-coder/kronos": "2026-11-17",
+      "solidjs/solid": "2026-11-18",
       "sostenesfreitas/ocarina-recomp": "2026-11-08",
       "stablyai/orca": "2026-09-29",
       "supermemoryai/company-brain": "2026-11-14",
@@ -284,6 +291,14 @@
         "joke": "Почему плагин всегда в хорошем настроении? Потому что у него всегда есть подключённый к нему «слеш»!",
         "evidence_quote": "Plugins that turn Claude into a specialist for your role, team, and company. Built for [Claude Cowork](https://claude.com/product/cowork), also compatible with [Claude Code](https://claude.com/product/claude-code)."
       },
+      "astral-sh/uv": {
+        "policy_version": 7,
+        "source_description": "An extremely fast Python package and project manager, written in Rust.",
+        "source_readme": "# uv\n\n<a href=\"https://pypi.python.org/pypi/uv\"><img src=\"https://img.shields.io/pypi/v/uv.svg\" alt=\"Latest PyPI version\" /></a>\n<a href=\"https://pypi.python.org/pypi/uv\"><img src=\"https://img.shields.io/pypi/pyversions/uv.svg\" alt=\"Supported Python versions\" /></a>\n<a href=\"https://discord.gg/astral-sh\"><img src=\"https://img.shields.io/badge/Discord-%235865F2.svg?logo=discord&logoColor=white\" alt=\"Discord\" /></a>\n\nAn extremely fast Python package and project manager, written in Rust.\n\n<p align=\"center\">\n  <picture align=\"center\">\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://github.com/astral-sh/uv/assets/1309177/03aa9163-1c79-4a87-a31d-7a9311ed9310\">\n    <source media=\"(prefers-color-scheme: light)\" srcset=\"https://github.com/astral-sh/uv/assets/1309177/629e59c0-9c6e-4013-9ad4-adb2bcf5080d\">\n    <img alt=\"Shows a bar chart with benchmark results.\" src=\"https://github.com/astral-sh/uv/assets/1309177/629e59c0-9c6e-4013-9ad4-adb2bcf5080d\">\n  </picture>\n</p>\n\n<p align=\"center\">\n  <i>Installing <a href=\"https://trio.readthedocs.io/\">Trio</a>'s dependencies with a warm cache.</i>\n</p>\n\n## Highlights\n\n- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and\n  more.\n- [10-100x faster](https://github.com/astral-sh/uv/blob/main/BENCHMARKS.md) than `pip`.\n- Provides [comprehensive project management](#projects), with a\n  [universal lockfile](https://docs.astral.sh/uv/concepts/projects/layout#the-lockfile).\n- [Runs scripts](#scripts), with support for\n  [inline dependency metadata](https://docs.astral.sh/uv/guides/scripts#declaring-script-dependencies).\n- [Installs and manages](#python-versions) Python versions.\n- [Runs and installs](#tools) tools published as Python packages.\n- Includes a [pip-compatible interface](#the-pip-interface) for a performance boost with a familiar\n  CLI.\n- Supports Cargo-style [workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces) for\n  scalable projects.\n- Disk-space efficient, with a [global cache](https://docs.astral.sh/uv/concepts/cache) for\n  dependency deduplication.\n- Installable without Rust or Python via `curl` or `pip`.\n- Supports macOS, Linux, and Windows.\n\nuv is backed by [Astral](https://astral.sh), the creators of\n[Ruff](https://github.com/astral-sh/ruff) and [ty](https://github.com/astral-sh/ty).\n\n## Installation\n\nInstall uv with our standalone installers:\n\n```bash\n# On macOS and Linux.\ncurl -LsSf https://astral.sh/uv/install.sh | sh\n```\n\n```bash\n# On Windows.\npowershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\n```\n\nOr, from [PyPI](https://pypi.org/project/uv/):\n\n```bash\n# With pip.\npip install uv\n```\n\n```bash\n# Or pipx.\npipx install uv\n```\n\nIf installed via the standalone installer, uv can update itself to the latest version:\n\n```bash\nuv self update\n```\n\nSee the [installation documentation](https://docs.astral.sh/uv/getting-started/installation/) for\ndetails and alternative installation methods.\n\n## Documentation\n\nuv's documentation is available at [docs.astral.sh/uv](https://docs.astral.sh/uv).\n\nAdditionally, the command line reference documentation can be viewed with `uv help`.\n\n## Features\n\n### Projects\n\nuv manages project dependencies and environments, with support for lockfiles, workspaces, and more,\nsimilar to `rye` or `poetry`:\n\n```console\n$ uv init example\nInitialized project `example` at `/home/user/example`\n\n$ cd example\n\n$ uv add ruff\nCreating virtual environment at: .venv\nResolved 2 packages in 170ms\n   Built example @ file:///home/user/example\nPrepared 2 packages in 627ms\nInstalled 2 packages in 1ms\n + example==0.1.0 (from file:///home/user/example)\n + ruff==0.5.0\n\n$ uv run ruff check\nAll checks passed!\n\n$ uv lock\nResolved 2 packages in 0.33ms\n\n$ uv sync\nResolved 2 packages in 0.70ms\nChecked 1 package in 0.02ms\n```\n\nSee the [project documentation](https://docs.astral.sh/uv/guides/projects/) to get started.\n\nuv also supports building and publishing projects, even if they're not managed with uv. See the\n[publish guide](https://docs.astral.sh/uv/guides/publish/) to learn more.\n\n### Scripts\n\nuv manages dependencies and environments for single-file scripts.\n\nCreate a new script and add inline metadata declaring its dependencies:\n\n```console\n$ echo 'import requests; print(requests.get(\"https://astral.sh\"))' > example.py\n\n$ uv add --script example.py requests\nUpdated `example.py`\n```\n\nThen, run the script in an isolated virtual environment:\n\n```console\n$ uv run example.py\nReading inline script metadata from: example.py\nInstalled 5 packages in 12ms\n<Response [200]>\n```\n\nSee the [scripts documentation](https://docs.astral.sh/uv/guides/scripts/) to get started.\n\n### Tools\n\nuv executes and installs command-line tools provided by Python packages, similar to `pipx`.\n\nRun a tool in an ephemeral environment using `uvx` (an alias for `uv tool run`):\n\n```console\n$ uvx pycowsay 'hello world!'\nResolved 1 package in 167ms\nInstalled 1 package in 9ms\n + pycowsay==0.0.0.2\n  \"\"\"",
+        "description": "uv — это единый инструмент, заменяющий набор привычных утилит для Python, таких как pip, pip‑tools, pipx, poetry, pyenv, twine и virtualenv. Он написан на Rust, что обеспечивает заявленную в README 10‑100‑кратную скорость по сравнению с pip, а также глобальный кэш, позволяющий экономить место на диске за счёт дедупликации зависимостей. Проект поддерживает управление зависимостями и виртуальными окружениями через lock‑файл, а также масштабируемые рабочие пространства в стиле Cargo, что упрощает работу с большими монорепозиториями. Кроме базовых функций установки пакетов, uv умеет запускать скрипты с встроенными метаданными зависимостей, управлять версиями Python и исполнять инструменты, опубликованные как Python‑пакеты, аналогично pipx, при этом предоставляя совместимый с pip интерфейс для плавного перехода. Пример использования: разработчик инициализирует новый проект командой `uv init`, добавляет нужные библиотеки (`uv add ruff`), фиксирует их в lock‑файле (`uv lock`) и синхронизирует окружение (`uv sync`). После этого можно запускать скрипты или инструменты в изолированных средах без отдельной настройки виртуального окружения. Установка возможна через curl‑скрипт, PowerShell, pip или pipx, а поддержка macOS, Linux и Windows делает uv кроссплатформенным решением для ускорения и упрощения Python‑разработки.",
+        "joke": "",
+        "evidence_quote": "An extremely fast Python package and project manager, written in Rust."
+      },
       "aureliengmz/clearwater": {
         "policy_version": 7,
         "source_description": "Real-time, photoreal shallow water in a single HTML file. WebGL2, no libraries, no build step.",
@@ -363,6 +378,14 @@
         "description": "Claude‑Bughunter — готовый набор навыков для Claude Code, превращающий его из чат‑бота в помощника по баг‑хаунтингу и внешнему red‑team. После установки в системе появляется 83 навыка и 15 слеш‑команд, которые автоматически активируются по описанию задачи на естественном языке, без необходимости явно вызывать их по имени. Навыки сгруппированы в четыре уровня: методология и мышление red‑team, поиск уязвимостей в веб‑приложениях (58 hunt‑навыков, основанных на 681 реальных HackerOne‑отчётах), атаки на корпоративные платформы (M365, Okta, vCenter и др.) с актуальными цепочками CVE 2024‑2026, а также процедуры триажа, валидации и отчётности, включающие VRT‑соответствие, редактирование PII и шаблоны доставок. Пользователь просто описывает цель, например «тестировать acme.com», и Claude подбирает соответствующие навыки: сканирование поддоменов, проверка живых хостов, ранжирование поверхности и предложения дальнейших проверок, таких как GraphQL‑интроспекция или OAuth‑redirect. Инструмент поддерживает два способа установки: через плагин‑маркетплейс Claude Code (быстрое подключение с неймспейсом) или копирование репозитория с последующим запуском скриптов, что позволяет также использовать CLI‑утилиту cbh и scaffolder hunt для локального управления проектом. Требования ограничиваются наличием Claude Code и доступа к файловой системе пользователя; все навыки работают в рамках локального окружения, но могут обращаться к внешним сервисам (например, subfinder, httpx) при необходимости. Таким образом, проект упрощает подготовку и проведение комплексных тестов, предоставляя готовый контент и автоматизацию без необходимости вручную собирать методики и шаблоны.",
         "joke": "",
         "evidence_quote": "> A self-contained Claude skill bundle for bug hunting and external red-team work · **83 skills** · 15 slash commands · **681 disclosed-report patterns** (433 now individually cited & auditable) across 24 core vulnerability classes"
+      },
+      "erkamyaman/rust-anything": {
+        "policy_version": 7,
+        "source_description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
+        "source_readme": "<p align=\"center\">\n  <img src=\"docs/assets/logo.png\" width=\"160\" height=\"160\" alt=\"The rust-anything crab\">\n</p>\n\n<h1 align=\"center\">rust-anything</h1>\n\n<p align=\"center\">by <a href=\"https://github.com/erkamyaman\">erKam Yaman</a></p>\n\n<p align=\"center\">English · <a href=\"docs/README_TR.md\">Türkçe</a> · <a href=\"docs/README_UK.md\">Українська</a> · <a href=\"docs/README_ZH.md\">简体中文</a> · <a href=\"docs/README_ZH-TW.md\">繁體中文</a> · <a href=\"docs/README_DE.md\">Deutsch</a> · <a href=\"docs/README_FR.md\">Français</a> · <a href=\"docs/README_RU.md\">Русский</a> · <a href=\"docs/README_JA.md\">日本語</a> · <a href=\"docs/README_KO.md\">한국어</a> · <a href=\"docs/README_AZ.md\">Azərbaycanca</a> · <a href=\"docs/README_UZ.md\">Oʻzbekcha</a> · <a href=\"docs/README_KK.md\">Қазақша</a> · <a href=\"docs/README_KY.md\">Кыргызча</a> · <a href=\"docs/README_TK.md\">Türkmençe</a> · <a href=\"docs/README_TT.md\">Татарча</a> · <a href=\"docs/README_UG.md\">ئۇيغۇرچە</a> · <a href=\"docs/README_PT.md\">Português</a></p>\n\n<p align=\"center\"><em>Rewrite your whole app in Rust. Keep it working the whole way.</em></p>\n\n<p align=\"center\"><em>CLIs, servers and libraries, piece by piece, checked against the original at every step.</em></p>\n\n<p align=\"center\">Node.js and TypeScript · Python · C · Go · Ruby · Java · PHP and C# in preview</p>\n\n<p align=\"center\">\n  <a href=\"https://crates.io/crates/rust-anything\"><img src=\"https://img.shields.io/crates/v/rust-anything?color=E2862A&label=crates.io\" alt=\"crates.io version\"></a>\n  <a href=\"https://www.npmjs.com/package/rust-anything\"><img src=\"https://img.shields.io/npm/v/rust-anything?color=E2862A&label=npm\" alt=\"npm version\"></a>\n  <img src=\"https://img.shields.io/badge/languages-6%20%2B%202%20preview-E2862A\" alt=\"6 languages, plus 2 in preview\">\n  <a href=\"#works-with\"><img src=\"https://img.shields.io/badge/works%20with-4%20agents-E2862A\" alt=\"Works with 4 agents\"></a>\n  <a href=\"https://github.com/erkamyaman/rust-anything/actions/workflows/ci.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/erkamyaman/rust-anything/ci.yml?branch=main&label=tests\" alt=\"Tests\"></a>\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-E2862A\" alt=\"MIT license\"></a>\n  <a href=\"https://github.com/erkamyaman/rust-anything\"><img src=\"https://img.shields.io/github/stars/erkamyaman/rust-anything?style=social\" alt=\"GitHub stars\"></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"#quick-start\">Quick start</a> ·\n  <a href=\"#languages\">Languages</a> ·\n  <a href=\"docs/how-it-works.md#how-it-works\">How it works</a> ·\n  <a href=\"docs/how-it-works.md#the-loop\">The loop</a> ·\n  <a href=\"docs/whole-apps.md#port-a-whole-app\">Port a whole app</a> ·\n  <a href=\"docs/how-it-works.md#hot-paths-keep-the-data-in-rust\">Hot paths</a> ·\n  <a href=\"docs/install.md#install\">Install</a> ·\n  <a href=\"docs/how-it-works.md#what-it-cant-catch\">What it can't catch</a> ·\n  <a href=\"docs/faq.md#faq\">FAQ</a>\n</p>\n\n<p align=\"center\">up to 20x faster · 38,251 recorded cases replayed · 0 mismatches · one command</p>\n\n<p align=\"center\">\n  <img src=\"docs/assets/race.gif\" alt=\"Typing user.profile into x18n's search over 50,000 keys: TypeScript spends 143 ms, the rust-anything batch 6.9 ms, with the same results at every keystroke.\" width=\"820\">\n  <br>\n  <sub>Typing a query into x18n's search over 50,000 keys: the TypeScript original against the rust-anything batch, same results at every keystroke.</sub>\n</p>\n\n<table>\n  <tr>\n    <td width=\"25%\" valign=\"top\">\n      <b>Record</b><br>\n      <code>record</code> runs the original on generated edge cases, semantic traps and your own inputs, and saves what it returns or throws.\n    </td>\n    <td width=\"25%\" valign=\"top\">\n      <b>Port</b><br>\n      <code>bridge</code> generates the Rust crate and a wrapper, so callers keep the original API. You or your agent write the Rust.\n    </td>\n    <td width=\"25%\" valign=\"top\">\n      <b>Check</b><br>\n      <code>diff</code> replays every recorded case against the Rust, and nothing ships until they all match and <code>gate</code> passes.\n    </td>\n    <td width=\"25%\" valign=\"top\">\n      <b>Lift</b><br>\n      When replay passes with no fallback and every unit passes gate, <code>app lift</code> makes it a pure Rust app. The original is never touched.\n    </td>\n  </tr>\n</table>\n\n**Rewrite your whole app in Rust, one piece at a time.** rust-anything records what your\nNode.js (TypeScript/JavaScript), Python, C, Go, Ruby or Java app does today, then checks every piece of the\nRust rewrite against that recording before it moves on, until the app is pure Rust. CLIs, HTTP\nservers and libraries; your coding agent (or you) writes the Rust. It can only catch what the\nrecording covers: see [What it can't catch](docs/how-it-works.md#what-it-cant-catch). Only need the slow part fast?\nPort just that, one hot path at a time:\n\n| Real workload, same results as the original | Original | With rust-anything |\n| --- | ---: | ---: |\n| x18n's sidebar search, 50,000 keys (TypeScript, Node) | 10 ms pe",
+        "description": "rust-anything позволяет постепенно переносить существующее приложение на Rust, проверяя каждый шаг на соответствие оригинальному поведению. Инструмент сначала записывает ответы и исключения оригинального кода (Node.js/TypeScript, Python, C, Go, Ruby, Java и др.) на наборе генерированных и пользовательских тестов, а затем генерирует Rust‑крэ́т и обёртку, сохраняющую прежний API. После этого команда diff воспроизводит все записанные случаи против нового Rust‑кода; только когда все совпадения прошли, gate разрешает дальнейшее продвижение. По завершении процесса lift превращает проект в полностью Rust‑приложение, не меняя исходный код.\n\nПодход особенно полезен для оптимизации «горячих» участков: можно записать лишь критические пути, переписать их на Rust и убедиться, что результаты идентичны, получая ускорение до 20‑кратного без риска регрессий. Инструмент поддерживает CLI, HTTP‑серверы и библиотеки, а также предоставляет единый набор команд (record, bridge, diff, gate, app lift) для автоматизации цикла миграции. Ограничение состоит в том, что проверка охватывает только те сценарии, которые были записаны; любые непокрытые случаи могут остаться незамеченными.",
+        "joke": "",
+        "evidence_quote": "**Rewrite your whole app in Rust, one piece at a time.** rust-anything records what your\nNode.js (TypeScript/JavaScript), Python, C, Go, Ruby or Java app does today, then checks ev"
       },
       "expo/exact": {
         "policy_version": 7,
@@ -644,6 +667,14 @@
         "joke": "",
         "evidence_quote": "Battery levels of your wireless mouse, headset, keyboard and controller, right on the Windows taskbar."
       },
+      "kruk2/jasna": {
+        "policy_version": 7,
+        "source_description": "Video restoration tool",
+        "source_readme": "> **The only places to get a genuine License code for the supporter models are [Ko-fi](https://ko-fi.com/kruk2), [Unifans](https://app.unifans.io/c/kruk2), and for China the seller in the [Chinese README](README.zh.md#在闲鱼购买).**\n>\n> **支持者模型的正版许可证码只能通过 [Ko-fi](https://ko-fi.com/kruk2)、[Unifans](https://app.unifans.io/c/kruk2) 或 [闲鱼](README.zh.md#在闲鱼购买) 获取。**\n\n[**English**](README.md) | [日本語](README.ja.md) | [中文](README.zh.md)\n\n# <img width=\"32\" src=\"https://github.com/Kruk2/jasna/blob/main/assets/jasna-logo.png?raw=true\" /> Jasna \n\nJasna restores mosaics in videos and images. It is free, has a simple app\nand a command line, and runs on your GPU.\n\n<img width=\"1200\" height=\"907\" alt=\"image\" src=\"https://github.com/user-attachments/assets/d59a914b-482d-4f37-ae72-5c59eb5dc9bb\" />\n\n## Contents\n\n**Start here**\n\n- [What Jasna can do](#what-jasna-can-do)\n- [What you need](#what-you-need)\n- [Quick start](#quick-start)\n- [Help and community](#help-and-community)\n- [Supporting the project](#supporting-the-project) (supporter models)\n\n**Advanced**\n\n- [How Jasna works](#how-jasna-works)\n- [Command line](#command-line)\n- [All guides](#all-guides)\n- [Benchmarks](#benchmarks)\n- [Licensing](#licensing)\n- [Acknowledgments](#acknowledgments)\n\n## What Jasna can do\n\n- **Restore mosaics in videos.** Only the mosaic areas change. [Quick start](#quick-start)\n- **Pick fast or detailed.** BasicVSR++ is fast and free; LTX is slower with more detail (supporters). [Choosing models](docs/en/models.md#restoration-model)\n- **Test LTX for free.** Trial mode shows how fast LTX runs on your PC. [LTX options](docs/en/models.md#ltx-options)\n- **Use LTX only where it helps.** Big mosaics get LTX, the rest BasicVSR++. [Mosaic scanning](docs/en/segments.md#mosaic-scanning)\n- **Restore only some scenes.** Choose ranges with a preview in the Segment Editor. [Segment Editor](docs/en/segments.md#segment-editor-gui)\n- **Pause and continue.** Long LTX jobs keep their progress. [Pause and continue](docs/en/models.md#pause-and-continue)\n- **Sharpen restored areas.** UNet 4x, RTX Super Res or Topaz. [Secondary restoration](docs/en/models.md#secondary-restoration)\n- **Upscale the whole video** to 1080p, 1440p or 4K. [Upscale](docs/en/advanced_processing.md#upscale-the-whole-video)\n- **Smoother motion.** Double the frame rate on RTX 40 and 50. [Frame generation](docs/en/gui.md#frame-generation)\n- **VR180 videos**, side by side or top/bottom. [VR180](docs/en/vr180.md)\n- **Still images** with SD 1.5 (supporters). [Images](docs/en/models.md#still-image-restoration-sd-15)\n- **Watch while it restores**, in the app or in a browser. [Video Player](docs/en/gui.md#video-player), [Streaming](docs/en/streaming.md)\n- **Many videos at once.** Queue, presets and an action when the queue is done. [Using the GUI](docs/en/gui.md#the-queue)\n- **Output extras.** Color LUT, sharpening, 60→30 FPS, play while it's being made. [Advanced processing](docs/en/advanced_processing.md)\n- **Command line and rented GPUs.** [CLI](docs/en/cli.md), [Cloud GPUs](docs/en/cloud.md)\n\n## What you need\n\n- **NVIDIA** GTX 16-series / RTX 20-series or newer, with a recent driver\n  (610+ on Windows, 580+ on Linux). GTX 10-series and older don't work.\n- Or **AMD** Radeon RX 6000 or newer (experimental). RX 7000/9000 are tested;\n  RX 6000 is untested.\n- A folder on a local disk, with no Chinese, Japanese, accented or other\n  non-English characters in its path.\n\n<details>\n<summary>More details</summary>\n\n- NVIDIA: your GPU needs compute capability 7.5 or higher in NVIDIA's\n  [GPU table](https://developer.nvidia.com/cuda/gpus). Data-center GPUs like\n  A100, H100 and B200 don't work.\n- AMD: see the table below. UNet 4x secondary restoration is supported.\n- Disk format: NTFS on Windows; ext4, Btrfs, XFS or ZFS on Linux. Network disks\n  are not supported. Use an SSD; on a hard disk (HDD) Jasna starts and loads\n  models slowly.\n- LTX needs an NVIDIA RTX or AMD Radeon RX 7000/9000 GPU (AMD integrated GPUs\n  untested), at least 8 GB VRAM and 16 GB RAM; on Linux, kernel 5.8 or newer.\n  See [What LTX needs](docs/en/models.md#what-ltx-needs).\n\n| AMD GPU | Jasna | LTX |\n| --- | --- | --- |\n| Radeon RX 9060/9070, Radeon AI PRO R9700 | yes | yes (Windows: beta) |\n| Radeon RX 7600–7900, Radeon PRO W7000 | yes | yes (Windows: beta) |\n| Radeon 740M/760M/780M/880M/890M, Ryzen AI Max (8050S/8060S) | yes, untested | yes, untested |\n| Radeon RX 6000, Radeon PRO W6000 | yes, untested | no |\n| Radeon 610M/660M/680M/820M/840M/860M | yes, untested | no |\n| Radeon RX 5000, Radeon PRO W5000, RX Vega, RX 500 and older | no | no |\n\n</details>\n\n## Quick start\n\n1. Download the release for your system and GPU.\n2. Unpack it into a folder with no Chinese, Japanese, accented or other\n   non-English characters in the path.\n3. Start the app:\n   - Windows: double-click `jasna.exe`. On AMD, first install\n     [AMD's driver for ROCm 10.1](https://www.amd.com/en/resources/support-articles/release-notes/RN-RAD-ROCM-10-01.html)\n     (**26.10.41.0",
+        "description": "Jasna — это утилита для восстановления замазанного (мозаичного) контента в видеоматериалах и отдельных изображениях, работающая полностью на GPU. Приложение предлагает как простую графическую оболочку, так и командный интерфейс, позволяя пользователю выбрать между быстрым бесплатным вариантом BasicVSR++ и более детализированным, но требующим лицензии, LTX‑моделью. При обработке длинных роликов LTX‑задачи могут быть приостановлены и возобновлены без потери прогресса, а система автоматически переключает быстрый режим на небольшие мозаики и детальный — на крупные, что экономит ресурсы. Кроме восстановления, инструмент умеет повышать разрешение до 4 K, удваивать частоту кадров на RTX 40/50, применять вторичную резкость (UNet 4×, RTX Super Res, Topaz) и поддерживает пакетную очередь, предварительный просмотр и работу с VR180‑форматами. Требования включают видеокарты NVIDIA GTX 16‑series/RTX 20‑series и новее (compute ≥ 7.5) или экспериментальные AMD Radeon RX 6000‑series и выше, а также локальный диск без нелатинских символов в пути; сетевые хранилища и старые GPU не поддерживаются. Для доступа к LTX‑моделям необходимо приобрести лицензионный код через указанные каналы (Ko‑fi, Unifans или китайский продавец).",
+        "joke": "Смотрю мозаичный кадр — и уже вижу, как он превращается в чистый HD.",
+        "evidence_quote": "Jasna restores mosaics in videos and images. It is free, has a simple app\nand a command line, and runs on your GPU."
+      },
       "lemomo-ai/lemo-opuscar": {
         "policy_version": 7,
         "source_description": "43 film styles, each a reusable style prompt plus a short film made entirely in code by Claude Opus 5.5. Pick a style, bring your own story, and let your agent direct. | Opus5.5 x 43 种影片风格：风格提示词 + 纯代码样片 + 导演与技术指南",
@@ -732,6 +763,14 @@
         "joke": "Почему модель любит яблоки? Потому что она работает только на Apple Silicon!",
         "evidence_quote": "**Open-weight typed decisions, running natively on Apple Silicon.**"
       },
+      "n8n-io/n8n": {
+        "policy_version": 7,
+        "source_description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+        "source_readme": "![Banner image](https://raw.githubusercontent.com/n8n-io/n8n/master/assets/readme-banner.jpg)\n\n# n8n – The Platform for AI Agents and Workflow Automation\n\nFair-code platform to build and deploy AI agents and workflows. Combine a visual canvas with custom code, run it self-hosted or in the [cloud](https://app.n8n.cloud/login), and connect to 1500+ integrations. AI automation you can trust with real work, from prototype to production.\n\n![n8n.io - Screenshot](https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-screenshot-readme.png)\n\n## Key Capabilities\n\n- **AI-Native Automation Platform**: Build and operationalize AI workflows and multi-step agents using your own data, models, and tools\n- **Model Flexibility, No Lock-In**: Connect to OpenAI, Anthropic, Google, or open-source models and switch providers without changing your architecture\n- **From Prototype to Production**: Design multi-step AI workflows with logic, tool use, human approvals, and full observability\n- **Code When You Need It**: Combine visual building with JavaScript, Python, and npm packages for advanced AI workflows\n- **Enterprise-Ready AI**: Self-host or deploy securely with role-based access, audit trails, and support for sensitive data\n- **Leverage What Already Exists**: 1500+ integrations and 9,000+ workflow [templates](https://n8n.io/workflows) to connect AI with your existing systems\n\n## Quick Start\n\nTry n8n instantly with our install script (requires [Docker](https://www.docker.com/)):\n\n```sh\ncurl -fsSL https://get.n8n.io | sh\n```\n\nOr deploy manually with [Docker](https://docs.n8n.io/hosting/installation/docker/):\n\n```\ndocker volume create n8n_data\ndocker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n\n```\n\nAccess the editor at http://localhost:5678\n\n## Resources\n\n- 📚 [Documentation](https://docs.n8n.io)\n- 🔧 [1500+ Integrations](https://n8n.io/integrations)\n- 💡 [Example Workflows](https://n8n.io/workflows)\n- 🤖 [AI & LangChain Guide](https://docs.n8n.io/advanced-ai/)\n- 👥 [Community Forum](https://community.n8n.io)\n- 📖 [Community Tutorials](https://community.n8n.io/c/tutorials/28)\n\n## Support\n\nNeed help? Our community forum is the place to get support and connect with other users:\n[community.n8n.io](https://community.n8n.io)\n\n## License\n\nn8n is [fair-code](https://faircode.io) distributed under the [Sustainable Use License](https://github.com/n8n-io/n8n/blob/master/LICENSE.md) and [n8n Enterprise License](https://github.com/n8n-io/n8n/blob/master/LICENSE_EE.md).\n\n- **Source Available**: Always visible source code\n- **Self-Hostable**: Deploy anywhere\n- **Extensible**: Add your own nodes and functionality\n\n[Enterprise Licenses](mailto:license@n8n.io) available for additional features and support.\n\nAdditional information about the license model can be found in the [docs](https://docs.n8n.io/n8n-community-license/).\n\n## Contributing\n\nFound a bug 🐛 or have a feature idea ✨? Check our [Contributing Guide](https://github.com/n8n-io/n8n/blob/master/CONTRIBUTING.md) for a setup guide & best practices.\n\n## Join the Team\n\nWant to shape the future of automation? Check out our [job posts](https://n8n.io/careers) and join our team!\n\n## What does n8n mean?\n\n**Short answer:** It means \"nodemation\" and is pronounced as n-eight-n.\n\n**Long answer:** \"I get that question quite often (more often than I expected) so I decided it is probably best to answer it here. While looking for a good name for the project with a free domain I realized very quickly that all the good ones I could think of were already taken. So, in the end, I chose nodemation. 'node-' in the sense that it uses a Node-View and that it uses Node.js and '-mation' for 'automation' which is what the project is supposed to help with. However, I did not like how long the name was and I could not imagine writing something that long every time in the CLI. That is when I then ended up on 'n8n'.\" - **Jan Oberhauser, Founder and CEO, n8n.io**\n",
+        "description": "n8n – платформа для автоматизации рабочих процессов с встроенными возможностями искусственного интеллекта. Пользователь собирает цепочки действий на визуальном канвасе, при необходимости добавляя пользовательский код на JavaScript или Python, что позволяет реализовать сложные AI‑агенты без глубоких знаний программирования. Платформа распространяется по fair‑code модели, что даёт открытый доступ к исходному коду и возможность самостоятельного хостинга в любой инфраструктуре, а также облачную версию через n8n.cloud.\n\nКлючевые возможности включают более 1500 готовых интеграций с внешними сервисами, поддержку более 400 шаблонов рабочих процессов и гибкую работу с моделями LLM от OpenAI, Anthropic, Google и открытых решений без привязки к конкретному провайдеру. Для корпоративных клиентов предусмотрены роли доступа, аудит‑логи и возможность развертывания в изолированных средах, что упрощает соблюдение требований к конфиденциальности данных. Кроме того, n8n позволяет расширять функциональность за счёт пользовательских узлов и npm‑пакетов, что делает её пригодной как для прототипирования, так и для масштабных продакшн‑решений.\n\nТипичный сценарий: компания интегрирует CRM, систему биллинга и чат‑бота, создаёт AI‑агента, который автоматически обрабатывает запросы клиентов, извлекает данные из базы, генерирует ответы с помощью выбранной модели и сохраняет результаты в ERP. Для запуска достаточно выполнить один скрипт установки через Docker, после чего редактор доступен по http://localhost:5678. Требования ограничиваются наличием Docker и достаточными ресурсами для выбранных моделей; при работе с облачными LLM требуется сетевое подключение к провайдеру.",
+        "joke": "",
+        "evidence_quote": "Fair-code platform to build and deploy AI agents and workflows. Combine a visual canvas with custom code, run it self-hosted or in the [cloud](https://app.n8n.cloud/login), and con"
+      },
       "nokia-applied-research/anyjev": {
         "policy_version": 7,
         "source_description": "Turn any LLM into a Jev-style decision model: typed decisions, real probabilities, no training. (continue updating, welcome any issue and PR request)",
@@ -756,6 +795,14 @@
         "joke": "Сканировать код так же просто, как запустить `cs scan .` – только без кофе‑брейка.",
         "evidence_quote": "Codex Security helps you find, investigate, and fix vulnerabilities in your code.\nUse its security workflows in Codex, or automate them with the\n`@openai/codex-security` CLI and TypeScript SDK."
       },
+      "openvinotoolkit/openvino": {
+        "policy_version": 7,
+        "source_description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+        "source_readme": "<div align=\"center\">\n<img src=\"https://storage.openvinotoolkit.org/assets/branding/openvino-logo-transparent-white-outline.svg\" width=\"400px\" alt=\"OpenVINO\">\n\n<h3 align=\"center\">\nOpen-source software toolkit for optimizing and deploying deep learning models.\n</h3>\n\n<p align=\"center\">\n <a href=\"https://docs.openvino.ai/2026/index.html\"><b>Documentation</b></a> • <a href=\"https://blog.openvino.ai\"><b>Blog</b></a> • <a href=\"https://docs.openvino.ai/2026/about-openvino/key-features.html\"><b>Key Features</b></a> • <a href=\"https://docs.openvino.ai/2026/get-started/learn-openvino.html\"><b>Tutorials</b></a> • <a href=\"https://docs.openvino.ai/2026/about-openvino/openvino-ecosystem/openvino-integrations.html\"><b>Integrations</b></a> • <a href=\"https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/model-hub.html\"><b>Benchmarks</b></a> • <a href=\"https://github.com/openvinotoolkit/openvino.genai\"><b>Generative AI</b></a>\n</p>\n\n[![PyPI Status](https://badge.fury.io/py/openvino.svg)](https://badge.fury.io/py/openvino)\n[![NPM](https://img.shields.io/npm/v/openvino-node)](https://www.npmjs.com/package/openvino-node)\n[![Anaconda Status](https://anaconda.org/conda-forge/openvino/badges/version.svg)](https://anaconda.org/conda-forge/openvino)\n[![brew Status](https://img.shields.io/homebrew/v/openvino)](https://formulae.brew.sh/formula/openvino)\n\n[![PyPI Downloads](https://static.pepy.tech/badge/openvino)](https://pepy.tech/project/openvino)\n[![Anaconda Downloads](https://anaconda.org/conda-forge/libopenvino/badges/downloads.svg)](https://anaconda.org/conda-forge/openvino/files)\n[![brew Downloads](https://img.shields.io/homebrew/installs/dy/openvino)](https://formulae.brew.sh/formula/openvino)\n </div>\n\n\n- **Inference Optimization**: Boost deep learning performance in computer vision, automatic speech recognition, generative AI, natural language processing with large and small language models, and many other common tasks.\n- **Flexible Model Support**: Use models trained with popular frameworks such as PyTorch, TensorFlow, ONNX, Keras, PaddlePaddle, and JAX/Flax. Directly integrate models built with transformers and diffusers from the Hugging Face Hub using Optimum Intel. Convert and deploy models without original frameworks.\n- **Broad Platform Compatibility**: Reduce resource demands and efficiently deploy on a range of platforms from edge to cloud. OpenVINO™ supports inference on CPU (x86, ARM), GPU (Intel integrated & discrete GPU) and AI accelerators (Intel NPU).\n- **Community and Ecosystem**: Join an active community contributing to the enhancement of deep learning performance across various domains.\n\nCheck out the [OpenVINO Cheat Sheet](https://docs.openvino.ai/2026/_static/download/OpenVINO_Quick_Start_Guide.pdf) and [Key Features](https://docs.openvino.ai/2026/about-openvino/key-features.html) for a quick reference.\n\n\n## Installation\n\n[Get your preferred distribution of OpenVINO](https://docs.openvino.ai/2026/get-started/install-openvino.html) or use this command for quick installation:\n\n```sh\npip install -U openvino\n```\n\n### Verify Installation\n\nAfter installation, you can verify OpenVINO is installed correctly by running:\n\n```python\nimport openvino as ov\nprint(ov.__version__)\n```\n\nCheck [system requirements](https://docs.openvino.ai/2026/about-openvino/release-notes-openvino/system-requirements.html) and [supported devices](https://docs.openvino.ai/2026/documentation/compatibility-and-support/supported-devices.html) for detailed information.\n\n## Tutorials and Examples\n\n[OpenVINO Quickstart example](https://docs.openvino.ai/2026/get-started.html) will walk you through the basics of deploying your first model.\n\nLearn how to optimize and deploy popular models with the [OpenVINO Notebooks](https://github.com/openvinotoolkit/openvino_notebooks) 📚:\n- [Create an LLM-powered Chatbot using OpenVINO](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/llm-chatbot/llm-chatbot-generate-api.ipynb)\n- [YOLOv11 Optimization](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/yolov11-optimization/yolov11-object-detection.ipynb)\n- [Text-to-Image Generation](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/text-to-image-genai/text-to-image-genai.ipynb)\n- [Multimodal assistant with LLaVa and OpenVINO](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/llava-multimodal-chatbot/llava-multimodal-chatbot-genai.ipynb)\n- [Automatic speech recognition using Whisper and OpenVINO](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/whisper-asr-genai/whisper-asr-genai.ipynb)\n\nDiscover more examples in the [OpenVINO Samples (Python & C++)](https://docs.openvino.ai/2026/get-started/learn-openvino/openvino-samples.html) and [Notebooks (Python)](https://docs.openvino.ai/2026/get-started/learn-openvino/interactive-tutorials-python.html).\n\nHere are easy-to-follow code examples demonstrating how to run PyTorch ",
+        "description": "OpenVINO™ — это набор инструментов, позволяющий ускорять вывод (inference) нейросетей и упрощать их развертывание на самых разных устройствах, от микроконтроллеров до серверных GPU. Проект принимает модели, обученные в популярных фреймворках (PyTorch, TensorFlow, ONNX, Keras, PaddlePaddle, JAX/Flax), а также готовые трансформеры и диффузоры из Hugging Face, и преобразует их в оптимизированный формат, который работает быстрее и требует меньше ресурсов. Основной механизм — статический граф компиляции и специализированные плагины под CPU, Intel‑GPU, а также NPU, что позволяет использовать единую модель на разных аппаратных платформах без повторного обучения.\n\nКлючевые возможности включают: (1) значительное ускорение вывода для задач компьютерного зрения, распознавания речи, генеративного ИИ и NLP; (2) поддержка широкого спектра форматов и возможность конвертации без установки оригинального фреймворка; (3) кроссплатформенность, позволяющая запускать модели на x86, ARM, интегрированных и дискретных GPU Intel, а также на специализированных ускорителях. Пользователь может установить пакет через pip, проверить версию и сразу приступить к работе с готовыми примерами, например, оптимизировать YOLOv11 или собрать LLM‑чатбот, используя готовые ноутбуки из репозитория openvino_notebooks.\n\nСценарий применения: разработчик мобильного приложения для распознавания объектов берёт предобученную модель YOLO, конвертирует её в OpenVINO, получает ускорение в 3‑5 раз на процессоре смартфона и интегрирует в приложение без изменения кода inference‑части. Требования включают совместимый процессор/графику и установленные зависимости, а ограничения — необходимость наличия поддерживаемого устройства и возможные ограничения при работе с очень большими моделями, которые могут не помещаться в память некоторых edge‑устройств.",
+        "joke": "Оптимизировать модель в OpenVINO — как заставить черепаху выиграть гонку с зайцем.",
+        "evidence_quote": "- **Inference Optimization**: Boost deep learning performance in computer vision, automatic speech recognition, generative AI, natural language processing with large and small language models, and many other common tasks."
+      },
       "opsafari/hypoarena": {
         "policy_version": 7,
         "source_description": "Scientific hypothesis-discovery workbench: grounded hypothesis-evidence graphs, synthetic literature with planted causal chains, generate-debate-evolve loops over pluggable offline adapters, Elo tournaments recovering planted skill order, paraphrase dedup, Bayesian evidence accumulation, reproducible reports. NumPy core, CPU-only torch extra.",
@@ -779,6 +826,14 @@
         "description": "HermesEnabler 2 — это небольшое приложение для Apple Watch, позволяющее включать пользовательские циферблаты Hermes на устройствах с watchOS 27.0‑27.3 beta 1. Пользователь получает готовый IPA‑файл, который можно установить через Sideloadly, либо собрать из исходников в Xcode, выбрав часы в качестве целевого устройства. После установки приложение предлагает пошаговую настройку, а также хранит резервную копию MobileGestalt, которую можно восстановить перед удалением, чтобы не потерять данные. Важно отключить автоматическую генерацию bundle‑ID в Sideloadly и использовать фиксированный идентификатор, иначе при обновлениях приложение не сможет сохранить свои настройки. Проект использует часть кода из Gester и распространяется без гарантий, поэтому пользователь берёт на себя все риски при экспериментальном использовании бета‑версий watchOS.",
         "joke": "",
         "evidence_quote": "> Supported only on watchOS 27.0 through 27.3 beta 1."
+      },
+      "punkpeye/awesome-mcp-servers": {
+        "policy_version": 7,
+        "source_description": "A collection of MCP servers.",
+        "source_readme": "# Awesome MCP Servers\n\n[![ไทย](https://img.shields.io/badge/Thai-Click-blue)](README-th.md)\n[![English](https://img.shields.io/badge/English-Click-yellow)](README.md)\n[![繁體中文](https://img.shields.io/badge/繁體中文-點擊查看-orange)](README-zh_TW.md)\n[![简体中文](https://img.shields.io/badge/简体中文-点击查看-orange)](README-zh.md)\n[![日本語](https://img.shields.io/badge/日本語-クリック-青)](README-ja.md)\n[![한국어](https://img.shields.io/badge/한국어-클릭-yellow)](README-ko.md)\n[![Português Brasileiro](https://img.shields.io/badge/Português_Brasileiro-Clique-green)](README-pt_BR.md)\n[![Discord](https://img.shields.io/discord/1312302100125843476?logo=discord&label=discord)](https://glama.ai/mcp/discord)\n[![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/mcp?style=flat&logo=reddit&label=subreddit)](https://www.reddit.com/r/mcp/)\n\n> [!IMPORTANT]\n> [ray.run](https://ray.run/) – from idea to a production-grade MCP server in under a minute! 🦜\n\n<sup><a href=\"https://glama.ai/advertise\">Ad</a></sup>\n\nA curated list of awesome Model Context Protocol (MCP) servers.\n\n* [What is MCP?](#what-is-mcp)\n* [Clients](#clients)\n* [Remote Servers](#remote-servers)\n* [Tutorials](#tutorials)\n* [Community](#community)\n* [Legend](#legend)\n* [Server Implementations](#server-implementations) \n* [Frameworks](#frameworks)\n* [Tips & Tricks](#tips-and-tricks)\n\n## What is MCP?\n\n[MCP](https://modelcontextprotocol.io/) is an open protocol that enables AI models to securely interact with local and remote resources through standardized server implementations. This list focuses on production-ready and experimental MCP servers that extend AI capabilities through file access, database connections, API integrations, and other contextual services.\n\n## Clients\n\nCheckout [awesome-mcp-clients](https://github.com/punkpeye/awesome-mcp-clients/) and [glama.ai/mcp/clients](https://glama.ai/mcp/clients).\n\n## Remote Servers\n\nThis list is for servers with a GitHub repo you install and run yourself. Looking for a hosted server you just connect to over a URL? See [awesome-remote-mcp-servers](https://github.com/punkpeye/awesome-remote-mcp-servers).\n\n## Tutorials\n\n* [Tool Definition Quality Score (TDQS)](https://github.com/glama-ai/tool-definition-quality-score)\n* [Model Context Protocol (MCP) Quickstart](https://glama.ai/blog/2024-11-25-model-context-protocol-quickstart)\n* [Setup Claude Desktop App to Use a SQLite Database](https://youtu.be/wxCCzo9dGj0)\n\n## Community\n\n* [r/mcp Reddit](https://www.reddit.com/r/mcp)\n* [Discord Server](https://glama.ai/mcp/discord)\n\n## Legend\n\n* 🎖️ – official implementation\n* programming language\n  * 🐍 – Python codebase\n  * 📇 – TypeScript (or JavaScript) codebase\n  * 🏎️ – Go codebase\n  * 🦀 – Rust codebase\n  * #️⃣ - C# Codebase\n  * ☕ - Java codebase\n  * 🌊 – C/C++ codebase\n  * 💎 - Ruby codebase\n\n* scope\n  * ☁️ - Cloud Service\n  * 🏠 - Local Service\n  * 📟 - Embedded Systems\n* operating system\n  * 🍎 – For macOS\n  * 🪟 – For Windows\n  * 🐧 - For Linux\n\n> [!NOTE]\n> Confused about Local 🏠 vs Cloud ☁️?\n> * Use local when MCP server is talking to a locally installed software, e.g. taking control over Chrome browser.\n> * Use cloud when MCP server is talking to remote APIs, e.g. weather API.\n\n## Server Implementations\n\n> [!NOTE]\n> We now have a [web-based directory](https://glama.ai/mcp/servers) that is synced with the repository.\n\n* 🔗 - [Aggregators](#aggregators)\n* 🤝 - [Agreements & Coordination](#agreements--coordination)\n* 🎨 - [Art & Culture](#art-and-culture)\n* 📐 - [Architecture & Design](#architecture-and-design)\n* 📂 - [Browser Automation](#browser-automation)\n* 🧬 - [Biology Medicine and Bioinformatics](#bio)\n* ☁️ - [Cloud Platforms](#cloud-platforms)\n* 👨‍💻 - [Code Execution](#code-execution)\n* 🤖 - [Coding Agents](#coding-agents)\n* 🖥️ - [Command Line](#command-line)\n* 💬 - [Communication](#communication)\n* 🗣️ - [Conversational AI](#conversational-ai)\n* 🔑 - [Cryptography](#cryptography)\n* 👤 - [Customer Data Platforms](#customer-data-platforms)\n* 🗄️ - [Databases](#databases)\n* 📊 - [Data Platforms](#data-platforms)\n* 🚚 - [Delivery](#delivery)\n* 🛠️ - [Developer Tools](#developer-tools)\n* 🧮 - [Data Science Tools](#data-science-tools)\n* 📊 - [Data Visualization](#data-visualization)\n* 📟 - [Embedded system](#embedded-system)\n* 🎓 - [Education](#education)\n* 🛒 - [E-Commerce](#e-commerce)\n* 🌳 - [Environment & Nature](#environment-and-nature)\n* 📂 - [File Systems](#file-systems)\n* 💰 - [Finance & Fintech](#finance--fintech)\n* 🎮 - [Gaming](#gaming)\n* 🏠 - [Home Automation](#home-automation)\n* 🪪 - [Identity](#identity)\n* 🏭 - [Industrial & IoT](#industrial--iot)\n* 🧠 - [Knowledge & Memory](#knowledge--memory)\n* ⚖️ - [Legal](#legal)\n* 🗺️ - [Location Services](#location-services)\n* 🎯 - [Marketing](#marketing)\n* 📊 - [Monitoring](#monitoring)\n* 🎥 - [Multimedia Process](#multimedia-process)\n* 🖥️ - [OS Automation](#os-automation)\n* 🎙️ - [Podcasts](#podcasts)\n* 📋 - [Product Management](#product-management)\n* 🏠 - [Real Estate](#real-estate)\n* 🔬 - [Research](#research)\n* 🔎 - [Se",
+        "description": "Этот репозиторий представляет собой тщательно отобранный список серверов, реализующих Model Context Protocol (MCP) — открытый протокол, позволяющий ИИ‑моделям безопасно взаимодействовать с локальными и удалёнными ресурсами. В списке указаны как готовые к продакшн решения, так и экспериментальные реализации, покрывающие широкий спектр областей: от браузерной автоматизации и работы с базами данных до интеграций с облачными сервисами и управления домашними устройствами. Каждый элемент помечен иконками, указывающими язык реализации, тип среды (локальная, облачная или встраиваемая) и поддерживаемую операционную систему, что упрощает выбор подходящего сервера под конкретные требования.\n\nДля разработчиков, желающих быстро развернуть собственный MCP‑сервер, в README выделен сервис ray.run, позволяющий перейти от идеи к полностью готовому продакшн‑серверу менее чем за минуту. Это особенно полезно в прототипировании и демонстрационных проектах, где требуется мгновенно получить работающий сервер без ручной настройки инфраструктуры. Кроме того, репозиторий содержит ссылки на сопутствующие ресурсы: список клиентских библиотек, обучающие руководства и ссылки на сообщества (Reddit, Discord), что облегчает интеграцию и поддержку.\n\nПрактический сценарий может выглядеть так: команда разрабатывает чат‑бота, которому нужен доступ к локальному файлу‑системному хранилищу и внешнему API погоды. Выбирая из списка сервер с пометкой 🏠 Local и 🐍 Python, они быстро разворачивают его через ray.run, подключают к клиенту‑библиотеке и получают возможность безопасно запрашивать файлы и данные о погоде без прямого доступа к сети из модели. Ограничения заключаются в том, что список охватывает только серверы с открытым репозиторием, которые пользователь должен установить и поддерживать самостоятельно; готовые облачные сервисы в этом перечне не включены.",
+        "joke": "",
+        "evidence_quote": "[!IMPORTANT]\n> [ray.run](https://ray.run/) – from idea to a production-grade MCP server in under a minute! 🦜"
       },
       "qwenlm/qwen-code": {
         "policy_version": 7,
@@ -843,6 +898,14 @@
         "description": "Kronos — это семейство декодер‑only моделей‑основ, обученных специально для «языка» финансовых рынков: последовательностей свечных графиков (K‑lines). В отличие от общих временных моделей, Kronos использует двухэтапный подход: сначала специализированный токенизатор преобразует многомерные OHLCV‑данные в иерархические дискретные токены, затем большой авторегрессионный трансформер предобучается на этих токенах, что позволяет применять одну модель к различным количественным задачам, от прогнозирования цен до генерации торговых стратегий. В наборе доступны модели разного размера – от мини‑модели с 4,1 М параметров и контекстом 2048 токенов до крупной модели в 499,2 М параметров, что даёт пользователям возможность подобрать вариант под свои вычислительные ресурсы.\n\nДля практического использования предусмотрен класс `KronosPredictor`, который автоматически обрабатывает входные данные, нормализует их и генерирует прогнозы. Пример демонстрации – 24‑часовой прогноз цены BTC/USDT, доступный в онлайн‑демо. Все модели и токенизаторы размещены в Hugging Face Hub, что упрощает загрузку и интеграцию в существующие пайплайны. При необходимости можно дообучать модели на собственных данных, используя опубликованные скрипты fine‑tuning, что открывает путь к кастомным финансовым задачам.\n\nТипичный сценарий: аналитик собирает исторические свечные данные с нескольких бирж, передаёт их `KronosPredictor`, получает вероятностные распределения будущих цен и использует их в риск‑менеджменте или автоматических торговых системах. Ограничения: крупные модели (например, Kronos‑large) не открыты в открытом доступе, а все модели требуют предобученного токенизатора и работают в режиме онлайн‑вызовов к Hugging Face, поэтому полностью автономный offline‑режим не гарантируется.",
         "joke": "Если ваш портфель шипит, дайте ему Kronos – он умеет читать свечи лучше любого гадалка.",
         "evidence_quote": "> Kronos is the **first open-source foundation model** for financial candlesticks (K-lines), \r\n> trained on data from over **45 global exchanges**."
+      },
+      "solidjs/solid": {
+        "policy_version": 7,
+        "source_description": "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
+        "source_readme": "<p>\n  <img src=\"https://assets.solidjs.com/banner?project=Library&type=core&version=2.0\" alt=\"SolidJS\" />\n</p>\n\n[![Build Status](https://img.shields.io/github/actions/workflow/status/solidjs/solid/main-ci.yml?branch=main&logo=github&style=for-the-badge)](https://github.com/solidjs/solid/actions/workflows/main-ci.yml)\n[![Coverage Status](https://img.shields.io/coveralls/github/solidjs/solid.svg?style=for-the-badge)](https://coveralls.io/github/solidjs/solid?branch=main)\n\n[![NPM Version](https://img.shields.io/npm/v/solid-js.svg?style=for-the-badge)](https://www.npmjs.com/package/solid-js)\n[![](https://img.shields.io/npm/dm/solid-js.svg?style=for-the-badge)](https://www.npmjs.com/package/solid-js)\n[![Discord](https://img.shields.io/discord/722131463138705510?style=for-the-badge)](https://discord.com/invite/solidjs)\n[![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/solidjs?style=for-the-badge)](https://www.reddit.com/r/solidjs/)\n\n**[Website](https://www.solidjs.com/) • [Docs](https://docs.solidjs.com/) • [Tutorial](https://docs.solidjs.com/tutorial) • [Playground](https://playground.solidjs.com/) • [Discord](https://discord.com/invite/solidjs)**\n\nSolid is a declarative JavaScript library for building user interfaces. Instead of a Virtual DOM, it compiles templates to real DOM nodes and updates them with fine-grained reactivity. Declare your state and use it throughout your app — when a piece of state changes, only the code that depends on it re-runs.\n\n## At a glance\n\n```tsx\nimport { createSignal } from \"solid-js\";\nimport { render } from \"@solidjs/web\";\n\nfunction Counter() {\n  const [count, setCount] = createSignal(0);\n  const doubled = () => count() * 2;\n\n  // The component body runs once. Only `{doubled()}` updates when count changes.\n  return <button onClick={() => setCount(c => c + 1)}>{doubled()}</button>;\n}\n\nrender(() => <Counter />, document.getElementById(\"app\")!);\n```\n\nTry it in our [Playground](https://playground.solidjs.com/).\n\n<details>\n<summary>Explain this!</summary>\n\nSolid compiles your JSX to real DOM operations at build time. The component function runs once on mount; reactivity is per-expression, not per-render. The `{doubled()}` expression compiles to a tracked update that only touches that one DOM position when `count()` changes.\n\n```js\nimport { template, delegateEvents, insert } from \"@solidjs/web\";\nimport { createSignal } from \"solid-js\";\n\nconst _tmpl$ = /*#__PURE__*/ template(`<button>`);\n\nfunction Counter() {\n  const [count, setCount] = createSignal(0);\n  const doubled = () => count() * 2;\n\n  return (() => {\n    const _el$ = _tmpl$();\n    _el$._$$click = () => setCount(c => c + 1);\n    insert(_el$, doubled);\n    return _el$;\n  })();\n}\ndelegateEvents([\"click\"]);\n```\n\nReads update on the next microtask (or call `flush()` for synchronous interop). Effects are split into a tracking `compute` phase and a side-effecting `apply` phase — see the [docs](https://docs.solidjs.com) for the full model.\n\n</details>\n\n## Key features\n\n- Fine-grained updates to the real DOM — no virtual DOM diff.\n- Declarative reactive primitives (`createSignal`, `createMemo`, `createStore`).\n- Render-once components — your component function is plain JavaScript that runs once.\n- Automatic dependency tracking — reading reactive state subscribes to it.\n- Microtask-batched updates with `flush()` for synchronous interop.\n- First-class async: any computation can return a `Promise`/`AsyncIterable`; `<Loading>` is the boundary.\n- Optimistic UI primitives (`createOptimistic`, `createOptimisticStore`) and structured `action(...)` mutations.\n- Streaming SSR and progressive hydration.\n- TypeScript-first, JSX-first, web-component friendly.\n- Universal: write custom renderers via [`@solidjs/universal`](packages/universal) to target non-DOM platforms.\n\n## Quick start\n\nStart from a [template](https://github.com/solidjs/templates):\n\n```sh\nnpx degit solidjs/templates/solid-v2/basic my-app\ncd my-app\nnpm install\nnpm run dev\n```\n\nOr add Solid to an existing Vite project:\n\n```sh\nnpm i solid-js @solidjs/web\nnpm i -D vite @solidjs/vite-plugin\n```\n\n```js\n// vite.config.ts\nimport { defineConfig } from \"vite\";\nimport solid from \"@solidjs/vite-plugin\";\n\nexport default defineConfig({\n  plugins: [solid()]\n});\n```\n\nand point TypeScript at the web JSX types:\n\n```json\n{\n  \"compilerOptions\": {\n    \"jsx\": \"preserve\",\n    \"jsxImportSource\": \"@solidjs/web\"\n  }\n}\n```\n\n`solid-js` owns renderer-neutral component types, while renderer packages such as `@solidjs/web` and `@solidjs/h` own their JSX namespaces and `jsx-runtime` type entries.\n\n### Coming from Solid 1.x?\n\nRead the [migration guide](documentation/solid-2.0/MIGRATION.md). Solid 1.x is maintained on the [`1.x` branch](https://github.com/solidjs/solid/tree/1.x), installs with `npm i solid-js@v1-latest`, and its docs are at [v1.solidjs.com](https://v1.solidjs.com).\n\n## For LLMs / AI assistants\n\nThe public API differs from any Solid examples that predate 2.0. Before generatin",
+        "description": "SolidJS – это декларативная JavaScript‑библиотека для создания пользовательских интерфейсов, которая вместо виртуального DOM компилирует JSX‑шаблоны в реальные операции над DOM и обновляет их с помощью тонко‑гранной реактивности. Состояние объявляется через primitives (createSignal, createMemo, createStore), а при изменении сигнала пересчитывается только тот код, который от него зависит, без повторного рендера всего компонента. Это позволяет писать компоненты, функции которых выполняются один раз при монтировании, а последующие изменения происходят в микрозадачах, что уменьшает количество лишних вычислений. Среди ключевых возможностей – микрозадачное батчинг обновлений, поддержка асинхронных вычислений (Promise/AsyncIterable) с границей <Loading>, оптимистичные UI‑примитивы (createOptimistic, createOptimisticStore) и возможность стримингового сервер‑сайд рендеринга с прогрессивной гидратацией. Библиотека ориентирована на TypeScript, поддерживает JSX‑first подход и может быть использована в разных средах через универсальный пакет @solidjs/universal, позволяя писать кастомные рендереры для не‑DOM платформ. Пример типичного сценария: разработчик создает сигнал счётчика, привязывает его к кнопке и получает мгновенное удвоенное значение без перерисовки всего дерева, что особенно ценно в интерактивных приложениях с частыми изменениями состояния. Для начала можно воспользоваться готовыми шаблонами (npx degit solidjs/templates/solid-v2/basic) или добавить Solid в существующий Vite‑проект, установив solid-js и @solidjs/web и подключив плагин @solidjs/vite-plugin. Требования включают современный JavaScript‑рантайм и поддержку TypeScript, а также наличие сборщика (например, Vite) для трансляции JSX в реальный DOM‑код.",
+        "joke": "Сигнал изменился — и только кнопка помчалась обновиться, а не весь UI.",
+        "evidence_quote": "Solid is a declarative JavaScript library for building user interfaces. Instead of a Virtual DOM, it compiles templates to real DOM nodes and updates them with fine-grained reactivity. Declare your state and use it throughout your app — when a piece of state changes, only the code that depends on it re-runs."
       },
       "sostenesfreitas/ocarina-recomp": {
         "policy_version": 7,
@@ -960,6 +1023,7 @@
     "daily_retry_at": {
       "alex314618-create/jevrev": "2026-11-13T20:02:20.546398057Z",
       "amitshekhariitbhu/ai-system-design": "2026-11-14T19:51:01.145518500Z",
+      "appwrite/appwrite": "2026-11-19T20:37:32.811716638Z",
       "ashhart/tensorfold": "2026-11-13T19:59:48.883787201Z",
       "asokurasu/text-humanizer": "2026-11-09T11:17:54.878005713Z",
       "blader/humanizer": "2026-11-09T17:58:40.009103841Z",
@@ -973,11 +1037,13 @@
       "ggml-org/llama.cpp": "2026-11-13T19:58:35.437090720Z",
       "haleclipse/cometixcode": "2026-11-11T21:19:00.056816704Z",
       "haziqahmedqasmi/peakcut": "2026-11-18T16:06:54.365282129Z",
+      "headroomlabs-ai/headroom": "2026-11-19T20:41:02.931381472Z",
       "herdrdev/herdr": "2026-11-12T17:13:17.541760500Z",
       "huamidev/gestaltx": "2026-11-10T19:55:47.416710463Z",
       "jev-chat/jev-chat-jarvis": "2026-11-09T10:32:23.460442293Z",
       "jhaizhou-ops/s2arm": "2026-11-10T19:54:55.651603211Z",
       "joshpuckett/allo": "2026-11-18T16:07:06.763012023Z",
+      "jquery/jquery": "2026-11-19T20:36:31.448159587Z",
       "kryvora-network/kryvora-node": "2026-11-09T10:32:41.310378426Z",
       "liuziyu77/valen": "2026-11-16T16:31:40.809227516Z",
       "mvanhorn/last30days-skill": "2026-11-17T19:40:54.429510665Z",
@@ -987,6 +1053,7 @@
       "nvm-sh/nvm": "2026-11-13T19:59:30.915849851Z",
       "ollaya-dev/ollaya": "2026-11-14T19:52:08.528459890Z",
       "onlistteam/ai-manager": "2026-11-13T20:01:33.863704724Z",
+      "ruvnet/ruflo": "2026-11-19T20:40:49.169629400Z",
       "samyost1/3dicon": "2026-11-17T19:43:48.769846146Z",
       "sveltejs/svelte": "2026-11-17T19:41:15.903845038Z",
       "sybil-solutions/inference-optimisation-skill": "2026-11-18T16:08:33.979943993Z",
@@ -997,6 +1064,7 @@
       "unreallabsai/unreal-agent": "2026-11-09T10:32:33.474270488Z",
       "wangmingxuan666/tiersense": "2026-11-17T19:44:49.204812568Z",
       "we-promise/sure": "2026-11-11T21:13:57.235114239Z",
+      "withmarbleapp/os-taxonomy": "2026-11-19T20:42:16.838120213Z",
       "yujunzhixue/dsh-purge": "2026-11-18T16:09:49.425209703Z",
       "yukitorido/short-video-generator-ai": "2026-11-09T10:34:03.755890509Z",
       "zhulinsen/daily_stock_analysis": "2026-11-10T19:52:26.476929289Z",
@@ -280460,6 +280528,2123 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "AIRzZ90/study-materials-fork",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 750,
+      "forks": 1232,
+      "language": "TypeScript",
+      "description": "A cross-platform Tauri 2 interface and interaction practice project",
+      "html_url": "https://github.com/AIRzZ90/study-materials-fork",
+      "topics": [],
+      "created_at": "2026-11-12T10:52:32Z",
+      "updated_at": "2026-11-18T18:29:18Z",
+      "pushed_at": "2026-11-12T11:06:34Z",
+      "license": "Other",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T10:52:32Z",
+          "description": "A cross-platform Tauri 2 interface and interaction practice project",
+          "html_url": "https://github.com/AIRzZ90/study-materials-fork",
+          "stars": 750,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "BigPizzaV3/ClaudeMom",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 609,
+      "forks": 127,
+      "language": "Rust",
+      "description": "不用 Claude 账号！把 API Key 变成登录模式，Claude 桌面版全功能解锁（汉化 / 语音 / 电脑控制）",
+      "html_url": "https://github.com/BigPizzaV3/ClaudeMom",
+      "topics": [
+        "claude",
+        "claude-code",
+        "claude-desktop",
+        "tauri"
+      ],
+      "created_at": "2026-11-12T07:06:59Z",
+      "updated_at": "2026-11-18T15:11:27Z",
+      "pushed_at": "2026-11-18T16:20:19Z",
+      "license": "AGPL-3.0",
+      "open_issues": 8,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T07:06:59Z",
+          "description": "不用 Claude 账号！把 API Key 变成登录模式，Claude 桌面版全功能解锁（汉化 / 语音 / 电脑控制）",
+          "html_url": "https://github.com/BigPizzaV3/ClaudeMom",
+          "stars": 609,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 58201,
+      "forks": 4878,
+      "language": "TypeScript",
+      "description": "Chrome DevTools for coding agents",
+      "html_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "topics": [
+        "browser",
+        "chrome",
+        "chrome-devtools",
+        "debugging",
+        "devtools",
+        "mcp",
+        "mcp-server",
+        "puppeteer"
+      ],
+      "created_at": "2025-09-11T10:39:55Z",
+      "updated_at": "2026-11-18T20:31:04Z",
+      "pushed_at": "2026-11-18T20:16:51Z",
+      "license": "Apache-2.0",
+      "open_issues": 137,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Chrome DevTools for coding agents",
+          "full_name": "ChromeDevTools/chrome-devtools-mcp",
+          "language": "TypeScript",
+          "trending_stars_period": 2948,
+          "trending_total_forks": null,
+          "trending_total_stars": 58201,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "CzzzzzzJ/mdldm-maitian",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 1292,
+      "forks": 409,
+      "language": "JavaScript",
+      "description": "麦田：自媒体多平台发布中控与数据监控（B站/抖音/小红书/视频号/YouTube/X），飞书卡片通知 + 数据大屏",
+      "html_url": "https://github.com/CzzzzzzJ/mdldm-maitian",
+      "topics": [
+        "automation",
+        "chrome-extension",
+        "creator-tools",
+        "dashboard",
+        "feishu",
+        "social-media"
+      ],
+      "created_at": "2026-11-14T03:59:22Z",
+      "updated_at": "2026-11-18T19:44:05Z",
+      "pushed_at": "2026-11-18T02:49:13Z",
+      "license": "MIT",
+      "open_issues": 6,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T03:59:22Z",
+          "description": "麦田：自媒体多平台发布中控与数据监控（B站/抖音/小红书/视频号/YouTube/X），飞书卡片通知 + 数据大屏",
+          "html_url": "https://github.com/CzzzzzzJ/mdldm-maitian",
+          "stars": 1292,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DeanChensj/jiangshan-map",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 7901,
+      "forks": 966,
+      "language": "JavaScript",
+      "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
+      "html_url": "https://github.com/DeanChensj/jiangshan-map",
+      "topics": [
+        "ancient-china",
+        "cartography",
+        "china-map",
+        "chinese-history",
+        "classical-chinese-poetry",
+        "digital-humanities",
+        "gis",
+        "historical-atlas",
+        "historical-map",
+        "interactive-map"
+      ],
+      "created_at": "2026-07-23T22:44:35Z",
+      "updated_at": "2026-11-18T20:15:01Z",
+      "pushed_at": "2026-11-18T15:06:58Z",
+      "license": "GPL-3.0",
+      "open_issues": 16,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
+          "full_name": "DeanChensj/jiangshan-map",
+          "language": "JavaScript",
+          "trending_stars_period": 280,
+          "trending_total_forks": null,
+          "trending_total_stars": 7901,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Eynnzerr/TelemetryCleaner",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 1651,
+      "forks": 135,
+      "language": "Kotlin",
+      "description": "基于 Shizuku 免 Root 清除国产安卓 SystemHelper、RegService 等系统预装隐私数据收集模块",
+      "html_url": "https://github.com/Eynnzerr/TelemetryCleaner",
+      "topics": [],
+      "created_at": "2026-11-11T06:25:10Z",
+      "updated_at": "2026-11-18T19:53:30Z",
+      "pushed_at": "2026-11-17T08:45:38Z",
+      "license": "MIT",
+      "open_issues": 10,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-11T06:25:10Z",
+          "description": "基于 Shizuku 免 Root 清除国产安卓 SystemHelper、RegService 等系统预装隐私数据收集模块",
+          "html_url": "https://github.com/Eynnzerr/TelemetryCleaner",
+          "stars": 1651,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "GoogleChrome/modern-web-guidance-src",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 8793,
+      "forks": 736,
+      "language": "TypeScript",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "html_url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "topics": [],
+      "created_at": "2026-01-27T20:22:24Z",
+      "updated_at": "2026-11-18T20:33:12Z",
+      "pushed_at": "2026-11-18T20:33:14Z",
+      "license": "Apache-2.0",
+      "open_issues": 398,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Keep your coding agent up to date with the latest web best practices",
+          "full_name": "GoogleChrome/modern-web-guidance-src",
+          "language": "TypeScript",
+          "trending_stars_period": 7015,
+          "trending_total_forks": null,
+          "trending_total_stars": 8793,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 59604,
+      "forks": 5411,
+      "language": "Python",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "html_url": "https://github.com/HKUDS/CLI-Anything",
+      "topics": [],
+      "created_at": "2026-03-08T13:52:57Z",
+      "updated_at": "2026-11-18T20:30:47Z",
+      "pushed_at": "2026-09-22T02:01:29Z",
+      "license": "Apache-2.0",
+      "open_issues": 243,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+          "full_name": "HKUDS/CLI-Anything",
+          "language": "Python",
+          "trending_stars_period": 384,
+          "trending_total_forks": null,
+          "trending_total_stars": 59604,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Hut-hzf/ung220z-tool",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 1100,
+      "forks": 272,
+      "language": "Python",
+      "description": "ung220z-tool 是一个针对 UNG220Z（九联/Unionman 中国移动光猫）的一键凭据提取工具，仅限在你自己的设备上用于找回忘记的管理密码、迁移宽带配置或安全自查。",
+      "html_url": "https://github.com/Hut-hzf/ung220z-tool",
+      "topics": [],
+      "created_at": "2026-11-15T11:16:46Z",
+      "updated_at": "2026-11-18T19:54:37Z",
+      "pushed_at": "2026-11-15T11:17:27Z",
+      "license": "MIT",
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-15T11:16:46Z",
+          "description": "ung220z-tool 是一个针对 UNG220Z（九联/Unionman 中国移动光猫）的一键凭据提取工具，仅限在你自己的设备上用于找回忘记的管理密码、迁移宽带配置或安全自查。",
+          "html_url": "https://github.com/Hut-hzf/ung220z-tool",
+          "stars": 1100,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Illson/RustText",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 610,
+      "forks": 2,
+      "language": "Rust",
+      "description": null,
+      "html_url": "https://github.com/Illson/RustText",
+      "topics": [],
+      "created_at": "2026-11-16T17:46:45Z",
+      "updated_at": "2026-11-18T20:13:16Z",
+      "pushed_at": "2026-11-18T19:48:42Z",
+      "license": null,
+      "open_issues": 16,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T17:46:45Z",
+          "description": null,
+          "html_url": "https://github.com/Illson/RustText",
+          "stars": 610,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Immortal-Protocols/lastbook",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 2131,
+      "forks": 275,
+      "language": "Python",
+      "description": "Offline knowledge AI, maps and videos for survival and rebuilding",
+      "html_url": "https://github.com/Immortal-Protocols/lastbook",
+      "topics": [],
+      "created_at": "2026-11-12T23:49:03Z",
+      "updated_at": "2026-11-18T20:33:22Z",
+      "pushed_at": "2026-11-18T03:25:03Z",
+      "license": "MIT",
+      "open_issues": 177,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T23:49:03Z",
+          "description": "Offline knowledge AI, maps and videos for survival and rebuilding",
+          "html_url": "https://github.com/Immortal-Protocols/lastbook",
+          "stars": 2131,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NVIDIA/SkillEvaluator",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 3650,
+      "forks": 510,
+      "language": "Python",
+      "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+      "html_url": "https://github.com/NVIDIA/SkillEvaluator",
+      "topics": [
+        "agent-evaluation",
+        "agent-plugins",
+        "agent-security",
+        "agent-skills",
+        "agentic-ai",
+        "benchmark",
+        "claude-code",
+        "codex",
+        "evaluate",
+        "evaluation",
+        "plugin",
+        "plugin-evaluation",
+        "security-scanner",
+        "skill-eval",
+        "skill-evals",
+        "skill-evaluation",
+        "skill-evaluator",
+        "skills"
+      ],
+      "created_at": "2026-06-24T02:32:26Z",
+      "updated_at": "2026-11-18T20:32:55Z",
+      "pushed_at": "2026-11-18T20:15:03Z",
+      "license": "Apache-2.0",
+      "open_issues": 66,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+          "full_name": "NVIDIA/SkillEvaluator",
+          "language": "Python",
+          "trending_stars_period": 323,
+          "trending_total_forks": null,
+          "trending_total_stars": 3650,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Noniv/abyssal-garden",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 2370,
+      "forks": 357,
+      "language": "JavaScript",
+      "description": "A dreamy underwater world you can swim through in your browser: swaying kelp forests, sunbeams, a sunken ship and manta rays. Everything is generated by code with WebGPU (no images, models or sound files), all in a single 97 KB HTML file.",
+      "html_url": "https://github.com/Noniv/abyssal-garden",
+      "topics": [],
+      "created_at": "2026-11-12T13:57:34Z",
+      "updated_at": "2026-11-18T20:27:51Z",
+      "pushed_at": "2026-11-14T17:41:33Z",
+      "license": "MIT",
+      "open_issues": 10,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T13:57:34Z",
+          "description": "A dreamy underwater world you can swim through in your browser: swaying kelp forests, sunbeams, a sunken ship and manta rays. Everything is generated by code with WebGPU (no images, models or sound files), all in a single 97 KB HTML file.",
+          "html_url": "https://github.com/Noniv/abyssal-garden",
+          "stars": 2370,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "TensaikunYT/Videohub",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 564,
+      "forks": 106,
+      "language": "JavaScript",
+      "description": null,
+      "html_url": "https://github.com/TensaikunYT/Videohub",
+      "topics": [],
+      "created_at": "2026-11-11T14:23:18Z",
+      "updated_at": "2026-11-18T19:46:29Z",
+      "pushed_at": "2026-11-13T18:35:40Z",
+      "license": "MIT",
+      "open_issues": 8,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-11T14:23:18Z",
+          "description": null,
+          "html_url": "https://github.com/TensaikunYT/Videohub",
+          "stars": 564,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ZhuLinsen/daily_stock_analysis",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 73321,
+      "forks": 57882,
+      "language": "Python",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "html_url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "topics": [
+        "a-stock",
+        "ai-agent",
+        "aigc",
+        "llm",
+        "quant",
+        "quantitative-finance",
+        "quantitative-trading"
+      ],
+      "created_at": "2026-01-10T06:43:20Z",
+      "updated_at": "2026-11-18T20:23:47Z",
+      "pushed_at": "2026-11-18T15:38:50Z",
+      "license": "MIT",
+      "open_issues": 46,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+          "full_name": "ZhuLinsen/daily_stock_analysis",
+          "language": "Python",
+          "trending_stars_period": 3653,
+          "trending_total_forks": null,
+          "trending_total_stars": 73321,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ZiChuanLan/freebie-radar",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 1610,
+      "forks": 268,
+      "language": "TypeScript",
+      "description": "白嫖与资讯资源聚合雷达：100+个源定时采集 + AI 二审过滤假福利 + 获取方式分级隔离抽奖/试用/推广 + Telegram 即时推送",
+      "html_url": "https://github.com/ZiChuanLan/freebie-radar",
+      "topics": [],
+      "created_at": "2026-11-12T09:08:11Z",
+      "updated_at": "2026-11-18T19:30:58Z",
+      "pushed_at": "2026-11-18T05:21:25Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T09:08:11Z",
+          "description": "白嫖与资讯资源聚合雷达：100+个源定时采集 + AI 二审过滤假福利 + 获取方式分级隔离抽奖/试用/推广 + Telegram 即时推送",
+          "html_url": "https://github.com/ZiChuanLan/freebie-radar",
+          "stars": 1610,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "affaan-m/ECC",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 306389,
+      "forks": 45107,
+      "language": "JavaScript",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "html_url": "https://github.com/affaan-m/ECC",
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ],
+      "created_at": "2026-01-18T00:51:51Z",
+      "updated_at": "2026-11-18T20:34:15Z",
+      "pushed_at": "2026-11-17T06:41:46Z",
+      "license": "MIT",
+      "open_issues": 168,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+          "full_name": "affaan-m/ECC",
+          "language": "JavaScript",
+          "trending_stars_period": 1109,
+          "trending_total_forks": null,
+          "trending_total_stars": 306389,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ag-ui-protocol/ag-ui",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 20397,
+      "forks": 2100,
+      "language": "TypeScript",
+      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+      "html_url": "https://github.com/ag-ui-protocol/ag-ui",
+      "topics": [
+        "ag-ui-protocol",
+        "agent-frontend",
+        "agent-ui",
+        "agentic-workflow",
+        "ai-agents"
+      ],
+      "created_at": "2025-05-07T12:49:37Z",
+      "updated_at": "2026-11-18T20:28:37Z",
+      "pushed_at": "2026-11-18T20:18:00Z",
+      "license": "MIT",
+      "open_issues": 589,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+          "full_name": "ag-ui-protocol/ag-ui",
+          "language": "TypeScript",
+          "trending_stars_period": 2773,
+          "trending_total_forks": null,
+          "trending_total_stars": 20397,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "alibaba/open-code-review",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 54159,
+      "forks": 4481,
+      "language": "Go",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "html_url": "https://github.com/alibaba/open-code-review",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "code-review",
+        "code-review-assistant",
+        "harness",
+        "repository-level-context"
+      ],
+      "created_at": "2026-05-18T02:16:36Z",
+      "updated_at": "2026-11-18T20:33:30Z",
+      "pushed_at": "2026-11-18T13:43:50Z",
+      "license": "Apache-2.0",
+      "open_issues": 343,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+          "full_name": "alibaba/open-code-review",
+          "language": "Go",
+          "trending_stars_period": 3675,
+          "trending_total_forks": null,
+          "trending_total_stars": 54159,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/skills",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 197148,
+      "forks": 23094,
+      "language": "Python",
+      "description": "Public repository for Agent Skills",
+      "html_url": "https://github.com/anthropics/skills",
+      "topics": [
+        "agent-skills"
+      ],
+      "created_at": "2025-09-22T15:53:31Z",
+      "updated_at": "2026-11-18T20:33:44Z",
+      "pushed_at": "2026-11-16T14:22:50Z",
+      "license": null,
+      "open_issues": 1558,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Public repository for Agent Skills",
+          "full_name": "anthropics/skills",
+          "language": "Python",
+          "trending_stars_period": 4847,
+          "trending_total_forks": null,
+          "trending_total_stars": 197148,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "apex-compute/ANR",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 2650,
+      "forks": 56,
+      "language": "C++",
+      "description": "Apex Neural Rendering (ANR) by Apex Compute",
+      "html_url": "https://github.com/apex-compute/ANR",
+      "topics": [],
+      "created_at": "2026-11-11T04:27:17Z",
+      "updated_at": "2026-11-18T20:27:51Z",
+      "pushed_at": "2026-11-17T00:20:54Z",
+      "license": null,
+      "open_issues": 36,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-11T04:27:17Z",
+          "description": "Apex Neural Rendering (ANR) by Apex Compute",
+          "html_url": "https://github.com/apex-compute/ANR",
+          "stars": 2650,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "appwrite/appwrite",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 58194,
+      "forks": 5888,
+      "language": "TypeScript",
+      "description": "The open-source cloud for agents & devs. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime, WAF and more",
+      "html_url": "https://github.com/appwrite/appwrite",
+      "topics": [
+        "android",
+        "appwrite",
+        "backend",
+        "backend-as-a-service",
+        "docker",
+        "firebase",
+        "firewall",
+        "flutter",
+        "hosting",
+        "ios",
+        "javascript",
+        "nextjs",
+        "react",
+        "react-native",
+        "reactnative",
+        "self-hosted",
+        "selfhosted",
+        "supabase",
+        "swift",
+        "web"
+      ],
+      "created_at": "2019-04-08T16:36:25Z",
+      "updated_at": "2026-11-18T20:20:23Z",
+      "pushed_at": "2026-11-18T20:34:45Z",
+      "license": "BSD-3-Clause",
+      "open_issues": 734,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The open-source cloud for agents & devs. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime, WAF and more",
+          "full_name": "appwrite/appwrite",
+          "language": "TypeScript",
+          "trending_stars_period": 239,
+          "trending_total_forks": null,
+          "trending_total_stars": 58194,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "astral-sh/uv",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 92193,
+      "forks": 3921,
+      "language": "Rust",
+      "description": "An extremely fast Python package and project manager, written in Rust.",
+      "html_url": "https://github.com/astral-sh/uv",
+      "topics": [
+        "packaging",
+        "python",
+        "resolver",
+        "uv"
+      ],
+      "created_at": "2023-10-02T20:24:11Z",
+      "updated_at": "2026-11-18T20:25:03Z",
+      "pushed_at": "2026-11-18T18:59:26Z",
+      "license": "Apache-2.0",
+      "open_issues": 3077,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An extremely fast Python package and project manager, written in Rust.",
+          "full_name": "astral-sh/uv",
+          "language": "Rust",
+          "trending_stars_period": 260,
+          "trending_total_forks": null,
+          "trending_total_stars": 92193,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "backnotprop/plannotator",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 13392,
+      "forks": 1346,
+      "language": "TypeScript",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+      "html_url": "https://github.com/backnotprop/plannotator",
+      "topics": [
+        "agents",
+        "claude-code",
+        "code-review",
+        "codex",
+        "obsidian",
+        "opencode",
+        "pi-mono",
+        "plan-mode",
+        "skills"
+      ],
+      "created_at": "2025-12-28T02:09:40Z",
+      "updated_at": "2026-11-18T20:33:22Z",
+      "pushed_at": "2026-11-18T20:29:16Z",
+      "license": "Apache-2.0",
+      "open_issues": 199,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+          "full_name": "backnotprop/plannotator",
+          "language": "TypeScript",
+          "trending_stars_period": 2926,
+          "trending_total_forks": null,
+          "trending_total_stars": 13392,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "boringmarketer/boring-marketing-skills",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 653,
+      "forks": 241,
+      "language": "Python",
+      "description": "32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+      "html_url": "https://github.com/boringmarketer/boring-marketing-skills",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "copywriting",
+        "local-seo",
+        "marketing",
+        "seo"
+      ],
+      "created_at": "2026-11-16T15:09:46Z",
+      "updated_at": "2026-11-18T20:30:02Z",
+      "pushed_at": "2026-11-17T22:53:58Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T15:09:46Z",
+          "description": "32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+          "html_url": "https://github.com/boringmarketer/boring-marketing-skills",
+          "stars": 653,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "chuanqisun/spaceship",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 848,
+      "forks": 83,
+      "language": "HTML",
+      "description": "Steer your ideas in realtime",
+      "html_url": "https://github.com/chuanqisun/spaceship",
+      "topics": [],
+      "created_at": "2026-11-16T14:43:45Z",
+      "updated_at": "2026-11-18T20:24:51Z",
+      "pushed_at": "2026-11-16T19:53:46Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-11-16T14:43:45Z",
+          "description": "Steer your ideas in realtime",
+          "html_url": "https://github.com/chuanqisun/spaceship",
+          "stars": 848,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cursor/plugins",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 17155,
+      "forks": 1891,
+      "language": "TypeScript",
+      "description": "Cursor plugin specification and official plugins",
+      "html_url": "https://github.com/cursor/plugins",
+      "topics": [],
+      "created_at": "2026-01-23T01:57:42Z",
+      "updated_at": "2026-11-18T20:30:20Z",
+      "pushed_at": "2026-11-18T12:24:36Z",
+      "license": null,
+      "open_issues": 679,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Cursor plugin specification and official plugins",
+          "full_name": "cursor/plugins",
+          "language": "TypeScript",
+          "trending_stars_period": 315,
+          "trending_total_forks": null,
+          "trending_total_stars": 17155,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "deepseek-ai/chat-demo",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 4806,
+      "forks": 1070,
+      "language": "TypeScript",
+      "description": "Chat Demo",
+      "html_url": "https://github.com/deepseek-ai/chat-demo",
+      "topics": [],
+      "created_at": "2026-11-12T08:08:19Z",
+      "updated_at": "2026-11-18T20:09:31Z",
+      "pushed_at": "2026-11-18T13:40:01Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T08:08:19Z",
+          "description": "Chat Demo",
+          "html_url": "https://github.com/deepseek-ai/chat-demo",
+          "stars": 4806,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dream-num/univer",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 29863,
+      "forks": 2703,
+      "language": "TypeScript",
+      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+      "html_url": "https://github.com/dream-num/univer",
+      "topics": [
+        "board",
+        "collaboration",
+        "doc",
+        "docx",
+        "excel",
+        "offce365",
+        "office",
+        "pdf",
+        "ppt",
+        "pptx",
+        "presentation",
+        "sdk",
+        "sheet",
+        "slides",
+        "spreadsheet",
+        "univer",
+        "word",
+        "wordprocessor",
+        "workspace",
+        "xlsx"
+      ],
+      "created_at": "2022-09-29T12:09:14Z",
+      "updated_at": "2026-11-18T20:22:20Z",
+      "pushed_at": "2026-11-18T20:19:06Z",
+      "license": "Apache-2.0",
+      "open_issues": 202,
+      "default_branch": "dev",
+      "sources": [
+        {
+          "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+          "full_name": "dream-num/univer",
+          "language": "TypeScript",
+          "trending_stars_period": 5845,
+          "trending_total_forks": null,
+          "trending_total_stars": 29863,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "duwqijlk/muse-protocol",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 1626,
+      "forks": 640,
+      "language": "Python",
+      "description": "muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）",
+      "html_url": "https://github.com/duwqijlk/muse-protocol",
+      "topics": [],
+      "created_at": "2026-11-14T01:24:58Z",
+      "updated_at": "2026-11-18T17:30:28Z",
+      "pushed_at": "2026-11-15T02:55:33Z",
+      "license": "Other",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T01:24:58Z",
+          "description": "muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）",
+          "html_url": "https://github.com/duwqijlk/muse-protocol",
+          "stars": 1626,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "elementalsouls/Claude-BugHunter",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 11148,
+      "forks": 1498,
+      "language": "Python",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "html_url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "topics": [
+        "ai-security",
+        "anthropic",
+        "application-security",
+        "bug-bounty",
+        "bugbounty",
+        "bugcrowd",
+        "claude",
+        "claude-code",
+        "claude-skills",
+        "ethical-hacking",
+        "hackerone",
+        "offensive-security",
+        "pentesting",
+        "red-team",
+        "security-tools",
+        "web-security"
+      ],
+      "created_at": "2026-05-05T11:22:32Z",
+      "updated_at": "2026-11-18T20:32:48Z",
+      "pushed_at": "2026-11-18T13:09:42Z",
+      "license": "MIT",
+      "open_issues": 15,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+          "full_name": "elementalsouls/Claude-BugHunter",
+          "language": "Python",
+          "trending_stars_period": 2508,
+          "trending_total_forks": null,
+          "trending_total_stars": 11148,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+          "full_name": "elementalsouls/Claude-BugHunter",
+          "language": "Python",
+          "trending_stars_period": 2322,
+          "trending_total_forks": null,
+          "trending_total_stars": 11148,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "erkamyaman/rust-anything",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 3134,
+      "forks": 249,
+      "language": "Rust",
+      "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
+      "html_url": "https://github.com/erkamyaman/rust-anything",
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "cli",
+        "code-migration",
+        "codex",
+        "ffi",
+        "golang",
+        "java",
+        "javascript",
+        "mcp",
+        "migration",
+        "napi",
+        "performance",
+        "porting",
+        "pyo3",
+        "python",
+        "rewrite",
+        "ruby",
+        "rust",
+        "typescript"
+      ],
+      "created_at": "2026-11-16T12:10:36Z",
+      "updated_at": "2026-11-18T20:34:44Z",
+      "pushed_at": "2026-11-18T20:13:02Z",
+      "license": "MIT",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T12:10:36Z",
+          "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
+          "html_url": "https://github.com/erkamyaman/rust-anything",
+          "stars": 3134,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "getarcaneapp/arcane",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 9751,
+      "forks": 558,
+      "language": "Go",
+      "description": "Modern Docker Management, Designed for Everyone",
+      "html_url": "https://github.com/getarcaneapp/arcane",
+      "topics": [
+        "compose",
+        "container-management",
+        "containers",
+        "docker",
+        "docker-compose",
+        "docker-management",
+        "go",
+        "self-hosted",
+        "sveltekit",
+        "typescript",
+        "web-ui"
+      ],
+      "created_at": "2025-04-19T00:43:29Z",
+      "updated_at": "2026-11-18T20:30:42Z",
+      "pushed_at": "2026-11-18T20:05:46Z",
+      "license": "BSD-3-Clause",
+      "open_issues": 16,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Modern Docker Management, Designed for Everyone",
+          "full_name": "getarcaneapp/arcane",
+          "language": "Go",
+          "trending_stars_period": 547,
+          "trending_total_forks": null,
+          "trending_total_stars": 9751,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-labs-code/stitch-skills",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 10368,
+      "forks": 1365,
+      "language": "TypeScript",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "html_url": "https://github.com/google-labs-code/stitch-skills",
+      "topics": [],
+      "created_at": "2026-01-16T17:17:17Z",
+      "updated_at": "2026-11-18T20:33:26Z",
+      "pushed_at": "2026-11-18T05:00:25Z",
+      "license": "Apache-2.0",
+      "open_issues": 21,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+          "full_name": "google-labs-code/stitch-skills",
+          "language": "TypeScript",
+          "trending_stars_period": 1197,
+          "trending_total_forks": null,
+          "trending_total_stars": 10368,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+          "full_name": "google-labs-code/stitch-skills",
+          "language": "TypeScript",
+          "trending_stars_period": 369,
+          "trending_total_forks": null,
+          "trending_total_stars": 10368,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-research/paper-orchestra",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 4151,
+      "forks": 518,
+      "language": "Python",
+      "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+      "html_url": "https://github.com/google-research/paper-orchestra",
+      "topics": [
+        "ai-research-assistant",
+        "multi-agent-systems"
+      ],
+      "created_at": "2026-05-01T18:07:52Z",
+      "updated_at": "2026-11-18T20:34:42Z",
+      "pushed_at": "2026-11-15T18:08:08Z",
+      "license": "Apache-2.0",
+      "open_issues": 41,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+          "full_name": "google-research/paper-orchestra",
+          "language": "Python",
+          "trending_stars_period": 1529,
+          "trending_total_forks": null,
+          "trending_total_stars": 4151,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "haziqahmedqasmi/PeakCut",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 1062,
+      "forks": 364,
+      "language": "Python",
+      "description": "AI clipping for long videos and live streams. Self-hosted, bring your own AI key.",
+      "html_url": "https://github.com/haziqahmedqasmi/PeakCut",
+      "topics": [],
+      "created_at": "2026-11-14T07:38:20Z",
+      "updated_at": "2026-11-18T20:25:11Z",
+      "pushed_at": "2026-11-17T13:20:20Z",
+      "license": "MIT",
+      "open_issues": 31,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T07:38:20Z",
+          "description": "AI clipping for long videos and live streams. Self-hosted, bring your own AI key.",
+          "html_url": "https://github.com/haziqahmedqasmi/PeakCut",
+          "stars": 1062,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "higurashi-ai/Haru",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 605,
+      "forks": 53,
+      "language": "Python",
+      "description": "Haru: a low-latency, multilingual, full-duplex spoken dialogue model",
+      "html_url": "https://github.com/higurashi-ai/Haru",
+      "topics": [],
+      "created_at": "2026-11-12T11:15:42Z",
+      "updated_at": "2026-11-18T20:17:27Z",
+      "pushed_at": "2026-11-13T06:21:17Z",
+      "license": "Apache-2.0",
+      "open_issues": 8,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T11:15:42Z",
+          "description": "Haru: a low-latency, multilingual, full-duplex spoken dialogue model",
+          "html_url": "https://github.com/higurashi-ai/Haru",
+          "stars": 605,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "huggingface/pybot",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 823,
+      "forks": 80,
+      "language": "Python",
+      "description": "PyBot: a chatbot written in pure Python by a swarm of agents. No weights, no training, just rules.",
+      "html_url": "https://github.com/huggingface/pybot",
+      "topics": [],
+      "created_at": "2026-11-12T11:35:13Z",
+      "updated_at": "2026-11-18T20:28:17Z",
+      "pushed_at": "2026-11-16T11:07:29Z",
+      "license": "Apache-2.0",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T11:35:13Z",
+          "description": "PyBot: a chatbot written in pure Python by a swarm of agents. No weights, no training, just rules.",
+          "html_url": "https://github.com/huggingface/pybot",
+          "stars": 823,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "joshpuckett/allo",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 1026,
+      "forks": 27,
+      "language": "Python",
+      "description": "Allo is your friendly neighborhood typeface, free and open source",
+      "html_url": "https://github.com/joshpuckett/allo",
+      "topics": [],
+      "created_at": "2026-11-15T17:33:42Z",
+      "updated_at": "2026-11-18T20:33:30Z",
+      "pushed_at": "2026-11-18T07:19:43Z",
+      "license": "OFL-1.1",
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-15T17:33:42Z",
+          "description": "Allo is your friendly neighborhood typeface, free and open source",
+          "html_url": "https://github.com/joshpuckett/allo",
+          "stars": 1026,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jquery/jquery",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 60000,
+      "forks": 20715,
+      "language": "JavaScript",
+      "description": "jQuery JavaScript Library",
+      "html_url": "https://github.com/jquery/jquery",
+      "topics": [
+        "jquery"
+      ],
+      "created_at": "2009-04-03T15:20:14Z",
+      "updated_at": "2026-11-18T20:32:48Z",
+      "pushed_at": "2026-11-17T19:00:49Z",
+      "license": "MIT",
+      "open_issues": 95,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "jQuery JavaScript Library",
+          "full_name": "jquery/jquery",
+          "language": "JavaScript",
+          "trending_stars_period": 268,
+          "trending_total_forks": null,
+          "trending_total_stars": 60000,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "krisgfx9/Wireless-Device-Battery-Monitor",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 3792,
+      "forks": 327,
+      "language": "C++",
+      "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
+      "html_url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor",
+      "topics": [],
+      "created_at": "2026-11-16T19:28:29Z",
+      "updated_at": "2026-11-18T20:34:58Z",
+      "pushed_at": "2026-11-18T11:41:35Z",
+      "license": "GPL-3.0",
+      "open_issues": 2156,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T19:28:29Z",
+          "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
+          "html_url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor",
+          "stars": 3792,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "linknimiball1974/ai-texture-forge",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 685,
+      "forks": 31,
+      "language": null,
+      "description": "An AI-powered texture forge for Blender — turn text prompts into seamless PBR materials, concept art and scene-wide projections with local or cloud diffusion models, straight inside the 3D viewport on Windows. · dream textures · dream textures blender · dream textures addon · dream textures ai · dream textures seamless · dream textures pbr",
+      "html_url": "https://github.com/linknimiball1974/ai-texture-forge",
+      "topics": [
+        "dream-textures",
+        "dream-textures-addon",
+        "dream-textures-ai",
+        "dream-textures-blender",
+        "dream-textures-diffusion",
+        "dream-textures-generation",
+        "dream-textures-gpu",
+        "dream-textures-history",
+        "dream-textures-inpainting",
+        "dream-textures-local",
+        "dream-textures-material",
+        "dream-textures-outpainting",
+        "dream-textures-pbr",
+        "dream-textures-projection",
+        "dream-textures-prompt",
+        "dream-textures-python",
+        "dream-textures-render",
+        "dream-textures-seamless",
+        "dream-textures-upscaling",
+        "dream-textures-windows"
+      ],
+      "created_at": "2026-11-11T19:09:18Z",
+      "updated_at": "2026-11-16T22:46:38Z",
+      "pushed_at": "2026-11-15T13:26:27Z",
+      "license": "MIT",
+      "open_issues": 48,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-11T19:09:18Z",
+          "description": "An AI-powered texture forge for Blender — turn text prompts into seamless PBR materials, concept art and scene-wide projections with local or cloud diffusion models, straight inside the 3D viewport on Windows. · dream textures · dream textures blender · dream textures addon · dream textures ai · dream textures seamless · dream textures pbr",
+          "html_url": "https://github.com/linknimiball1974/ai-texture-forge",
+          "stars": 685,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "makepad/relax",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 598,
+      "forks": 34,
+      "language": "Rust",
+      "description": "Relax Rust JIT",
+      "html_url": "https://github.com/makepad/relax",
+      "topics": [],
+      "created_at": "2026-11-11T19:12:58Z",
+      "updated_at": "2026-11-18T16:14:48Z",
+      "pushed_at": "2026-11-18T19:53:12Z",
+      "license": "MIT",
+      "open_issues": 12,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-11T19:12:58Z",
+          "description": "Relax Rust JIT",
+          "html_url": "https://github.com/makepad/relax",
+          "stars": 598,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "meta/astryx",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 30531,
+      "forks": 2393,
+      "language": "TypeScript",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "html_url": "https://github.com/meta/astryx",
+      "topics": [],
+      "created_at": "2026-01-09T16:20:32Z",
+      "updated_at": "2026-11-18T20:30:32Z",
+      "pushed_at": "2026-11-18T20:35:16Z",
+      "license": "MIT",
+      "open_issues": 1055,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open source design system that's fully customizable and agent ready",
+          "full_name": "meta/astryx",
+          "language": "TypeScript",
+          "trending_stars_period": 8700,
+          "trending_total_forks": null,
+          "trending_total_stars": 30531,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mit-han-lab/pear",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 674,
+      "forks": 42,
+      "language": "Python",
+      "description": "Training Reasoning Models in Simulation to Natively Use Real Robots",
+      "html_url": "https://github.com/mit-han-lab/pear",
+      "topics": [],
+      "created_at": "2026-11-13T17:43:06Z",
+      "updated_at": "2026-11-18T19:22:21Z",
+      "pushed_at": "2026-11-18T19:36:30Z",
+      "license": "Apache-2.0",
+      "open_issues": 6,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-13T17:43:06Z",
+          "description": "Training Reasoning Models in Simulation to Natively Use Real Robots",
+          "html_url": "https://github.com/mit-han-lab/pear",
+          "stars": 674,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mvanhorn/last30days-skill",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 69884,
+      "forks": 6237,
+      "language": "Python",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "html_url": "https://github.com/mvanhorn/last30days-skill",
+      "topics": [
+        "ai-prompts",
+        "ai-skill",
+        "bluesky",
+        "claude",
+        "claude-code",
+        "clawhub",
+        "deep-research",
+        "hackernews",
+        "instagram",
+        "openclaw",
+        "polymarket",
+        "recency",
+        "reddit",
+        "research",
+        "social-media",
+        "tiktok",
+        "trends",
+        "twitter",
+        "web-search",
+        "youtube"
+      ],
+      "created_at": "2026-01-23T20:37:37Z",
+      "updated_at": "2026-11-18T20:31:02Z",
+      "pushed_at": "2026-11-17T22:37:11Z",
+      "license": "MIT",
+      "open_issues": 22,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+          "full_name": "mvanhorn/last30days-skill",
+          "language": "Python",
+          "trending_stars_period": 1548,
+          "trending_total_forks": null,
+          "trending_total_stars": 69884,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+          "full_name": "mvanhorn/last30days-skill",
+          "language": "Python",
+          "trending_stars_period": 1062,
+          "trending_total_forks": null,
+          "trending_total_stars": 69884,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "n4ze3m/tiny-voca",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 741,
+      "forks": 95,
+      "language": "Python",
+      "description": "A 4.5M-parameter two-voice English text-to-speech model, trained from scratch",
+      "html_url": "https://github.com/n4ze3m/tiny-voca",
+      "topics": [
+        "onnx",
+        "text-to-speech",
+        "tts"
+      ],
+      "created_at": "2026-11-14T16:02:56Z",
+      "updated_at": "2026-11-18T20:31:13Z",
+      "pushed_at": "2026-11-18T15:36:23Z",
+      "license": "Apache-2.0",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T16:02:56Z",
+          "description": "A 4.5M-parameter two-voice English text-to-speech model, trained from scratch",
+          "html_url": "https://github.com/n4ze3m/tiny-voca",
+          "stars": 741,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "n8n-io/n8n",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 210995,
+      "forks": 61563,
+      "language": "TypeScript",
+      "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+      "html_url": "https://github.com/n8n-io/n8n",
+      "topics": [
+        "ai",
+        "apis",
+        "automation",
+        "cli",
+        "data-flow",
+        "development",
+        "integration-framework",
+        "integrations",
+        "ipaas",
+        "low-code",
+        "low-code-platform",
+        "mcp",
+        "mcp-client",
+        "mcp-server",
+        "n8n",
+        "no-code",
+        "self-hosted",
+        "typescript",
+        "workflow",
+        "workflow-automation"
+      ],
+      "created_at": "2019-06-22T09:24:21Z",
+      "updated_at": "2026-11-18T20:34:56Z",
+      "pushed_at": "2026-11-18T20:35:02Z",
+      "license": "Other",
+      "open_issues": 1244,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+          "full_name": "n8n-io/n8n",
+          "language": "TypeScript",
+          "trending_stars_period": 315,
+          "trending_total_forks": null,
+          "trending_total_stars": 210995,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "nvm-sh/nvm",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 96141,
+      "forks": 10781,
+      "language": "Shell",
+      "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+      "html_url": "https://github.com/nvm-sh/nvm",
+      "topics": [
+        "bash",
+        "install",
+        "lts",
+        "node",
+        "node-js",
+        "nodejs",
+        "nvm",
+        "nvmrc",
+        "posix",
+        "posix-compliant",
+        "shell",
+        "version-manager",
+        "zsh"
+      ],
+      "created_at": "2010-04-15T17:47:47Z",
+      "updated_at": "2026-11-18T20:25:02Z",
+      "pushed_at": "2026-11-17T23:08:40Z",
+      "license": "MIT",
+      "open_issues": 371,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+          "full_name": "nvm-sh/nvm",
+          "language": "Shell",
+          "trending_stars_period": 111,
+          "trending_total_forks": null,
+          "trending_total_stars": 96141,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "obra/superpowers",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 319938,
+      "forks": 28545,
+      "language": "Shell",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "html_url": "https://github.com/obra/superpowers",
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
+      ],
+      "created_at": "2025-10-09T19:45:18Z",
+      "updated_at": "2026-11-18T20:34:22Z",
+      "pushed_at": "2026-11-03T23:24:58Z",
+      "license": "MIT",
+      "open_issues": 359,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An agentic skills framework & software development methodology that works.",
+          "full_name": "obra/superpowers",
+          "language": "Shell",
+          "trending_stars_period": 823,
+          "trending_total_forks": null,
+          "trending_total_stars": 319938,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "openai/codex-security",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 14091,
+      "forks": 1098,
+      "language": "TypeScript",
+      "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+      "html_url": "https://github.com/openai/codex-security",
+      "topics": [
+        "ai-security",
+        "application-security",
+        "cli",
+        "code-scanning",
+        "codex",
+        "codex-security",
+        "cybersecurity",
+        "devsecops",
+        "nodejs",
+        "npm",
+        "openai",
+        "sdk",
+        "security",
+        "typescript",
+        "vulnerability-scanning"
+      ],
+      "created_at": "2026-07-13T22:00:13Z",
+      "updated_at": "2026-11-18T20:34:10Z",
+      "pushed_at": "2026-11-18T20:08:47Z",
+      "license": "Apache-2.0",
+      "open_issues": 186,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+          "full_name": "openai/codex-security",
+          "language": "TypeScript",
+          "trending_stars_period": 2531,
+          "trending_total_forks": null,
+          "trending_total_stars": 14091,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "opencoredev/islandcn",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 807,
+      "forks": 65,
+      "language": "TypeScript",
+      "description": "The open-source Dynamic Island for React, installed with shadcn.",
+      "html_url": "https://github.com/opencoredev/islandcn",
+      "topics": [
+        "dynamic-island",
+        "nextjs",
+        "react",
+        "shadcn",
+        "typescript",
+        "ui-components"
+      ],
+      "created_at": "2026-11-13T11:50:50Z",
+      "updated_at": "2026-11-18T16:33:21Z",
+      "pushed_at": "2026-11-13T15:14:36Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-13T11:50:50Z",
+          "description": "The open-source Dynamic Island for React, installed with shadcn.",
+          "html_url": "https://github.com/opencoredev/islandcn",
+          "stars": 807,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "openvinotoolkit/openvino",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 11294,
+      "forks": 3600,
+      "language": "C++",
+      "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "html_url": "https://github.com/openvinotoolkit/openvino",
+      "topics": [
+        "ai",
+        "computer-vision",
+        "deep-learning",
+        "deploy-ai",
+        "diffusion-models",
+        "generative-ai",
+        "good-first-issue",
+        "inference",
+        "llm-inference",
+        "natural-language-processing",
+        "nlp",
+        "openvino",
+        "optimize-ai",
+        "performance-boost",
+        "recommendation-system",
+        "speech-recognition",
+        "stable-diffusion",
+        "transformers",
+        "yolo"
+      ],
+      "created_at": "2018-10-15T10:54:40Z",
+      "updated_at": "2026-11-18T20:32:45Z",
+      "pushed_at": "2026-11-18T20:33:28Z",
+      "license": "Apache-2.0",
+      "open_issues": 1160,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+          "full_name": "openvinotoolkit/openvino",
+          "language": "C++",
+          "trending_stars_period": 18,
+          "trending_total_forks": null,
+          "trending_total_stars": 11294,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "punkpeye/awesome-mcp-servers",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 97984,
+      "forks": 20338,
+      "language": null,
+      "description": "A collection of MCP servers.",
+      "html_url": "https://github.com/punkpeye/awesome-mcp-servers",
+      "topics": [
+        "ai",
+        "mcp"
+      ],
+      "created_at": "2024-11-30T04:49:10Z",
+      "updated_at": "2026-11-18T20:32:47Z",
+      "pushed_at": "2026-11-17T05:21:40Z",
+      "license": "MIT",
+      "open_issues": 4751,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A collection of MCP servers.",
+          "full_name": "punkpeye/awesome-mcp-servers",
+          "language": "",
+          "trending_stars_period": 52,
+          "trending_total_forks": null,
+          "trending_total_stars": 97984,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "rivet-dev/open-orange",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 676,
+      "forks": 28,
+      "language": "TypeScript",
+      "description": "Run Cloudflare Workers and Durable Objects unchanged on AWS, GCP, Azure or your own servers.",
+      "html_url": "https://github.com/rivet-dev/open-orange",
+      "topics": [
+        "cloudflare",
+        "cloudflare-workers",
+        "durable-objects",
+        "nodejs",
+        "rivet",
+        "self-hosted",
+        "serverless",
+        "sqlite",
+        "typescript",
+        "wrangler"
+      ],
+      "created_at": "2026-11-12T00:44:12Z",
+      "updated_at": "2026-11-18T20:19:02Z",
+      "pushed_at": "2026-11-18T16:20:05Z",
+      "license": "Apache-2.0",
+      "open_issues": 10,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T00:44:12Z",
+          "description": "Run Cloudflare Workers and Durable Objects unchanged on AWS, GCP, Azure or your own servers.",
+          "html_url": "https://github.com/rivet-dev/open-orange",
+          "stars": 676,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "solidjs/solid",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 36524,
+      "forks": 1179,
+      "language": "TypeScript",
+      "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
+      "html_url": "https://github.com/solidjs/solid",
+      "topics": [
+        "declarative",
+        "fine-grained",
+        "javascript",
+        "jsx",
+        "performance",
+        "proxies",
+        "reactive",
+        "solid"
+      ],
+      "created_at": "2018-04-24T16:36:27Z",
+      "updated_at": "2026-11-18T20:33:56Z",
+      "pushed_at": "2026-11-18T18:25:57Z",
+      "license": "MIT",
+      "open_issues": 32,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
+          "full_name": "solidjs/solid",
+          "language": "TypeScript",
+          "trending_stars_period": 37,
+          "trending_total_forks": null,
+          "trending_total_stars": 36524,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sveltejs/svelte",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 89734,
+      "forks": 6215,
+      "language": "JavaScript",
+      "description": "web development for the rest of us",
+      "html_url": "https://github.com/sveltejs/svelte",
+      "topics": [
+        "compiler",
+        "template",
+        "ui"
+      ],
+      "created_at": "2016-11-20T18:13:05Z",
+      "updated_at": "2026-11-18T20:33:03Z",
+      "pushed_at": "2026-11-18T17:52:24Z",
+      "license": "MIT",
+      "open_issues": 1296,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "web development for the rest of us",
+          "full_name": "sveltejs/svelte",
+          "language": "JavaScript",
+          "trending_stars_period": 694,
+          "trending_total_forks": null,
+          "trending_total_stars": 89734,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sybil-solutions/inference-optimisation-skill",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 1060,
+      "forks": 92,
+      "language": "Python",
+      "description": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization",
+      "html_url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+      "topics": [
+        "agent-skill",
+        "benchmarking",
+        "claude-code",
+        "inference",
+        "llm",
+        "speculative-decoding"
+      ],
+      "created_at": "2026-11-16T18:40:04Z",
+      "updated_at": "2026-11-18T20:33:44Z",
+      "pushed_at": "2026-11-16T18:40:08Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T18:40:04Z",
+          "description": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization",
+          "html_url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+          "stars": 1060,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tradermonty/claude-trading-skills",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 7057,
+      "forks": 1437,
+      "language": "Python",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "html_url": "https://github.com/tradermonty/claude-trading-skills",
+      "topics": [],
+      "created_at": "2025-10-19T16:37:29Z",
+      "updated_at": "2026-11-18T20:31:29Z",
+      "pushed_at": "2026-11-18T14:10:21Z",
+      "license": "MIT",
+      "open_issues": 52,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+          "full_name": "tradermonty/claude-trading-skills",
+          "language": "Python",
+          "trending_stars_period": 2985,
+          "trending_total_forks": null,
+          "trending_total_stars": 7057,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 52620,
+      "forks": 3682,
+      "language": "Rust",
+      "description": "Browser automation CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "topics": [],
+      "created_at": "2026-01-11T05:38:15Z",
+      "updated_at": "2026-11-18T20:25:09Z",
+      "pushed_at": "2026-11-18T20:31:32Z",
+      "license": "Apache-2.0",
+      "open_issues": 598,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Browser automation CLI for AI agents",
+          "full_name": "vercel-labs/agent-browser",
+          "language": "Rust",
+          "trending_stars_period": 3429,
+          "trending_total_forks": null,
+          "trending_total_stars": 52620,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "we-promise/sure",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 16475,
+      "forks": 1443,
+      "language": "Ruby",
+      "description": "The personal finance app for everyone (by everyone)",
+      "html_url": "https://github.com/we-promise/sure",
+      "topics": [],
+      "created_at": "2025-07-23T04:13:55Z",
+      "updated_at": "2026-11-18T20:33:37Z",
+      "pushed_at": "2026-11-18T20:32:49Z",
+      "license": "AGPL-3.0",
+      "open_issues": 1028,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The personal finance app for everyone (by everyone)",
+          "full_name": "we-promise/sure",
+          "language": "Ruby",
+          "trending_stars_period": 4786,
+          "trending_total_forks": null,
+          "trending_total_stars": 16475,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "yetanotherbrowser/yab",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 713,
+      "forks": 67,
+      "language": "Swift",
+      "description": "Yab, yet another browser: a fast native macOS browser with an iPhone and Android companion",
+      "html_url": "https://github.com/yetanotherbrowser/yab",
+      "topics": [],
+      "created_at": "2026-11-14T23:56:32Z",
+      "updated_at": "2026-11-18T19:59:58Z",
+      "pushed_at": "2026-11-18T19:54:33Z",
+      "license": "Apache-2.0",
+      "open_issues": 937,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T23:56:32Z",
+          "description": "Yab, yet another browser: a fast native macOS browser with an iPhone and Android companion",
+          "html_url": "https://github.com/yetanotherbrowser/yab",
+          "stars": 713,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "zephyr4123/snug",
+      "captured_at": "2026-11-18T20:34:55Z",
+      "stars": 894,
+      "forks": 61,
+      "language": "Swift",
+      "description": "为 UU远程 打造的 Mac 移动端工作区：独立竖屏、窗口自适应铺满、字号随屏放大、触控遵循 iOS 交互习惯，让 Mac 在手机上拥有原生级的操作体验。A native-grade iPhone workspace for controlling your Mac over UU Remote.",
+      "html_url": "https://github.com/zephyr4123/snug",
+      "topics": [
+        "gestures",
+        "ipad",
+        "iphone",
+        "macos",
+        "macos-app",
+        "menubar-app",
+        "productivity",
+        "remote-control",
+        "remote-desktop",
+        "swift",
+        "swiftui",
+        "uu-remote",
+        "virtual-display",
+        "window-management"
+      ],
+      "created_at": "2026-11-13T03:26:21Z",
+      "updated_at": "2026-11-18T20:33:30Z",
+      "pushed_at": "2026-11-18T16:52:45Z",
+      "license": "MIT",
+      "open_issues": 9,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-13T03:26:21Z",
+          "description": "为 UU远程 打造的 Mac 移动端工作区：独立竖屏、窗口自适应铺满、字号随屏放大、触控遵循 iOS 交互习惯，让 Mac 在手机上拥有原生级的操作体验。A native-grade iPhone workspace for controlling your Mac over UU Remote.",
+          "html_url": "https://github.com/zephyr4123/snug",
+          "stars": 894,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
@@ -280542,7 +282727,8 @@
     "daily-20261114T180618Z": 111,
     "daily-20261115T162400Z": 117,
     "daily-20261116T193802Z": 128,
-    "daily-20261117T160305Z": 137
+    "daily-20261117T160305Z": 137,
+    "daily-20261118T203455Z": 144
   },
   "sent_slots": {
     "2026-09-30-pm": 61,
@@ -280559,7 +282745,8 @@
     "daily:2026-11-14": 111,
     "daily:2026-11-15": 117,
     "daily:2026-11-16": 128,
-    "daily:2026-11-17": 137
+    "daily:2026-11-17": 137,
+    "daily:2026-11-18": 144
   },
   "pending_digests": {},
   "llm_daily_requests": {
@@ -280582,7 +282769,8 @@
     "2026-11-14": 19,
     "2026-11-15": 14,
     "2026-11-16": 17,
-    "2026-11-17": 15
+    "2026-11-17": 15,
+    "2026-11-18": 17
   },
   "delivery_progress": {
     "20260930T143510Z": {
