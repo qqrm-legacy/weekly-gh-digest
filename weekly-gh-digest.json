@@ -284762,6 +284762,2090 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "AIRzZ90/study-materials-fork",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 751,
+      "forks": 1233,
+      "language": "TypeScript",
+      "description": "A cross-platform Tauri 2 interface and interaction practice project",
+      "html_url": "https://github.com/AIRzZ90/study-materials-fork",
+      "topics": [],
+      "created_at": "2026-11-12T10:52:32Z",
+      "updated_at": "2026-11-18T21:48:08Z",
+      "pushed_at": "2026-11-12T11:06:34Z",
+      "license": "Other",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T10:52:32Z",
+          "description": "A cross-platform Tauri 2 interface and interaction practice project",
+          "html_url": "https://github.com/AIRzZ90/study-materials-fork",
+          "stars": 751,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "BigPizzaV3/ClaudeMom",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 618,
+      "forks": 128,
+      "language": "Rust",
+      "description": "不用 Claude 账号！把 API Key 变成登录模式，Claude 桌面版全功能解锁（汉化 / 语音 / 电脑控制）",
+      "html_url": "https://github.com/BigPizzaV3/ClaudeMom",
+      "topics": [
+        "claude",
+        "claude-code",
+        "claude-desktop",
+        "tauri"
+      ],
+      "created_at": "2026-11-12T07:06:59Z",
+      "updated_at": "2026-11-19T02:02:04Z",
+      "pushed_at": "2026-11-18T16:20:19Z",
+      "license": "AGPL-3.0",
+      "open_issues": 9,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T07:06:59Z",
+          "description": "不用 Claude 账号！把 API Key 变成登录模式，Claude 桌面版全功能解锁（汉化 / 语音 / 电脑控制）",
+          "html_url": "https://github.com/BigPizzaV3/ClaudeMom",
+          "stars": 618,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 58226,
+      "forks": 4877,
+      "language": "TypeScript",
+      "description": "Chrome DevTools for coding agents",
+      "html_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "topics": [
+        "browser",
+        "chrome",
+        "chrome-devtools",
+        "debugging",
+        "devtools",
+        "mcp",
+        "mcp-server",
+        "puppeteer"
+      ],
+      "created_at": "2025-09-11T10:39:55Z",
+      "updated_at": "2026-11-19T02:18:56Z",
+      "pushed_at": "2026-11-18T22:28:44Z",
+      "license": "Apache-2.0",
+      "open_issues": 137,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Chrome DevTools for coding agents",
+          "full_name": "ChromeDevTools/chrome-devtools-mcp",
+          "language": "TypeScript",
+          "trending_stars_period": 3143,
+          "trending_total_forks": null,
+          "trending_total_stars": 58226,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "CzzzzzzJ/mdldm-maitian",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 1349,
+      "forks": 422,
+      "language": "JavaScript",
+      "description": "麦田：自媒体多平台发布中控与数据监控（B站/抖音/小红书/视频号/YouTube/X），飞书卡片通知 + 数据大屏",
+      "html_url": "https://github.com/CzzzzzzJ/mdldm-maitian",
+      "topics": [
+        "automation",
+        "chrome-extension",
+        "creator-tools",
+        "dashboard",
+        "feishu",
+        "social-media"
+      ],
+      "created_at": "2026-11-14T03:59:22Z",
+      "updated_at": "2026-11-19T02:35:22Z",
+      "pushed_at": "2026-11-18T02:49:13Z",
+      "license": "MIT",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T03:59:22Z",
+          "description": "麦田：自媒体多平台发布中控与数据监控（B站/抖音/小红书/视频号/YouTube/X），飞书卡片通知 + 数据大屏",
+          "html_url": "https://github.com/CzzzzzzJ/mdldm-maitian",
+          "stars": 1349,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "DeanChensj/jiangshan-map",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 8030,
+      "forks": 984,
+      "language": "JavaScript",
+      "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
+      "html_url": "https://github.com/DeanChensj/jiangshan-map",
+      "topics": [
+        "ancient-china",
+        "cartography",
+        "china-map",
+        "chinese-history",
+        "classical-chinese-poetry",
+        "digital-humanities",
+        "gis",
+        "historical-atlas",
+        "historical-map",
+        "interactive-map"
+      ],
+      "created_at": "2026-07-23T22:44:35Z",
+      "updated_at": "2026-11-19T02:35:52Z",
+      "pushed_at": "2026-11-19T01:07:13Z",
+      "license": "GPL-3.0",
+      "open_issues": 15,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
+          "full_name": "DeanChensj/jiangshan-map",
+          "language": "JavaScript",
+          "trending_stars_period": 218,
+          "trending_total_forks": null,
+          "trending_total_stars": 8030,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "GoogleChrome/modern-web-guidance-src",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 8864,
+      "forks": 741,
+      "language": "TypeScript",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "html_url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "topics": [],
+      "created_at": "2026-01-27T20:22:24Z",
+      "updated_at": "2026-11-19T02:32:41Z",
+      "pushed_at": "2026-11-19T01:13:58Z",
+      "license": "Apache-2.0",
+      "open_issues": 397,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Keep your coding agent up to date with the latest web best practices",
+          "full_name": "GoogleChrome/modern-web-guidance-src",
+          "language": "TypeScript",
+          "trending_stars_period": 7257,
+          "trending_total_forks": null,
+          "trending_total_stars": 8864,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 59831,
+      "forks": 5433,
+      "language": "Python",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "html_url": "https://github.com/HKUDS/CLI-Anything",
+      "topics": [],
+      "created_at": "2026-03-08T13:52:57Z",
+      "updated_at": "2026-11-19T02:34:55Z",
+      "pushed_at": "2026-09-22T02:01:29Z",
+      "license": "Apache-2.0",
+      "open_issues": 245,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+          "full_name": "HKUDS/CLI-Anything",
+          "language": "Python",
+          "trending_stars_period": 389,
+          "trending_total_forks": null,
+          "trending_total_stars": 59831,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Hut-hzf/ung220z-tool",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 1282,
+      "forks": 318,
+      "language": "Python",
+      "description": "ung220z-tool 是一个针对 UNG220Z（九联/Unionman 中国移动光猫）的一键凭据提取工具，仅限在你自己的设备上用于找回忘记的管理密码、迁移宽带配置或安全自查。",
+      "html_url": "https://github.com/Hut-hzf/ung220z-tool",
+      "topics": [],
+      "created_at": "2026-11-15T11:16:46Z",
+      "updated_at": "2026-11-19T02:33:14Z",
+      "pushed_at": "2026-11-15T11:17:27Z",
+      "license": "MIT",
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-15T11:16:46Z",
+          "description": "ung220z-tool 是一个针对 UNG220Z（九联/Unionman 中国移动光猫）的一键凭据提取工具，仅限在你自己的设备上用于找回忘记的管理密码、迁移宽带配置或安全自查。",
+          "html_url": "https://github.com/Hut-hzf/ung220z-tool",
+          "stars": 1282,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Illson/RustText",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 615,
+      "forks": 2,
+      "language": "Rust",
+      "description": null,
+      "html_url": "https://github.com/Illson/RustText",
+      "topics": [],
+      "created_at": "2026-11-16T17:46:45Z",
+      "updated_at": "2026-11-19T00:29:54Z",
+      "pushed_at": "2026-11-19T01:10:54Z",
+      "license": null,
+      "open_issues": 19,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T17:46:45Z",
+          "description": null,
+          "html_url": "https://github.com/Illson/RustText",
+          "stars": 615,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Immortal-Protocols/lastbook",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 2178,
+      "forks": 284,
+      "language": "Python",
+      "description": "Offline knowledge AI, maps and videos for survival and rebuilding",
+      "html_url": "https://github.com/Immortal-Protocols/lastbook",
+      "topics": [],
+      "created_at": "2026-11-12T23:49:03Z",
+      "updated_at": "2026-11-19T02:06:58Z",
+      "pushed_at": "2026-11-19T00:46:44Z",
+      "license": "MIT",
+      "open_issues": 158,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T23:49:03Z",
+          "description": "Offline knowledge AI, maps and videos for survival and rebuilding",
+          "html_url": "https://github.com/Immortal-Protocols/lastbook",
+          "stars": 2178,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "NVIDIA/SkillEvaluator",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 3769,
+      "forks": 519,
+      "language": "Python",
+      "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+      "html_url": "https://github.com/NVIDIA/SkillEvaluator",
+      "topics": [
+        "agent-evaluation",
+        "agent-plugins",
+        "agent-security",
+        "agent-skills",
+        "agentic-ai",
+        "benchmark",
+        "claude-code",
+        "codex",
+        "evaluate",
+        "evaluation",
+        "plugin",
+        "plugin-evaluation",
+        "security-scanner",
+        "skill-eval",
+        "skill-evals",
+        "skill-evaluation",
+        "skill-evaluator",
+        "skills"
+      ],
+      "created_at": "2026-06-24T02:32:26Z",
+      "updated_at": "2026-11-19T02:34:26Z",
+      "pushed_at": "2026-11-18T21:04:10Z",
+      "license": "Apache-2.0",
+      "open_issues": 67,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+          "full_name": "NVIDIA/SkillEvaluator",
+          "language": "Python",
+          "trending_stars_period": 312,
+          "trending_total_forks": null,
+          "trending_total_stars": 3769,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Noniv/abyssal-garden",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 2401,
+      "forks": 365,
+      "language": "JavaScript",
+      "description": "A dreamy underwater world you can swim through in your browser: swaying kelp forests, sunbeams, a sunken ship and manta rays. Everything is generated by code with WebGPU (no images, models or sound files), all in a single 97 KB HTML file.",
+      "html_url": "https://github.com/Noniv/abyssal-garden",
+      "topics": [],
+      "created_at": "2026-11-12T13:57:34Z",
+      "updated_at": "2026-11-19T02:33:18Z",
+      "pushed_at": "2026-11-14T17:41:33Z",
+      "license": "MIT",
+      "open_issues": 10,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T13:57:34Z",
+          "description": "A dreamy underwater world you can swim through in your browser: swaying kelp forests, sunbeams, a sunken ship and manta rays. Everything is generated by code with WebGPU (no images, models or sound files), all in a single 97 KB HTML file.",
+          "html_url": "https://github.com/Noniv/abyssal-garden",
+          "stars": 2401,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ZhuLinsen/daily_stock_analysis",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 73371,
+      "forks": 57904,
+      "language": "Python",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "html_url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "topics": [
+        "a-stock",
+        "ai-agent",
+        "aigc",
+        "llm",
+        "quant",
+        "quantitative-finance",
+        "quantitative-trading"
+      ],
+      "created_at": "2026-01-10T06:43:20Z",
+      "updated_at": "2026-11-19T02:34:23Z",
+      "pushed_at": "2026-11-18T15:38:50Z",
+      "license": "MIT",
+      "open_issues": 45,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+          "full_name": "ZhuLinsen/daily_stock_analysis",
+          "language": "Python",
+          "trending_stars_period": 3566,
+          "trending_total_forks": null,
+          "trending_total_stars": 73371,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ZiChuanLan/freebie-radar",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 1637,
+      "forks": 272,
+      "language": "TypeScript",
+      "description": "白嫖与资讯资源聚合雷达：100+个源定时采集 + AI 二审过滤假福利 + 获取方式分级隔离抽奖/试用/推广 + Telegram 即时推送",
+      "html_url": "https://github.com/ZiChuanLan/freebie-radar",
+      "topics": [],
+      "created_at": "2026-11-12T09:08:11Z",
+      "updated_at": "2026-11-19T02:33:29Z",
+      "pushed_at": "2026-11-18T05:21:25Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T09:08:11Z",
+          "description": "白嫖与资讯资源聚合雷达：100+个源定时采集 + AI 二审过滤假福利 + 获取方式分级隔离抽奖/试用/推广 + Telegram 即时推送",
+          "html_url": "https://github.com/ZiChuanLan/freebie-radar",
+          "stars": 1637,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "affaan-m/ECC",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 306580,
+      "forks": 45130,
+      "language": "JavaScript",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "html_url": "https://github.com/affaan-m/ECC",
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ],
+      "created_at": "2026-01-18T00:51:51Z",
+      "updated_at": "2026-11-19T02:30:17Z",
+      "pushed_at": "2026-11-17T06:41:46Z",
+      "license": "MIT",
+      "open_issues": 172,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+          "full_name": "affaan-m/ECC",
+          "language": "JavaScript",
+          "trending_stars_period": 1108,
+          "trending_total_forks": null,
+          "trending_total_stars": 306580,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ag-ui-protocol/ag-ui",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 20459,
+      "forks": 2105,
+      "language": "TypeScript",
+      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+      "html_url": "https://github.com/ag-ui-protocol/ag-ui",
+      "topics": [
+        "ag-ui-protocol",
+        "agent-frontend",
+        "agent-ui",
+        "agentic-workflow",
+        "ai-agents"
+      ],
+      "created_at": "2025-05-07T12:49:37Z",
+      "updated_at": "2026-11-19T02:29:22Z",
+      "pushed_at": "2026-11-18T20:18:00Z",
+      "license": "MIT",
+      "open_issues": 590,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+          "full_name": "ag-ui-protocol/ag-ui",
+          "language": "TypeScript",
+          "trending_stars_period": 3221,
+          "trending_total_forks": null,
+          "trending_total_stars": 20459,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "alibaba/open-code-review",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 54194,
+      "forks": 4484,
+      "language": "Go",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "html_url": "https://github.com/alibaba/open-code-review",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "code-review",
+        "code-review-assistant",
+        "harness",
+        "repository-level-context"
+      ],
+      "created_at": "2026-05-18T02:16:36Z",
+      "updated_at": "2026-11-19T02:34:44Z",
+      "pushed_at": "2026-11-19T02:06:36Z",
+      "license": "Apache-2.0",
+      "open_issues": 339,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+          "full_name": "alibaba/open-code-review",
+          "language": "Go",
+          "trending_stars_period": 4383,
+          "trending_total_forks": null,
+          "trending_total_stars": 54194,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "anthropics/skills",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 197246,
+      "forks": 23102,
+      "language": "Python",
+      "description": "Public repository for Agent Skills",
+      "html_url": "https://github.com/anthropics/skills",
+      "topics": [
+        "agent-skills"
+      ],
+      "created_at": "2025-09-22T15:53:31Z",
+      "updated_at": "2026-11-19T02:36:15Z",
+      "pushed_at": "2026-11-16T14:22:50Z",
+      "license": null,
+      "open_issues": 1560,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Public repository for Agent Skills",
+          "full_name": "anthropics/skills",
+          "language": "Python",
+          "trending_stars_period": 4381,
+          "trending_total_forks": null,
+          "trending_total_stars": 197244,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "appwrite/appwrite",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 58249,
+      "forks": 5883,
+      "language": "TypeScript",
+      "description": "The open-source cloud for agents & devs. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime, WAF and more",
+      "html_url": "https://github.com/appwrite/appwrite",
+      "topics": [
+        "android",
+        "appwrite",
+        "backend",
+        "backend-as-a-service",
+        "docker",
+        "firebase",
+        "firewall",
+        "flutter",
+        "hosting",
+        "ios",
+        "javascript",
+        "nextjs",
+        "react",
+        "react-native",
+        "reactnative",
+        "self-hosted",
+        "selfhosted",
+        "supabase",
+        "swift",
+        "web"
+      ],
+      "created_at": "2019-04-08T16:36:25Z",
+      "updated_at": "2026-11-19T02:33:59Z",
+      "pushed_at": "2026-11-19T02:32:08Z",
+      "license": "BSD-3-Clause",
+      "open_issues": 734,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The open-source cloud for agents & devs. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime, WAF and more",
+          "full_name": "appwrite/appwrite",
+          "language": "TypeScript",
+          "trending_stars_period": 232,
+          "trending_total_forks": null,
+          "trending_total_stars": 58249,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "astral-sh/uv",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 92249,
+      "forks": 3923,
+      "language": "Rust",
+      "description": "An extremely fast Python package and project manager, written in Rust.",
+      "html_url": "https://github.com/astral-sh/uv",
+      "topics": [
+        "packaging",
+        "python",
+        "resolver",
+        "uv"
+      ],
+      "created_at": "2023-10-02T20:24:11Z",
+      "updated_at": "2026-11-19T02:35:05Z",
+      "pushed_at": "2026-11-19T00:24:53Z",
+      "license": "Apache-2.0",
+      "open_issues": 3078,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An extremely fast Python package and project manager, written in Rust.",
+          "full_name": "astral-sh/uv",
+          "language": "Rust",
+          "trending_stars_period": 258,
+          "trending_total_forks": null,
+          "trending_total_stars": 92249,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "backnotprop/plannotator",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 13474,
+      "forks": 1356,
+      "language": "TypeScript",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+      "html_url": "https://github.com/backnotprop/plannotator",
+      "topics": [
+        "agents",
+        "claude-code",
+        "code-review",
+        "codex",
+        "obsidian",
+        "opencode",
+        "pi-mono",
+        "plan-mode",
+        "skills"
+      ],
+      "created_at": "2025-12-28T02:09:40Z",
+      "updated_at": "2026-11-19T02:30:26Z",
+      "pushed_at": "2026-11-19T02:34:15Z",
+      "license": "Apache-2.0",
+      "open_issues": 208,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+          "full_name": "backnotprop/plannotator",
+          "language": "TypeScript",
+          "trending_stars_period": 3290,
+          "trending_total_forks": null,
+          "trending_total_stars": 13474,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "berkantay/gpucanvas",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 528,
+      "forks": 36,
+      "language": "TypeScript",
+      "description": "Put thousands of live DOM nodes on an infinite canvas: the GPU draws them, an editor selects, moves and resizes them, shaders and transitions run on them, and an AI agent can read them and point at them.",
+      "html_url": "https://github.com/berkantay/gpucanvas",
+      "topics": [
+        "ai-agents",
+        "canvas",
+        "design-tools",
+        "editor",
+        "html-in-canvas",
+        "infinite-canvas",
+        "react",
+        "shaders",
+        "transitions",
+        "typescript",
+        "webgpu",
+        "wgsl"
+      ],
+      "created_at": "2026-11-12T23:19:42Z",
+      "updated_at": "2026-11-19T02:29:33Z",
+      "pushed_at": "2026-11-18T13:30:07Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T23:19:42Z",
+          "description": "Put thousands of live DOM nodes on an infinite canvas: the GPU draws them, an editor selects, moves and resizes them, shaders and transitions run on them, and an AI agent can read them and point at them.",
+          "html_url": "https://github.com/berkantay/gpucanvas",
+          "stars": 528,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "boringmarketer/boring-marketing-skills",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 669,
+      "forks": 248,
+      "language": "Python",
+      "description": "32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+      "html_url": "https://github.com/boringmarketer/boring-marketing-skills",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "copywriting",
+        "local-seo",
+        "marketing",
+        "seo"
+      ],
+      "created_at": "2026-11-16T15:09:46Z",
+      "updated_at": "2026-11-19T02:32:00Z",
+      "pushed_at": "2026-11-17T22:53:58Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T15:09:46Z",
+          "description": "32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+          "html_url": "https://github.com/boringmarketer/boring-marketing-skills",
+          "stars": 669,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "chuanqisun/spaceship",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 871,
+      "forks": 86,
+      "language": "HTML",
+      "description": "Steer your ideas in realtime",
+      "html_url": "https://github.com/chuanqisun/spaceship",
+      "topics": [],
+      "created_at": "2026-11-16T14:43:45Z",
+      "updated_at": "2026-11-19T01:49:52Z",
+      "pushed_at": "2026-11-16T19:53:46Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-11-16T14:43:45Z",
+          "description": "Steer your ideas in realtime",
+          "html_url": "https://github.com/chuanqisun/spaceship",
+          "stars": 871,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "credoksopho1984/blender-ai-copilot-studio",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 516,
+      "forks": 14,
+      "language": null,
+      "description": "An AI copilot and MCP server for Blender that turns plain-language briefs into scene operations—inside a visual chat studio with multi-agent teams, your choice of AI models, and 27 built-in scene tools. · blender-ai-copilot-studio · blender ai · ai for blender · blender copilot · blender ai copilot · blender ai assistant · blender mcp server",
+      "html_url": "https://github.com/credoksopho1984/blender-ai-copilot-studio",
+      "topics": [
+        "3d-automation",
+        "3d-modeling",
+        "blender",
+        "blender-addon",
+        "blender-agents",
+        "blender-ai",
+        "blender-assistant",
+        "blender-automation",
+        "blender-chatgpt",
+        "blender-copilot",
+        "blender-extension",
+        "blender-llm",
+        "blender-mcp",
+        "blender-plugin",
+        "blender-scripting",
+        "blender3d",
+        "bpy",
+        "mcp",
+        "mcp-server",
+        "model-context-protocol"
+      ],
+      "created_at": "2026-11-12T19:30:32Z",
+      "updated_at": "2026-11-16T21:06:07Z",
+      "pushed_at": "2026-11-15T13:27:56Z",
+      "license": "MIT",
+      "open_issues": 48,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T19:30:32Z",
+          "description": "An AI copilot and MCP server for Blender that turns plain-language briefs into scene operations—inside a visual chat studio with multi-agent teams, your choice of AI models, and 27 built-in scene tools. · blender-ai-copilot-studio · blender ai · ai for blender · blender copilot · blender ai copilot · blender ai assistant · blender mcp server",
+          "html_url": "https://github.com/credoksopho1984/blender-ai-copilot-studio",
+          "stars": 516,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cursor/plugins",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 17249,
+      "forks": 1905,
+      "language": "TypeScript",
+      "description": "Cursor plugin specification and official plugins",
+      "html_url": "https://github.com/cursor/plugins",
+      "topics": [],
+      "created_at": "2026-01-23T01:57:42Z",
+      "updated_at": "2026-11-19T02:35:37Z",
+      "pushed_at": "2026-11-18T12:24:36Z",
+      "license": null,
+      "open_issues": 680,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Cursor plugin specification and official plugins",
+          "full_name": "cursor/plugins",
+          "language": "TypeScript",
+          "trending_stars_period": 314,
+          "trending_total_forks": null,
+          "trending_total_stars": 17249,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "deepseek-ai/chat-demo",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 4851,
+      "forks": 1086,
+      "language": "TypeScript",
+      "description": "Chat Demo",
+      "html_url": "https://github.com/deepseek-ai/chat-demo",
+      "topics": [],
+      "created_at": "2026-11-12T08:08:19Z",
+      "updated_at": "2026-11-19T02:35:14Z",
+      "pushed_at": "2026-11-18T13:40:01Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T08:08:19Z",
+          "description": "Chat Demo",
+          "html_url": "https://github.com/deepseek-ai/chat-demo",
+          "stars": 4851,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dream-num/univer",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 29903,
+      "forks": 2706,
+      "language": "TypeScript",
+      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+      "html_url": "https://github.com/dream-num/univer",
+      "topics": [
+        "board",
+        "collaboration",
+        "doc",
+        "docx",
+        "excel",
+        "offce365",
+        "office",
+        "pdf",
+        "ppt",
+        "pptx",
+        "presentation",
+        "sdk",
+        "sheet",
+        "slides",
+        "spreadsheet",
+        "univer",
+        "word",
+        "wordprocessor",
+        "workspace",
+        "xlsx"
+      ],
+      "created_at": "2022-09-29T12:09:14Z",
+      "updated_at": "2026-11-19T02:33:07Z",
+      "pushed_at": "2026-11-19T01:14:53Z",
+      "license": "Apache-2.0",
+      "open_issues": 202,
+      "default_branch": "dev",
+      "sources": [
+        {
+          "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+          "full_name": "dream-num/univer",
+          "language": "TypeScript",
+          "trending_stars_period": 6840,
+          "trending_total_forks": null,
+          "trending_total_stars": 29903,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "duwqijlk/muse-protocol",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 1628,
+      "forks": 641,
+      "language": "Python",
+      "description": "muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）",
+      "html_url": "https://github.com/duwqijlk/muse-protocol",
+      "topics": [],
+      "created_at": "2026-11-14T01:24:58Z",
+      "updated_at": "2026-11-19T00:33:05Z",
+      "pushed_at": "2026-11-15T02:55:33Z",
+      "license": "Other",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T01:24:58Z",
+          "description": "muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）",
+          "html_url": "https://github.com/duwqijlk/muse-protocol",
+          "stars": 1628,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "erkamyaman/rust-anything",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 3466,
+      "forks": 279,
+      "language": "Rust",
+      "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
+      "html_url": "https://github.com/erkamyaman/rust-anything",
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "cli",
+        "code-migration",
+        "codex",
+        "ffi",
+        "golang",
+        "java",
+        "javascript",
+        "mcp",
+        "migration",
+        "napi",
+        "performance",
+        "porting",
+        "pyo3",
+        "python",
+        "rewrite",
+        "ruby",
+        "rust",
+        "typescript"
+      ],
+      "created_at": "2026-11-16T12:10:36Z",
+      "updated_at": "2026-11-19T02:35:42Z",
+      "pushed_at": "2026-11-18T21:09:57Z",
+      "license": "MIT",
+      "open_issues": 8,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T12:10:36Z",
+          "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
+          "html_url": "https://github.com/erkamyaman/rust-anything",
+          "stars": 3466,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "faizfahmi77/ScanDot",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 545,
+      "forks": 5,
+      "language": "Kotlin",
+      "description": "Experimental Android 3D scanning and point-cloud viewer",
+      "html_url": "https://github.com/faizfahmi77/ScanDot",
+      "topics": [
+        "3d-scanning",
+        "android",
+        "photogrammetry",
+        "point-cloud"
+      ],
+      "created_at": "2026-11-13T04:07:57Z",
+      "updated_at": "2026-11-18T06:32:35Z",
+      "pushed_at": "2026-11-13T04:27:21Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-13T04:07:57Z",
+          "description": "Experimental Android 3D scanning and point-cloud viewer",
+          "html_url": "https://github.com/faizfahmi77/ScanDot",
+          "stars": 545,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "getarcaneapp/arcane",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 9844,
+      "forks": 565,
+      "language": "Go",
+      "description": "Modern Docker Management, Designed for Everyone",
+      "html_url": "https://github.com/getarcaneapp/arcane",
+      "topics": [
+        "compose",
+        "container-management",
+        "containers",
+        "docker",
+        "docker-compose",
+        "docker-management",
+        "go",
+        "self-hosted",
+        "sveltekit",
+        "typescript",
+        "web-ui"
+      ],
+      "created_at": "2025-04-19T00:43:29Z",
+      "updated_at": "2026-11-19T02:28:47Z",
+      "pushed_at": "2026-11-19T02:23:41Z",
+      "license": "BSD-3-Clause",
+      "open_issues": 14,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Modern Docker Management, Designed for Everyone",
+          "full_name": "getarcaneapp/arcane",
+          "language": "Go",
+          "trending_stars_period": 547,
+          "trending_total_forks": null,
+          "trending_total_stars": 9844,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-labs-code/stitch-skills",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 10427,
+      "forks": 1368,
+      "language": "TypeScript",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "html_url": "https://github.com/google-labs-code/stitch-skills",
+      "topics": [],
+      "created_at": "2026-01-16T17:17:17Z",
+      "updated_at": "2026-11-19T02:34:30Z",
+      "pushed_at": "2026-11-18T05:00:25Z",
+      "license": "Apache-2.0",
+      "open_issues": 21,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+          "full_name": "google-labs-code/stitch-skills",
+          "language": "TypeScript",
+          "trending_stars_period": 1567,
+          "trending_total_forks": null,
+          "trending_total_stars": 10427,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+          "full_name": "google-labs-code/stitch-skills",
+          "language": "TypeScript",
+          "trending_stars_period": 365,
+          "trending_total_forks": null,
+          "trending_total_stars": 10427,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-research/paper-orchestra",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 4360,
+      "forks": 539,
+      "language": "Python",
+      "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+      "html_url": "https://github.com/google-research/paper-orchestra",
+      "topics": [
+        "ai-research-assistant",
+        "multi-agent-systems"
+      ],
+      "created_at": "2026-05-01T18:07:52Z",
+      "updated_at": "2026-11-19T02:36:00Z",
+      "pushed_at": "2026-11-15T18:08:08Z",
+      "license": "Apache-2.0",
+      "open_issues": 41,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+          "full_name": "google-research/paper-orchestra",
+          "language": "Python",
+          "trending_stars_period": 1524,
+          "trending_total_forks": null,
+          "trending_total_stars": 4360,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "haziqahmedqasmi/PeakCut",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 1099,
+      "forks": 371,
+      "language": "Python",
+      "description": "AI clipping for long videos and live streams. Self-hosted, bring your own AI key.",
+      "html_url": "https://github.com/haziqahmedqasmi/PeakCut",
+      "topics": [],
+      "created_at": "2026-11-14T07:38:20Z",
+      "updated_at": "2026-11-19T02:20:35Z",
+      "pushed_at": "2026-11-17T13:20:20Z",
+      "license": "MIT",
+      "open_issues": 33,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T07:38:20Z",
+          "description": "AI clipping for long videos and live streams. Self-hosted, bring your own AI key.",
+          "html_url": "https://github.com/haziqahmedqasmi/PeakCut",
+          "stars": 1099,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "higurashi-ai/Haru",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 615,
+      "forks": 55,
+      "language": "Python",
+      "description": "Haru: a low-latency, multilingual, full-duplex spoken dialogue model",
+      "html_url": "https://github.com/higurashi-ai/Haru",
+      "topics": [],
+      "created_at": "2026-11-12T11:15:42Z",
+      "updated_at": "2026-11-19T02:35:07Z",
+      "pushed_at": "2026-11-13T06:21:17Z",
+      "license": "Apache-2.0",
+      "open_issues": 8,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T11:15:42Z",
+          "description": "Haru: a low-latency, multilingual, full-duplex spoken dialogue model",
+          "html_url": "https://github.com/higurashi-ai/Haru",
+          "stars": 615,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "huggingface/pybot",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 844,
+      "forks": 81,
+      "language": "Python",
+      "description": "PyBot: a chatbot written in pure Python by a swarm of agents. No weights, no training, just rules.",
+      "html_url": "https://github.com/huggingface/pybot",
+      "topics": [],
+      "created_at": "2026-11-12T11:35:13Z",
+      "updated_at": "2026-11-19T02:22:54Z",
+      "pushed_at": "2026-11-16T11:07:29Z",
+      "license": "Apache-2.0",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T11:35:13Z",
+          "description": "PyBot: a chatbot written in pure Python by a swarm of agents. No weights, no training, just rules.",
+          "html_url": "https://github.com/huggingface/pybot",
+          "stars": 844,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "joshpuckett/allo",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 1055,
+      "forks": 28,
+      "language": "Python",
+      "description": "Allo is your friendly neighborhood typeface, free and open source",
+      "html_url": "https://github.com/joshpuckett/allo",
+      "topics": [],
+      "created_at": "2026-11-15T17:33:42Z",
+      "updated_at": "2026-11-19T02:09:24Z",
+      "pushed_at": "2026-11-18T07:19:43Z",
+      "license": "OFL-1.1",
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-15T17:33:42Z",
+          "description": "Allo is your friendly neighborhood typeface, free and open source",
+          "html_url": "https://github.com/joshpuckett/allo",
+          "stars": 1055,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jquery/jquery",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 60023,
+      "forks": 20709,
+      "language": "JavaScript",
+      "description": "jQuery JavaScript Library",
+      "html_url": "https://github.com/jquery/jquery",
+      "topics": [
+        "jquery"
+      ],
+      "created_at": "2009-04-03T15:20:14Z",
+      "updated_at": "2026-11-19T02:26:01Z",
+      "pushed_at": "2026-11-17T19:00:49Z",
+      "license": "MIT",
+      "open_issues": 95,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "jQuery JavaScript Library",
+          "full_name": "jquery/jquery",
+          "language": "JavaScript",
+          "trending_stars_period": 266,
+          "trending_total_forks": null,
+          "trending_total_stars": 60023,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "krisgfx9/Wireless-Device-Battery-Monitor",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 4038,
+      "forks": 352,
+      "language": "C++",
+      "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
+      "html_url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor",
+      "topics": [],
+      "created_at": "2026-11-16T19:28:29Z",
+      "updated_at": "2026-11-19T02:33:04Z",
+      "pushed_at": "2026-11-19T00:43:24Z",
+      "license": "GPL-3.0",
+      "open_issues": 2436,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T19:28:29Z",
+          "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
+          "html_url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor",
+          "stars": 4038,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "meta/astryx",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 30613,
+      "forks": 2400,
+      "language": "TypeScript",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "html_url": "https://github.com/meta/astryx",
+      "topics": [],
+      "created_at": "2026-01-09T16:20:32Z",
+      "updated_at": "2026-11-19T02:35:28Z",
+      "pushed_at": "2026-11-19T02:35:12Z",
+      "license": "MIT",
+      "open_issues": 1115,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open source design system that's fully customizable and agent ready",
+          "full_name": "meta/astryx",
+          "language": "TypeScript",
+          "trending_stars_period": 6250,
+          "trending_total_forks": null,
+          "trending_total_stars": 30613,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mit-han-lab/pear",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 678,
+      "forks": 42,
+      "language": "Python",
+      "description": "Training Reasoning Models in Simulation to Natively Use Real Robots",
+      "html_url": "https://github.com/mit-han-lab/pear",
+      "topics": [],
+      "created_at": "2026-11-13T17:43:06Z",
+      "updated_at": "2026-11-19T02:19:11Z",
+      "pushed_at": "2026-11-19T02:29:51Z",
+      "license": "Apache-2.0",
+      "open_issues": 6,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-13T17:43:06Z",
+          "description": "Training Reasoning Models in Simulation to Natively Use Real Robots",
+          "html_url": "https://github.com/mit-han-lab/pear",
+          "stars": 678,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mvanhorn/last30days-skill",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 70085,
+      "forks": 6247,
+      "language": "Python",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "html_url": "https://github.com/mvanhorn/last30days-skill",
+      "topics": [
+        "ai-prompts",
+        "ai-skill",
+        "bluesky",
+        "claude",
+        "claude-code",
+        "clawhub",
+        "deep-research",
+        "hackernews",
+        "instagram",
+        "openclaw",
+        "polymarket",
+        "recency",
+        "reddit",
+        "research",
+        "social-media",
+        "tiktok",
+        "trends",
+        "twitter",
+        "web-search",
+        "youtube"
+      ],
+      "created_at": "2026-01-23T20:37:37Z",
+      "updated_at": "2026-11-19T02:36:26Z",
+      "pushed_at": "2026-11-17T22:37:11Z",
+      "license": "MIT",
+      "open_issues": 22,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+          "full_name": "mvanhorn/last30days-skill",
+          "language": "Python",
+          "trending_stars_period": 2423,
+          "trending_total_forks": null,
+          "trending_total_stars": 70084,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+          "full_name": "mvanhorn/last30days-skill",
+          "language": "Python",
+          "trending_stars_period": 1059,
+          "trending_total_forks": null,
+          "trending_total_stars": 70084,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "n4ze3m/tiny-voca",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 750,
+      "forks": 95,
+      "language": "Python",
+      "description": "A 4.5M-parameter two-voice English text-to-speech model, trained from scratch",
+      "html_url": "https://github.com/n4ze3m/tiny-voca",
+      "topics": [
+        "onnx",
+        "text-to-speech",
+        "tts"
+      ],
+      "created_at": "2026-11-14T16:02:56Z",
+      "updated_at": "2026-11-19T01:55:41Z",
+      "pushed_at": "2026-11-18T15:36:23Z",
+      "license": "Apache-2.0",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T16:02:56Z",
+          "description": "A 4.5M-parameter two-voice English text-to-speech model, trained from scratch",
+          "html_url": "https://github.com/n4ze3m/tiny-voca",
+          "stars": 750,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "n8n-io/n8n",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 211131,
+      "forks": 61571,
+      "language": "TypeScript",
+      "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+      "html_url": "https://github.com/n8n-io/n8n",
+      "topics": [
+        "ai",
+        "apis",
+        "automation",
+        "cli",
+        "data-flow",
+        "development",
+        "integration-framework",
+        "integrations",
+        "ipaas",
+        "low-code",
+        "low-code-platform",
+        "mcp",
+        "mcp-client",
+        "mcp-server",
+        "n8n",
+        "no-code",
+        "self-hosted",
+        "typescript",
+        "workflow",
+        "workflow-automation"
+      ],
+      "created_at": "2019-06-22T09:24:21Z",
+      "updated_at": "2026-11-19T02:34:51Z",
+      "pushed_at": "2026-11-19T02:32:57Z",
+      "license": "Other",
+      "open_issues": 1246,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+          "full_name": "n8n-io/n8n",
+          "language": "TypeScript",
+          "trending_stars_period": 325,
+          "trending_total_forks": null,
+          "trending_total_stars": 211131,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "nvm-sh/nvm",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 96163,
+      "forks": 10781,
+      "language": "Shell",
+      "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+      "html_url": "https://github.com/nvm-sh/nvm",
+      "topics": [
+        "bash",
+        "install",
+        "lts",
+        "node",
+        "node-js",
+        "nodejs",
+        "nvm",
+        "nvmrc",
+        "posix",
+        "posix-compliant",
+        "shell",
+        "version-manager",
+        "zsh"
+      ],
+      "created_at": "2010-04-15T17:47:47Z",
+      "updated_at": "2026-11-19T02:34:47Z",
+      "pushed_at": "2026-11-18T22:19:08Z",
+      "license": "MIT",
+      "open_issues": 371,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+          "full_name": "nvm-sh/nvm",
+          "language": "Shell",
+          "trending_stars_period": 237,
+          "trending_total_forks": null,
+          "trending_total_stars": 96163,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "obra/superpowers",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 321373,
+      "forks": 28562,
+      "language": "Shell",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "html_url": "https://github.com/obra/superpowers",
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
+      ],
+      "created_at": "2025-10-09T19:45:18Z",
+      "updated_at": "2026-11-19T02:35:32Z",
+      "pushed_at": "2026-11-03T23:24:58Z",
+      "license": "MIT",
+      "open_issues": 360,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An agentic skills framework & software development methodology that works.",
+          "full_name": "obra/superpowers",
+          "language": "Shell",
+          "trending_stars_period": 822,
+          "trending_total_forks": null,
+          "trending_total_stars": 321373,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "openai/codex-security",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 14124,
+      "forks": 1103,
+      "language": "TypeScript",
+      "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+      "html_url": "https://github.com/openai/codex-security",
+      "topics": [
+        "ai-security",
+        "application-security",
+        "cli",
+        "code-scanning",
+        "codex",
+        "codex-security",
+        "cybersecurity",
+        "devsecops",
+        "nodejs",
+        "npm",
+        "openai",
+        "sdk",
+        "security",
+        "typescript",
+        "vulnerability-scanning"
+      ],
+      "created_at": "2026-07-13T22:00:13Z",
+      "updated_at": "2026-11-19T02:19:58Z",
+      "pushed_at": "2026-11-19T02:11:31Z",
+      "license": "Apache-2.0",
+      "open_issues": 197,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+          "full_name": "openai/codex-security",
+          "language": "TypeScript",
+          "trending_stars_period": 2630,
+          "trending_total_forks": null,
+          "trending_total_stars": 14124,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "opencoredev/islandcn",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 812,
+      "forks": 65,
+      "language": "TypeScript",
+      "description": "The open-source Dynamic Island for React, installed with shadcn.",
+      "html_url": "https://github.com/opencoredev/islandcn",
+      "topics": [
+        "dynamic-island",
+        "nextjs",
+        "react",
+        "shadcn",
+        "typescript",
+        "ui-components"
+      ],
+      "created_at": "2026-11-13T11:50:50Z",
+      "updated_at": "2026-11-19T02:03:05Z",
+      "pushed_at": "2026-11-18T21:15:36Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-13T11:50:50Z",
+          "description": "The open-source Dynamic Island for React, installed with shadcn.",
+          "html_url": "https://github.com/opencoredev/islandcn",
+          "stars": 812,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "openvinotoolkit/openvino",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 11349,
+      "forks": 3603,
+      "language": "C++",
+      "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "html_url": "https://github.com/openvinotoolkit/openvino",
+      "topics": [
+        "ai",
+        "computer-vision",
+        "deep-learning",
+        "deploy-ai",
+        "diffusion-models",
+        "generative-ai",
+        "good-first-issue",
+        "inference",
+        "llm-inference",
+        "natural-language-processing",
+        "nlp",
+        "openvino",
+        "optimize-ai",
+        "performance-boost",
+        "recommendation-system",
+        "speech-recognition",
+        "stable-diffusion",
+        "transformers",
+        "yolo"
+      ],
+      "created_at": "2018-10-15T10:54:40Z",
+      "updated_at": "2026-11-19T02:21:08Z",
+      "pushed_at": "2026-11-19T02:15:44Z",
+      "license": "Apache-2.0",
+      "open_issues": 1162,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+          "full_name": "openvinotoolkit/openvino",
+          "language": "C++",
+          "trending_stars_period": 24,
+          "trending_total_forks": null,
+          "trending_total_stars": 11349,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "punkpeye/awesome-mcp-servers",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 98066,
+      "forks": 20358,
+      "language": null,
+      "description": "A collection of MCP servers.",
+      "html_url": "https://github.com/punkpeye/awesome-mcp-servers",
+      "topics": [
+        "ai",
+        "mcp"
+      ],
+      "created_at": "2024-11-30T04:49:10Z",
+      "updated_at": "2026-11-19T02:36:27Z",
+      "pushed_at": "2026-11-17T05:21:40Z",
+      "license": "MIT",
+      "open_issues": 4771,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A collection of MCP servers.",
+          "full_name": "punkpeye/awesome-mcp-servers",
+          "language": "",
+          "trending_stars_period": 53,
+          "trending_total_forks": null,
+          "trending_total_stars": 98065,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "quer3q/kraken-mount",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 519,
+      "forks": 44,
+      "language": "Rust",
+      "description": "Minimalist PS5 game mounter supporting PKG, folder dumps, zstd and lz4",
+      "html_url": "https://github.com/quer3q/kraken-mount",
+      "topics": [
+        "homebrew",
+        "ps5"
+      ],
+      "created_at": "2026-11-13T07:25:37Z",
+      "updated_at": "2026-11-19T01:45:25Z",
+      "pushed_at": "2026-11-18T16:13:46Z",
+      "license": "GPL-3.0",
+      "open_issues": 9,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-13T07:25:37Z",
+          "description": "Minimalist PS5 game mounter supporting PKG, folder dumps, zstd and lz4",
+          "html_url": "https://github.com/quer3q/kraken-mount",
+          "stars": 519,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "rivet-dev/open-orange",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 680,
+      "forks": 28,
+      "language": "TypeScript",
+      "description": "Run Cloudflare Workers and Durable Objects unchanged on AWS, GCP, Azure or your own servers.",
+      "html_url": "https://github.com/rivet-dev/open-orange",
+      "topics": [
+        "cloudflare",
+        "cloudflare-workers",
+        "durable-objects",
+        "nodejs",
+        "rivet",
+        "self-hosted",
+        "serverless",
+        "sqlite",
+        "typescript",
+        "wrangler"
+      ],
+      "created_at": "2026-11-12T00:44:12Z",
+      "updated_at": "2026-11-19T01:34:11Z",
+      "pushed_at": "2026-11-18T16:20:05Z",
+      "license": "Apache-2.0",
+      "open_issues": 10,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-12T00:44:12Z",
+          "description": "Run Cloudflare Workers and Durable Objects unchanged on AWS, GCP, Azure or your own servers.",
+          "html_url": "https://github.com/rivet-dev/open-orange",
+          "stars": 680,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "siliconjungle/shapeshift-labs-ink-studio",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 552,
+      "forks": 44,
+      "language": "JavaScript",
+      "description": "Sculpting, animation and simulation toolkit for pixel-art Gaussian splats",
+      "html_url": "https://github.com/siliconjungle/shapeshift-labs-ink-studio",
+      "topics": [],
+      "created_at": "2026-11-16T07:44:00Z",
+      "updated_at": "2026-11-19T02:35:08Z",
+      "pushed_at": "2026-11-19T02:30:03Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T07:44:00Z",
+          "description": "Sculpting, animation and simulation toolkit for pixel-art Gaussian splats",
+          "html_url": "https://github.com/siliconjungle/shapeshift-labs-ink-studio",
+          "stars": 552,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "solidjs/solid",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 36611,
+      "forks": 1184,
+      "language": "TypeScript",
+      "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
+      "html_url": "https://github.com/solidjs/solid",
+      "topics": [
+        "declarative",
+        "fine-grained",
+        "javascript",
+        "jsx",
+        "performance",
+        "proxies",
+        "reactive",
+        "solid"
+      ],
+      "created_at": "2018-04-24T16:36:27Z",
+      "updated_at": "2026-11-19T02:29:07Z",
+      "pushed_at": "2026-11-19T01:03:09Z",
+      "license": "MIT",
+      "open_issues": 23,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
+          "full_name": "solidjs/solid",
+          "language": "TypeScript",
+          "trending_stars_period": 40,
+          "trending_total_forks": null,
+          "trending_total_stars": 36611,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sveltejs/svelte",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 89641,
+      "forks": 6208,
+      "language": "JavaScript",
+      "description": "web development for the rest of us",
+      "html_url": "https://github.com/sveltejs/svelte",
+      "topics": [
+        "compiler",
+        "template",
+        "ui"
+      ],
+      "created_at": "2016-11-20T18:13:05Z",
+      "updated_at": "2026-11-19T02:33:04Z",
+      "pushed_at": "2026-11-18T23:17:50Z",
+      "license": "MIT",
+      "open_issues": 1308,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "web development for the rest of us",
+          "full_name": "sveltejs/svelte",
+          "language": "JavaScript",
+          "trending_stars_period": 692,
+          "trending_total_forks": null,
+          "trending_total_stars": 89641,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sybil-solutions/inference-optimisation-skill",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 1124,
+      "forks": 101,
+      "language": "Python",
+      "description": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization",
+      "html_url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+      "topics": [
+        "agent-skill",
+        "benchmarking",
+        "claude-code",
+        "inference",
+        "llm",
+        "speculative-decoding"
+      ],
+      "created_at": "2026-11-16T18:40:04Z",
+      "updated_at": "2026-11-19T02:34:03Z",
+      "pushed_at": "2026-11-16T18:40:08Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T18:40:04Z",
+          "description": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization",
+          "html_url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+          "stars": 1124,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tradermonty/claude-trading-skills",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 7091,
+      "forks": 1439,
+      "language": "Python",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "html_url": "https://github.com/tradermonty/claude-trading-skills",
+      "topics": [],
+      "created_at": "2025-10-19T16:37:29Z",
+      "updated_at": "2026-11-19T02:34:34Z",
+      "pushed_at": "2026-11-19T02:30:53Z",
+      "license": "MIT",
+      "open_issues": 53,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+          "full_name": "tradermonty/claude-trading-skills",
+          "language": "Python",
+          "trending_stars_period": 3242,
+          "trending_total_forks": null,
+          "trending_total_stars": 7091,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 52669,
+      "forks": 3686,
+      "language": "Rust",
+      "description": "Browser automation CLI for AI agents",
+      "html_url": "https://github.com/vercel-labs/agent-browser",
+      "topics": [],
+      "created_at": "2026-01-11T05:38:15Z",
+      "updated_at": "2026-11-19T02:32:43Z",
+      "pushed_at": "2026-11-19T01:36:22Z",
+      "license": "Apache-2.0",
+      "open_issues": 598,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Browser automation CLI for AI agents",
+          "full_name": "vercel-labs/agent-browser",
+          "language": "Rust",
+          "trending_stars_period": 2987,
+          "trending_total_forks": null,
+          "trending_total_stars": 52669,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "we-promise/sure",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 16519,
+      "forks": 1449,
+      "language": "Ruby",
+      "description": "The personal finance app for everyone (by everyone)",
+      "html_url": "https://github.com/we-promise/sure",
+      "topics": [],
+      "created_at": "2025-07-23T04:13:55Z",
+      "updated_at": "2026-11-19T02:25:16Z",
+      "pushed_at": "2026-11-19T02:30:50Z",
+      "license": "AGPL-3.0",
+      "open_issues": 1014,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The personal finance app for everyone (by everyone)",
+          "full_name": "we-promise/sure",
+          "language": "Ruby",
+          "trending_stars_period": 3866,
+          "trending_total_forks": null,
+          "trending_total_stars": 16519,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "yetanotherbrowser/yab",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 723,
+      "forks": 67,
+      "language": "Swift",
+      "description": "Yab, yet another browser: a fast native macOS browser with an iPhone and Android companion",
+      "html_url": "https://github.com/yetanotherbrowser/yab",
+      "topics": [],
+      "created_at": "2026-11-14T23:56:32Z",
+      "updated_at": "2026-11-19T02:18:10Z",
+      "pushed_at": "2026-11-18T19:54:33Z",
+      "license": "Apache-2.0",
+      "open_issues": 940,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-14T23:56:32Z",
+          "description": "Yab, yet another browser: a fast native macOS browser with an iPhone and Android companion",
+          "html_url": "https://github.com/yetanotherbrowser/yab",
+          "stars": 723,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "zephyr4123/snug",
+      "captured_at": "2026-11-19T02:36:06Z",
+      "stars": 955,
+      "forks": 68,
+      "language": "Swift",
+      "description": "为 UU远程 打造的 Mac 移动端工作区：独立竖屏、窗口自适应铺满、字号随屏放大、触控遵循 iOS 交互习惯，让 Mac 在手机上拥有原生级的操作体验。A native-grade iPhone workspace for controlling your Mac over UU Remote.",
+      "html_url": "https://github.com/zephyr4123/snug",
+      "topics": [
+        "gestures",
+        "ipad",
+        "iphone",
+        "macos",
+        "macos-app",
+        "menubar-app",
+        "productivity",
+        "remote-control",
+        "remote-desktop",
+        "swift",
+        "swiftui",
+        "uu-remote",
+        "virtual-display",
+        "window-management"
+      ],
+      "created_at": "2026-11-13T03:26:21Z",
+      "updated_at": "2026-11-19T02:36:28Z",
+      "pushed_at": "2026-11-18T16:52:45Z",
+      "license": "MIT",
+      "open_issues": 13,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-13T03:26:21Z",
+          "description": "为 UU远程 打造的 Mac 移动端工作区：独立竖屏、窗口自适应铺满、字号随屏放大、触控遵循 iOS 交互习惯，让 Mac 在手机上拥有原生级的操作体验。A native-grade iPhone workspace for controlling your Mac over UU Remote.",
+          "html_url": "https://github.com/zephyr4123/snug",
+          "stars": 954,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
