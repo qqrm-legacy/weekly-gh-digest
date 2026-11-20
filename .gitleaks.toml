@@ -48,3 +48,14 @@ condition = "AND"
 paths = ['''^src/main\.rs$''']
 regexTarget = "match"
 regexes = ['''^-----begin private key-----"\)\s*\|\| lower\.contains\("-----begin rsa private key-----"\)\s*\|\| lower\.contains\("-----begin openssh private key-----$''']
+
+# The upstream Firecrawl README uses this exact literal in curl examples.
+# Reviewed cached/upstream README blob: eaecfed6c8a76b16b4e8bcd5d499a473ece1cb11.
+# https://github.com/firecrawl/firecrawl/blob/main/README.md
+[[allowlists]]
+description = "Literal Firecrawl API-key placeholder in copied README"
+targetRules = ["curl-auth-header"]
+condition = "AND"
+paths = ['''^data/runs/[^/]+/readme-firecrawl_firecrawl\.md$''']
+regexTarget = "secret"
+regexes = ['''^fc-YOUR_API_KEY$''']
