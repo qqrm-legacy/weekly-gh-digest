@@ -302664,7 +302664,8 @@
         "chunk-02": 162,
         "chunk-03": 163,
         "chunk-04": 164,
-        "chunk-05": 165
+        "chunk-05": 165,
+        "chunk-06": 166
       },
       "overview_message_id": null,
       "message_texts": {
@@ -302707,5 +302708,5 @@
     "daily-20261103T170529Z": 69,
     "daily-20261104T171701Z": 73
   },
-  "uncertain_delivery": "-1003944093514:daily-20261120T202432Z/chunk-06"
+  "uncertain_delivery": null
 }
