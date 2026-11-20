@@ -122,8 +122,8 @@ After reviewing the merged code, target and provider configuration, an authorize
 operator can activate the scheduled production pipeline with:
 
 ```sh
-gh variable set DIGEST_DELIVERY_ENABLED --repo qqrm-labs/weekly-gh-digest --body true
-gh variable set DIGEST_DAILY_DELIVERY_ENABLED --repo qqrm-labs/weekly-gh-digest --body true
+gh variable set DIGEST_DELIVERY_ENABLED --repo qqrm/weekly-gh-digest --body true
+gh variable set DIGEST_DAILY_DELIVERY_ENABLED --repo qqrm/weekly-gh-digest --body true
 ```
 
 This permits scheduled daily and explicitly requested weekly delivery using the configured

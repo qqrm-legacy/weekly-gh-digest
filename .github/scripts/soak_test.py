@@ -15,7 +15,7 @@ import urllib.request
 
 import remote_state
 
-REPOSITORY = 'qqrm-labs/weekly-gh-digest'
+REPOSITORY = 'qqrm/weekly-gh-digest'
 STATE_BRANCH = 'digest-soak-state-2026-10-31'
 START = datetime.fromisoformat('2026-10-31T12:00:00+00:00')
 UNTIL = datetime.fromisoformat('2026-11-08T00:00:00+00:00')
