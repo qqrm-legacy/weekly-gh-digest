@@ -715,7 +715,7 @@ fn crlf_readme_paragraphs_keep_exact_multiline_evidence() {
 #[test]
 fn twelve_local_rejects_are_checkpointed_and_leave_the_next_daily_candidate_eligible() {
     let clock = FakeClock::at("2026-11-08T15:00:00Z");
-    let retry_at = clock.now() + chrono::Duration::hours(24);
+    let retry_at = clock.now() + time::SignedDuration::hours(24);
     let dir = tempfile::tempdir().unwrap();
     let path = dir.path().join("state.json");
     let mut entries: Vec<_> = (0..12).map(|i| ranked(&format!("bad/p{i:02}"))).collect();
@@ -798,7 +798,7 @@ fn twelve_local_rejects_are_checkpointed_and_leave_the_next_daily_candidate_elig
         &candidates,
         &restored,
         crate::editions::Format::Daily,
-        retry_at - chrono::Duration::seconds(1),
+        retry_at - time::SignedDuration::seconds(1),
     );
     assert_eq!(before_due.len(), 1);
     let (at_due, excluded) = crate::editions::select(
@@ -983,7 +983,7 @@ fn rejected_daily_cards_do_not_block_later_cards_or_acknowledge_findings() {
         crate::editions::defer_daily(
             &mut state,
             "org/ready",
-            clock.now() - chrono::Duration::hours(48),
+            clock.now() - time::SignedDuration::hours(48),
         );
         let server = TestServer::start(vec![
             (200, completion(&initial)),
@@ -1048,7 +1048,7 @@ fn rejected_daily_cards_do_not_block_later_cards_or_acknowledge_findings() {
 #[test]
 fn full_snapshot_editorial_rejects_stay_local_before_daily_cache_and_publication() {
     let clock = FakeClock::at("2026-11-08T15:00:00Z");
-    let retry_at = clock.now() + chrono::Duration::hours(24);
+    let retry_at = clock.now() + time::SignedDuration::hours(24);
     let dir = tempfile::tempdir().unwrap();
     let path = dir.path().join("state.json");
     let mut entries = vec![ranked("org/scoped-ocr"), ranked("org/ready")];
@@ -1152,7 +1152,7 @@ fn poisoned_matching_cache_is_evicted_and_deferred_without_blocking_ready_cards(
         ),
     ] {
         let clock = FakeClock::at("2026-11-08T15:00:00Z");
-        let retry_at = clock.now() + chrono::Duration::hours(24);
+        let retry_at = clock.now() + time::SignedDuration::hours(24);
         let dir = tempfile::tempdir().unwrap();
         let path = dir.path().join("state.json");
         let mut entries = vec![
@@ -1286,7 +1286,7 @@ fn final_payload_rejections_are_repaired_then_deferred_without_blocking_later_ca
         ),
     ] {
         let clock = FakeClock::at("2026-11-08T15:00:00Z");
-        let retry_at = clock.now() + chrono::Duration::hours(24);
+        let retry_at = clock.now() + time::SignedDuration::hours(24);
         let dir = tempfile::tempdir().unwrap();
         let path = dir.path().join("state.json");
         let entries = vec![ranked("org/rejected"), ranked("org/ready")];

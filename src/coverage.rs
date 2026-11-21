@@ -1,21 +1,22 @@
 //! Factual coverage of retained observations; never reconstruct missed captures.
+use crate::timestamp::Timestamp;
 use crate::{Snapshot, parse_time};
 use anyhow::{Context, Result};
-use chrono::{DateTime, Duration, NaiveDateTime, SecondsFormat, Utc};
 use serde_json::{Value, json};
 use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
 use std::path::Path;
+use time::{SignedDuration as Duration, macros::format_description};
 
 const TARGET_INTERVAL_SECONDS: i64 = 3 * 60 * 60;
 
-fn timestamp(time: DateTime<Utc>) -> String {
-    time.to_rfc3339_opts(SecondsFormat::Secs, true)
+fn timestamp(time: Timestamp) -> String {
+    time.rfc3339_seconds()
 }
 
 /// Count nominal trigger instants in (start, end], not successful scheduled runs.
-fn nominal_slots(start: DateTime<Utc>, end: DateTime<Utc>) -> usize {
-    let mut slot = start.date_naive().and_hms_opt(0, 17, 0).unwrap().and_utc();
+fn nominal_slots(start: Timestamp, end: Timestamp) -> usize {
+    let mut slot = Timestamp::from_utc(start.date().with_hms(0, 17, 0).unwrap());
     let mut count = 0;
     while slot <= end {
         if slot > start {
@@ -28,7 +29,7 @@ fn nominal_slots(start: DateTime<Utc>, end: DateTime<Utc>) -> usize {
 
 /// Pass the retained state snapshots, not the aggregated weekly candidate pool.
 /// `runs_dir` is read-only. Call after the current capture manifest is written.
-pub(super) fn report(snapshots: &[Snapshot], now: DateTime<Utc>, runs_dir: &Path) -> Result<Value> {
+pub(super) fn report(snapshots: &[Snapshot], now: Timestamp, runs_dir: &Path) -> Result<Value> {
     let start = now - Duration::days(7);
     let mut captures = BTreeSet::new();
     let mut repositories = BTreeSet::new();
@@ -56,12 +57,12 @@ pub(super) fn report(snapshots: &[Snapshot], now: DateTime<Utc>, runs_dir: &Path
     let times: Vec<_> = captures.iter().copied().collect();
     let mut intervals: Vec<_> = times
         .windows(2)
-        .map(|pair| (pair[1] - pair[0]).num_seconds())
+        .map(|pair| (pair[1] - pair[0]).whole_seconds())
         .collect();
     let long_intervals: Vec<_> = times
         .windows(2)
         .filter_map(|pair| {
-            let seconds = (pair[1] - pair[0]).num_seconds();
+            let seconds = (pair[1] - pair[0]).whole_seconds();
             (seconds > TARGET_INTERVAL_SECONDS).then(
                 || json!({"from":timestamp(pair[0]),"to":timestamp(pair[1]),"seconds":seconds}),
             )
@@ -102,14 +103,10 @@ pub(super) fn report(snapshots: &[Snapshot], now: DateTime<Utc>, runs_dir: &Path
                 continue;
             };
             // Stored-preview and retry copies are not additional observations.
-            let Ok(captured) = NaiveDateTime::parse_from_str(name, "%Y%m%dT%H%M%SZ") else {
+            let Some(captured) = Timestamp::parse_stamp(name) else {
                 continue;
             };
-            let captured = captured.and_utc();
-            if captured.format("%Y%m%dT%H%M%SZ").to_string() != name
-                || captured < start
-                || captured > now
-            {
+            if captured < start || captured > now {
                 continue;
             }
             let at = timestamp(captured);
@@ -199,8 +196,8 @@ pub(super) fn report(snapshots: &[Snapshot], now: DateTime<Utc>, runs_dir: &Path
             "median_interval_seconds":median,
             "max_interval_seconds":intervals.last(),
             "intervals_over_three_hours":long_intervals,
-            "leading_gap_seconds":times.first().map(|first|(*first-start).num_seconds()),
-            "trailing_gap_seconds":times.last().map(|last|(now-*last).num_seconds()),
+            "leading_gap_seconds":times.first().map(|first|(*first-start).whole_seconds()),
+            "trailing_gap_seconds":times.last().map(|last|(now-*last).whole_seconds()),
             "empty_window":captures.is_empty()
         },
         "archive":{
@@ -228,7 +225,7 @@ fn short_time(value: &Value) -> String {
     value
         .as_str()
         .and_then(parse_time)
-        .map(|time| time.format("%d.%m %H:%M").to_string())
+        .map(|time| time.format(format_description!("[day].[month] [hour]:[minute]")))
         .unwrap_or_else(|| "неизвестно".into())
 }
 
@@ -281,7 +278,7 @@ pub(super) fn render_notice(report: &Value) -> String {
 mod tests {
     use super::*;
 
-    fn time(value: &str) -> DateTime<Utc> {
+    fn time(value: &str) -> Timestamp {
         parse_time(value).unwrap()
     }
 
@@ -290,7 +287,7 @@ mod tests {
     }
 
     fn manifest(root: &Path, captured: &str, value: Value) {
-        let dir = root.join(time(captured).format("%Y%m%dT%H%M%SZ").to_string());
+        let dir = root.join(crate::stamp(time(captured)));
         fs::create_dir_all(&dir).unwrap();
         fs::write(
             dir.join("manifest.json"),

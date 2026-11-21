@@ -1,6 +1,6 @@
 //! Loopback-only HTTP fixtures and deterministic time; never use provider credentials.
 use crate::clock::Clock;
-use chrono::{DateTime, Utc};
+use crate::timestamp::Timestamp;
 use std::{
     cell::{Cell, RefCell},
     io::{Read, Write},
@@ -10,7 +10,7 @@ use std::{
 };
 
 pub struct FakeClock {
-    pub now: Cell<DateTime<Utc>>,
+    pub now: Cell<Timestamp>,
     pub sleeps: RefCell<Vec<Duration>>,
 }
 
@@ -24,13 +24,13 @@ impl FakeClock {
 }
 
 impl Clock for FakeClock {
-    fn now(&self) -> DateTime<Utc> {
+    fn now(&self) -> Timestamp {
         self.now.get()
     }
     fn sleep(&self, duration: Duration) {
         self.sleeps.borrow_mut().push(duration);
         self.now
-            .set(self.now.get() + chrono::Duration::from_std(duration).unwrap());
+            .set(self.now.get() + time::SignedDuration::try_from(duration).unwrap());
     }
 }
 
