@@ -23,6 +23,7 @@
       "anthropics/claude-quickstarts": "2026-11-08",
       "anthropics/financial-services": "2026-09-29",
       "anthropics/knowledge-work-plugins": "2026-11-03",
+      "arekejoker/qwen21-nsfw-pose-skill": "2026-11-22",
       "astral-sh/uv": "2026-11-18",
       "aureliengmz/clearwater": "2026-11-16",
       "averygan/reclip": "2026-09-29",
@@ -34,6 +35,7 @@
       "cathrynlavery/diagram-design": "2026-11-19",
       "cloudflare/quiche": "2026-11-09",
       "cloudflare/security-audit-skill": "2026-09-29",
+      "cocosgt/riemann-hypothesis-lean": "2026-11-22",
       "colbymchenry/codegraph": "2026-09-30",
       "composiohq/awesome-claude-skills": "2026-09-30",
       "contrastive-lm/clm": "2026-09-29",
@@ -50,6 +52,7 @@
       "duwqijlk/muse-protocol": "2026-11-15",
       "dzhng/jevgrep": "2026-09-30",
       "earendil-works/pi": "2026-10-01",
+      "el4cteo/fast-anything": "2026-11-22",
       "elastic/elasticsearch": "2026-09-29",
       "elementalsouls/claude-bughunter": "2026-11-15",
       "erkamyaman/rust-anything": "2026-11-18",
@@ -89,6 +92,8 @@
       "iamajmeena/neonclipping": "2026-11-20",
       "immortal-protocols/lastbook": "2026-11-17",
       "infinityloop1308/pipepipe": "2026-11-11",
+      "ink-q/agy-fast": "2026-11-22",
+      "itsnotrexed/leonida": "2026-11-22",
       "jamesondh/chimera-vocal-synth": "2026-11-09",
       "janestreet/agent_skills": "2026-11-09",
       "jev-chat/jev-chat-windows": "2026-11-09",
@@ -103,6 +108,7 @@
       "kkkkhazix/aihot": "2026-09-30",
       "krisgfx9/wireless-device-battery-monitor": "2026-11-17",
       "kruk2/jasna": "2026-11-18",
+      "leanprover-community/riemann-hypothesis": "2026-11-22",
       "lemomo-ai/lemo-opuscar": "2026-11-14",
       "likely7/veyra-nrvideo": "2026-11-13",
       "linknimiball1974/ai-texture-forge": "2026-11-16",
@@ -131,8 +137,10 @@
       "nvidia/skillevaluator": "2026-11-15",
       "oblien/openship": "2026-09-29",
       "obra/superpowers": "2026-10-01",
+      "omonkeyz/xbox-emulator": "2026-11-22",
       "openai/codex-security": "2026-11-11",
       "openclaw/openclaw": "2026-09-30",
+      "openmoss/moss-image": "2026-11-22",
       "openvinotoolkit/openvino": "2026-11-18",
       "opsafari/hypoarena": "2026-11-15",
       "pallavi-shekhar/ai-engineering-interview-questions-company-wise": "2026-11-04",
@@ -313,6 +321,14 @@
         "joke": "Почему плагин всегда в хорошем настроении? Потому что у него всегда есть подключённый к нему «слеш»!",
         "evidence_quote": "Plugins that turn Claude into a specialist for your role, team, and company. Built for [Claude Cowork](https://claude.com/product/cowork), also compatible with [Claude Code](https://claude.com/product/claude-code)."
       },
+      "arekejoker/qwen21-nsfw-pose-skill": {
+        "policy_version": 7,
+        "source_description": "Qwen-Image 2.1 NSFW/姿势出图 skill：作者级提示词配方 + NSFW LoRA + 136 姿势 VNCCS 人偶控制；适用 Claude Code / Codex / Cursor / OpenClaw",
+        "source_readme": "# qwen21-nsfw-pose\n\n[![Package checks](https://github.com/Arekejoker/qwen21-nsfw-pose-skill/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/Arekejoker/qwen21-nsfw-pose-skill/actions/workflows/validate.yml)\n\n[English](README.en.md) | 中文\n\n**Qwen-Image 2.1 本地 NSFW / 姿势出图完整配方** — 作者级提示词结构 + NSFW LoRA + 136 个 3D 姿势库 + VNCCS 人偶精确姿势控制。\n\n基于 ComfyUI + `qwen_image_2.1_int8_convrot` 底模（与 Civitai 作者同款底模），复刻并验证过 Civitai 作者样图（2026-10-12）。\n\n- 适用：Claude Code / Codex / Cursor / OpenClaw（agent 技能）+ 人类手动使用\n- 内容：可跟跑的作者案例、强制配方、姿势大胆度阶梯（L0–L3）、完整依赖与安装指南\n\n**演示**（3D 人偶调姿势 → 一键生成 → 成品，Route ④）：\n\n<img src=\"references/demo_pose_studio.gif\" width=\"100%\" alt=\"演示：3D 人偶变形 → 实时生成 → 成品\" />\n\n---\n\n## 效果展示\n\n### 本配方输出：同一海边场景的三级对照（L0 → L1 → L2）\n\n| L0 · 全着装，无 LoRA（提示词即全部） | L1 · 湿身泳装 + LoRA@1.0 | L2 · 极低机位 + 湿身蹲姿 + LoRA@1.0 |\n| --- | --- | --- |\n| <img src=\"references/pose_examples/01_seaside.png\" width=\"290\" /> | <img src=\"references/pose_examples/01b_seaside_lora.png\" width=\"290\" /> | <img src=\"references/pose_examples/06_l2_squat_lowangle.png\" width=\"290\" /> |\n\n三张图同场景递进：L0 只有提示词；L1 加 LoRA + 显式皮肤/水珠描写；L2 再加低机位与开合姿态。**LoRA 负责质感，提示词负责信息密度，机位负责大胆度。**\n\n### NSFW 效果（⚠️ 以下图片包含裸露内容）\n\n<details>\n<summary><picture><img src=\"references/author_samples_cover_cursor.gif?v=3\" width=\"100%\" alt=\"作者原图（NSFW）· 点击卡片展开\" /></picture><br/><b>👇 点击上方卡片展开作者原图（含裸露内容 · 18+，再点收起）</b></summary>\n\n**作者原图**（Civitai showcase，本配方复刻的目标）：\n\n| 作者 · 淋浴（tawsLoRa） | 作者 · 按摩（tawsLoRa） | 作者 · 自拍（TheseAlpacas） |\n| --- | --- | --- |\n| <img src=\"downloads/samples/taws_v13_shower_author.jpg\" width=\"300\" /> | <img src=\"downloads/samples/taws_v13_massage_author.jpg\" width=\"300\" /> | <img src=\"downloads/samples/thesealpacas_v2_selfie_author.jpg\" width=\"300\" /> |\n\n</details>\n\n用 §「快速开始」的命令可复刻淋浴那张（复刻输出已验证与作者原图同场景同构图，见 `downloads/samples/phase5_meta.json` 与本文快速开始一节）。\n\n### 3D 人偶精确姿势（Route ④，136 姿势库）\n\n默认人物图 `references/src_standing.png`；姿势 = 骨骼旋转 JSON（MakeHuman 网格 + three.js 渲染），\n换姿势且保身份。姿势库来源：HuggingFace 4 个公开仓库（`Totemistyk/General_Poses`、\n`Totemistyk/Ballet_PoseStudio`、`MIUProject/VNCCS_PoseLibrary_Main`、\n`MIUProject/MySuperPoseRepo`）+ 55 个手工精选，共 **136 个**。\n\n---\n\n## 快速开始（作者案例跟跑）\n\n前置安装见 [install/setup.md](install/setup.md)。装好后先跑一次自检（只读，不改动任何东西）：\n\n```bash\npython3 scripts/doctor.py\n```\n\n它逐项检查 ComfyUI 连通性、底模/LoRA、VNCCS 节点、姿势库、浏览器后端，并给出缺失项的修复指引。\n全绿后一条命令复刻作者淋浴样图（~5 分钟）：\n\n```bash\npython3 scripts/qwen_pose_test.py \\\n  --mode t2i --name author_case_shower \\\n  --prompt \"$(cat prompts/taws_v13_shower.txt)\" \\\n  --seed 80964 \\\n  --steps 50 --cfg 2.5 --sampler er_sde --scheduler beta \\\n  --width 1152 --height 1728 \\\n  --lora \"qwen2_1-femaledVaginus-nsfw-v1_3-fine_L22-31.safetensors\" \\\n  --lora-strength 1.0 \\\n  --out outputs/author_case/shower.png\n```\n\n对比对象：`downloads/samples/taws_v13_shower_author.jpg`。\n完整元数据（提示词/参数/seed/完整工作流）：`downloads/samples/phase5_meta.json`。\n\n### 硬件要求（参考）\n\n底模为 Qwen-Image 2.1 int8 套件，模型文件合计约 16GB（diffusion 6.8GB / text encoder 8.7GB / VAE 0.6GB），LoRA 各自 ≤608MB。\n\n- **最低**：NVIDIA 12GB 显存 + 32GB 内存——能跑，ComfyUI 会自动把部分模型卸载到内存，出图慢一些\n- **推荐**：24GB 显存（3090/4090 级）+ 32–64GB 内存——模型基本常驻，体验最顺\n- **8GB 显存**：建议用 GGUF 量化版（社区实测 12–16GB 显存可跑 Q4；8GB 靠 offload 会明显更慢）\n- 纯 CPU 不推荐（单张图耗时过长）\n- 硬盘预留 ~40GB；CPU 无特殊要求（现代 x86_64/ARM 均可）；Linux 最省事；Windows 可原生运行基础脚本（doctor / `--list-poses` / 媒体锁回退，社区贡献），完整流程仍建议 WSL2；Mac（Apple Silicon）见下方单独小节\n- 路线④额外需要一个可连接的桌面浏览器（Playwright/CDP，见 `install/setup.md`）\n\n本仓库案例图与实测数据来自统一内存设备（DGX Spark）：1024×1024、40 步约 32 秒/张，峰值增量约 7–10GB。\n\n### macOS（Apple Silicon）\n\n- 适用 M 系芯片（M1 及以上）；Intel Mac 不建议\n- **模型选择看统一内存**：≥32GB 直接用本仓库原版 int8 套件（ComfyUI + MPS）；16–32GB 建议改用 GGUF 量化版（搭配 ComfyUI-GGUF；社区实测 Q8 更快、Q4 更省内存）\n- **速度预期：分钟级/张**——社区报告：M5 Pro 48GB 跑 int8 约 144 秒/1024；M1 Max 64GB 约 7–10 分钟/张（加缓存优化节点如 Comfyui-Spectrum-Qwen2.1 可提速 2–3 倍）。对比本仓库 DGX Spark 实测 32 秒/张，仅供参考\n- 已知坑：编辑模式在 MPS 上偶发 VAE 编码异常，可用 ComfyUI 的 `--cpu-vae` 绕过（ComfyUI issue #16433，已有修复讨论）；内存紧张时建议单张生成、关闭其他大内存应用\n- 路线兼容：①②③ 脚本在 macOS 可直接运行（纯 Python 标准库、POSIX 兼容）；④ 需 `playwright install chromium`（macOS 版），`install/setup.md` 中的 AppArmor 提示不适用\n- ⚠️ 以上 Mac 数据来自社区报告，维护者没有 Mac 硬件、未经实测；如果你在 Mac 上跑通或遇到问题，欢迎开 issue 反馈，我们会持续更新本说明\n\n## 四条路线\n\n| 需求 | 路线 | 命令 |\n| --- | --- | --- |\n| 新 NSFW/性感图（文字出图） | ① T2I + NSFW LoRA（必开） | `scripts/qwen_pose_test.py --mode t2i` |\n| 已有角色图换姿势（保脸/保服装） | ② Edit | `scripts/qwen_pose_test.py --mode edit` |\n| 已有 3D 人偶姿势渲染图，脚本换姿势（不开浏览器） | ③ 脚本姿势迁移（人偶参考 + VNCCS LoRA） | `scripts/run_pose_transfer.py --char <角色图> --pose-ref <人偶渲染图> --out <出图.png>` |\n| 指定 3D 姿势库里的精确姿势 | ④ VNCCS PoseStudio | `scripts/run_vnccs_ui.py --pose <name> [--prompt \"<场景>\"]` |\n\n路线③的人偶参考图可由路线④的运行自动保存（输出目录里的 `doll_*.png`），或任何 3D 姿态渲染图。\n不要用照片/插画当姿势参考——模型会把参考人物拼进画面，或直接重画参考人物；请使用无身份特征的 3D 人偶渲染图（路线③/④）。\n\n姿势怎么选（大胆度阶梯 L0–L3、用户要求→姿势族映射表）：见 `SKILL.md` §4，或\n`scripts/run_vnccs_ui.py --list-poses` 列出全部 136 个姿势。\n\n## 配方要点（摘要）\n\n- `er_sde` + `beta`，CFG 2.5，50 步，1152×1728 竖版\n- **NSFW LoRA 永远开**（默认 `femaledVaginus v1.3b` @ 1.0）\n- 提示词必须按作者结构写满 7 要素、300–1500 字符、含 LoRA 触发词\n- 弱化配方（无 LoRA/短提示词/减步数）前必须告知用户代价，不许默默减弱\n\n完整规则与证据：`SKILL.md`。\n\n## 目录结构\n\n```\n├── SKILL.",
+        "description": "Проект — это готовый набор инструкций и ресурсов для локального генератора изображений Qwen‑Image 2.1, позволяющий создавать NSFW‑контент с точным контролем позы 3‑D‑модели. В основе лежит ComfyUI с базовой моделью `qwen_image_2.1_int8_convrot`, к которой добавлены авторские LoRA‑модули и библиотека из 136 предопределённых поз, собранных из нескольких публичных репозиториев и ручного отбора. Пользователь может выбрать один из четырёх «маршрутов»: простое текст‑в‑изображение с LoRA, редактирование уже существующего персонажа, перенос позы из 3‑D‑рендера без браузера, либо интерактивный выбор позы через VNCCS PoseStudio, требующий подключённого браузера. Для каждого сценария предусмотрены готовые скрипты, которые автоматически подбирают параметры (er_sde, beta‑scheduler, CFG 2.5, 50 шагов) и формируют полный workflow, включая 7‑элементный шаблон подсказки. Минимальные системные требования — видеокарта с 12 ГБ видеопамяти и 32 ГБ ОЗУ; рекомендуется 24 ГБ видеопамяти для постоянного размещения модели, а на 8 ГБ можно использовать квантованную версию GGUF, хотя производительность будет ниже. На macOS с Apple Silicon поддерживается запуск int8‑версии при ≥32 ГБ памяти, иначе требуется GGUF‑квантование. Проект ориентирован как на автоматизированные агентные навыки (Claude Code, Codex, Cursor, OpenClaw), так и на ручное использование, предоставляя полные метаданные и сравнение с оригинальными образцами автора.",
+        "joke": "С помощью 136 поз вы сможете заставить виртуального манекена позировать лучше любого фотомоделя.",
+        "evidence_quote": "**Qwen-Image 2.1 本地 NSFW / 姿势出图完整配方** — 作者级提示词结构 + NSFW LoRA + 136 个 3D 姿势库 + VNCCS 人偶精确姿势控制。"
+      },
       "astral-sh/uv": {
         "policy_version": 7,
         "source_description": "An extremely fast Python package and project manager, written in Rust.",
@@ -377,6 +393,14 @@
         "joke": "",
         "evidence_quote": "[quiche] is an implementation of the QUIC transport protocol and HTTP/3 as\nspecified by the [IETF]. It provides a low level API for processing QUIC packets\nand handling connection state. The application is responsible for providing I/O\n(e.g. sockets handling) as well as an event loop with support for timers."
       },
+      "cocosgt/riemann-hypothesis-lean": {
+        "policy_version": 7,
+        "source_description": "Mirror of Levent Alpöge's Lean proof of the Riemann Hypothesis (with Claude). All credit to Levent Alpöge. Source: alpo.ge",
+        "source_readme": "# Riemann Hypothesis in Lean — by Levent Alpöge (with Claude)\n\n> **The proof in this repository is the work of [Levent Alpöge](https://alpo.ge/).**\n> On 2026-11-20 he announced that, working with Claude, he had found a proof of the Riemann Hypothesis that extends to the Generalized Riemann Hypothesis (for Dirichlet L-functions), and that the argument is fully formalized in Lean without assumptions.\n> All credit belongs to Levent Alpöge (and Claude). This repository is an unmodified mirror of the Lean code he published, put on GitHub so that people and agents can browse, clone and check it.\n>\n> 本仓库只是镜像：证明由数学家 Levent Alpöge（和 Claude 合作）完成，署名与一切功劳归他。代码原样搬运，没有改动。\n\n- Announcement (4 pages): https://alpo.ge/remark.pdf\n- Original download: https://alpo.ge/lean.tar.gz.part01 … https://alpo.ge/lean.tar.gz.part14\n- Merged archive in this repo's [Releases](https://github.com/CocoSgt/riemann-hypothesis-lean/releases/tag/v2026-11-20)\n\n**Status.** As of mirroring (2026-11-20), no independent build or review of this code has been published. Treat it as a claimed proof until it has been compiled and checked.\n\n---\n\n## What is proved\n\nThe target statements are short. Read these two files first.\n\n`src/Main.lean`\n\n```lean\nimport Statements\nimport Supplements.Kernels.MainTheoremsAll\n\ntheorem riemannHypothesis : RiemannHypothesis := rhOfAll\n\ntheorem riemannZeta_eq_zero_re : RiemannZetaZerosOnLine := rhOfAll\n\ntheorem LFunction_ne_zero_of_half_lt_re : DirichletLNonvanishingRightOfHalf := allChi\n\ntheorem LFunction_eq_zero_re : DirichletLZerosOnLine := claimAll.2.1\n\ntheorem LFunction_eq_zero_re_of_isPrimitive : PrimitiveDirichletLZerosOnLine := critAll\n```\n\n- `RiemannHypothesis` is **Mathlib's own definition** (`Mathlib/NumberTheory/LSeries/RiemannZeta.lean`, line 185 at the pinned commit), so the headline statement comes from Mathlib, outside this repository:\n\n  ```lean\n  def RiemannHypothesis : Prop :=\n    ∀ (s : ℂ) (_ : riemannZeta s = 0) (_ : ¬∃ n : ℕ, s = -2 * (n + 1)) (_ : s ≠ 1), s.re = 1 / 2\n  ```\n- `src/Statements.lean` (16 lines, imports only Mathlib) defines the other four statements:\n  - `RiemannZetaZerosOnLine`: every zero of `riemannZeta` other than the trivial zeros `-2(n+1)` and `s = 1` has real part `1/2`\n  - `DirichletLNonvanishingRightOfHalf`: for every Dirichlet character `χ` mod `N`, `LFunction χ s ≠ 0` when `Re s > 1/2` (excluding `χ = 1, s = 1`)\n  - `DirichletLZerosOnLine` / `PrimitiveDirichletLZerosOnLine`: zeros of Dirichlet L-functions in the critical strip lie on `Re s = 1/2` (GRH for Dirichlet L-functions)\n- The proof terms come from `src/Supplements/Kernels/MainTheorems.lean`:\n  `allChi := UpperTheory.FinalTheorems.everyCharacter`, `rhOfAll := Formalism.VW.rh_of_every allChi`, `critAll`, `claimAll`.\n\n## Repository layout\n\n| Path | `.lean` files | Lines |\n|---|---:|---:|\n| `src/Development/` | 141,928 | 12.2 M |\n| `src/Formalism/` | 18,254 | 3.2 M |\n| `src/GroundTheory/` | 8,507 | 1.1 M |\n| `src/ReciprocityTheory/` | 3,845 | 563 K |\n| `src/CompanionTheory/` | 2,027 | 194 K |\n| `src/PositivityTheory/` | 449 | 55 K |\n| `src/Lemmata/` | 167 | 9 K |\n| `src/Supplements/` | 3 | 22 |\n| `src/BuildAid/` | 5 | 20 |\n| `src/Statements.lean`, `src/Main.lean` | 2 | — |\n| **Total** | **175,187** | **≈ 17.4 M** |\n\n- `lean-toolchain`: `leanprover/lean4:v4.33.1`\n- `lakefile.toml`: package `tree`, `srcDir = \"src\"`, Mathlib pinned at `0df444a360eaa60ab8c11dca51a86af692955474`, global options `maxHeartbeats = 4000000`, `autoImplicit = false`, extra arg `--tstack=400000`\n- Libraries (`lean_lib`): `BuildAid`, `CompanionTheory`, `Development`, `Formalism`, `GroundTheory`, `GroundTheoryFields` (`GroundTheory.LocalFields` / `GlobalFields`), `Lemmata`, `PositivityTheory`, `ReciprocityTheory`, `Supplements`, `Main` (roots `Statements`, `Main`)\n- `src/BuildAid/*.lean` only add namespaces to Lean's library-suggestion deny list; they contain no mathematics.\n\n## Getting the code\n\nPick one.\n\n**A. Clone this repository** (about 234 MB packed, 1.3 GB checked out):\n\n```bash\ngit clone --depth 1 https://github.com/CocoSgt/riemann-hypothesis-lean.git\ncd riemann-hypothesis-lean\n```\n\n**B. Download the merged archive from Releases and verify it:**\n\n```bash\ncurl -LO https://github.com/CocoSgt/riemann-hypothesis-lean/releases/download/v2026-11-20/lean.tar.gz\nshasum -a 256 lean.tar.gz\n# expect 9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc  (239,275,554 bytes)\ntar -xzf lean.tar.gz && cd lean\n```\n\n**C. Use the author's original parts** (most trustworthy source):\n\n```bash\nfor i in $(seq -w 1 14); do curl -LO https://alpo.ge/lean.tar.gz.part$i; done\ncat lean.tar.gz.part{01..14} > lean.tar.gz\nshasum -a 256 lean.tar.gz   # same hash as above\ntar -xzf lean.tar.gz && cd lean\n```\n\nThe `src/` tree in this repository is byte-for-byte the content of that archive; this README, `.gitignore` and nothing else were added.\n\n## Building\n\n```bash\n# 1. Install elan (Lean version manager) if needed\ncurl https://elan.lean-lang.org/elan-init.sh -sSf | sh",
+        "description": "Репозиторий — неизменённое зеркало Lean‑кода, в котором математик Levent Alpöge (при содействии модели Claude) формализовал доказательство гипотезы Римана и обобщённой гипотезы Римана для L‑функций Дирихле. Все утверждения построены на определениях из Mathlib, а именно на пропозиции RiemannHypothesis, требующей, чтобы каждый нетривиальный ноль ζ‑функции имел действительную часть ½, а также на четырёх дополнительных формулировках о нулях L‑функций. Основная часть доказательства находится в файлах src/Supplements/Kernels/MainTheorems.lean и связывается через теоремы rhOfAll, allChi и др., которые выводят требуемые свойства из единой формальной конструкции. Пользователь может клонировать репозиторий (≈ 234 МБ) или скачать готовый архив, затем собрать проект с помощью Lean 4 (v4.33.1) и Mathlib, зафиксированных в lakefile.toml, что позволяет проверить корректность формального доказательства в локальном окружении. На момент зеркалирования не опубликовано независимое построение или рецензия, поэтому код следует рассматривать как заявленное, но ещё не проверенное доказательство.",
+        "joke": "Если ваш компилятор Lean начнёт ругаться, значит, он нашёл ещё одну незаполненную гипотезу.",
+        "evidence_quote": "> **The proof in this repository is the work of [Levent Alpöge](https://alpo.ge/).**\n> On 2026-11-20 he announced that, working with Claude, he had found a proof of the Riemann Hypothesis that extends to the Generalized Riemann Hypothesis (for Dirichlet L-functions), and that the argument is fully formalized in Lean without assumptions."
+      },
       "deanchensj/jiangshan-map": {
         "policy_version": 7,
         "source_description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
@@ -416,6 +440,14 @@
         "description": "Проект реализует полностью HTTP‑клиент для регистрации и обмена приглашёнными кодами в сервисе muse.ai без использования браузера. В клиенте последовательно воспроизводятся все запросы, описанные в протоколе: получение начального cookie, перезапуск с CSRF‑токеном, отправка OTP, подтверждение кода, завершение регистрации, переход через bootstrap‑страницу, принятие динамического TOS и, наконец, активация кода приглашения. Для каждого шага указаны обязательные параметры, например `supports_muse_link_transparency: true` в запросе `confirm-otp` и обязательный вызов `vm/wake` перед редемпцией кода, без которого сервер отвечает ошибкой `invalid`.\n\nБиблиотека предоставляет два уровня использования: одиночный скрипт `example_register.py` для регистрации одного аккаунта и модуль `runner.py`, позволяющий массово обрабатывать списки email‑ов, прокси и кодов. Планировщик распределяет «sticky»‑прокси между воркерами, ограничивает количество успешных проверок на один IP и автоматически переключает прокси при сетевых ошибках до трёх раз, не тратя новые email‑ы. Результаты каждой попытки сохраняются в JSON‑файлы, а чувствительные токены (`frl_access_token`, `hatch_sess`) хранятся только в памяти.\n\nВажные ограничения: некоторые поля имеют нестандартную семантику (например, `first_name` — имя, `last_name` — фамилия), а даты рождения до 18 лет вызывают ошибку 403. Регистрация может завершиться статусом «region_waitlist», когда аккаунт создан, но доступ ограничен географией. Кроме того, все запросы к API требуют использования динамического текста TOS, полученного из bootstrap‑страницы, и фиксированного `Referer`. Проект не обещает обхода региональных ограничений и не сохраняет токены на диск, что повышает безопасность при массовом использовании.",
         "joke": "Если ваш скрипт не прошёл `vm/wake`, значит, код приглашения спит лучше, чем вы.",
         "evidence_quote": "补充一下，记得用JP 节点， JP 不需要绑卡，直接过"
+      },
+      "el4cteo/fast-anything": {
+        "policy_version": 7,
+        "source_description": "Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
+        "source_readme": "<p align=\"center\">\n  <img src=\"https://raw.githubusercontent.com/EL4CTEO/fast-anything/main/docs/assets/wordmark.png\" alt=\"fast-anything\" width=\"520\">\n</p>\n\n<p align=\"center\"><b>Don't rewrite it in Rust. Rewrite the 5% that's slow.</b></p>\n\n<p align=\"center\">\n  <a href=\"https://trendshift.io/repositories/371252\"><img src=\"https://trendshift.io/api/badge/repositories/371252\" alt=\"EL4CTEO/fast-anything | Trendshift\" width=\"250\" height=\"55\"></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://www.npmjs.com/package/@el4cteo/fast-anything\"><img src=\"https://img.shields.io/npm/v/@el4cteo/fast-anything?color=f74c00&label=npm\" alt=\"npm\"></a>\n  <a href=\"https://crates.io/crates/fast-anything\"><img src=\"https://img.shields.io/crates/v/fast-anything?color=f74c00\" alt=\"crates.io\"></a>\n  <a href=\"https://github.com/EL4CTEO/fast-anything/actions/workflows/ci.yml\"><img src=\"https://github.com/EL4CTEO/fast-anything/actions/workflows/ci.yml/badge.svg\" alt=\"CI\"></a>\n  <img src=\"https://img.shields.io/badge/Python%20%C2%B7%20Node%20%C2%B7%20TypeScript%20%C2%B7%20Ruby%20%C2%B7%20Java%20%C2%B7%20Kotlin%20%C2%B7%20Go%20%C2%B7%20PHP%20%C2%B7%20C%20%C2%B7%20C%2B%2B%20%C2%B7%20C%23-2563eb\" alt=\"Python, Node, TypeScript, Ruby, Java, Kotlin, Go, PHP, C, C++, C#\">\n  <img src=\"https://img.shields.io/badge/Claude%20Code-plugin-d97757\" alt=\"Claude Code plugin\">\n  <img src=\"https://img.shields.io/badge/MCP-server-555\" alt=\"MCP server\">\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-555\" alt=\"MIT\"></a>\n</p>\n\nRewriting a whole app in Rust costs months, minute-long compiles and gigabytes of `target/`. Most of the runtime sits in a few functions anyway.\n\n**fast-anything** finds those functions, has your coding agent port *only them* to Rust, proves the port gives the same results on real recorded calls, and swaps it in. One command, fully reversible.\n\n<p align=\"center\"><img src=\"https://raw.githubusercontent.com/EL4CTEO/fast-anything/main/docs/assets/demo.gif\" alt=\"fast-anything go --agent claude -- python app.py\" width=\"820\"></p>\n\n## Install\n\n```sh\nnpm i -g @el4cteo/fast-anything      # or: cargo install fast-anything\n```\n\nPorts are compiled with your Rust toolchain ([rustup](https://rustup.rs)).\n\n## Use\n\n```sh\nfast-anything go --agent claude -- python app.py     # or: -- node app.ts / bun app.ts / deno run -A app.ts / ruby app.rb / java App.java / mvn exec:java / gradle run / go run . / php app.php / clang -O2 main.c\n```\n\nOr step by step:\n\n| command | what it does |\n|---|---|\n| `scan -- <cmd>` | profiles the app, ranks functions by time × how portable they are |\n| `port [id]` | records up to 500 real calls, creates a one-function Rust crate + `TASK.md` |\n| `verify` | release-builds the port and replays every recorded call |\n| `enable` / `disable` | swaps the Rust in or out (one marked block, removed byte for byte) |\n| `bench` | times the whole app, original vs Rust, interleaved runs |\n| `report` | markdown + SVG card for your PR |\n| `doctor` | checks Rust, your runtimes and your agents |\n\n`--agent` takes `claude`, `codex`, or any command that reads a prompt on stdin. Without it, hand `TASK.md` to whatever you use.\n\n## Proof, not vibes\n\n<p align=\"center\"><img src=\"https://raw.githubusercontent.com/EL4CTEO/fast-anything/main/docs/assets/verify.gif\" alt=\"verify catches a wrong port\" width=\"820\"></p>\n\nThat port looked right but compared bytes instead of characters. 148 of 500 real calls caught it. On top of the recorded calls, fast-anything derives extra cases and lets the original answer them: edge cases (NaN, ±infinity, -0.0, zero and ±1, non-ASCII text, empty and up to 16× bigger inputs) and shrunk inputs (tiny and random slices). Nothing is enabled until every case matches: same values (floats within 1e-9), errors where the original errors. A port that is right but slower per call than the original (calling into Rust costs more than the work saved) isn't enabled either. `FAST_ANYTHING_DISABLE=1` runs the original any time.\n\n## Results\n\nReal runs on an i5-10500, Windows 11 (C and C++: a 4-core GitHub Actions Linux runner). Reproduce them from [`examples/`](examples).\n\n| app | before | after |\n|---|---|---|\n| Python fuzzy dedupe (700 names) | 4.91s | **42ms, 116×** |\n| TypeScript fuzzy dedupe (2,000 names) | 3.11s | **155ms, 20×** |\n| PHP fuzzy dedupe (600 names) | 2.94s | **53ms, 55×** |\n| Go fuzzy dedupe (3,000 names) | 3.02s | **144ms, 21×** |\n| Ruby fuzzy dedupe (400 names) | 3.13s | **228ms, 14×** |\n| C# fuzzy dedupe (4,000 names) | 4.03s | **312ms, 13×** |\n| Java fuzzy dedupe (4,000 names) | 3.50s | **1.18s, 3×** (11× on the function; the rest is JVM startup) |\n| C mandelbrot (8 zoom levels) | 431ms | **127ms, 3.4×** |\n| C++ fuzzy dedupe (6,000 names) | 3.02s | **1.09s, 2.7×** |\n\nfast-anything ports the outermost loop it can, not the tiny function called inside it, so the app crosses into Rust once instead of millions of times. Porting only the inner `levenshtein` gave 35× and 1.9×.\n\n## Why not rewrite it all?\n\n- **C",
+        "description": "fast-anything — утилита, позволяющая ускорить существующее приложение, не переписывая его полностью на Rust. Инструмент профилирует запуск, выявляет небольшую часть кода (обычно ≈ 5 % функций), которые занимают большую часть времени и при этом легко переносимы. Затем с помощью выбранного код‑агента (Claude, Codex или любой процесс, читающий запрос из stdin) генерирует однофункциональный Rust‑крейт, проверяет его корректность на реальных вызовах и заменяет оригинальную функцию в приложении. Всё управляется одной командой, а изменения полностью обратимы: можно включить или отключить портированную функцию без изменения байтов оригинального кода. Среди ключевых возможностей: автоматический скан — ранжирует функции по времени и портируемости; портирование — записывает до 500 реальных вызовов и создаёт задачу для агента; верификация — перекомпилирует Rust‑порт и сравнивает результаты с оригиналом, включая граничные случаи (NaN, бесконечность, большие и маленькие входы); переключение — включает/выключает порт без перезапуска приложения, а bench измеряет ускорение. Пример применения: у разработчика Python‑скрипта, медленно обрабатывающего наборы имён, fast-anything профилирует «функцию levenshtein», генерирует её Rust‑реализацию, проверяет совпадение результатов и заменяет её, что в тестах сократило время выполнения с 4.91 сек до 42 мс (≈ 116× ускорения). Требования: установленный Rust‑toolchain (rustup), поддерживаемый язык приложения (Python, Node, TypeScript, Ruby, Java, Kotlin, Go, PHP, C, C++, C#) и доступ к код‑агенту. Ограничения: портируется только одна функция за раз, проверка проходит только при полном совпадении результатов (включая ошибки) и при отсутствии замедления вызова Rust‑кода; если условие не выполнено, порт остаётся отключённым.",
+        "joke": "",
+        "evidence_quote": "Rewriting a whole app in Rust costs months, minute-long compiles and gigabytes of `target/`. Most of the runtime sits in a few functions anyway."
       },
       "elementalsouls/claude-bughunter": {
         "policy_version": 7,
@@ -649,6 +681,22 @@
         "joke": "",
         "evidence_quote": "... and many more improvements!"
       },
+      "ink-q/agy-fast": {
+        "policy_version": 7,
+        "source_description": "Non-invasive MCP accelerator plugin for Google Antigravity (CLI/Desktop/IDE): cuts LLM turns (-34%), token quota (-31%), and upload traffic (-40%) without affecting native UI or diffs.",
+        "source_readme": "<div align=\"center\">\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/logo-light.svg\" />\n  <source media=\"(prefers-color-scheme: light)\" srcset=\"assets/logo-dark.svg\" />\n  <img src=\"assets/logo.svg\" alt=\"agy-fast logo\" width=\"80\" />\n</picture>\n\n# agy-fast\n\n**Latency, Token-Quota & Tool-Call Accelerator Plugin for Google Antigravity**\n\n[![Version](https://img.shields.io/github/v/tag/INK-Q/agy-fast?label=version&sort=semver&style=flat-square&color=38BDF8&labelColor=0F172A)](CHANGELOG.md)\n[![GitHub Stars](https://img.shields.io/github/stars/INK-Q/agy-fast?style=flat-square&color=FACC15&labelColor=0F172A)](https://github.com/INK-Q/agy-fast/stargazers)\n[![Node.js >= 20](https://img.shields.io/badge/node-%3E%3D20-22C55E?style=flat-square&logo=node.js&logoColor=white&labelColor=0F172A)](#quick-start)\n[![Runtime Dependencies: 0](https://img.shields.io/badge/runtime%20deps-0-38BDF8?style=flat-square&labelColor=0F172A)](#how-it-works)\n[![Platforms](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-64748B?style=flat-square&labelColor=0F172A)](#quick-start)\n[![MIT License](https://img.shields.io/badge/license-MIT-22C55E?style=flat-square&labelColor=0F172A)](LICENSE)\n[![Glama MCP Server](https://glama.ai/mcp/servers/INK-Q/agy-fast/badges/score.svg)](https://glama.ai/mcp/servers/INK-Q/agy-fast)\n[![HOL Guard Verified](https://img.shields.io/endpoint?url=https%3A%2F%2Fhol.org%2Fapi%2Fregistry%2Fbadges%2Fplugin%3Fslug%3Dink-q%252Fagy-fast%26metric%3Dscore&style=flat-square&labelColor=0F172A)](https://hol.org/registry/plugins/ink-q%2Fagy-fast?utm_source=hol_marketplace&utm_medium=plugins_badge&utm_campaign=plugins&utm_content=ink-q%2Fagy-fast&ref=plugin-author-5dc88d78)\n\nEnglish · [简体中文](README.zh-CN.md) · [Quick Start](#quick-start) · [Benchmarks](#real-world-benchmarks) · [MCP Tools](#the-5-mcp-tools) · [Analysis Report](docs/ANALYSIS_REPORT.md) · [Changelog](CHANGELOG.md)\n\n</div>\n\n<br />\n\n**`agy-fast`** is a zero-dependency, policy-compliant local [MCP](https://modelcontextprotocol.io/) plugin for **Google Antigravity** (CLI `agy`, Desktop 2.0, and IDE). It cuts agent wall-clock latency, billable token quota, and upload traffic by consolidating high-frequency searches, multi-language symbol outlines, atomic multi-file edits, and build/test checks into batched local calls—and injecting a sub-50 ms workspace snapshot once per session—without altering Antigravity's native UI, diff viewer, modified-files list, checkpoints, or safety checks.\n\n| LLM Turns / 10 Actions | Est. Billable Quota | Tool-Return Upload | Spills & Native UI Impact |\n| :---: | :---: | :---: | :---: |\n| **-33.7%**<br><sub>`-38.2%` ≥150k ctx · `-58.8%` subagents</sub> | **-31.5%**<br><sub>`-36.5%` ≥150k ctx · `-54.0%` subagents</sub> | **-39.7%**<br><sub>`-53.7%` uncached fresh input</sub> | **0**<br><sub>`≤8.8 KB` inline cap · Native diff & UI untouched</sub> |\n\n<p align=\"center\">\n  <img src=\"assets/demo-before-after.gif\" alt=\"agy-fast Before vs. After multi-file workflow comparison: 6 turns (48.2s) reduced to 2 turns (14.1s) with 0 disk spills\" width=\"100%\" />\n</p>\n\n## Quick Start\n\n**Requirements:** **Node.js >= 20** (no `npm install` needed — pre-built, unminified zero-dependency ESM bundles are included in `dist/`). Optional: [`ripgrep` (`rg`)](https://github.com/BurntSushi/ripgrep) for faster code search (automatically falls back to pure Node.js when absent).\n\n### One-Command Install (Recommended)\n\nInstalls runtime files to `~/.gemini/config/plugins/agy-fast`, runs `agy plugin validate --strict` and `agy plugin enable agy-fast` when `agy` is installed, and verifies both the MCP server and `SessionStart` hook live:\n\n**macOS / Linux:**\n```bash\ncurl -fsSL https://raw.githubusercontent.com/INK-Q/agy-fast/main/install.sh | sh\n```\n\n**Windows (PowerShell):**\n```powershell\nirm https://raw.githubusercontent.com/INK-Q/agy-fast/main/install.ps1 | iex\n```\n\n> [!TIP]\n> **Activating in Desktop 2.0 / IDE:** Open **Customizations → Installed** in Antigravity, confirm `agy-fast` is enabled, and start a **new session** to load the `SessionStart` hook and MCP tools.\n>\n> **Launching `agy` CLI without approval prompts (optional):** To auto-approve `agy-fast` MCP calls and tool permissions without prompting on every step, start the CLI with:\n>\n> ```bash\n> agy --dangerously-skip-permissions\n> ```\n>\n> *(Official `agy` flag that auto-approves all tool permission requests without prompting — use only in trusted repositories, or pair with `--sandbox`.)*\n\n<details>\n<summary>More installation options (local clone, direct git clone, <code>agy</code> CLI, per-repo team install, or ask Antigravity)</summary>\n\n#### Local Clone (Any OS)\n```bash\ngit clone https://github.com/INK-Q/agy-fast.git\ncd agy-fast\nnode scripts/install.mjs install\n```\n\n#### Direct Clone into Antigravity Plugins Directory (No Script Needed)\nAntigravity automatically discovers plugins placed in `~/.gemini/config/plugins/`:\n\n```bash\n# macOS / Linux\ngit clone https://gith",
+        "description": "agy-fast — это локальный плагин MCP для Google Antigravity (CLI agy, Desktop 2.0 и IDE), который уменьшает задержку, расход токенов и объём загружаемых данных за счёт агрегации частых запросов в один локальный вызов. Плагин собирает поисковые запросы, символы из разных языков, атомарные правки файлов и проверки сборки/тестов, формирует снимок рабочего пространства за < 50 мс и отправляет его один раз за сессию, не меняя пользовательский интерфейс, дифф‑просмотр, список изменённых файлов и встроенные проверки безопасности. По заявлению авторов, такие батч‑вызовы снижают количество LLM‑ходов на ≈ 34 %, биллинговый токен‑квот на ≈ 31 % и трафик загрузки на ≈ 40 % при сохранении полной совместимости с нативным UI Antigravity.\n\nДля пользователя это означает, что многократные операции, например поиск по коду, построение символов и последовательные правки нескольких файлов, выполняются быстрее и дешевле: в демонстрации 6‑шагового рабочего процесса время сократилось с 48,2 с до 14,1 с, а объём записей на диск не превысил 8,8 KB. Плагин не требует дополнительных зависимостей, работает на Node.js ≥ 20 и может использовать ripgrep для ускоренного поиска, но при его отсутствии автоматически переходит к чистому Node‑реализационному режиму. Установка производится одной командой curl/PowerShell, после чего плагин автоматически валидируется, включается и проверяется на наличие MCP‑сервера и хука SessionStart.",
+        "joke": "Сократить запросы к LLM до одного‑единственного снимка? Похоже, Antigravity нашёл способ летать без топлива.",
+        "evidence_quote": "**Latency, Token-Quota & Tool-Call Accelerator Plugin for Google Antigravity**"
+      },
+      "itsnotrexed/leonida": {
+        "policy_version": 7,
+        "source_description": "Leonida Is A Native PC Recompilation Of The Xbox Version Of Grand Theft Auto 6",
+        "source_readme": "<h1 align=\"center\">\n  <br>\n  <a>\n  <img src=\"assets/logo.png\" alt=\"Leonida\" width=\"200\">\n</a>\n\n  <br>\n  <b>Leonida</b>\n  <br>\n</h1>\n\n<h4 align=\"center\">Grand Theft Auto VI (Xbox Series) running natively on Windows, built on your PC from your own copy.\n</h4>\n\n<p align=\"center\">\n  <a href=\"docs/i18n/README.md\">Other languages</a> |\n  <a href=\"#project-status\">Status</a> |\n  <a href=\"#how-to-build\">How to build</a> |\n  <a href=\"#how-it-works\">How it works</a> |\n  <a href=\"#want-to-help\">Want to help?</a> |\n  <a href=\"#credits\">Credits</a> |\n  <a href=\"#license\">License</a> |\n  <a href=\"https://discord.gg/rexed\">Discord</a>\n</p>\n\nLeonida is a static recompilation project. The Xbox Series CPU is x86-64 like a PC, so the game's code is loaded\nand run natively, and the console's system software is reimplemented. The console's precompiled RDNA2 GPU programs\nare translated to SPIR-V for Vulkan. The game's models, textures and audio are read from your package. All of this\nhappens **on your PC, from your own copy of the game**.\n\n> [!IMPORTANT]\n> This repository **does not contain the game, keys or an executable**, and it does not explain how to get them. You\n> need your own copy, with its files already readable on disk. Nothing here decrypts or works around any protection.\n> Everything the build creates (the generated shaders, extracted assets, the runtime folder and your saves) comes\n> from your game and stays on your PC. Never share those files.\n\nDiscord: https://discord.gg/rexed\n<br>\n\n## Project status\n\n**Early. The game does not boot yet.** Everything that can be done without the game's executable is in place, so\nwork on booting can start as soon as one is available to a developer.\n\n| What | Status |\n|---|---|\n| Booting, story mode, anything playable | ❌ No |\n| Finding and checking your copy (Xbox Series 1.0.2.1) | ✅ Works |\n| Shaders: carve, unpack native RDNA2 code, disassemble | ✅ All 26,503 |\n| Shaders: RDNA2 → SPIR-V translation | ✅ **All 26,503 translated**: 2,236 VS, 12,101 PS, 2,689 CS, 9,282 mesh, 195 geometry, with a per-shader metadata index for pipeline creation. All 26,503 passed `spirv-val` in the [LLVM 23.1.5 Linux run at `c432cdc`](https://github.com/ItsNotRexed/Leonida/issues/644#issuecomment-7072972586). A [full-corpus run at `43d4703`](https://github.com/ItsNotRexed/Leonida/issues/881#issuecomment-7075507328) also validated all 26,503 after `dcd8ecf` fixed the SPIR-V ID bound; the intervening `dedd75c` run was 26,501. ⚠️ 21,545 are wave64: exact on 64-wide subgroups (AMD). On 32-wide subgroups (NVIDIA, Intel), compute and mesh shaders are exact with wave64 emulation (`--wave64-emulate`, on by default there); cross-half wave ops in vertex, pixel and geometry shaders are still approximate |\n| Shader translator checked on a real GPU | ⚠️ The hand-written GPU tests (vertex fetch, texture sampling, exports, ALU ops, partial-register ops, barycentrics, wave-uniform branches, compute LDS/barriers/buffer stores, wave64 masks) have been run on more than 30 GPU and driver combinations, with results in [#166](https://github.com/ItsNotRexed/Leonida/issues/166): NVIDIA Turing, Ampere, Ada and Blackwell (Windows and Linux); AMD GCN3, RDNA1, RDNA2, RDNA3 and RDNA4 (Windows driver and RADV); Intel Gen9 (ANV); Apple M1 (MoltenVK, no geometry or mesh stages); and Mesa llvmpipe. Wave64 tests need 64-wide subgroups (AMD) or `LEONIDA_W64_EMULATE=1`. These are small test shaders: the game's own shaders are checked by `spirv-val` and by driver pipeline creation (`vk_pipeline_check`), not by their output |\n| Models (OBJ with real names, UVs, material references) | ✅ Exported. Not all layouts are decoded yet |\n| Texture dictionaries and world texture pools (DDS) | ✅ Exported. Pool entries stored as BCPack are still skipped by the export; a clean-room decoder (`tools/bcpack.py`) rebuilds BC1, BC3, BC4, BC5, BC6H and BC7 (most BC6H/BC7 chunks need a local history table, which the repo does not ship), and is not wired into `rpf9dump` yet ([notes](docs/textures.md)) |\n| Audio banks (AWC: Opus, XMA2) | ✅ Exported whole. Opus repackaged **losslessly** as Ogg Opus; PCM (codec 0/2) as WAV; XMA2 decoded with ffmpeg. `--wav` adds 16-bit PCM WAV ([notes](docs/audio.md)) |\n| Music/radio config | ? Measured. **1,589** audio-config records with exact durations and AWC stream ids; station grouping and content-id lists; no per-track start offsets ([notes](docs/audio_config.md)) |\n| PE loader and import shims | ⚠️ Runs a stand-in executable end to end (`gta6rt --run`: CRT startup, statics, heap, files, threads, GDK imports through the shims, exit code back). Controllers through a GameInput shim on SDL3 (any controller SDL supports, rumble, DualSense trigger effects and lightbar; built when SDL3 is installed or with `-DLEONIDA_SDL3_FETCH=ON`, [notes](docs/gameinput.md)). `--trace-d3d12` logs every D3D12 call and its outcome for the first boot. Untested against the real executable |\n| Xbox D3D12 → Vulkan | ⚠️ In progress. A Vulkan-backed ",
+        "description": "Leonida – это проект статической рекомпиляции, позволяющий запускать Xbox Series‑версию Grand Theft Auto VI на Windows без эмуляции процессора. Поскольку CPU консоли тоже x86‑64, бинарный код игры загружается и исполняется напрямую, а системное ПО консоли реализовано заново. Шейдеры, скомпилированные под RDNA2, переводятся в SPIR‑V для Vulkan, а модели, текстуры и аудио извлекаются из оригинального пакета игры, который пользователь должен предоставить сам. Проект уже умеет находить и проверять копию игры, полностью переводит более 26 000 шейдеров и экспортирует модели, текстуры и аудио‑банки, включая lossless‑конвертацию Opus в Ogg и PCM в WAV. Кроме того, реализован загрузчик PE‑файлов и шимы импортов, позволяющие запускать тестовый исполняемый файл, а контроллеры поддерживаются через SDL3. На текущем этапе игра ещё не загружается, но все инфраструктурные части, необходимые для последующего запуска, уже работают, что делает Leonida готовой к дальнейшей разработке boot‑процесса.",
+        "joke": "",
+        "evidence_quote": "Leonida is a static recompilation project. The Xbox Series CPU is x86-64 like a PC, so the game's code is loaded\nand run natively, and the console's system software is reimplemented. The console's precompiled RDNA2 GPU programs\nare translated to SPIR-V for Vulkan. The game's models, textures and audio are read from your package. All of this\nhappens **on your PC, from your own copy of the game**."
+      },
       "jamesondh/chimera-vocal-synth": {
         "policy_version": 7,
         "source_description": "the ultimate vocal synthesizer - sing, speak, beatbox, and more",
@@ -752,6 +800,14 @@
         "description": "Jasna — это утилита для восстановления замазанного (мозаичного) контента в видеоматериалах и отдельных изображениях, работающая полностью на GPU. Приложение предлагает как простую графическую оболочку, так и командный интерфейс, позволяя пользователю выбрать между быстрым бесплатным вариантом BasicVSR++ и более детализированным, но требующим лицензии, LTX‑моделью. При обработке длинных роликов LTX‑задачи могут быть приостановлены и возобновлены без потери прогресса, а система автоматически переключает быстрый режим на небольшие мозаики и детальный — на крупные, что экономит ресурсы. Кроме восстановления, инструмент умеет повышать разрешение до 4 K, удваивать частоту кадров на RTX 40/50, применять вторичную резкость (UNet 4×, RTX Super Res, Topaz) и поддерживает пакетную очередь, предварительный просмотр и работу с VR180‑форматами. Требования включают видеокарты NVIDIA GTX 16‑series/RTX 20‑series и новее (compute ≥ 7.5) или экспериментальные AMD Radeon RX 6000‑series и выше, а также локальный диск без нелатинских символов в пути; сетевые хранилища и старые GPU не поддерживаются. Для доступа к LTX‑моделям необходимо приобрести лицензионный код через указанные каналы (Ko‑fi, Unifans или китайский продавец).",
         "joke": "Смотрю мозаичный кадр — и уже вижу, как он превращается в чистый HD.",
         "evidence_quote": "Jasna restores mosaics in videos and images. It is free, has a simple app\nand a command line, and runs on your GPU."
+      },
+      "leanprover-community/riemann-hypothesis": {
+        "policy_version": 7,
+        "source_description": "Independent Comparator setup for the Lean formalization of the Riemann Hypothesis (Alpöge, 2026-11-20)",
+        "source_readme": "# riemann-hypothesis\n\n[![checks](https://github.com/leanprover-community/riemann-hypothesis/actions/workflows/checks.yml/badge.svg)](https://github.com/leanprover-community/riemann-hypothesis/actions/workflows/checks.yml)\n\n\nA community-led effort to clean up and maintain a Lean formalization of the Riemann Hypothesis,\nand of GRH for Dirichlet L-functions. The `original` branch contains the first commit as retrieved on 2026-11-20 from <https://alpo.ge/remark.pdf>\n\n## Theorem Statements\n\n`src/Main.lean` proves the following theorems (see [`src/Challenge.lean`](src/Challenge.lean)):\n\n| Theorem | Statement |\n|---|---|\n| `riemannHypothesis` | Mathlib's `RiemannHypothesis` |\n| `LFunction_ne_zero_of_half_lt_re` | L(χ, s) ≠ 0 for Re s > 1/2, for every modulus and every Dirichlet character, except the trivial character at s = 1 |\n| `LFunction_eq_zero_re` | every zero of L(χ, s) with 0 < Re s < 1 has Re s = 1/2 |\n\n states the same five with `sorry` in place of the\nproofs, in a file that imports only Mathlib. Comparator checks that `Main.lean` proves exactly\nthose statements, that it uses no axioms other than `propext`, `Quot.sound` and\n`Classical.choice`, and that Lean's kernel and nanoda both accept the proof.\n\n## Cache\n\nA full build takes hours, so you should use the cache:\n\n```bash\nlake exe cache get\nlake build --no-build\n```\n\n## Checking the proof\n\nTo check the proof yourself, without the cache, take a fresh clone on a Linux machine with\n[bubblewrap](https://github.com/containers/bubblewrap) installed and run:\n\n```bash\nMATHLIB_CACHE_GET_URL=https://cache.mathlib.org/mathlib4 lake exe mathlib/cache get\nlake comparator\n```\n\nThe first command fetches Mathlib's compiled files and nothing of ours. Don't use\n`lake exe cache get` here, because that also downloads our prebuilt copy of the submission. The\nsecond reads `comparator.json`, builds `Challenge` and `Main` in a sandbox with no network, and\nmakes the checks described under [What is claimed](#what-is-claimed).\n\n```bash\nexport LEAN_ABORT_ON_PANIC=1        # as Comparator does\nexport LAKE_ARTIFACT_CACHE=false    # in case cache-env.sh was sourced\n\n# in a clone where the submission has not been compiled\nlake build Challenge\nlake env leanexport Challenge -- $(cat export-targets.txt) > challenge.export\n\n# wherever you build the submission\nlake build Main\nlake env leanexport Main -- $(cat export-targets.txt) > solution.export\n\n# from an empty directory, with the same Lean release and comparator.json from the first clone\nlake comparator --config comparator.json \\\n  --challenge-from-export challenge.export --solution-from-export solution.export\n```\n\nThe published source was written for Lean 4.33.1, which has neither `lake comparator` nor\n`leanexport`, so checking `40e56bab` itself takes two toolchains.\n[An older version of this README](https://github.com/leanprover-community/riemann-hypothesis/blob/7cce738ba719a32964ca3822d0994f4c6952c7ae/README.md#checking-it)\nhas those steps.\n\n## CI\n\nIf you have a Linux machine with\nplenty of memory and disk to spare, [CI-RUNNERS.md](verification/CI-RUNNERS.md) explains how to\nlend it. The scripts behind all this are in [`scripts/`](scripts/) and\n[`tools/ci_native/`](tools/ci_native/README.md).\n\n## License\n\nThe submission belongs to its author and was published without a license. It is mirrored here\nso that it can be checked. Commit `40e56bab` is the unmodified copy.\n\n",
+        "description": "Проект — сообщественное усилие по поддержке и очистке формализации гипотезы Римана и обобщённой гипотезы Римана (GRH) для L‑функций Дирихле в системе доказательств Lean. В репозитории хранится набор теорем, формулировки которых находятся в файлах `src/Main.lean` и `src/Challenge.lean`; их доказательства заменены заглушками `sorry`, а задача Comparator‑а — проверить, что `Main.lean` действительно доказывает именно эти утверждения, использует только три аксиомы (`propext`, `Quot.sound`, `Classical.choice`) и проходит проверку ядра Lean и nanoda. Для пользователя это значит, что можно загрузить репозиторий, собрать кэш (чтобы сократить часы компиляции), а затем в изолированном sandbox‑окружении без сетевого доступа выполнить `lake comparator`, сравнив экспортированные доказательства решения и задания. Инструмент позволяет убедиться в корректности формализации без необходимости доверять чужим результатам, а также предоставляет готовый CI‑скрипт для автоматизации проверки на мощных Linux‑машинах. Требования включают Lean 4.33.1, утилиту `bubblewrap` для контейнеризации и достаточный объём памяти и диска; без кэша сборка занимает несколько часов. Лицензия отсутствует, поэтому репозиторий служит лишь зеркалом исходного материала для проверки.",
+        "joke": "Если ваш компилятор Lean начинает плакать, значит, он нашёл ещё одну незаполненную гипотезу.",
+        "evidence_quote": "A community-led effort to clean up and maintain a Lean formalization of the Riemann Hypothesis,\nand of GRH for Dirichlet L-functions. The `original` branch contains the first commit as retrieved on 2026-11-20 from <https://alpo.ge/remark.pdf>"
       },
       "lemomo-ai/lemo-opuscar": {
         "policy_version": 7,
@@ -889,6 +945,14 @@
         "joke": "Если ваш навык провалит Tier 1, значит, агент будет жаловаться на «недостаток качества» ещё до первого шага.",
         "evidence_quote": "SkillEvaluator checks AI agent skills and measures their effect on task results:\nstart with quality checks, then compare runs with and without a skill."
       },
+      "omonkeyz/xbox-emulator": {
+        "policy_version": 7,
+        "source_description": "Progress notes for running Xbox Series X|S builds on PC (TomBox + rage9)",
+        "source_readme": "# Xbox Emulator\n\n**Running the Xbox Series X|S library on PC. A continuation of [drycheetah84/TomBox](https://github.com/drycheetah84/TomBox).**\n\nThe runtime reimplements the console's platform layer (Xbox-flavoured Direct3D 12, precompiled RDNA2 shaders, unified-memory textures, system libraries) so dumped, already-decrypted Xbox Series X|S builds run as normal Windows processes. It is not tied to any single title. This repo tracks our continuation — new titles brought up, platform calls extended, shader stages unlocked.\n\nUses legally obtained, already-decrypted dumps. The runtime does no key extraction or package decryption.\n\n**Source code:** the emulator's Rust workspace is in this repo: [`crates/`](crates/), [`tools/`](tools/) and `Cargo.toml`. It contains no game files, binaries or build output.\n\n**Contributing:** pull requests are welcome, especially console library functions still marked missing in the [library map](docs/LIBRARY_MAP.md). See [CONTRIBUTING.md](CONTRIBUTING.md). Licensed GPL-3.0-or-later (see [LICENSE](LICENSE)). Releases before this change remain available under MIT OR Apache-2.0.\n\n## Status\n\n[![system functions](docs/img/badge-imports.svg)](docs/img/progress.svg)\n[![Direct3D 12.x methods](docs/img/badge-d3d12x.svg)](docs/img/progress.svg)\n[![RDNA2 instructions](docs/img/badge-instructions.svg)](docs/img/progress.svg)\n[![shaders translated](docs/img/badge-shaders.svg)](#tested-titles)\n[![shader stages](docs/img/badge-stages.svg)](docs/img/progress.svg)\n[![milestones](docs/img/badge-milestones.svg)](#milestones)\n[![titles examined](docs/img/badge-titles.svg)](#tested-titles)\n[![Xbox console libraries](docs/img/badge-console.svg)](docs/LIBRARY_MAP.md)\n\n[![progress map](docs/img/progress.svg)](docs/img/progress.svg)\n\n<sub>One square per item. The first four sections use upstream's definitions so the numbers stay comparable: green = done, amber = partial (a stub, a forwarder, or not verified to work), grey = not done — imported system functions of the Fortnite EXE, Direct3D 12.x interface methods, RDNA2 shader instructions the decoder knows, and the eight shader stages (mesh and amplification still grey). The fifth section is ours and covers Xbox console libraries only: the exports of the console OS DLLs (EmbeddedXvd of every analysed title, union, so the newest console OS sets the surface) that no same-named DLL in a PC's <code>C:\\Windows\\System32</code> exports, so console-only DLLs (d3d12_xs, xg_xs, xmem, AcpHal, chad, xapu, xcrdapi, the *legacy variants, ...) count in full and modified PC DLLs (kernel32, advapi32, mfplat, ...) only for their console-only exports, plus the GDK wrappers the emulator redirects; plain Windows DLLs (ntdll, msvcrt, ucrtbase, combase, ...) are not shown. Coloured implemented / forwarded / stub / missing; lighter squares are functions an analysed title imports. Per-title import coverage likewise counts only imports from console libraries. Generated by <code>tools/progress/gen.py</code>; per-function tables in <a href=\"docs/LIBRARY_MAP.md\">docs/LIBRARY_MAP.md</a>, headline numbers in <a href=\"tools/progress/summary.json\">tools/progress/summary.json</a>.</sub>\n\n## Milestones\n\nCounted live by `tools/progress/gen.py`; full table with evidence in [docs/MILESTONES.md](docs/MILESTONES.md).\n\n| Milestone | State |\n|---|---|\n| All imported system functions covered (671/671) | done |\n| Full title shader sweep translated (105,506/105,506) | done |\n| All Direct3D 12.x methods covered | in progress (map) |\n| All RDNA2 instructions verified | in progress (map) |\n| All shader stages (Mesh, Amplification) | in progress (map) |\n| All Xbox console libraries covered | in progress (map) |\n| Fortnite boots, first frames, login, hotfix, mode select, BR lobby | done (7 run milestones) |\n| 3D scene correct | not reached |\n| Keyboard / controller input | not reached |\n| Audio | not reached |\n| Gameplay | not reached |\n| A second title running | not reached |\n\n## Tested titles\n\n| Title | Build | Result |\n|---|---|---|\n| Fortnite (Chapter 2 Season 4) | 2.0.1461.7919 | Boots, logs in to a private server, reaches the lobby. 2D interface correct. 3D scene lit but the character material is wrong and bloom shows artifacts. No audio. Not playable. On this machine (2026-11-21): boots, first frames, window on the primary monitor, login complete, hotfix success, game-mode select, Battle Royale lobby (`UI.State.Athena.Frontend`). |\n| XDefiant | dump examined | **Not run.** Imports and console OS (10.0.22000) mapped in [docs/LIBRARY_MAP.md](docs/LIBRARY_MAP.md); new modules include XCurl, Bink2Scarlett, chad (XDsp*), xapu (XApu*). |\n| Grand Theft Auto VI | 1.0.2.1 | **Not run** (dump has no executable). Shader package examined: 26,503 shaders, plain compressed Xbox shader containers. Of a 4,000-shader sample all disassemble cleanly; ~⅓ of vertex shaders translate. Blockers: mesh shaders, shaders without root signatures. |\n\n## Our local state\n\n- [docs/DEVELOPMENT_LOG.md](docs/DEVELOPMENT_LOG.md) — ",
+        "description": "Эмулятор реализует платформенный слой Xbox Series X|S (Direct3D 12‑вариант, предкомпилированные шейдеры RDNA2, унифицированные текстуры и системные библиотеки) в виде обычного Windows‑процесса, позволяя запускать уже расшифрованные сборки консоли без извлечения ключей. Проект построен на Rust‑рабочем пространстве, где основная логика находится в каталогах crates и tools, а исходный код не содержит игровых файлов. На текущий момент покрыты все импортированные системные функции (671 из 671) и полностью переведён набор шейдеров (105 506 из 105 506), однако поддержка полного набора методов Direct3D 12.x, инструкций RDNA2 и всех шейдерных стадий (mesh, amplification) ещё находится в работе. Тестовый запуск Fortnite Chapter 2 Season 4 демонстрирует загрузку, вход в приватный сервер и отображение лобби, но 3‑D‑сцена имеет артефакты, отсутствует звук и игровой процесс не реализован.",
+        "joke": "Эмулировать Xbox на ПК — как заставить консоль играть в шахматы, а не в шутеры.",
+        "evidence_quote": "**Running the Xbox Series X|S library on PC. A continuation of [drycheetah84/TomBox](https://github.com/drycheetah84/TomBox).**"
+      },
       "openai/codex-security": {
         "policy_version": 7,
         "source_description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
@@ -896,6 +960,14 @@
         "description": "Codex Security — инструмент от OpenAI для автоматического обнаружения, анализа и исправления уязвимостей в исходном коде. Он доступен как глобальная CLI‑утилита и как TypeScript SDK, что позволяет интегрировать сканирование в терминал, CI‑конвейеры или собственные приложения. Пользователь может просканировать весь репозиторий, отдельные пути или изменения между ветками, а также выбрать режим «deep», который повторяет стандартный скан и возвращает дедуплицированные результаты. После обнаружения находок система предлагает валидацию, генерацию патчей и проверку уже применённых исправлений, а также формирует черновики SECURITY.md и сохраняет модели угроз для последующего аудита.\n\nВстроенные возможности включают автоматическое определение владельцев кода на основе истории Git, экспорт результатов в форматы SARIF, JSON и CSV, а также интеграцию с системами трекинга задач (Linear, Jira, GitHub). Для больших проектов предусмотрены bulk‑сканы, позволяющие запускать независимые проверки нескольких репозиториев в одной кампании, и возможность импортировать результаты сторонних сканеров. При работе в облаке требуется только API‑ключ, а для headless‑машин поддерживается аутентификация через устройство или SSH. Требования к окружению: Node.js 22.x, 24.x или 26.x и Python 3.10+ (с tomli).",
         "joke": "Сканировать код так же просто, как запустить `cs scan .` – только без кофе‑брейка.",
         "evidence_quote": "Codex Security helps you find, investigate, and fix vulnerabilities in your code.\nUse its security workflows in Codex, or automate them with the\n`@openai/codex-security` CLI and TypeScript SDK."
+      },
+      "openmoss/moss-image": {
+        "policy_version": 7,
+        "source_description": "Official repository for MOSS-Image, a 5B-parameter base DiT model with high-quality text rendering, layout generation, and efficient fine-tuning.",
+        "source_readme": "<div align=\"center\">\n  <p>\n    <img src=\"assets/lockup-light.svg#gh-light-mode-only\" alt=\"MOSS-Image\" width=\"520\">\n    <img src=\"assets/lockup-dark.svg#gh-dark-mode-only\" alt=\"MOSS-Image\" width=\"520\">\n  </p>\n  <p>\n    <a href=\"https://huggingface.co/OpenMOSS-Team/MOSS-Image-Base\"><img alt=\"Hugging Face · MOSS-Image-Base\" src=\"https://img.shields.io/badge/🤗%20Hugging%20Face-MOSS--Image--Base-ffc107?style=flat-square\"></a>\n    &nbsp;\n    <a href=\"https://huggingface.co/OpenMOSS-Team/MOSS-Image-SFT\"><img alt=\"Hugging Face · MOSS-Image-SFT\" src=\"https://img.shields.io/badge/🤗%20Hugging%20Face-MOSS--Image--SFT-ffc107?style=flat-square\"></a>\n    &nbsp;\n    <a href=\"https://huggingface.co/Comfy-Org/MOSS-Image\"><img alt=\"ComfyUI Models\" src=\"https://img.shields.io/badge/ComfyUI-Models-ffc107?style=flat-square\"></a>\n    &nbsp;\n    <a href=\"https://modelscope.cn/models/openmoss/MOSS-Image-Base\"><img alt=\"ModelScope · MOSS-Image-Base\" src=\"assets/modelscope-base-badge.svg\"></a>\n    &nbsp;\n    <a href=\"https://modelscope.cn/models/openmoss/MOSS-Image-SFT\"><img alt=\"ModelScope · MOSS-Image-SFT\" src=\"assets/modelscope-sft-badge.svg\"></a>\n    &nbsp;\n    <a href=\"https://huggingface.co/spaces/OpenMOSS-Team/MOSS-Image\"><img alt=\"Hugging Face Spaces · Demo\" src=\"https://img.shields.io/badge/🤗%20Spaces-Demo-4f46e5?style=flat-square\"></a>\n    &nbsp;\n    <a href=\"https://platform.mosi.cn/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=imageapi\"><img alt=\"MOSI API Platform\" src=\"https://img.shields.io/badge/🔌%20MOSI-API%20Platform-0f766e?style=flat-square\"></a>\n    &nbsp;\n    <a href=\"https://openmoss.github.io/MOSS-Image/\"><img alt=\"Homepage\" src=\"https://img.shields.io/badge/🌐%20Project-Homepage-2563eb?style=flat-square\"></a>\n    &nbsp;\n    <a href=\"paper/MOSS_Image_Technical_Report.pdf\"><img alt=\"Technical Report\" src=\"https://img.shields.io/badge/📄%20Paper-Technical_Report-b31b1b?style=flat-square\"></a>\n    &nbsp;\n    <a href=\"https://arxiv.org/abs/2610.23374\"><img alt=\"arXiv: 2610.23374\" src=\"https://img.shields.io/badge/arXiv-2610.23374-b31b1b?style=flat-square&amp;logo=arxiv&amp;logoColor=white\"></a>\n    &nbsp;\n    <a href=\"https://x.com/Open_MOSS\"><img alt=\"Follow OpenMOSS on X\" src=\"https://img.shields.io/badge/Follow-OpenMOSS-000000?style=flat-square&amp;logo=x&amp;logoColor=white\"></a>\n    &nbsp;\n    <a href=\"https://qm.qq.com/q/hphM7VhaDu\"><img alt=\"MOSS-Image QQ 交流群：755535143\" src=\"https://img.shields.io/badge/QQ-755535143-12B7F5?style=flat-square&amp;logo=qq&amp;logoColor=white\"></a>\n    &nbsp;\n    <a href=\"https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=7a3m2007-815f-409b-9c3d-a4129f5c058e\"><img alt=\"MOSS-Builders Feishu Community\" src=\"assets/feishu-builders-badge.svg\"></a>\n    &nbsp;\n    <a href=\"https://discord.gg/nXFWEyvbb\"><img alt=\"MOSS-Image Discord Community\" src=\"https://img.shields.io/badge/Discord-Community-5865F2?style=flat-square&amp;logo=discord&amp;logoColor=white\"></a>\n  </p>\n  <p>\n    <strong>English</strong> &nbsp; | &nbsp; <a href=\"README_ZH.md\">简体中文</a>\n  </p>\n</div>\n\n\n## News\n\n- **[2026-10-20]** 🚀 The **MOSS-Image** series is now available on the [MOSI API Platform](https://platform.mosi.cn/?utm_source=github&utm_medium=readme&utm_campaign=imageapi). Try it in the Playground or integrate it through the API.\n\n- **[2026-10-19]** 📄 The [MOSS-Image Technical Report](https://arxiv.org/abs/2610.23374) is now available on arXiv. If you find our work useful, please support us with an [upvote on Hugging Face Papers](https://huggingface.co/papers/2610.23374)! 🤗\n\n- **[2026-10-18]** 🛠️ [KohakuMossTrainer](https://github.com/KohakuBlueleaf/KohakuMossTrainer) has been released, offering full fine-tuning and LyCORIS training (including LoRA) for **MOSS-Image-Base** and **MOSS-Image-SFT**. It features extensive optimizer support, mixed-precision training (BF16/FP16/FP8/MXFP8/INT8), multi-GPU training (DDP/FSDP/pipeline parallelism), optimized kernels, and CPU offloading, enabling adapter training with as little as **6GB VRAM**. It supports Windows, Linux, NVIDIA GPUs (SM70–SM120), and Intel Arc GPUs. See the [GitHub repository](https://github.com/KohakuBlueleaf/KohakuMossTrainer) for details.\n\n- **[2026-10-16]** 🚀 MOSS-Image has day-0 support in [SGLang](https://docs.sglang.io/cookbook/diffusion/OpenMOSS/MOSS-Image), [vLLM-Omni](https://recipes.vllm.ai/OpenMOSS-Team/MOSS-Image-Base), and [ComfyUI](https://huggingface.co/Comfy-Org/MOSS-Image).\n\n- **[2026-10-16]** 🎉 We are introducing **MOSS-Image-Base** and **MOSS-Image-SFT**! Code and model weights are publicly available.\n\n  **Our key highlights:**\n\n  - 📐 **Layout control:** Control the placement of text and visual elements.\n  - ✍️ **Strong text rendering:** Generate clear, accurate text within images.\n  - 📜 **Long-prompt support:** Accept text prompts of up to 4K tokens.\n  - 🎨 **Versatile visual styles:** Create high-quality anime and photorealistic images.\n  - 🛠️ **Easy to fine-tune:** Adapt the base model to custom tasks and ",
+        "description": "MOSS‑Image — это 5 Б параметров авторегрессионная модель DiT, ориентированная на генерацию изображений с точным отображением текста и гибким управлением компоновкой. Базовая версия (MOSS‑Image‑Base) и дообученная (MOSS‑Image‑SFT) доступны в Hugging Face, ModelScope и через MOSI API Platform, где их можно протестировать в Playground или интегрировать в собственные сервисы. Модель принимает запросы до 4 К токенов, что позволяет использовать длинные описания и детальные инструкции, а также поддерживает разнообразные стили – от аниме до фотореалистичных сцен. Для пользователей, которым требуется адаптация под специфические задачи, предоставлен открытый код и набор инструментов, включая KohakuMossTrainer, который реализует полное дообучение, LoRA‑адаптеры и оптимизации (BF16/FP16/FP8/MXFP8/INT8), а также мульти‑GPU‑режимы (DDP, FSDP, pipeline) и возможность обучения с 6 ГБ видеопамяти за счёт CPU‑offloading. Примером практического применения может быть автоматическое создание рекламных баннеров: пользователь задаёт длинный текст‑описание, указывает расположение логотипа и слогана, а модель генерирует готовый макет с чётким текстом и нужным визуальным стилем. Требования включают NVIDIA GPU (SM70‑SM120) или Intel Arc, а также поддержку Windows или Linux; ограничений по офлайн‑работе нет, поскольку модель вызывается через API или локально, но для полного функционала требуется доступ к GPU‑ресурсам.",
+        "joke": "",
+        "evidence_quote": "- **[2026-10-20]** 🚀 The **MOSS-Image** series is now available on the [MOSI API Platform](https://platform.mosi.cn/?utm_source=github&utm_medium=readme&utm_campaign=imageapi). Try it in the Playground or integrate it through the API."
       },
       "openvinotoolkit/openvino": {
         "policy_version": 7,
@@ -1169,6 +1241,7 @@
       "haziqahmedqasmi/peakcut": "2026-11-18T16:06:54.365282129Z",
       "headroomlabs-ai/headroom": "2026-11-19T20:41:02.931381472Z",
       "herdrdev/herdr": "2026-11-12T17:13:17.541760500Z",
+      "heyputer/everything": "2026-11-23T19:49:30.915299088Z",
       "huamidev/gestaltx": "2026-11-10T19:55:47.416710463Z",
       "jev-chat/jev-chat-jarvis": "2026-11-09T10:32:23.460442293Z",
       "jhaizhou-ops/s2arm": "2026-11-10T19:54:55.651603211Z",
@@ -1176,6 +1249,7 @@
       "jquery/jquery": "2026-11-19T20:36:31.448159587Z",
       "kryvora-network/kryvora-node": "2026-11-09T10:32:41.310378426Z",
       "lemxy/winrust": "2026-11-21T20:27:43.926264373Z",
+      "leonxlnx/earshot": "2026-11-23T19:49:43.161185942Z",
       "liuziyu77/valen": "2026-11-16T16:31:40.809227516Z",
       "morluto/rea": "2026-11-20T20:47:26.896588247Z",
       "mvanhorn/last30days-skill": "2026-11-17T19:40:54.429510665Z",
@@ -1185,6 +1259,8 @@
       "nvm-sh/nvm": "2026-11-13T19:59:30.915849851Z",
       "ollaya-dev/ollaya": "2026-11-14T19:52:08.528459890Z",
       "onlistteam/ai-manager": "2026-11-13T20:01:33.863704724Z",
+      "r0y00/xbox2windows": "2026-11-23T19:45:41.133325969Z",
+      "realdody/americas-recomp": "2026-11-23T19:48:31.209881462Z",
       "ruvnet/ruflo": "2026-11-19T20:40:49.169629400Z",
       "samyost1/3dicon": "2026-11-17T19:43:48.769846146Z",
       "sourmitocand1987/vividframe-gpu": "2026-11-21T20:26:30.947989089Z",
@@ -307147,6 +307223,2094 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "0xkaka/homeport",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 623,
+      "forks": 112,
+      "language": "HTML",
+      "description": null,
+      "html_url": "https://github.com/0xkaka/homeport",
+      "topics": [],
+      "created_at": "2026-11-17T05:39:46Z",
+      "updated_at": "2026-11-22T14:46:29Z",
+      "pushed_at": "2026-11-19T09:05:16Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-17T05:39:46Z",
+          "description": null,
+          "html_url": "https://github.com/0xkaka/homeport",
+          "stars": 623,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 58816,
+      "forks": 4914,
+      "language": "TypeScript",
+      "description": "Chrome DevTools for coding agents",
+      "html_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "topics": [
+        "browser",
+        "chrome",
+        "chrome-devtools",
+        "debugging",
+        "devtools",
+        "mcp",
+        "mcp-server",
+        "puppeteer"
+      ],
+      "created_at": "2025-09-11T10:39:55Z",
+      "updated_at": "2026-11-22T19:20:20Z",
+      "pushed_at": "2026-11-22T01:06:14Z",
+      "license": "Apache-2.0",
+      "open_issues": 138,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Chrome DevTools for coding agents",
+          "full_name": "ChromeDevTools/chrome-devtools-mcp",
+          "language": "TypeScript",
+          "trending_stars_period": 2795,
+          "trending_total_forks": null,
+          "trending_total_stars": 58816,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "CocoSgt/riemann-hypothesis-lean",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 502,
+      "forks": 80,
+      "language": "Lean",
+      "description": "Mirror of Levent Alpöge's Lean proof of the Riemann Hypothesis (with Claude). All credit to Levent Alpöge. Source: alpo.ge",
+      "html_url": "https://github.com/CocoSgt/riemann-hypothesis-lean",
+      "topics": [],
+      "created_at": "2026-11-20T14:59:14Z",
+      "updated_at": "2026-11-22T18:16:18Z",
+      "pushed_at": "2026-11-20T15:13:36Z",
+      "license": null,
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T14:59:14Z",
+          "description": "Mirror of Levent Alpöge's Lean proof of the Riemann Hypothesis (with Claude). All credit to Levent Alpöge. Source: alpo.ge",
+          "html_url": "https://github.com/CocoSgt/riemann-hypothesis-lean",
+          "stars": 502,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "EL4CTEO/fast-anything",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 1653,
+      "forks": 105,
+      "language": "Rust",
+      "description": "Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
+      "html_url": "https://github.com/EL4CTEO/fast-anything",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude-code",
+        "claude-code-plugin",
+        "codex",
+        "developer-tools",
+        "ffi",
+        "mcp",
+        "mcp-server",
+        "napi-rs",
+        "nodejs",
+        "optimization",
+        "performance",
+        "profiler",
+        "pyo3",
+        "python",
+        "rewrite-it-in-rust",
+        "ruby",
+        "rust",
+        "typescript"
+      ],
+      "created_at": "2026-11-21T14:40:27Z",
+      "updated_at": "2026-11-22T19:40:59Z",
+      "pushed_at": "2026-11-22T17:14:51Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-21T14:40:27Z",
+          "description": "Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
+          "html_url": "https://github.com/EL4CTEO/fast-anything",
+          "stars": 1653,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "GoogleChrome/modern-web-guidance-src",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 10159,
+      "forks": 809,
+      "language": "TypeScript",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "html_url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "topics": [],
+      "created_at": "2026-01-27T20:22:24Z",
+      "updated_at": "2026-11-22T19:37:32Z",
+      "pushed_at": "2026-11-22T15:16:46Z",
+      "license": "Apache-2.0",
+      "open_issues": 384,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Keep your coding agent up to date with the latest web best practices",
+          "full_name": "GoogleChrome/modern-web-guidance-src",
+          "language": "TypeScript",
+          "trending_stars_period": 4400,
+          "trending_total_forks": null,
+          "trending_total_stars": 10159,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 62661,
+      "forks": 5683,
+      "language": "Python",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "html_url": "https://github.com/HKUDS/CLI-Anything",
+      "topics": [],
+      "created_at": "2026-03-08T13:52:57Z",
+      "updated_at": "2026-11-22T19:40:43Z",
+      "pushed_at": "2026-11-20T10:05:15Z",
+      "license": "Apache-2.0",
+      "open_issues": 285,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+          "full_name": "HKUDS/CLI-Anything",
+          "language": "Python",
+          "trending_stars_period": 687,
+          "trending_total_forks": null,
+          "trending_total_stars": 62661,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Hut-hzf/ung220z-tool",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 2353,
+      "forks": 534,
+      "language": "Python",
+      "description": "ung220z-tool 是一个针对 UNG220Z，另含中兴/烽火/华为/九联多厂商适配、固件指纹识别与分家族排障建议的一键凭据提取工具，仅限在你自己的设备上用于找回忘记的管理密码、迁移宽带配置或安全自查。",
+      "html_url": "https://github.com/Hut-hzf/ung220z-tool",
+      "topics": [],
+      "created_at": "2026-11-15T11:16:46Z",
+      "updated_at": "2026-11-22T18:45:51Z",
+      "pushed_at": "2026-11-22T07:06:43Z",
+      "license": "MIT",
+      "open_issues": 9,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-15T11:16:46Z",
+          "description": "ung220z-tool 是一个针对 UNG220Z，另含中兴/烽火/华为/九联多厂商适配、固件指纹识别与分家族排障建议的一键凭据提取工具，仅限在你自己的设备上用于找回忘记的管理密码、迁移宽带配置或安全自查。",
+          "html_url": "https://github.com/Hut-hzf/ung220z-tool",
+          "stars": 2353,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "INK-Q/agy-fast",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 482,
+      "forks": 34,
+      "language": "TypeScript",
+      "description": "Non-invasive MCP accelerator plugin for Google Antigravity (CLI/Desktop/IDE): cuts LLM turns (-34%), token quota (-31%), and upload traffic (-40%) without affecting native UI or diffs.",
+      "html_url": "https://github.com/INK-Q/agy-fast",
+      "topics": [
+        "ai-agent",
+        "ai-coding",
+        "antigravity",
+        "antigravity-cli",
+        "antigravity-ide",
+        "antigravity-plugins",
+        "coding-agent",
+        "context-optimization",
+        "developer-productivity",
+        "developer-tools",
+        "gemini",
+        "google-antigravity",
+        "latency-optimization",
+        "mcp",
+        "mcp-plugin",
+        "mcp-server",
+        "model-context-protocol",
+        "performance",
+        "plugin",
+        "token-optimization"
+      ],
+      "created_at": "2026-11-19T04:58:46Z",
+      "updated_at": "2026-11-22T19:38:16Z",
+      "pushed_at": "2026-11-22T18:34:31Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-19T04:58:46Z",
+          "description": "Non-invasive MCP accelerator plugin for Google Antigravity (CLI/Desktop/IDE): cuts LLM turns (-34%), token quota (-31%), and upload traffic (-40%) without affecting native UI or diffs.",
+          "html_url": "https://github.com/INK-Q/agy-fast",
+          "stars": 482,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Illson/RustText",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 471,
+      "forks": 2,
+      "language": "C#",
+      "description": "Portable Windows text editor with Sublime Text-style multi-cursor editing, regex find and replace, split views, and a live viewer for large log files.",
+      "html_url": "https://github.com/Illson/RustText",
+      "topics": [
+        "jsonl",
+        "large-files",
+        "log-viewer",
+        "portable",
+        "text-editor",
+        "windows"
+      ],
+      "created_at": "2026-11-16T17:46:45Z",
+      "updated_at": "2026-11-22T18:41:53Z",
+      "pushed_at": "2026-11-22T18:15:50Z",
+      "license": null,
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T17:46:45Z",
+          "description": "Portable Windows text editor with Sublime Text-style multi-cursor editing, regex find and replace, split views, and a live viewer for large log files.",
+          "html_url": "https://github.com/Illson/RustText",
+          "stars": 471,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ItsNotRexed/Leonida",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 13342,
+      "forks": 1078,
+      "language": "Python",
+      "description": "Leonida Is A Native PC Recompilation Of The Xbox Version Of Grand Theft Auto 6",
+      "html_url": "https://github.com/ItsNotRexed/Leonida",
+      "topics": [],
+      "created_at": "2026-11-20T20:07:13Z",
+      "updated_at": "2026-11-22T19:43:21Z",
+      "pushed_at": "2026-11-22T18:51:15Z",
+      "license": "GPL-3.0",
+      "open_issues": 1120,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T20:07:13Z",
+          "description": "Leonida Is A Native PC Recompilation Of The Xbox Version Of Grand Theft Auto 6",
+          "html_url": "https://github.com/ItsNotRexed/Leonida",
+          "stars": 13342,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Lemxy/WinRust",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 1170,
+      "forks": 65,
+      "language": "Rust",
+      "description": "Windows shell replacement in Rust: taskbar, file manager, NTFS search, task manager, disk cleaner. One installer exe.",
+      "html_url": "https://github.com/Lemxy/WinRust",
+      "topics": [],
+      "created_at": "2026-11-17T14:27:06Z",
+      "updated_at": "2026-11-22T19:39:35Z",
+      "pushed_at": "2026-11-22T18:03:52Z",
+      "license": "Apache-2.0",
+      "open_issues": 50,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-17T14:27:06Z",
+          "description": "Windows shell replacement in Rust: taskbar, file manager, NTFS search, task manager, disk cleaner. One installer exe.",
+          "html_url": "https://github.com/Lemxy/WinRust",
+          "stars": 1170,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "MSNightmare/FastUnlock",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 674,
+      "forks": 110,
+      "language": null,
+      "description": "FastUnlock : Windows Narrator LockScreen Bypass 0day Vulnerability",
+      "html_url": "https://github.com/MSNightmare/FastUnlock",
+      "topics": [],
+      "created_at": "2026-11-19T12:37:51Z",
+      "updated_at": "2026-11-22T18:58:04Z",
+      "pushed_at": "2026-11-21T05:18:41Z",
+      "license": "MIT",
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-19T12:37:51Z",
+          "description": "FastUnlock : Windows Narrator LockScreen Bypass 0day Vulnerability",
+          "html_url": "https://github.com/MSNightmare/FastUnlock",
+          "stars": 674,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "R0Y00/Xbox2Windows",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 1255,
+      "forks": 122,
+      "language": "Python",
+      "description": "GTA VI static recompilation research for x64 Windows. Source-built EXEs run on Windows, and two translated pixel shaders match reference outputs on hardware and WARP. Full-game startup is unverified.",
+      "html_url": "https://github.com/R0Y00/Xbox2Windows",
+      "topics": [
+        "d3d12",
+        "directx-raytracing",
+        "scarlett",
+        "static-recompilation",
+        "windows",
+        "xbox",
+        "xbox-series-x"
+      ],
+      "created_at": "2026-11-20T17:43:52Z",
+      "updated_at": "2026-11-22T19:34:58Z",
+      "pushed_at": "2026-11-22T19:41:58Z",
+      "license": "MIT",
+      "open_issues": 87,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T17:43:52Z",
+          "description": "GTA VI static recompilation research for x64 Windows. Source-built EXEs run on Windows, and two translated pixel shaders match reference outputs on hardware and WARP. Full-game startup is unverified.",
+          "html_url": "https://github.com/R0Y00/Xbox2Windows",
+          "stars": 1255,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Tracer-Cloud/opensre",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 14327,
+      "forks": 1960,
+      "language": "Python",
+      "description": "The open-source agent for CI/CD reliability.",
+      "html_url": "https://github.com/Tracer-Cloud/opensre",
+      "topics": [
+        "alerting",
+        "ci-cd",
+        "cli",
+        "datadog",
+        "devops",
+        "gitlab-ci",
+        "grafana",
+        "incident-management",
+        "llm",
+        "observability",
+        "ollama",
+        "remediation",
+        "root-cause-analysis",
+        "site-reliability-engineering",
+        "slack"
+      ],
+      "created_at": "2026-01-13T00:04:47Z",
+      "updated_at": "2026-11-22T19:38:00Z",
+      "pushed_at": "2026-11-22T15:09:02Z",
+      "license": "Apache-2.0",
+      "open_issues": 20,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The open-source agent for CI/CD reliability.",
+          "full_name": "Tracer-Cloud/opensre",
+          "language": "Python",
+          "trending_stars_period": 395,
+          "trending_total_forks": null,
+          "trending_total_stars": 14327,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "TurtleReside/Gemini-Config-Checker-",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 469,
+      "forks": 0,
+      "language": "Go",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+      "html_url": "https://github.com/TurtleReside/Gemini-Config-Checker-",
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker",
+        "generative-ai",
+        "lim-seo",
+        "llm",
+        "mcp-server",
+        "nextjs",
+        "open-code",
+        "seo-checker",
+        "seo-tool",
+        "typescript"
+      ],
+      "created_at": "2026-11-15T16:46:04Z",
+      "updated_at": "2026-11-21T19:37:43Z",
+      "pushed_at": "2026-11-15T16:47:00Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-15T16:46:04Z",
+          "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+          "html_url": "https://github.com/TurtleReside/Gemini-Config-Checker-",
+          "stars": 469,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "WindGatorRise37/Gemini-Config-Checker-",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 469,
+      "forks": 0,
+      "language": "Makefile",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+      "html_url": "https://github.com/WindGatorRise37/Gemini-Config-Checker-",
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker",
+        "generative-ai",
+        "lim-seo",
+        "llm",
+        "mcp-server",
+        "nextjs",
+        "open-code",
+        "seo-checker",
+        "seo-tool",
+        "typescript"
+      ],
+      "created_at": "2026-11-15T16:47:17Z",
+      "updated_at": "2026-11-21T19:09:36Z",
+      "pushed_at": "2026-11-15T16:48:17Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-15T16:47:17Z",
+          "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+          "html_url": "https://github.com/WindGatorRise37/Gemini-Config-Checker-",
+          "stars": 469,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "WyrmClimberManacle/Gemini-Config-Checker-",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 469,
+      "forks": 1,
+      "language": "Makefile",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+      "html_url": "https://github.com/WyrmClimberManacle/Gemini-Config-Checker-",
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker",
+        "generative-ai",
+        "lim-seo",
+        "llm",
+        "mcp-server",
+        "nextjs",
+        "open-code",
+        "seo-checker",
+        "seo-tool",
+        "typescript"
+      ],
+      "created_at": "2026-11-15T16:48:18Z",
+      "updated_at": "2026-11-21T19:03:00Z",
+      "pushed_at": "2026-11-15T16:49:29Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-15T16:48:18Z",
+          "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+          "html_url": "https://github.com/WyrmClimberManacle/Gemini-Config-Checker-",
+          "stars": 469,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "XiaoYouChR/Ghost-Downloader-3",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 15016,
+      "forks": 901,
+      "language": "Python",
+      "description": "The only downloader you need. 下载器的集大成者。",
+      "html_url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+      "topics": [
+        "async",
+        "asyncio",
+        "bittorent",
+        "bt",
+        "cross-platform",
+        "download-manager",
+        "downloader",
+        "fluent-design",
+        "ftp",
+        "http3",
+        "magnet",
+        "pyqt",
+        "pyside6",
+        "python",
+        "qt",
+        "quic",
+        "react",
+        "software",
+        "streaming"
+      ],
+      "created_at": "2023-08-16T04:23:44Z",
+      "updated_at": "2026-11-22T19:43:14Z",
+      "pushed_at": "2026-11-22T15:12:09Z",
+      "license": "GPL-3.0",
+      "open_issues": 103,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The only downloader you need. 下载器的集大成者。",
+          "full_name": "XiaoYouChR/Ghost-Downloader-3",
+          "language": "Python",
+          "trending_stars_period": 690,
+          "trending_total_forks": null,
+          "trending_total_stars": 15016,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "YellowLaborerMarket/Gemini-Config-Checker-",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 471,
+      "forks": 0,
+      "language": "Makefile",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+      "html_url": "https://github.com/YellowLaborerMarket/Gemini-Config-Checker-",
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker",
+        "generative-ai",
+        "lim-seo",
+        "llm",
+        "mcp-server",
+        "nextjs",
+        "open-code",
+        "seo-checker",
+        "seo-tool",
+        "typescript"
+      ],
+      "created_at": "2026-11-15T16:48:18Z",
+      "updated_at": "2026-11-21T19:02:59Z",
+      "pushed_at": "2026-11-15T16:49:31Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-15T16:48:18Z",
+          "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+          "html_url": "https://github.com/YellowLaborerMarket/Gemini-Config-Checker-",
+          "stars": 471,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ag-ui-protocol/ag-ui",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 21165,
+      "forks": 2155,
+      "language": "TypeScript",
+      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+      "html_url": "https://github.com/ag-ui-protocol/ag-ui",
+      "topics": [
+        "ag-ui-protocol",
+        "agent-frontend",
+        "agent-ui",
+        "agentic-workflow",
+        "ai-agents"
+      ],
+      "created_at": "2025-05-07T12:49:37Z",
+      "updated_at": "2026-11-22T19:38:39Z",
+      "pushed_at": "2026-11-21T18:51:48Z",
+      "license": "MIT",
+      "open_issues": 605,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+          "full_name": "ag-ui-protocol/ag-ui",
+          "language": "TypeScript",
+          "trending_stars_period": 3792,
+          "trending_total_forks": null,
+          "trending_total_stars": 21165,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "alibaba/open-code-review",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 55356,
+      "forks": 4596,
+      "language": "Go",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "html_url": "https://github.com/alibaba/open-code-review",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "code-review",
+        "code-review-assistant",
+        "harness",
+        "repository-level-context"
+      ],
+      "created_at": "2026-05-18T02:16:36Z",
+      "updated_at": "2026-11-22T19:43:01Z",
+      "pushed_at": "2026-11-22T15:34:31Z",
+      "license": "Apache-2.0",
+      "open_issues": 344,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+          "full_name": "alibaba/open-code-review",
+          "language": "Go",
+          "trending_stars_period": 4032,
+          "trending_total_forks": null,
+          "trending_total_stars": 55356,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "backnotprop/plannotator",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 14375,
+      "forks": 1427,
+      "language": "TypeScript",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+      "html_url": "https://github.com/backnotprop/plannotator",
+      "topics": [
+        "agents",
+        "claude-code",
+        "code-review",
+        "codex",
+        "obsidian",
+        "opencode",
+        "pi-mono",
+        "plan-mode",
+        "skills"
+      ],
+      "created_at": "2025-12-28T02:09:40Z",
+      "updated_at": "2026-11-22T19:42:31Z",
+      "pushed_at": "2026-11-22T19:36:57Z",
+      "license": "Apache-2.0",
+      "open_issues": 209,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+          "full_name": "backnotprop/plannotator",
+          "language": "TypeScript",
+          "trending_stars_period": 3396,
+          "trending_total_forks": null,
+          "trending_total_stars": 14375,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "bookwjitchieni1986/blender-ai-mcp-addon",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 2744,
+      "forks": 38,
+      "language": null,
+      "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration.",
+      "html_url": "https://github.com/bookwjitchieni1986/blender-ai-mcp-addon",
+      "topics": [
+        "ai-agents",
+        "ai-assistant",
+        "blender",
+        "blender-addon",
+        "blender-ai",
+        "blender-automation",
+        "blender-mcp",
+        "blender-plugin",
+        "blender-scripting",
+        "bpy",
+        "chatgpt",
+        "claude",
+        "gemini",
+        "llm",
+        "mcp",
+        "mcp-for-blender",
+        "mcp-server",
+        "model-context-protocol",
+        "ollama",
+        "opencode"
+      ],
+      "created_at": "2026-11-19T14:43:10Z",
+      "updated_at": "2026-11-22T17:01:37Z",
+      "pushed_at": "2026-11-22T13:29:36Z",
+      "license": "MIT",
+      "open_issues": 61,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-19T14:43:10Z",
+          "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration.",
+          "html_url": "https://github.com/bookwjitchieni1986/blender-ai-mcp-addon",
+          "stars": 2744,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "boringmarketer/boring-marketing-skills",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 792,
+      "forks": 280,
+      "language": "Python",
+      "description": "32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+      "html_url": "https://github.com/boringmarketer/boring-marketing-skills",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "copywriting",
+        "local-seo",
+        "marketing",
+        "seo"
+      ],
+      "created_at": "2026-11-16T15:09:46Z",
+      "updated_at": "2026-11-22T18:21:55Z",
+      "pushed_at": "2026-11-17T22:53:58Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T15:09:46Z",
+          "description": "32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+          "html_url": "https://github.com/boringmarketer/boring-marketing-skills",
+          "stars": 792,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cathrynlavery/diagram-design",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 70212,
+      "forks": 4712,
+      "language": "HTML",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "html_url": "https://github.com/cathrynlavery/diagram-design",
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "codex",
+        "data-visualization",
+        "diagrams",
+        "drawio",
+        "mermaid",
+        "svg"
+      ],
+      "created_at": "2026-04-16T18:01:16Z",
+      "updated_at": "2026-11-22T19:42:34Z",
+      "pushed_at": "2026-11-22T01:44:54Z",
+      "license": "MIT",
+      "open_issues": 45,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+          "full_name": "cathrynlavery/diagram-design",
+          "language": "HTML",
+          "trending_stars_period": 513,
+          "trending_total_forks": null,
+          "trending_total_stars": 70212,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "chuanqisun/spaceship",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 1044,
+      "forks": 111,
+      "language": "HTML",
+      "description": "Steer ideas like a space pilot!",
+      "html_url": "https://github.com/chuanqisun/spaceship",
+      "topics": [],
+      "created_at": "2026-11-16T14:43:45Z",
+      "updated_at": "2026-11-22T15:27:55Z",
+      "pushed_at": "2026-11-20T15:52:59Z",
+      "license": "MIT",
+      "open_issues": 3,
+      "default_branch": "master",
+      "sources": [
+        {
+          "created_at": "2026-11-16T14:43:45Z",
+          "description": "Steer ideas like a space pilot!",
+          "html_url": "https://github.com/chuanqisun/spaceship",
+          "stars": 1044,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cursor/plugins",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 18387,
+      "forks": 1999,
+      "language": "TypeScript",
+      "description": "Cursor plugin specification and official plugins",
+      "html_url": "https://github.com/cursor/plugins",
+      "topics": [],
+      "created_at": "2026-01-23T01:57:42Z",
+      "updated_at": "2026-11-22T19:43:38Z",
+      "pushed_at": "2026-11-22T01:02:38Z",
+      "license": null,
+      "open_issues": 691,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Cursor plugin specification and official plugins",
+          "full_name": "cursor/plugins",
+          "language": "TypeScript",
+          "trending_stars_period": 301,
+          "trending_total_forks": null,
+          "trending_total_stars": 18386,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dream-num/univer",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 31232,
+      "forks": 2840,
+      "language": "TypeScript",
+      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+      "html_url": "https://github.com/dream-num/univer",
+      "topics": [
+        "board",
+        "collaboration",
+        "doc",
+        "docx",
+        "excel",
+        "offce365",
+        "office",
+        "pdf",
+        "ppt",
+        "pptx",
+        "presentation",
+        "sdk",
+        "sheet",
+        "slides",
+        "spreadsheet",
+        "univer",
+        "word",
+        "wordprocessor",
+        "workspace",
+        "xlsx"
+      ],
+      "created_at": "2022-09-29T12:09:14Z",
+      "updated_at": "2026-11-22T19:38:22Z",
+      "pushed_at": "2026-11-22T11:13:21Z",
+      "license": "Apache-2.0",
+      "open_issues": 210,
+      "default_branch": "dev",
+      "sources": [
+        {
+          "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+          "full_name": "dream-num/univer",
+          "language": "TypeScript",
+          "trending_stars_period": 7240,
+          "trending_total_forks": null,
+          "trending_total_stars": 31232,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "elementalsouls/Claude-BugHunter",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 17450,
+      "forks": 1945,
+      "language": "Python",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "html_url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "topics": [
+        "ai-security",
+        "anthropic",
+        "application-security",
+        "bug-bounty",
+        "bugbounty",
+        "bugcrowd",
+        "claude",
+        "claude-code",
+        "claude-skills",
+        "ethical-hacking",
+        "hackerone",
+        "offensive-security",
+        "pentesting",
+        "red-team",
+        "security-tools",
+        "web-security"
+      ],
+      "created_at": "2026-05-05T11:22:32Z",
+      "updated_at": "2026-11-22T19:41:06Z",
+      "pushed_at": "2026-11-22T12:16:00Z",
+      "license": "MIT",
+      "open_issues": 15,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+          "full_name": "elementalsouls/Claude-BugHunter",
+          "language": "Python",
+          "trending_stars_period": 1721,
+          "trending_total_forks": null,
+          "trending_total_stars": 17450,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "erkamyaman/rust-anything",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 7901,
+      "forks": 628,
+      "language": "Rust",
+      "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
+      "html_url": "https://github.com/erkamyaman/rust-anything",
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "cli",
+        "code-migration",
+        "codex",
+        "ffi",
+        "golang",
+        "java",
+        "javascript",
+        "mcp",
+        "migration",
+        "napi",
+        "performance",
+        "porting",
+        "pyo3",
+        "python",
+        "rewrite",
+        "ruby",
+        "rust",
+        "typescript"
+      ],
+      "created_at": "2026-11-16T12:10:36Z",
+      "updated_at": "2026-11-22T19:41:59Z",
+      "pushed_at": "2026-11-22T19:36:09Z",
+      "license": "MIT",
+      "open_issues": 5,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T12:10:36Z",
+          "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
+          "html_url": "https://github.com/erkamyaman/rust-anything",
+          "stars": 7901,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "firecrawl/firecrawl",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 206869,
+      "forks": 10811,
+      "language": "TypeScript",
+      "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+      "html_url": "https://github.com/firecrawl/firecrawl",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-crawler",
+        "ai-scraping",
+        "ai-search",
+        "crawler",
+        "data-extraction",
+        "html-to-markdown",
+        "llm",
+        "markdown",
+        "scraper",
+        "scraping",
+        "web-crawler",
+        "web-data",
+        "web-data-extraction",
+        "web-scraper",
+        "web-scraping",
+        "web-search",
+        "webscraping"
+      ],
+      "created_at": "2024-04-15T21:02:29Z",
+      "updated_at": "2026-11-22T19:43:02Z",
+      "pushed_at": "2026-11-22T18:47:08Z",
+      "license": "AGPL-3.0",
+      "open_issues": 916,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+          "full_name": "firecrawl/firecrawl",
+          "language": "TypeScript",
+          "trending_stars_period": 910,
+          "trending_total_forks": null,
+          "trending_total_stars": 206869,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-labs-code/stitch-skills",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 11845,
+      "forks": 1472,
+      "language": "TypeScript",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "html_url": "https://github.com/google-labs-code/stitch-skills",
+      "topics": [],
+      "created_at": "2026-01-16T17:17:17Z",
+      "updated_at": "2026-11-22T19:42:05Z",
+      "pushed_at": "2026-11-20T18:08:01Z",
+      "license": "Apache-2.0",
+      "open_issues": 28,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+          "full_name": "google-labs-code/stitch-skills",
+          "language": "TypeScript",
+          "trending_stars_period": 2431,
+          "trending_total_forks": null,
+          "trending_total_stars": 11845,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+          "full_name": "google-labs-code/stitch-skills",
+          "language": "TypeScript",
+          "trending_stars_period": 516,
+          "trending_total_forks": null,
+          "trending_total_stars": 11845,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "iamajmeena/neonclipping",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 2065,
+      "forks": 115,
+      "language": "Python",
+      "description": "Paste a link, get captioned 9:16 clips in ~2 min. Free, local, open-source clipping engine (audio-first, YouTube captions, local LLM).",
+      "html_url": "https://github.com/iamajmeena/neonclipping",
+      "topics": [
+        "ai-video-clipper",
+        "clipping",
+        "faster-whisper",
+        "ffmpeg",
+        "gameplay-clipper",
+        "local-llm",
+        "ollama",
+        "open-source-video-editor",
+        "opusclip-alternative",
+        "shorts",
+        "twitch-clips",
+        "vertical-video",
+        "video",
+        "whisper",
+        "youtube-shorts-generator",
+        "yt-dlp"
+      ],
+      "created_at": "2026-11-19T10:00:43Z",
+      "updated_at": "2026-11-22T19:37:54Z",
+      "pushed_at": "2026-11-21T22:46:46Z",
+      "license": "MIT",
+      "open_issues": 30,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-19T10:00:43Z",
+          "description": "Paste a link, get captioned 9:16 clips in ~2 min. Free, local, open-source clipping engine (audio-first, YouTube captions, local LLM).",
+          "html_url": "https://github.com/iamajmeena/neonclipping",
+          "stars": 2065,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jingyaogong/minimind",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 68572,
+      "forks": 8969,
+      "language": "Python",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "html_url": "https://github.com/jingyaogong/minimind",
+      "topics": [
+        "artificial-intelligence",
+        "large-language-model"
+      ],
+      "created_at": "2024-07-27T04:34:12Z",
+      "updated_at": "2026-11-22T19:41:57Z",
+      "pushed_at": "2026-11-22T14:31:43Z",
+      "license": "Apache-2.0",
+      "open_issues": 61,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+          "full_name": "jingyaogong/minimind",
+          "language": "Python",
+          "trending_stars_period": 473,
+          "trending_total_forks": null,
+          "trending_total_stars": 68572,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "joshpuckett/allo",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 1441,
+      "forks": 39,
+      "language": "Python",
+      "description": "Allo is your friendly neighborhood typeface, free and open source",
+      "html_url": "https://github.com/joshpuckett/allo",
+      "topics": [],
+      "created_at": "2026-11-15T17:33:42Z",
+      "updated_at": "2026-11-22T19:17:37Z",
+      "pushed_at": "2026-11-18T07:19:43Z",
+      "license": "OFL-1.1",
+      "open_issues": 6,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-15T17:33:42Z",
+          "description": "Allo is your friendly neighborhood typeface, free and open source",
+          "html_url": "https://github.com/joshpuckett/allo",
+          "stars": 1441,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kajisho5/ffmpeg-skill",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 9637,
+      "forks": 859,
+      "language": "Python",
+      "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+      "html_url": "https://github.com/kajisho5/ffmpeg-skill",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "audio-processing",
+        "captions",
+        "claude-code",
+        "codex",
+        "coding-agent",
+        "cursor",
+        "ffmpeg",
+        "gemini-cli-extension",
+        "loudness-normalization",
+        "mcp",
+        "mcp-server",
+        "model-context-protocol",
+        "python",
+        "subtitles",
+        "transcoding",
+        "video",
+        "video-editing",
+        "whisper"
+      ],
+      "created_at": "2026-09-03T14:33:38Z",
+      "updated_at": "2026-11-22T19:43:07Z",
+      "pushed_at": "2026-11-22T15:36:33Z",
+      "license": "MIT",
+      "open_issues": 45,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+          "full_name": "kajisho5/ffmpeg-skill",
+          "language": "Python",
+          "trending_stars_period": 3598,
+          "trending_total_forks": null,
+          "trending_total_stars": 9637,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "leanprover-community/riemann-hypothesis",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 583,
+      "forks": 123,
+      "language": "Lean",
+      "description": "Independent Comparator setup for the Lean formalization of the Riemann Hypothesis (Alpöge, 2026-11-20)",
+      "html_url": "https://github.com/leanprover-community/riemann-hypothesis",
+      "topics": [],
+      "created_at": "2026-11-20T14:47:49Z",
+      "updated_at": "2026-11-22T19:43:27Z",
+      "pushed_at": "2026-11-22T19:05:14Z",
+      "license": null,
+      "open_issues": 46,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T14:47:49Z",
+          "description": "Independent Comparator setup for the Lean formalization of the Riemann Hypothesis (Alpöge, 2026-11-20)",
+          "html_url": "https://github.com/leanprover-community/riemann-hypothesis",
+          "stars": 583,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "meta/astryx",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 32152,
+      "forks": 2524,
+      "language": "TypeScript",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "html_url": "https://github.com/meta/astryx",
+      "topics": [],
+      "created_at": "2026-01-09T16:20:32Z",
+      "updated_at": "2026-11-22T19:41:25Z",
+      "pushed_at": "2026-11-22T19:43:25Z",
+      "license": "MIT",
+      "open_issues": 877,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open source design system that's fully customizable and agent ready",
+          "full_name": "meta/astryx",
+          "language": "TypeScript",
+          "trending_stars_period": 3967,
+          "trending_total_forks": null,
+          "trending_total_stars": 32152,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mjmirza/app-store-compliance",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 3868,
+      "forks": 234,
+      "language": "Shell",
+      "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+      "html_url": "https://github.com/mjmirza/app-store-compliance",
+      "topics": [
+        "accessibility",
+        "ai-agents",
+        "android",
+        "app-review-guidelines",
+        "app-store",
+        "app-store-connect",
+        "app-store-rejection",
+        "app-store-review",
+        "claude-code",
+        "coppa",
+        "data-safety",
+        "eu-ai-act",
+        "gdpr",
+        "google-play",
+        "google-play-policy",
+        "ios",
+        "mobile-compliance",
+        "play-console",
+        "pre-submission-checklist",
+        "privacy-manifest"
+      ],
+      "created_at": "2026-06-06T11:29:45Z",
+      "updated_at": "2026-11-22T19:41:12Z",
+      "pushed_at": "2026-11-22T17:14:36Z",
+      "license": "Other",
+      "open_issues": 27,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+          "full_name": "mjmirza/app-store-compliance",
+          "language": "Shell",
+          "trending_stars_period": 617,
+          "trending_total_forks": null,
+          "trending_total_stars": 3868,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mvanhorn/last30days-skill",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 72599,
+      "forks": 6419,
+      "language": "Python",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "html_url": "https://github.com/mvanhorn/last30days-skill",
+      "topics": [
+        "ai-prompts",
+        "ai-skill",
+        "bluesky",
+        "claude",
+        "claude-code",
+        "clawhub",
+        "deep-research",
+        "hackernews",
+        "instagram",
+        "openclaw",
+        "polymarket",
+        "recency",
+        "reddit",
+        "research",
+        "social-media",
+        "tiktok",
+        "trends",
+        "twitter",
+        "web-search",
+        "youtube"
+      ],
+      "created_at": "2026-01-23T20:37:37Z",
+      "updated_at": "2026-11-22T19:34:21Z",
+      "pushed_at": "2026-11-22T18:42:48Z",
+      "license": "MIT",
+      "open_issues": 21,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+          "full_name": "mvanhorn/last30days-skill",
+          "language": "Python",
+          "trending_stars_period": 4198,
+          "trending_total_forks": null,
+          "trending_total_stars": 72599,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+          "full_name": "mvanhorn/last30days-skill",
+          "language": "Python",
+          "trending_stars_period": 673,
+          "trending_total_forks": null,
+          "trending_total_stars": 72599,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "nataphong-lab/Open-Source-Face-Recognition-Ultimate",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 611,
+      "forks": 503,
+      "language": "Python",
+      "description": "Face Recognition, Face Liveness Detection, Face Anti-Spoofing, Face Detection, Face Landmarks, Face Compare, Face Matching, Face Pose, Face Expression, Face Attributes, Face Templates Extraction, Face Landmarks",
+      "html_url": "https://github.com/nataphong-lab/Open-Source-Face-Recognition-Ultimate",
+      "topics": [],
+      "created_at": "2026-11-19T10:40:46Z",
+      "updated_at": "2026-11-22T18:40:17Z",
+      "pushed_at": "2026-11-22T13:49:18Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-19T10:40:46Z",
+          "description": "Face Recognition, Face Liveness Detection, Face Anti-Spoofing, Face Detection, Face Landmarks, Face Compare, Face Matching, Face Pose, Face Expression, Face Attributes, Face Templates Extraction, Face Landmarks",
+          "html_url": "https://github.com/nataphong-lab/Open-Source-Face-Recognition-Ultimate",
+          "stars": 611,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "nginx/nginx",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 32856,
+      "forks": 8381,
+      "language": "C",
+      "description": "The official NGINX Open Source repository.",
+      "html_url": "https://github.com/nginx/nginx",
+      "topics": [
+        "content-cache",
+        "http",
+        "http2",
+        "http3",
+        "https",
+        "load-balancer",
+        "mail-proxy-server",
+        "nginx",
+        "quic",
+        "reverse-proxy",
+        "security",
+        "tcp-proxy-server",
+        "tls",
+        "udp-proxy-server",
+        "web-server"
+      ],
+      "created_at": "2015-06-23T10:26:27Z",
+      "updated_at": "2026-11-22T19:35:16Z",
+      "pushed_at": "2026-11-18T16:40:14Z",
+      "license": "BSD-2-Clause",
+      "open_issues": 493,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "The official NGINX Open Source repository.",
+          "full_name": "nginx/nginx",
+          "language": "C",
+          "trending_stars_period": 168,
+          "trending_total_forks": null,
+          "trending_total_stars": 32856,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "nilbuild/stick-scene",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 597,
+      "forks": 65,
+      "language": "JavaScript",
+      "description": "Skill to draw stick figure animated visuals",
+      "html_url": "https://github.com/nilbuild/stick-scene",
+      "topics": [],
+      "created_at": "2026-11-15T00:17:40Z",
+      "updated_at": "2026-11-22T19:39:44Z",
+      "pushed_at": "2026-11-16T10:36:25Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-15T00:17:40Z",
+          "description": "Skill to draw stick figure animated visuals",
+          "html_url": "https://github.com/nilbuild/stick-scene",
+          "stars": 597,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "obra/superpowers",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 324041,
+      "forks": 28754,
+      "language": "Shell",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "html_url": "https://github.com/obra/superpowers",
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
+      ],
+      "created_at": "2025-10-09T19:45:18Z",
+      "updated_at": "2026-11-22T19:37:57Z",
+      "pushed_at": "2026-11-03T23:24:58Z",
+      "license": "MIT",
+      "open_issues": 362,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An agentic skills framework & software development methodology that works.",
+          "full_name": "obra/superpowers",
+          "language": "Shell",
+          "trending_stars_period": 785,
+          "trending_total_forks": null,
+          "trending_total_stars": 324041,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "omonkeyz/xbox-emulator",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 1222,
+      "forks": 77,
+      "language": "Rust",
+      "description": "Progress notes for running Xbox Series X|S builds on PC (TomBox + rage9)",
+      "html_url": "https://github.com/omonkeyz/xbox-emulator",
+      "topics": [],
+      "created_at": "2026-11-21T08:08:39Z",
+      "updated_at": "2026-11-22T19:23:37Z",
+      "pushed_at": "2026-11-22T19:18:20Z",
+      "license": "GPL-3.0",
+      "open_issues": 26,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-21T08:08:39Z",
+          "description": "Progress notes for running Xbox Series X|S builds on PC (TomBox + rage9)",
+          "html_url": "https://github.com/omonkeyz/xbox-emulator",
+          "stars": 1222,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "openvinotoolkit/openvino",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 12064,
+      "forks": 3656,
+      "language": "C++",
+      "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "html_url": "https://github.com/openvinotoolkit/openvino",
+      "topics": [
+        "ai",
+        "computer-vision",
+        "deep-learning",
+        "deploy-ai",
+        "diffusion-models",
+        "generative-ai",
+        "good-first-issue",
+        "inference",
+        "llm-inference",
+        "natural-language-processing",
+        "nlp",
+        "openvino",
+        "optimize-ai",
+        "performance-boost",
+        "recommendation-system",
+        "speech-recognition",
+        "stable-diffusion",
+        "transformers",
+        "yolo"
+      ],
+      "created_at": "2018-10-15T10:54:40Z",
+      "updated_at": "2026-11-22T19:25:34Z",
+      "pushed_at": "2026-11-22T17:49:06Z",
+      "license": "Apache-2.0",
+      "open_issues": 1204,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+          "full_name": "openvinotoolkit/openvino",
+          "language": "C++",
+          "trending_stars_period": 155,
+          "trending_total_forks": null,
+          "trending_total_stars": 12064,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "pookjw/HermesEnabler",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 2394,
+      "forks": 200,
+      "language": "Objective-C",
+      "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+      "html_url": "https://github.com/pookjw/HermesEnabler",
+      "topics": [],
+      "created_at": "2024-12-14T11:32:03Z",
+      "updated_at": "2026-11-22T19:15:41Z",
+      "pushed_at": "2026-11-19T02:24:27Z",
+      "license": "MIT",
+      "open_issues": 84,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+          "full_name": "pookjw/HermesEnabler",
+          "language": "Objective-C",
+          "trending_stars_period": 524,
+          "trending_total_forks": null,
+          "trending_total_stars": 2394,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "realdody/americas-recomp",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 472,
+      "forks": 81,
+      "language": null,
+      "description": null,
+      "html_url": "https://github.com/realdody/americas-recomp",
+      "topics": [],
+      "created_at": "2026-11-20T15:33:20Z",
+      "updated_at": "2026-11-22T19:38:19Z",
+      "pushed_at": "2026-11-22T17:34:04Z",
+      "license": "GPL-2.0",
+      "open_issues": 17,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T15:33:20Z",
+          "description": null,
+          "html_url": "https://github.com/realdody/americas-recomp",
+          "stars": 472,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "replit/datacat",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 547,
+      "forks": 59,
+      "language": "TypeScript",
+      "description": "Self-hosted observability: metrics, logs, traces, dashboards and alerts. Stores data in PostgreSQL or ClickHouse. Accepts OpenTelemetry data.",
+      "html_url": "https://github.com/replit/datacat",
+      "topics": [
+        "alerting",
+        "apm",
+        "clickhouse",
+        "dashboards",
+        "logging",
+        "metrics",
+        "monitoring",
+        "observability",
+        "opentelemetry",
+        "postgresql",
+        "self-hosted",
+        "tracing"
+      ],
+      "created_at": "2026-11-17T02:51:06Z",
+      "updated_at": "2026-11-22T18:46:13Z",
+      "pushed_at": "2026-11-20T07:13:09Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "develop",
+      "sources": [
+        {
+          "created_at": "2026-11-17T02:51:06Z",
+          "description": "Self-hosted observability: metrics, logs, traces, dashboards and alerts. Stores data in PostgreSQL or ClickHouse. Accepts OpenTelemetry data.",
+          "html_url": "https://github.com/replit/datacat",
+          "stars": 547,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "siliconjungle/shapeshift-labs-ink-studio",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 1026,
+      "forks": 85,
+      "language": "JavaScript",
+      "description": "Sculpting, animation and simulation toolkit for pixel-art Gaussian splats",
+      "html_url": "https://github.com/siliconjungle/shapeshift-labs-ink-studio",
+      "topics": [],
+      "created_at": "2026-11-16T07:44:00Z",
+      "updated_at": "2026-11-22T19:28:07Z",
+      "pushed_at": "2026-11-22T19:40:23Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T07:44:00Z",
+          "description": "Sculpting, animation and simulation toolkit for pixel-art Gaussian splats",
+          "html_url": "https://github.com/siliconjungle/shapeshift-labs-ink-studio",
+          "stars": 1026,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sybil-solutions/inference-optimisation-skill",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 1925,
+      "forks": 179,
+      "language": "Python",
+      "description": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization",
+      "html_url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+      "topics": [
+        "agent-skill",
+        "benchmarking",
+        "claude-code",
+        "inference",
+        "llm",
+        "speculative-decoding"
+      ],
+      "created_at": "2026-11-16T18:40:04Z",
+      "updated_at": "2026-11-22T19:31:22Z",
+      "pushed_at": "2026-11-16T18:40:08Z",
+      "license": "MIT",
+      "open_issues": 18,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-16T18:40:04Z",
+          "description": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization",
+          "html_url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+          "stars": 1925,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "toeverything/AFFiNE",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 76719,
+      "forks": 5613,
+      "language": "TypeScript",
+      "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use. ",
+      "html_url": "https://github.com/toeverything/AFFiNE",
+      "topics": [
+        "app",
+        "crdt",
+        "editor",
+        "electron",
+        "knowledge-base",
+        "markdown",
+        "miro",
+        "notes",
+        "notion",
+        "notion-alternative",
+        "rust",
+        "rust-lang",
+        "rust-language",
+        "table",
+        "tableview",
+        "whiteboard",
+        "wiki",
+        "workspace"
+      ],
+      "created_at": "2022-07-31T18:45:21Z",
+      "updated_at": "2026-11-22T19:40:52Z",
+      "pushed_at": "2026-11-22T14:36:04Z",
+      "license": "Other",
+      "open_issues": 842,
+      "default_branch": "canary",
+      "sources": [
+        {
+          "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+          "full_name": "toeverything/AFFiNE",
+          "language": "TypeScript",
+          "trending_stars_period": 537,
+          "trending_total_forks": null,
+          "trending_total_stars": 76719,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tradermonty/claude-trading-skills",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 7761,
+      "forks": 1494,
+      "language": "Python",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "html_url": "https://github.com/tradermonty/claude-trading-skills",
+      "topics": [],
+      "created_at": "2025-10-19T16:37:29Z",
+      "updated_at": "2026-11-22T19:19:31Z",
+      "pushed_at": "2026-11-22T19:37:49Z",
+      "license": "MIT",
+      "open_issues": 64,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+          "full_name": "tradermonty/claude-trading-skills",
+          "language": "Python",
+          "trending_stars_period": 3113,
+          "trending_total_forks": null,
+          "trending_total_stars": 7761,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "we-promise/sure",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 17297,
+      "forks": 1516,
+      "language": "Ruby",
+      "description": "The personal finance app for everyone (by everyone)",
+      "html_url": "https://github.com/we-promise/sure",
+      "topics": [],
+      "created_at": "2025-07-23T04:13:55Z",
+      "updated_at": "2026-11-22T19:24:25Z",
+      "pushed_at": "2026-11-22T16:27:47Z",
+      "license": "AGPL-3.0",
+      "open_issues": 1146,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The personal finance app for everyone (by everyone)",
+          "full_name": "we-promise/sure",
+          "language": "Ruby",
+          "trending_stars_period": 2041,
+          "trending_total_forks": null,
+          "trending_total_stars": 17297,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "weightcashiercupola/Gemini-Config-Checker-",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 470,
+      "forks": 0,
+      "language": "Makefile",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+      "html_url": "https://github.com/weightcashiercupola/Gemini-Config-Checker-",
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker",
+        "generative-ai",
+        "lim-seo",
+        "llm",
+        "mcp-server",
+        "nextjs",
+        "open-code",
+        "seo-checker",
+        "seo-tool",
+        "typescript"
+      ],
+      "created_at": "2026-11-15T16:47:11Z",
+      "updated_at": "2026-11-21T19:37:39Z",
+      "pushed_at": "2026-11-15T16:48:06Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-15T16:47:11Z",
+          "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+          "html_url": "https://github.com/weightcashiercupola/Gemini-Config-Checker-",
+          "stars": 470,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "weldbladesmithwharf/Gemini-Config-Checker-",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 469,
+      "forks": 0,
+      "language": "Makefile",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+      "html_url": "https://github.com/weldbladesmithwharf/Gemini-Config-Checker-",
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker",
+        "generative-ai",
+        "lim-seo",
+        "llm",
+        "mcp-server",
+        "nextjs",
+        "open-code",
+        "seo-checker",
+        "seo-tool",
+        "typescript"
+      ],
+      "created_at": "2026-11-15T16:47:11Z",
+      "updated_at": "2026-11-21T19:37:39Z",
+      "pushed_at": "2026-11-15T16:48:07Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-15T16:47:11Z",
+          "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+          "html_url": "https://github.com/weldbladesmithwharf/Gemini-Config-Checker-",
+          "stars": 469,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "zhouxiaoka/autoclip",
+      "captured_at": "2026-11-22T19:43:30Z",
+      "stars": 13355,
+      "forks": 2115,
+      "language": "Python",
+      "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+      "html_url": "https://github.com/zhouxiaoka/autoclip",
+      "topics": [
+        "ai-agent",
+        "ai-video-editor",
+        "content-repurposing",
+        "desktop-app",
+        "douyin",
+        "instagram-reels",
+        "mcp",
+        "open-source",
+        "podcast",
+        "subtitles",
+        "tiktok",
+        "video-clipping",
+        "video-editing-software",
+        "xiaohongshu",
+        "youtube-shorts"
+      ],
+      "created_at": "2025-07-08T04:51:15Z",
+      "updated_at": "2026-11-22T19:42:14Z",
+      "pushed_at": "2026-11-22T17:15:28Z",
+      "license": "MIT",
+      "open_issues": 30,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+          "full_name": "zhouxiaoka/autoclip",
+          "language": "Python",
+          "trending_stars_period": 640,
+          "trending_total_forks": null,
+          "trending_total_stars": 13355,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
@@ -307232,7 +309396,8 @@
     "daily-20261117T160305Z": 137,
     "daily-20261118T203455Z": 144,
     "daily-20261119T204029Z": 152,
-    "daily-20261120T202432Z": 160
+    "daily-20261120T202432Z": 160,
+    "daily-20261122T194330Z": 168
   },
   "sent_slots": {
     "2026-09-30-pm": 61,
@@ -307252,7 +309417,8 @@
     "daily:2026-11-17": 137,
     "daily:2026-11-18": 144,
     "daily:2026-11-19": 152,
-    "daily:2026-11-20": 160
+    "daily:2026-11-20": 160,
+    "daily:2026-11-22": 168
   },
   "pending_digests": {},
   "llm_daily_requests": {
@@ -307278,7 +309444,8 @@
     "2026-11-17": 15,
     "2026-11-18": 17,
     "2026-11-19": 15,
-    "2026-11-20": 12
+    "2026-11-20": 12,
+    "2026-11-22": 13
   },
   "delivery_progress": {
     "20260930T143510Z": {
