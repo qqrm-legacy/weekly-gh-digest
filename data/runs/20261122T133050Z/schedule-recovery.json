@@ -1,0 +1,15 @@
+{
+  "slot": "weekly:2026-11-16",
+  "mode": "preview",
+  "send": false,
+  "llm": false,
+  "reason": "explicit-manual-request",
+  "event": "workflow_dispatch",
+  "cron": "",
+  "edition": "weekly",
+  "delivery_enabled": true,
+  "daily_delivery_enabled": true,
+  "issue_due_at": "2026-11-16T07:00:00+00:00",
+  "selected_at": "2026-11-22T13:30:50.065931+00:00",
+  "issue_age_seconds": 541850
+}
