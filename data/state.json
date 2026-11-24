@@ -4,6 +4,7 @@
     "version": 1,
     "daily_covered": {
       "0xkaka/homeport": "2026-11-20",
+      "4lwayz/portwatch-vi": "2026-11-24",
       "852wa/jizura": "2026-09-29",
       "abdulmannanmalik13-wq/adobe-substance-3d-studio": "2026-11-11",
       "actions/runner-images": "2026-11-03",
@@ -26,12 +27,14 @@
       "arekejoker/qwen21-nsfw-pose-skill": "2026-11-22",
       "astral-sh/uv": "2026-11-18",
       "aureliengmz/clearwater": "2026-11-16",
+      "avaneesh-inamdar/stream-tube-desktop": "2026-11-24",
       "averygan/reclip": "2026-09-29",
       "backnotprop/plannotator": "2026-11-13",
       "block/buzz": "2026-11-03",
       "bodila51/gtavi-claudecode": "2026-11-19",
       "bookwjitchieni1986/blender-ai-mcp-addon": "2026-11-20",
       "byoungd/up": "2026-09-30",
+      "caho1/open-claude-ui": "2026-11-24",
       "cathrynlavery/diagram-design": "2026-11-19",
       "cloudflare/quiche": "2026-11-09",
       "cloudflare/security-audit-skill": "2026-09-29",
@@ -66,6 +69,7 @@
       "flutter/flutter": "2026-10-01",
       "freestylefly/wechatbridge": "2026-11-09",
       "frigadehq/yogurt": "2026-11-14",
+      "fxceless/victory-fork": "2026-11-24",
       "fxembed/fxembed": "2026-09-29",
       "garrytan/gbrain": "2026-11-09",
       "gathin23/cleanyourtv": "2026-11-20",
@@ -175,6 +179,7 @@
       "tracer-cloud/opensre": "2026-11-19",
       "tradermonty/claude-trading-skills": "2026-11-13",
       "trycua/cua": "2026-09-29",
+      "ubiquitarianism/leonida": "2026-11-24",
       "v-modal/awesome-jev-tools": "2026-11-08",
       "vectifyai/pageindex": "2026-09-29",
       "vectorize-io/hindsight": "2026-09-29",
@@ -184,6 +189,7 @@
       "willfaust/madeira": "2026-09-29",
       "woo20080623-cell/cinebench-desktop": "2026-11-10",
       "wy51ai/floorplan-3d": "2026-11-14",
+      "xcl-dev/xcl": "2026-11-24",
       "xiaoyouchr/ghost-downloader-3": "2026-11-19",
       "yappologistic/cui": "2026-11-10",
       "ybblab/jiumi": "2026-11-20",
@@ -200,6 +206,14 @@
         "description": "homeport — инструмент, позволяющий направлять трафик к «чувствительным» сайтам (Claude, Google, Stripe и др.) через один фиксированный residential‑прокси, тогда как остальные запросы продолжают использовать обычный VPN‑сервер (airport). Это устраняет проблему частой смены IP‑адресов, когда разные узлы находятся в разных странах, и тем самым снижает риск блокировок, запросов верификации и отказов при оплате. Схема работы проста: устройство отправляет запрос к выбранному в airport узлу‑переключателю, тот передаёт его к residential‑выходу, который и виден целевому сайту как единственный «домашний» IP. При этом смена узла‑переключателя не меняет конечный IP, что обеспечивает согласованность адреса на всех устройствах.\n\nДля настройки требуется три компонента: (1) рабочий airport‑подписка, (2) статический residential‑прокси с поддержкой HTTP или SOCKS5 и учётными данными, (3) клиент‑приложение, поддерживающее правила‑переписывания (Clash Party, Clash Verge Rev, FlClash, Shadowrocket). После ввода адреса, порта, логина и пароля в специальную страницу‑генератор, скрипт‑правило автоматически добавляется в конфигурацию клиента. Затем включается режим «Rule», активируется системный прокси (и при необходимости виртуальный TUN‑интерфейс), и трафик к выбранным сайтам начинает проходить через residential‑выход, а остальные запросы остаются на обычном маршруте.\n\nКлючевые возможности: фиксированный residential‑IP для всех устройств, независимая от выбранного узла‑переключателя; автоматическое переключение IPv4 при ошибках IPv6 у Claude; поддержка как HTTP, так и SOCKS5‑прокси без необходимости менять клиент. Ограничения: нужен статический residential‑прокси (динамический или datacenter‑прокси не подходят), а некоторые сервисы (например, v2rayN) не способны реализовать требуемую схему, поэтому рекомендуется использовать Clash‑клиенты. При правильной настройке пользователь получает единый «домашний» IP для всех чувствительных сервисов без потери скорости для остальных соединений.",
         "joke": "",
         "evidence_quote": "**一句话：让 Claude、Google、Stripe 这些网站，在你所有设备上都看到同一个“住宅 IP”。**"
+      },
+      "4lwayz/portwatch-vi": {
+        "policy_version": 7,
+        "source_description": "Does GTA VI run on PC yet? A live tracker of community recompilation and emulation efforts, updated daily.",
+        "source_readme": "# PortWatch VI\n\n**Does GTA VI run on PC yet?** A static GitHub Pages site that tracks every serious community effort to recompile, emulate or port the leaked Xbox Series build of GTA VI to PC. All efforts are scored on one ladder, and a scout refreshes the data every 3 hours.\n\n- One headline progress bar shows the closest effort, with the top projects pinned to it.\n- A live countdown runs to the missing executable's expected drop.\n- A leaderboard card per effort shows its own bar, milestone ladder, groundwork breakdown, what works and what's blocking.\n- Further sections cover the watchlist of early projects, a toolkit of asset tools, the scout's inbox of new candidates, and fake-download warnings.\n\nNo game files, keys or executables are hosted or linked, ever.\n\n## Deploy on GitHub Pages\n\n1. Create a new GitHub repository and push this folder to its `main` branch.\n2. In the repo, open **Settings → Pages** and set **Source** to **GitHub Actions**.\n3. Open **Settings → Actions → General** and make sure workflows are allowed.\n4. Open **Actions → Scout → Run workflow** to run the first scout. It commits fresh data and deploys the site.\n\nEach deploy also runs `scripts/build-site.mjs`, which turns `data/tracker.json` into pages search engines can read: one page per news story (`news/<id>.html`), a news archive, an RSS feed (`news/feed.xml`) and `sitemap.xml`. It then pings [IndexNow](https://www.indexnow.org/) (Bing, Yandex and others; no account needed) with the URLs that changed since the last deploy. For Google, add the site in Search Console and submit `sitemap.xml`.\n\nFrom then on, `Scout` runs every 3 hours (00:17, 03:17, 06:17 … UTC) on GitHub's servers, so no computer of yours needs to be on. Any push to `main` redeploys the site through `Deploy site`. To change the frequency, edit the `cron` line in `.github/workflows/scout.yml`. For example, `17 6 * * *` runs it once a day. GitHub can delay scheduled runs by a few minutes when it's busy.\n\n## What the scout does (`scripts/scout.mjs`)\n\n1. **Refreshes** every tracked repo: stars, forks, issues, last push, commits in the last 7 days, and whether it's gone (404, or 451 for a DMCA block). It also hashes each README to notice changes.\n2. **Spots claims.** If a README newly says GTA VI boots, reaches the menu or runs at some FPS, the card shows an \"unverified claim\" banner and the change feed records it.\n3. **Discovers** new repos from GitHub and GitLab searches (`scout.queries` in `data/tracker.json`), Hacker News, Bluesky, Mastodon, Lemmy and 4chan, plus Reddit and X when keys are set, by pulling GitHub links out of posts. It also gathers **headlines** from the Google News and Bing News feeds, keeping only stories about the leak, ports, takedowns, scams or official news. And it **watches GitHub's public DMCA log** for new Take-Two or Rockstar notices, flagging any tracked project they name. On 4chan it uses the free read-only API, at one request per second. It opens only /v/ threads that mention GTA VI together with port terms (recomp, emulator, leak, executable, GitHub…), plus /vg/'s /gtag/ and /emugen/ generals. Change the boards with `scout.chan.boards`. Nothing from 4chan is shown on the site except, indirectly, repo names that pass every filter.\n4. **Filters out spam** such as clone networks, download lures and \"PC installer\" repos. Their names are counted under *There is no download*, never linked.\n5. **Filters out copies.** Re-uploads of tracked projects are flagged when they reuse a tracked project's name or have a README that is 60% or more identical, renamed copies included. Original fan games and repos without a real README are skipped too. Candidates already waiting are re-checked every run.\n6. **Scores substance** from code language, size, technical depth, status tables, tests and commit activity. Repos with real code go to **New candidates**, shown as plain text and not linked until reviewed. Thin or off-topic ones are remembered and skipped.\n7. **Writes news** (needs `ANTHROPIC_API_KEY`). Claude searches the web for takedowns, bans, confirmed leaks, legal news, scams and official announcements, then writes up to two short original articles. It runs at most every 11 hours, not on every 3-hourly scout run, to keep costs down. A source is kept only if it came up in Claude's own search. Each article's image is the source's preview image, credited and linked back; it falls back to a generated cover.\n8. **Records** a change feed, the day's leader score for the sparkline, and a run summary.\n\n### Optional secrets (Settings → Secrets and variables → Actions)\n\n| Secret | What it enables |\n|---|---|\n| `ANTHROPIC_API_KEY` | **Claude review.** When a tracked README changes, or a new candidate shows up, Claude (`claude-opus-5-5`) reads the README and recent commits and re-scores the effort. It also promotes or rejects candidates automatically. Guardrails clamp the output: a GTA VI milestone only counts if Claude quotes text that really appears in the repo, and",
+        "description": "PortWatch VI — это статический сайт на GitHub Pages, который ежедневно собирает и отображает все серьёзные попытки сообщества перекомпилировать, эмулировать или портировать утёкшую Xbox Series‑версию GTA VI на ПК. Автоматический «scout» сканирует репозитории на GitHub и GitLab, а также публичные источники (Hacker News, Reddit, 4chan и др.), фиксирует изменения в README, количество звёзд, форков, коммитов и наличие DMCA‑блокировок, после чего обновляет JSON‑базу данных и генерирует страницы сайта. На главной странице показывается прогресс‑бар самого близкого к готовому порта, а отдельные карточки‑лидерборды раскрывают детали каждого проекта: текущий статус, пройденные вехи, что уже работает и какие препятствия остаются. Кроме того, система публикует новостные статьи, генерируемые Claude (Anthropic), которые собирают информацию о takedown‑уведомлениях, официальных заявлениях и скандалах, а также предупреждают о фейковых загрузках.\n\nДля пользователя это значит, что он получает единый, постоянно обновляемый источник информации о статусе GTA VI‑порта без необходимости вручную отслеживать сотни репозиториев и форумных обсуждений. Сайт не хранит игровые файлы, ключи или исполняемые файлы, поэтому не нарушает авторские права и не предлагает нелегального контента. Основные возможности: (1) автоматический сбор и оценка репозиториев по коду, активности и технической глубине; (2) фильтрация спама и дублирующих репозиториев, чтобы показывать только оригинальные усилия; (3) генерация новостных статей и визуального тайм‑каунта до ожидаемого релиза. Развёртывание происходит полностью на GitHub Actions, поэтому пользователю не требуется держать включённый компьютер — достаточно лишь запустить первый workflow и позволить планировщику выполнять сканирование каждые три часа.",
+        "joke": "",
+        "evidence_quote": "**Does GTA VI run on PC yet?** A static GitHub Pages site that tracks every serious community effort to recompile, emulate or port the leaked Xbox Series build of GTA VI to PC. All efforts are scored on one ladder, and a scout refreshes the data every 3 hours."
       },
       "abdulmannanmalik13-wq/adobe-substance-3d-studio": {
         "policy_version": 7,
@@ -345,6 +359,14 @@
         "joke": "Веб‑страница с водой, где даже рыбы могут кликнуть «плюнуть» в ваш курсор.",
         "evidence_quote": "Real-time, photoreal shallow water in a single HTML file. WebGL2, no libraries, no build step, no external assets."
       },
+      "avaneesh-inamdar/stream-tube-desktop": {
+        "policy_version": 7,
+        "source_description": "Native YouTube client for Windows in Rust, with SponsorBlock, DeArrow and Return YouTube Dislike built in",
+        "source_readme": "<p align=\"center\">\n  <img src=\"assets/logo.png\" alt=\"Stream Tube\" width=\"120\">\n</p>\n\n<h1 align=\"center\">Stream Tube</h1>\n\n<p align=\"center\">\n  A native YouTube client for Windows and Linux, written in Rust.<br>\n  No browser, no ads, no tracking. SponsorBlock, DeArrow and Return YouTube Dislike built in.\n</p>\n\n<p align=\"center\">\n  <img src=\"https://img.shields.io/badge/platform-Windows%20%7C%20Linux-0078D6\" alt=\"Windows and Linux\">\n  <img src=\"https://img.shields.io/github/v/release/Avaneesh-Inamdar/Stream-Tube-Desktop?include_prereleases&sort=semver&label=release\" alt=\"Latest release\">\n  <a href=\"https://github.com/Avaneesh-Inamdar/Stream-Tube-Desktop/releases\"><img src=\"https://img.shields.io/github/downloads/Avaneesh-Inamdar/Stream-Tube-Desktop/total?label=downloads&color=FF0033&cacheSeconds=3600\" alt=\"Total downloads\"></a>\n  <img src=\"https://img.shields.io/badge/built%20with-Rust-B7410E\" alt=\"Rust\">\n  <img src=\"https://img.shields.io/badge/license-MIT-green\" alt=\"MIT license\">\n</p>\n\n<p align=\"center\">\n  <img src=\"docs/screenshots/home.png\" alt=\"Home feed\" width=\"900\">\n</p>\n\n## Why\n\nI wanted YouTube on my desktop without keeping a browser tab open, and without the\nads, autoplaying junk and sponsor reads. The existing options were either Electron\napps that eat a gigabyte of RAM or web frontends that break every other week.\nStream Tube is a single native app: the UI is drawn on the GPU with\n[GPUI](https://github.com/zed-industries/zed/tree/main/crates/gpui), and video\ngoes through libmpv, so it starts fast and scrolls smoothly even with big feeds.\n\n## What it does\n\n**No ads, anywhere**\n- No pre-roll, mid-roll or overlay ads: the app plays the video stream directly, so YouTube's ads are never loaded\n- No promoted videos, banners or sponsored cards in Home, search or Shorts\n- Sponsor reads inside videos are skipped too, with SponsorBlock (below)\n- Nothing to install or keep updated: it isn't an ad blocker that YouTube can break, ads simply aren't part of how the app plays video\n\n**Watching**\n- Home, Shorts, Subscriptions, Explore categories, channels (including their courses and shows), playlists and search, with search suggestions and your recent searches\n- A personal Home without an account: \"For you\" recommends videos related to what you've watched and searched in the app, mixed with new uploads from your subscriptions. Signed in, Home is your own YouTube Home feed\n- A *Recently uploaded* chip on Home, like youtube.com's: videos from your Home feed and subscriptions uploaded in the last two weeks, newest first\n- Tabs: Ctrl+click anything (or *Open in new tab* in a video's menu) to open it in the background, and switch with Ctrl+Tab, Ctrl+1…9 or a click. Ctrl+T opens a new tab, Ctrl+W or a middle click closes one\n- Videos made for kids (YouTube Kids) play and download like any other video\n- Old video annotations are back: notes, speech bubbles and clickable links from YouTube's annotation archive, drawn over the video where they used to be (turn them off in *Settings → Player* or from the player's gear menu)\n- Arabic, Hebrew and other right-to-left text is shown in the right order\n- Shorts follow your account's recommendations when you're signed in, or start from the Shorts you watched last\n- libmpv player with hardware decoding, codec preference (AV1, VP9 or H.264), 360p up to 4K, enhanced bitrate, speed control (remembered per channel if you want), captions you can style (font, colour, opacity, background and edge, with a live preview), chapters and seek-bar preview thumbnails\n- A chapters panel beside the player, like youtube.com: click the chapter name in the player bar (or *View all* under the description) to list every chapter with its thumbnail, follow the one playing, and jump to any of them\n- Timestamps in descriptions and comments seek the video and bring the player back into view\n- Resumes where you left off, remembers your last quality, autoplays the next video or loops, and plays whole playlists as a queue\n- A miniplayer while you browse that you can drag anywhere and resize (it remembers where you put it), a picture-in-picture window, theater mode and fullscreen\n- Keeps playing when minimized, or pauses and resumes when you come back\n- Live streams with live chat (Top chat or every message), and chatting when signed in\n- Shorts in a vertical player that moves to the next one by itself, or open them in the regular player. Shorts comments open their replies as threads too\n- Hold Space or press and hold on the video to play at 2x\n- Hover previews: rest the pointer on a thumbnail and it plays inside it, muted, with a seek bar to skip around\n- Most replayed graph with \"jump ahead\", ambient glow around the player (on or off from the player's gear menu), force original audio instead of auto-dubbing\n- A screenshot button in the player bar\n- Comments sorted by Top, Timed or Newest. *Timed* works like youtube.com: comments that mention a moment of the video appear as playback reaches it\n- Comments show",
+        "description": "Stream Tube – это нативный клиент YouTube для Windows и Linux, написанный на Rust. Приложение заменяет браузер, полностью избавляя от рекламных роликов, спонсорских вставок и трекинга, поскольку видео воспроизводятся через libmpv без загрузки рекламных потоков. Встроенные модули SponsorBlock, DeArrow и Return YouTube Dislike автоматически пропускают рекламные сегменты, заменяют заменённые титры и показывают оригинальные оценки, что делает просмотр чище и быстрее.\n\nПользователь получает привычный набор функций: лента Home, Shorts, подписки, поиск с подсказками, плейлисты и возможность открывать контент в нескольких вкладках, управляемых привычными сочетаниями клавиш. Воспроизведение поддерживает аппаратное декодирование, выбор кодека (AV1, VP9, H.264), разрешения от 360p до 4K, а также расширенные возможности плеера – стилизованные субтитры, панель глав с главами, тайм‑коды в описаниях и комментариях, мини‑плеер, PiP и автоплей. Приложение сохраняет позицию просмотра, качество и скорость воспроизведения, а также умеет показывать старые аннотации YouTube и поддерживает RTL‑текст.\n\nДля пользователей, которым нужен быстрый, лёгкий и рекламно‑чистый доступ к YouTube без постоянного открытого браузера, Stream Tube предлагает полностью нативный UI, отрисованный GPUI, и небольшое потребление памяти по сравнению с Electron‑решениями. Требования ограничиваются наличием GPU‑поддержки для рендеринга и установленного libmpv; приложение не предоставляет собственного бэкенда и полагается на публичные API YouTube, поэтому при изменениях в этих API возможны сбои, как и у любого стороннего клиента.",
+        "joke": "Наконец-то можно смотреть YouTube, не слыша, как реклама просит купить что‑то, а только звук вашего собственного клика.",
+        "evidence_quote": "I wanted YouTube on my desktop without keeping a browser tab open, and without the\nads, autoplaying junk and sponsor reads. The existing options were either Electron\napps that eat"
+      },
       "backnotprop/plannotator": {
         "policy_version": 7,
         "source_description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
@@ -376,6 +398,14 @@
         "description": "Проект — дополнение mcp-for-blender-pro, которое превращает Blender в интерактивного AI‑ассистента. Пользователь задаёт запрос в виде диалога, а модель, подключённая через Model Context Protocol (MCP), получает доступ к сцене, может инспектировать объекты, создавать геометрию, менять материалы, искать и импортировать ассеты, а также выполнять многократные шаги автоматизации. Всё происходит в едином визуальном рабочем пространстве: чат, превью viewport и доска задач находятся в отдельном окне‑студии, где можно наблюдать изменения в реальном времени и одобрять их.\n\nДля гибкости система поддерживает любые модели, совместимые с OpenAI‑Chat, Anthropic‑Messages, Google‑Gemini, Ollama и другими, а также локальные эндпоинты. Пользователь сохраняет несколько подключений, может использовать один «ассистент» для быстрых правок или собрать команду из менеджера, рабочих и ревьюеров, где каждый агент получает отдельную роль, инструкцию и модель. Задачи исполняются последовательно, а при неудачном выполнении допускается одна попытка исправления, после чего процесс останавливается. В наборе включено 21 специализированный сценический инструмент, а интерфейс доступен на пяти языках.\n\nТипичный сценарий: художник формулирует идею «создать продуктовый стенд с подсветкой», выбирает модель, отправляет запрос, ассистент генерирует объекты, назначает материалы и размещает камеру, показывая каждый шаг в чате и в превью. После одобрения сцена готова к рендеру или экспорту. Требования: Blender 4.2 + на Windows x64, активное интернет‑соединение для облачных моделей (локальные модели работают без него), а также наличие API‑ключей для выбранных провайдеров.",
         "joke": "Когда AI в Blender спрашивает, где разместить свет, он явно не хочет, чтобы вы включали лампу в реальной жизни.",
         "evidence_quote": "**An AI assistant for Blender that can inspect your scene, build objects, edit materials, find assets and carry out multi-step workflows—with a visual chat workspace and a built-in Model Context Protocol (MCP) server.**"
+      },
+      "caho1/open-claude-ui": {
+        "policy_version": 7,
+        "source_description": "基于 REA 深度拆解并高保真还原 Claude 官方桌面端 UI。还原 30 个独立 React 组件与 8 项硬核交互物理算法，附带 3000+ 行逆向分析手册。",
+        "source_readme": "# Open Claude UI (`open-claude-ui`)\n\n<p align=\"center\">\n  <a href=\"https://openclaudeui.com\">\n    <picture>\n      <source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/images/ocu-wordmark-dark.svg\" />\n      <img src=\"assets/images/ocu-wordmark-light.svg\" width=\"180\" alt=\"Open Claude UI (OCU) logo\" />\n    </picture>\n  </a>\n</p>\n\n<p align=\"center\">\n  🌐 <strong>官网：<a href=\"https://openclaudeui.com\">openclaudeui.com</a></strong>\n</p>\n\n<p align=\"center\">\n  <strong>基于 REA 深度拆解，高保真生产级还原 Claude 设计系统 (CDS) 与工程交互物理学。</strong>\n</p>\n\n<p align=\"center\">\n  <strong>简体中文</strong> · <a href=\"README-en.md\">English</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://openclaudeui.com\"><img src=\"https://img.shields.io/badge/%E5%AE%98%E7%BD%91-openclaudeui.com-ea580c\" alt=\"官网\" /></a>\n  <a href=\"https://github.com/Caho1/open-claude-ui\"><img src=\"https://img.shields.io/github/stars/Caho1/open-claude-ui?style=flat&logo=github&color=ea580c\" alt=\"GitHub Stars\" /></a>\n  <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-blue.svg\" alt=\"License: MIT\" /></a>\n  <a href=\"https://github.com/morluto/rea\"><img src=\"https://img.shields.io/badge/Reverse%20Engineered%20with-REA-ea580c?logo=github\" alt=\"Reverse Engineered with REA\" /></a>\n  <a href=\"assets/README.md\"><img src=\"https://img.shields.io/badge/assets-clean--room%20compliance-success\" alt=\"Asset Compliance\" /></a>\n  <a href=\"https://www.typescriptlang.org/\"><img src=\"https://img.shields.io/badge/TypeScript-5.5+-blue?logo=typescript\" alt=\"TypeScript\" /></a>\n  <a href=\"https://react.dev/\"><img src=\"https://img.shields.io/badge/React-18+-61DAFB?logo=react\" alt=\"React\" /></a>\n  <a href=\"https://tailwindcss.com/\"><img src=\"https://img.shields.io/badge/TailwindCSS-3.4+-38B2AC?logo=tailwind-css\" alt=\"TailwindCSS\" /></a>\n  <a href=\"https://www.framer.com/motion/\"><img src=\"https://img.shields.io/badge/Framer_Motion-11+-0055FF?logo=framer\" alt=\"Framer Motion\" /></a>\n</p>\n\n---\n\n## 📖 简介 (Introduction)\n\n`open-claude-ui` 是基于对现代桌面端 AI 客户端进行深度拆解与逆向分析构建的高保真开源 UI 组件库与动效引擎。\n\n> 🧭 **取证基线**：当前版本卷为 [docs/v5.11492.5](docs/v5.11492.5/README.md)（`@ant/desktop 5.11492.5`，Electron `45.2.1`，经 `Info.plist` / `app.asar/package.json` / 构建戳 `commitHash 1403e2cf…` 三路核实）；[docs/v4.16336.0](docs/v4.16336.0/README.md)（侧边浏览器全量）与 [docs/v4.29.0-4.4212.0](docs/v4.29.0-4.4212.0/README.md)（主取证 3.6556.2）为历史基线。全部经 **REA** 静态提取 + **Main Process Debugger** / 9229 Node inspector 只读活体实测双通道验证。\n>\n> 📁 **文档版本命名规范**：逆向分析手册的目录名从本版起**直接对齐 Claude Desktop 的版本号**（如 `docs/v4.29.0-4.4212.0/`）；后续 Claude 更新后，新取证报告将以对应版本号新建目录。目录名可写单个版本（如 `docs/v5.0.0/`）或覆盖区间（如 `docs/v4.29.0-4.4212.0/`，表示该报告在首个版本取证、后续版本增量复核）。早期的 `docs/v1/`、`docs/v2/` 保持原名不变，作为历史快照保留（v2 取值已被取代，以 `docs/v4.29.0-4.4212.0/` 为准）。\n\n整个逆向推导、反混淆静态分析与 ASAR 资源解构，均依托于先进的多平台逆向工程框架 **[REA (Reverse Engineer Anything)](https://github.com/morluto/rea)** 完成——通过 REA 的静态 AST 解析、闭包代码反混淆与运行时跟踪能力，穿透生产级压缩包，精准还原了底层工程物理常数与数学模型。\n\n不同于市面上常见的盲猜或近似复刻，本项目所有组件规范、物理阻尼常数、着色器关键帧及音频管道均**严格依据真实前端架构反编译验证**提炼而成：\n* **温润的人文质感 (Editorial Warmth)**：纯正陶土橙（Clay `#d97757`）、4 层微对比表面阶梯（Surface 0-3）与视网膜高分屏发丝细边补偿（Hairline Ring）；\n* **严苛的交互物理学 (Interaction Physics)**：4 套生产级物理弹簧参数调校、4px 指针移动死区、CJK 输入法合成守卫、滚动渐隐遮罩（v1 取证的 7 档非线性阶梯；3.6556.2 已重构为 `@property` 变量驱动，见 [docs/v4.29.0-4.4212.0](docs/v4.29.0-4.4212.0/README.md)）；\n* **高阶视听与系统架构 (Audiovisual & Architecture)**：基于原生 Web Audio API 的零延迟合成提示音、以光标为锚点的画廊跑道平移缩放、macOS 桌面毛玻璃透明融合与 Cowork 多代理协同拓扑。\n\n> 💡 **架构分层说明 (Architecture & Portability)**：  \n> 本项目的 **令牌层 (Tokens) 与纯 CSS 表现层可脱离 React 与 Tailwind 单独使用**。无论是自研桌面 Harness（如 DSH、各类 Agent 桌面容器）、传统 Web 页面还是 Vue/Svelte 宿主，只需引入 `@import \"open-claude-ui/tokens.css\";` 或 `@import \"open-claude-ui/pure.css\";`，即可直接消费全量 316 个设计令牌（初测于 3.6556.2，现以 docs/v5.11492.5 卷实测为准；桌面端 5.11492.5 主窗口样式表内共 934 个 `--cds-*` 定义）、Zero-JS 原生滚动消隐遮罩（`[data-cds-scroll-fade]`）与核心动效类，详情见下文快速上手。\n\n> ⚖️ **版权与合规声明 (DMCA & Assets Policy)**：  \n> 本开源项目**不公开分发任何专有二进制资产**（包括商业字体 `.ttf` 与录音 `.mp3`）。本项目提供原生系统级字体回退栈与 Web Audio API 纯代码合成音效，完全自包含、合规安全。详情参见 [assets/README.md](assets/README.md)。\n\n---\n\n## 🌟 核心特性 (Key Features)\n\n```mermaid\ngraph TD\n    OCUI[\"open-claude-ui\"]\n    \n    OCUI --> Tokens[\"1. 设计哲学与令牌体系<br/>(Surfaces 0-3, Clay, Hairlines, System Fonts)\"]\n    OCUI --> Atoms[\"2. 基础原子交互控件<br/>(CdsButton, SegmentedControl, StatusIndicators, Dialog)\"]\n    OCUI --> Stream[\"3. 会话流与指令引擎<br/>(Composer, IME Guard, Model Switcher, MCP Cards)\"]\n    OCUI --> Motion[\"4. 动效物理学与着色器<br/>(Spring Physics, Ambient Shimmer, Scroll Fade Masks)\"]\n    OCUI --> Media[\"5. 视听多媒体与产物交互<br/>(Synthetic Audio, Lightbox Pan/Zoom, Split Resizer, Epitaxy)\"]\n    OCUI --> Desktop[\"6. 桌面架构与协作拓扑<br/>(macOS Vibrancy, Sidebar DnD, Cowork Canvas, A11y Roving)\"]\n    OCUI --> Setup[\"7. 完整工程规范与开箱即用<br/>(Tailwind, CSS Themes, Zero-Binary Dependency)\"]\n```\n\n1. **37 个开箱即用代码文件**：30 个 v1 基线模块（11 个基础原子控件 + 19 个深度架构物理学模块与 React Hooks）+ 5 个后续版本新增模块 + 2 个主题/配置资产，零黑盒依赖。\n2. **纯原生系统级排版与音效**：支持系统高保真字体回退栈，内置基于 Web Audio 振荡器的零延迟提示音合成引擎。\n3. **交互式组件故事书 (Storybook Preview)**：内置单文件开箱即用的离线 Storybook，支持浏览器直接打开预览全部组件动效。\n4. **七大领域分卷完整技术手册**：",
+        "description": "open-claude-ui – это открытая библиотека UI‑компонентов и движка анимаций, построенная на основе глубокого статического и динамического анализа официального десктопного клиента Claude. Авторы использовали фреймворк REA (Reverse Engineer Anything) для разбора ASAR‑пакетов, обратного декодирования закрытого кода и извлечения точных физических параметров взаимодействия, что позволило воспроизвести 30 независимых React‑компонентов и восемь сложных алгоритмов анимации с высокой степенью соответствия оригиналу. Каждый элемент, от цветовой палитры Clay #d97757 до параметров пружинных анимаций, зафиксирован в документированных версиях, синхронных с конкретными выпусками Claude Desktop (например, v5.11492.5).\\n\\nБиблиотека предоставляет несколько уровней использования: токен‑слой и чистый CSS можно подключать к любому фронтенду без React и Tailwind, а набор готовых атомарных контролов (кнопки, сегментированные переключатели, диалоги) и более сложных модулей (композер, медиаплеер, Cowork‑канва) доступны как готовые React‑компоненты. Встроенный Storybook позволяет просматривать все компоненты и их анимации офлайн, а система токенов включает более 3000 переменных CSS, что упрощает стилизацию и адаптацию под собственный дизайн.\\n\\nПроект ориентирован на разработчиков, желающих создать собственные AI‑клиенты или интегрировать элементы Claude в веб‑ и десктоп‑приложения, при этом соблюдая требования к лицензированию и отсутствию проприетарных бинарных ресурсов. Требования включают Node.js, поддержку TypeScript 5.5+, React 18+ и TailwindCSS 3.4+, а также возможность работы в среде, где доступны Web Audio API и macOS‑специфичные эффекты (vibrancy). Ограничения: проект не распространяет оригинальные шрифты и аудиофайлы, заменяя их системными альтернативами, и полностью зависит от точности REA‑анализа, поэтому любые изменения в официальном клиенте Claude могут потребовать обновления токенов и компонентов.",
+        "joke": "",
+        "evidence_quote": "`open-claude-ui` 是基于对现代桌面端 AI 客户端进行深度拆解与逆向分析构建的高保真开源 UI 组件库与动效引擎。"
       },
       "cathrynlavery/diagram-design": {
         "policy_version": 7,
@@ -512,6 +542,14 @@
         "description": "Yogurt — приложение для создания приватных AI‑заметок о встречах, которое работает на macOS, Windows и Linux. Оно записывает звук микрофона и системный аудио, преобразует речь в текст в реальном времени с помощью whisper.cpp или Apple SpeechAnalyzer, а затем генерирует сводки и ответы на вопросы, используя локальную модель через llama.cpp. Все данные — аудио, транскрипты, заметки и результаты обработки — сохраняются только на компьютере пользователя; приложение обращается в сеть лишь для загрузки моделей и проверки обновлений.\n\nКлючевые возможности включают живые транскрипции более чем 99 языков, автоматическое определение говорящих (только на macOS), поиск по папкам, заголовкам и содержимому, экспорт в Markdown и возможность подключить стороннее приложение‑ассистент через локальный MCP‑сервер. После однократного скачивания моделей (примерно 5 ГБ для небольшого и 14 ГБ и более для более мощных) все операции происходят офлайн, что позволяет использовать Yogurt без постоянного интернет‑соединения. Требования к системе: macOS 14.4+ (Apple Silicon), Windows 10 2004+ (x64) или Ubuntu 22.04+ (x64) с минимум 8 ГБ ОЗУ; при недостаточной мощности приложение предупреждает пользователя во время установки.",
         "joke": "",
         "evidence_quote": "- **Live transcripts.** Yogurt records calls and turns speech into text as you talk.\n- **Meeting summaries.** Yogurt writes up the conversation and any notes you add.\n- **Private b"
+      },
+      "fxceless/victory-fork": {
+        "policy_version": 7,
+        "source_description": "Work-in-progress fork of VIctory: getting an Xbox Series title to render and run on a Windows PC. No game files.",
+        "source_readme": "# VIctory fork (work in progress)\n\nA work-in-progress fork of [VIctory](https://github.com/Marvisak/VIctory), a\ncompatibility layer that runs an Xbox Series title natively on Windows from\nfiles the user supplies. This fork follows upstream\n`main` and adds fixes aimed at one goal: getting the game's world to render\ncorrectly and playably on one particular PC.\n\n**This repository contains no game files, code or assets.** You need your own\ncopy of the game. It is not affiliated with or endorsed by the game's\ndeveloper or publisher.\n\n## Credits\n\n- **[VIctory](https://github.com/Marvisak/VIctory)** by Marvisak and its\n  contributors is the base of everything here: the loader, the runtime\n  services, the Direct3D 12 back end and the shader recompiler. Licensed\n  GPL-3.0-or-later; so is this fork. Upstream's history is kept intact below\n  the single commit that carries this fork's changes.\n- **[XCL](https://github.com/ivall/xcl)** by ivall and its contributors\n  (GPL-2.0-only) was used as a reference for how the same title behaves under\n  another layer. Fixes inspired by it were written anew in VIctory's code.\n- This fork's changes were developed with [Claude Code](https://claude.com/claude-code).\n\n## Status of this fork (2026-11-25)\n\n**Not playable yet: 2.5 to 4 frames per second, and shadowed areas are black.**\nTested on one machine: Windows 11, Intel i7-14700KF, NVIDIA RTX 4070 12 GB,\n32 GB RAM. The Series X profile is used throughout.\n\n| Stage | State in this fork |\n|-------|--------------------|\n| Boot, menus, start screen | works, 30 fps (as upstream) |\n| Opening cutscene | plays from start to finish, in order, lit: title cards, credits cards, night and dusk shots |\n| Saves | the game autosaves a checkpoint and loads it again |\n| First gameplay scene (the prologue) | renders: characters, textures, sky, sunlit exterior; HUD, pause menu and pad input work |\n| Light in shadow | missing: the game's ray-traced bounce light and ray-traced lamp and sun shadows do not run yet, so anything the sun does not hit directly is black |\n| Frame rate in the world | 2-4 fps: 420-450 ms per frame by default, 240-350 ms with the newer switches (`VICTORY_RELAY=2`, or `VICTORY_LATE_WAIT=3 VICTORY_WIDE_BACK=1 VICTORY_CARD_BUFFERS_MIN_MB=1 VICTORY_CARD_BUFFERS_MB=1024`); it started at 3-6 seconds per frame |\n| Stability | no driver hang or device loss in normal runs (a hang introduced by the wave64 update was found and fixed: its barrier form for 64-lane programs is now off unless `VICTORY_WAVE_WIDE=1`) |\n\n### What this fork changed (summary)\n\nRendering:\n- Meshlet culling read its scene buffers as the wrong kind of view, so the world drew almost nothing; fixed.\n- Per-draw descriptor tables could run out, after which draws used slots never made for them and the card hung; fixed.\n- Light packed by the game's compute shaders was read back through empty copies (sky, probes, fog); fixed for every mip level and layer.\n- The fog reconstruction, shadow-mask, hair, blend-shape skinning, fire and several material programs did not translate; fixed.\n- Gathers at a named mip level (with and without an offset) read level 0; fixed.\n- Implicit-level samples outside pixel shaders produced invalid DXIL in 730 compute programs; fixed.\n- Rectangle lists, depth and stencil twins for depth textures written by compute, texture read-backs.\n- Ray tracing, in progress and off by default: the game's own structure-builder programs translate, title memory can be read by raw address from shaders, the hardware ray/box and ray/triangle test is emulated in DXIL (checked against a reference on the GPU), and 59 of the 64 trace programs translate. Nothing is lit by it yet. See [docs/fork-ray-tracing.md](docs/fork-ray-tracing.md).\n\nSpeed and memory:\n- Waits for memory values, write-watch queries and page queries no longer walk page tables per call.\n- Large title buffers get a copy in card memory, with shader writes found by hashing on the card.\n- Submissions can be sent ahead of the wait for the card (`VICTORY_LATE_WAIT`), with a relay thread that lands results as the card finishes (`VICTORY_RELAY`): in a first five-minute run the card's idle time behind the submitting thread fell from about 136 to 30 ms per frame.\n- Title memory can be opened as a graphics heap so that buffers are used in place instead of copied (`VICTORY_INPLACE`, first stage only; a probe confirmed the approach on the test GPU).\n- The bindless texture queue no longer uploads stale views; the view table no longer grows without bound; the pipeline library is mapped instead of read into memory.\n- An intermittent device loss was traced to the pipeline library file being replaced while mapped; fixed.\n\n- Translated shaders get clean-up passes over the finished module (dead code, constant folding, reuse of values, branch facts); the pack's host instruction count falls by about 43 %, worth about 20 ms of GPU time per frame on the test machine (`VICTORY_SHADER_OPT=0` turns them off).\n\nMost of the newer speed",
+        "description": "Проект представляет собой форк совместимости‑слоя VIctory, позволяющего запускать оригинальные файлы Xbox Series X на Windows‑ПК. Цель форка — добиться корректного рендеринга игрового мира и обеспечить управляемый игровой процесс на конкретном железе, при этом в репозитории нет игровых файлов, их пользователь должен предоставить самостоятельно. Авторы исправили ряд критических багов, связанных с culling‑мэшлетов, дескрипторными таблицами и чтением данных освещения, что позволило отобразить персонажей, текстуры, небо и HUD в первой сцене пролога, а также обеспечить работу автосохранений и меню. Кроме визуальных правок, внедрены оптимизации памяти и ускорения подачи команд GPU: уменьшено время ожидания карты, введён релэй‑поток и поддержка in‑place буферов, что сократило простои GPU с 136 мс до 30 мс за кадр на тестовой системе (i7‑14700KF, RTX 4070). Текущий статус — мир рендерится со скоростью 2‑4 fps, без трассировки лучей и с полностью чёрными тенями, но базовая игра запускается, меню работают, а автосохранения функционируют. Пользователь может экспериментировать с набором переменных окружения (VICTORY_RELAY, VICTORY_LATE_WAIT и др.) для дальнейшего повышения производительности, однако полноценный игровой опыт пока недостижим.",
+        "joke": "Запускать Xbox‑игру на ПК без эмуляции процессора — почти как заставить консоль писать код на C#.",
+        "evidence_quote": "A work-in-progress fork of [VIctory](https://github.com/Marvisak/VIctory), a\ncompatibility layer that runs an Xbox Series title natively on Windows from\nfiles the user supplies. Th"
       },
       "garrytan/gbrain": {
         "policy_version": 7,
@@ -1129,6 +1167,14 @@
         "joke": "Если ваш брокер спросит, кто подбирает сделки, ответьте: «Это мой Claude, а не я!»",
         "evidence_quote": "Claude Trading Skills started as a personal project to use AI to improve my own trading process.\n\nClaude Trading Skills is a Claude Skills-based trading workflow toolkit for time-constrained individual investors."
       },
+      "ubiquitarianism/leonida": {
+        "policy_version": 7,
+        "source_description": "A continuation of Leonida, the Xbox > PC port interface of GTA VI",
+        "source_readme": "<h1 align=\"center\">\n  <br>\n  <a>\n  <img src=\"assets/logo.svg\" alt=\"Leonida Continued\" width=\"200\">\n</a>\n\n  <br>\n  <b>Leonida Continued</b>\n  <br>\n</h1>\n\n<h4 align=\"center\">Grand Theft Auto VI (Xbox Series) running natively on Windows, built on your PC from your own copy.\n</h4>\n\n<p align=\"center\">\n  <a href=\"docs/i18n/README.md\">Other languages</a> |\n  <a href=\"#project-status\">Status</a> |\n  <a href=\"#how-to-build\">How to build</a> |\n  <a href=\"#how-it-works\">How it works</a> |\n  <a href=\"#want-to-help\">Want to help?</a> |\n  <a href=\"#credits\">Credits</a> |\n  <a href=\"#license\">License</a> |\n  <a href=\"https://discord.gg/ETf4qj5acN\">Discord</a> |\n  <a href=\"https://t.me/mandyport\">Telegram</a>\n</p>\n\nLeonida is a static recompilation project. The Xbox Series CPU is x86-64 like a PC, so the game's code is loaded\nand run natively, and the console's system software is reimplemented. The console's precompiled RDNA2 GPU programs\nare translated to SPIR-V for Vulkan. The game's models, textures and audio are read from your package. All of this\nhappens **on your PC, from your own copy of the game**.\n\n> [!IMPORTANT]\n> This repository **does not contain the game, keys or an executable**, and it does not explain how to get them. You\n> need your own copy, with its files already readable on disk. Nothing here decrypts or works around any protection.\n> Everything the build creates (the generated shaders, extracted assets, the runtime folder and your saves) comes\n> from your game and stays on your PC. Never share those files.\n\n> [!NOTE]\n> **This is a continuation of [NotRexed's Leonida project](https://github.com/ItsNotRexed/Leonida).** The original\n> author has left the project, and development continues here with its full commit history. Credit for the work up to\n> that point belongs to NotRexed and the contributors listed in the history.\n\nDiscord: https://discord.gg/ETf4qj5acN\n\nTelegram: https://t.me/mandyport\n\nOriginal author's Git Mirror: https://git.notrexed.dev/notrexed/Leonida\n<br>\n\n## Project status\n\n**Early. The game does not boot yet.** Everything that can be done without the game's executable is in place, so\nwork on booting can start as soon as one is available to a developer.\n\n| What | Status |\n|---|---|\n| Booting, story mode, anything playable | ❌ No |\n| Finding and checking your copy (Xbox Series 1.0.2.1) | ✅ Works |\n| Shaders: carve, unpack native RDNA2 code, disassemble | ✅ All 26,503 |\n| Shaders: RDNA2 → SPIR-V translation | ✅ **26,503 / 26,503 translated**: 2,236 VS, 12,101 PS, 2,689 CS, 9,282 mesh, 195 geometry, with a per-shader metadata index for pipeline creation. The LLVM 23.1.5 Linux rerun at `c432cdc` and the LLVM 23.1.3 Windows rerun at `43d0015` both translated all 26,503 ([Linux](https://github.com/ItsNotRexed/Leonida/issues/644#issuecomment-7072972586), [Windows](https://github.com/ItsNotRexed/Leonida/issues/644#issuecomment-7074299915)). Translation and SPIR-V validation are separate steps; validation results are listed below. ⚠️ 23,841 are wave64: exact on 64-wide subgroups (AMD). On 32-wide subgroups (NVIDIA, Intel), compute and mesh shaders are exact with wave64 emulation (`--wave64-emulate`, on by default there); cross-half wave ops in vertex, pixel and geometry shaders are still approximate |\n| SPIR-V validation (`spirv-val`) | ✅ **26,503 / 26,503 passed** in the LLVM 23.1.5 Linux rerun at `c432cdc` and in the full-corpus rerun at `43d4703`, after `dcd8ecf` fixed the SPIR-V ID-bound error ([Linux rerun](https://github.com/ItsNotRexed/Leonida/issues/644#issuecomment-7072972586), [full-corpus rerun](https://github.com/ItsNotRexed/Leonida/issues/881#issuecomment-7075507328)). On Windows at `43d0015`, all 26,503 translated but 26,501 passed validation; the two ID-bound failures were fixed by `dcd8ecf`. The intermediate `dedd75c` run also passed 26,501. |\n| Shader translator checked on a real GPU | ⚠️ The hand-written GPU tests (vertex fetch, texture sampling, exports, ALU ops, partial-register ops, barycentrics, wave-uniform branches, compute LDS/barriers/buffer stores, wave64 masks) have been run on more than 30 GPU and driver combinations, with results in [#166](https://github.com/ItsNotRexed/Leonida/issues/166): NVIDIA Turing, Ampere, Ada and Blackwell (Windows and Linux); AMD GCN3, RDNA1, RDNA2, RDNA3 and RDNA4 (Windows driver and RADV); Intel Gen9 (ANV); Apple M1 (MoltenVK, no geometry or mesh stages); and Mesa llvmpipe. Wave64 tests need 64-wide subgroups (AMD) or `LEONIDA_W64_EMULATE=1`. These are small test shaders: the game's own shaders are checked by `spirv-val` and by driver pipeline creation (`vk_pipeline_check`), not by their output |\n| Models (OBJ with real names, UVs, material references) | ✅ Exported. A ten-archive scan at decoder pin `e293917` recovered **382,781 models** with zero readback decode failures. This includes **343,327** models from `levels.rpf`. A full OBJ export of that archive is pending. See [recount and export scope](docs/models.md#full-archive-re-count-at-",
+        "description": "Проект — статическая перекомпиляция оригинальной версии GTA VI для Xbox Series, позволяющая запускать её нативно на Windows. Благодаря тому, что процессор консоли — x86‑64, код игры загружается и исполняется без эмуляции, а системное ПО консоли воссоздаётся в виде пользовательского рантайма. Преобразователь переводит предкомпилированные RDNA2‑шэйдеры в SPIR‑V, что делает их совместимыми с Vulkan‑драйверами разных производителей. Все модели, текстуры и аудио извлекаются из вашей копии игры и остаются на локальном диске, без передачи в облако.\n\nКлючевые возможности: полностью реализована проверка и перевод всех 26 503 шэйдеров (2 236 вершинных, 12 101 пиксельных и др.) с подтверждённой валидацией SPIR‑V; экспорт моделей в OBJ‑формате, уже извлечено более 380 000 моделей, включая почти весь контент уровней; поддержка широкого спектра GPU (AMD, NVIDIA, Intel, Apple) через тесты, проверяющие работу шэйдеров, текстур и вычислительных блоков. На текущий момент игра ещё не загружается, но инфраструктура для загрузки, проверки копии и трансляции шэйдеров полностью готова, что позволяет разработчикам сразу приступить к отладке загрузочного процесса, имея все необходимые артефакты.\n\nСценарий использования: пользователь копирует файлы Xbox‑версии GTA VI на ПК, запускает сборку проекта, которая извлекает ресурсы, переводит шэйдеры и формирует директорию с готовой к запуску средой. Затем, получив исполняемый файл игры (не предоставляемый репозиторием), можно попытаться запустить его через созданный рантайм. Требования включают наличие рабочей копии игры, поддерживаемый Vulkan‑драйвер и компилятор LLVM 23.x; ограничения — отсутствие текущей возможности загрузки и отсутствие каких‑либо средств обхода защиты, проект работает только с легально полученными данными.",
+        "joke": "Перевести RDNA2‑шэйдеры в SPIR‑V — почти как заставить Xbox‑консоль говорить на Vulkan.",
+        "evidence_quote": "Leonida is a static recompilation project. The Xbox Series CPU is x86-64 like a PC, so the game's code is loaded\nand run natively, and the console's system software is reimplemented. The console's precompiled RDNA2 GPU programs\nare translated to SPIR-V for Vulkan. The game's models, textures and audio are read from your package. All of this\nhappens **on your PC, from your own copy of the game**."
+      },
       "v-modal/awesome-jev-tools": {
         "policy_version": 7,
         "source_description": "A curated list of tools  built for Jev — TypeSafe AI's System One model for typed decisions.",
@@ -1168,6 +1214,14 @@
         "description": "Проект представляет собой полностью клиентское приложение для планировки и визуализации жилых помещений. Пользователь в 2D‑режиме размещает более 60 видов мебели и бытовой техники, меняет размеры, вращает предметы и даже редактирует несущие и ненесущие стены; все действия синхронно отражаются в 3D‑сцене, построенной на Three.js, где доступен как обзор сверху, так и режим первого лица с управлением WASD. Приложение работает без сборки: достаточно открыть единственный файл index.html, а все данные сохраняются в localStorage, что позволяет сохранять и восстанавливать проекты без сервера. Среди ключевых возможностей – автоматический подсчёт площади комнат и примерный расчёт стоимости отделочных материалов с учётом 5 % потерь, экспорт готовых планов в PNG и импорт/экспорт JSON‑файлов, а также поддержка переключения интерфейса между китайским и английским языками. Сценарий применения: дизайнер интерьера быстро создаёт несколько вариантов планировки, проверяя, как изменится освещение при смене времени суток или как будет выглядеть мебель в реальном масштабе, а затем делится готовыми изображениями с клиентом. Требования минимальны – современный браузер и доступ к CDN для загрузки Three.js; первая загрузка 3D‑сцены требует интернет‑соединения, но дальнейшая работа возможна офлайн, поскольку все модели и данные уже находятся в браузере.",
         "joke": "",
         "evidence_quote": "纯前端的户型装修设计工具：在 2D 平面图上摆放家具、拆改墙体、测量尺寸，一键切换到 Three.js 3D 场景，可以鸟瞰，也可以第一人称漫游。整个应用就是一个 `index.html`，无需构建，打开即用。"
+      },
+      "xcl-dev/xcl": {
+        "policy_version": 7,
+        "source_description": "Xbox Series compatibility layer for Windows - runs console game code natively, reimplements the console system libraries and recompiles RDNA2 shaders to DXIL",
+        "source_readme": "# XCL – Xbox Series X|S → Windows compatibility layer\n\n[![Discord](https://img.shields.io/badge/Discord-join%20the%20server-5865F2?logo=discord&logoColor=white)](https://discord.gg/xcl)\n**Discord: <https://discord.gg/xcl>**\n\nXCL is a compatibility layer that runs Xbox Series X|S (GDK) games you own on a Windows PC - in the spirit of Wine/Proton. There is no CPU emulation: the game's x64 code runs natively, and XCL provides its own, independently written implementations of the console system libraries the PC does not have (`kernelx.dll`, XGameRuntime, `d3d12_xs.dll`, …). The console's GPU code (RDNA2 machine code) is recompiled into PC shaders (HLSL → DXIL).\n\nXCL works only on unpacked game files you already own. It does not download, decrypt or unpack game packages (XVC / MSIXVC) and contains nothing for circumventing DRM. The repository holds no code, headers or binaries from the console SDK, no keys and no game data; the Windows components XCL relies on (XGameRuntime, XAudio2, D3D12, DXC) come from your own system or the public Windows SDK and are not distributed with XCL.\n\n## Games\n\n| Game | Package (version) | State | What works | Limits |\n|---|---|---|---|---|\n| **Minecraft Preview** | `Microsoft.MinecraftBeta` 1.18.3064.0 | ✅ | fully playable | – |\n| **Unicorn Overlord** | `SEGAofAmericaInc.Pa253b0c1Y` 1.0.0.6 | ✅ | fully playable | – |\n| **Fortnite** | `436609B6.FortniteClient` 2.0.1461.7919 | ✅ | works fully, as far as the game allows without its online services | the game itself is online-only (multiplayer servers) |\n| **XDefiant** | `Ubisoft.XDefiant-Game` 1.0.0.186 | ✅ | works fully, as far as the game allows without its servers | the game's own servers have been shut down |\n| **A newer retail game** | – | 🚧 | starts in ~4 s, runs at a steady 30 fps without a crash, shows its menus and goes on past the first one to its settings; fits a 32 GB machine (~15 GB committed in the menus) | gameplay not reached yet; its minimap mesh pipelines are refused |\n\n## Highlights\n\n- **100 % of a retail game's shaders translate** – all 26 698 RDNA2 programs (26 503 records) of its shader pack\n  become HLSL; random samples compile to DXIL with 0 errors.\n- **The game's own console DLLs run on the PC** – its Bink 2 video codec decodes the game's\n  movies, its ray-tracing BVH builder builds acceleration structures on a PC GPU, the AMD FSR 4\n  console upscaler runs a whole frame on a PC GPU, the GDK HTTP library initialises.\n- **Console textures decode exactly** – the GFX10 tiling and mip layout reproduce 909 of 912\n  textures of the game's texture archive byte for byte, its volume textures included.\n- **370+ automated tests**, including GPU tests that compare translated shaders against expected\n  results instruction by instruction.\n\n## What works\n\n✅ done and verified\n\n### Running the game's code\n\n| Feature | State | What it does | Verified by |\n|---|---|---|---|\n| **PE loader** | ✅ | relocations, imports by name / ordinal / delay-load, TLS callbacks, exception tables, game DLLs, data-driven import routing (HLE / Windows / stub) | the game's 16 console DLLs load with 0 unresolved imports |\n| **kernelx** | ✅ | title memory (budget from MicrosoftGame.Config, physical pages), threads on the PC's processors, modules, OS / console info | unit + end-to-end tests |\n| **Memory** | ✅ | title graphics memory shared by CPU and GPU without copies, up to 16 GB (4 GiB windows) | GPU tests: loads, stores and atomics across windows |\n| **File system** | ✅ | console paths (`GAME:`, `G:`, `D:` …) → the game folder; writes go to an overlay, the game folder is never modified; the console's drives: `S:\\` (persistent local storage) and `T:\\` (temp) in the title's data folder; free disk space answered for console paths | end-to-end: the test title's folder stays byte-identical; PLS and free space through the real call path |\n| **DirectStorage** | ✅ | the console's DirectStorage queues: file and memory sources, zlib, and BCPack – the console's texture compression – for BC1, BC3, BC4, BC5, BC6H and BC7 (BC2 and the hardware swizzle are refused) | unit tests on synthetic streams; retail BCPack chunks of all six modes byte-identical with a reference decoder (`XCL_SAMPLE_BCPACK`) |\n\n### System services\n\n| Feature | State | What it does | Verified by |\n|---|---|---|---|\n| **XGameRuntime** | ✅ | the GDK thunk protocol real titles use, laid out from a table of all 396 GDK runtime functions; offline XUser, XGameSave, persistent local storage, XPackage, XGame (title id), XSystem – the title sees an Xbox Series X / S; task queues, async, networking and dialogs through the PC's XGameRuntime | the game's libHttpClient initialises; users, saves and storage through the real call path; slot layout cross-checked against the game's own thunks |\n| **Input** | ✅ | GameInput: one gamepad – the PC's XInput controller, and keyboard and mouse as a gamepad (see [Controls](#controls)) | unit tests; an Xbox controller in Minecraft |\n| **Audio** | ✅ | XAudio2 → system ",
+        "description": "XCL — это слой совместимости, позволяющий запускать нативный x64‑код Xbox Series X|S (GDK) на Windows без эмуляции процессора. Проект реализует собственные версии системных библиотек консоли (kernelx.dll, XGameRuntime, d3d12_xs.dll и т.д.) и перекомпилирует машинный код GPU RDNA2 в HLSL‑DXIL, благодаря чему шейдеры работают без ошибок. Среди поддерживаемых функций — загрузка PE‑файлов, управление памятью, файловая система с оверлей‑записью, DirectStorage‑очереди и полный набор сервисов XGameRuntime, включая ввод через XInput и аудио через XAudio2. Пользователь может запускать распакованные файлы собственных игр, получая полностью играбельный опыт, как показано на примерах Minecraft Preview, Fortnite и XDefiant, при этом XCL не содержит DRM‑обхода, SDK‑кодов или игровых данных. Ограничения: требуется предварительно распакованный пакет игры, поддержка ограничена текущим набором реализованных библиотек и шэйдеров, а онлайн‑зависимые функции (мультиплеер, серверы) работают только в рамках доступных сервисов.",
+        "joke": "Запускать Xbox‑игры на ПК без эмуляции процессора — почти как заставить консоль писать код на C#.",
+        "evidence_quote": "XCL is a compatibility layer that runs Xbox Series X|S (GDK) games you own on a Windows PC - in the spirit of Wine/Proton. There is no CPU emulation: the game's x64 code runs natively, and XCL provides its own, independently written implementations of the console system libraries the PC does not have (`kernelx.dll`, XGameRuntime, `d3d12_xs.dll`, …). The console's GPU code (RDNA2 machine code) is recompiled into PC shaders (HLSL → DXIL)."
       },
       "xiaoyouchr/ghost-downloader-3": {
         "policy_version": 7,
@@ -1220,6 +1274,7 @@
     },
     "daily_retry_at": {
       "0marcontreras/gta6recomp": "2026-11-21T20:27:29.807016775Z",
+      "ajncsystem/shadowofthecolossus-pc": "2026-11-25T23:53:04.868392775Z",
       "alex314618-create/jevrev": "2026-11-13T20:02:20.546398057Z",
       "amitshekhariitbhu/ai-system-design": "2026-11-14T19:51:01.145518500Z",
       "anthropics/claude-plugins-official": "2026-11-21T20:29:53.521660875Z",
@@ -1234,6 +1289,7 @@
       "czjam/gjgjxweb": "2026-11-09T17:59:32.157735009Z",
       "czzzzzzj/mdldm-maitian": "2026-11-18T16:06:25.489050709Z",
       "deepseek-ai/chat-demo": "2026-11-15T18:09:55.766151909Z",
+      "deterministic-machines/deslop-please": "2026-11-25T23:51:29.540898179Z",
       "dgreenheck/tidewater": "2026-11-09T11:17:51.623830033Z",
       "egoist/mygo-music": "2026-11-09T18:00:31.425299177Z",
       "ggml-org/llama.cpp": "2026-11-13T19:58:35.437090720Z",
@@ -1243,6 +1299,7 @@
       "herdrdev/herdr": "2026-11-12T17:13:17.541760500Z",
       "heyputer/everything": "2026-11-23T19:49:30.915299088Z",
       "huamidev/gestaltx": "2026-11-10T19:55:47.416710463Z",
+      "ivall/xcl": "2026-11-25T23:48:26.839954745Z",
       "jev-chat/jev-chat-jarvis": "2026-11-09T10:32:23.460442293Z",
       "jhaizhou-ops/s2arm": "2026-11-10T19:54:55.651603211Z",
       "joshpuckett/allo": "2026-11-18T16:07:06.763012023Z",
@@ -1250,9 +1307,12 @@
       "kryvora-network/kryvora-node": "2026-11-09T10:32:41.310378426Z",
       "lemxy/winrust": "2026-11-21T20:27:43.926264373Z",
       "leonxlnx/earshot": "2026-11-23T19:49:43.161185942Z",
+      "licincan/blender-ai-mcp-addon": "2026-11-25T23:53:16.116891516Z",
       "liuziyu77/valen": "2026-11-16T16:31:40.809227516Z",
+      "marvisak/victory": "2026-11-25T23:47:26.785871697Z",
       "morluto/rea": "2026-11-20T20:47:26.896588247Z",
       "mvanhorn/last30days-skill": "2026-11-17T19:40:54.429510665Z",
+      "myluxy/overdrive": "2026-11-25T23:53:10.656867867Z",
       "newliver666/apk-reverse": "2026-11-09T10:32:37.481788403Z",
       "noniv/abyssal-garden": "2026-11-16T16:29:06.763213530Z",
       "nvidia/model-optimizer": "2026-11-09T10:34:55.775146046Z",
@@ -321684,6 +321744,2037 @@
         }
       ],
       "readme_excerpt": null
+    },
+    {
+      "full_name": "0xkaka/homeport",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 658,
+      "forks": 119,
+      "language": "HTML",
+      "description": null,
+      "html_url": "https://github.com/0xkaka/homeport",
+      "topics": [],
+      "created_at": "2026-11-17T05:39:46Z",
+      "updated_at": "2026-11-24T18:56:05Z",
+      "pushed_at": "2026-11-19T09:05:16Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-17T05:39:46Z",
+          "description": null,
+          "html_url": "https://github.com/0xkaka/homeport",
+          "stars": 658,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "4lwayz/portwatch-vi",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 2804,
+      "forks": 70,
+      "language": "JavaScript",
+      "description": "Does GTA VI run on PC yet? A live tracker of community recompilation and emulation efforts, updated daily.",
+      "html_url": "https://github.com/4lwayz/portwatch-vi",
+      "topics": [],
+      "created_at": "2026-11-21T23:16:41Z",
+      "updated_at": "2026-11-24T23:46:44Z",
+      "pushed_at": "2026-11-24T22:40:20Z",
+      "license": null,
+      "open_issues": 51,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-21T23:16:41Z",
+          "description": "Does GTA VI run on PC yet? A live tracker of community recompilation and emulation efforts, updated daily.",
+          "html_url": "https://github.com/4lwayz/portwatch-vi",
+          "stars": 2804,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "AFK-surf/xnulinux",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 3335,
+      "forks": 149,
+      "language": "Objective-C++",
+      "description": "XNU as a loadable kernel module inside Linux (macOS personality for arm64 Linux)",
+      "html_url": "https://github.com/AFK-surf/xnulinux",
+      "topics": [],
+      "created_at": "2026-11-20T10:18:31Z",
+      "updated_at": "2026-11-24T23:44:40Z",
+      "pushed_at": "2026-11-24T23:25:00Z",
+      "license": "Other",
+      "open_issues": 10,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T10:18:31Z",
+          "description": "XNU as a loadable kernel module inside Linux (macOS personality for arm64 Linux)",
+          "html_url": "https://github.com/AFK-surf/xnulinux",
+          "stars": 3335,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Ahmet-Dedeler/awesome-gta6-reverse-engineering",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 687,
+      "forks": 34,
+      "language": "HTML",
+      "description": "Curated list of open-source GTA VI (GTA 6) reverse engineering tools, RAGE 9 / RPF9 archive explorers, TTPF texture & ADAT/AWC audio decoders, format docs, and Xbox Series / PS5 translation layers.",
+      "html_url": "https://github.com/Ahmet-Dedeler/awesome-gta6-reverse-engineering",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "game-preservation",
+        "grand-theft-auto-vi",
+        "gta-6",
+        "gta-vi",
+        "gta6",
+        "gtavi",
+        "modding",
+        "rage9",
+        "rdna2",
+        "recompilation",
+        "reverse-engineering",
+        "rpf9",
+        "rust",
+        "scarlett",
+        "ttpf",
+        "xbox-series"
+      ],
+      "created_at": "2026-11-21T17:08:48Z",
+      "updated_at": "2026-11-24T22:52:12Z",
+      "pushed_at": "2026-11-24T19:00:55Z",
+      "license": "Other",
+      "open_issues": 3,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-21T17:08:48Z",
+          "description": "Curated list of open-source GTA VI (GTA 6) reverse engineering tools, RAGE 9 / RPF9 archive explorers, TTPF texture & ADAT/AWC audio decoders, format docs, and Xbox Series / PS5 translation layers.",
+          "html_url": "https://github.com/Ahmet-Dedeler/awesome-gta6-reverse-engineering",
+          "stars": 687,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Avaneesh-Inamdar/Stream-Tube-Desktop",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 863,
+      "forks": 62,
+      "language": "Rust",
+      "description": "Native YouTube client for Windows in Rust, with SponsorBlock, DeArrow and Return YouTube Dislike built in",
+      "html_url": "https://github.com/Avaneesh-Inamdar/Stream-Tube-Desktop",
+      "topics": [
+        "dearrow",
+        "desktop-app",
+        "gpui",
+        "mpv",
+        "rust",
+        "sponsorblock",
+        "windows",
+        "youtube",
+        "youtube-client"
+      ],
+      "created_at": "2026-11-22T18:50:17Z",
+      "updated_at": "2026-11-24T23:35:10Z",
+      "pushed_at": "2026-11-24T12:39:40Z",
+      "license": "MIT",
+      "open_issues": 54,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-22T18:50:17Z",
+          "description": "Native YouTube client for Windows in Rust, with SponsorBlock, DeArrow and Return YouTube Dislike built in",
+          "html_url": "https://github.com/Avaneesh-Inamdar/Stream-Tube-Desktop",
+          "stars": 863,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 59209,
+      "forks": 4878,
+      "language": "TypeScript",
+      "description": "Chrome DevTools for coding agents",
+      "html_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "topics": [
+        "browser",
+        "chrome",
+        "chrome-devtools",
+        "debugging",
+        "devtools",
+        "mcp",
+        "mcp-server",
+        "puppeteer"
+      ],
+      "created_at": "2025-09-11T10:39:55Z",
+      "updated_at": "2026-11-24T23:46:47Z",
+      "pushed_at": "2026-11-24T19:53:24Z",
+      "license": "Apache-2.0",
+      "open_issues": 118,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Chrome DevTools for coding agents",
+          "full_name": "ChromeDevTools/chrome-devtools-mcp",
+          "language": "TypeScript",
+          "trending_stars_period": 1581,
+          "trending_total_forks": null,
+          "trending_total_stars": 59209,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "CocoSgt/riemann-hypothesis-lean",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 560,
+      "forks": 89,
+      "language": "Lean",
+      "description": "Mirror of Levent Alpöge's Lean proof of the Riemann Hypothesis (with Claude). All credit to Levent Alpöge. Source: alpo.ge",
+      "html_url": "https://github.com/CocoSgt/riemann-hypothesis-lean",
+      "topics": [],
+      "created_at": "2026-11-20T14:59:14Z",
+      "updated_at": "2026-11-24T22:43:38Z",
+      "pushed_at": "2026-11-20T15:13:36Z",
+      "license": null,
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T14:59:14Z",
+          "description": "Mirror of Levent Alpöge's Lean proof of the Riemann Hypothesis (with Claude). All credit to Levent Alpöge. Source: alpo.ge",
+          "html_url": "https://github.com/CocoSgt/riemann-hypothesis-lean",
+          "stars": 560,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "EL4CTEO/fast-anything",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 3593,
+      "forks": 255,
+      "language": "Rust",
+      "description": "Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
+      "html_url": "https://github.com/EL4CTEO/fast-anything",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude-code",
+        "claude-code-plugin",
+        "codex",
+        "developer-tools",
+        "ffi",
+        "mcp",
+        "mcp-server",
+        "napi-rs",
+        "nodejs",
+        "optimization",
+        "performance",
+        "profiler",
+        "pyo3",
+        "python",
+        "rewrite-it-in-rust",
+        "ruby",
+        "rust",
+        "typescript"
+      ],
+      "created_at": "2026-11-21T14:40:27Z",
+      "updated_at": "2026-11-24T23:46:48Z",
+      "pushed_at": "2026-11-24T15:28:28Z",
+      "license": "MIT",
+      "open_issues": 15,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-21T14:40:27Z",
+          "description": "Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
+          "html_url": "https://github.com/EL4CTEO/fast-anything",
+          "stars": 3593,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "GoogleChrome/modern-web-guidance-src",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 10811,
+      "forks": 822,
+      "language": "TypeScript",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "html_url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "topics": [],
+      "created_at": "2026-01-27T20:22:24Z",
+      "updated_at": "2026-11-24T23:46:15Z",
+      "pushed_at": "2026-11-24T21:38:47Z",
+      "license": "Apache-2.0",
+      "open_issues": 396,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Keep your coding agent up to date with the latest web best practices",
+          "full_name": "GoogleChrome/modern-web-guidance-src",
+          "language": "TypeScript",
+          "trending_stars_period": 2694,
+          "trending_total_forks": null,
+          "trending_total_stars": 10811,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 64713,
+      "forks": 5901,
+      "language": "Python",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "html_url": "https://github.com/HKUDS/CLI-Anything",
+      "topics": [],
+      "created_at": "2026-03-08T13:52:57Z",
+      "updated_at": "2026-11-24T23:44:39Z",
+      "pushed_at": "2026-11-20T10:05:15Z",
+      "license": "Apache-2.0",
+      "open_issues": 294,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+          "full_name": "HKUDS/CLI-Anything",
+          "language": "Python",
+          "trending_stars_period": 1075,
+          "trending_total_forks": null,
+          "trending_total_stars": 64713,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "INK-Q/agy-fast",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 1165,
+      "forks": 67,
+      "language": "TypeScript",
+      "description": "Non-invasive MCP accelerator plugin for Google Antigravity (CLI/Desktop/IDE): cuts LLM turns (-34%), token quota (-31%), and upload traffic (-40%) without affecting native UI or diffs.",
+      "html_url": "https://github.com/INK-Q/agy-fast",
+      "topics": [
+        "ai-agent",
+        "ai-coding",
+        "antigravity",
+        "antigravity-cli",
+        "antigravity-ide",
+        "antigravity-plugins",
+        "coding-agent",
+        "context-optimization",
+        "developer-productivity",
+        "developer-tools",
+        "gemini",
+        "google-antigravity",
+        "latency-optimization",
+        "mcp",
+        "mcp-plugin",
+        "mcp-server",
+        "model-context-protocol",
+        "performance",
+        "plugin",
+        "token-optimization"
+      ],
+      "created_at": "2026-11-19T04:58:46Z",
+      "updated_at": "2026-11-24T23:40:53Z",
+      "pushed_at": "2026-11-24T14:28:12Z",
+      "license": "MIT",
+      "open_issues": 31,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-19T04:58:46Z",
+          "description": "Non-invasive MCP accelerator plugin for Google Antigravity (CLI/Desktop/IDE): cuts LLM turns (-34%), token quota (-31%), and upload traffic (-40%) without affecting native UI or diffs.",
+          "html_url": "https://github.com/INK-Q/agy-fast",
+          "stars": 1165,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ItsNotRexed/Hookshot",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 703,
+      "forks": 37,
+      "language": "C++",
+      "description": "Hookshot Is A Native PC Recompilation Of The Switch 2 Ocarina Of Time Remake",
+      "html_url": "https://github.com/ItsNotRexed/Hookshot",
+      "topics": [],
+      "created_at": "2026-11-20T20:06:20Z",
+      "updated_at": "2026-11-24T23:43:03Z",
+      "pushed_at": "2026-11-22T19:13:49Z",
+      "license": "GPL-3.0",
+      "open_issues": 11,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T20:06:20Z",
+          "description": "Hookshot Is A Native PC Recompilation Of The Switch 2 Ocarina Of Time Remake",
+          "html_url": "https://github.com/ItsNotRexed/Hookshot",
+          "stars": 703,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Lemxy/WinRust",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 1461,
+      "forks": 95,
+      "language": "Rust",
+      "description": "Windows shell replacement in Rust: taskbar, file manager, NTFS search, task manager, disk cleaner. One installer exe.",
+      "html_url": "https://github.com/Lemxy/WinRust",
+      "topics": [],
+      "created_at": "2026-11-17T14:27:06Z",
+      "updated_at": "2026-11-24T23:45:46Z",
+      "pushed_at": "2026-11-24T13:32:21Z",
+      "license": "Apache-2.0",
+      "open_issues": 51,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-17T14:27:06Z",
+          "description": "Windows shell replacement in Rust: taskbar, file manager, NTFS search, task manager, disk cleaner. One installer exe.",
+          "html_url": "https://github.com/Lemxy/WinRust",
+          "stars": 1461,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "MSNightmare/FastUnlock",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 724,
+      "forks": 123,
+      "language": null,
+      "description": "FastUnlock : Windows Narrator LockScreen Bypass 0day Vulnerability",
+      "html_url": "https://github.com/MSNightmare/FastUnlock",
+      "topics": [],
+      "created_at": "2026-11-19T12:37:51Z",
+      "updated_at": "2026-11-24T21:51:28Z",
+      "pushed_at": "2026-11-21T05:18:41Z",
+      "license": "MIT",
+      "open_issues": 4,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-19T12:37:51Z",
+          "description": "FastUnlock : Windows Narrator LockScreen Bypass 0day Vulnerability",
+          "html_url": "https://github.com/MSNightmare/FastUnlock",
+          "stars": 724,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Marvisak/VIctory",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 11243,
+      "forks": 1649,
+      "language": "Rust",
+      "description": "An attempt at running GTA VI on PC",
+      "html_url": "https://github.com/Marvisak/VIctory",
+      "topics": [],
+      "created_at": "2026-11-23T21:47:25Z",
+      "updated_at": "2026-11-24T23:46:54Z",
+      "pushed_at": "2026-11-24T21:37:26Z",
+      "license": "GPL-3.0",
+      "open_issues": 1505,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-23T21:47:25Z",
+          "description": "An attempt at running GTA VI on PC",
+          "html_url": "https://github.com/Marvisak/VIctory",
+          "stars": 11242,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "R0Y00/Xbox2Windows",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 1896,
+      "forks": 214,
+      "language": "Python",
+      "description": "Static recompilation research for Xbox Series X|S software on x64 Windows, with source-built CPU and GPU tests. Full-game startup is unverified.",
+      "html_url": "https://github.com/R0Y00/Xbox2Windows",
+      "topics": [
+        "d3d12",
+        "directx-raytracing",
+        "scarlett",
+        "static-recompilation",
+        "windows",
+        "xbox",
+        "xbox-series-x"
+      ],
+      "created_at": "2026-11-20T17:43:52Z",
+      "updated_at": "2026-11-24T22:57:09Z",
+      "pushed_at": "2026-11-24T23:43:17Z",
+      "license": "MIT",
+      "open_issues": 243,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T17:43:52Z",
+          "description": "Static recompilation research for Xbox Series X|S software on x64 Windows, with source-built CPU and GPU tests. Full-game startup is unverified.",
+          "html_url": "https://github.com/R0Y00/Xbox2Windows",
+          "stars": 1896,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ThreatDefence/agentic-attack-detections",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 625,
+      "forks": 131,
+      "language": "Python",
+      "description": "Detection rules and IOCs for AI agent attack frameworks: ARTEX, Cairn, PentAGI, HexStrike, CyberStrikeAI, Strix, Hermes Agent, Agent Zero, RedAmon, Xalgorix, Pentest Swarm AI. KQL hunts for Microsoft Sentinel and Defender XDR, Sigma, Suricata, Zeek, YARA, Splunk, Elastic, STIX 2.1.",
+      "html_url": "https://github.com/ThreatDefence/agentic-attack-detections",
+      "topics": [
+        "agentic-ai",
+        "ai-security",
+        "blue-team",
+        "defender-xdr",
+        "detection-engineering",
+        "ioc",
+        "kql",
+        "llm-security",
+        "microsoft-sentinel",
+        "sigma",
+        "sigma-rules",
+        "stix",
+        "suricata",
+        "suricata-rules",
+        "threat-detection",
+        "threat-hunting",
+        "threat-intelligence",
+        "yara",
+        "yara-rules",
+        "zeek"
+      ],
+      "created_at": "2026-11-20T00:06:24Z",
+      "updated_at": "2026-11-24T23:42:17Z",
+      "pushed_at": "2026-11-24T23:28:34Z",
+      "license": "MIT",
+      "open_issues": 7,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T00:06:24Z",
+          "description": "Detection rules and IOCs for AI agent attack frameworks: ARTEX, Cairn, PentAGI, HexStrike, CyberStrikeAI, Strix, Hermes Agent, Agent Zero, RedAmon, Xalgorix, Pentest Swarm AI. KQL hunts for Microsoft Sentinel and Defender XDR, Sigma, Suricata, Zeek, YARA, Splunk, Elastic, STIX 2.1.",
+          "html_url": "https://github.com/ThreatDefence/agentic-attack-detections",
+          "stars": 625,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "Tracer-Cloud/opensre",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 15176,
+      "forks": 2010,
+      "language": "Python",
+      "description": "The open-source agent for CI/CD reliability.",
+      "html_url": "https://github.com/Tracer-Cloud/opensre",
+      "topics": [
+        "alerting",
+        "ci-cd",
+        "cli",
+        "datadog",
+        "devops",
+        "gitlab-ci",
+        "grafana",
+        "incident-management",
+        "llm",
+        "observability",
+        "ollama",
+        "remediation",
+        "root-cause-analysis",
+        "site-reliability-engineering",
+        "slack"
+      ],
+      "created_at": "2026-01-13T00:04:47Z",
+      "updated_at": "2026-11-24T23:44:46Z",
+      "pushed_at": "2026-11-24T22:23:52Z",
+      "license": "Apache-2.0",
+      "open_issues": 28,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The open-source agent for CI/CD reliability.",
+          "full_name": "Tracer-Cloud/opensre",
+          "language": "Python",
+          "trending_stars_period": 408,
+          "trending_total_forks": null,
+          "trending_total_stars": 15176,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "XiaoYouChR/Ghost-Downloader-3",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 17297,
+      "forks": 1049,
+      "language": "Python",
+      "description": "The only downloader you need. 下载器的集大成者。",
+      "html_url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+      "topics": [
+        "async",
+        "asyncio",
+        "bittorent",
+        "bt",
+        "cross-platform",
+        "download-manager",
+        "downloader",
+        "fluent-design",
+        "ftp",
+        "http3",
+        "magnet",
+        "pyqt",
+        "pyside6",
+        "python",
+        "qt",
+        "quic",
+        "react",
+        "software",
+        "streaming"
+      ],
+      "created_at": "2023-08-16T04:23:44Z",
+      "updated_at": "2026-11-24T23:46:32Z",
+      "pushed_at": "2026-11-24T12:15:51Z",
+      "license": "GPL-3.0",
+      "open_issues": 113,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The only downloader you need. 下载器的集大成者。",
+          "full_name": "XiaoYouChR/Ghost-Downloader-3",
+          "language": "Python",
+          "trending_stars_period": 1102,
+          "trending_total_forks": null,
+          "trending_total_stars": 17297,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ag-ui-protocol/ag-ui",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 21560,
+      "forks": 2173,
+      "language": "TypeScript",
+      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+      "html_url": "https://github.com/ag-ui-protocol/ag-ui",
+      "topics": [
+        "ag-ui-protocol",
+        "agent-frontend",
+        "agent-ui",
+        "agentic-workflow",
+        "ai-agents"
+      ],
+      "created_at": "2025-05-07T12:49:37Z",
+      "updated_at": "2026-11-24T23:39:37Z",
+      "pushed_at": "2026-11-24T22:29:20Z",
+      "license": "MIT",
+      "open_issues": 620,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+          "full_name": "ag-ui-protocol/ag-ui",
+          "language": "TypeScript",
+          "trending_stars_period": 2966,
+          "trending_total_forks": null,
+          "trending_total_stars": 21560,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "alibaba/open-code-review",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 56044,
+      "forks": 4630,
+      "language": "Go",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "html_url": "https://github.com/alibaba/open-code-review",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "code-review",
+        "code-review-assistant",
+        "harness",
+        "repository-level-context"
+      ],
+      "created_at": "2026-05-18T02:16:36Z",
+      "updated_at": "2026-11-24T23:41:33Z",
+      "pushed_at": "2026-11-24T16:19:18Z",
+      "license": "Apache-2.0",
+      "open_issues": 343,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+          "full_name": "alibaba/open-code-review",
+          "language": "Go",
+          "trending_stars_period": 3015,
+          "trending_total_forks": null,
+          "trending_total_stars": 56044,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "backnotprop/plannotator",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 14885,
+      "forks": 1437,
+      "language": "TypeScript",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+      "html_url": "https://github.com/backnotprop/plannotator",
+      "topics": [
+        "agents",
+        "claude-code",
+        "code-review",
+        "codex",
+        "obsidian",
+        "opencode",
+        "pi-mono",
+        "plan-mode",
+        "skills"
+      ],
+      "created_at": "2025-12-28T02:09:40Z",
+      "updated_at": "2026-11-24T23:46:22Z",
+      "pushed_at": "2026-11-24T23:32:07Z",
+      "license": "Apache-2.0",
+      "open_issues": 226,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+          "full_name": "backnotprop/plannotator",
+          "language": "TypeScript",
+          "trending_stars_period": 2395,
+          "trending_total_forks": null,
+          "trending_total_stars": 14885,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cathrynlavery/diagram-design",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 71994,
+      "forks": 4805,
+      "language": "HTML",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "html_url": "https://github.com/cathrynlavery/diagram-design",
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "codex",
+        "data-visualization",
+        "diagrams",
+        "drawio",
+        "mermaid",
+        "svg"
+      ],
+      "created_at": "2026-04-16T18:01:16Z",
+      "updated_at": "2026-11-24T23:46:16Z",
+      "pushed_at": "2026-11-24T23:45:59Z",
+      "license": "MIT",
+      "open_issues": 42,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+          "full_name": "cathrynlavery/diagram-design",
+          "language": "HTML",
+          "trending_stars_period": 794,
+          "trending_total_forks": null,
+          "trending_total_stars": 71994,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "cursor/plugins",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 19188,
+      "forks": 2076,
+      "language": "TypeScript",
+      "description": "Cursor plugin specification and official plugins",
+      "html_url": "https://github.com/cursor/plugins",
+      "topics": [],
+      "created_at": "2026-01-23T01:57:42Z",
+      "updated_at": "2026-11-24T23:40:47Z",
+      "pushed_at": "2026-11-24T23:17:05Z",
+      "license": null,
+      "open_issues": 696,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Cursor plugin specification and official plugins",
+          "full_name": "cursor/plugins",
+          "language": "TypeScript",
+          "trending_stars_period": 359,
+          "trending_total_forks": null,
+          "trending_total_stars": 19188,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "danielwh2/sprite-stacking",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 770,
+      "forks": 57,
+      "language": "HTML",
+      "description": "Agent skill: turn four pixel art views into fake-3D sprites you can spin. Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi.",
+      "html_url": "https://github.com/danielwh2/sprite-stacking",
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "codex",
+        "cursor",
+        "fake-3d",
+        "gamedev",
+        "pixel-art",
+        "sprite-stacking",
+        "voxel"
+      ],
+      "created_at": "2026-11-20T14:32:43Z",
+      "updated_at": "2026-11-24T22:11:04Z",
+      "pushed_at": "2026-11-24T13:12:08Z",
+      "license": "MIT",
+      "open_issues": 1,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T14:32:43Z",
+          "description": "Agent skill: turn four pixel art views into fake-3D sprites you can spin. Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi.",
+          "html_url": "https://github.com/danielwh2/sprite-stacking",
+          "stars": 770,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "deterministic-machines/deslop-please",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 731,
+      "forks": 32,
+      "language": "Rust",
+      "description": "Bring (back) sanity to your code",
+      "html_url": "https://github.com/deterministic-machines/deslop-please",
+      "topics": [],
+      "created_at": "2026-11-22T05:36:03Z",
+      "updated_at": "2026-11-24T23:45:36Z",
+      "pushed_at": "2026-11-24T06:40:42Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-22T05:36:03Z",
+          "description": "Bring (back) sanity to your code",
+          "html_url": "https://github.com/deterministic-machines/deslop-please",
+          "stars": 731,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "dream-num/univer",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 31685,
+      "forks": 2858,
+      "language": "TypeScript",
+      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+      "html_url": "https://github.com/dream-num/univer",
+      "topics": [
+        "board",
+        "collaboration",
+        "doc",
+        "docx",
+        "excel",
+        "offce365",
+        "office",
+        "pdf",
+        "ppt",
+        "pptx",
+        "presentation",
+        "sdk",
+        "sheet",
+        "slides",
+        "spreadsheet",
+        "univer",
+        "word",
+        "wordprocessor",
+        "workspace",
+        "xlsx"
+      ],
+      "created_at": "2022-09-29T12:09:14Z",
+      "updated_at": "2026-11-24T23:39:10Z",
+      "pushed_at": "2026-11-24T16:16:45Z",
+      "license": "Apache-2.0",
+      "open_issues": 208,
+      "default_branch": "dev",
+      "sources": [
+        {
+          "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+          "full_name": "dream-num/univer",
+          "language": "TypeScript",
+          "trending_stars_period": 4324,
+          "trending_total_forks": null,
+          "trending_total_stars": 31685,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "elementalsouls/Claude-BugHunter",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 21421,
+      "forks": 2228,
+      "language": "Python",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 84 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "html_url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "topics": [
+        "ai-security",
+        "anthropic",
+        "application-security",
+        "bug-bounty",
+        "bugbounty",
+        "bugcrowd",
+        "claude",
+        "claude-code",
+        "claude-skills",
+        "ethical-hacking",
+        "hackerone",
+        "offensive-security",
+        "pentesting",
+        "red-team",
+        "security-tools",
+        "web-security"
+      ],
+      "created_at": "2026-05-05T11:22:32Z",
+      "updated_at": "2026-11-24T23:46:10Z",
+      "pushed_at": "2026-11-24T10:43:35Z",
+      "license": "MIT",
+      "open_issues": 13,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A Claude Code skill bundle for bug hunting and external red-team work - 84 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+          "full_name": "elementalsouls/Claude-BugHunter",
+          "language": "Python",
+          "trending_stars_period": 1833,
+          "trending_total_forks": null,
+          "trending_total_stars": 21421,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "erkamyaman/safe-anything",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 624,
+      "forks": 56,
+      "language": "Rust",
+      "description": "Find the holes before someone else does. A fast, 100% Rust vulnerability scanner: XSS, SQL injection, leaked secrets, dependency CVEs and AI agent setups.",
+      "html_url": "https://github.com/erkamyaman/safe-anything",
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "claude-code-plugin",
+        "cli",
+        "codex",
+        "cursor",
+        "devsecops",
+        "mcp",
+        "osv",
+        "owasp",
+        "rust",
+        "sast",
+        "secret-scanning",
+        "secrets",
+        "security",
+        "security-scanner",
+        "sql-injection",
+        "vulnerability",
+        "vulnerability-scanner",
+        "xss"
+      ],
+      "created_at": "2026-11-22T16:44:10Z",
+      "updated_at": "2026-11-24T23:45:54Z",
+      "pushed_at": "2026-11-24T18:41:56Z",
+      "license": "MIT",
+      "open_issues": 36,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-22T16:44:10Z",
+          "description": "Find the holes before someone else does. A fast, 100% Rust vulnerability scanner: XSS, SQL injection, leaked secrets, dependency CVEs and AI agent setups.",
+          "html_url": "https://github.com/erkamyaman/safe-anything",
+          "stars": 624,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "firecrawl/firecrawl",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 208911,
+      "forks": 10916,
+      "language": "TypeScript",
+      "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+      "html_url": "https://github.com/firecrawl/firecrawl",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-crawler",
+        "ai-scraping",
+        "ai-search",
+        "crawler",
+        "data-extraction",
+        "html-to-markdown",
+        "llm",
+        "markdown",
+        "scraper",
+        "scraping",
+        "web-crawler",
+        "web-data",
+        "web-data-extraction",
+        "web-scraper",
+        "web-scraping",
+        "web-search",
+        "webscraping"
+      ],
+      "created_at": "2024-04-15T21:02:29Z",
+      "updated_at": "2026-11-24T23:45:53Z",
+      "pushed_at": "2026-11-24T23:00:48Z",
+      "license": "AGPL-3.0",
+      "open_issues": 917,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+          "full_name": "firecrawl/firecrawl",
+          "language": "TypeScript",
+          "trending_stars_period": 990,
+          "trending_total_forks": null,
+          "trending_total_stars": 208911,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "fxceless/victory-fork",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 1706,
+      "forks": 391,
+      "language": "Rust",
+      "description": "Work-in-progress fork of VIctory: getting an Xbox Series title to render and run on a Windows PC. No game files.",
+      "html_url": "https://github.com/fxceless/victory-fork",
+      "topics": [],
+      "created_at": "2026-11-24T18:02:37Z",
+      "updated_at": "2026-11-24T23:46:24Z",
+      "pushed_at": "2026-11-24T22:00:21Z",
+      "license": "GPL-3.0",
+      "open_issues": 326,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-24T18:02:37Z",
+          "description": "Work-in-progress fork of VIctory: getting an Xbox Series title to render and run on a Windows PC. No game files.",
+          "html_url": "https://github.com/fxceless/victory-fork",
+          "stars": 1706,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "google-labs-code/stitch-skills",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 12637,
+      "forks": 1525,
+      "language": "TypeScript",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "html_url": "https://github.com/google-labs-code/stitch-skills",
+      "topics": [],
+      "created_at": "2026-01-16T17:17:17Z",
+      "updated_at": "2026-11-24T23:39:30Z",
+      "pushed_at": "2026-11-24T21:51:04Z",
+      "license": "Apache-2.0",
+      "open_issues": 23,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+          "full_name": "google-labs-code/stitch-skills",
+          "language": "TypeScript",
+          "trending_stars_period": 2572,
+          "trending_total_forks": null,
+          "trending_total_stars": 12637,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+          "full_name": "google-labs-code/stitch-skills",
+          "language": "TypeScript",
+          "trending_stars_period": 401,
+          "trending_total_forks": null,
+          "trending_total_stars": 12637,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "iamajmeena/neonclipping",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 2480,
+      "forks": 155,
+      "language": "Python",
+      "description": "Paste a link, get captioned 9:16 clips in ~2 min. Free, local, open-source clipping engine (audio-first, YouTube captions, local LLM).",
+      "html_url": "https://github.com/iamajmeena/neonclipping",
+      "topics": [
+        "ai-video-clipper",
+        "clipping",
+        "faster-whisper",
+        "ffmpeg",
+        "gameplay-clipper",
+        "local-llm",
+        "ollama",
+        "open-source-video-editor",
+        "opusclip-alternative",
+        "shorts",
+        "twitch-clips",
+        "vertical-video",
+        "video",
+        "whisper",
+        "youtube-shorts-generator",
+        "yt-dlp"
+      ],
+      "created_at": "2026-11-19T10:00:43Z",
+      "updated_at": "2026-11-24T22:35:53Z",
+      "pushed_at": "2026-11-24T13:27:46Z",
+      "license": "AGPL-3.0",
+      "open_issues": 28,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-19T10:00:43Z",
+          "description": "Paste a link, get captioned 9:16 clips in ~2 min. Free, local, open-source clipping engine (audio-first, YouTube captions, local LLM).",
+          "html_url": "https://github.com/iamajmeena/neonclipping",
+          "stars": 2480,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "jingyaogong/minimind",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 70157,
+      "forks": 9130,
+      "language": "Python",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "html_url": "https://github.com/jingyaogong/minimind",
+      "topics": [
+        "artificial-intelligence",
+        "large-language-model"
+      ],
+      "created_at": "2024-07-27T04:34:12Z",
+      "updated_at": "2026-11-24T23:43:02Z",
+      "pushed_at": "2026-11-23T04:01:07Z",
+      "license": "Apache-2.0",
+      "open_issues": 63,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+          "full_name": "jingyaogong/minimind",
+          "language": "Python",
+          "trending_stars_period": 727,
+          "trending_total_forks": null,
+          "trending_total_stars": 70157,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "kajisho5/ffmpeg-skill",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 10670,
+      "forks": 918,
+      "language": "Python",
+      "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+      "html_url": "https://github.com/kajisho5/ffmpeg-skill",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "audio-processing",
+        "captions",
+        "claude-code",
+        "codex",
+        "coding-agent",
+        "cursor",
+        "ffmpeg",
+        "gemini-cli-extension",
+        "loudness-normalization",
+        "mcp",
+        "mcp-server",
+        "model-context-protocol",
+        "python",
+        "subtitles",
+        "transcoding",
+        "video",
+        "video-editing",
+        "whisper"
+      ],
+      "created_at": "2026-09-03T14:33:38Z",
+      "updated_at": "2026-11-24T23:46:57Z",
+      "pushed_at": "2026-11-24T09:13:58Z",
+      "license": "MIT",
+      "open_issues": 44,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+          "full_name": "kajisho5/ffmpeg-skill",
+          "language": "Python",
+          "trending_stars_period": 3891,
+          "trending_total_forks": null,
+          "trending_total_stars": 10671,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "leanprover-community/riemann-hypothesis",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 1041,
+      "forks": 408,
+      "language": "Lean",
+      "description": "Lean formalization of the Riemann Hypothesis (Alpöge, 2026-11-20) being cleaned up by members of the Lean community.",
+      "html_url": "https://github.com/leanprover-community/riemann-hypothesis",
+      "topics": [],
+      "created_at": "2026-11-20T14:47:49Z",
+      "updated_at": "2026-11-24T23:31:44Z",
+      "pushed_at": "2026-11-24T23:45:51Z",
+      "license": null,
+      "open_issues": 479,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T14:47:49Z",
+          "description": "Lean formalization of the Riemann Hypothesis (Alpöge, 2026-11-20) being cleaned up by members of the Lean community.",
+          "html_url": "https://github.com/leanprover-community/riemann-hypothesis",
+          "stars": 1041,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "meta/astryx",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 32867,
+      "forks": 2575,
+      "language": "TypeScript",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "html_url": "https://github.com/meta/astryx",
+      "topics": [],
+      "created_at": "2026-01-09T16:20:32Z",
+      "updated_at": "2026-11-24T23:43:15Z",
+      "pushed_at": "2026-11-24T23:43:35Z",
+      "license": "MIT",
+      "open_issues": 797,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An open source design system that's fully customizable and agent ready",
+          "full_name": "meta/astryx",
+          "language": "TypeScript",
+          "trending_stars_period": 3165,
+          "trending_total_forks": null,
+          "trending_total_stars": 32867,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mjmirza/app-store-compliance",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 5835,
+      "forks": 378,
+      "language": "Shell",
+      "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+      "html_url": "https://github.com/mjmirza/app-store-compliance",
+      "topics": [
+        "accessibility",
+        "ai-agents",
+        "android",
+        "app-review-guidelines",
+        "app-store",
+        "app-store-connect",
+        "app-store-rejection",
+        "app-store-review",
+        "claude-code",
+        "coppa",
+        "data-safety",
+        "eu-ai-act",
+        "gdpr",
+        "google-play",
+        "google-play-policy",
+        "ios",
+        "mobile-compliance",
+        "play-console",
+        "pre-submission-checklist",
+        "privacy-manifest"
+      ],
+      "created_at": "2026-06-06T11:29:45Z",
+      "updated_at": "2026-11-24T23:45:29Z",
+      "pushed_at": "2026-11-24T23:36:04Z",
+      "license": "Other",
+      "open_issues": 34,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+          "full_name": "mjmirza/app-store-compliance",
+          "language": "Shell",
+          "trending_stars_period": 936,
+          "trending_total_forks": null,
+          "trending_total_stars": 5835,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "mvanhorn/last30days-skill",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 74180,
+      "forks": 6540,
+      "language": "Python",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "html_url": "https://github.com/mvanhorn/last30days-skill",
+      "topics": [
+        "agent-skills",
+        "artificial-intelligence",
+        "automation",
+        "bot",
+        "command-line",
+        "data-science",
+        "dsh",
+        "dsh-plugin",
+        "golang",
+        "instagram",
+        "llms",
+        "nlp",
+        "osint",
+        "polymarket",
+        "python3",
+        "reddit",
+        "terminal",
+        "tiktok",
+        "twitter",
+        "youtube"
+      ],
+      "created_at": "2026-01-23T20:37:37Z",
+      "updated_at": "2026-11-24T23:45:36Z",
+      "pushed_at": "2026-11-24T19:38:02Z",
+      "license": "MIT",
+      "open_issues": 25,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+          "full_name": "mvanhorn/last30days-skill",
+          "language": "Python",
+          "trending_stars_period": 5448,
+          "trending_total_forks": null,
+          "trending_total_stars": 74180,
+          "type": "trending_weekly"
+        },
+        {
+          "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+          "full_name": "mvanhorn/last30days-skill",
+          "language": "Python",
+          "trending_stars_period": 695,
+          "trending_total_forks": null,
+          "trending_total_stars": 74180,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "nataphong-lab/Open-Source-Face-Recognition-Ultimate",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 722,
+      "forks": 600,
+      "language": "Python",
+      "description": "Face Recognition, Face Liveness Detection, Face Anti-Spoofing, Face Detection, Face Landmarks, Face Compare, Face Matching, Face Pose, Face Expression, Face Attributes, Face Templates Extraction, Face Landmarks",
+      "html_url": "https://github.com/nataphong-lab/Open-Source-Face-Recognition-Ultimate",
+      "topics": [],
+      "created_at": "2026-11-19T10:40:46Z",
+      "updated_at": "2026-11-24T14:36:13Z",
+      "pushed_at": "2026-11-24T10:43:48Z",
+      "license": null,
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-19T10:40:46Z",
+          "description": "Face Recognition, Face Liveness Detection, Face Anti-Spoofing, Face Detection, Face Landmarks, Face Compare, Face Matching, Face Pose, Face Expression, Face Attributes, Face Templates Extraction, Face Landmarks",
+          "html_url": "https://github.com/nataphong-lab/Open-Source-Face-Recognition-Ultimate",
+          "stars": 722,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "nginx/nginx",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 33214,
+      "forks": 8394,
+      "language": "C",
+      "description": "The official NGINX Open Source repository.",
+      "html_url": "https://github.com/nginx/nginx",
+      "topics": [
+        "content-cache",
+        "http",
+        "http2",
+        "http3",
+        "https",
+        "load-balancer",
+        "mail-proxy-server",
+        "nginx",
+        "quic",
+        "reverse-proxy",
+        "security",
+        "tcp-proxy-server",
+        "tls",
+        "udp-proxy-server",
+        "web-server"
+      ],
+      "created_at": "2015-06-23T10:26:27Z",
+      "updated_at": "2026-11-24T23:45:08Z",
+      "pushed_at": "2026-11-24T16:13:34Z",
+      "license": "BSD-2-Clause",
+      "open_issues": 490,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "The official NGINX Open Source repository.",
+          "full_name": "nginx/nginx",
+          "language": "C",
+          "trending_stars_period": 158,
+          "trending_total_forks": null,
+          "trending_total_stars": 33214,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "obra/superpowers",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 325773,
+      "forks": 28903,
+      "language": "Shell",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "html_url": "https://github.com/obra/superpowers",
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
+      ],
+      "created_at": "2025-10-09T19:45:18Z",
+      "updated_at": "2026-11-24T23:47:03Z",
+      "pushed_at": "2026-11-24T23:38:55Z",
+      "license": "MIT",
+      "open_issues": 370,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "An agentic skills framework & software development methodology that works.",
+          "full_name": "obra/superpowers",
+          "language": "Shell",
+          "trending_stars_period": 1006,
+          "trending_total_forks": null,
+          "trending_total_stars": 325773,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "omonkeyz/xbox-emulator",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 1817,
+      "forks": 120,
+      "language": "Rust",
+      "description": "Progress notes for running Xbox Series X|S builds on PC (TomBox + rage9)",
+      "html_url": "https://github.com/omonkeyz/xbox-emulator",
+      "topics": [],
+      "created_at": "2026-11-21T08:08:39Z",
+      "updated_at": "2026-11-24T23:17:31Z",
+      "pushed_at": "2026-11-23T11:58:17Z",
+      "license": "GPL-3.0",
+      "open_issues": 163,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-21T08:08:39Z",
+          "description": "Progress notes for running Xbox Series X|S builds on PC (TomBox + rage9)",
+          "html_url": "https://github.com/omonkeyz/xbox-emulator",
+          "stars": 1817,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "openvinotoolkit/openvino",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 12456,
+      "forks": 3693,
+      "language": "C++",
+      "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "html_url": "https://github.com/openvinotoolkit/openvino",
+      "topics": [
+        "ai",
+        "computer-vision",
+        "deep-learning",
+        "deploy-ai",
+        "diffusion-models",
+        "generative-ai",
+        "good-first-issue",
+        "inference",
+        "llm-inference",
+        "natural-language-processing",
+        "nlp",
+        "openvino",
+        "optimize-ai",
+        "performance-boost",
+        "recommendation-system",
+        "speech-recognition",
+        "stable-diffusion",
+        "transformers",
+        "yolo"
+      ],
+      "created_at": "2018-10-15T10:54:40Z",
+      "updated_at": "2026-11-24T23:45:19Z",
+      "pushed_at": "2026-11-24T23:43:50Z",
+      "license": "Apache-2.0",
+      "open_issues": 1180,
+      "default_branch": "master",
+      "sources": [
+        {
+          "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+          "full_name": "openvinotoolkit/openvino",
+          "language": "C++",
+          "trending_stars_period": 187,
+          "trending_total_forks": null,
+          "trending_total_stars": 12456,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "os6/nospeaker",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 1750,
+      "forks": 88,
+      "language": "Swift",
+      "description": "make your macbook's trackpad talk using its haptic motor",
+      "html_url": "https://github.com/os6/nospeaker",
+      "topics": [
+        "haptics",
+        "macos",
+        "swift",
+        "trackpad"
+      ],
+      "created_at": "2026-11-22T12:05:54Z",
+      "updated_at": "2026-11-24T23:32:39Z",
+      "pushed_at": "2026-11-24T02:43:05Z",
+      "license": "MIT",
+      "open_issues": 17,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-22T12:05:54Z",
+          "description": "make your macbook's trackpad talk using its haptic motor",
+          "html_url": "https://github.com/os6/nospeaker",
+          "stars": 1750,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "pookjw/HermesEnabler",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 2489,
+      "forks": 206,
+      "language": "Objective-C",
+      "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+      "html_url": "https://github.com/pookjw/HermesEnabler",
+      "topics": [],
+      "created_at": "2024-12-14T11:32:03Z",
+      "updated_at": "2026-11-24T23:36:37Z",
+      "pushed_at": "2026-11-19T02:24:27Z",
+      "license": "MIT",
+      "open_issues": 86,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+          "full_name": "pookjw/HermesEnabler",
+          "language": "Objective-C",
+          "trending_stars_period": 390,
+          "trending_total_forks": null,
+          "trending_total_stars": 2489,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "qianyiai/kurocat",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 604,
+      "forks": 96,
+      "language": "TypeScript",
+      "description": "KuroCat — Free open-source desktop typing cat pet & OBS overlay (Bongo Cat alternative, Tauri v2 + Rust + MCP)｜轻量级透明置顶桌面打字小黑猫伴侣（6款猫咪+鲸鱼娘大肥鱼 / 输密码防偷窥 / OBS透明源 / AI捏猫 / Win·Mac·Linux·Android）",
+      "html_url": "https://github.com/qianyiai/kurocat",
+      "topics": [
+        "android",
+        "bongo-cat",
+        "bongocat",
+        "cross-platform",
+        "desktop-pet",
+        "keyboard-visualizer",
+        "kurocat",
+        "linux",
+        "macos",
+        "mcp",
+        "obs-studio",
+        "open-source",
+        "rust",
+        "tauri",
+        "typing-cat",
+        "windows"
+      ],
+      "created_at": "2026-11-21T15:49:31Z",
+      "updated_at": "2026-11-24T23:32:59Z",
+      "pushed_at": "2026-11-24T17:16:53Z",
+      "license": "MIT",
+      "open_issues": 29,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-21T15:49:31Z",
+          "description": "KuroCat — Free open-source desktop typing cat pet & OBS overlay (Bongo Cat alternative, Tauri v2 + Rust + MCP)｜轻量级透明置顶桌面打字小黑猫伴侣（6款猫咪+鲸鱼娘大肥鱼 / 输密码防偷窥 / OBS透明源 / AI捏猫 / Win·Mac·Linux·Android）",
+          "html_url": "https://github.com/qianyiai/kurocat",
+          "stars": 604,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "replit/datacat",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 605,
+      "forks": 68,
+      "language": "TypeScript",
+      "description": "Self-hosted observability: metrics, logs, traces, dashboards and alerts. Stores data in PostgreSQL or ClickHouse. Accepts OpenTelemetry data.",
+      "html_url": "https://github.com/replit/datacat",
+      "topics": [
+        "alerting",
+        "apm",
+        "clickhouse",
+        "dashboards",
+        "logging",
+        "metrics",
+        "monitoring",
+        "observability",
+        "opentelemetry",
+        "postgresql",
+        "self-hosted",
+        "tracing"
+      ],
+      "created_at": "2026-11-17T02:51:06Z",
+      "updated_at": "2026-11-24T20:34:10Z",
+      "pushed_at": "2026-11-23T21:23:26Z",
+      "license": "Apache-2.0",
+      "open_issues": 0,
+      "default_branch": "develop",
+      "sources": [
+        {
+          "created_at": "2026-11-17T02:51:06Z",
+          "description": "Self-hosted observability: metrics, logs, traces, dashboards and alerts. Stores data in PostgreSQL or ClickHouse. Accepts OpenTelemetry data.",
+          "html_url": "https://github.com/replit/datacat",
+          "stars": 605,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sous-labs/songe",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 649,
+      "forks": 58,
+      "language": "Python",
+      "description": "A training engine for your local model, using your idle compute",
+      "html_url": "https://github.com/sous-labs/songe",
+      "topics": [
+        "coding-agents",
+        "distillation",
+        "fine-tuning",
+        "llm",
+        "local-llm",
+        "lora",
+        "mlx"
+      ],
+      "created_at": "2026-11-20T11:01:20Z",
+      "updated_at": "2026-11-24T23:40:37Z",
+      "pushed_at": "2026-11-24T22:13:52Z",
+      "license": "Apache-2.0",
+      "open_issues": 18,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T11:01:20Z",
+          "description": "A training engine for your local model, using your idle compute",
+          "html_url": "https://github.com/sous-labs/songe",
+          "stars": 649,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "sybil-solutions/skill-distill",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 714,
+      "forks": 54,
+      "language": "Python",
+      "description": "Distill a good Claude Code / Codex session into a skill an open-weight model can follow to reproduce the task",
+      "html_url": "https://github.com/sybil-solutions/skill-distill",
+      "topics": [],
+      "created_at": "2026-11-21T01:43:00Z",
+      "updated_at": "2026-11-24T23:38:53Z",
+      "pushed_at": "2026-11-21T03:48:01Z",
+      "license": "MIT",
+      "open_issues": 0,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-21T01:43:00Z",
+          "description": "Distill a good Claude Code / Codex session into a skill an open-weight model can follow to reproduce the task",
+          "html_url": "https://github.com/sybil-solutions/skill-distill",
+          "stars": 714,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "toeverything/AFFiNE",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 77972,
+      "forks": 5697,
+      "language": "TypeScript",
+      "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use. ",
+      "html_url": "https://github.com/toeverything/AFFiNE",
+      "topics": [
+        "app",
+        "crdt",
+        "editor",
+        "electron",
+        "knowledge-base",
+        "markdown",
+        "miro",
+        "notes",
+        "notion",
+        "notion-alternative",
+        "rust",
+        "rust-lang",
+        "rust-language",
+        "table",
+        "tableview",
+        "whiteboard",
+        "wiki",
+        "workspace"
+      ],
+      "created_at": "2022-07-31T18:45:21Z",
+      "updated_at": "2026-11-24T23:46:31Z",
+      "pushed_at": "2026-11-24T23:45:19Z",
+      "license": "Other",
+      "open_issues": 660,
+      "default_branch": "canary",
+      "sources": [
+        {
+          "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+          "full_name": "toeverything/AFFiNE",
+          "language": "TypeScript",
+          "trending_stars_period": 589,
+          "trending_total_forks": null,
+          "trending_total_stars": 77972,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "tradermonty/claude-trading-skills",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 8294,
+      "forks": 1538,
+      "language": "Python",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "html_url": "https://github.com/tradermonty/claude-trading-skills",
+      "topics": [],
+      "created_at": "2025-10-19T16:37:29Z",
+      "updated_at": "2026-11-24T23:45:38Z",
+      "pushed_at": "2026-11-23T21:39:16Z",
+      "license": "MIT",
+      "open_issues": 53,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+          "full_name": "tradermonty/claude-trading-skills",
+          "language": "Python",
+          "trending_stars_period": 1903,
+          "trending_total_forks": null,
+          "trending_total_stars": 8294,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "ubiquitarianism/leonida",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 1855,
+      "forks": 403,
+      "language": "Python",
+      "description": "A continuation of Leonida, the Xbox > PC port interface of GTA VI",
+      "html_url": "https://github.com/ubiquitarianism/leonida",
+      "topics": [],
+      "created_at": "2026-11-23T23:54:39Z",
+      "updated_at": "2026-11-24T23:46:47Z",
+      "pushed_at": "2026-11-24T23:42:47Z",
+      "license": "GPL-3.0",
+      "open_issues": 977,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-23T23:54:39Z",
+          "description": "A continuation of Leonida, the Xbox > PC port interface of GTA VI",
+          "html_url": "https://github.com/ubiquitarianism/leonida",
+          "stars": 1855,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "we-promise/sure",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 17771,
+      "forks": 1542,
+      "language": "Ruby",
+      "description": "The personal finance app for everyone (by everyone)",
+      "html_url": "https://github.com/we-promise/sure",
+      "topics": [],
+      "created_at": "2025-07-23T04:13:55Z",
+      "updated_at": "2026-11-24T23:45:12Z",
+      "pushed_at": "2026-11-24T23:42:19Z",
+      "license": "AGPL-3.0",
+      "open_issues": 1156,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "The personal finance app for everyone (by everyone)",
+          "full_name": "we-promise/sure",
+          "language": "Ruby",
+          "trending_stars_period": 1612,
+          "trending_total_forks": null,
+          "trending_total_stars": 17771,
+          "type": "trending_weekly"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "xcl-dev/xcl",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 7799,
+      "forks": 1027,
+      "language": "Rust",
+      "description": "Xbox Series compatibility layer for Windows - runs console game code natively, reimplements the console system libraries and recompiles RDNA2 shaders to DXIL",
+      "html_url": "https://github.com/xcl-dev/xcl",
+      "topics": [
+        "d3d12",
+        "gdk",
+        "rdna2",
+        "xbox"
+      ],
+      "created_at": "2026-11-20T20:03:21Z",
+      "updated_at": "2026-11-24T23:41:39Z",
+      "pushed_at": "2026-11-24T23:44:44Z",
+      "license": "GPL-2.0",
+      "open_issues": 1287,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-20T20:03:21Z",
+          "description": "Xbox Series compatibility layer for Windows - runs console game code natively, reimplements the console system libraries and recompiles RDNA2 shaders to DXIL",
+          "html_url": "https://github.com/xcl-dev/xcl",
+          "stars": 7799,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "xikhar/papercraft",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 611,
+      "forks": 64,
+      "language": "JavaScript",
+      "description": "Agent skill to build games, interactive scenes, web pages and animations in a handcrafted pop-up papercraft style",
+      "html_url": "https://github.com/xikhar/papercraft",
+      "topics": [],
+      "created_at": "2026-11-21T00:29:56Z",
+      "updated_at": "2026-11-24T23:45:33Z",
+      "pushed_at": "2026-11-21T17:37:19Z",
+      "license": "MIT",
+      "open_issues": 2,
+      "default_branch": "main",
+      "sources": [
+        {
+          "created_at": "2026-11-21T00:29:56Z",
+          "description": "Agent skill to build games, interactive scenes, web pages and animations in a handcrafted pop-up papercraft style",
+          "html_url": "https://github.com/xikhar/papercraft",
+          "stars": 611,
+          "type": "new_repo_search"
+        }
+      ],
+      "readme_excerpt": null
+    },
+    {
+      "full_name": "zhouxiaoka/autoclip",
+      "captured_at": "2026-11-24T23:46:47Z",
+      "stars": 15307,
+      "forks": 2266,
+      "language": "Python",
+      "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+      "html_url": "https://github.com/zhouxiaoka/autoclip",
+      "topics": [
+        "ai-agent",
+        "ai-video-editor",
+        "content-repurposing",
+        "desktop-app",
+        "douyin",
+        "instagram-reels",
+        "mcp",
+        "open-source",
+        "podcast",
+        "subtitles",
+        "tiktok",
+        "video-clipping",
+        "video-editing-software",
+        "xiaohongshu",
+        "youtube-shorts"
+      ],
+      "created_at": "2025-07-08T04:51:15Z",
+      "updated_at": "2026-11-24T23:43:40Z",
+      "pushed_at": "2026-11-24T16:41:11Z",
+      "license": "MIT",
+      "open_issues": 40,
+      "default_branch": "main",
+      "sources": [
+        {
+          "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+          "full_name": "zhouxiaoka/autoclip",
+          "language": "Python",
+          "trending_stars_period": 981,
+          "trending_total_forks": null,
+          "trending_total_stars": 15307,
+          "type": "trending_daily"
+        }
+      ],
+      "readme_excerpt": null
     }
   ],
   "covered": {
@@ -321770,7 +323861,8 @@
     "daily-20261118T203455Z": 144,
     "daily-20261119T204029Z": 152,
     "daily-20261120T202432Z": 160,
-    "daily-20261122T194330Z": 168
+    "daily-20261122T194330Z": 168,
+    "daily-20261124T234647Z": 177
   },
   "sent_slots": {
     "2026-09-30-pm": 61,
@@ -321791,7 +323883,8 @@
     "daily:2026-11-18": 144,
     "daily:2026-11-19": 152,
     "daily:2026-11-20": 160,
-    "daily:2026-11-22": 168
+    "daily:2026-11-22": 168,
+    "daily:2026-11-24": 177
   },
   "pending_digests": {},
   "llm_daily_requests": {
@@ -321818,7 +323911,8 @@
     "2026-11-18": 17,
     "2026-11-19": 15,
     "2026-11-20": 12,
-    "2026-11-22": 13
+    "2026-11-22": 13,
+    "2026-11-24": 14
   },
   "delivery_progress": {
     "20260930T143510Z": {
