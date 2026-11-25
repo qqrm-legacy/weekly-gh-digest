@@ -1,11 +1,21 @@
 name: Run Bot
 
 on:
-  schedule:
-    # Collection ticks recover only the evening daily issue, never weekly work.
-    - cron: '17 */3 * * *'
-    # Daily discoveries at 18:00 Moscow (UTC+3).
-    - cron: '0 15 * * *'
+  workflow_call:
+    inputs:
+      operation:
+        description: Explicit collection, read-only preview, or daily publication
+        type: string
+        required: true
+    secrets:
+      TELEGRAM_BOT_TOKEN:
+        required: false
+      TELEGRAM_CHAT_ID:
+        required: false
+      TELEGRAM_TECH_CHAT_ID:
+        required: false
+      GROQ_API_KEY:
+        required: false
   workflow_dispatch:
     inputs:
       digest_format:
@@ -109,8 +119,12 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ steps.release.outputs.commit }}
-          fetch-depth: 0
+          fetch-depth: 1
           persist-credentials: false
+
+      - name: Require the split-workflow runtime contract
+        if: inputs.operation != ''
+        run: grep -q 'SPLIT_WORKFLOW_CONTRACT = 1' .github/scripts/run_mode.py
 
       - name: Install verified release binary
         env:
@@ -139,7 +153,7 @@ jobs:
           fi
           ok=0
           for attempt in 1 2 3; do
-            if git fetch origin bot-state:refs/remotes/origin/bot-state 2>/dev/null; then
+            if git fetch --depth=1 origin bot-state:refs/remotes/origin/bot-state 2>/dev/null; then
               ok=1
               break
             fi
@@ -161,12 +175,17 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           DELIVERY_STATE_KEY: weekly-gh-digest.json
           ARCHIVE_HEAD: ${{ steps.restore-state.outputs.head }}
+          RUN_OPERATION: ${{ inputs.operation }}
         shell: bash
         run: |
           set -euo pipefail
           status=0
           python3 .github/scripts/remote_state.py restore data/state.json || status=$?
           if [[ "$status" == 3 ]]; then
+            if [[ "${RUN_OPERATION:-}" == preview ]]; then
+              echo "Read-only preview requires an existing checkpoint" >&2
+              exit 1
+            fi
             if [[ ! -f data/state.json ]]; then
               test -z "$ARCHIVE_HEAD" || { echo "Existing archive has no state; refusing empty delivery memory" >&2; exit 1; }
               mkdir -p data
@@ -182,6 +201,7 @@ jobs:
         env:
           PLAN_FILE: ${{ runner.temp }}/weekly-run-plan.json
           RECOVER_WEEKLY: ${{ inputs.recover_weekly }}
+          RUN_OPERATION: ${{ inputs.operation }}
           EVENT_NAME: ${{ github.event_name }}
           EVENT_SCHEDULE: ${{ github.event.schedule }}
           DIGEST_DELIVERY_ENABLED: ${{ vars.DIGEST_DELIVERY_ENABLED }}
@@ -199,16 +219,18 @@ jobs:
           DELIVERY_CHECKPOINT: .github/scripts/remote_state.py
           DELIVERY_STATE_KEY: weekly-gh-digest.json
           GITHUB_TOKEN: ${{ github.token }}
-          TELEGRAM_BOT_TOKEN: ${{ steps.mode.outputs.send == 'true' && secrets.TELEGRAM_BOT_TOKEN || '' }}
-          TELEGRAM_CHAT_ID: ${{ steps.mode.outputs.send == 'true' && secrets.TELEGRAM_CHAT_ID || '' }}
-          TELEGRAM_TECH_CHAT_ID: ${{ steps.mode.outputs.send == 'true' && secrets.TELEGRAM_TECH_CHAT_ID || '' }}
-          GROQ_API_KEY: ${{ steps.mode.outputs.llm == 'true' && secrets.GROQ_API_KEY || '' }}
+          TELEGRAM_BOT_TOKEN: ${{ inputs.operation != 'collect' && inputs.operation != 'preview' && steps.mode.outputs.send == 'true' && secrets.TELEGRAM_BOT_TOKEN || '' }}
+          TELEGRAM_CHAT_ID: ${{ inputs.operation != 'collect' && inputs.operation != 'preview' && steps.mode.outputs.send == 'true' && secrets.TELEGRAM_CHAT_ID || '' }}
+          TELEGRAM_TECH_CHAT_ID: ${{ inputs.operation != 'collect' && inputs.operation != 'preview' && steps.mode.outputs.send == 'true' && secrets.TELEGRAM_TECH_CHAT_ID || '' }}
+          GROQ_API_KEY: ${{ inputs.operation != 'collect' && inputs.operation != 'preview' && steps.mode.outputs.llm == 'true' && secrets.GROQ_API_KEY || '' }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL }}
           LLM_FREE_TIER_CONFIRMED: ${{ vars.LLM_FREE_TIER_CONFIRMED }}
           GH_TOKEN: ${{ github.token }}
           RETRY_DELIVERY_RUN_ID: ${{ inputs.retry_delivery_run_id }}
           PREVIEW_SOURCE_RUN_ID: ${{ inputs.preview_source_run_id }}
           RUN_MODE: ${{ steps.mode.outputs.mode }}
+          RUN_OPERATION: ${{ inputs.operation }}
+          EXPECTED_DAILY_SLOT: ${{ steps.mode.outputs.slot }}
           USE_LLM: ${{ steps.mode.outputs.llm }}
           DIGEST_DELIVERY_ENABLED: ${{ vars.DIGEST_DELIVERY_ENABLED }}
           DIGEST_DAILY_DELIVERY_ENABLED: ${{ vars.DIGEST_DAILY_DELIVERY_ENABLED }}
@@ -216,10 +238,24 @@ jobs:
         run: |
           set -euo pipefail
           bot=./bin/weekly-gh-digest
-          if [[ "$RUN_MODE" == "preview-stored" ]]; then
+          if [[ "$RUN_MODE" == "skip" ]]; then
+            echo "Publication already completed; no collection or provider requests."
+          elif [[ "$RUN_MODE" == "daily-offline-preview" ]]; then
+            test -z "${TELEGRAM_BOT_TOKEN:-}${TELEGRAM_CHAT_ID:-}${TELEGRAM_TECH_CHAT_ID:-}${GROQ_API_KEY:-}"
+            before=$(sha256sum data/state.json)
+            preview_dir="data/runs/preview-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+            env -u DELIVERY_CHECKPOINT "$bot" preview-retained data/state.json "$preview_dir" --daily
+            test "$(sha256sum data/state.json)" = "$before"
+            test -s "$preview_dir/ranking-input.json"
+            test -s "$preview_dir/queue.json"
+            printf 'run_directory=%s\n' "$preview_dir" >> "$GITHUB_OUTPUT"
+          elif [[ "$RUN_MODE" == "preview-stored" ]]; then
             [[ "$PREVIEW_SOURCE_RUN_ID" =~ ^[0-9]+$ ]]
             source=$(gh run view "$PREVIEW_SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" --json workflowName,headBranch,conclusion)
-            [[ "$(jq -r .workflowName <<<"$source")" == "Run Bot" ]]
+            case "$(jq -r .workflowName <<<"$source")" in
+              "Run Bot"|"Publish Digest"|"Digest Rollout") ;;
+              *) exit 1 ;;
+            esac
             [[ "$(jq -r .headBranch <<<"$source")" == "main" ]]
             [[ "$(jq -r .conclusion <<<"$source")" == "success" ]]
             source_dir="$RUNNER_TEMP/weekly-preview-$PREVIEW_SOURCE_RUN_ID"
@@ -235,7 +271,10 @@ jobs:
           elif [[ "$RUN_MODE" == "retry" ]]; then
             [[ "$RETRY_DELIVERY_RUN_ID" =~ ^[0-9]+$ ]]
             source=$(gh run view "$RETRY_DELIVERY_RUN_ID" --repo "$GITHUB_REPOSITORY" --json workflowName,headBranch)
-            [[ "$(jq -r .workflowName <<<"$source")" == "Run Bot" ]] || { echo "Source run is not Run Bot" >&2; exit 1; }
+            case "$(jq -r .workflowName <<<"$source")" in
+              "Run Bot"|"Publish Digest"|"Digest Rollout") ;;
+              *) echo "Unexpected source workflow" >&2; exit 1 ;;
+            esac
             [[ "$(jq -r .headBranch <<<"$source")" == "$GITHUB_REF_NAME" ]] || { echo "Source run belongs to a different branch" >&2; exit 1; }
             source_dir="$RUNNER_TEMP/weekly-gh-digest-source-$RETRY_DELIVERY_RUN_ID"
             mkdir -p "$source_dir"
@@ -254,9 +293,12 @@ jobs:
             cp -a "$(dirname "$source_input")/." "$delivery_dir/"
             "$bot" debug-delivery "$delivery_dir"
           elif [[ "$RUN_MODE" == "daily-digest" ]]; then
-            "$bot" digest --daily --llm
+            args=(digest --daily --llm)
+            if [[ "${RUN_OPERATION:-}" == publish ]]; then args+=(--retained-only); fi
+            "$bot" "${args[@]}"
           elif [[ "$RUN_MODE" == "daily-preview" ]]; then
             args=(preview --daily --dry-run)
+            if [[ "${RUN_OPERATION:-}" == publish ]]; then args+=(--retained-only); fi
             if [[ "$USE_LLM" == "true" ]]; then args+=(--llm); fi
             "$bot" "${args[@]}"
           elif [[ "$RUN_MODE" == "digest" ]]; then
@@ -290,10 +332,10 @@ jobs:
 
       - name: Upload run preview and provenance
         id: upload
-        if: always() && steps.prepare.outputs.run_directory != ''
+        if: always() && steps.prepare.outputs.run_directory != '' && steps.mode.outputs.mode != 'collect'
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: weekly-gh-digest-${{ github.run_id }}
+          name: ${{ steps.mode.outputs.mode == 'daily-offline-preview' && format('weekly-gh-digest-dry-{0}-{1}', github.run_id, github.run_attempt) || format('weekly-gh-digest-{0}', github.run_id) }}
           path: ${{ steps.prepare.outputs.run_directory }}
           if-no-files-found: error
           retention-days: 90
@@ -313,7 +355,7 @@ jobs:
           fi
 
       - name: Save state and source provenance
-        if: always() && steps.restore-state.outcome == 'success' && steps.restore-delivery.outcome == 'success'
+        if: always() && inputs.operation != 'preview' && steps.mode.outcome == 'success' && steps.mode.outputs.mode != 'skip' && steps.restore-state.outcome == 'success' && steps.restore-delivery.outcome == 'success'
         env:
           GH_TOKEN: ${{ github.token }}
           GIT_CONFIG_COUNT: '2'
@@ -339,7 +381,7 @@ jobs:
             exit 1
           fi
           if [[ -n "$remote_head" ]]; then
-            git fetch origin bot-state:refs/remotes/origin/bot-state
+            # Reuse the fetched snapshot; the remote head above was checked for changes.
             test "$(git rev-parse origin/bot-state)" = "$RESTORED_STATE_HEAD"
             git worktree add "$state_dir" origin/bot-state
           else

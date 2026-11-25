@@ -223,7 +223,7 @@ impl<'a> Groq<'a> {
                 stop_reason = "per-run LLM request cap reached".into();
                 continue;
             }
-            let day = self.clock.now().format("%Y-%m-%d").to_string();
+            let day = self.clock.now().date().to_string();
             if state
                 .llm_daily_requests
                 .get(&day)
@@ -466,7 +466,7 @@ impl<'a> Groq<'a> {
         if *calls >= MAX_LLM_REQUESTS {
             return Err(anyhow!("per-run LLM request cap reached"));
         }
-        let day = self.clock.now().format("%Y-%m-%d").to_string();
+        let day = self.clock.now().date().to_string();
         let used = state.llm_daily_requests.entry(day).or_default();
         if *used >= DAILY_LLM_REQUEST_CAP {
             return Err(anyhow!("per-day LLM request cap reached"));
@@ -617,7 +617,7 @@ fn parse_ready_card(
     primary_sources: &str,
     accepted_jokes: &[String],
     format: crate::editions::Format,
-    now: chrono::DateTime<chrono::Utc>,
+    now: crate::timestamp::Timestamp,
 ) -> Result<(String, String, String)> {
     let (description, joke, evidence_quote) = parse_project_response(text)?;
     // Redaction can shorten otherwise valid copy. Recheck the emitted text's
@@ -637,7 +637,7 @@ fn parse_ready_card(
         "format_version":3,
         "edition":format.name(),
         "llm_requested":true,
-        "generated_at":now.to_rfc3339(),
+        "generated_at":now.rfc3339(),
         "entries":[{
             "full_name":entry.snapshot.full_name,
             "latest":entry.snapshot,

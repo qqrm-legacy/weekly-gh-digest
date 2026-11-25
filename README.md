@@ -1,10 +1,11 @@
 # GitHub Digest
 
-Russian GitHub discoveries delivered to Telegram each day at 18:00 Moscow, with observations collected every three hours. Weekly editions remain available for explicit manual requests. See the [daily-only operating policy](docs/daily-only.md) and [queue and delivery semantics](docs/daily-weekly-queue.md).
+Russian GitHub discoveries delivered to Telegram each day at 18:00 Moscow, with observations collected every two hours. Weekly editions remain available for explicit manual requests. See the [daily-only operating policy](docs/daily-only.md) and [queue and delivery semantics](docs/daily-weekly-queue.md).
 
 ## Cadence and candidate selection
 
-- Collect candidate metadata at minute 17 every three hours (00:17, 03:17, …, 21:17 UTC). Collection itself uses no LLM calls or Telegram credentials. After 15:00 UTC, collection ticks may recover an unfinished daily issue. Actual captures and gaps are recorded in `coverage.json`.
+- `Collect Observations` captures candidate metadata every two hours at minute 17 UTC, with no LLM or Telegram credentials. `Publish Digest` publishes the latest due daily slot at 15:00 UTC from retained observations; late events recover the due slot instead of collecting. Both share the existing state lock. Actual gaps are recorded in `coverage.json`.
+- For an explicit staged rollout, manually dispatch `Digest Rollout`: offline read-only preview, then collection, then gated publication. A failed prerequisite stops later stages. `Publish Digest` defaults to a read-only offline preview on manual dispatch.
 - Prepare one daily issue at 15:00 UTC (18:00 Moscow). Delayed runs share the same daily slot. There is no automatic Monday publication or weekly recovery timer; manual weekly previews and delivery keep their existing gates.
 - Sources are the first returned pages of weekly Trending, daily Trending, and GitHub Search for repositories created in the past seven days. This is a bounded sample, not a global ranking or code audit.
 - Retain every real observation and keep undelivered findings in the edition's queue even after they leave Trending. Daily selection reserves eight places for discoveries first seen within the last 24 hours, ranked by daily Trending, weekly Trending, then Search and descending source metric; four places serve the oldest due backlog. Either group uses unfilled places, up to 12 candidates total. Later sightings or retries do not refresh first-seen time. Manual weekly issues select up to 30 detailed cards plus an index of other pending findings.
@@ -136,6 +137,6 @@ Preview artifacts retain coverage notices and capture timestamps without adding 
 
 ## Re-render a saved issue offline
 
-Dispatch `Run Bot` with `preview_source_run_id` set to a successful run of `Run Bot` from `main`. This downloads its flat artifact as data, validates the recorded selection and publication format, and re-renders the stored cards with the selected release's layout. Both daily and weekly artifacts are supported. Sending or recovery inputs cannot be combined with this option. No provider key or Telegram credentials are injected, even if `preview_with_llm=true` is also selected.
+Dispatch `Run Bot` with `preview_source_run_id` set to a successful publication run of `Run Bot`, `Publish Digest`, or `Digest Rollout` from `main`. This downloads its flat artifact as data, validates the recorded selection and publication format, and re-renders the stored cards with the selected release's layout. Both daily and weekly artifacts are supported. Sending or recovery inputs cannot be combined with this option. No provider key or Telegram credentials are injected, even if `preview_with_llm=true` is also selected.
 
 The local equivalent is `weekly-gh-digest preview-stored <run-directory>`. It preserves source descriptions, observation dates, and provenance, and writes the current preview files. `format-refresh.json` records the source generation time, refresh time, zero provider requests, message count, and editorial policy version; `format_refreshed_at` records the refresh in the digest. `preview-source.json` identifies the originating Actions run. This operation changes presentation only and does not generate new analyses or acknowledge publication.

@@ -1,9 +1,10 @@
 //! Weekly publication identity and retained collection window.
+use crate::timestamp::Timestamp;
 use crate::{Snapshot, State, parse_time};
-use chrono::{DateTime, Datelike, Duration, Utc};
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use std::collections::BTreeMap;
+use time::SignedDuration as Duration;
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub(super) struct ObservationWindow {
@@ -25,11 +26,11 @@ pub(super) fn record(state: &mut State, new: &[Snapshot]) {
 }
 
 /// Moscow is UTC+3. A new issue period opens on Monday at 10:00 Moscow.
-pub(super) fn slot(moment: DateTime<Utc>) -> String {
+pub(super) fn slot(moment: Timestamp) -> String {
     let local = moment + Duration::hours(3);
     let mut monday =
-        local.date_naive() - Duration::days(local.weekday().num_days_from_monday().into());
-    if local.naive_utc() < monday.and_hms_opt(10, 0, 0).unwrap() {
+        local.date() - Duration::days(local.date().weekday().number_days_from_monday().into());
+    if local.date_time() < monday.with_hms(10, 0, 0).unwrap() {
         monday -= Duration::days(7);
     }
     format!("weekly:{monday}")
@@ -37,21 +38,17 @@ pub(super) fn slot(moment: DateTime<Utc>) -> String {
 
 /// Union every observed repository, retaining peak metrics separately from latest metadata.
 /// Daily/weekly rolling counts are never summed, and disappearing rows stay eligible.
-pub(super) fn candidates(state: &State, now: DateTime<Utc>) -> Vec<Snapshot> {
+pub(super) fn candidates(state: &State, now: Timestamp) -> Vec<Snapshot> {
     candidates_since(state, now, Some(now - Duration::days(7)))
 }
 
 /// Pending findings do not expire with the reporting window.
-pub(super) fn all_candidates(state: &State, now: DateTime<Utc>) -> Vec<Snapshot> {
+pub(super) fn all_candidates(state: &State, now: Timestamp) -> Vec<Snapshot> {
     candidates_since(state, now, None)
 }
 
-fn candidates_since(
-    state: &State,
-    now: DateTime<Utc>,
-    cutoff: Option<DateTime<Utc>>,
-) -> Vec<Snapshot> {
-    let mut groups = BTreeMap::<String, BTreeMap<DateTime<Utc>, &Snapshot>>::new();
+fn candidates_since(state: &State, now: Timestamp, cutoff: Option<Timestamp>) -> Vec<Snapshot> {
+    let mut groups = BTreeMap::<String, BTreeMap<Timestamp, &Snapshot>>::new();
     for snapshot in &state.snapshots {
         let Some(captured) = parse_time(&snapshot.captured_at) else {
             continue;
@@ -85,17 +82,15 @@ fn candidates_since(
                         .or_insert_with(|| (i64::MIN, Value::Null));
                     if metric >= entry.0 {
                         let mut source = source.clone();
-                        source["captured_at"] = Value::String(
-                            captured.to_rfc3339_opts(chrono::SecondsFormat::Secs, true),
-                        );
+                        source["captured_at"] = Value::String(captured.rfc3339_seconds());
                         *entry = (metric, source);
                     }
                 }
             }
             snapshot.sources = peaks.into_values().map(|(_, source)| source).collect();
             snapshot.observation = Some(ObservationWindow {
-                first_seen: first.to_rfc3339_opts(chrono::SecondsFormat::Secs, true),
-                last_seen: last.to_rfc3339_opts(chrono::SecondsFormat::Secs, true),
+                first_seen: first.rfc3339_seconds(),
+                last_seen: last.rfc3339_seconds(),
                 observations: observations.len(),
             });
             snapshot
@@ -112,7 +107,7 @@ mod tests {
     use super::*;
     use serde_json::json;
 
-    fn time(value: &str) -> DateTime<Utc> {
+    fn time(value: &str) -> Timestamp {
         parse_time(value).unwrap()
     }
 

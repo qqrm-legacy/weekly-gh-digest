@@ -19,7 +19,7 @@ def validate_ai_cards(digest):
 
 
 def main():
-    if os.environ.get('GITHUB_REPOSITORY') != 'qqrm-labs/weekly-gh-digest':
+    if os.environ.get('GITHUB_REPOSITORY') != 'qqrm-legacy/weekly-gh-digest':
         raise RuntimeError('Unexpected repository')
     if any(os.environ.get(key) for key in ('TELEGRAM_BOT_TOKEN', 'TELEGRAM_CHAT_ID', 'TELEGRAM_TECH_CHAT_ID', 'DELIVERY_CHECKPOINT')):
         raise RuntimeError('Read-only preview must not receive delivery credentials or a remote writer')

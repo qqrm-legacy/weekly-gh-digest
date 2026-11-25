@@ -6,10 +6,18 @@ operator; this change does not write variables, secrets or runtime state.
 
 ## Automatic schedule
 
-- `17 */3 * * *`: collect observations; after 15:00 UTC recover the daily issue
-  only when its slot is not acknowledged. Before the deadline and after a
-  successful delivery, collect without Telegram or LLM calls.
-- `0 15 * * *`: prepare the daily AI digest at 18:00 Moscow.
+- `Collect Observations` (`collect.yml`): `17 */2 * * *`, collection only, no
+  provider or Telegram credentials, and no duplicate collection artifact.
+- `Publish Digest` (`publish.yml`): `0 15 * * *`, daily publication at 18:00
+  Moscow using retained observations. Delayed executions before 15:00 UTC use
+  yesterday's due slot; acknowledged slots skip work. Older undelivered
+  findings remain in the daily backlog. Frozen pending deliveries resume first.
+- `Digest Rollout` is manual only: read-only offline preview, then collection,
+  then gated publication. The preview performs no source, LLM or Telegram
+  requests and does not change production state. Later jobs require success.
+- Both workflows call the same released runtime, share the state concurrency
+  group and use shallow fetches. A release without the split-workflow contract
+  fails closed rather than using old scheduling logic.
 
 There is no Monday weekly publication trigger. Collection ticks never fall back
 to weekly synthesis or delivery, even when the weekly slot is missing and the
@@ -63,7 +71,8 @@ still requires reconciliation; disabling weekly automation does not clear it.
 The daily queue includes older undelivered work, not just projects first seen
 on the current date. Coverage remains limited to actually observed sources.
 
-Tests exercise two simulated weeks of collection ticks, daily ACK suppression,
+Tests exercise two simulated weeks of collection-only ticks, late publication at
+1/6/11/12/23/24/48 hours, daily ACK suppression,
 disabled daily permission, stale Monday events, manual recovery, source-history
 preservation and removal of all automatic weekly triggers. This is a scheduling
 regression test, not a claim of two weeks of live operation.

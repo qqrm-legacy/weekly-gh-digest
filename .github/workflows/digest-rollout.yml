@@ -1,0 +1,37 @@
+name: Digest Rollout
+
+# Explicit operator-controlled rollout, never triggered by a push or a PR.
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  dry-run:
+    permissions:
+      actions: read
+      contents: write
+    uses: ./.github/workflows/run-bot.yml
+    with:
+      operation: preview
+  collect:
+    permissions:
+      actions: read
+      contents: write
+    needs: dry-run
+    uses: ./.github/workflows/run-bot.yml
+    with:
+      operation: collect
+  publish:
+    permissions:
+      actions: read
+      contents: write
+    needs: collect
+    uses: ./.github/workflows/run-bot.yml
+    with:
+      operation: publish
+    secrets:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      TELEGRAM_TECH_CHAT_ID: ${{ secrets.TELEGRAM_TECH_CHAT_ID }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
