@@ -1,0 +1,3641 @@
+{
+  "catalogue": [],
+  "coverage": {
+    "archive": {
+      "available": true,
+      "captures_without_manifest": [],
+      "directories_without_manifest": [],
+      "filtered_captures": [],
+      "invalid_manifests": [],
+      "manifest_capture_count": 21,
+      "manifests_without_snapshots": [],
+      "metadata_failure_records": 0,
+      "source_failure_records": 8
+    },
+    "cadence": {
+      "empty_window": false,
+      "interval_count": 20,
+      "intervals_over_two_hours": [
+        {
+          "from": "2026-11-19T02:36:06Z",
+          "seconds": 32888,
+          "to": "2026-11-19T11:44:14Z"
+        },
+        {
+          "from": "2026-11-19T11:44:14Z",
+          "seconds": 32175,
+          "to": "2026-11-19T20:40:29Z"
+        },
+        {
+          "from": "2026-11-19T22:35:36Z",
+          "seconds": 13538,
+          "to": "2026-11-20T02:21:14Z"
+        },
+        {
+          "from": "2026-11-20T02:21:14Z",
+          "seconds": 33773,
+          "to": "2026-11-20T11:44:07Z"
+        },
+        {
+          "from": "2026-11-20T11:44:07Z",
+          "seconds": 31225,
+          "to": "2026-11-20T20:24:32Z"
+        },
+        {
+          "from": "2026-11-20T22:08:39Z",
+          "seconds": 15025,
+          "to": "2026-11-21T02:19:04Z"
+        },
+        {
+          "from": "2026-11-21T02:19:04Z",
+          "seconds": 31710,
+          "to": "2026-11-21T11:07:34Z"
+        },
+        {
+          "from": "2026-11-21T11:07:34Z",
+          "seconds": 94996,
+          "to": "2026-11-22T13:30:50Z"
+        },
+        {
+          "from": "2026-11-22T13:30:50Z",
+          "seconds": 22360,
+          "to": "2026-11-22T19:43:30Z"
+        },
+        {
+          "from": "2026-11-22T20:56:37Z",
+          "seconds": 17365,
+          "to": "2026-11-23T01:46:02Z"
+        },
+        {
+          "from": "2026-11-23T01:46:02Z",
+          "seconds": 39807,
+          "to": "2026-11-23T12:49:29Z"
+        },
+        {
+          "from": "2026-11-23T12:49:29Z",
+          "seconds": 47479,
+          "to": "2026-11-24T02:00:48Z"
+        },
+        {
+          "from": "2026-11-24T02:15:01Z",
+          "seconds": 41506,
+          "to": "2026-11-24T13:46:47Z"
+        },
+        {
+          "from": "2026-11-24T13:46:47Z",
+          "seconds": 36000,
+          "to": "2026-11-24T23:46:47Z"
+        },
+        {
+          "from": "2026-11-24T23:55:41Z",
+          "seconds": 62854,
+          "to": "2026-11-25T17:23:15Z"
+        }
+      ],
+      "leading_gap_seconds": 11235,
+      "max_interval_seconds": 94996,
+      "median_interval_seconds": 31467.5,
+      "min_interval_seconds": 534,
+      "nominal_cron": "17 */2 * * *",
+      "nominal_slot_boundary": "start_exclusive_end_inclusive",
+      "nominal_slots_in_window": 84,
+      "scheduled_capture_count": null,
+      "target_interval_seconds": 7200,
+      "trailing_gap_seconds": 21935,
+      "trigger_note": "Historical snapshots do not identify manual versus scheduled runs; capture counts are not schedule completion counts."
+    },
+    "format_version": 1,
+    "observed": {
+      "capture_count": 21,
+      "duplicate_snapshot_rows": 0,
+      "first_capture_at": "2026-11-19T02:36:06Z",
+      "ignored_future_rows": 0,
+      "invalid_timestamp_rows": 0,
+      "last_capture_at": "2026-11-25T17:23:15Z",
+      "snapshot_rows": 1207,
+      "unique_repositories": 146
+    },
+    "scope": {
+      "global_coverage_known": false,
+      "missing_intervals_reconstructed": false,
+      "note": "No observations are invented, interpolated or restored from aggregated weekly candidates. Leading and trailing gaps describe the observed window, not proven failed triggers.",
+      "search_first_page_limit": 30,
+      "trending": "first returned weekly and daily pages"
+    },
+    "window": {
+      "end": "2026-11-25T23:28:50Z",
+      "kind": "rolling_seven_days",
+      "start": "2026-11-18T23:28:50Z"
+    }
+  },
+  "dedup_excluded": [
+    {
+      "full_name": "AjncSystem/ShadowOfTheColossus-PC",
+      "reason": "daily explanation retry deferred; retained in pending queue",
+      "retry_at": "2026-11-25T23:53:04.868392775Z"
+    },
+    {
+      "full_name": "deterministic-machines/deslop-please",
+      "reason": "daily explanation retry deferred; retained in pending queue",
+      "retry_at": "2026-11-25T23:51:29.540898179Z"
+    },
+    {
+      "full_name": "ivall/xcl",
+      "reason": "daily explanation retry deferred; retained in pending queue",
+      "retry_at": "2026-11-25T23:48:26.839954745Z"
+    },
+    {
+      "full_name": "LiCinCan/blender-ai-mcp-addon",
+      "reason": "daily explanation retry deferred; retained in pending queue",
+      "retry_at": "2026-11-25T23:53:16.116891516Z"
+    },
+    {
+      "full_name": "Marvisak/VIctory",
+      "reason": "daily explanation retry deferred; retained in pending queue",
+      "retry_at": "2026-11-25T23:47:26.785871697Z"
+    },
+    {
+      "full_name": "MyLuxy/overdrive",
+      "reason": "daily explanation retry deferred; retained in pending queue",
+      "retry_at": "2026-11-25T23:53:10.656867867Z"
+    },
+    {
+      "full_name": "rowanbyte3329/stardew-valley-mod-manager",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sous-labs/songe",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jhaizhou-ops/d2r-mobile",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "xiaoyang111222/cn-math-taxonomy",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "deeplethe/solid-glass",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "aicodeking/leanrea",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ahwootech/BRUTAL",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "chenglou/handwired",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Supermedo/uncharted_pc",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "alchaincyf/huashu-motion",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "rohit267/net-merge",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Tencent-Hunyuan/Hy-Memory",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "xscreensaver-official/xscreensaver",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zhuyansen/new-term-radar",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "feder-cr/git-ai",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "outcrawlai/scout",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "seedds/nxnative",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Zfinix/eleven",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "threerocks/sweety-handdraw-video",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "cranebeaker/coop-anything",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "datalab-to/indra",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mistralai/timestral",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "0xProbabillity/house-control",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "HayatoG/iss_pc",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "solana-classic/solana-classic",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "simbasjungles/free-my-tv",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Ansub/tv-detox",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "humblemuzzu/dumbtv",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Graphify-Labs/graphify",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "msitarzewski/agency-agents",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "vllm-project/vllm",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sickn33/agentic-awesome-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "android/skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "deepseek-ai/DeepInfer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JoasASantos/REA-Prompts",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "wshobson/agents",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "pengchujin/aerial-tv",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "reason-machines/reason-network",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "dipa-studio/ios-sweet",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zcbacxc/mcd-party-planner",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "YOURSJEYO/claude-switcher",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "supabase/supabase",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "strelov1/freehire",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "twentyhq/twenty",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "earthtojake/text-to-cad",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ctresb/leis",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ikow/php2shell-poc",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "eness/php2shell-CVE-2026-109618-CVE-2026-109619-PoC",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ELY-Open-Source/ElyOffice",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "eagle-hq/EAGLE-4",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "stackedlol/ascii-sharks",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "luongnv89/claude-howto",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "php/php-src",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Meloong-Git/PCL",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "fastapi/fastapi",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tek-sys-hub/Rubix-lang",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "9bie/php2shell-bypass-aslr-exp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "openai/php2shell-checker",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "oosexgang/hackios-xnu-kernel",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "colinhacks/reylo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "UniXNU/UniXNU",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Revivedx/SavageWindRecomp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "NVIDIA/flare-local-inference",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Hugo-Dz/spritefusion-sprite-normals",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Renhuai123/ziwei-doushu",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "SnailSploit/Claude-Red",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "OpenBMB/VoxCPM",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "nodejs/node",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "elie222/rakazo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "wesbos/3d-model-anything",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "EthanArbuckle/fairplay-decrypt",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Jakeschincariol/day-trader-skill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "xevrion/hatchzip",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Zagitta/gpu-unlock",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Snapintosh/Snapintosh",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "aicodeking/pandacode",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "dominikmartn/harp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Nutlope/hallmark",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "makecindy/cindy",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "pollen-robotics/microduck",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jbiaojerry/ebook-treasure-chest",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "google-gemini/gemini-cli",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "aws/agent-toolkit-for-aws",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "assetnote/php2shell-scanner",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JustAResearcher/gpu-unlock-ada",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "VictorTaelin/uniichat",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "pingdotgg/t3code",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TauricResearch/TradingAgents",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JetBrains/thinkrail",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "multica-ai/andrej-karpathy-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AgriciDaniel/claude-seo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "coollabsio/coolify",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "nthnclrk/CleanFrame",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "rddmwmddr/android-ad-cleaner",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "morganlinton/BeautifulRust",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "designfuchen/word-atlas",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "lyramakesmusic/neuron-explorer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "udhaykumarbala/cleanyourtv-app",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mizorewww/gdirect",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "nightly-labs/openbot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "gitroomhq/postiz-app",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Panniantong/Agent-Reach",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "alchaincyf/huashu-design",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "NVIDIA/SkillSpector",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "t3dotgg/tstack",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "enesozturk/dimensional-drawing",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "DenisSergeevitch/ex-ussr-kinship-research",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "KillaBoi/StealMyBitcoin-PoC",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "impacifist/Windows-GPU-UNLOCK",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "unclebob/ub-mode",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "andyhuo520/digital-human-koubo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "torrentplayer/torrentplayer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "HKUDS/DeepTutor",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "togg53192-cmd/jailbreaks",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "LNPANDY/NX2Apple",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "surendrapandar/minilytics",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "elayadesign/ai-design-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "anhao/ai-pose-gallery-zh",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "interplains/Zero-Breach-Toolkit",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "DLSS-5-Swaper-New/.github",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ZiChuanLan/agent-purge",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kargulstudio/calender-app-design",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zita-ch/supermimic_vibed",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "CopilotKit/OpenDuet",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "hmjz100/LinkSwift",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ruvnet/RuView",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "macro-inc/macro",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "xiaolai/the-craft-of-selfteaching",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "expo/skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jakubkrehel/skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Motionsites-AI/claude-skill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Leonxlnx/taste-skill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "oosexgang/hakios-xnu-kernel",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "anonnerdfrenzy/survival-llm",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "daveebbelaar/bama",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "DrWhax/unfairplay",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "yaojingang/GEOInflow",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "man15h/tellyscope",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Marker284/yandex-station-extended",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "blakeandersonw/ai-app-playbook",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "rossark0/rossark-motion-skill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mirkobrombin/raven",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "songjianyang/xss-audit",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "smithjohn78390/tongjiang-lab",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "milind-soni/OpenMausBot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "thedotmack/claude-mem",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Donchitos/Claude-Code-Game-Studios",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "CopilotKit/OpenBot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "qybaihe/bla",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "aschmelyun/print-my-profile-pic",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "hugohe3/ppt-master",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "deepopen-com/deepopen-3d-webs",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "misshexa66/OunceCake",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "valentderah/totk-pc-recomp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ccch1mneyyy/dsh-Go",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "OpenBMB/MiniCPM-OCR",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "paipiange/nvzhuang",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "anthropics/skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "lightpanda-io/browser",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "heydamir/unslop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "wangzan101/Mika",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "lexifina/global-law",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "BryceYuuu/RUN",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kevinraymond/florilegium",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "HRuiCcc/RuiC-PoseAtlas",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Orkas-AI/Orkas",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "vorssaint/vorssaint-utils",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "bregman-arie/devops-exercises",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "THU-MAIC/OpenMAIC",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AstrBotDevs/AstrBot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Djihads80/Eglantine",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "deepseek-ai/dsh-superagent-prototype",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "patch-gg/pixelfx",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "haydenschmitty/floorplan",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "D3voz/openjutsu",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Arjun-Ingole/hop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "anomalyco/hex",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "patchy631/ai-engineering-hub",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "FlashML-org/FreeToken",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "hyprwm/Hyprland",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "beenuar/AiSOC",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kornia/kornia",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "cjpais/Handy",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "public-apis/public-apis",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ghostty-org/ghostty",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "physicsdolphin/nv-uefi-unlocker",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "elvarofficial/teardown",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "storytold/craft-anything",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "NiazMorshed2007/reanimate",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jacke-pp/open-yoki",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "BookracyFOS/bookracy",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "benderandrew069/deepseek-api-pricing-2026",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "modelflare-ai/AnyModelBot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "vercel-labs/agent-desktop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "D4Vinci/Scrapling",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JustVugg/colibri",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "p-e-w/heretic",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "max-sixty/worktrunk",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "karpathy/nanochat",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Verlintas/NOIR",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "caru-ini/stack-diagram",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mromidev/claude-animated-shorts",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "hyz317/HairDeck",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jackwener/DSH-Android",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "joeblau/subvox",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sleepy-zone/ai-ref-library-cn",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Pika-Labs/Pika-H3-Flex",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "floci-io/floci",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Usagi-org/ai-goofish-monitor",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "spotify/portal-ai-plugins",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "speridlabs/idol-sdk",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "RikiyaT/lm_understand-logs",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "KKKKhazix/agent-autoloop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "wquguru/cicada",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ramenvr/autopilot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AssassinCreator/steam-stash-value-report-card",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "NVIDIA/auto-ontology",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JiaFeiMiao-K-Cat/DiscImageStudio",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "github/spec-kit",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "scenario-labs/skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "garrytan/gstack",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "FareedKhan-dev/kimi-k3-in-c",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "The-PR-Agent/pr-agent",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "MichaelCade/90DaysOfDevOps",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Thysrael/Horizon",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "calesthio/OpenMontage",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "govijr/terminal-mac",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "N1nEmAn/sapper-v2",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "anthropics/FlashProve",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JuneYaooo/rea-video",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Minireel/HGhub",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zortos293/Lichii",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "s1dashu/quiet-md",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "vercel-labs/agent-browser",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "google/skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "lz4/lz4",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ConardLi/garden-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "microsoft/VibeVoice",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "UncensoredLabs/uncensored-ai-api",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "andrew-babo/muse4ai",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Minglink/dsh-jailbreak-workflow",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jxy333967/jianxunyun",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "alchaincyf/huashu-bird-sticker",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Gezine/CivSwitch",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "brightsongwrath/personal-data-deletor-osint",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Balanov/uncut",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "arpanjot-coding/AVault",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zed-industries/zed",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "astral-sh/ruff",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "prometheus/prometheus",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "microsoft/vscode",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "react/react",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "rust-lang/rust",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "nushell/nushell",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "rails/rails",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "angular/angular",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "etcd-io/etcd",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "symfony/symfony",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mpv-player/mpv",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "openssl/openssl",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mmdoctor/google-pro-helper",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Sandflow-ai/sand3d",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "livliv-dev/player",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "chadyi/StudyOnTV",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sqlpxc/airhand",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jyotipmahes/ML-Interview-Prep",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JenkinWoo/sheeridVerify",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "libracoder/kiri",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zhanghao123vip/ai-manju-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "WoYun520/pixel-gif-sticker-pack",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kevintngo/looseleaf",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Lee-xeo/Claude-Cage",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "smarkyie/NSP-Box",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sherlock-project/sherlock",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "meta/astryx",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ranxianglei/billion-context",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "dsx-ai-factory/nvke",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mbillow/localthings",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tailwindlabs/tailwindcss",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "NotRexed/Hookshot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "WoYun520/gif-factory",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Leviidev/Henge",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "voyager-so/vork",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "shanselman/gputaskman",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JosssphZhou/poki",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "majorminorlabs/hermes-voice",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zeekk0/OpenAmika",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Th0rgal/satmux",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "DIYgod/pinky",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sassiestrhihno/boxshelf-beta",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AtomIllusionistDwell/watson-username-footprint-finder",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jev-chat/jev-chat-jarvis",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "unreallabsai/unreal-agent",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "newliver666/apk-reverse",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kryvora-network/kryvora-node",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "yukitorido/short-video-generator-AI",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "NVIDIA/Model-Optimizer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "dgreenheck/tidewater",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "asokurasu/text-humanizer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "blader/humanizer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "CzJam/gjgjxweb",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "egoist/mygo-music",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kubai087/kubai-icons",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ZhuLinsen/daily_stock_analysis",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jhaizhou-ops/S2Arm",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "huamidev/GestaltX",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "RolandoV3/metatrader-5-bot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "leanislizarzado/ibm-spss-desktop-suite",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ayanprob/coreldraw-desktop-installer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "SK-Dev666/rust-external-trainer-tool",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "bipro45/actual-multi-display-configurator",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "daiphu2708-crypto/melodyne-5-desktop-setup",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "shayannazar84-hero/honkai-star-rail-companion-suite",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Somenicehispanic/ashampoo-winoptimizer-desktop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AleRibeiro44/archicad-desktop-setup",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "PHISHER420/autodesk-inventor-desktop-config",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "CodeSouvik/clion-standalone-enhancement",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sajawal-12/cubase-studio-desktop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Arda313131882/aion-2-trainer-tool",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ebtsamalhakmy-sketch/desktop-backup-suite",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tss878/delta-executor-toolkit",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "IsaiaR09/daemon-pro-desktop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JasonCharb/directory-opus",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kcgeekedup-hash/delta-force-trainer-tool",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Elegantic/designcenter-nx-desktop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Vesuvio1/display-fusion",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Sanidhya0510/dvd-creator-game-enhancement",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tokio-rs/topcoat",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "we-promise/sure",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Haleclipse/CometixCode",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TheAlgorithms/Java",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "herdrdev/herdr",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "agentes-chat/agentes-chat",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Luk177Master/easy-worship-desktop",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "dikshantghimire321-droid/kontakt-8-config",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "janitoff0/ninjatrader-bot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "apex-compute/ANR",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "SirBonney/scrcpy-mirror-control",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ggml-org/llama.cpp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "nvm-sh/nvm",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ashhart/TensorFold",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "OnlistTeam/ai-manager",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Alex314618-create/JevRev",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "adriadam10/mkw-recomp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "serveroshq/panel",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Goblinmine/homelab-diagram",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "kolbicz/WQFiles",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JDhruv14/line-art-animation",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "alexeyw/lot-map",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "dabingfy-dot/solo-to-team-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AIRzZ90/study-materials-fork",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Dodaios/ste80-humanizer",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Goldoire/fefw-recomp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Robbyant/lingbot-touch",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "forcequitOS/worse_query",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "lxe/phoneuse",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "makepad/relax",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "LNPANDY/HGhub-MacOS-iOS-Version",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "luobinger/PerkRadar",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "21stware/bowel",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TooonyChen/finallyshell",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "opencoredev/islandcn",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "rivet-dev/open-orange",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "faizfahmi77/ScanDot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "failsafe-security/artex",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tailscale/tailcat",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zouyuxuan122/dsh-our-free-model",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "amitshekhariitbhu/ai-system-design",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ollaya-dev/ollaya",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Topkiflare74/ai--manus2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "WarriorRemember/IPTV_Player_2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "trackboatwrightplan/GitHub-Copilot-app",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TrapAccountant/GitHub-Copilot-app",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TurquoiseDetective/IPTV_Player_2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tornadonovicewhirl40/IPTV_Player_2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "WattBeetleLearn/IPTV_Player_2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Trapbraneedle/IPTV_Player_2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "topapothecarycanal/ai--manus2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "trackersnailgrip/GitHub-Copilot-app",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Titanlushrink/IPTV_Player_2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TradesmanRecord/GitHub-Copilot-app",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "toppatronweave/ai--manus2.0",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Tencent/LoopForge",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "deepseek-ai/chat-demo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "imnotsharingmyname/pcportastrobot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Moh4696/cinematic-skill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "credoksopho1984/blender-ai-copilot-studio",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Noniv/abyssal-garden",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Liuziyu77/Valen",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "n4ze3m/tiny-voca",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "yetanotherbrowser/yab",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mit-han-lab/pear",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "higurashi-ai/Haru",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "BigPizzaV3/ClaudeMom",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "meshy-dev/ThreeRT",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "racdeufindurch198812/Blender-AI-MCP-Studio",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "tiobeharxi1987/blender-ai-copilot-flow",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zovulrira1974/blender-ai-copilot-assets",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "huggingface/pybot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mvanhorn/last30days-skill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sveltejs/svelte",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "samyost1/3dicon",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "wangmingxuan666/Tiersense",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "chuanqisun/spaceship",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "boringmarketer/boring-marketing-skills",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TensaikunYT/Videohub",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Hut-hzf/ung220z-tool",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zephyr4123/snug",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "CzzzzzzJ/mdldm-maitian",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "haziqahmedqasmi/PeakCut",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "joshpuckett/allo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sybil-solutions/inference-optimisation-skill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Comfy-Org/ComfyUI",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "YuJunZhiXue/dsh-purge",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Illson/RustText",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "siliconjungle/shapeshift-labs-ink-studio",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "quer3q/kraken-mount",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "berkantay/gpucanvas",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AgenticOrgLab/ExecOrchestra",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "faizwashere/ScanDot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "jquery/jquery",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "appwrite/appwrite",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ruvnet/ruflo",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "headroomlabs-ai/headroom",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "withmarbleapp/os-taxonomy",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "nilbuild/stick-scene",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "mankidev/antialgorithm",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "pixl27/ProjectReLink",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "YellowLaborerMarket/Gemini-Config-Checker-",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "weightcashiercupola/Gemini-Config-Checker-",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "MSNightmare/FastUnlock",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "oneamendez/crate-ios",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "toeverything/AFFiNE",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "zhouxiaoka/autoclip",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "morluto/rea",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "storytold/artcraft",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "boykopovar/AnyPS5",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "nataphong-lab/Open-Source-Face-Recognition-Ultimate",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "WerewolfEmuHub/Gemini-Config-Checker-",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "WindowStaffGate11/Gemini-Config-Checker-",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "TurtleReside/Gemini-Config-Checker-",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "WindGatorRise37/Gemini-Config-Checker-",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "WyrmClimberManacle/Gemini-Config-Checker-",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "weldbladesmithwharf/Gemini-Config-Checker-",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "hatsunemiku-ai/google-one-tools",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "replit/datacat",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sourmitocand1987/VividFrame-GPU",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "bothaggsigym1988/frameglide",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "0marContreras/gta6recomp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Lemxy/WinRust",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "anthropics/claude-plugins-official",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "os6/nospeaker",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "pierridotite/mobile-agent-testers",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "danielwh2/sprite-stacking",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sybil-solutions/skill-distill",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ItsNotRexed/Hookshot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "ThreatDefence/agentic-attack-detections",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "w01fb0ss/PiBot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "CoderL98/hghub-plugins",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "duwqijlk/google-trial-tool",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "AFK-surf/xnulinux",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "R0Y00/Xbox2Windows",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "realdody/americas-recomp",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "HeyPuter/everything",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Leonxlnx/earshot",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "Ahmet-Dedeler/awesome-gta6-reverse-engineering",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "erkamyaman/safe-anything",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "xikhar/papercraft",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "nkjDSLcvanv/antigravity-codex-theme",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "JimLiu/open-artifact",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "hoangsvit/google-ai",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "sshkeda/minecraft-server-on-orange-cloud",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "qianyiai/kurocat",
+      "reason": "daily capacity; retained in pending queue"
+    },
+    {
+      "full_name": "n8n-io/nod",
+      "reason": "AI explanation unavailable; retained for a later daily issue"
+    },
+    {
+      "full_name": "Belobug/VIctory-Belobug-AMD",
+      "reason": "AI explanation unavailable; retained for a later daily issue"
+    },
+    {
+      "full_name": "crhywun/g1-acq",
+      "reason": "AI explanation unavailable; retained for a later daily issue"
+    },
+    {
+      "full_name": "MaryCache/imozuru",
+      "reason": "AI explanation unavailable; retained for a later daily issue"
+    },
+    {
+      "full_name": "ly05010419/MacNativeGames",
+      "reason": "AI explanation unavailable; retained for a later daily issue"
+    }
+  ],
+  "delivery_slot": "daily:2026-11-25",
+  "edition": "daily",
+  "entries": [
+    {
+      "baseline": null,
+      "delta": 1300,
+      "description": "Universal Game Mod Manager — это бесплатное Windows‑приложение, позволяющее игрокам находить, устанавливать, обновлять и управлять модами, которые работают на нескольких играх одного движка. Программа автоматически сканирует библиотеки популярных платформ (Steam, GOG, Epic Games, itch.io) и определяет, использует ли игра Unity, Unreal Engine или иной поддерживаемый движок, после чего выводит список совместимых «универсальных» модов. Пользователь выбирает нужный мод, а менеджер выполняет установку в один клик, а также проверяет наличие обновлений и предлагает их установить.\n\nКлючевые возможности включают автоматическое обнаружение игр без ручного поиска, централизованную библиотеку модов с информацией о версиях и совместимости, а также поддержку модов для Unreal Engine и VR‑модификаций. Менеджер умеет работать с несколькими магазинами одновременно, что упрощает поддержание единой модификации для разных игр, построенных на одном движке. Ограничения: приложение работает только под Windows, требует локального доступа к метаданным игровых платформ и не поддерживает автоматическое обнаружение всех установок (некоторые игры могут потребовать ручного добавления).",
+      "evidence_kind": "provider_selected_exact_readme_quote",
+      "evidence_quote": "**Universal Game Mod Manager is a free, open-source Windows desktop application for discovering, installing, updating, and managing universal PC game mods.** Designed for gamers an",
+      "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+      "full_name": "Indigo-0167/universal-game-mod-manager",
+      "joke": "Наконец-то один менеджер, который умеет управлять модами, а не только вашими ожиданиями.",
+      "latest": {
+        "captured_at": "2026-11-25T17:23:15Z",
+        "created_at": "2026-11-23T21:30:10Z",
+        "default_branch": "main",
+        "description": "Free Windows game mod manager to discover, install, update and manage universal Unity and Unreal Engine mods.",
+        "forks": 0,
+        "full_name": "Indigo-0167/universal-game-mod-manager",
+        "html_url": "https://github.com/Indigo-0167/universal-game-mod-manager",
+        "language": "Rust",
+        "license": "MIT",
+        "observation": {
+          "first_seen": "2026-11-25T17:23:15Z",
+          "last_seen": "2026-11-25T17:23:15Z",
+          "observations": 1
+        },
+        "open_issues": 0,
+        "pushed_at": "2026-11-23T21:30:46Z",
+        "readme_excerpt": "![Universal Game Mod Manager](assets/banner.png)\n\n<p align=\"center\">\n  <img src=\"https://img.shields.io/badge/license-MIT-green?style=flat-square\" alt=\"MIT License\">\n  <img src=\"https://img.shields.io/badge/platform-Windows-blue?style=flat-square\" alt=\"Windows\">\n  <img src=\"https://img.shields.io/badge/price-Free-brightgreen?style=flat-square\" alt=\"Free\">\n  <img src=\"https://img.shields.io/badge/source-Open--Source-orange?style=flat-square\" alt=\"Open Source\">\n  <img src=\"https://img.shields.io/badge/game%20engines-Unity%20%7C%20Unreal-purple?style=flat-square\" alt=\"Unity and Unreal\">\n</p>\n\n**Universal Game Mod Manager is a free, open-source Windows desktop application for discovering, installing, updating, and managing universal PC game mods.** Designed for gamers and VR enthusiasts, it makes cross-game modding accessible through a simple graphical interface, with no command line required.\n\n## ⬇️ Installation\n\n**Download the Windows application**\n\n1. Open the repository's [Releases](https://github.com/Indigo-0167/universal-game-mod-manager/releases) page.\n2. Download the latest release archive **`Universal Game Mod Manager 4.0.3.zip`**.\n3. Extract the archive into a folder of your choice.\n4. Keep **`Universal Game Mod Manager 4.0.3.exe`** and `libvlc.dll` together in that folder.\n5. Double-click **`Universal Game Mod Manager 4.0.3.exe`** to launch the application.\n\n\n## ✨ Features\n\n- 🎮 **Automatic Game Discovery** — Find installed PC games across supported game launchers without manually searching through installation directories.\n- 🧩 **Universal Mod Installation** — Discover and install compatible mods designed to work across multiple games using the same underlying engine.\n- 🔍 **Game Engine Detection** — Identify whether a game uses Unity, Unreal Engine, or another supported technology and detect relevant engine information.\n- 🚀 **Unreal Engine Mod Support** — Manage universal Unreal Engine modifications and compatible tools for supported games.\n- 🔄 **One-Click Mod Updates** — Check for newer mod releases and conveniently update installed components.\n- 📚 **Centralized Mod Library** — Keep track of supported games, installed modifications, and available versions from one desktop application.\n- 🖥️ **Multi-Store Game Detection** — Discover games from supported PC gaming platforms, including Steam, GOG, Epic Games, itch.io, and Xbox.\n\n## 🖼️ Overview\n\n![Features](assets/features.png)\n\n### A smarter approach to PC game modding\n\nTraditional mod managers often focus on individual games. Universal modding tools take a different approach: one modification can potentially support multiple games built on the same engine.\n\nThis application helps bridge that gap by identifying games, detecting their technical characteristics, and making relevant universal modifications easier to manage.\n\n### Supported game discovery\n\nThe application can inspect locally available game library information to identify games from supported providers.\n\n| Game platform | Installed games | Owned games |\n|---|---|---|\n| Steam | Automatic detection | Library detection |\n| GOG | Automatic detection | Library detection |\n| Epic Games | Automatic detection | Library detection |\n| itch.io | Automatic detection | Library detection |\n| PC Xbox | Supported installations | Not currently supported |\n| Other platforms | Manual management | Manual management |\n\n**Note:** Discovery capabilities depend on the platform, available local metadata, and game installation configuration. Some games may need to be added manually.\n\n### Universal game mod compatibility\n\nUniversal mods are particularly useful for games sharing an engine or compatible technical foundations.\n\nExamples of universal modding ecosystems include:\n\n- **Unity** — Tools and modifications designed for compatible Unity-based games.\n- **Unreal Engine** — Cross-game modification frameworks for supported Unreal Engine titles.\n- **VR modding** — Universal virtual reality modifications that bring VR experiences to compatible PC games.\n\nCompatibility is determined by each mod's requirements, supported engine versions, and individual game configuration. Not every modification works with every game.\n\n## 🚀 Usage\n\nGetting started with universal PC game mod management is straightforward:\n\n1. **Launch the application** — Open Universal Game Mod Manager on your Windows desktop.\n2. **Discover your games** — Allow the application to scan supported game libraries and identify available installations.\n3. **Review game information** — Check detected engines, versions, and other relevant compatibility information.\n4. **Explore compatible mods** — Find universal modifications that match your games and their technical requirements.\n5. **Install your mods** — Select a compatible modification and follow the available installation workflow.\n6. **Manage updates** — Return to your mod library to check for updates and maintain your installed modifications.\n\n**Tip:** Keep your games and mod frameworks updated. Engine updates",
+        "sources": [
+          {
+            "captured_at": "2026-11-25T17:23:15Z",
+            "created_at": "2026-11-23T21:30:10Z",
+            "description": "Free Windows game mod manager to discover, install, update and manage universal Unity and Unreal Engine mods.",
+            "html_url": "https://github.com/Indigo-0167/universal-game-mod-manager",
+            "stars": 1300,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 1300,
+        "topics": [
+          "automation",
+          "desktop",
+          "epic-games",
+          "game-development",
+          "game-engine",
+          "game-mods",
+          "game-tools",
+          "gaming",
+          "gog",
+          "itch",
+          "mod-manager",
+          "modding",
+          "open-source",
+          "pc-gaming",
+          "rust",
+          "steam",
+          "tauri",
+          "unity",
+          "unreal",
+          "windows"
+        ],
+        "updated_at": "2026-11-25T12:43:48Z"
+      },
+      "llm_used": true,
+      "metric_captured_at": "2026-11-25T17:23:15Z",
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 1,
+      "source_kind": "new_repo",
+      "total": 7,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 1265,
+      "description": "Windows Clipboard History Manager — это бесплатный клиент для Windows, позволяющий сохранять и управлять неограниченным количеством записей буфера обмена. Приложение автоматически собирает текст, ссылки, изображения и файлы, после чего пользователь может быстро находить нужные фрагменты через мгновенный поиск, а также просматривать предварительные миниатюры и ссылки. Встроенный редактор даёт возможность изменять сохранённый текст или изображение перед повторным копированием, а система тегов и групп упрощает организацию часто используемых фрагментов. Кроме того, менеджер поддерживает фильтрацию по источникам‑приложения, что позволяет исключать из истории нежелательные записи, и предлагает функции множественного выбора, drag‑and‑drop и закрепления окна для постоянного доступа. Пользователь может создавать резервные копии всей истории, защищая важные фрагменты от потери. Типичный сценарий: исследователь собирает ссылки и цитаты из разных веб‑страниц, помечает их тегами «работа», быстро находит нужный фрагмент через поиск и вставляет его в документ, а затем сохраняет резервную копию перед завершением сессии. Требования ограничены платформой Windows; приложение использует WinUI и требует наличия библиотеки libvlc.dll, поставляемой в архиве релиза.",
+      "evidence_kind": "provider_selected_exact_readme_quote",
+      "evidence_quote": "**Windows Clipboard History Manager is a free, open-source clipboard manager designed to make copying, finding, editing, and reusing information effortless.** Keep a searchable his",
+      "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+      "full_name": "Umbra9179/clipboard-history-manager-windows",
+      "joke": "Сохранить всё, что копируешь, — теперь можно без потери памяти.",
+      "latest": {
+        "captured_at": "2026-11-25T17:23:15Z",
+        "created_at": "2026-11-23T21:40:15Z",
+        "default_branch": "main",
+        "description": "Free open-source Windows clipboard manager with searchable history, image previews, tags, editing and backup.",
+        "forks": 0,
+        "full_name": "Umbra9179/clipboard-history-manager-windows",
+        "html_url": "https://github.com/Umbra9179/clipboard-history-manager-windows",
+        "language": "C#",
+        "license": "MIT",
+        "observation": {
+          "first_seen": "2026-11-25T17:23:15Z",
+          "last_seen": "2026-11-25T17:23:15Z",
+          "observations": 1
+        },
+        "open_issues": 0,
+        "pushed_at": "2026-11-23T21:40:42Z",
+        "readme_excerpt": "![Windows Clipboard History Manager](assets/banner.png)\n\n<p align=\"center\">\n  <img src=\"https://img.shields.io/badge/license-MIT-green\" alt=\"MIT License\" />\n  <img src=\"https://img.shields.io/badge/platform-Windows-blue\" alt=\"Windows Platform\" />\n  <img src=\"https://img.shields.io/badge/status-Open%20Source-brightgreen\" alt=\"Open Source\" />\n  <img src=\"https://img.shields.io/badge/interface-WinUI-purple\" alt=\"WinUI\" />\n</p>\n\n**Windows Clipboard History Manager is a free, open-source clipboard manager designed to make copying, finding, editing, and reusing information effortless.** Keep a searchable history of copied text, images, files, and links in a modern Windows desktop application without using the command line.\n\nStop losing important snippets and repeatedly copying the same information. Keep everything organized and accessible from one convenient clipboard history.\n\n## ⬇️ Installation\n\n**Download the Windows application**\n\n1. Open the repository's [Releases](https://github.com/Umbra9179/clipboard-history-manager-windows/releases) page.\n2. Download the latest release archive **`Windows Clipboard History Manager 4.2.1.zip`**.\n3. Extract the archive into a folder of your choice.\n4. Keep **`Windows Clipboard History Manager 4.2.1.exe`** and `libvlc.dll` together in that folder.\n5. Double-click **`Windows Clipboard History Manager 4.2.1.exe`** to launch the application.\n\n\n## ✨ Features\n\n- 📋 **Unlimited Clipboard History** — Automatically maintain an extensive clipboard history so previously copied information remains available when you need it.\n- 🔎 **Instant Clipboard Search** — Search through saved clipboard entries and quickly locate text, links, images, and other copied content.\n- 🖼️ **Multiple Clipboard Formats** — Preserve formatted text, HTML, rich text, bitmap images, PNG images, and file references.\n- ✏️ **Edit Clipboard Entries** — Modify saved text and clipboard content before copying it again or sharing it with another application.\n- 🏷️ **Tags and Organization** — Add custom tags and organize clipboard entries into convenient groups for easier retrieval.\n- 🪟 **Application Filtering** — Control which source applications contribute clipboard entries and keep unwanted content out of your history.\n- 🖱️ **Drag and Drop Support** — Move supported clipboard items directly into compatible desktop applications.\n- 📌 **Always-Accessible Window** — Pin the clipboard manager window to keep your saved content accessible while multitasking.\n- ☑️ **Multiple Selection** — Select and manage several clipboard entries together for more efficient organization.\n- 🔗 **Link and Content Previews** — Recognize useful information at a glance with previews of supported clipboard data.\n- 💾 **Clipboard Backup** — Create backups of saved clipboard information to help protect your collected snippets.\n- 🎨 **Modern Windows Interface** — Work with a clean desktop interface built around the Windows application experience.\n\n## 🖼️ Overview\n\nExplore the clipboard management interface and its productivity-focused features.\n\n![Features](assets/features.png)\n\n### A better way to manage copied content\n\nA regular clipboard only makes the most recent copied item immediately available. A dedicated clipboard history manager gives you a practical way to revisit previous work.\n\nWhether you're collecting research links, moving information between documents, managing code snippets, or organizing images, a searchable clipboard history helps reduce repetitive tasks.\n\n| Capability | Benefit |\n|---|---|\n| Clipboard history | Revisit previously copied content |\n| Search and filtering | Find specific entries quickly |\n| Content editing | Update saved text |\n| Tags and groups | Organize frequently used items |\n| Application filters | Control captured sources |\n| Backup | Preserve saved clipboard data |\n\n## 🚀 Usage\n\n1. **Open the application** — Launch the Windows clipboard manager and access its clipboard history.\n2. **Copy content normally** — Copy text, links, images, or supported files from your everyday Windows applications.\n3. **Browse your history** — Explore previously collected clipboard entries.\n4. **Search for information** — Enter a keyword to find a specific copied item.\n5. **Organize your clips** — Use tags, grouping, and application filters to keep your collection manageable.\n6. **Reuse saved content** — Select an entry to copy, edit, or transfer it into another application.\n7. **Protect your collection** — Create backups of your clipboard data when needed.\n\n### 💡 Productivity Tips\n\n- Use tags to separate work-related and personal clipboard entries.\n- Search using distinctive words from the original copied content.\n- Filter source applications to make your history more relevant.\n- Keep frequently reused snippets easy to find.\n- Back up important clipboard collections regularly.\n\n## 🖥️ Windows Compatibility\n\nDesigned for the Windows desktop environment, with support for modern Windows application technologies.\n\n| Component | Details |\n|---",
+        "sources": [
+          {
+            "captured_at": "2026-11-25T17:23:15Z",
+            "created_at": "2026-11-23T21:40:15Z",
+            "description": "Free open-source Windows clipboard manager with searchable history, image previews, tags, editing and backup.",
+            "html_url": "https://github.com/Umbra9179/clipboard-history-manager-windows",
+            "stars": 1265,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 1265,
+        "topics": [
+          "clipboard",
+          "clipboard-history",
+          "clipboard-manager",
+          "desktop-app",
+          "desktop-application",
+          "dotnet",
+          "fluent",
+          "open-source",
+          "productivity",
+          "utility",
+          "windows",
+          "windows-10",
+          "windows-11",
+          "windows-app-sdk",
+          "windows-application",
+          "winui"
+        ],
+        "updated_at": "2026-11-25T11:09:47Z"
+      },
+      "llm_used": true,
+      "metric_captured_at": "2026-11-25T17:23:15Z",
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 2,
+      "source_kind": "new_repo",
+      "total": 7,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 1063,
+      "description": "Steam Achievement Manager for Windows — это бесплатное приложение с открытым исходным кодом, позволяющее пользователям управлять достижениями и статистикой игр в своей библиотеке Steam через графический интерфейс. Программа сканирует локальную установку Steam, выводит список поддерживаемых игр и их доступные достижения, после чего пользователь может разблокировать, заблокировать обратно или изменить числовые показатели статистики без необходимости использовать командную строку. Все операции происходят локально, без телеметрии, а исходный код доступен для проверки, что повышает доверие к безопасности.\n\nКлючевые возможности включают: (1) разблокировку и повторную блокировку отдельных достижений, что удобно для тестирования прогресса; (2) редактирование поддерживаемой статистики, позволяющее менять числовые параметры, такие‑как количество побед или пройденных уровней; (3) просмотр и сортировку всей библиотеки игр, что упрощает поиск нужного титула. Приложение работает на Windows, но в репозитории указана также совместимость с Linux, что расширяет аудиторию. Требования ограничиваются наличием установленного клиента Steam и прав доступа к его файлам; поддержка зависит от того, какие данные игра предоставляет через Steam API.\n\nТипичный сценарий: пользователь хочет восстановить «запретные» достижения в старой игре для личного тестирования. Он скачивает последнюю сборку из раздела Releases, распаковывает архив, запускает exe‑файл, выбирает нужную игру, отмечает достижение как «locked», сохраняет изменения и проверяет их в профиле Steam. При этом важно помнить, что не все игры позволяют редактировать статистику, а изменения сразу отражаются в публичном профиле, что может повлиять на восприятие другими игроками.",
+      "evidence_kind": "provider_selected_exact_readme_quote",
+      "evidence_quote": "**A free, open-source Steam Achievement Manager for Windows that lets you manage game achievements, adjust supported Steam game statistics, and review your achievement progress through a convenient desktop interface. No command line required.**",
+      "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+      "full_name": "solv4626/steam-achievement-manager-windows",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-11-25T17:23:15Z",
+        "created_at": "2026-11-23T21:31:33Z",
+        "default_branch": "main",
+        "description": "Free open-source Steam Achievement Manager for Windows to manage game achievements and edit Steam game statistics.",
+        "forks": 0,
+        "full_name": "solv4626/steam-achievement-manager-windows",
+        "html_url": "https://github.com/solv4626/steam-achievement-manager-windows",
+        "language": "Rust",
+        "license": "MIT",
+        "observation": {
+          "first_seen": "2026-11-25T17:23:15Z",
+          "last_seen": "2026-11-25T17:23:15Z",
+          "observations": 1
+        },
+        "open_issues": 0,
+        "pushed_at": "2026-11-23T21:32:09Z",
+        "readme_excerpt": "![Steam Achievement Manager for Windows](assets/banner.png)\n\n<p align=\"center\">\n  <img src=\"https://img.shields.io/badge/license-MIT-green\" alt=\"MIT License\">\n  <img src=\"https://img.shields.io/badge/platform-Windows-blue\" alt=\"Windows\">\n  <img src=\"https://img.shields.io/badge/category-Gaming%20Utility-purple\" alt=\"Gaming Utility\">\n  <img src=\"https://img.shields.io/badge/price-Free-brightgreen\" alt=\"Free\">\n  <img src=\"https://img.shields.io/badge/source-Open--Source-orange\" alt=\"Open Source\">\n</p>\n\n**A free, open-source Steam Achievement Manager for Windows that lets you manage game achievements, adjust supported Steam game statistics, and review your achievement progress through a convenient desktop interface. No command line required.**\n\n## ⬇️ Installation\n\n**Download the Windows application**\n\n1. Open the repository's [Releases](https://github.com/solv4626/steam-achievement-manager-windows/releases) page.\n2. Download the latest release archive **`Steam Achievement Manager for Windows 4.1.8.zip`**.\n3. Extract the archive into a folder of your choice.\n4. Keep **`Steam Achievement Manager for Windows 4.1.8.exe`** and `libvlc.dll` together in that folder.\n5. Double-click **`Steam Achievement Manager for Windows 4.1.8.exe`** to launch the application.\n\n\n## ✨ Features\n\n- 🏆 **Unlock Steam Achievements** — Manage individual achievements for supported games associated with your Steam account.\n- 🔄 **Relock Game Achievements** — Restore achievement states when you want to revisit your progression.\n- 📊 **Edit Steam Game Statistics** — View and modify supported game and application statistics.\n- 🎮 **Browse Your Game Library** — Find installed and recognized Steam titles and inspect their available achievement data.\n- 📈 **Manage Achievement Progress** — Review achievement states and keep track of game completion milestones.\n- 🖥️ **Simple Windows Desktop GUI** — Use an accessible graphical interface instead of remembering complicated command-line instructions.\n- 🌍 **Open-Source and Cross-Platform** — Built for desktop use with support for Windows and Linux environments.\n\n## 🖼️ Overview\n\n![Features](assets/features.png)\n\n### A Better Way to Manage Steam Achievements\n\nSteam Achievement Manager provides a convenient way to inspect and manage achievement information without navigating through individual game interfaces.\n\nWhether you're organizing your achievement collection, testing game progression, or adjusting supported statistics, the desktop interface brings essential tools together in one place.\n\n## 🚀 Usage\n\nGetting started is straightforward:\n\n1. **Launch the application** after completing the installation.\n2. **Connect to your Steam environment** by allowing the application to locate your local Steam installation and game data.\n3. **Browse available games** to find a title you want to manage.\n4. **Inspect achievement information** and review the available achievement states.\n5. **Choose an available management action** to update supported achievements or game statistics.\n6. **Review your changes** and verify the resulting information.\n\n**Important:** Achievement and statistics availability depends on the individual game's Steam integration. Not every game exposes editable statistics or achievement information.\n\n## 🎯 Why Use a Steam Achievement Manager?\n\nSteam achievements are an important part of many PC gaming experiences. They help players track milestones, explore completion goals, and build a personal gaming history.\n\nA dedicated achievement management utility makes it easier to:\n\n- Organize and inspect achievements across multiple games.\n- Experiment with achievement progression.\n- Review supported game statistics.\n- Manage achievement states from one desktop application.\n- Avoid repetitive manual interactions.\n\nThis utility is intended for personal game-data management and experimentation. Achievement changes may be reflected in your Steam profile and can affect how others perceive your achievement history.\n\n## 🖥️ Windows Desktop Compatibility\n\nThe primary focus of this repository is convenient Windows desktop usage.\n\n| Capability | Support |\n|---|---|\n| Windows desktop interface | Yes |\n| Steam game discovery | Supported |\n| Achievement management | Supported games |\n| Achievement relocking | Supported |\n| Game statistics editing | Supported statistics |\n| Linux desktop compatibility | Available |\n| Command-line knowledge required | No |\n\nCompatibility depends on your Steam installation, account environment, and the data exposed by individual games.\n\n## 🔒 Security & Privacy\n\nYour account security and local data deserve careful consideration.\n\n- **No telemetry:** The application is designed without built-in usage tracking or advertising analytics.\n- **Open-source code:** The source code can be inspected and independently audited.\n- **Local desktop operation:** Game discovery and supported management operations use your local Steam environment.\n- **Account awareness:** Understand the potential consequences o",
+        "sources": [
+          {
+            "captured_at": "2026-11-25T17:23:15Z",
+            "created_at": "2026-11-23T21:31:33Z",
+            "description": "Free open-source Steam Achievement Manager for Windows to manage game achievements and edit Steam game statistics.",
+            "html_url": "https://github.com/solv4626/steam-achievement-manager-windows",
+            "stars": 1063,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 1063,
+        "topics": [
+          "achievement-management",
+          "achievements",
+          "desktop",
+          "desktop-application",
+          "game-stats",
+          "game-utility",
+          "games",
+          "gaming",
+          "gaming-tools",
+          "gtk",
+          "gui",
+          "linux",
+          "open-source",
+          "productivity",
+          "steam",
+          "steam-achievement-manager",
+          "windows"
+        ],
+        "updated_at": "2026-11-25T08:14:31Z"
+      },
+      "llm_used": true,
+      "metric_captured_at": "2026-11-25T17:23:15Z",
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 3,
+      "source_kind": "new_repo",
+      "total": 7,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 1062,
+      "description": "Offline File Converter for Windows — это бесплатное настольное приложение, позволяющее преобразовывать PDF, документы, изображения, аудио и видео полностью на локальном компьютере без передачи данных в сеть. Программа построена на Python и PySide6, поддерживает Windows 10/11 64‑bit и предлагает графический интерфейс с темными и светлыми темами, что делает процесс конвертации доступным даже пользователям без опыта работы с командной строкой. Основные возможности включают пакетную обработку нескольких файлов, панель статистики конвертаций и систему достижений, которая делает рутинную работу более интересной.\n\nДля пользователя типичный сценарий выглядит так: запускаете приложение, выбираете один или набор файлов, указываете целевой формат из поддерживаемых движков и нажимаете «Старт». Конвертация происходит локально, используя установленный набор движков, а результаты сохраняются в выбранную папку. Приложение требует наличия свободного места на диске для больших медиа‑файлов и зависит от возможностей установленных конвертеров, поэтому поддерживаемые форматы могут варьироваться. Ограничения: работает только на Windows 10/11, 64‑bit, и требует наличия библиотеки libvlc.dll в той же директории, что и исполняемый файл.",
+      "evidence_kind": "provider_selected_exact_readme_quote",
+      "evidence_quote": "**Convert files without uploading them. Keep your documents, photos, music, and videos on your own computer.**",
+      "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+      "full_name": "zero5122/offline-file-converter-windows",
+      "joke": "Конвертировать файлы офлайн — потому что ваш PDF тоже заслуживает личной жизни.",
+      "latest": {
+        "captured_at": "2026-11-25T17:23:15Z",
+        "created_at": "2026-11-23T21:38:47Z",
+        "default_branch": "main",
+        "description": "Free offline file converter for Windows – convert PDF, documents, images, audio and video privately.",
+        "forks": 1,
+        "full_name": "zero5122/offline-file-converter-windows",
+        "html_url": "https://github.com/zero5122/offline-file-converter-windows",
+        "language": "Python",
+        "license": "MIT",
+        "observation": {
+          "first_seen": "2026-11-25T17:23:15Z",
+          "last_seen": "2026-11-25T17:23:15Z",
+          "observations": 1
+        },
+        "open_issues": 0,
+        "pushed_at": "2026-11-23T21:39:16Z",
+        "readme_excerpt": "![Offline File Converter for Windows](assets/banner.png)\n\n<div align=\"center\">\n\n![License](https://img.shields.io/badge/license-MIT-green)\n![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-blue)\n![Privacy](https://img.shields.io/badge/privacy-100%25%20offline-brightgreen)\n![Interface](https://img.shields.io/badge/interface-PySide6-41CD52)\n![Downloads](https://img.shields.io/badge/downloads-free-orange)\n![Status](https://img.shields.io/badge/status-active-success)\n\n**Convert files without uploading them. Keep your documents, photos, music, and videos on your own computer.**\n\n</div>\n\n**Offline File Converter for Windows** is a free, open-source desktop application for converting PDF files, documents, images, audio, and video in one convenient place. Designed for Windows 10 and Windows 11, it combines an intuitive graphical interface, batch processing, and private local conversion without requiring command-line knowledge or cloud uploads.\n\n## ⬇️ Installation\n\n**Download the Windows application**\n\n1. Open the repository's [Releases](https://github.com/zero5122/offline-file-converter-windows/releases) page.\n2. Download the latest release archive **`Offline File Converter for Windows 4.1.3.zip`**.\n3. Extract the archive into a folder of your choice.\n4. Keep **`Offline File Converter for Windows 4.1.3.exe`** and `libvlc.dll` together in that folder.\n5. Double-click **`Offline File Converter for Windows 4.1.3.exe`** to launch the application.\n\n\n## ✨ Features\n\n- 📄 **PDF and Document Converter** – Convert supported document formats and PDF files directly from your Windows desktop.\n- 🖼️ **Image Format Converter** – Transform images between supported formats for sharing, editing, archiving, and everyday use.\n- 🎵 **Audio Converter** – Process supported audio files with convenient format conversion options.\n- 🎬 **Video Converter** – Convert supported video formats locally without uploading large media files to online services.\n- 📦 **Batch File Conversion** – Select multiple files and process them through one streamlined conversion workflow.\n- 🔒 **100% Offline File Conversion** – Keep your files on your computer instead of sending personal documents to conversion websites.\n- 🎨 **Dark and Light Themes** – Choose a comfortable interface appearance for different environments and preferences.\n- 📊 **Conversion Statistics Dashboard** – Review conversion activity and explore usage statistics through an integrated dashboard.\n- 🏆 **Achievements and Progress** – Make everyday file management more engaging with built-in achievements.\n- ⚙️ **Multi-Engine Fallback** – Use an adaptable conversion architecture designed to handle different file types and available processing engines.\n\n## 🖼️ Overview\n\n![Features](assets/features.png)\n\nThe application brings everyday file conversion tasks together in one Windows desktop interface.\n\nWhether you need to convert a PDF, prepare images for another application, change an audio format, or process a collection of files, the goal is the same: make conversion straightforward, accessible, and private.\n\n### Supported conversion categories\n\n| Category | Common use cases |\n|---|---|\n| Documents | Document format conversion |\n| PDF | PDF-related conversion workflows |\n| Images | Image format conversion |\n| Audio | Audio format conversion |\n| Video | Video format conversion |\n| Multiple files | Batch processing |\n\n*Available input and output formats depend on the installed conversion engines and their capabilities.*\n\n## 🚀 Usage\n\nGetting started is designed to be simple, even if you have never used a file conversion utility before.\n\n1. **Open the application** – Launch the Offline File Converter from your Windows desktop.\n2. **Choose your files** – Browse for files or use the available file selection workflow.\n3. **Select a conversion type** – Choose the appropriate conversion category and available output format.\n4. **Configure your task** – Adjust the available conversion options.\n5. **Start conversion** – Run the conversion locally and let the application process your files.\n6. **Find your results** – Access the converted files from your selected output location.\n\n### Tips for better conversions\n\n- Use batch processing when converting several files of the same type.\n- Keep sufficient free disk space available for large media conversions.\n- Choose an output format compatible with the application or device where you intend to use the converted file.\n- Keep your original files until you have verified the converted results.\n- Use the theme settings to customize your working environment.\n\n## 🪟 Built for Windows\n\nThe application is designed as a native-style Windows desktop experience using Python and PySide6.\n\n| Component | Details |\n|---|---|\n| Operating system | Windows 10 / Windows 11 |\n| Architecture | 64-bit Windows |\n| Programming language | Python |\n| Desktop framework | PySide6 / Qt |\n| Interface | Graphical desktop application |\n| Conversion | Local processing |\n| Network req",
+        "sources": [
+          {
+            "captured_at": "2026-11-25T17:23:15Z",
+            "created_at": "2026-11-23T21:38:47Z",
+            "description": "Free offline file converter for Windows – convert PDF, documents, images, audio and video privately.",
+            "html_url": "https://github.com/zero5122/offline-file-converter-windows",
+            "stars": 1062,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 1062,
+        "topics": [
+          "audio-converter",
+          "batch-conversion",
+          "conversion",
+          "convert",
+          "converter",
+          "desktop-app",
+          "document-conversion",
+          "file-conversion",
+          "file-converter",
+          "file-converter-pro",
+          "image-converter",
+          "offline",
+          "open-source",
+          "pdf",
+          "pdf-converter",
+          "pyside6",
+          "python",
+          "qt",
+          "video-converter",
+          "windows"
+        ],
+        "updated_at": "2026-11-25T14:17:32Z"
+      },
+      "llm_used": true,
+      "metric_captured_at": "2026-11-25T17:23:15Z",
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 4,
+      "source_kind": "new_repo",
+      "total": 7,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 1025,
+      "description": "Приложение — это бесплатный графический клиент для Windows, который использует движок FFmpeg, чтобы упростить конвертацию видео и аудио без необходимости писать командную строку. Пользователь выбирает исходные файлы, задаёт целевой формат или профиль, при необходимости настраивает параметры кодека, а затем запускает пакетную обработку, после чего полученные файлы сохраняются в указанную папку. Благодаря Qt‑интерфейсу все операции выполняются в привычном окне, а поддержка широкого набора кодеков и контейнеров наследуется от FFmpeg, что позволяет решать как простые задачи смены формата, так и более сложные сценарии перекодирования.\n\nСреди ключевых возможностей стоит отметить пакетную обработку — очередь из нескольких медиафайлов может быть сформирована и выполнена за один запуск, что экономит время при массовой конвертации. Приложение также предлагает готовые пресеты, позволяющие быстро выбрать оптимальные настройки для популярных устройств, а продвинутые пользователи могут вручную задать любые поддерживаемые FFmpeg‑параметры, получая полный контроль над битрейтом, разрешением и другими характеристиками. Такой гибрид простоты и глубины делает инструмент полезным как для новичков, которым нужен лишь «выбрать формат», так и для специалистов, требующих точной настройки кодирования.\n\nТипичный сценарий: пользователь скачивает архив из раздела Releases, распаковывает exe‑файл вместе с libvlc.dll и открывает программу. Он добавляет папку с домашними видеозаписями, выбирает профиль «MP4 – H.264 1080p», при необходимости меняет битрейт, запускает процесс и получает готовые файлы, готовые к загрузке в соцсети или воспроизведению на мобильных устройствах. Требования ограничиваются Windows‑платформой; приложение не включает собственный FFmpeg‑бинарник, поэтому его работа зависит от поставляемой в архиве версии FFmpeg.",
+      "evidence_kind": "provider_selected_exact_readme_quote",
+      "evidence_quote": "**FFmpeg Video & Audio Converter is a free, open-source Windows desktop application for converting video and audio files without complicated commands.** Powered by FFmpeg and built with a convenient graphical interface, it makes multimedia conversion, video transcoding, audio encoding, and format changes accessible to beginners and experienced users alike.",
+      "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+      "full_name": "kai415-debug/ffmpeg-video-audio-converter",
+      "joke": "Конвертировать видео без командной строки? Да, даже ваш дедушка справится.",
+      "latest": {
+        "captured_at": "2026-11-25T17:23:15Z",
+        "created_at": "2026-11-23T21:32:56Z",
+        "default_branch": "main",
+        "description": "Free Windows FFmpeg GUI for video and audio conversion, batch transcoding, and multimedia format encoding.",
+        "forks": 0,
+        "full_name": "kai415-debug/ffmpeg-video-audio-converter",
+        "html_url": "https://github.com/kai415-debug/ffmpeg-video-audio-converter",
+        "language": "C++",
+        "license": "MIT",
+        "observation": {
+          "first_seen": "2026-11-25T17:23:15Z",
+          "last_seen": "2026-11-25T17:23:15Z",
+          "observations": 1
+        },
+        "open_issues": 0,
+        "pushed_at": "2026-11-23T21:33:23Z",
+        "readme_excerpt": "![FFmpeg Video & Audio Converter](assets/banner.png)\n\n<p align=\"center\">\n  <img src=\"https://img.shields.io/badge/Platform-Windows-blue?logo=windows\" alt=\"Windows\">\n  <img src=\"https://img.shields.io/badge/Engine-FFmpeg-green\" alt=\"FFmpeg\">\n  <img src=\"https://img.shields.io/badge/Language-C%2B%2B-orange\" alt=\"C++\">\n  <img src=\"https://img.shields.io/badge/Interface-Qt5-41CD52?logo=qt\" alt=\"Qt5\">\n  <img src=\"https://img.shields.io/badge/License-MIT-brightgreen\" alt=\"MIT License\">\n  <img src=\"https://img.shields.io/badge/Price-Free-success\" alt=\"Free\">\n</p>\n\n**FFmpeg Video & Audio Converter is a free, open-source Windows desktop application for converting video and audio files without complicated commands.** Powered by FFmpeg and built with a convenient graphical interface, it makes multimedia conversion, video transcoding, audio encoding, and format changes accessible to beginners and experienced users alike.\n\n## ⬇️ Installation\n\n**Download the Windows application**\n\n1. Open the repository's [Releases](https://github.com/kai415-debug/ffmpeg-video-audio-converter/releases) page.\n2. Download the latest release archive **`FFmpeg Video & Audio Converter 4.1.2.zip`**.\n3. Extract the archive into a folder of your choice.\n4. Keep **`FFmpeg Video & Audio Converter 4.1.2.exe`** and `libvlc.dll` together in that folder.\n5. Double-click **`FFmpeg Video & Audio Converter 4.1.2.exe`** to launch the application.\n\n\n## ✨ Features\n\n- 🎬 **Video Format Conversion** — Convert video files between popular multimedia formats using the powerful FFmpeg processing engine.\n- 🎵 **Audio File Conversion** — Transform audio files into different formats while configuring encoding options to suit your needs.\n- 📦 **Batch Media Processing** — Queue multiple media files and process conversion jobs through a unified desktop workflow.\n- ⚡ **FFmpeg-Powered Encoding** — Benefit from FFmpeg's extensive codec and container support for flexible video and audio transcoding.\n- 🎛️ **Custom Encoding Presets** — Choose convenient conversion profiles or customize available parameters for greater control over output files.\n- 🖥️ **User-Friendly Windows GUI** — Manage media conversion through a graphical interface instead of manually entering terminal commands.\n- 🔧 **Advanced Conversion Options** — Adjust supported FFmpeg parameters for workflows that require more precise control over encoding.\n\n## 🖼️ Overview\n\n![Features](assets/features.png)\n\n### Supported Media Workflows\n\nThe application brings common multimedia conversion tasks together in one Windows desktop environment.\n\n| Workflow | Purpose |\n|---|---|\n| Video conversion | Change video formats and containers |\n| Audio conversion | Convert audio between supported formats |\n| Video transcoding | Re-encode media using FFmpeg |\n| Batch conversion | Process multiple files in sequence |\n| Preset encoding | Apply predefined conversion settings |\n| Custom encoding | Configure available FFmpeg options |\n\n### Built Around FFmpeg\n\n[FFmpeg](https://ffmpeg.org/) provides the underlying multimedia processing capabilities. Its broad ecosystem of codecs, encoders, decoders, and container formats makes it suitable for everyday media conversion as well as more specialized transcoding tasks.\n\nThe graphical interface helps make these capabilities easier to access without requiring users to memorize FFmpeg command-line syntax.\n\n## 🚀 Usage\n\nGetting started with desktop media conversion is straightforward:\n\n1. **Launch the application** — Open the FFmpeg Video & Audio Converter on your Windows PC.\n2. **Select source media** — Add the video or audio files you want to convert.\n3. **Choose an output format** — Select an available format or conversion profile.\n4. **Configure encoding settings** — Adjust supported quality, codec, and other conversion parameters as needed.\n5. **Start conversion** — Run the conversion job and allow FFmpeg to process your media.\n6. **Find your output files** — Open the destination folder and use your converted media.\n\n### 💡 Conversion Tips\n\n- Choose an appropriate output container for the device or application where the media will be used.\n- Use a compatible codec when sharing files across different operating systems and media players.\n- Keep the original source file when experimenting with custom encoding settings.\n- Remember that converting a compressed file into a different format does not necessarily improve its original quality.\n- For faster processing, consider the relationship between output quality, resolution, codec, and encoding speed.\n\n## 🪟 Why Choose a Graphical FFmpeg Converter?\n\nFFmpeg is exceptionally capable, but command-line conversion can be intimidating when you only need to change a file format.\n\nThis Windows FFmpeg GUI provides a more approachable workflow:\n\n- No need to construct lengthy terminal commands for routine conversions.\n- Manage video and audio conversion from a single desktop application.\n- Access FFmpeg-powered media processing through graphical controls.\n- Use pre",
+        "sources": [
+          {
+            "captured_at": "2026-11-25T17:23:15Z",
+            "created_at": "2026-11-23T21:32:56Z",
+            "description": "Free Windows FFmpeg GUI for video and audio conversion, batch transcoding, and multimedia format encoding.",
+            "html_url": "https://github.com/kai415-debug/ffmpeg-video-audio-converter",
+            "stars": 1025,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 1025,
+        "topics": [
+          "audio",
+          "audio-converter",
+          "conversion",
+          "converter-encoding",
+          "cpp",
+          "desktop",
+          "ffmpeg",
+          "ffmpeg-wrapper",
+          "gui",
+          "media-converter",
+          "media-processing",
+          "multimedia",
+          "open-source",
+          "qml",
+          "qt5",
+          "transcoding",
+          "video",
+          "video-converter",
+          "video-encoding",
+          "windows"
+        ],
+        "updated_at": "2026-11-25T17:01:44Z"
+      },
+      "llm_used": true,
+      "metric_captured_at": "2026-11-25T17:23:15Z",
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 5,
+      "source_kind": "new_repo",
+      "total": 7,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 900,
+      "description": "Проект представляет собой полностью самописный рендерер океана, работающий в браузере через WebGPU без использования сторонних движков или графических библиотек. Пользователь открывает один HTML‑файл (около 61 KB) и получает интерактивную сцену с волнами, белой пеной, блеском солнца и физически‑корректным закатным небом, управляя камерой свободно в пространстве. Основой волновой модели служит FFT‑симуляция по Тессендорфу с шестью каскадами 256×256 точек, покрывающая диапазон от километровых волн до миллиметровых капель, а поверхность генерируется CDLOD‑квадродеревом из 17 уровней, обеспечивая детализацию до 6,25 см рядом с камерой и охват до 160 км.\n\nВизуальная часть построена на нескольких специализированных техниках: LEAN‑мэппинг для анизотропного отражения, спектральный блеск солнца с учётом диска, динамический куб‑мап отражений, процедурный шум для пеной и пузырей, а также атмосфера Хиллере с двумя слоями облаков, поддерживающая самозатенение и аэрозольный эффект. После рендеринга сцена проходит HDR‑постобработку с 4× MSAA, 8‑уровневым bloom, тонмаппингом AgX и дезинтерграцией, что делает изображение готовым к просмотру без дополнительных настроек. Тесты показывают, что на RTX 5070 Ti при разрешении 2560×1440 кадр формируется за 6–8 мс, а основной код переиспользует предвыделенные массивы, минимизируя нагрузку сборщика мусора.\n\nДля запуска достаточно современного Chrome с поддержкой WebGPU; файл можно открыть напрямую из файловой системы, а параметры URL позволяют задавать разрешение, позицию камеры, поле зрения и любые настройки волнового и атмосферного поведения. Ограничения включают необходимость дискретного GPU (интегрированные решения могут не справиться) и отсутствие поддержки более старых браузеров. Таким образом, проект служит демонстрацией возможностей WebGPU для сложных физических симуляций и может быть использован как учебный материал или база для дальнейшего расширения морских визуализаций.",
+      "evidence_kind": "provider_selected_exact_readme_quote",
+      "evidence_quote": "A real-time ocean renderer written from scratch on WebGPU, with no engine or rendering library. It draws a sunset sea with simulated waves, whitecaps, sun glitter, and a physically based sky with clouds.",
+      "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+      "full_name": "Noniv/web-ocean",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-23T21:26:43Z",
+        "created_at": "2026-10-16T23:49:53Z",
+        "default_branch": "main",
+        "description": "Real-time WebGPU ocean renderer written from scratch, no engine. FFT waves, whitecaps, sun glitter, physically based sunset sky with clouds, free camera. Built with Claude Code (Opus 5.5). Opens from a single 61 KB HTML file in Chrome.",
+        "forks": 141,
+        "full_name": "Noniv/web-ocean",
+        "html_url": "https://github.com/Noniv/web-ocean",
+        "language": "HTML",
+        "license": "MIT",
+        "observation": {
+          "first_seen": "2026-10-19T18:16:51Z",
+          "last_seen": "2026-10-23T21:26:43Z",
+          "observations": 19
+        },
+        "open_issues": 8,
+        "pushed_at": "2026-10-17T00:39:56Z",
+        "readme_excerpt": "# web-ocean\n\nA real-time ocean renderer written from scratch on WebGPU, with no engine or rendering library. It draws a sunset sea with simulated waves, whitecaps, sun glitter, and a physically based sky with clouds. You fly around it with a free camera.\n\n![Looking toward the sun from 2.4 m above the water](docs/front.jpg)\n\n| 75 degrees off the sun, 2.4 m up | Looking toward the sun from 30 m up |\n|---|---|\n| ![](docs/side.jpg) | ![](docs/high.jpg) |\n\n## Run it\n\nYou need a recent Chrome with WebGPU and a reasonably capable GPU. On a laptop, force Chrome onto the dedicated GPU in the Windows graphics settings, or it will fall back to the integrated one.\n\nOpen `ocean.html` directly in the browser. `ocean.min.html` is the same page minified (61 KB instead of 102 KB). Both are self-contained and work from `file://`.\n\nTo run from source:\n\n```\nnpm install\nnpm start        # serves http://localhost:8080/\n```\n\nAfter editing anything under `js/`, run `npm run build` to regenerate both bundles. The minified build strips WGSL comments and whitespace and minifies the JavaScript with esbuild.\n\n## Controls\n\n| Input | Action |\n|---|---|\n| Click the canvas | Capture the mouse (Esc releases it). Holding the right mouse button also works. |\n| Mouse | Look around |\n| W A S D | Move |\n| Space or E / Q or C | Up / down |\n| Shift | 5x speed |\n| Mouse wheel | Change base speed |\n| H | Settings panel: wind, swell, choppiness, turbidity, foam, sun, haze, clouds, exposure, bloom |\n\nThe camera keeps itself above the displaced water surface, so waves never pass through it.\n\nURL parameters are handy for testing. `?w=2560&h=1440` forces the render resolution, `cam=x,y,z,yawDeg,pitchDeg` sets the camera, `fov=deg` sets the field of view, `ui=0` hides the HUD, and any settings key works too, for example `windSpeed=12&swellHs=2&sunElev=8`.\n\n## How it works\n\n### Waves\n\nThe sea is a Tessendorf FFT simulation with six cascades of 256 by 256 samples. The patches range from 1103 m down to 0.26 m, so wavelengths run from about a kilometre to a few millimetres. The smallest cascade produces the sharp sun sparkles near the camera.\n\nThe spectrum is a fetch-limited JONSWAP wind sea with Donelan-Banner directional spreading, plus a narrow long-crested swell. Dispersion includes the capillary term, and choppy horizontal displacement sharpens the crests. The inverse FFTs are radix-2 compute shaders working in workgroup memory.\n\nThe surface mesh is a CDLOD quadtree with 17 levels. Vertices are 6.25 cm apart near the camera and the mesh reaches 160 km, with continuous vertex morphing between levels.\n\n### Shading\n\n- Mip-mapped first and second moments of the wave slopes (LEAN mapping) give the right anisotropic roughness at every distance. The sun glitter widens with distance and the far sea settles into a sheen without aliasing. Screen-space slope derivatives add specular anti-aliasing.\n- Sun glitter uses an anisotropic Gaussian slope distribution with Smith masking and the size of the solar disc.\n- The sky reflection comes from an environment cube map rebuilt every frame, with roughness-filtered mips. At grazing angles the reflection direction is tilted to account for which wave facets the viewer can actually see.\n- The water body is turbid blue-green, lit by the whole sky hemisphere. Backlit crests get a subsurface glow, and wind-gust patches modulate the short ripples.\n- Whitecaps start where the total surface Jacobian folds. Foam is stored in two camera-centred world-space maps (128 m and 1 km wide), decays over time, drifts downwind, and breaks into streaks as it ages. A procedural bubble texture gives it its structure.\n\n### Sky\n\nThe atmosphere follows Hillaire's approach, with transmittance, multiple-scattering, and sky-view lookup tables plus aerosol haze. There are two cloud layers, a broken low cumulus and a fibrous altostratus deck. Each is shaded with self-shadowing toward the sun, lit rims, silver linings when backlit, and direction-dependent multiple scattering.\n\nCloud noise octaves are filtered by pixel footprint, and silhouettes are anti-aliased analytically: the screen-space derivative of each layer's edge function sets the width of its opacity edge. Cloud transmittance along the sun direction dims the sunlight that reaches the water, and aerial perspective is applied over the sea.\n\n### Post-processing\n\nThe scene renders in HDR with 4x MSAA. Post-processing adds an 8-level bloom, AgX tone mapping, a slight white balance shift, and dithering.\n\n## Performance\n\nAt 2560 by 1440 on an RTX 5070 Ti, the GPU takes about 6 to 8 ms per frame, measured while other programs were also using the GPU. The HUD shows FPS and GPU time when the browser supports `timestamp-query`.\n\nThe per-frame code reuses preallocated typed arrays and descriptors, so the garbage collector has almost nothing to do. The only recurring allocations are the objects WebGPU itself requires, such as the swap-chain view and command buffers.\n\n## Known limitations\n\n- Far water is sti",
+        "sources": [
+          {
+            "captured_at": "2026-10-23T21:26:43Z",
+            "created_at": "2026-10-16T23:49:53Z",
+            "description": "Real-time WebGPU ocean renderer written from scratch, no engine. FFT waves, whitecaps, sun glitter, physically based sunset sky with clouds, free camera. Built with Claude Code (Opus 5.5). Opens from a single 61 KB HTML file in Chrome.",
+            "html_url": "https://github.com/Noniv/web-ocean",
+            "stars": 900,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 900,
+        "topics": [],
+        "updated_at": "2026-10-23T21:23:41Z"
+      },
+      "llm_used": true,
+      "metric_captured_at": "2026-10-23T21:26:43Z",
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 6,
+      "source_kind": "new_repo",
+      "total": 7,
+      "trending_source": false
+    },
+    {
+      "baseline": null,
+      "delta": 841,
+      "description": "GPTibo — это полностью самохостируемая платформа для цифровой торговли, объединяющая публичный магазин, административную панель и партнёрскую рабочую область. Пользователи могут просматривать товары, оформлять заказы, отслеживать статус оплаты и подавать запросы в службу поддержки, а администраторы получают инструменты для управления ценами, возвратами, агентскими программами и настройкой уведомлений. Партнёры, в свою очередь, могут запускать собственные брендированные витрины, задавать домены и вести статистику продаж своих суб‑агентов.\n\nСистема построена на двух альтернативных бекендах: Go‑сервис с Gin и PostgreSQL либо Cloudflare Workers с D1, что позволяет выбрать подходящий стек под инфраструктуру и масштаб. Фронтенд реализован на React 19, TypeScript и Vite, использует Tailwind CSS и React Email для шаблонов писем. Встроенные скрипты автоматизируют миграцию базы, инициализацию секретов и запуск Docker‑Compose, а также локальное тестирование Workers через Wrangler.\n\nДля начала работы требуется настроить собственные учётные данные платёжных шлюзов и поставщиков, поскольку исходный код поставляет только анонимные адаптеры без реальных ключей. Проект не включает готовый поставщик товаров, поэтому пользователю придётся интегрировать свои сервисы доставки и инвентаря. Тестовый набор покрывает как фронтенд, так и бекенд, но не подключается к реальным платёжным системам, поэтому перед запуском в продакшн необходимо выполнить полную проверку бизнес‑логики в своей среде.",
+      "evidence_kind": "provider_selected_exact_readme_quote",
+      "evidence_quote": "**可自托管的数字商品商城，包含用户前台、管理后台与代理工作台。**",
+      "evidence_scope": "Exact source quotation confirms provenance only; factual accuracy and claim entailment are not automatically verified",
+      "full_name": "CoolkHz/gptibo",
+      "joke": "",
+      "latest": {
+        "captured_at": "2026-10-20T23:55:18Z",
+        "created_at": "2026-10-13T15:57:19Z",
+        "default_branch": "main",
+        "description": "Self-hosted GPTibo storefront, admin and Go backend — sanitized MIT source",
+        "forks": 503,
+        "full_name": "CoolkHz/gptibo",
+        "html_url": "https://github.com/CoolkHz/gptibo",
+        "language": "TypeScript",
+        "license": "MIT",
+        "observation": {
+          "first_seen": "2026-10-19T18:16:51Z",
+          "last_seen": "2026-10-20T23:55:18Z",
+          "observations": 7
+        },
+        "open_issues": 0,
+        "pushed_at": "2026-10-14T02:40:46Z",
+        "readme_excerpt": "# GPTibo\n\n**可自托管的数字商品商城，包含用户前台、管理后台与代理工作台。**\n\n[![CI](https://github.com/CoolkHz/gptibo/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/CoolkHz/gptibo/actions/workflows/verify.yml)\n[MIT License](LICENSE) · [快速开始](#快速开始) · [后端文档](services/storefront/README.md) · [安全说明](SECURITY.md)\n\nGPTibo 将商品展示、下单支付、订单交付、售后处理和代理商店管理整合在同一套系统中。前端使用 React 与 TypeScript，后端提供 Go + PostgreSQL 和 Cloudflare Workers + D1 两种实现，便于按部署环境选择和二次开发。\n\n原站点已停止运营，项目现以 MIT 许可证开放源码。支付与供应商接入使用匿名适配器，需要配置自己的服务后使用。\n\n## 功能\n\n| 模块 | 能力 |\n| --- | --- |\n| 用户商城 | 商品与套餐展示、下单、支付状态、订单查询、售后申请、中英文界面、深浅色主题 |\n| 管理后台 | 商品定价、订单与客户管理、退款处理、代理管理、结算与通知配置 |\n| 代理工作台 | 独立商店、品牌设置、自定义域名、商品管理、订单统计与下级代理管理 |\n| 业务后端 | 身份验证、支付回调、采购适配、异步任务、邮件通知与交易状态管理 |\n| 开发与部署 | 数据库迁移、Docker Compose、自动化测试、GitHub Actions 与源码安全扫描 |\n\n## 技术栈\n\n| 层级 | 技术 |\n| --- | --- |\n| 前端 | React 19、TypeScript、Vite、Tailwind CSS |\n| Go 后端 | Go、Gin、PostgreSQL，API 与业务 Worker 分进程运行 |\n| Cloudflare 后端 | Workers、D1、Wrangler |\n| 邮件 | React Email |\n| 验证 | Node.js Test Runner、Go Test、Gitleaks |\n\n两套后端均服务于商城。当前公开版本包含商城侧供应商适配器，**不包含独立供货平台及供应商执行系统**。\n\n## 快速开始\n\n### 环境准备\n\n- Node.js 24、npm、Git、Python 3。\n- 使用 Go 后端时，准备 Docker Compose；原生开发需要 Go 1.26+ 和 PostgreSQL。\n- 使用 Cloudflare 后端时，通过项目内的 Wrangler 运行本地环境。\n\n```sh\ngit clone https://github.com/CoolkHz/gptibo.git\ncd gptibo\nnpm ci\n```\n\n选择下面一种后端方式运行。\n\n### 方式一：Go + PostgreSQL\n\n在仓库根目录执行以下命令，初始化本地秘密、数据库和运行角色：\n\n```sh\ncd services/storefront\npython3 scripts/init-secrets.py\ncp .env.example .env\ndocker compose config --quiet\ndocker compose build api\ndocker compose up -d --wait postgres\ndocker compose --profile maintenance run --rm maintenance migrate\ndocker compose --profile maintenance run --rm maintenance grant-runtime\ndocker compose up -d --wait api worker\n```\n\n另开终端，在仓库根目录启动前端：\n\n```sh\nnpx vite --config services/storefront/vite.config.ts\n```\n\n访问 `http://127.0.0.1:5175`。前端会将 `/api` 请求代理到本机 Go API 的 `8093` 端口。\n\n原生启动、管理员登录、邮件服务与接入配置见 [Go 后端文档](services/storefront/README.md)。Windows 用户可使用后端目录中的 `scripts/init-secrets.ps1` 初始化秘密。\n\n### 方式二：Cloudflare Workers + D1\n\n在仓库根目录执行：\n\n```sh\ncp .dev.vars.example .dev.vars\nnpx wrangler d1 migrations apply gptibo-local --local\nnpm run preview:worker\n```\n\n默认访问 `http://127.0.0.1:8787`。需要前端热更新时，另开终端运行 `npm run dev`，访问 `http://127.0.0.1:5173`；API 请求会转发到本地 Worker。\n\n`.dev.vars` 保存本地配置，不应提交。远程部署时需创建自己的 Cloudflare 资源，并替换 `wrangler.jsonc` 中的占位配置。\n\n### 页面入口\n\n| 页面 | 路径 |\n| --- | --- |\n| 商城 | `/` |\n| 管理后台 | `/admin` |\n| 代理工作台 | `/partner` |\n\n管理员登录需要配置自己的管理员身份、TOTP 和邮件验证服务。默认配置不提供可直接登录的管理员账号，也不会发起真实支付、采购或通知。\n\n## 项目结构\n\n```text\nsrc/                   商城前台、管理后台与代理工作台\nservices/storefront/   Go API、业务 Worker、迁移与部署配置\nworker/                Cloudflare Workers 后端\nmigrations/            D1 数据库迁移\nemails/                邮件模板\ntests/                 前端与 Worker 业务测试\nscripts/               构建与源码检查脚本\npublic/                静态资源\n.github/workflows/     持续集成\n```\n\n## 配置与接入\n\n| 配置文件 | 用途 |\n| --- | --- |\n| [services/storefront/.env.example](services/storefront/.env.example) | Go 后端基础运行配置 |\n| [services/storefront/.env.integrations.example](services/storefront/.env.integrations.example) | Go 后端支付、采购及通知接入 |\n| [.dev.vars.example](.dev.vars.example) | Cloudflare 本地配置 |\n| [wrangler.jsonc](wrangler.jsonc) | Worker 与 D1 资源配置 |\n\n供应商适配器使用 `recharge`、`account_supplier`、`delivery_supplier`、`xgift` 等通用名称；`gatewaya`、`gatewayb` 为匿名聚合支付适配器。请依据自己的服务协议核对地址、签名、商品映射、金额和回调，再开启对应功能。\n\n真实商户身份、密钥、账号凭据和生产数据不随源码提供。`example.invalid` 是不可用于真实接入的保留域名，示例商品与金额仅用于演示。请使用新数据库安装；匿名化后的迁移不兼容原生产数据库。\n\n## 开发与验证\n\n在仓库根目录执行：\n\n```sh\nnpm test                # 前端与 Worker 业务测试\nnpm run lint            # 静态检查\nnpm run build           # 类型检查、邮件模板与前端构建\nnpm run security:scan   # 公开源码检查\n```\n\nGo 后端验证：\n\n```sh\ncd services/storefront\ngo test ./...\ngo vet ./...\n```\n\n完整数据库测试需设置 `STOREFRONT_TEST_DATABASE_URL`，连接本机、库名以 `_test` 结尾的专用数据库；未配置时集成测试会跳过。详细要求见[后端测试说明](services/storefront/README.md#测试)。\n\n自动化测试不连接真实支付或供应商服务。生产部署前，需要在自己的环境验证完整交易流程。\n\n## 参与贡献\n\n欢迎通过 [Issues](https://github.com/CoolkHz/gptibo/issues) 反馈问题或提出建议，也欢迎提交 Pull Request。\n\n1. 描述问题、预期行为和复现步骤。\n2. 提交范围明确的改动，涉及交易或账务逻辑时补充回归测试。\n3. 运行与改动相关的检查，在 PR 中说明验证结果。\n\n请勿提交真实凭据、用户资料、生产日志或数据库。安全问题请按 [SECURITY.md](SECURITY.md) 中的方式报告。\n\n## 许可证\n\n项目代码采用 [MIT License](LICENSE)，允许在保留版权与许可声明的前提下使用、修改和分发。\n\n第三方资源遵循各自许可证，商标及美术作品权利归原权利人所有。详见[品牌资源说明](public/brands/README.md)与[第三方样式说明](src/styles/vendor/README.md)。\n",
+        "sources": [
+          {
+            "captured_at": "2026-10-20T23:55:18Z",
+            "created_at": "2026-10-13T15:57:19Z",
+            "description": "Self-hosted GPTibo storefront, admin and Go backend — sanitized MIT source",
+            "html_url": "https://github.com/CoolkHz/gptibo",
+            "stars": 841,
+            "type": "new_repo_search"
+          }
+        ],
+        "stars": 841,
+        "topics": [],
+        "updated_at": "2026-10-20T17:41:12Z"
+      },
+      "llm_used": true,
+      "metric_captured_at": "2026-10-20T23:55:18Z",
+      "period": "новый репозиторий: звёзды на момент среза",
+      "rank": 7,
+      "source_kind": "new_repo",
+      "total": 7,
+      "trending_source": false
+    }
+  ],
+  "format_version": 3,
+  "generated_at": "2026-11-25T23:28:50Z",
+  "joke": "",
+  "llm_budget": {
+    "actual_requests": 15,
+    "all_descriptions_complete": false,
+    "card_failures": [
+      {
+        "disposition": "retained_for_later_issue",
+        "id": "crhywun/g1-acq",
+        "initial_error": "named product or integration is absent from the supplied primary sources",
+        "repair_error": "named product or integration is absent from the supplied primary sources",
+        "stage": "project_description_schema_repair"
+      }
+    ],
+    "daily_deferred": [
+      {
+        "id": "n8n-io/nod",
+        "reason": "unusable_readme",
+        "retry_at": "2026-11-26T23:28:51.422352512Z"
+      },
+      {
+        "id": "Belobug/VIctory-Belobug-AMD",
+        "reason": "readme_quote_rejected",
+        "retry_at": "2026-11-26T23:29:04.697259678Z"
+      },
+      {
+        "id": "crhywun/g1-acq",
+        "reason": "description_rejected_after_repair",
+        "retry_at": "2026-11-26T23:30:53.438128524Z"
+      },
+      {
+        "id": "MaryCache/imozuru",
+        "reason": "readme_quote_rejected",
+        "retry_at": "2026-11-26T23:33:21.597361835Z"
+      },
+      {
+        "id": "ly05010419/MacNativeGames",
+        "reason": "readme_quote_rejected",
+        "retry_at": "2026-11-26T23:35:01.984562973Z"
+      }
+    ],
+    "evidence_scope": "Primary metadata and stored README excerpts contain author claims and may be incomplete. Exact README quotation matching checks provenance only, not claim entailment, factual accuracy, runtime behavior, privacy, security, performance or license rights. Human factual review remains required.",
+    "expected_requests": 11,
+    "factual_review_performed": false,
+    "grounding_failures": [
+      {
+        "additional_requests": 0,
+        "fallback": "source metadata",
+        "id": "Belobug/VIctory-Belobug-AMD",
+        "reason": "README quotation length is outside 24..=600"
+      },
+      {
+        "additional_requests": 0,
+        "fallback": "source metadata",
+        "id": "MaryCache/imozuru",
+        "reason": "Model evidence_quote is not an exact substring of the stored README excerpt"
+      },
+      {
+        "additional_requests": 0,
+        "fallback": "source metadata",
+        "id": "ly05010419/MacNativeGames",
+        "reason": "Model evidence_quote is not an exact substring of the stored README excerpt"
+      }
+    ],
+    "local_inference": false,
+    "max_requests_per_run": 40,
+    "max_requests_per_utc_day": 100,
+    "max_requests_with_retries": 40,
+    "paid_fallback": false,
+    "providers": [
+      {
+        "model": "openai/gpt-oss-120b",
+        "name": "Groq"
+      }
+    ],
+    "readme_gaps": [
+      "n8n-io/nod"
+    ],
+    "reason": "1 project descriptions rejected; first crhywun/g1-acq: named product or integration is absent from the supplied primary sources; findings remain queued",
+    "source_gaps": []
+  },
+  "llm_requested": true,
+  "llm_used": true,
+  "manifest": {
+    "api_repositories": [
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:19Z",
+        "forks": 105,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 3627,
+        "status": "included",
+        "url": "https://api.github.com/repos/4lwayz/portwatch-vi"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:19Z",
+        "forks": 181,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 3828,
+        "status": "included",
+        "url": "https://api.github.com/repos/AFK-surf/xnulinux"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:20Z",
+        "forks": 39,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 731,
+        "status": "included",
+        "url": "https://api.github.com/repos/Ahmet-Dedeler/awesome-gta6-reverse-engineering"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:20Z",
+        "forks": 86,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1148,
+        "status": "included",
+        "url": "https://api.github.com/repos/Avaneesh-Inamdar/Stream-Tube-Desktop"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:20Z",
+        "forks": 269,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1521,
+        "status": "included",
+        "url": "https://api.github.com/repos/Belobug/VIctory-Belobug-AMD"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:21Z",
+        "forks": 4887,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 59324,
+        "status": "included",
+        "url": "https://api.github.com/repos/ChromeDevTools/chrome-devtools-mcp"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:21Z",
+        "forks": 277,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 3881,
+        "status": "included",
+        "url": "https://api.github.com/repos/EL4CTEO/fast-anything"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:22Z",
+        "forks": 831,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 10989,
+        "status": "included",
+        "url": "https://api.github.com/repos/GoogleChrome/modern-web-guidance-src"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:22Z",
+        "forks": 5950,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 65497,
+        "status": "included",
+        "url": "https://api.github.com/repos/HKUDS/CLI-Anything"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:22Z",
+        "forks": 85,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1482,
+        "status": "included",
+        "url": "https://api.github.com/repos/INK-Q/agy-fast"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:23Z",
+        "forks": 0,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1300,
+        "status": "included",
+        "url": "https://api.github.com/repos/Indigo-0167/universal-game-mod-manager"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:23Z",
+        "forks": 125,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 734,
+        "status": "included",
+        "url": "https://api.github.com/repos/MSNightmare/FastUnlock"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:23Z",
+        "forks": 1905,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 12329,
+        "status": "included",
+        "url": "https://api.github.com/repos/Marvisak/VIctory"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:24Z",
+        "forks": 227,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1944,
+        "status": "included",
+        "url": "https://api.github.com/repos/R0Y00/Xbox2Windows"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:24Z",
+        "forks": 2025,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 15431,
+        "status": "included",
+        "url": "https://api.github.com/repos/Tracer-Cloud/opensre"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:24Z",
+        "forks": 0,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1265,
+        "status": "included",
+        "url": "https://api.github.com/repos/Umbra9179/clipboard-history-manager-windows"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:25Z",
+        "forks": 1075,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 18074,
+        "status": "included",
+        "url": "https://api.github.com/repos/XiaoYouChR/Ghost-Downloader-3"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:25Z",
+        "forks": 2180,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 21691,
+        "status": "included",
+        "url": "https://api.github.com/repos/ag-ui-protocol/ag-ui"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:26Z",
+        "forks": 4650,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 56298,
+        "status": "included",
+        "url": "https://api.github.com/repos/alibaba/open-code-review"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:26Z",
+        "forks": 1448,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 15049,
+        "status": "included",
+        "url": "https://api.github.com/repos/backnotprop/plannotator"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:26Z",
+        "forks": 4841,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 72775,
+        "status": "included",
+        "url": "https://api.github.com/repos/cathrynlavery/diagram-design"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:27Z",
+        "forks": 286,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1131,
+        "status": "included",
+        "url": "https://api.github.com/repos/crhywun/g1-acq"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:27Z",
+        "forks": 2098,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 19477,
+        "status": "included",
+        "url": "https://api.github.com/repos/cursor/plugins"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:27Z",
+        "forks": 72,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 883,
+        "status": "included",
+        "url": "https://api.github.com/repos/danielwh2/sprite-stacking"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:28Z",
+        "forks": 47,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1031,
+        "status": "included",
+        "url": "https://api.github.com/repos/deterministic-machines/deslop-please"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:28Z",
+        "forks": 2866,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 31830,
+        "status": "included",
+        "url": "https://api.github.com/repos/dream-num/univer"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:29Z",
+        "forks": 2326,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 22610,
+        "status": "included",
+        "url": "https://api.github.com/repos/elementalsouls/Claude-BugHunter"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:29Z",
+        "forks": 10968,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 209759,
+        "status": "included",
+        "url": "https://api.github.com/repos/firecrawl/firecrawl"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:29Z",
+        "forks": 784,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2869,
+        "status": "included",
+        "url": "https://api.github.com/repos/fxceless/victory-fork"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:30Z",
+        "forks": 1534,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 12904,
+        "status": "included",
+        "url": "https://api.github.com/repos/google-labs-code/stitch-skills"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:30Z",
+        "forks": 162,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2602,
+        "status": "included",
+        "url": "https://api.github.com/repos/iamajmeena/neonclipping"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:30Z",
+        "forks": 9206,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 70841,
+        "status": "included",
+        "url": "https://api.github.com/repos/jingyaogong/minimind"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:31Z",
+        "forks": 0,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1025,
+        "status": "included",
+        "url": "https://api.github.com/repos/kai415-debug/ffmpeg-video-audio-converter"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:31Z",
+        "forks": 934,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 11001,
+        "status": "included",
+        "url": "https://api.github.com/repos/kajisho5/ffmpeg-skill"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:31Z",
+        "forks": 476,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1173,
+        "status": "included",
+        "url": "https://api.github.com/repos/leanprover-community/riemann-hypothesis"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:32Z",
+        "forks": 2589,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 33061,
+        "status": "included",
+        "url": "https://api.github.com/repos/meta/astryx"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:32Z",
+        "forks": 409,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 6343,
+        "status": "included",
+        "url": "https://api.github.com/repos/mjmirza/app-store-compliance"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:32Z",
+        "forks": 6599,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 74924,
+        "status": "included",
+        "url": "https://api.github.com/repos/mvanhorn/last30days-skill"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:33Z",
+        "forks": 559,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 3472,
+        "status": "included",
+        "url": "https://api.github.com/repos/n8n-io/nod"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:33Z",
+        "forks": 8401,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 33327,
+        "status": "included",
+        "url": "https://api.github.com/repos/nginx/nginx"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:34Z",
+        "forks": 28964,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 326404,
+        "status": "included",
+        "url": "https://api.github.com/repos/obra/superpowers"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:34Z",
+        "forks": 121,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1841,
+        "status": "included",
+        "url": "https://api.github.com/repos/omonkeyz/xbox-emulator"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:34Z",
+        "forks": 3706,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 12603,
+        "status": "included",
+        "url": "https://api.github.com/repos/openvinotoolkit/openvino"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:35Z",
+        "forks": 98,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1856,
+        "status": "included",
+        "url": "https://api.github.com/repos/os6/nospeaker"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:35Z",
+        "forks": 207,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2509,
+        "status": "included",
+        "url": "https://api.github.com/repos/pookjw/HermesEnabler"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:35Z",
+        "forks": 144,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 937,
+        "status": "included",
+        "url": "https://api.github.com/repos/qianyiai/kurocat"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:36Z",
+        "forks": 0,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 871,
+        "status": "included",
+        "url": "https://api.github.com/repos/rowanbyte3329/stardew-valley-mod-manager"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:36Z",
+        "forks": 0,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1063,
+        "status": "included",
+        "url": "https://api.github.com/repos/solv4626/steam-achievement-manager-windows"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:36Z",
+        "forks": 70,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 832,
+        "status": "included",
+        "url": "https://api.github.com/repos/sous-labs/songe"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:37Z",
+        "forks": 64,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 797,
+        "status": "included",
+        "url": "https://api.github.com/repos/sybil-solutions/skill-distill"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:37Z",
+        "forks": 5713,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 78331,
+        "status": "included",
+        "url": "https://api.github.com/repos/toeverything/AFFiNE"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:37Z",
+        "forks": 1551,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 8423,
+        "status": "included",
+        "url": "https://api.github.com/repos/tradermonty/claude-trading-skills"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:38Z",
+        "forks": 503,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 2239,
+        "status": "included",
+        "url": "https://api.github.com/repos/ubiquitarianism/leonida"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:38Z",
+        "forks": 1559,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 17890,
+        "status": "included",
+        "url": "https://api.github.com/repos/we-promise/sure"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:38Z",
+        "forks": 1110,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 8197,
+        "status": "included",
+        "url": "https://api.github.com/repos/xcl-dev/xcl"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:39Z",
+        "forks": 1,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 1062,
+        "status": "included",
+        "url": "https://api.github.com/repos/zero5122/offline-file-converter-windows"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:39Z",
+        "forks": 2319,
+        "pagination": "single repository response",
+        "reason": "metadata captured",
+        "source": "GitHub REST repository metadata",
+        "stars": 16036,
+        "status": "included",
+        "url": "https://api.github.com/repos/zhouxiaoka/autoclip"
+      }
+    ],
+    "candidate_count": 57,
+    "candidate_policy": "All identities returned by configured Trending pages and bounded Search page are retained, including covered repositories and metadata failures; weekly selection happens later; not a global GitHub census.",
+    "captured_at": "2026-11-25T17:23:15Z",
+    "excluded_candidates": [],
+    "publication_from_retained": true,
+    "retained_capture_run": "20261125T172315Z",
+    "sources": [
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:16Z",
+        "pagination": "HTML first page as returned; no pagination",
+        "parsed_candidates": 14,
+        "reason": "repository rows parsed from first page",
+        "source": "GitHub Trending weekly",
+        "status": "included",
+        "url": "https://github.com/trending?since=weekly"
+      },
+      {
+        "complete": true,
+        "fetched_at": "2026-11-25T17:23:18Z",
+        "pagination": "HTML first page as returned; no pagination",
+        "parsed_candidates": 16,
+        "reason": "repository rows parsed from first page",
+        "source": "GitHub Trending daily",
+        "status": "included",
+        "url": "https://github.com/trending?since=daily"
+      },
+      {
+        "complete": false,
+        "fetched_at": "2026-11-25T17:23:19Z",
+        "incomplete_results": false,
+        "pagination": "per_page=30; first page only; Search API result cap applies",
+        "query": "created:>=2026-11-18",
+        "reason": "first page ingested as candidate source only",
+        "returned": 29,
+        "source": "GitHub REST Search repositories created in last 7 days",
+        "status": "included",
+        "total_count": 2811218,
+        "url": "https://api.github.com/search/repositories?q=created%3A%3E%3D2026-11-18&sort=stars&order=desc&per_page=30"
+      },
+      {
+        "candidate": "n8n-io/nod",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-25T23:28:50Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/n8n-io/nod/main/README.md"
+      },
+      {
+        "candidate": "Belobug/VIctory-Belobug-AMD",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-25T23:28:50Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/Belobug/VIctory-Belobug-AMD/main/README.md"
+      },
+      {
+        "candidate": "Indigo-0167/universal-game-mod-manager",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-25T23:28:50Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/Indigo-0167/universal-game-mod-manager/main/README.md"
+      },
+      {
+        "candidate": "Umbra9179/clipboard-history-manager-windows",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-25T23:28:50Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/Umbra9179/clipboard-history-manager-windows/main/README.md"
+      },
+      {
+        "candidate": "crhywun/g1-acq",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-25T23:28:51Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/crhywun/g1-acq/main/README.md"
+      },
+      {
+        "candidate": "solv4626/steam-achievement-manager-windows",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-25T23:28:51Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/solv4626/steam-achievement-manager-windows/main/README.md"
+      },
+      {
+        "candidate": "zero5122/offline-file-converter-windows",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-25T23:28:51Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/zero5122/offline-file-converter-windows/main/README.md"
+      },
+      {
+        "candidate": "kai415-debug/ffmpeg-video-audio-converter",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-25T23:28:51Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/kai415-debug/ffmpeg-video-audio-converter/main/README.md"
+      },
+      {
+        "candidate": "MaryCache/imozuru",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-25T23:28:51Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/MaryCache/imozuru/main/README.md"
+      },
+      {
+        "candidate": "Noniv/web-ocean",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-25T23:28:51Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/Noniv/web-ocean/main/README.md"
+      },
+      {
+        "candidate": "CoolkHz/gptibo",
+        "chars": 4291,
+        "complete": true,
+        "fetched_at": "2026-11-25T23:28:51Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/CoolkHz/gptibo/main/README.md"
+      },
+      {
+        "candidate": "ly05010419/MacNativeGames",
+        "chars": 5000,
+        "complete": true,
+        "fetched_at": "2026-11-25T23:28:51Z",
+        "pagination": "root README.md on default branch; excerpt capped at 5000; transfer capped at 1MB",
+        "reason": "raw README captured; bounded excerpt used for model",
+        "source": "GitHub raw README.md",
+        "status": "included",
+        "url": "https://raw.githubusercontent.com/ly05010419/MacNativeGames/main/README.md"
+      }
+    ],
+    "validation_notes": [],
+    "weekly_observed_repositories": 493,
+    "weekly_selected_repositories": 12
+  },
+  "new_repositories_by_total_stars": [
+    {
+      "created_at": "2026-11-23T21:47:25Z",
+      "full_name": "Marvisak/VIctory",
+      "stars": 12329,
+      "url": "https://github.com/Marvisak/VIctory"
+    },
+    {
+      "created_at": "2026-11-20T20:03:21Z",
+      "full_name": "ivall/xcl",
+      "stars": 6686,
+      "url": "https://github.com/ivall/xcl"
+    },
+    {
+      "created_at": "2026-11-20T10:18:31Z",
+      "full_name": "AFK-surf/xnulinux",
+      "stars": 3828,
+      "url": "https://github.com/AFK-surf/xnulinux"
+    },
+    {
+      "created_at": "2026-11-20T17:43:52Z",
+      "full_name": "R0Y00/Xbox2Windows",
+      "stars": 1944,
+      "url": "https://github.com/R0Y00/Xbox2Windows"
+    },
+    {
+      "created_at": "2026-11-22T12:05:54Z",
+      "full_name": "os6/nospeaker",
+      "stars": 1856,
+      "url": "https://github.com/os6/nospeaker"
+    },
+    {
+      "created_at": "2026-11-25T09:41:37Z",
+      "full_name": "Belobug/VIctory-Belobug-AMD",
+      "stars": 1521,
+      "url": "https://github.com/Belobug/VIctory-Belobug-AMD"
+    },
+    {
+      "created_at": "2026-11-23T21:30:10Z",
+      "full_name": "Indigo-0167/universal-game-mod-manager",
+      "stars": 1300,
+      "url": "https://github.com/Indigo-0167/universal-game-mod-manager"
+    },
+    {
+      "created_at": "2026-11-23T21:40:15Z",
+      "full_name": "Umbra9179/clipboard-history-manager-windows",
+      "stars": 1265,
+      "url": "https://github.com/Umbra9179/clipboard-history-manager-windows"
+    },
+    {
+      "created_at": "2026-11-20T22:12:47Z",
+      "full_name": "hatsunemiku-ai/google-one-tools",
+      "stars": 1211,
+      "url": "https://github.com/hatsunemiku-ai/google-one-tools"
+    },
+    {
+      "created_at": "2026-11-22T10:53:17Z",
+      "full_name": "crhywun/g1-acq",
+      "stars": 1131,
+      "url": "https://github.com/crhywun/g1-acq"
+    }
+  ],
+  "official_github_trending_weekly": [
+    {
+      "full_name": "morluto/rea",
+      "stars": 379528,
+      "url": "https://github.com/morluto/rea",
+      "weekly_trending_stars": 229268
+    },
+    {
+      "full_name": "pingdotgg/t3code",
+      "stars": 56045,
+      "url": "https://github.com/pingdotgg/t3code",
+      "weekly_trending_stars": 17100
+    },
+    {
+      "full_name": "storytold/artcraft",
+      "stars": 34649,
+      "url": "https://github.com/storytold/artcraft",
+      "weekly_trending_stars": 16379
+    },
+    {
+      "full_name": "sherlock-project/sherlock",
+      "stars": 113263,
+      "url": "https://github.com/sherlock-project/sherlock",
+      "weekly_trending_stars": 14381
+    },
+    {
+      "full_name": "boykopovar/AnyPS5",
+      "stars": 45675,
+      "url": "https://github.com/boykopovar/AnyPS5",
+      "weekly_trending_stars": 14224
+    },
+    {
+      "full_name": "vercel-labs/agent-desktop",
+      "stars": 23524,
+      "url": "https://github.com/vercel-labs/agent-desktop",
+      "weekly_trending_stars": 13712
+    },
+    {
+      "full_name": "meta/astryx",
+      "stars": 33061,
+      "url": "https://github.com/meta/astryx",
+      "weekly_trending_stars": 13660
+    },
+    {
+      "full_name": "Nutlope/hallmark",
+      "stars": 51876,
+      "url": "https://github.com/Nutlope/hallmark",
+      "weekly_trending_stars": 12062
+    },
+    {
+      "full_name": "NVIDIA/auto-ontology",
+      "stars": 12683,
+      "url": "https://github.com/NVIDIA/auto-ontology",
+      "weekly_trending_stars": 10159
+    },
+    {
+      "full_name": "thedotmack/claude-mem",
+      "stars": 115926,
+      "url": "https://github.com/thedotmack/claude-mem",
+      "weekly_trending_stars": 9318
+    }
+  ],
+  "period_end": "2026-11-25T23:28:50Z",
+  "period_start": "2026-11-24T23:28:50Z",
+  "queue": {
+    "ack_policy": "Only completed delivery acknowledges this format. Previews, failures and caps acknowledge nothing.",
+    "carried_from_earlier_periods": 483,
+    "catalogue": 0,
+    "detailed": 7,
+    "pending_after_success": 486,
+    "pending_before": 493
+  },
+  "ranking": "Up to 8 discoveries first seen within the last 24 hours, ranked by daily Trending peak, weekly peak, then Search, plus 4 oldest due backlog findings. Either group uses spare capacity, up to 12 total. Backlog order uses first-seen or retry time; local explanation failures wait 24 hours. Deferred and overflow findings stay queued. Daily publication does not exclude weekly publication.",
+  "trend_summary": "До восьми находок, впервые замеченных за последние 24 часа, по популярности в дневном Trending, недельном Trending и поиске; ещё четыре места — для старых находок по времени очереди или повторной попытки. Свободные места передаются другой группе, всего до 12 карточек. Новые для нашей ленты, не обязательно недавно созданные. Дневная публикация не исключает проект из недельного обзора.",
+  "trends": {
+    "forks": [
+      {
+        "delta": 10342,
+        "full_name": "morluto/rea"
+      },
+      {
+        "delta": 5197,
+        "full_name": "debpalash/VoiceStudio"
+      },
+      {
+        "delta": 5163,
+        "full_name": "affaan-m/ECC"
+      },
+      {
+        "delta": 4246,
+        "full_name": "mattpocock/skills"
+      },
+      {
+        "delta": 3702,
+        "full_name": "storytold/craft-anything"
+      },
+      {
+        "delta": 3542,
+        "full_name": "cloudflare/security-audit-skill"
+      },
+      {
+        "delta": 3154,
+        "full_name": "Gathin23/cleanyourtv"
+      },
+      {
+        "delta": 2692,
+        "full_name": "obra/superpowers"
+      },
+      {
+        "delta": 2659,
+        "full_name": "paperclipai/paperclip"
+      },
+      {
+        "delta": 2453,
+        "full_name": "anthropics/claude-code"
+      }
+    ],
+    "percent": [
+      {
+        "delta": 51124,
+        "full_name": "mattpocock/skills"
+      },
+      {
+        "delta": 50251,
+        "full_name": "debpalash/VoiceStudio"
+      },
+      {
+        "delta": 50213,
+        "full_name": "cloudflare/security-audit-skill"
+      },
+      {
+        "delta": 45072,
+        "full_name": "morluto/rea"
+      },
+      {
+        "delta": 39060,
+        "full_name": "affaan-m/ECC"
+      },
+      {
+        "delta": 33314,
+        "full_name": "pbakaus/impeccable"
+      },
+      {
+        "delta": 32680,
+        "full_name": "obra/superpowers"
+      },
+      {
+        "delta": 28778,
+        "full_name": "stablyai/orca"
+      },
+      {
+        "delta": 27290,
+        "full_name": "Gathin23/cleanyourtv"
+      },
+      {
+        "delta": 26117,
+        "full_name": "pingdotgg/t3code"
+      }
+    ]
+  }
+}
