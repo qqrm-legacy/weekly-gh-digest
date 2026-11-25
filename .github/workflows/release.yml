@@ -51,6 +51,11 @@ jobs:
       - name: Verify portable offline runtime
         run: python3 .github/scripts/verify_release_runtime.py "$PWD/target/release/weekly-gh-digest"
 
+      - name: Read-only daily preview on the actual retained checkpoint
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/verify_retained_dry_run.py "$PWD/target/release/weekly-gh-digest"
+
       - name: Package the release binary and metadata
         run: python3 .github/scripts/publish_release.py package target/release/weekly-gh-digest release-assets
 

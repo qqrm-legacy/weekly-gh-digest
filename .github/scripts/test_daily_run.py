@@ -1,5 +1,5 @@
 """Independent gates and slots; automatic work is daily-only."""
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 import unittest
 from unittest.mock import patch
 import tempfile
@@ -24,15 +24,25 @@ class DailyRunTests(unittest.TestCase):
         self.assertEqual(daily_run.slot(datetime(2027, 1, 1, 15, tzinfo=timezone.utc)), "daily:2027-01-01")
         self.assertNotEqual(self.key, weekly_run.slot(self.now))
 
-    def test_morning_collection_does_not_send_yesterday_or_today(self):
-        env = {"DIGEST_DELIVERY_ENABLED": "true", "DIGEST_DAILY_DELIVERY_ENABLED": "true"}
-        before = datetime(2026, 11, 3, 14, 59, 59, tzinfo=timezone.utc)
-        self.assertEqual(daily_run.recovery_mode(env, before, {}, {})[0], ("collect", False, False))
-        after = datetime(2026, 11, 3, 15, tzinfo=timezone.utc)
-        self.assertEqual(daily_run.recovery_mode(env, after, {}, {})[0], ("daily-digest", True, True))
-        sent = {"sent_slots": {daily_run.slot(after): 12}}
-        self.assertEqual(daily_run.recovery_mode(env, after, {}, sent)[0], ("collect", False, False))
+    def test_delayed_publication_does_not_become_collection(self):
+        env = {"DIGEST_DELIVERY_ENABLED": "true", "DIGEST_DAILY_DELIVERY_ENABLED": "true",
+               "RUN_OPERATION": "publish", "EVENT_NAME": "schedule", "EVENT_SCHEDULE": run_mode.DAILY_CRON}
+        due = datetime(2026, 11, 3, 15, tzinfo=timezone.utc)
+        for hours in (0, 1, 6, 11, 12, 23, 24, 48):
+            now = due + timedelta(hours=hours)
+            key = daily_run.slot(now)
+            self.assertEqual(run_mode.select_plan(env, now, {}, {}, {})[0], ("daily-digest", True, True))
+            sent = {"sent_slots": {key: 12}}
+            self.assertEqual(run_mode.select_plan(env, now, {}, {}, sent)[0], ("skip", False, False))
+        self.assertEqual(daily_run.slot(due + timedelta(hours=11)), "daily:2026-11-03")
+        self.assertEqual(daily_run.slot(due + timedelta(hours=24)), "daily:2026-11-04")
         self.assertEqual(run_mode.DAILY_CRON, "0 15 * * *")
+
+    def test_pending_daily_resume_survives_a_current_slot_ack(self):
+        env = {"DIGEST_DELIVERY_ENABLED": "true", "DIGEST_DAILY_DELIVERY_ENABLED": "true"}
+        state = {"sent_slots": {self.key: 42}, "pending_digests": {
+            "frozen": {"edition": "daily", "delivery_slot": "daily:2026-10-30"}}}
+        self.assertEqual(daily_run.recovery_mode(env, self.now, {}, state)[0], ("daily-digest", True, True))
 
     def test_daily_requires_two_explicit_gates(self):
         event = {"EVENT_NAME": "schedule", "EVENT_SCHEDULE": run_mode.DAILY_CRON}
@@ -57,20 +67,20 @@ class DailyRunTests(unittest.TestCase):
         state = {"sent_slots": {weekly_run.slot(self.now): 42}}
         self.assertEqual(daily_run.recovery_mode({}, self.now, {}, state)[0], ("daily-preview", False, False))
         state["sent_slots"][self.key] = 43
-        self.assertEqual(daily_run.recovery_mode({}, self.now, {}, state)[0], ("collect", False, False))
+        self.assertEqual(daily_run.recovery_mode({}, self.now, {}, state)[0], ("skip", False, False))
 
     def test_preview_receipt_is_not_delivery_ack(self):
         receipts = {"format_version": 1, "issues": {self.key: {"slot": self.key, "mode": "daily-preview", "artifact_id": "10"}}}
-        self.assertEqual(daily_run.recovery_mode({}, self.now, receipts, {})[0], ("collect", False, False))
+        self.assertEqual(daily_run.recovery_mode({}, self.now, receipts, {})[0], ("skip", False, False))
         enabled = {"DIGEST_DELIVERY_ENABLED": "true", "DIGEST_DAILY_DELIVERY_ENABLED": "true"}
         self.assertEqual(daily_run.recovery_mode(enabled, self.now, receipts, {})[0], ("daily-digest", True, True))
 
-    def test_collection_tick_only_recovers_daily_preview(self):
+    def test_collection_tick_never_recovers_publication(self):
         env = {"EVENT_NAME": "schedule", "EVENT_SCHEDULE": run_mode.COLLECTION_CRON}
         with patch.object(weekly_run, "recovery_mode", side_effect=AssertionError("automatic weekly recovery")):
             for state in [{}, {"sent_slots": {weekly_run.slot(self.now): 42}}]:
                 mode, _ = run_mode.select_plan(env, self.now, {}, {}, state)
-                self.assertEqual(mode, ("daily-preview", False, False))
+                self.assertEqual(mode, ("collect", False, False))
 
     def test_explicit_weekly_recovery_never_runs_daily(self):
         env = {"EVENT_NAME": "workflow_dispatch", "RECOVER_WEEKLY": "true"}

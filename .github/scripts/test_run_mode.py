@@ -74,8 +74,15 @@ class RunModeTests(unittest.TestCase):
 
     def test_workflow_schedules_and_secret_injection_match_the_gate(self):
         workflow = (Path(__file__).parents[1] / "workflows/run-bot.yml").read_text()
-        self.assertEqual(re.findall(r"cron: '([^']+)'", workflow),
-                         [COLLECTION_CRON, DAILY_CRON])
+        workflows = Path(__file__).parents[1] / "workflows"
+        self.assertEqual(re.findall(r"cron: '([^']+)'", workflow), [])
+        self.assertEqual(re.findall(r"cron: '([^']+)'", (workflows / "collect.yml").read_text()), [COLLECTION_CRON])
+        self.assertEqual(re.findall(r"cron: '([^']+)'", (workflows / "publish.yml").read_text()), [DAILY_CRON])
+        self.assertIn("operation: collect", (workflows / "collect.yml").read_text())
+        self.assertNotIn("secrets: inherit", (workflows / "collect.yml").read_text())
+        self.assertIn("default: true", (workflows / "publish.yml").read_text())
+        self.assertIn("needs: dry-run", (workflows / "digest-rollout.yml").read_text())
+        self.assertIn("needs: collect", (workflows / "digest-rollout.yml").read_text())
         for secret in ["TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "TELEGRAM_TECH_CHAT_ID"]:
             self.assertIn("steps.mode.outputs.send == 'true' && secrets." + secret, workflow)
         self.assertIn("steps.mode.outputs.llm == 'true' && secrets.GROQ_API_KEY", workflow)

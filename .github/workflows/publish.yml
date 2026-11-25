@@ -1,0 +1,22 @@
+name: Publish Digest
+
+on:
+  schedule:
+    - cron: '0 15 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Read-only offline preview; false publishes the due daily issue
+        type: boolean
+        default: true
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  publish:
+    uses: ./.github/workflows/run-bot.yml
+    with:
+      operation: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'preview' || 'publish' }}
+    secrets: inherit

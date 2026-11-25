@@ -8,7 +8,7 @@ use std::fs;
 use std::path::Path;
 use time::{SignedDuration as Duration, macros::format_description};
 
-const TARGET_INTERVAL_SECONDS: i64 = 3 * 60 * 60;
+const TARGET_INTERVAL_SECONDS: i64 = 2 * 60 * 60;
 
 fn timestamp(time: Timestamp) -> String {
     time.rfc3339_seconds()
@@ -22,7 +22,7 @@ fn nominal_slots(start: Timestamp, end: Timestamp) -> usize {
         if slot > start {
             count += 1;
         }
-        slot += Duration::hours(3);
+        slot += Duration::hours(2);
     }
     count
 }
@@ -122,6 +122,9 @@ pub(super) fn report(snapshots: &[Snapshot], now: Timestamp, runs_dir: &Path) ->
                 invalid_manifests.push(json!({"captured_at":at,"reason":"invalid JSON"}));
                 continue;
             };
+            if manifest["publication_from_retained"] == true {
+                continue;
+            }
             if manifest["captured_at"].as_str().and_then(parse_time) != Some(captured) {
                 invalid_manifests.push(
                     json!({"captured_at":at,"reason":"missing or mismatched capture timestamp"}),
@@ -185,7 +188,7 @@ pub(super) fn report(snapshots: &[Snapshot], now: Timestamp, runs_dir: &Path) ->
             "ignored_future_rows":future_rows
         },
         "cadence":{
-            "nominal_cron":"17 */3 * * *",
+            "nominal_cron":"17 */2 * * *",
             "target_interval_seconds":TARGET_INTERVAL_SECONDS,
             "nominal_slots_in_window":nominal_slots(start,now),
             "nominal_slot_boundary":"start_exclusive_end_inclusive",
@@ -195,7 +198,7 @@ pub(super) fn report(snapshots: &[Snapshot], now: Timestamp, runs_dir: &Path) ->
             "min_interval_seconds":intervals.first(),
             "median_interval_seconds":median,
             "max_interval_seconds":intervals.last(),
-            "intervals_over_three_hours":long_intervals,
+            "intervals_over_two_hours":long_intervals,
             "leading_gap_seconds":times.first().map(|first|(*first-start).whole_seconds()),
             "trailing_gap_seconds":times.last().map(|last|(now-*last).whole_seconds()),
             "empty_window":captures.is_empty()
@@ -316,16 +319,16 @@ mod tests {
         assert_eq!(value["observed"]["unique_repositories"], 3);
         assert_eq!(value["observed"]["ignored_future_rows"], 1);
         assert_eq!(value["observed"]["invalid_timestamp_rows"], 1);
-        assert_eq!(value["cadence"]["nominal_slots_in_window"], 56);
+        assert_eq!(value["cadence"]["nominal_slots_in_window"], 84);
         assert!(value["cadence"]["scheduled_capture_count"].is_null());
         assert_eq!(value["cadence"]["median_interval_seconds"], 21600.0);
         assert_eq!(value["cadence"]["max_interval_seconds"], 32400);
         assert_eq!(
-            value["cadence"]["intervals_over_three_hours"]
+            value["cadence"]["intervals_over_two_hours"]
                 .as_array()
                 .unwrap()
                 .len(),
-            1
+            2
         );
         assert_eq!(value["cadence"]["leading_gap_seconds"], 62220);
         assert_eq!(value["cadence"]["trailing_gap_seconds"], 499380);
@@ -406,7 +409,7 @@ mod tests {
             &temp.path().join("absent"),
         )
         .unwrap();
-        assert_eq!(value["cadence"]["nominal_slots_in_window"], 56);
+        assert_eq!(value["cadence"]["nominal_slots_in_window"], 84);
         assert_eq!(value["cadence"]["empty_window"], true);
         assert!(value["cadence"]["leading_gap_seconds"].is_null());
         assert!(value["cadence"]["trailing_gap_seconds"].is_null());

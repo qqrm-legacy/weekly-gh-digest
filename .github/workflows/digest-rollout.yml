@@ -1,0 +1,26 @@
+name: Digest Rollout
+
+# Explicit operator-controlled rollout, never triggered by a push or a PR.
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  dry-run:
+    uses: ./.github/workflows/run-bot.yml
+    with:
+      operation: preview
+  collect:
+    needs: dry-run
+    uses: ./.github/workflows/run-bot.yml
+    with:
+      operation: collect
+  publish:
+    needs: collect
+    uses: ./.github/workflows/run-bot.yml
+    with:
+      operation: publish
+    secrets: inherit

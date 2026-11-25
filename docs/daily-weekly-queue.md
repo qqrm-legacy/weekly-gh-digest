@@ -6,7 +6,7 @@ stable [GitHub Release](releases.md).
 
 ## Durable state, not a text hand-off
 
-Collection still runs every three hours. All observations enter `State.snapshots`
+Collection runs every two hours. All observations enter `State.snapshots`
 before editorial selection and remain in the existing durable checkpoint and
 source archive. No Redis deployment is needed.
 
@@ -102,7 +102,7 @@ atomic transaction. Collection and previews continue while delivery is reconcile
 
 ## Schedule and permissions
 
-- `17 */3 * * *`: collect; after 15:00 UTC recover only the due daily issue
+- `17 */2 * * *`: collect only; the separate publisher handles the due daily issue
   or daily preview. Before that deadline and after an acknowledged issue, collect only.
 - `0 15 * * *`: daily issue, using the same daily identity on delayed recovery.
 - Weekly work requires a manual request; the retired Monday cron is collection-only.
@@ -122,8 +122,8 @@ After reviewing the merged code, target and provider configuration, an authorize
 operator can activate the scheduled production pipeline with:
 
 ```sh
-gh variable set DIGEST_DELIVERY_ENABLED --repo qqrm/weekly-gh-digest --body true
-gh variable set DIGEST_DAILY_DELIVERY_ENABLED --repo qqrm/weekly-gh-digest --body true
+gh variable set DIGEST_DELIVERY_ENABLED --repo qqrm-legacy/weekly-gh-digest --body true
+gh variable set DIGEST_DAILY_DELIVERY_ENABLED --repo qqrm-legacy/weekly-gh-digest --body true
 ```
 
 This permits scheduled daily and explicitly requested weekly delivery using the configured

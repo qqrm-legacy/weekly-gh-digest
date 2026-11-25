@@ -73,7 +73,7 @@ class StateWorkflowTests(unittest.TestCase):
     def test_existing_branch_fetch_failure_is_fatal(self):
         result, calls, _ = self.run_step("Restore persistent state", "fetch_error")
         self.assertNotEqual(result.returncode, 0)
-        self.assertEqual(calls.count("fetch origin"), 3)
+        self.assertEqual(calls.count("fetch --depth=1 origin"), 3)
 
     def test_existing_state_records_restored_commit(self):
         result, _, output = self.run_step("Restore persistent state", "existing")

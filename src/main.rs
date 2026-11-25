@@ -178,6 +178,82 @@ fn update_state(new: &[Snapshot]) -> Result<State> {
     Ok(state)
 }
 
+/// Prepare a publication from a real, retained capture without re-querying Trending/Search.
+/// The manifest points to the original archive; it is not a new observation.
+fn retained_run(state: &State, now: Timestamp, runs: &Path) -> Result<sources::RunData> {
+    let captures = state
+        .snapshots
+        .iter()
+        .filter_map(|row| parse_time(&row.captured_at))
+        .filter(|captured| *captured <= now)
+        .collect::<std::collections::BTreeSet<_>>();
+    for captured in captures.into_iter().rev() {
+        let original = stamp(captured);
+        let path = runs.join(&original).join("manifest.json");
+        let bytes = match fs::read(&path) {
+            Ok(bytes) => bytes,
+            Err(error) if error.kind() == std::io::ErrorKind::NotFound => continue,
+            Err(error) => return Err(error.into()),
+        };
+        let mut manifest: Value = serde_json::from_slice(&bytes)?;
+        if manifest["captured_at"].as_str().and_then(parse_time) != Some(captured)
+            || manifest["publication_from_retained"] == true
+            || !manifest["sources"]
+                .as_array()
+                .is_some_and(|sources| sources.iter().any(|source| source["status"] == "included"))
+        {
+            continue;
+        }
+        let dir = runs.join(stamp(now));
+        fs::create_dir(&dir)?;
+        manifest["publication_from_retained"] = json!(true);
+        manifest["retained_capture_run"] = json!(original);
+        write_json(&dir.join("manifest.json"), &manifest)?;
+        return Ok(sources::RunData {
+            dir,
+            manifest,
+            snapshots: Vec::new(),
+        });
+    }
+    Err(anyhow!("no retained observation with a valid source manifest"))
+}
+
+#[cfg(test)]
+#[test]
+fn retained_publication_does_not_create_a_new_observation() {
+    let archive = tempfile::tempdir().unwrap();
+    let captured = parse_time("2026-11-23T15:17:00Z").unwrap();
+    let now = parse_time("2026-11-24T02:00:00Z").unwrap();
+    let mut state = State::default();
+    assert!(retained_run(&state, now, archive.path()).is_err());
+    state.snapshots.push(
+        serde_json::from_value(
+            json!({"full_name":"example/project","captured_at":captured.rfc3339_seconds()}),
+        )
+        .unwrap(),
+    );
+    let source = archive.path().join(stamp(captured));
+    fs::create_dir(&source).unwrap();
+    let manifest = json!({"captured_at":captured.rfc3339_seconds(),
+        "sources":[{"status":"included"}],"candidate_count":1});
+    write_json(&source.join("manifest.json"), &manifest).unwrap();
+    let publication = retained_run(&state, now, archive.path()).unwrap();
+    assert!(publication.snapshots.is_empty());
+    assert_eq!(publication.manifest["retained_capture_run"], stamp(captured));
+    assert_eq!(
+        publication.manifest["captured_at"],
+        captured.rfc3339_seconds()
+    );
+    assert_eq!(
+        serde_json::from_slice::<Value>(&fs::read(source.join("manifest.json")).unwrap()).unwrap(),
+        manifest
+    );
+    let report = coverage::report(&state.snapshots, now, archive.path()).unwrap();
+    assert_eq!(report["observed"]["capture_count"], 1);
+    assert_eq!(report["archive"]["manifest_capture_count"], 1);
+    assert_eq!(report["archive"]["invalid_manifests"], json!([]));
+}
+
 fn parse_time(s: &str) -> Option<Timestamp> {
     Timestamp::parse(s).ok()
 }
@@ -573,7 +649,7 @@ fn make_digest_for(
     newrepos.sort_by_key(|entry| -entry["stars"].as_i64().unwrap_or(0));
     newrepos.truncate(10);
     let coverage_report = coverage::report(&state.snapshots, now, &runs_dir())?;
-    let trend_summary = "Недельная подборка из сохранённых наблюдений GitHub Trending и поиска. Плановый интервал сбора — три часа; фактические интервалы и пробелы указаны отдельно. Сначала проекты из недельного Trending, затем дневного, затем найденные новые репозитории. Для Trending показан максимальный наблюдавшийся +N своего периода, а не сумма срезов и не измеренный прирост за календарную неделю. Это ограниченная выборка, не рейтинг качества всего GitHub и не список новых релизов.";
+    let trend_summary = "Недельная подборка из сохранённых наблюдений GitHub Trending и поиска. Плановый интервал сбора — два часа; фактические интервалы и пробелы указаны отдельно. Сначала проекты из недельного Trending, затем дневного, затем найденные новые репозитории. Для Trending показан максимальный наблюдавшийся +N своего периода, а не сумма срезов и не измеренный прирост за календарную неделю. Это ограниченная выборка, не рейтинг качества всего GitHub и не список новых релизов.";
     let digest = json!({
         "format_version":3,
         "generated_at":now.rfc3339_seconds(),
@@ -1413,11 +1489,38 @@ fn main() -> Result<()> {
     }
     let llm = args.iter().any(|x| x == "--llm");
     let now = Timestamp::now();
-    let source_clock = clock::SystemClock;
-    let source_http = sources::GitHubHttp::from_env(&source_clock)?;
-    let gathered = sources::collect(now, &runs_dir(), &source_http, &source_clock)?;
-    record_run_directory(&gathered.dir)?;
-    let mut state = update_state(&gathered.snapshots)?;
+    let retained_only = args.iter().any(|arg| arg == "--retained-only");
+    anyhow::ensure!(
+        !retained_only
+            || (format == editions::Format::Daily && matches!(command, "preview" | "digest")),
+        "--retained-only requires daily preview or digest"
+    );
+    if retained_only {
+        let expected = env::var("EXPECTED_DAILY_SLOT").context("missing planned daily slot")?;
+        anyhow::ensure!(
+            expected == format.slot(now),
+            "daily boundary changed after planning; refusing to publish a different slot"
+        );
+    }
+    let (gathered, mut state) = if retained_only {
+        let state = read_state_strict()?;
+        let gathered = retained_run(&state, now, &runs_dir())?;
+        record_run_directory(&gathered.dir)?;
+        (gathered, state)
+    } else {
+        let source_clock = clock::SystemClock;
+        let source_http = sources::GitHubHttp::from_env(&source_clock)?;
+        let gathered = sources::collect(now, &runs_dir(), &source_http, &source_clock)?;
+        record_run_directory(&gathered.dir)?;
+        if command == "collect" {
+            anyhow::ensure!(
+                !gathered.snapshots.is_empty(),
+                "collection produced no observations; refusing to mark it successful"
+            );
+        }
+        let state = update_state(&gathered.snapshots)?;
+        (gathered, state)
+    };
     if command == "collect" {
         let coverage_report = coverage::report(&state.snapshots, now, &runs_dir())?;
         write_json(&gathered.dir.join("coverage.json"), &coverage_report)?;
@@ -1438,8 +1541,7 @@ fn main() -> Result<()> {
             editions::resume(&mut state, now, format)?;
         }
     }
-    // Keep collecting on retries, but do not spend provider requests for a
-    // publication slot that already has a durable acknowledgement.
+    // Do not spend provider requests for an already acknowledged slot.
     if command == "digest" && !dry && state.sent_slots.contains_key(&slot_key) {
         if let Some(output) = env::var_os("GITHUB_OUTPUT") {
             use std::io::Write;
@@ -1448,10 +1550,10 @@ fn main() -> Result<()> {
         }
         write_json(
             &gathered.dir.join("delivery-skipped.json"),
-            &json!({"slot":slot_key,"already_delivered":true,"collection_retained":true}),
+            &json!({"slot":slot_key,"already_delivered":true,"collection_retained":!retained_only}),
         )?;
         println!(
-            "Slot {slot_key} already delivered; collection retained, no provider calls or sends"
+            "Slot {slot_key} already delivered; no provider calls or sends"
         );
         return Ok(());
     }
