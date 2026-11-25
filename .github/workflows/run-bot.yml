@@ -7,6 +7,15 @@ on:
         description: Explicit collection, read-only preview, or daily publication
         type: string
         required: true
+    secrets:
+      TELEGRAM_BOT_TOKEN:
+        required: false
+      TELEGRAM_CHAT_ID:
+        required: false
+      TELEGRAM_TECH_CHAT_ID:
+        required: false
+      GROQ_API_KEY:
+        required: false
   workflow_dispatch:
     inputs:
       digest_format:

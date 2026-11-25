@@ -19,4 +19,8 @@ jobs:
     uses: ./.github/workflows/run-bot.yml
     with:
       operation: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'preview' || 'publish' }}
-    secrets: inherit
+    secrets:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      TELEGRAM_TECH_CHAT_ID: ${{ secrets.TELEGRAM_TECH_CHAT_ID }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}

@@ -215,7 +215,9 @@ fn retained_run(state: &State, now: Timestamp, runs: &Path) -> Result<sources::R
             snapshots: Vec::new(),
         });
     }
-    Err(anyhow!("no retained observation with a valid source manifest"))
+    Err(anyhow!(
+        "no retained observation with a valid source manifest"
+    ))
 }
 
 #[cfg(test)]
@@ -239,7 +241,10 @@ fn retained_publication_does_not_create_a_new_observation() {
     write_json(&source.join("manifest.json"), &manifest).unwrap();
     let publication = retained_run(&state, now, archive.path()).unwrap();
     assert!(publication.snapshots.is_empty());
-    assert_eq!(publication.manifest["retained_capture_run"], stamp(captured));
+    assert_eq!(
+        publication.manifest["retained_capture_run"],
+        stamp(captured)
+    );
     assert_eq!(
         publication.manifest["captured_at"],
         captured.rfc3339_seconds()
@@ -1552,9 +1557,7 @@ fn main() -> Result<()> {
             &gathered.dir.join("delivery-skipped.json"),
             &json!({"slot":slot_key,"already_delivered":true,"collection_retained":!retained_only}),
         )?;
-        println!(
-            "Slot {slot_key} already delivered; no provider calls or sends"
-        );
+        println!("Slot {slot_key} already delivered; no provider calls or sends");
         return Ok(());
     }
     let weekly = schedule::candidates(&state, now);
