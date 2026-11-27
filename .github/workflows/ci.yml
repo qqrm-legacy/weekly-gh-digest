@@ -49,7 +49,7 @@ jobs:
         run: cargo install --debug --locked --version '=0.9.151' cargo-nextest
 
       - name: Test with nextest
-        run: cargo nextest run --locked --no-tests=pass --no-fail-fast
+        run: cargo nextest run --locked --no-fail-fast
 
       - name: Verify publication-disabled CLI boundaries
         run: |
