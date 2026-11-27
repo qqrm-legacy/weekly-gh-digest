@@ -42,7 +42,7 @@ jobs:
         run: cargo install --debug --locked --version '=0.9.151' cargo-nextest
       - name: Test schedules, state, language and publication boundaries
         run: |
-          cargo nextest run --locked --no-tests=pass --no-fail-fast
+          cargo nextest run --locked --no-fail-fast
           python3 -m unittest discover -s .github/scripts -p 'test_*.py'
           cargo build --locked
           python3 .github/scripts/verify_publication_disabled.py ./target/debug/weekly-gh-digest

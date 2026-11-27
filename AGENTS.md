@@ -9,7 +9,7 @@
 - `cargo fmt --all -- --check`
 - `cargo check --tests --benches`
 - `cargo clippy --all-targets --all-features -- -D warnings`
-- `cargo nextest run --no-tests=pass`
+- `cargo nextest run`
 
 ## Workflow Rules
 - Never bypass failing checks on `main`.
