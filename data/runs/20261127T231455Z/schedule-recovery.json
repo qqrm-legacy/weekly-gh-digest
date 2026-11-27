@@ -1,0 +1,15 @@
+{
+  "slot": "daily:2026-11-27",
+  "mode": "daily-digest",
+  "send": true,
+  "llm": true,
+  "reason": "daily-delivery-due",
+  "event": "schedule",
+  "cron": "0 15 * * *",
+  "edition": "daily",
+  "delivery_enabled": true,
+  "daily_delivery_enabled": true,
+  "issue_due_at": "2026-11-27T15:00:00+00:00",
+  "selected_at": "2026-11-27T23:14:55.427867+00:00",
+  "issue_age_seconds": 29695
+}

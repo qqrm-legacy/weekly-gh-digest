@@ -1,0 +1,4737 @@
+[
+  {
+    "full_name": "0xkaka/homeport",
+    "captured_at": "2026-11-24T23:55:41Z",
+    "stars": 658,
+    "forks": 119,
+    "language": "HTML",
+    "description": null,
+    "html_url": "https://github.com/0xkaka/homeport",
+    "topics": [],
+    "created_at": "2026-11-17T05:39:46Z",
+    "updated_at": "2026-11-24T18:56:05Z",
+    "pushed_at": "2026-11-19T09:05:16Z",
+    "license": null,
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T23:55:41Z",
+        "created_at": "2026-11-17T05:39:46Z",
+        "description": null,
+        "html_url": "https://github.com/0xkaka/homeport",
+        "stars": 658,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-24T23:55:41Z",
+      "observations": 12
+    }
+  },
+  {
+    "full_name": "4lwayz/portwatch-vi",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 6448,
+    "forks": 182,
+    "language": "JavaScript",
+    "description": "Does GTA VI run on PC yet? A live tracker of community recompilation and emulation efforts, updated daily.",
+    "html_url": "https://github.com/4lwayz/portwatch-vi",
+    "topics": [],
+    "created_at": "2026-11-21T23:16:41Z",
+    "updated_at": "2026-11-27T16:46:48Z",
+    "pushed_at": "2026-11-27T16:20:59Z",
+    "license": null,
+    "open_issues": 229,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-21T23:16:41Z",
+        "description": "Does GTA VI run on PC yet? A live tracker of community recompilation and emulation efforts, updated daily.",
+        "html_url": "https://github.com/4lwayz/portwatch-vi",
+        "stars": 6448,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T02:00:48Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 11
+    }
+  },
+  {
+    "full_name": "AFK-surf/xnulinux",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 4334,
+    "forks": 224,
+    "language": "C",
+    "description": "XNU as a loadable kernel module inside Linux (macOS personality for arm64 Linux)",
+    "html_url": "https://github.com/AFK-surf/xnulinux",
+    "topics": [],
+    "created_at": "2026-11-20T10:18:31Z",
+    "updated_at": "2026-11-27T16:25:38Z",
+    "pushed_at": "2026-11-27T16:37:40Z",
+    "license": "Other",
+    "open_issues": 21,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-20T10:18:31Z",
+        "description": "XNU as a loadable kernel module inside Linux (macOS personality for arm64 Linux)",
+        "html_url": "https://github.com/AFK-surf/xnulinux",
+        "stars": 4334,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-23T12:49:29Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 12
+    }
+  },
+  {
+    "full_name": "ag-ui-protocol/ag-ui",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 21926,
+    "forks": 2192,
+    "language": "TypeScript",
+    "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+    "html_url": "https://github.com/ag-ui-protocol/ag-ui",
+    "topics": [
+      "ag-ui-protocol",
+      "agent-frontend",
+      "agent-ui",
+      "agentic-workflow",
+      "ai-agents"
+    ],
+    "created_at": "2025-05-07T12:49:37Z",
+    "updated_at": "2026-11-27T16:42:18Z",
+    "pushed_at": "2026-11-27T15:52:19Z",
+    "license": "MIT",
+    "open_issues": 633,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-22T20:56:37Z",
+        "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+        "full_name": "ag-ui-protocol/ag-ui",
+        "language": "TypeScript",
+        "trending_stars_period": 3792,
+        "trending_total_forks": null,
+        "trending_total_stars": 21172,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "Ahmet-Dedeler/awesome-gta6-reverse-engineering",
+    "captured_at": "2026-11-26T11:02:05Z",
+    "stars": 761,
+    "forks": 43,
+    "language": "HTML",
+    "description": "Curated list of open-source GTA VI (GTA 6) reverse engineering tools, RAGE 9 / RPF9 archive explorers, TTPF texture & ADAT/AWC audio decoders, format docs, and Xbox Series / PS5 translation layers.",
+    "html_url": "https://github.com/Ahmet-Dedeler/awesome-gta6-reverse-engineering",
+    "topics": [
+      "awesome",
+      "awesome-list",
+      "game-preservation",
+      "grand-theft-auto-vi",
+      "gta-6",
+      "gta-vi",
+      "gta6",
+      "gtavi",
+      "modding",
+      "rage9",
+      "rdna2",
+      "recompilation",
+      "reverse-engineering",
+      "rpf9",
+      "rust",
+      "scarlett",
+      "ttpf",
+      "xbox-series"
+    ],
+    "created_at": "2026-11-21T17:08:48Z",
+    "updated_at": "2026-11-26T10:39:28Z",
+    "pushed_at": "2026-11-26T00:58:17Z",
+    "license": "Other",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-26T11:02:05Z",
+        "created_at": "2026-11-21T17:08:48Z",
+        "description": "Curated list of open-source GTA VI (GTA 6) reverse engineering tools, RAGE 9 / RPF9 archive explorers, TTPF texture & ADAT/AWC audio decoders, format docs, and Xbox Series / PS5 translation layers.",
+        "html_url": "https://github.com/Ahmet-Dedeler/awesome-gta6-reverse-engineering",
+        "stars": 761,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T02:00:48Z",
+      "last_seen": "2026-11-26T11:02:05Z",
+      "observations": 8
+    }
+  },
+  {
+    "full_name": "alesha-pro/llm.asm",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1951,
+    "forks": 307,
+    "language": "Assembly",
+    "description": "Qwen3-0.6B inference (12 KB), bare-metal bootable OS (22 KB), and from-scratch Mini-GPT trainer with live Braille TUI (32 KB) in 100% pure x86-64 NASM assembly. Zero C, zero libc, zero dependencies.",
+    "html_url": "https://github.com/alesha-pro/llm.asm",
+    "topics": [
+      "assembly",
+      "avx2",
+      "bare-metal",
+      "llm",
+      "machine-learning",
+      "nasm",
+      "osdev",
+      "qwen",
+      "transformer",
+      "x86-64"
+    ],
+    "created_at": "2026-11-25T07:28:51Z",
+    "updated_at": "2026-11-27T16:46:27Z",
+    "pushed_at": "2026-11-25T15:42:44Z",
+    "license": "MIT",
+    "open_issues": 19,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-25T07:28:51Z",
+        "description": "Qwen3-0.6B inference (12 KB), bare-metal bootable OS (22 KB), and from-scratch Mini-GPT trainer with live Braille TUI (32 KB) in 100% pure x86-64 NASM assembly. Zero C, zero libc, zero dependencies.",
+        "html_url": "https://github.com/alesha-pro/llm.asm",
+        "stars": 1951,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-26T11:02:05Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 4
+    }
+  },
+  {
+    "full_name": "alibaba/open-code-review",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 56849,
+    "forks": 4699,
+    "language": "Go",
+    "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+    "html_url": "https://github.com/alibaba/open-code-review",
+    "topics": [
+      "agent",
+      "agent-skills",
+      "code-review",
+      "code-review-assistant",
+      "harness",
+      "repository-level-context"
+    ],
+    "created_at": "2026-05-18T02:16:36Z",
+    "updated_at": "2026-11-27T16:41:15Z",
+    "pushed_at": "2026-11-26T02:19:51Z",
+    "license": "Apache-2.0",
+    "open_issues": 361,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+        "full_name": "alibaba/open-code-review",
+        "language": "Go",
+        "trending_stars_period": 4457,
+        "trending_total_forks": null,
+        "trending_total_stars": 54928,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "Avaneesh-Inamdar/Stream-Tube-Desktop",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1624,
+    "forks": 142,
+    "language": "Rust",
+    "description": "Native YouTube client for Windows in Rust, with SponsorBlock, DeArrow and Return YouTube Dislike built in",
+    "html_url": "https://github.com/Avaneesh-Inamdar/Stream-Tube-Desktop",
+    "topics": [
+      "dearrow",
+      "desktop-app",
+      "gpui",
+      "mpv",
+      "rust",
+      "sponsorblock",
+      "windows",
+      "youtube",
+      "youtube-client"
+    ],
+    "created_at": "2026-11-22T18:50:17Z",
+    "updated_at": "2026-11-27T16:22:51Z",
+    "pushed_at": "2026-11-27T16:45:58Z",
+    "license": "MIT",
+    "open_issues": 19,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-22T18:50:17Z",
+        "description": "Native YouTube client for Windows in Rust, with SponsorBlock, DeArrow and Return YouTube Dislike built in",
+        "html_url": "https://github.com/Avaneesh-Inamdar/Stream-Tube-Desktop",
+        "stars": 1624,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T13:46:47Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 9
+    }
+  },
+  {
+    "full_name": "avatarmanz/VIctory-7900XTX",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1924,
+    "forks": 623,
+    "language": "Rust",
+    "description": "Goal: an Xbox Series title (your own dump) on PC as the Series X version at 4K with ray tracing, picture matching the Xbox first (textures, lighting), then 30+ fps. Porting, not emulating. RX 7900 XTX first. No game files.",
+    "html_url": "https://github.com/avatarmanz/VIctory-7900XTX",
+    "topics": [],
+    "created_at": "2026-11-25T22:18:14Z",
+    "updated_at": "2026-11-27T16:15:28Z",
+    "pushed_at": "2026-11-27T01:11:22Z",
+    "license": "GPL-3.0",
+    "open_issues": 379,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-25T22:18:14Z",
+        "description": "Goal: an Xbox Series title (your own dump) on PC as the Series X version at 4K with ray tracing, picture matching the Xbox first (textures, lighting), then 30+ fps. Porting, not emulating. RX 7900 XTX first. No game files.",
+        "html_url": "https://github.com/avatarmanz/VIctory-7900XTX",
+        "stars": 1924,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-26T01:49:16Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "backnotprop/plannotator",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 15383,
+    "forks": 1471,
+    "language": "TypeScript",
+    "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+    "html_url": "https://github.com/backnotprop/plannotator",
+    "topics": [
+      "agents",
+      "claude-code",
+      "code-review",
+      "codex",
+      "obsidian",
+      "opencode",
+      "pi-mono",
+      "plan-mode",
+      "skills"
+    ],
+    "created_at": "2025-12-28T02:09:40Z",
+    "updated_at": "2026-11-27T16:42:47Z",
+    "pushed_at": "2026-11-27T16:35:52Z",
+    "license": "Apache-2.0",
+    "open_issues": 257,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+        "full_name": "backnotprop/plannotator",
+        "language": "TypeScript",
+        "trending_stars_period": 3555,
+        "trending_total_forks": null,
+        "trending_total_stars": 14015,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "Belobug/VIctory-Belobug-AMD",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 4146,
+    "forks": 1247,
+    "language": "Rust",
+    "description": null,
+    "html_url": "https://github.com/Belobug/VIctory-Belobug-AMD",
+    "topics": [],
+    "created_at": "2026-11-25T09:41:37Z",
+    "updated_at": "2026-11-27T16:47:59Z",
+    "pushed_at": "2026-11-26T22:30:21Z",
+    "license": "GPL-3.0",
+    "open_issues": 540,
+    "default_branch": "a-publier",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-25T09:41:37Z",
+        "description": null,
+        "html_url": "https://github.com/Belobug/VIctory-Belobug-AMD",
+        "stars": 4145,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-25T17:23:15Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 6
+    }
+  },
+  {
+    "full_name": "bookwjitchieni1986/blender-ai-mcp-addon",
+    "captured_at": "2026-11-23T12:49:29Z",
+    "stars": 2760,
+    "forks": 40,
+    "language": null,
+    "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration.",
+    "html_url": "https://github.com/bookwjitchieni1986/blender-ai-mcp-addon",
+    "topics": [
+      "ai-agents",
+      "ai-assistant",
+      "blender",
+      "blender-addon",
+      "blender-ai",
+      "blender-automation",
+      "blender-mcp",
+      "blender-plugin",
+      "blender-scripting",
+      "bpy",
+      "chatgpt",
+      "claude",
+      "gemini",
+      "llm",
+      "mcp",
+      "mcp-for-blender",
+      "mcp-server",
+      "model-context-protocol",
+      "ollama",
+      "opencode"
+    ],
+    "created_at": "2026-11-19T14:43:10Z",
+    "updated_at": "2026-11-23T09:38:06Z",
+    "pushed_at": "2026-11-22T13:29:36Z",
+    "license": "MIT",
+    "open_issues": 61,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-23T12:49:29Z",
+        "created_at": "2026-11-19T14:43:10Z",
+        "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration.",
+        "html_url": "https://github.com/bookwjitchieni1986/blender-ai-mcp-addon",
+        "stars": 2760,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-23T12:49:29Z",
+      "observations": 7
+    }
+  },
+  {
+    "full_name": "boringmarketer/boring-marketing-skills",
+    "captured_at": "2026-11-23T12:49:29Z",
+    "stars": 803,
+    "forks": 282,
+    "language": "Python",
+    "description": "32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+    "html_url": "https://github.com/boringmarketer/boring-marketing-skills",
+    "topics": [
+      "agent-skills",
+      "ai-agents",
+      "claude-code",
+      "codex",
+      "copywriting",
+      "local-seo",
+      "marketing",
+      "seo"
+    ],
+    "created_at": "2026-11-16T15:09:46Z",
+    "updated_at": "2026-11-23T12:32:25Z",
+    "pushed_at": "2026-11-17T22:53:58Z",
+    "license": "MIT",
+    "open_issues": 2,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-23T12:49:29Z",
+        "created_at": "2026-11-16T15:09:46Z",
+        "description": "32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+        "html_url": "https://github.com/boringmarketer/boring-marketing-skills",
+        "stars": 803,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-23T12:49:29Z",
+      "observations": 7
+    }
+  },
+  {
+    "full_name": "cathrynlavery/diagram-design",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 74315,
+    "forks": 5003,
+    "language": "HTML",
+    "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+    "html_url": "https://github.com/cathrynlavery/diagram-design",
+    "topics": [
+      "agent-skills",
+      "claude-code",
+      "codex",
+      "data-visualization",
+      "diagrams",
+      "drawio",
+      "mermaid",
+      "svg"
+    ],
+    "created_at": "2026-04-16T18:01:16Z",
+    "updated_at": "2026-11-27T16:47:41Z",
+    "pushed_at": "2026-11-26T19:48:58Z",
+    "license": "MIT",
+    "open_issues": 33,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-26T11:02:05Z",
+        "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+        "full_name": "cathrynlavery/diagram-design",
+        "language": "HTML",
+        "trending_stars_period": 1141,
+        "trending_total_forks": null,
+        "trending_total_stars": 73466,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "ChromeDevTools/chrome-devtools-mcp",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 59595,
+    "forks": 4902,
+    "language": "TypeScript",
+    "description": "Chrome DevTools for coding agents",
+    "html_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "topics": [
+      "browser",
+      "chrome",
+      "chrome-devtools",
+      "debugging",
+      "devtools",
+      "mcp",
+      "mcp-server",
+      "puppeteer"
+    ],
+    "created_at": "2025-09-11T10:39:55Z",
+    "updated_at": "2026-11-27T16:44:10Z",
+    "pushed_at": "2026-11-27T14:34:29Z",
+    "license": "Apache-2.0",
+    "open_issues": 112,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "Chrome DevTools for coding agents",
+        "full_name": "ChromeDevTools/chrome-devtools-mcp",
+        "language": "TypeScript",
+        "trending_stars_period": 3306,
+        "trending_total_forks": null,
+        "trending_total_stars": 58599,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "chuanqisun/spaceship",
+    "captured_at": "2026-11-23T12:49:29Z",
+    "stars": 1059,
+    "forks": 115,
+    "language": "HTML",
+    "description": "Steer ideas like a space pilot!",
+    "html_url": "https://github.com/chuanqisun/spaceship",
+    "topics": [],
+    "created_at": "2026-11-16T14:43:45Z",
+    "updated_at": "2026-11-23T12:27:46Z",
+    "pushed_at": "2026-11-23T08:11:47Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "master",
+    "sources": [
+      {
+        "captured_at": "2026-11-23T12:49:29Z",
+        "created_at": "2026-11-16T14:43:45Z",
+        "description": "Steer ideas like a space pilot!",
+        "html_url": "https://github.com/chuanqisun/spaceship",
+        "stars": 1059,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-23T12:49:29Z",
+      "observations": 7
+    }
+  },
+  {
+    "full_name": "CocoSgt/riemann-hypothesis-lean",
+    "captured_at": "2026-11-24T23:55:41Z",
+    "stars": 560,
+    "forks": 89,
+    "language": "Lean",
+    "description": "Mirror of Levent Alpöge's Lean proof of the Riemann Hypothesis (with Claude). All credit to Levent Alpöge. Source: alpo.ge",
+    "html_url": "https://github.com/CocoSgt/riemann-hypothesis-lean",
+    "topics": [],
+    "created_at": "2026-11-20T14:59:14Z",
+    "updated_at": "2026-11-24T22:43:38Z",
+    "pushed_at": "2026-11-20T15:13:36Z",
+    "license": null,
+    "open_issues": 4,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T23:55:41Z",
+        "created_at": "2026-11-20T14:59:14Z",
+        "description": "Mirror of Levent Alpöge's Lean proof of the Riemann Hypothesis (with Claude). All credit to Levent Alpöge. Source: alpo.ge",
+        "html_url": "https://github.com/CocoSgt/riemann-hypothesis-lean",
+        "stars": 560,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-22T13:30:50Z",
+      "last_seen": "2026-11-24T23:55:41Z",
+      "observations": 10
+    }
+  },
+  {
+    "full_name": "CoderL98/hghub-plugins",
+    "captured_at": "2026-11-23T12:49:29Z",
+    "stars": 481,
+    "forks": 70,
+    "language": "JavaScript",
+    "description": "HGhub HPP 1.0 单文件插件与订阅源",
+    "html_url": "https://github.com/CoderL98/hghub-plugins",
+    "topics": [],
+    "created_at": "2026-11-16T03:33:57Z",
+    "updated_at": "2026-11-23T12:30:55Z",
+    "pushed_at": "2026-11-16T06:25:24Z",
+    "license": null,
+    "open_issues": 4,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-23T12:49:29Z",
+        "created_at": "2026-11-16T03:33:57Z",
+        "description": "HGhub HPP 1.0 单文件插件与订阅源",
+        "html_url": "https://github.com/CoderL98/hghub-plugins",
+        "stars": 481,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-23T01:46:02Z",
+      "last_seen": "2026-11-23T12:49:29Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "crhywun/g1-acq",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1758,
+    "forks": 400,
+    "language": "JavaScript",
+    "description": null,
+    "html_url": "https://github.com/crhywun/g1-acq",
+    "topics": [],
+    "created_at": "2026-11-22T10:53:17Z",
+    "updated_at": "2026-11-27T16:47:29Z",
+    "pushed_at": "2026-11-26T23:51:35Z",
+    "license": null,
+    "open_issues": 9,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-22T10:53:17Z",
+        "description": null,
+        "html_url": "https://github.com/crhywun/g1-acq",
+        "stars": 1758,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-25T17:23:15Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 6
+    }
+  },
+  {
+    "full_name": "cursor/plugins",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 19953,
+    "forks": 2211,
+    "language": "TypeScript",
+    "description": "Cursor plugin specification and official plugins",
+    "html_url": "https://github.com/cursor/plugins",
+    "topics": [],
+    "created_at": "2026-01-23T01:57:42Z",
+    "updated_at": "2026-11-27T16:43:33Z",
+    "pushed_at": "2026-11-26T09:04:53Z",
+    "license": null,
+    "open_issues": 709,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-26T11:02:05Z",
+        "description": "Cursor plugin specification and official plugins",
+        "full_name": "cursor/plugins",
+        "language": "TypeScript",
+        "trending_stars_period": 416,
+        "trending_total_forks": null,
+        "trending_total_stars": 19657,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "CzzzzzzJ/mdldm-maitian",
+    "captured_at": "2026-11-21T11:07:34Z",
+    "stars": 1760,
+    "forks": 512,
+    "language": "JavaScript",
+    "description": "麦田：自媒体多平台发布中控与数据监控（B站/抖音/小红书/视频号/YouTube/X），飞书卡片通知 + 数据大屏",
+    "html_url": "https://github.com/CzzzzzzJ/mdldm-maitian",
+    "topics": [
+      "automation",
+      "chrome-extension",
+      "creator-tools",
+      "dashboard",
+      "feishu",
+      "social-media"
+    ],
+    "created_at": "2026-11-14T03:59:22Z",
+    "updated_at": "2026-11-21T10:34:46Z",
+    "pushed_at": "2026-11-21T04:13:34Z",
+    "license": "MIT",
+    "open_issues": 5,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "created_at": "2026-11-14T03:59:22Z",
+        "description": "麦田：自媒体多平台发布中控与数据监控（B站/抖音/小红书/视频号/YouTube/X），飞书卡片通知 + 数据大屏",
+        "html_url": "https://github.com/CzzzzzzJ/mdldm-maitian",
+        "stars": 1760,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-21T11:07:34Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "danielwh2/sprite-stacking",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1072,
+    "forks": 89,
+    "language": "HTML",
+    "description": "Agent skill: turn four pixel art views into fake-3D sprites you can spin. Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi.",
+    "html_url": "https://github.com/danielwh2/sprite-stacking",
+    "topics": [
+      "agent-skills",
+      "claude-code",
+      "codex",
+      "cursor",
+      "fake-3d",
+      "gamedev",
+      "pixel-art",
+      "sprite-stacking",
+      "voxel"
+    ],
+    "created_at": "2026-11-20T14:32:43Z",
+    "updated_at": "2026-11-27T16:13:10Z",
+    "pushed_at": "2026-11-24T13:12:08Z",
+    "license": "MIT",
+    "open_issues": 1,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-20T14:32:43Z",
+        "description": "Agent skill: turn four pixel art views into fake-3D sprites you can spin. Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi.",
+        "html_url": "https://github.com/danielwh2/sprite-stacking",
+        "stars": 1072,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-23T01:46:02Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 13
+    }
+  },
+  {
+    "full_name": "deterministic-machines/deslop-please",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1183,
+    "forks": 61,
+    "language": "Rust",
+    "description": "Bring (back) sanity to your code",
+    "html_url": "https://github.com/deterministic-machines/deslop-please",
+    "topics": [],
+    "created_at": "2026-11-22T05:36:03Z",
+    "updated_at": "2026-11-27T16:35:51Z",
+    "pushed_at": "2026-11-27T08:06:39Z",
+    "license": "MIT",
+    "open_issues": 5,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-22T05:36:03Z",
+        "description": "Bring (back) sanity to your code",
+        "html_url": "https://github.com/deterministic-machines/deslop-please",
+        "stars": 1183,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T13:46:47Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 9
+    }
+  },
+  {
+    "full_name": "dream-num/univer",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 32038,
+    "forks": 2878,
+    "language": "TypeScript",
+    "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+    "html_url": "https://github.com/dream-num/univer",
+    "topics": [
+      "board",
+      "collaboration",
+      "doc",
+      "docx",
+      "excel",
+      "offce365",
+      "office",
+      "pdf",
+      "ppt",
+      "pptx",
+      "presentation",
+      "sdk",
+      "sheet",
+      "slides",
+      "spreadsheet",
+      "univer",
+      "word",
+      "wordprocessor",
+      "workspace",
+      "xlsx"
+    ],
+    "created_at": "2022-09-29T12:09:14Z",
+    "updated_at": "2026-11-27T16:44:20Z",
+    "pushed_at": "2026-11-27T15:31:48Z",
+    "license": "Apache-2.0",
+    "open_issues": 198,
+    "default_branch": "dev",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+        "full_name": "dream-num/univer",
+        "language": "TypeScript",
+        "trending_stars_period": 7539,
+        "trending_total_forks": null,
+        "trending_total_stars": 31010,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "duwqijlk/google-trial-tool",
+    "captured_at": "2026-11-24T02:15:01Z",
+    "stars": 447,
+    "forks": 174,
+    "language": "JavaScript",
+    "description": null,
+    "html_url": "https://github.com/duwqijlk/google-trial-tool",
+    "topics": [],
+    "created_at": "2026-11-19T11:06:16Z",
+    "updated_at": "2026-11-24T01:01:32Z",
+    "pushed_at": "2026-11-19T11:54:58Z",
+    "license": null,
+    "open_issues": 3,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T02:15:01Z",
+        "created_at": "2026-11-19T11:06:16Z",
+        "description": null,
+        "html_url": "https://github.com/duwqijlk/google-trial-tool",
+        "stars": 447,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-23T01:46:02Z",
+      "last_seen": "2026-11-24T02:15:01Z",
+      "observations": 3
+    }
+  },
+  {
+    "full_name": "duwqijlk/muse-protocol",
+    "captured_at": "2026-11-21T11:07:34Z",
+    "stars": 1716,
+    "forks": 666,
+    "language": "Python",
+    "description": "muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）",
+    "html_url": "https://github.com/duwqijlk/muse-protocol",
+    "topics": [],
+    "created_at": "2026-11-14T01:24:58Z",
+    "updated_at": "2026-11-21T10:00:36Z",
+    "pushed_at": "2026-11-15T02:55:33Z",
+    "license": "Other",
+    "open_issues": 3,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "created_at": "2026-11-14T01:24:58Z",
+        "description": "muse.ai 注册与邀请码兑换协议研究（纯 HTTP Python 实现）",
+        "html_url": "https://github.com/duwqijlk/muse-protocol",
+        "stars": 1716,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-21T11:07:34Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "EL4CTEO/fast-anything",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 4416,
+    "forks": 316,
+    "language": "Rust",
+    "description": "Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
+    "html_url": "https://github.com/EL4CTEO/fast-anything",
+    "topics": [
+      "agent-skills",
+      "ai-agents",
+      "claude-code",
+      "claude-code-plugin",
+      "codex",
+      "developer-tools",
+      "ffi",
+      "mcp",
+      "mcp-server",
+      "napi-rs",
+      "nodejs",
+      "optimization",
+      "performance",
+      "profiler",
+      "pyo3",
+      "python",
+      "rewrite-it-in-rust",
+      "ruby",
+      "rust",
+      "typescript"
+    ],
+    "created_at": "2026-11-21T14:40:27Z",
+    "updated_at": "2026-11-27T16:46:33Z",
+    "pushed_at": "2026-11-27T16:19:57Z",
+    "license": "MIT",
+    "open_issues": 1,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-21T14:40:27Z",
+        "description": "Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
+        "html_url": "https://github.com/EL4CTEO/fast-anything",
+        "stars": 4416,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-22T13:30:50Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 16
+    }
+  },
+  {
+    "full_name": "elementalsouls/Claude-BugHunter",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 25653,
+    "forks": 2622,
+    "language": "Python",
+    "description": "A Claude Code skill bundle for bug hunting and external red-team work - 85 skills, 16 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+    "html_url": "https://github.com/elementalsouls/Claude-BugHunter",
+    "topics": [
+      "ai-security",
+      "anthropic",
+      "application-security",
+      "bug-bounty",
+      "bugbounty",
+      "bugcrowd",
+      "claude",
+      "claude-code",
+      "claude-skills",
+      "ethical-hacking",
+      "hackerone",
+      "offensive-security",
+      "pentesting",
+      "red-team",
+      "security-tools",
+      "web-security"
+    ],
+    "created_at": "2026-05-05T11:22:32Z",
+    "updated_at": "2026-11-27T16:48:07Z",
+    "pushed_at": "2026-11-27T04:27:28Z",
+    "license": "MIT",
+    "open_issues": 16,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-23T12:49:29Z",
+        "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+        "full_name": "elementalsouls/Claude-BugHunter",
+        "language": "Python",
+        "trending_stars_period": 2037,
+        "trending_total_forks": null,
+        "trending_total_stars": 18897,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "erkamyaman/rust-anything",
+    "captured_at": "2026-11-23T12:49:29Z",
+    "stars": 8456,
+    "forks": 676,
+    "language": "Rust",
+    "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
+    "html_url": "https://github.com/erkamyaman/rust-anything",
+    "topics": [
+      "agent-skills",
+      "claude-code",
+      "cli",
+      "code-migration",
+      "codex",
+      "ffi",
+      "golang",
+      "java",
+      "javascript",
+      "mcp",
+      "migration",
+      "napi",
+      "performance",
+      "porting",
+      "pyo3",
+      "python",
+      "rewrite",
+      "ruby",
+      "rust",
+      "typescript"
+    ],
+    "created_at": "2026-11-16T12:10:36Z",
+    "updated_at": "2026-11-23T12:49:05Z",
+    "pushed_at": "2026-11-23T12:45:40Z",
+    "license": "MIT",
+    "open_issues": 29,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-23T12:49:29Z",
+        "created_at": "2026-11-16T12:10:36Z",
+        "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
+        "html_url": "https://github.com/erkamyaman/rust-anything",
+        "stars": 8456,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-23T12:49:29Z",
+      "observations": 7
+    }
+  },
+  {
+    "full_name": "erkamyaman/safe-anything",
+    "captured_at": "2026-11-24T23:55:41Z",
+    "stars": 624,
+    "forks": 56,
+    "language": "Rust",
+    "description": "Find the holes before someone else does. A fast, 100% Rust vulnerability scanner: XSS, SQL injection, leaked secrets, dependency CVEs and AI agent setups.",
+    "html_url": "https://github.com/erkamyaman/safe-anything",
+    "topics": [
+      "ai-agents",
+      "claude-code",
+      "claude-code-plugin",
+      "cli",
+      "codex",
+      "cursor",
+      "devsecops",
+      "mcp",
+      "osv",
+      "owasp",
+      "rust",
+      "sast",
+      "secret-scanning",
+      "secrets",
+      "security",
+      "security-scanner",
+      "sql-injection",
+      "vulnerability",
+      "vulnerability-scanner",
+      "xss"
+    ],
+    "created_at": "2026-11-22T16:44:10Z",
+    "updated_at": "2026-11-24T23:45:54Z",
+    "pushed_at": "2026-11-24T18:41:56Z",
+    "license": "MIT",
+    "open_issues": 36,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T23:55:41Z",
+        "created_at": "2026-11-22T16:44:10Z",
+        "description": "Find the holes before someone else does. A fast, 100% Rust vulnerability scanner: XSS, SQL injection, leaked secrets, dependency CVEs and AI agent setups.",
+        "html_url": "https://github.com/erkamyaman/safe-anything",
+        "stars": 624,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T02:00:48Z",
+      "last_seen": "2026-11-24T23:55:41Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "firecrawl/firecrawl",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 211473,
+    "forks": 11114,
+    "language": "TypeScript",
+    "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+    "html_url": "https://github.com/firecrawl/firecrawl",
+    "topics": [
+      "ai",
+      "ai-agents",
+      "ai-crawler",
+      "ai-scraping",
+      "ai-search",
+      "crawler",
+      "data-extraction",
+      "html-to-markdown",
+      "llm",
+      "markdown",
+      "scraper",
+      "scraping",
+      "web-crawler",
+      "web-data",
+      "web-data-extraction",
+      "web-scraper",
+      "web-scraping",
+      "web-search",
+      "webscraping"
+    ],
+    "created_at": "2024-04-15T21:02:29Z",
+    "updated_at": "2026-11-27T16:47:16Z",
+    "pushed_at": "2026-11-27T16:28:23Z",
+    "license": "AGPL-3.0",
+    "open_issues": 933,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+        "full_name": "firecrawl/firecrawl",
+        "language": "TypeScript",
+        "trending_stars_period": 1241,
+        "trending_total_forks": null,
+        "trending_total_stars": 205667,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "fxceless/victory-fork",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 3341,
+    "forks": 1011,
+    "language": "Rust",
+    "description": "Work-in-progress fork of VIctory: getting an Xbox Series title to render and run on a Windows PC. No game files.",
+    "html_url": "https://github.com/fxceless/victory-fork",
+    "topics": [],
+    "created_at": "2026-11-24T18:02:37Z",
+    "updated_at": "2026-11-27T16:45:28Z",
+    "pushed_at": "2026-11-27T16:01:54Z",
+    "license": "GPL-3.0",
+    "open_issues": 1240,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-24T18:02:37Z",
+        "description": "Work-in-progress fork of VIctory: getting an Xbox Series title to render and run on a Windows PC. No game files.",
+        "html_url": "https://github.com/fxceless/victory-fork",
+        "stars": 3341,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T23:46:47Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 8
+    }
+  },
+  {
+    "full_name": "google-labs-code/stitch-skills",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 13502,
+    "forks": 1600,
+    "language": "TypeScript",
+    "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+    "html_url": "https://github.com/google-labs-code/stitch-skills",
+    "topics": [],
+    "created_at": "2026-01-16T17:17:17Z",
+    "updated_at": "2026-11-27T16:47:26Z",
+    "pushed_at": "2026-11-24T21:51:04Z",
+    "license": "Apache-2.0",
+    "open_issues": 25,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-22T20:56:37Z",
+        "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+        "full_name": "google-labs-code/stitch-skills",
+        "language": "TypeScript",
+        "trending_stars_period": 516,
+        "trending_total_forks": null,
+        "trending_total_stars": 11860,
+        "type": "trending_daily"
+      },
+      {
+        "captured_at": "2026-11-23T12:49:29Z",
+        "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+        "full_name": "google-labs-code/stitch-skills",
+        "language": "TypeScript",
+        "trending_stars_period": 2683,
+        "trending_total_forks": null,
+        "trending_total_stars": 12112,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "GoogleChrome/modern-web-guidance-src",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 11405,
+    "forks": 846,
+    "language": "TypeScript",
+    "description": "Keep your coding agent up to date with the latest web best practices",
+    "html_url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+    "topics": [],
+    "created_at": "2026-01-27T20:22:24Z",
+    "updated_at": "2026-11-27T16:45:21Z",
+    "pushed_at": "2026-11-27T09:54:12Z",
+    "license": "Apache-2.0",
+    "open_issues": 402,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "Keep your coding agent up to date with the latest web best practices",
+        "full_name": "GoogleChrome/modern-web-guidance-src",
+        "language": "TypeScript",
+        "trending_stars_period": 5224,
+        "trending_total_forks": null,
+        "trending_total_stars": 9674,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "gylive/google-ultra",
+    "captured_at": "2026-11-22T13:30:50Z",
+    "stars": 2661,
+    "forks": 89,
+    "language": "Python",
+    "description": null,
+    "html_url": "https://github.com/gylive/google-ultra",
+    "topics": [],
+    "created_at": "2026-11-17T10:21:54Z",
+    "updated_at": "2026-11-22T13:15:09Z",
+    "pushed_at": "2026-11-21T15:55:25Z",
+    "license": "MIT",
+    "open_issues": 26,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-22T13:30:50Z",
+        "created_at": "2026-11-17T10:21:54Z",
+        "description": null,
+        "html_url": "https://github.com/gylive/google-ultra",
+        "stars": 2661,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-22T13:30:50Z",
+      "observations": 3
+    }
+  },
+  {
+    "full_name": "hatsunemiku-ai/google-one-tools",
+    "captured_at": "2026-11-22T13:30:50Z",
+    "stars": 1211,
+    "forks": 559,
+    "language": "Python",
+    "description": null,
+    "html_url": "https://github.com/hatsunemiku-ai/google-one-tools",
+    "topics": [],
+    "created_at": "2026-11-20T22:12:47Z",
+    "updated_at": "2026-11-22T13:28:05Z",
+    "pushed_at": "2026-11-21T07:02:02Z",
+    "license": "MIT",
+    "open_issues": 2,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-22T13:30:50Z",
+        "created_at": "2026-11-20T22:12:47Z",
+        "description": null,
+        "html_url": "https://github.com/hatsunemiku-ai/google-one-tools",
+        "stars": 1211,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T11:07:34Z",
+      "last_seen": "2026-11-22T13:30:50Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "haziqahmedqasmi/PeakCut",
+    "captured_at": "2026-11-21T11:07:34Z",
+    "stars": 1590,
+    "forks": 509,
+    "language": "Python",
+    "description": "AI clipping for long videos and live streams. Self-hosted, bring your own AI key.",
+    "html_url": "https://github.com/haziqahmedqasmi/PeakCut",
+    "topics": [],
+    "created_at": "2026-11-14T07:38:20Z",
+    "updated_at": "2026-11-21T11:04:58Z",
+    "pushed_at": "2026-11-20T13:52:57Z",
+    "license": "MIT",
+    "open_issues": 45,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "created_at": "2026-11-14T07:38:20Z",
+        "description": "AI clipping for long videos and live streams. Self-hosted, bring your own AI key.",
+        "html_url": "https://github.com/haziqahmedqasmi/PeakCut",
+        "stars": 1590,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-21T11:07:34Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "HKUDS/CLI-Anything",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 66837,
+    "forks": 6119,
+    "language": "Python",
+    "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+    "html_url": "https://github.com/HKUDS/CLI-Anything",
+    "topics": [],
+    "created_at": "2026-03-08T13:52:57Z",
+    "updated_at": "2026-11-27T16:48:01Z",
+    "pushed_at": "2026-11-20T10:05:15Z",
+    "license": "Apache-2.0",
+    "open_issues": 337,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-26T11:02:05Z",
+        "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+        "full_name": "HKUDS/CLI-Anything",
+        "language": "Python",
+        "trending_stars_period": 1106,
+        "trending_total_forks": null,
+        "trending_total_stars": 66011,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "hoangsvit/google-ai",
+    "captured_at": "2026-11-24T02:15:01Z",
+    "stars": 432,
+    "forks": 94,
+    "language": "Python",
+    "description": "A terminal toolkit for Windows and macOS to inspect Google AI Pro offers through Android, ADB, Frida and Google Play. The shared Textual dashboard uses a PowerShell/Python launcher on Windows and a native Python adapter on macOS.",
+    "html_url": "https://github.com/hoangsvit/google-ai",
+    "topics": [
+      "gemini",
+      "gemini-ai",
+      "gemini-api",
+      "google",
+      "google-ai"
+    ],
+    "created_at": "2026-11-18T15:17:53Z",
+    "updated_at": "2026-11-24T01:47:23Z",
+    "pushed_at": "2026-11-24T00:29:04Z",
+    "license": null,
+    "open_issues": 11,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T02:15:01Z",
+        "created_at": "2026-11-18T15:17:53Z",
+        "description": "A terminal toolkit for Windows and macOS to inspect Google AI Pro offers through Android, ADB, Frida and Google Play. The shared Textual dashboard uses a PowerShell/Python launcher on Windows and a native Python adapter on macOS.",
+        "html_url": "https://github.com/hoangsvit/google-ai",
+        "stars": 432,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T02:00:48Z",
+      "last_seen": "2026-11-24T02:15:01Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "Hut-hzf/ung220z-tool",
+    "captured_at": "2026-11-22T20:56:37Z",
+    "stars": 2354,
+    "forks": 534,
+    "language": "Python",
+    "description": "ung220z-tool 是一个针对 UNG220Z，另含中兴/烽火/华为/九联多厂商适配、固件指纹识别与分家族排障建议的一键凭据提取工具，仅限在你自己的设备上用于找回忘记的管理密码、迁移宽带配置或安全自查。",
+    "html_url": "https://github.com/Hut-hzf/ung220z-tool",
+    "topics": [],
+    "created_at": "2026-11-15T11:16:46Z",
+    "updated_at": "2026-11-22T20:00:13Z",
+    "pushed_at": "2026-11-22T07:06:43Z",
+    "license": "MIT",
+    "open_issues": 9,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-22T20:56:37Z",
+        "created_at": "2026-11-15T11:16:46Z",
+        "description": "ung220z-tool 是一个针对 UNG220Z，另含中兴/烽火/华为/九联多厂商适配、固件指纹识别与分家族排障建议的一键凭据提取工具，仅限在你自己的设备上用于找回忘记的管理密码、迁移宽带配置或安全自查。",
+        "html_url": "https://github.com/Hut-hzf/ung220z-tool",
+        "stars": 2354,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-22T20:56:37Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "iamajmeena/neonclipping",
+    "captured_at": "2026-11-26T21:42:28Z",
+    "stars": 2713,
+    "forks": 169,
+    "language": "Python",
+    "description": "Paste a link, get captioned 9:16 clips in ~2 min. Free, local, open-source clipping engine (audio-first, YouTube captions, local LLM).",
+    "html_url": "https://github.com/iamajmeena/neonclipping",
+    "topics": [
+      "ai-video-clipper",
+      "clipping",
+      "faster-whisper",
+      "ffmpeg",
+      "gameplay-clipper",
+      "local-llm",
+      "ollama",
+      "open-source-video-editor",
+      "opusclip-alternative",
+      "shorts",
+      "twitch-clips",
+      "vertical-video",
+      "video",
+      "whisper",
+      "youtube-shorts-generator",
+      "yt-dlp"
+    ],
+    "created_at": "2026-11-19T10:00:43Z",
+    "updated_at": "2026-11-26T21:41:05Z",
+    "pushed_at": "2026-11-24T13:27:46Z",
+    "license": "AGPL-3.0",
+    "open_issues": 48,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-26T21:42:28Z",
+        "created_at": "2026-11-19T10:00:43Z",
+        "description": "Paste a link, get captioned 9:16 clips in ~2 min. Free, local, open-source clipping engine (audio-first, YouTube captions, local LLM).",
+        "html_url": "https://github.com/iamajmeena/neonclipping",
+        "stars": 2713,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-26T21:42:28Z",
+      "observations": 16
+    }
+  },
+  {
+    "full_name": "Illson/RustText",
+    "captured_at": "2026-11-23T12:49:29Z",
+    "stars": 469,
+    "forks": 2,
+    "language": "C#",
+    "description": "Portable Windows text editor with Sublime Text-style multi-cursor editing, regex find and replace, split views, and a live viewer for large log files.",
+    "html_url": "https://github.com/Illson/RustText",
+    "topics": [
+      "jsonl",
+      "large-files",
+      "log-viewer",
+      "portable",
+      "text-editor",
+      "windows"
+    ],
+    "created_at": "2026-11-16T17:46:45Z",
+    "updated_at": "2026-11-23T04:17:09Z",
+    "pushed_at": "2026-11-22T22:18:05Z",
+    "license": null,
+    "open_issues": 1,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-22T20:56:37Z",
+        "created_at": "2026-11-16T17:46:45Z",
+        "description": "Portable Windows text editor with Sublime Text-style multi-cursor editing, regex find and replace, split views, and a live viewer for large log files.",
+        "html_url": "https://github.com/Illson/RustText",
+        "stars": 471,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-22T13:30:50Z",
+      "last_seen": "2026-11-23T12:49:29Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "Indigo-0167/universal-game-mod-manager",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1309,
+    "forks": 1,
+    "language": "Rust",
+    "description": "Free Windows game mod manager to discover, install, update and manage universal Unity and Unreal Engine mods.",
+    "html_url": "https://github.com/Indigo-0167/universal-game-mod-manager",
+    "topics": [
+      "automation",
+      "desktop",
+      "epic-games",
+      "game-development",
+      "game-engine",
+      "game-mods",
+      "game-tools",
+      "gaming",
+      "gog",
+      "itch",
+      "mod-manager",
+      "modding",
+      "open-source",
+      "pc-gaming",
+      "rust",
+      "steam",
+      "tauri",
+      "unity",
+      "unreal",
+      "windows"
+    ],
+    "created_at": "2026-11-23T21:30:10Z",
+    "updated_at": "2026-11-27T16:46:52Z",
+    "pushed_at": "2026-11-23T21:30:46Z",
+    "license": "MIT",
+    "open_issues": 1,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-23T21:30:10Z",
+        "description": "Free Windows game mod manager to discover, install, update and manage universal Unity and Unreal Engine mods.",
+        "html_url": "https://github.com/Indigo-0167/universal-game-mod-manager",
+        "stars": 1309,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-25T17:23:15Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 6
+    }
+  },
+  {
+    "full_name": "INK-Q/agy-fast",
+    "captured_at": "2026-11-26T21:42:28Z",
+    "stars": 1704,
+    "forks": 95,
+    "language": "TypeScript",
+    "description": "Non-invasive MCP accelerator plugin for Google Antigravity (CLI/Desktop/IDE): cuts LLM turns (-34%), token quota (-31%), and upload traffic (-40%) without affecting native UI or diffs.",
+    "html_url": "https://github.com/INK-Q/agy-fast",
+    "topics": [
+      "ai-agent",
+      "ai-coding",
+      "antigravity",
+      "antigravity-cli",
+      "antigravity-ide",
+      "antigravity-plugins",
+      "coding-agent",
+      "context-optimization",
+      "developer-productivity",
+      "developer-tools",
+      "gemini",
+      "google-antigravity",
+      "latency-optimization",
+      "mcp",
+      "mcp-plugin",
+      "mcp-server",
+      "model-context-protocol",
+      "performance",
+      "plugin",
+      "token-optimization"
+    ],
+    "created_at": "2026-11-19T04:58:46Z",
+    "updated_at": "2026-11-26T20:39:04Z",
+    "pushed_at": "2026-11-26T14:57:13Z",
+    "license": "MIT",
+    "open_issues": 26,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-26T21:42:28Z",
+        "created_at": "2026-11-19T04:58:46Z",
+        "description": "Non-invasive MCP accelerator plugin for Google Antigravity (CLI/Desktop/IDE): cuts LLM turns (-34%), token quota (-31%), and upload traffic (-40%) without affecting native UI or diffs.",
+        "html_url": "https://github.com/INK-Q/agy-fast",
+        "stars": 1704,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-22T19:43:30Z",
+      "last_seen": "2026-11-26T21:42:28Z",
+      "observations": 13
+    }
+  },
+  {
+    "full_name": "ItsNotRexed/Hookshot",
+    "captured_at": "2026-11-26T01:49:16Z",
+    "stars": 735,
+    "forks": 39,
+    "language": "C++",
+    "description": "Hookshot Is A Native PC Recompilation Of The Switch 2 Ocarina Of Time Remake",
+    "html_url": "https://github.com/ItsNotRexed/Hookshot",
+    "topics": [],
+    "created_at": "2026-11-20T20:06:20Z",
+    "updated_at": "2026-11-26T01:18:46Z",
+    "pushed_at": "2026-11-22T19:13:49Z",
+    "license": "GPL-3.0",
+    "open_issues": 12,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-26T01:49:16Z",
+        "created_at": "2026-11-20T20:06:20Z",
+        "description": "Hookshot Is A Native PC Recompilation Of The Switch 2 Ocarina Of Time Remake",
+        "html_url": "https://github.com/ItsNotRexed/Hookshot",
+        "stars": 735,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-23T01:46:02Z",
+      "last_seen": "2026-11-26T01:49:16Z",
+      "observations": 8
+    }
+  },
+  {
+    "full_name": "ItsNotRexed/Leonida",
+    "captured_at": "2026-11-23T12:49:29Z",
+    "stars": 19449,
+    "forks": 1627,
+    "language": "Python",
+    "description": "Leonida Is A Native PC Recompilation Of The Xbox Version Of Grand Theft Auto 6",
+    "html_url": "https://github.com/ItsNotRexed/Leonida",
+    "topics": [],
+    "created_at": "2026-11-20T20:07:13Z",
+    "updated_at": "2026-11-23T12:49:32Z",
+    "pushed_at": "2026-11-23T11:36:50Z",
+    "license": "GPL-3.0",
+    "open_issues": 2081,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-23T12:49:29Z",
+        "created_at": "2026-11-20T20:07:13Z",
+        "description": "Leonida Is A Native PC Recompilation Of The Xbox Version Of Grand Theft Auto 6",
+        "html_url": "https://github.com/ItsNotRexed/Leonida",
+        "stars": 19449,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-22T13:30:50Z",
+      "last_seen": "2026-11-23T12:49:29Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "ivall/xcl",
+    "captured_at": "2026-11-24T13:46:47Z",
+    "stars": 6686,
+    "forks": 827,
+    "language": "Rust",
+    "description": "Xbox Series compatibility layer for Windows - runs console game code natively, reimplements the console system libraries and recompiles RDNA2 shaders to DXIL",
+    "html_url": "https://github.com/ivall/xcl",
+    "topics": [
+      "d3d12",
+      "gdk",
+      "rdna2",
+      "xbox"
+    ],
+    "created_at": "2026-11-20T20:03:21Z",
+    "updated_at": "2026-11-24T13:46:49Z",
+    "pushed_at": "2026-11-24T13:38:04Z",
+    "license": "GPL-2.0",
+    "open_issues": 726,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T13:46:47Z",
+        "created_at": "2026-11-20T20:03:21Z",
+        "description": "Xbox Series compatibility layer for Windows - runs console game code natively, reimplements the console system libraries and recompiles RDNA2 shaders to DXIL",
+        "html_url": "https://github.com/ivall/xcl",
+        "stars": 6686,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T02:00:48Z",
+      "last_seen": "2026-11-24T13:46:47Z",
+      "observations": 3
+    }
+  },
+  {
+    "full_name": "JimLiu/open-artifact",
+    "captured_at": "2026-11-24T02:15:01Z",
+    "stars": 438,
+    "forks": 57,
+    "language": "TypeScript",
+    "description": "Open, agent- and model-agnostic artifacts, all saved locally as plain files — edit, comment on, and export slides, UI designs, design systems, whiteboards, sheets, dashboards, docs, and motion.",
+    "html_url": "https://github.com/JimLiu/open-artifact",
+    "topics": [
+      "agent-skills",
+      "ai-agents",
+      "artifacts",
+      "claude-artifacts",
+      "claude-code",
+      "claude-design",
+      "codex",
+      "coding-agent",
+      "cursor",
+      "design-tools",
+      "dsh-plugin",
+      "dsh-plugins",
+      "github-copilot",
+      "local-first",
+      "mcp",
+      "mcp-apps"
+    ],
+    "created_at": "2026-11-17T02:25:25Z",
+    "updated_at": "2026-11-24T01:56:27Z",
+    "pushed_at": "2026-11-23T23:20:49Z",
+    "license": "Apache-2.0",
+    "open_issues": 1,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T02:15:01Z",
+        "created_at": "2026-11-17T02:25:25Z",
+        "description": "Open, agent- and model-agnostic artifacts, all saved locally as plain files — edit, comment on, and export slides, UI designs, design systems, whiteboards, sheets, dashboards, docs, and motion.",
+        "html_url": "https://github.com/JimLiu/open-artifact",
+        "stars": 438,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T02:00:48Z",
+      "last_seen": "2026-11-24T02:15:01Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "jingyaogong/minimind",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 72127,
+    "forks": 9403,
+    "language": "Python",
+    "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+    "html_url": "https://github.com/jingyaogong/minimind",
+    "topics": [
+      "artificial-intelligence",
+      "large-language-model"
+    ],
+    "created_at": "2024-07-27T04:34:12Z",
+    "updated_at": "2026-11-27T16:44:55Z",
+    "pushed_at": "2026-11-26T08:55:11Z",
+    "license": "Apache-2.0",
+    "open_issues": 68,
+    "default_branch": "master",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+        "full_name": "jingyaogong/minimind",
+        "language": "Python",
+        "trending_stars_period": 847,
+        "trending_total_forks": null,
+        "trending_total_stars": 67902,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "joshpuckett/allo",
+    "captured_at": "2026-11-22T20:56:37Z",
+    "stars": 1445,
+    "forks": 39,
+    "language": "Python",
+    "description": "Allo is your friendly neighborhood typeface, free and open source",
+    "html_url": "https://github.com/joshpuckett/allo",
+    "topics": [],
+    "created_at": "2026-11-15T17:33:42Z",
+    "updated_at": "2026-11-22T20:56:08Z",
+    "pushed_at": "2026-11-18T07:19:43Z",
+    "license": "OFL-1.1",
+    "open_issues": 6,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-22T20:56:37Z",
+        "created_at": "2026-11-15T17:33:42Z",
+        "description": "Allo is your friendly neighborhood typeface, free and open source",
+        "html_url": "https://github.com/joshpuckett/allo",
+        "stars": 1445,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-22T20:56:37Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "kai415-debug/ffmpeg-video-audio-converter",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1027,
+    "forks": 0,
+    "language": "C++",
+    "description": "Free Windows FFmpeg GUI for video and audio conversion, batch transcoding, and multimedia format encoding.",
+    "html_url": "https://github.com/kai415-debug/ffmpeg-video-audio-converter",
+    "topics": [
+      "audio",
+      "audio-converter",
+      "conversion",
+      "converter-encoding",
+      "cpp",
+      "desktop",
+      "ffmpeg",
+      "ffmpeg-wrapper",
+      "gui",
+      "media-converter",
+      "media-processing",
+      "multimedia",
+      "open-source",
+      "qml",
+      "qt5",
+      "transcoding",
+      "video",
+      "video-converter",
+      "video-encoding",
+      "windows"
+    ],
+    "created_at": "2026-11-23T21:32:56Z",
+    "updated_at": "2026-11-27T16:47:27Z",
+    "pushed_at": "2026-11-23T21:33:23Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-23T21:32:56Z",
+        "description": "Free Windows FFmpeg GUI for video and audio conversion, batch transcoding, and multimedia format encoding.",
+        "html_url": "https://github.com/kai415-debug/ffmpeg-video-audio-converter",
+        "stars": 1027,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-25T17:23:15Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 6
+    }
+  },
+  {
+    "full_name": "kajisho5/ffmpeg-skill",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 11805,
+    "forks": 978,
+    "language": "Python",
+    "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+    "html_url": "https://github.com/kajisho5/ffmpeg-skill",
+    "topics": [
+      "agent-skills",
+      "ai-agents",
+      "audio-processing",
+      "captions",
+      "claude-code",
+      "codex",
+      "coding-agent",
+      "cursor",
+      "ffmpeg",
+      "gemini-cli-extension",
+      "loudness-normalization",
+      "mcp",
+      "mcp-server",
+      "model-context-protocol",
+      "python",
+      "subtitles",
+      "transcoding",
+      "video",
+      "video-editing",
+      "whisper"
+    ],
+    "created_at": "2026-09-03T14:33:38Z",
+    "updated_at": "2026-11-27T16:39:39Z",
+    "pushed_at": "2026-11-27T16:21:33Z",
+    "license": "MIT",
+    "open_issues": 55,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T23:55:41Z",
+        "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+        "full_name": "kajisho5/ffmpeg-skill",
+        "language": "Python",
+        "trending_stars_period": 3891,
+        "trending_total_forks": null,
+        "trending_total_stars": 10670,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "krisgfx9/Wireless-Device-Battery-Monitor",
+    "captured_at": "2026-11-22T13:30:50Z",
+    "stars": 6005,
+    "forks": 504,
+    "language": "C++",
+    "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
+    "html_url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor",
+    "topics": [],
+    "created_at": "2026-11-16T19:28:29Z",
+    "updated_at": "2026-11-22T13:28:54Z",
+    "pushed_at": "2026-11-22T02:40:03Z",
+    "license": "GPL-3.0",
+    "open_issues": 3608,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-22T13:30:50Z",
+        "created_at": "2026-11-16T19:28:29Z",
+        "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
+        "html_url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor",
+        "stars": 6005,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-22T13:30:50Z",
+      "observations": 3
+    }
+  },
+  {
+    "full_name": "leanprover-community/riemann-hypothesis",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1514,
+    "forks": 546,
+    "language": "Lean",
+    "description": "Lean formalization of the Riemann Hypothesis (Alpöge, 2026-11-20) being cleaned up by members of the Lean community.",
+    "html_url": "https://github.com/leanprover-community/riemann-hypothesis",
+    "topics": [],
+    "created_at": "2026-11-20T14:47:49Z",
+    "updated_at": "2026-11-27T16:09:33Z",
+    "pushed_at": "2026-11-27T14:07:06Z",
+    "license": "Apache-2.0",
+    "open_issues": 1233,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-20T14:47:49Z",
+        "description": "Lean formalization of the Riemann Hypothesis (Alpöge, 2026-11-20) being cleaned up by members of the Lean community.",
+        "html_url": "https://github.com/leanprover-community/riemann-hypothesis",
+        "stars": 1514,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-22T13:30:50Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 16
+    }
+  },
+  {
+    "full_name": "Lemxy/WinRust",
+    "captured_at": "2026-11-24T23:55:41Z",
+    "stars": 1461,
+    "forks": 95,
+    "language": "Rust",
+    "description": "Windows shell replacement in Rust: taskbar, file manager, NTFS search, task manager, disk cleaner. One installer exe.",
+    "html_url": "https://github.com/Lemxy/WinRust",
+    "topics": [],
+    "created_at": "2026-11-17T14:27:06Z",
+    "updated_at": "2026-11-24T23:45:46Z",
+    "pushed_at": "2026-11-24T13:32:21Z",
+    "license": "Apache-2.0",
+    "open_issues": 51,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T23:55:41Z",
+        "created_at": "2026-11-17T14:27:06Z",
+        "description": "Windows shell replacement in Rust: taskbar, file manager, NTFS search, task manager, disk cleaner. One installer exe.",
+        "html_url": "https://github.com/Lemxy/WinRust",
+        "stars": 1461,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-24T23:55:41Z",
+      "observations": 12
+    }
+  },
+  {
+    "full_name": "lsernau/grh-lean",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1007,
+    "forks": 112,
+    "language": "Lean",
+    "description": "A short Lean 4 proof of the Generalized Riemann Hypothesis",
+    "html_url": "https://github.com/lsernau/grh-lean",
+    "topics": [],
+    "created_at": "2026-11-25T20:42:55Z",
+    "updated_at": "2026-11-27T16:46:21Z",
+    "pushed_at": "2026-11-25T20:45:04Z",
+    "license": "Apache-2.0",
+    "open_issues": 4,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-25T20:42:55Z",
+        "description": "A short Lean 4 proof of the Generalized Riemann Hypothesis",
+        "html_url": "https://github.com/lsernau/grh-lean",
+        "stars": 1007,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-26T21:42:28Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 3
+    }
+  },
+  {
+    "full_name": "mankidev/antialgorithm",
+    "captured_at": "2026-11-21T11:07:34Z",
+    "stars": 584,
+    "forks": 34,
+    "language": "Python",
+    "description": "Agent skill that steers the model away from its first, most average pick in creative work: names, ideas, logo, posters, UI.",
+    "html_url": "https://github.com/mankidev/antialgorithm",
+    "topics": [
+      "agent-skills",
+      "claude-code",
+      "claude-code-plugin",
+      "claude-skills",
+      "codex",
+      "creative-writing",
+      "creativity",
+      "design",
+      "llm",
+      "naming",
+      "svg",
+      "ui-design"
+    ],
+    "created_at": "2026-11-14T09:48:23Z",
+    "updated_at": "2026-11-21T10:48:35Z",
+    "pushed_at": "2026-11-20T17:08:35Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "created_at": "2026-11-14T09:48:23Z",
+        "description": "Agent skill that steers the model away from its first, most average pick in creative work: names, ideas, logo, posters, UI.",
+        "html_url": "https://github.com/mankidev/antialgorithm",
+        "stars": 584,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-21T11:07:34Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "Marvisak/VIctory",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 13701,
+    "forks": 2332,
+    "language": "Rust",
+    "description": "An attempt at running GTA VI on PC",
+    "html_url": "https://github.com/Marvisak/VIctory",
+    "topics": [],
+    "created_at": "2026-11-23T21:47:25Z",
+    "updated_at": "2026-11-27T16:46:32Z",
+    "pushed_at": "2026-11-25T23:27:48Z",
+    "license": "GPL-3.0",
+    "open_issues": 2226,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-23T21:47:25Z",
+        "description": "An attempt at running GTA VI on PC",
+        "html_url": "https://github.com/Marvisak/VIctory",
+        "stars": 13701,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T02:00:48Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 11
+    }
+  },
+  {
+    "full_name": "meta/astryx",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 33492,
+    "forks": 2610,
+    "language": "TypeScript",
+    "description": "An open source design system that's fully customizable and agent ready",
+    "html_url": "https://github.com/meta/astryx",
+    "topics": [],
+    "created_at": "2026-01-09T16:20:32Z",
+    "updated_at": "2026-11-27T16:45:41Z",
+    "pushed_at": "2026-11-27T16:46:45Z",
+    "license": "MIT",
+    "open_issues": 809,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "An open source design system that's fully customizable and agent ready",
+        "full_name": "meta/astryx",
+        "language": "TypeScript",
+        "trending_stars_period": 4131,
+        "trending_total_forks": null,
+        "trending_total_stars": 31547,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "mjmirza/app-store-compliance",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 7596,
+    "forks": 549,
+    "language": "Shell",
+    "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 125 documented rejection patterns and fixes, privacy manifest and Data safety checks, 117 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+    "html_url": "https://github.com/mjmirza/app-store-compliance",
+    "topics": [
+      "accessibility",
+      "ai-agents",
+      "android",
+      "app-review-guidelines",
+      "app-store",
+      "app-store-connect",
+      "app-store-rejection",
+      "app-store-review",
+      "claude-code",
+      "coppa",
+      "data-safety",
+      "eu-ai-act",
+      "gdpr",
+      "google-play",
+      "google-play-policy",
+      "ios",
+      "mobile-compliance",
+      "play-console",
+      "pre-submission-checklist",
+      "privacy-manifest"
+    ],
+    "created_at": "2026-06-06T11:29:45Z",
+    "updated_at": "2026-11-27T16:47:54Z",
+    "pushed_at": "2026-11-27T16:44:43Z",
+    "license": "Other",
+    "open_issues": 39,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T23:55:41Z",
+        "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+        "full_name": "mjmirza/app-store-compliance",
+        "language": "Shell",
+        "trending_stars_period": 936,
+        "trending_total_forks": null,
+        "trending_total_stars": 5839,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "MSNightmare/FastUnlock",
+    "captured_at": "2026-11-26T01:49:16Z",
+    "stars": 740,
+    "forks": 126,
+    "language": null,
+    "description": "FastUnlock : Windows Narrator LockScreen Bypass 0day Vulnerability",
+    "html_url": "https://github.com/MSNightmare/FastUnlock",
+    "topics": [],
+    "created_at": "2026-11-19T12:37:51Z",
+    "updated_at": "2026-11-26T00:23:28Z",
+    "pushed_at": "2026-11-21T05:18:41Z",
+    "license": "MIT",
+    "open_issues": 4,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-26T01:49:16Z",
+        "created_at": "2026-11-19T12:37:51Z",
+        "description": "FastUnlock : Windows Narrator LockScreen Bypass 0day Vulnerability",
+        "html_url": "https://github.com/MSNightmare/FastUnlock",
+        "stars": 740,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-26T01:49:16Z",
+      "observations": 14
+    }
+  },
+  {
+    "full_name": "mvanhorn/last30days-skill",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 76224,
+    "forks": 6767,
+    "language": "Python",
+    "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+    "html_url": "https://github.com/mvanhorn/last30days-skill",
+    "topics": [
+      "agent-skills",
+      "artificial-intelligence",
+      "automation",
+      "bot",
+      "command-line",
+      "data-science",
+      "dsh",
+      "dsh-plugin",
+      "golang",
+      "instagram",
+      "llms",
+      "nlp",
+      "osint",
+      "polymarket",
+      "python3",
+      "reddit",
+      "terminal",
+      "tiktok",
+      "twitter",
+      "youtube"
+    ],
+    "created_at": "2026-01-23T20:37:37Z",
+    "updated_at": "2026-11-27T16:47:58Z",
+    "pushed_at": "2026-11-27T06:30:50Z",
+    "license": "MIT",
+    "open_issues": 22,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-25T17:23:15Z",
+        "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+        "full_name": "mvanhorn/last30days-skill",
+        "language": "Python",
+        "trending_stars_period": 950,
+        "trending_total_forks": null,
+        "trending_total_stars": 74924,
+        "type": "trending_daily"
+      },
+      {
+        "captured_at": "2026-11-24T23:55:41Z",
+        "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+        "full_name": "mvanhorn/last30days-skill",
+        "language": "Python",
+        "trending_stars_period": 5448,
+        "trending_total_forks": null,
+        "trending_total_stars": 74183,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "n4ze3m/tiny-voca",
+    "captured_at": "2026-11-21T11:07:34Z",
+    "stars": 796,
+    "forks": 99,
+    "language": "Python",
+    "description": "A 4.5M-parameter two-voice English text-to-speech model, trained from scratch",
+    "html_url": "https://github.com/n4ze3m/tiny-voca",
+    "topics": [
+      "onnx",
+      "text-to-speech",
+      "tts"
+    ],
+    "created_at": "2026-11-14T16:02:56Z",
+    "updated_at": "2026-11-21T09:11:21Z",
+    "pushed_at": "2026-11-21T07:59:13Z",
+    "license": "Apache-2.0",
+    "open_issues": 4,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "created_at": "2026-11-14T16:02:56Z",
+        "description": "A 4.5M-parameter two-voice English text-to-speech model, trained from scratch",
+        "html_url": "https://github.com/n4ze3m/tiny-voca",
+        "stars": 796,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-21T11:07:34Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "n8n-io/nod",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 4218,
+    "forks": 636,
+    "language": "TypeScript",
+    "description": "Open source personal agent with its own computer. It chases invoices, preps your calls and cancels trials on real websites, and asks before it acts. Runs on your machine with the model you choose. By n8n.",
+    "html_url": "https://github.com/n8n-io/nod",
+    "topics": [
+      "agents",
+      "ai-agent",
+      "ai-assistant",
+      "anthropic",
+      "automation",
+      "browser-automation",
+      "computer-use",
+      "electron",
+      "llm",
+      "local-first",
+      "mcp",
+      "n8n",
+      "openai",
+      "personal-agent",
+      "personal-assistant",
+      "privacy",
+      "self-hosted",
+      "telegram-bot",
+      "typescript",
+      "whatsapp-bot"
+    ],
+    "created_at": "2026-09-25T13:46:42Z",
+    "updated_at": "2026-11-27T16:29:56Z",
+    "pushed_at": "2026-11-27T16:42:18Z",
+    "license": "Apache-2.0",
+    "open_issues": 103,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "description": "Open source personal agent with its own computer. It chases invoices, preps your calls and cancels trials on real websites, and asks before it acts. Runs on your machine with the model you choose. By n8n.",
+        "full_name": "n8n-io/nod",
+        "language": "TypeScript",
+        "trending_stars_period": 1165,
+        "trending_total_forks": null,
+        "trending_total_stars": 4218,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-25T17:23:15Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 6
+    }
+  },
+  {
+    "full_name": "nataphong-lab/Open-Source-Face-Recognition-Ultimate",
+    "captured_at": "2026-11-24T23:55:41Z",
+    "stars": 723,
+    "forks": 600,
+    "language": "Python",
+    "description": "Face Recognition, Face Liveness Detection, Face Anti-Spoofing, Face Detection, Face Landmarks, Face Compare, Face Matching, Face Pose, Face Expression, Face Attributes, Face Templates Extraction, Face Landmarks",
+    "html_url": "https://github.com/nataphong-lab/Open-Source-Face-Recognition-Ultimate",
+    "topics": [],
+    "created_at": "2026-11-19T10:40:46Z",
+    "updated_at": "2026-11-24T23:53:38Z",
+    "pushed_at": "2026-11-24T10:43:48Z",
+    "license": null,
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T23:55:41Z",
+        "created_at": "2026-11-19T10:40:46Z",
+        "description": "Face Recognition, Face Liveness Detection, Face Anti-Spoofing, Face Detection, Face Landmarks, Face Compare, Face Matching, Face Pose, Face Expression, Face Attributes, Face Templates Extraction, Face Landmarks",
+        "html_url": "https://github.com/nataphong-lab/Open-Source-Face-Recognition-Ultimate",
+        "stars": 723,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-24T23:55:41Z",
+      "observations": 12
+    }
+  },
+  {
+    "full_name": "nexu-io/opengame",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1992,
+    "forks": 328,
+    "language": "TypeScript",
+    "description": "The Super Game Agent — the Unity & Unreal for AI agents, with 100+ viral games to remix. Turn 20+ coding agents (Claude Code, Codex, DeepSeek, etc.) into a full-stack AI game studio. Build and publish 3D & mini-games to WeChat, Douyin, TikTok, Telegram, itch.io, and more.",
+    "html_url": "https://github.com/nexu-io/opengame",
+    "topics": [
+      "agent-skills",
+      "ai-agents",
+      "ai-game-generator",
+      "claude-code",
+      "codex",
+      "deepseek",
+      "deepseek-harness",
+      "dsh",
+      "dsh-plugin",
+      "game-development",
+      "game-engine",
+      "indie-game",
+      "local-first",
+      "mcp",
+      "mini-games",
+      "threejs",
+      "unity",
+      "unreal-engine",
+      "vibe-coding",
+      "wechat-minigame"
+    ],
+    "created_at": "2026-11-25T10:35:45Z",
+    "updated_at": "2026-11-27T16:44:35Z",
+    "pushed_at": "2026-11-27T16:47:33Z",
+    "license": "Apache-2.0",
+    "open_issues": 73,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-25T10:35:45Z",
+        "description": "The Super Game Agent — the Unity & Unreal for AI agents, with 100+ viral games to remix. Turn 20+ coding agents (Claude Code, Codex, DeepSeek, etc.) into a full-stack AI game studio. Build and publish 3D & mini-games to WeChat, Douyin, TikTok, Telegram, itch.io, and more.",
+        "html_url": "https://github.com/nexu-io/opengame",
+        "stars": 1992,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-27T04:19:21Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "nginx/nginx",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 33632,
+    "forks": 8469,
+    "language": "C",
+    "description": "The official NGINX Open Source repository.",
+    "html_url": "https://github.com/nginx/nginx",
+    "topics": [
+      "content-cache",
+      "http",
+      "http2",
+      "http3",
+      "https",
+      "load-balancer",
+      "mail-proxy-server",
+      "nginx",
+      "quic",
+      "reverse-proxy",
+      "security",
+      "tcp-proxy-server",
+      "tls",
+      "udp-proxy-server",
+      "web-server"
+    ],
+    "created_at": "2015-06-23T10:26:27Z",
+    "updated_at": "2026-11-27T16:46:35Z",
+    "pushed_at": "2026-11-27T15:22:15Z",
+    "license": "BSD-2-Clause",
+    "open_issues": 494,
+    "default_branch": "master",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "The official NGINX Open Source repository.",
+        "full_name": "nginx/nginx",
+        "language": "C",
+        "trending_stars_period": 246,
+        "trending_total_forks": null,
+        "trending_total_stars": 32643,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "nilbuild/stick-scene",
+    "captured_at": "2026-11-22T20:56:37Z",
+    "stars": 599,
+    "forks": 65,
+    "language": "JavaScript",
+    "description": "Skill to draw stick figure animated visuals",
+    "html_url": "https://github.com/nilbuild/stick-scene",
+    "topics": [],
+    "created_at": "2026-11-15T00:17:40Z",
+    "updated_at": "2026-11-22T20:52:09Z",
+    "pushed_at": "2026-11-16T10:36:25Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-22T20:56:37Z",
+        "created_at": "2026-11-15T00:17:40Z",
+        "description": "Skill to draw stick figure animated visuals",
+        "html_url": "https://github.com/nilbuild/stick-scene",
+        "stars": 599,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-22T20:56:37Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "nkjDSLcvanv/antigravity-codex-theme",
+    "captured_at": "2026-11-24T13:46:47Z",
+    "stars": 515,
+    "forks": 28,
+    "language": "JavaScript",
+    "description": "Google Antigravity 桌面端增强插件：Codex 昼夜双主题、原生设置页与一键热更新、1,900+ 中文汉化、四态状态灯与实时用量监控（含旁路提问 / SSH 远端）、可选 Tab 下一句预测。不改安装包，模块化按需安装。",
+    "html_url": "https://github.com/nkjDSLcvanv/antigravity-codex-theme",
+    "topics": [
+      "antigravity",
+      "chinese",
+      "codex-theme",
+      "localization",
+      "theme",
+      "token-usage"
+    ],
+    "created_at": "2026-11-17T08:38:53Z",
+    "updated_at": "2026-11-24T13:24:21Z",
+    "pushed_at": "2026-11-24T09:33:37Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T13:46:47Z",
+        "created_at": "2026-11-17T08:38:53Z",
+        "description": "Google Antigravity 桌面端增强插件：Codex 昼夜双主题、原生设置页与一键热更新、1,900+ 中文汉化、四态状态灯与实时用量监控（含旁路提问 / SSH 远端）、可选 Tab 下一句预测。不改安装包，模块化按需安装。",
+        "html_url": "https://github.com/nkjDSLcvanv/antigravity-codex-theme",
+        "stars": 515,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T02:00:48Z",
+      "last_seen": "2026-11-24T13:46:47Z",
+      "observations": 3
+    }
+  },
+  {
+    "full_name": "obra/superpowers",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 328103,
+    "forks": 29147,
+    "language": "Shell",
+    "description": "An agentic skills framework & software development methodology that works.",
+    "html_url": "https://github.com/obra/superpowers",
+    "topics": [
+      "ai",
+      "brainstorming",
+      "coding",
+      "obra",
+      "sdlc",
+      "skills",
+      "subagent-driven-development",
+      "superpowers"
+    ],
+    "created_at": "2025-10-09T19:45:18Z",
+    "updated_at": "2026-11-27T16:46:16Z",
+    "pushed_at": "2026-11-26T11:33:33Z",
+    "license": "MIT",
+    "open_issues": 374,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T23:55:41Z",
+        "description": "An agentic skills framework & software development methodology that works.",
+        "full_name": "obra/superpowers",
+        "language": "Shell",
+        "trending_stars_period": 1006,
+        "trending_total_forks": null,
+        "trending_total_stars": 325780,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "obsidianmd/obsidian-skills",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 54254,
+    "forks": 3863,
+    "language": "Shell",
+    "description": "Teach your agent to use Obsidian and open formats including Markdown, Bases, JSON Canvas.",
+    "html_url": "https://github.com/obsidianmd/obsidian-skills",
+    "topics": [
+      "agents",
+      "agentskills",
+      "bases",
+      "chatgpt",
+      "claude",
+      "claude-code",
+      "claude-skills",
+      "cli",
+      "codex",
+      "defuddle",
+      "grok-bot",
+      "hermes",
+      "jsoncanvas",
+      "knap",
+      "markdown",
+      "md",
+      "obsidian",
+      "openclaw",
+      "opencode",
+      "skills"
+    ],
+    "created_at": "2026-01-02T21:45:11Z",
+    "updated_at": "2026-11-27T16:44:13Z",
+    "pushed_at": "2026-11-26T17:50:16Z",
+    "license": "MIT",
+    "open_issues": 5,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "description": "Teach your agent to use Obsidian and open formats including Markdown, Bases, JSON Canvas.",
+        "full_name": "obsidianmd/obsidian-skills",
+        "language": "Shell",
+        "trending_stars_period": 704,
+        "trending_total_forks": null,
+        "trending_total_stars": 54254,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-26T21:42:28Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 3
+    }
+  },
+  {
+    "full_name": "omonkeyz/xbox-emulator",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1852,
+    "forks": 124,
+    "language": "Rust",
+    "description": "Progress notes for running Xbox Series X|S builds on PC (TomBox + rage9)",
+    "html_url": "https://github.com/omonkeyz/xbox-emulator",
+    "topics": [],
+    "created_at": "2026-11-21T08:08:39Z",
+    "updated_at": "2026-11-27T13:26:07Z",
+    "pushed_at": "2026-11-25T13:47:56Z",
+    "license": "GPL-3.0",
+    "open_issues": 53,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-21T08:08:39Z",
+        "description": "Progress notes for running Xbox Series X|S builds on PC (TomBox + rage9)",
+        "html_url": "https://github.com/omonkeyz/xbox-emulator",
+        "stars": 1852,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-22T13:30:50Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 16
+    }
+  },
+  {
+    "full_name": "openvinotoolkit/openvino",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 12916,
+    "forks": 3786,
+    "language": "C++",
+    "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+    "html_url": "https://github.com/openvinotoolkit/openvino",
+    "topics": [
+      "ai",
+      "computer-vision",
+      "deep-learning",
+      "deploy-ai",
+      "diffusion-models",
+      "generative-ai",
+      "good-first-issue",
+      "inference",
+      "llm-inference",
+      "natural-language-processing",
+      "nlp",
+      "openvino",
+      "optimize-ai",
+      "performance-boost",
+      "recommendation-system",
+      "speech-recognition",
+      "stable-diffusion",
+      "transformers",
+      "yolo"
+    ],
+    "created_at": "2018-10-15T10:54:40Z",
+    "updated_at": "2026-11-27T16:46:51Z",
+    "pushed_at": "2026-11-27T16:47:40Z",
+    "license": "Apache-2.0",
+    "open_issues": 1199,
+    "default_branch": "master",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+        "full_name": "openvinotoolkit/openvino",
+        "language": "C++",
+        "trending_stars_period": 217,
+        "trending_total_forks": null,
+        "trending_total_stars": 11853,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "os6/nospeaker",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1983,
+    "forks": 106,
+    "language": "Swift",
+    "description": "make your macbook's trackpad talk using its haptic motor",
+    "html_url": "https://github.com/os6/nospeaker",
+    "topics": [
+      "haptics",
+      "macos",
+      "swift",
+      "trackpad"
+    ],
+    "created_at": "2026-11-22T12:05:54Z",
+    "updated_at": "2026-11-27T15:41:28Z",
+    "pushed_at": "2026-11-24T02:43:05Z",
+    "license": "MIT",
+    "open_issues": 22,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-22T12:05:54Z",
+        "description": "make your macbook's trackpad talk using its haptic motor",
+        "html_url": "https://github.com/os6/nospeaker",
+        "stars": 1983,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-23T01:46:02Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 13
+    }
+  },
+  {
+    "full_name": "pierridotite/mobile-agent-testers",
+    "captured_at": "2026-11-23T12:49:29Z",
+    "stars": 1151,
+    "forks": 111,
+    "language": "Python",
+    "description": "20 AI testers on 20 different phones, in parallel, on GitHub's free runners: Claude Code agents on iOS Simulators and Android emulators that find broken flows, translation, layout and accessibility bugs",
+    "html_url": "https://github.com/pierridotite/mobile-agent-testers",
+    "topics": [
+      "accessibility-testing",
+      "ai-agents",
+      "ai-testing",
+      "android",
+      "android-emulator",
+      "claude",
+      "claude-code",
+      "e2e-testing",
+      "exploratory-testing",
+      "expo",
+      "flutter",
+      "github-actions",
+      "ios",
+      "ios-simulator",
+      "llm",
+      "mobile-testing",
+      "qa",
+      "react-native",
+      "test-automation",
+      "ui-testing"
+    ],
+    "created_at": "2026-11-16T19:11:44Z",
+    "updated_at": "2026-11-23T12:49:36Z",
+    "pushed_at": "2026-11-23T08:03:36Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-23T12:49:29Z",
+        "created_at": "2026-11-16T19:11:44Z",
+        "description": "20 AI testers on 20 different phones, in parallel, on GitHub's free runners: Claude Code agents on iOS Simulators and Android emulators that find broken flows, translation, layout and accessibility bugs",
+        "html_url": "https://github.com/pierridotite/mobile-agent-testers",
+        "stars": 1150,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-23T01:46:02Z",
+      "last_seen": "2026-11-23T12:49:29Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "Pixel679-cmyk/windows-titlebar-blur-customizer",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1241,
+    "forks": 0,
+    "language": "C++",
+    "description": "Customize Windows 10 and 11 title bar effects with Aero, Acrylic, Mica and advanced DWM blur effects.",
+    "html_url": "https://github.com/Pixel679-cmyk/windows-titlebar-blur-customizer",
+    "topics": [
+      "acrylic",
+      "aero",
+      "aeroglass",
+      "blur",
+      "cplusplus",
+      "cpp",
+      "desktop",
+      "desktop-customization",
+      "dwm",
+      "glassmorphism",
+      "mica",
+      "personalization",
+      "transparency",
+      "win10",
+      "win11",
+      "windows",
+      "windows-10",
+      "windows-11",
+      "windows-customization"
+    ],
+    "created_at": "2026-11-26T21:26:56Z",
+    "updated_at": "2026-11-27T16:48:00Z",
+    "pushed_at": "2026-11-26T21:27:28Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-26T21:26:56Z",
+        "description": "Customize Windows 10 and 11 title bar effects with Aero, Acrylic, Mica and advanced DWM blur effects.",
+        "html_url": "https://github.com/Pixel679-cmyk/windows-titlebar-blur-customizer",
+        "stars": 1240,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-27T16:47:54Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 1
+    }
+  },
+  {
+    "full_name": "pookjw/HermesEnabler",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 2569,
+    "forks": 206,
+    "language": "Objective-C",
+    "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+    "html_url": "https://github.com/pookjw/HermesEnabler",
+    "topics": [],
+    "created_at": "2024-12-14T11:32:03Z",
+    "updated_at": "2026-11-27T16:27:02Z",
+    "pushed_at": "2026-11-19T02:24:27Z",
+    "license": "MIT",
+    "open_issues": 87,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+        "full_name": "pookjw/HermesEnabler",
+        "language": "Objective-C",
+        "trending_stars_period": 582,
+        "trending_total_forks": null,
+        "trending_total_stars": 2324,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "qianyiai/KuroCat",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1744,
+    "forks": 247,
+    "language": "TypeScript",
+    "description": "KuroCat — Free open-source 3D/2D desktop typing cat & AI coding companion (Bongo Cat alternative · Tauri v2 + Rust + MCP · Claude/Codex/DeepSeek/OBS · Win/Mac/Linux/Android)｜开源3D桌面打字小黑猫与AI伴侣",
+    "html_url": "https://github.com/qianyiai/KuroCat",
+    "topics": [
+      "3d",
+      "ai-companion",
+      "android",
+      "bongo-cat",
+      "bongocat",
+      "claude-code",
+      "codex",
+      "cross-platform",
+      "desktop-pet",
+      "keyboard-visualizer",
+      "kurocat",
+      "linux",
+      "macos",
+      "mcp",
+      "obs-studio",
+      "open-source",
+      "rust",
+      "tauri",
+      "typing-cat",
+      "windows"
+    ],
+    "created_at": "2026-11-21T15:49:31Z",
+    "updated_at": "2026-11-27T16:40:57Z",
+    "pushed_at": "2026-11-27T06:32:21Z",
+    "license": "MIT",
+    "open_issues": 67,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-21T15:49:31Z",
+        "description": "KuroCat — Free open-source 3D/2D desktop typing cat & AI coding companion (Bongo Cat alternative · Tauri v2 + Rust + MCP · Claude/Codex/DeepSeek/OBS · Win/Mac/Linux/Android)｜开源3D桌面打字小黑猫与AI伴侣",
+        "html_url": "https://github.com/qianyiai/KuroCat",
+        "stars": 1744,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T13:46:47Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 9
+    }
+  },
+  {
+    "full_name": "R0Y00/Xbox2Windows",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 2032,
+    "forks": 246,
+    "language": "Python",
+    "description": "Static recompilation research for Xbox Series X|S software on x64 Windows, with source-built CPU and GPU tests. Full-game startup is unverified.",
+    "html_url": "https://github.com/R0Y00/Xbox2Windows",
+    "topics": [
+      "d3d12",
+      "directx-raytracing",
+      "scarlett",
+      "static-recompilation",
+      "windows",
+      "xbox",
+      "xbox-series-x"
+    ],
+    "created_at": "2026-11-20T17:43:52Z",
+    "updated_at": "2026-11-27T16:47:43Z",
+    "pushed_at": "2026-11-27T16:22:59Z",
+    "license": "MIT",
+    "open_issues": 252,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-20T17:43:52Z",
+        "description": "Static recompilation research for Xbox Series X|S software on x64 Windows, with source-built CPU and GPU tests. Full-game startup is unverified.",
+        "html_url": "https://github.com/R0Y00/Xbox2Windows",
+        "stars": 2032,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-22T13:30:50Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 16
+    }
+  },
+  {
+    "full_name": "realdody/americas-recomp",
+    "captured_at": "2026-11-23T12:49:29Z",
+    "stars": 558,
+    "forks": 87,
+    "language": null,
+    "description": null,
+    "html_url": "https://github.com/realdody/americas-recomp",
+    "topics": [],
+    "created_at": "2026-11-20T15:33:20Z",
+    "updated_at": "2026-11-23T12:44:32Z",
+    "pushed_at": "2026-11-23T10:03:50Z",
+    "license": "GPL-2.0",
+    "open_issues": 20,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-23T12:49:29Z",
+        "created_at": "2026-11-20T15:33:20Z",
+        "description": null,
+        "html_url": "https://github.com/realdody/americas-recomp",
+        "stars": 558,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-22T19:43:30Z",
+      "last_seen": "2026-11-23T12:49:29Z",
+      "observations": 4
+    }
+  },
+  {
+    "full_name": "replit/datacat",
+    "captured_at": "2026-11-24T23:55:41Z",
+    "stars": 605,
+    "forks": 68,
+    "language": "TypeScript",
+    "description": "Self-hosted observability: metrics, logs, traces, dashboards and alerts. Stores data in PostgreSQL or ClickHouse. Accepts OpenTelemetry data.",
+    "html_url": "https://github.com/replit/datacat",
+    "topics": [
+      "alerting",
+      "apm",
+      "clickhouse",
+      "dashboards",
+      "logging",
+      "metrics",
+      "monitoring",
+      "observability",
+      "opentelemetry",
+      "postgresql",
+      "self-hosted",
+      "tracing"
+    ],
+    "created_at": "2026-11-17T02:51:06Z",
+    "updated_at": "2026-11-24T20:34:10Z",
+    "pushed_at": "2026-11-23T21:23:26Z",
+    "license": "Apache-2.0",
+    "open_issues": 0,
+    "default_branch": "develop",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T23:55:41Z",
+        "created_at": "2026-11-17T02:51:06Z",
+        "description": "Self-hosted observability: metrics, logs, traces, dashboards and alerts. Stores data in PostgreSQL or ClickHouse. Accepts OpenTelemetry data.",
+        "html_url": "https://github.com/replit/datacat",
+        "stars": 605,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T11:07:34Z",
+      "last_seen": "2026-11-24T23:55:41Z",
+      "observations": 11
+    }
+  },
+  {
+    "full_name": "Reukix/Reloc",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1376,
+    "forks": 273,
+    "language": "Swift",
+    "description": "iOS accessory-level location simulator over local loopback (iAP2 / MFi-v3 / NMEA)",
+    "html_url": "https://github.com/Reukix/Reloc",
+    "topics": [],
+    "created_at": "2026-11-25T17:29:48Z",
+    "updated_at": "2026-11-27T16:47:42Z",
+    "pushed_at": "2026-11-27T11:21:20Z",
+    "license": "AGPL-3.0",
+    "open_issues": 10,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-25T17:29:48Z",
+        "description": "iOS accessory-level location simulator over local loopback (iAP2 / MFi-v3 / NMEA)",
+        "html_url": "https://github.com/Reukix/Reloc",
+        "stars": 1376,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-27T04:19:21Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "rowanbyte3329/stardew-valley-mod-manager",
+    "captured_at": "2026-11-25T17:23:15Z",
+    "stars": 871,
+    "forks": 0,
+    "language": "C#",
+    "description": "Free open-source Stardew Valley mod manager for Windows with SMAPI support, mod updates, and custom mod profiles.",
+    "html_url": "https://github.com/rowanbyte3329/stardew-valley-mod-manager",
+    "topics": [
+      "avaloniaui",
+      "cross-platform",
+      "csharp",
+      "desktop",
+      "dotnet",
+      "game-modding",
+      "game-mods",
+      "gaming",
+      "mod-management",
+      "modmanager",
+      "open-source",
+      "productivity",
+      "stardew-valley",
+      "stardew-valley-mods",
+      "windows"
+    ],
+    "created_at": "2026-11-23T21:21:35Z",
+    "updated_at": "2026-11-25T05:24:43Z",
+    "pushed_at": "2026-11-23T21:22:01Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-25T17:23:15Z",
+        "created_at": "2026-11-23T21:21:35Z",
+        "description": "Free open-source Stardew Valley mod manager for Windows with SMAPI support, mod updates, and custom mod profiles.",
+        "html_url": "https://github.com/rowanbyte3329/stardew-valley-mod-manager",
+        "stars": 871,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-25T17:23:15Z",
+      "last_seen": "2026-11-25T17:23:15Z",
+      "observations": 1
+    }
+  },
+  {
+    "full_name": "siliconjungle/shapeshift-labs-ink-studio",
+    "captured_at": "2026-11-23T12:49:29Z",
+    "stars": 1056,
+    "forks": 88,
+    "language": "JavaScript",
+    "description": "Sculpting, animation and simulation toolkit for pixel-art Gaussian splats",
+    "html_url": "https://github.com/siliconjungle/shapeshift-labs-ink-studio",
+    "topics": [],
+    "created_at": "2026-11-16T07:44:00Z",
+    "updated_at": "2026-11-23T12:26:08Z",
+    "pushed_at": "2026-11-23T12:45:28Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-23T12:49:29Z",
+        "created_at": "2026-11-16T07:44:00Z",
+        "description": "Sculpting, animation and simulation toolkit for pixel-art Gaussian splats",
+        "html_url": "https://github.com/siliconjungle/shapeshift-labs-ink-studio",
+        "stars": 1056,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-23T12:49:29Z",
+      "observations": 7
+    }
+  },
+  {
+    "full_name": "solv4626/steam-achievement-manager-windows",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1067,
+    "forks": 1,
+    "language": "Rust",
+    "description": "Free open-source Steam Achievement Manager for Windows to manage game achievements and edit Steam game statistics.",
+    "html_url": "https://github.com/solv4626/steam-achievement-manager-windows",
+    "topics": [
+      "achievement-management",
+      "achievements",
+      "desktop",
+      "desktop-application",
+      "game-stats",
+      "game-utility",
+      "games",
+      "gaming",
+      "gaming-tools",
+      "gtk",
+      "gui",
+      "linux",
+      "open-source",
+      "productivity",
+      "steam",
+      "steam-achievement-manager",
+      "windows"
+    ],
+    "created_at": "2026-11-23T21:31:33Z",
+    "updated_at": "2026-11-27T16:48:14Z",
+    "pushed_at": "2026-11-23T21:32:09Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-23T21:31:33Z",
+        "description": "Free open-source Steam Achievement Manager for Windows to manage game achievements and edit Steam game statistics.",
+        "html_url": "https://github.com/solv4626/steam-achievement-manager-windows",
+        "stars": 1066,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-25T17:23:15Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 6
+    }
+  },
+  {
+    "full_name": "sous-labs/songe",
+    "captured_at": "2026-11-27T04:19:21Z",
+    "stars": 909,
+    "forks": 74,
+    "language": "Python",
+    "description": "A training engine for your local model, using your idle compute",
+    "html_url": "https://github.com/sous-labs/songe",
+    "topics": [
+      "coding-agents",
+      "distillation",
+      "fine-tuning",
+      "llm",
+      "local-llm",
+      "lora",
+      "mlx"
+    ],
+    "created_at": "2026-11-20T11:01:20Z",
+    "updated_at": "2026-11-27T03:07:18Z",
+    "pushed_at": "2026-11-27T02:40:40Z",
+    "license": "Apache-2.0",
+    "open_issues": 19,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T04:19:21Z",
+        "created_at": "2026-11-20T11:01:20Z",
+        "description": "A training engine for your local model, using your idle compute",
+        "html_url": "https://github.com/sous-labs/songe",
+        "stars": 909,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T23:46:47Z",
+      "last_seen": "2026-11-27T04:19:21Z",
+      "observations": 7
+    }
+  },
+  {
+    "full_name": "sshkeda/minecraft-server-on-orange-cloud",
+    "captured_at": "2026-11-24T02:15:01Z",
+    "stars": 421,
+    "forks": 9,
+    "language": "TypeScript",
+    "description": "Run a Minecraft Java server entirely on Cloudflare. Sleeps when nobody's playing.",
+    "html_url": "https://github.com/sshkeda/minecraft-server-on-orange-cloud",
+    "topics": [
+      "bun",
+      "cloudflare",
+      "cloudflare-containers",
+      "cloudflare-workers",
+      "durable-objects",
+      "effect",
+      "minecraft",
+      "minecraft-server",
+      "papermc",
+      "spectrum",
+      "typescript"
+    ],
+    "created_at": "2026-11-21T02:36:03Z",
+    "updated_at": "2026-11-24T00:52:55Z",
+    "pushed_at": "2026-11-21T08:57:40Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T02:15:01Z",
+        "created_at": "2026-11-21T02:36:03Z",
+        "description": "Run a Minecraft Java server entirely on Cloudflare. Sleeps when nobody's playing.",
+        "html_url": "https://github.com/sshkeda/minecraft-server-on-orange-cloud",
+        "stars": 421,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T02:00:48Z",
+      "last_seen": "2026-11-24T02:15:01Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "sybil-solutions/inference-optimisation-skill",
+    "captured_at": "2026-11-23T12:49:29Z",
+    "stars": 2047,
+    "forks": 192,
+    "language": "Python",
+    "description": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization",
+    "html_url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+    "topics": [
+      "agent-skill",
+      "benchmarking",
+      "claude-code",
+      "inference",
+      "llm",
+      "speculative-decoding"
+    ],
+    "created_at": "2026-11-16T18:40:04Z",
+    "updated_at": "2026-11-23T12:47:33Z",
+    "pushed_at": "2026-11-16T18:40:08Z",
+    "license": "MIT",
+    "open_issues": 20,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-23T12:49:29Z",
+        "created_at": "2026-11-16T18:40:04Z",
+        "description": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization",
+        "html_url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+        "stars": 2047,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-23T12:49:29Z",
+      "observations": 7
+    }
+  },
+  {
+    "full_name": "sybil-solutions/skill-distill",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 980,
+    "forks": 84,
+    "language": "Python",
+    "description": "Distill a good Claude Code / Codex session into a skill an open-weight model can follow to reproduce the task",
+    "html_url": "https://github.com/sybil-solutions/skill-distill",
+    "topics": [],
+    "created_at": "2026-11-21T01:43:00Z",
+    "updated_at": "2026-11-27T16:13:27Z",
+    "pushed_at": "2026-11-21T03:48:01Z",
+    "license": "MIT",
+    "open_issues": 2,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-21T01:43:00Z",
+        "description": "Distill a good Claude Code / Codex session into a skill an open-weight model can follow to reproduce the task",
+        "html_url": "https://github.com/sybil-solutions/skill-distill",
+        "stars": 980,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-23T01:46:02Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 13
+    }
+  },
+  {
+    "full_name": "ThreatDefence/agentic-attack-detections",
+    "captured_at": "2026-11-24T23:55:41Z",
+    "stars": 625,
+    "forks": 131,
+    "language": "Python",
+    "description": "Detection rules and IOCs for AI agent attack frameworks: ARTEX, Cairn, PentAGI, HexStrike, CyberStrikeAI, Strix, Hermes Agent, Agent Zero, RedAmon, Xalgorix, Pentest Swarm AI. KQL hunts for Microsoft Sentinel and Defender XDR, Sigma, Suricata, Zeek, YARA, Splunk, Elastic, STIX 2.1.",
+    "html_url": "https://github.com/ThreatDefence/agentic-attack-detections",
+    "topics": [
+      "agentic-ai",
+      "ai-security",
+      "blue-team",
+      "defender-xdr",
+      "detection-engineering",
+      "ioc",
+      "kql",
+      "llm-security",
+      "microsoft-sentinel",
+      "sigma",
+      "sigma-rules",
+      "stix",
+      "suricata",
+      "suricata-rules",
+      "threat-detection",
+      "threat-hunting",
+      "threat-intelligence",
+      "yara",
+      "yara-rules",
+      "zeek"
+    ],
+    "created_at": "2026-11-20T00:06:24Z",
+    "updated_at": "2026-11-24T23:42:17Z",
+    "pushed_at": "2026-11-24T23:28:34Z",
+    "license": "MIT",
+    "open_issues": 7,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T23:55:41Z",
+        "created_at": "2026-11-20T00:06:24Z",
+        "description": "Detection rules and IOCs for AI agent attack frameworks: ARTEX, Cairn, PentAGI, HexStrike, CyberStrikeAI, Strix, Hermes Agent, Agent Zero, RedAmon, Xalgorix, Pentest Swarm AI. KQL hunts for Microsoft Sentinel and Defender XDR, Sigma, Suricata, Zeek, YARA, Splunk, Elastic, STIX 2.1.",
+        "html_url": "https://github.com/ThreatDefence/agentic-attack-detections",
+        "stars": 625,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-23T01:46:02Z",
+      "last_seen": "2026-11-24T23:55:41Z",
+      "observations": 7
+    }
+  },
+  {
+    "full_name": "toeverything/AFFiNE",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 79295,
+    "forks": 5804,
+    "language": "TypeScript",
+    "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use. ",
+    "html_url": "https://github.com/toeverything/AFFiNE",
+    "topics": [
+      "app",
+      "crdt",
+      "editor",
+      "electron",
+      "knowledge-base",
+      "markdown",
+      "miro",
+      "notes",
+      "notion",
+      "notion-alternative",
+      "rust",
+      "rust-lang",
+      "rust-language",
+      "table",
+      "tableview",
+      "whiteboard",
+      "wiki",
+      "workspace"
+    ],
+    "created_at": "2022-07-31T18:45:21Z",
+    "updated_at": "2026-11-27T16:44:11Z",
+    "pushed_at": "2026-11-27T16:31:06Z",
+    "license": "Other",
+    "open_issues": 658,
+    "default_branch": "canary",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+        "full_name": "toeverything/AFFiNE",
+        "language": "TypeScript",
+        "trending_stars_period": 676,
+        "trending_total_forks": null,
+        "trending_total_stars": 75999,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "Tracer-Cloud/opensre",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 16036,
+    "forks": 2125,
+    "language": "Python",
+    "description": "The open-source agent for CI/CD reliability.",
+    "html_url": "https://github.com/Tracer-Cloud/opensre",
+    "topics": [
+      "alerting",
+      "ci-cd",
+      "cli",
+      "datadog",
+      "devops",
+      "gitlab-ci",
+      "grafana",
+      "incident-management",
+      "llm",
+      "observability",
+      "ollama",
+      "remediation",
+      "root-cause-analysis",
+      "site-reliability-engineering",
+      "slack"
+    ],
+    "created_at": "2026-01-13T00:04:47Z",
+    "updated_at": "2026-11-27T16:47:26Z",
+    "pushed_at": "2026-11-27T00:57:58Z",
+    "license": "Apache-2.0",
+    "open_issues": 31,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "The open-source agent for CI/CD reliability.",
+        "full_name": "Tracer-Cloud/opensre",
+        "language": "Python",
+        "trending_stars_period": 466,
+        "trending_total_forks": null,
+        "trending_total_stars": 13773,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "tradermonty/claude-trading-skills",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 8698,
+    "forks": 1569,
+    "language": "Python",
+    "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+    "html_url": "https://github.com/tradermonty/claude-trading-skills",
+    "topics": [],
+    "created_at": "2025-10-19T16:37:29Z",
+    "updated_at": "2026-11-27T16:40:42Z",
+    "pushed_at": "2026-11-27T12:55:07Z",
+    "license": "MIT",
+    "open_issues": 51,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+        "full_name": "tradermonty/claude-trading-skills",
+        "language": "Python",
+        "trending_stars_period": 3471,
+        "trending_total_forks": null,
+        "trending_total_stars": 7513,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "trustno1-coder/VIctory-NVIDIA",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1159,
+    "forks": 397,
+    "language": "Rust",
+    "description": "VIctory (Xbox Series compatibility layer) tuned for NVIDIA RTX cards: Series X at 2560x1440 with DLSS, about 26-30 fps on an RTX 5070, DLSS frame generation 2x-6x, an F1 settings menu and F3 stats panel, open water without dark blocks. Built on many repos combined into one. No game files or NVIDIA files included.",
+    "html_url": "https://github.com/trustno1-coder/VIctory-NVIDIA",
+    "topics": [
+      "compatibility-layer",
+      "directx-12",
+      "dlss",
+      "frame-generation",
+      "nvidia",
+      "rust"
+    ],
+    "created_at": "2026-11-25T23:35:29Z",
+    "updated_at": "2026-11-27T16:48:15Z",
+    "pushed_at": "2026-11-27T13:40:39Z",
+    "license": "GPL-3.0",
+    "open_issues": 44,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-25T23:35:29Z",
+        "description": "VIctory (Xbox Series compatibility layer) tuned for NVIDIA RTX cards: Series X at 2560x1440 with DLSS, about 26-30 fps on an RTX 5070, DLSS frame generation 2x-6x, an F1 settings menu and F3 stats panel, open water without dark blocks. Built on many repos combined into one. No game files or NVIDIA files included.",
+        "html_url": "https://github.com/trustno1-coder/VIctory-NVIDIA",
+        "stars": 1156,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-27T16:47:54Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 1
+    }
+  },
+  {
+    "full_name": "TurtleReside/Gemini-Config-Checker-",
+    "captured_at": "2026-11-22T20:56:37Z",
+    "stars": 469,
+    "forks": 0,
+    "language": "Go",
+    "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+    "html_url": "https://github.com/TurtleReside/Gemini-Config-Checker-",
+    "topics": [
+      "ai",
+      "ai-search",
+      "aichecker",
+      "chatgpt",
+      "cli",
+      "config-checker",
+      "gemeni",
+      "gemeni-checker",
+      "generative-ai",
+      "lim-seo",
+      "llm",
+      "mcp-server",
+      "nextjs",
+      "open-code",
+      "seo-checker",
+      "seo-tool",
+      "typescript"
+    ],
+    "created_at": "2026-11-15T16:46:04Z",
+    "updated_at": "2026-11-21T19:37:43Z",
+    "pushed_at": "2026-11-15T16:47:00Z",
+    "license": "Apache-2.0",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "created_at": "2026-11-15T16:46:04Z",
+        "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+        "html_url": "https://github.com/TurtleReside/Gemini-Config-Checker-",
+        "stars": 472,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-22T20:56:37Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "ubiquitarianism/leonida",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 2606,
+    "forks": 589,
+    "language": "Python",
+    "description": "A continuation of Leonida, the Xbox > PC port interface for GTA VI",
+    "html_url": "https://github.com/ubiquitarianism/leonida",
+    "topics": [],
+    "created_at": "2026-11-23T23:54:39Z",
+    "updated_at": "2026-11-27T16:18:39Z",
+    "pushed_at": "2026-11-27T16:26:46Z",
+    "license": "GPL-3.0",
+    "open_issues": 1565,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-23T23:54:39Z",
+        "description": "A continuation of Leonida, the Xbox > PC port interface for GTA VI",
+        "html_url": "https://github.com/ubiquitarianism/leonida",
+        "stars": 2606,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T13:46:47Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 9
+    }
+  },
+  {
+    "full_name": "Umbra9179/clipboard-history-manager-windows",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1270,
+    "forks": 1,
+    "language": "C#",
+    "description": "Free open-source Windows clipboard manager with searchable history, image previews, tags, editing and backup.",
+    "html_url": "https://github.com/Umbra9179/clipboard-history-manager-windows",
+    "topics": [
+      "clipboard",
+      "clipboard-history",
+      "clipboard-manager",
+      "desktop-app",
+      "desktop-application",
+      "dotnet",
+      "fluent",
+      "open-source",
+      "productivity",
+      "utility",
+      "windows",
+      "windows-10",
+      "windows-11",
+      "windows-app-sdk",
+      "windows-application",
+      "winui"
+    ],
+    "created_at": "2026-11-23T21:40:15Z",
+    "updated_at": "2026-11-27T16:46:58Z",
+    "pushed_at": "2026-11-23T21:40:42Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-23T21:40:15Z",
+        "description": "Free open-source Windows clipboard manager with searchable history, image previews, tags, editing and backup.",
+        "html_url": "https://github.com/Umbra9179/clipboard-history-manager-windows",
+        "stars": 1270,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-25T17:23:15Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 6
+    }
+  },
+  {
+    "full_name": "w01fb0ss/PiBot",
+    "captured_at": "2026-11-24T13:46:47Z",
+    "stars": 542,
+    "forks": 77,
+    "language": "TypeScript",
+    "description": "Open-source, local-first AI agent team for your desktop: multi-agent group chats, computer use, browser, MCP, routines and approvals. macOS, Windows, Linux + Android. Built on pi.",
+    "html_url": "https://github.com/w01fb0ss/PiBot",
+    "topics": [
+      "agent",
+      "ai-agent",
+      "ai-agents",
+      "ai-assistant",
+      "android",
+      "automation",
+      "chatgpt",
+      "coding-agent",
+      "computer-use",
+      "desktop-app",
+      "electron",
+      "llm",
+      "local-first",
+      "mcp",
+      "multi-agent",
+      "ollama",
+      "openai",
+      "privacy",
+      "self-hosted",
+      "typescript"
+    ],
+    "created_at": "2026-11-21T06:54:24Z",
+    "updated_at": "2026-11-24T13:46:52Z",
+    "pushed_at": "2026-11-24T12:27:30Z",
+    "license": "Apache-2.0",
+    "open_issues": 10,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T13:46:47Z",
+        "created_at": "2026-11-21T06:54:24Z",
+        "description": "Open-source, local-first AI agent team for your desktop: multi-agent group chats, computer use, browser, MCP, routines and approvals. macOS, Windows, Linux + Android. Built on pi.",
+        "html_url": "https://github.com/w01fb0ss/PiBot",
+        "stars": 541,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-23T01:46:02Z",
+      "last_seen": "2026-11-24T13:46:47Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "we-promise/sure",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 18184,
+    "forks": 1580,
+    "language": "Ruby",
+    "description": "The personal finance app for everyone (by everyone)",
+    "html_url": "https://github.com/we-promise/sure",
+    "topics": [],
+    "created_at": "2025-07-23T04:13:55Z",
+    "updated_at": "2026-11-27T16:16:09Z",
+    "pushed_at": "2026-11-27T09:19:41Z",
+    "license": "AGPL-3.0",
+    "open_issues": 1184,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "description": "The personal finance app for everyone (by everyone)",
+        "full_name": "we-promise/sure",
+        "language": "Ruby",
+        "trending_stars_period": 2476,
+        "trending_total_forks": null,
+        "trending_total_stars": 17003,
+        "type": "trending_weekly"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "weightcashiercupola/Gemini-Config-Checker-",
+    "captured_at": "2026-11-22T20:56:37Z",
+    "stars": 470,
+    "forks": 0,
+    "language": "Makefile",
+    "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+    "html_url": "https://github.com/weightcashiercupola/Gemini-Config-Checker-",
+    "topics": [
+      "ai",
+      "ai-search",
+      "aichecker",
+      "chatgpt",
+      "cli",
+      "config-checker",
+      "gemeni",
+      "gemeni-checker",
+      "generative-ai",
+      "lim-seo",
+      "llm",
+      "mcp-server",
+      "nextjs",
+      "open-code",
+      "seo-checker",
+      "seo-tool",
+      "typescript"
+    ],
+    "created_at": "2026-11-15T16:47:11Z",
+    "updated_at": "2026-11-21T19:37:39Z",
+    "pushed_at": "2026-11-15T16:48:06Z",
+    "license": "Apache-2.0",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "created_at": "2026-11-15T16:47:11Z",
+        "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+        "html_url": "https://github.com/weightcashiercupola/Gemini-Config-Checker-",
+        "stars": 473,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-22T20:56:37Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "weldbladesmithwharf/Gemini-Config-Checker-",
+    "captured_at": "2026-11-22T20:56:37Z",
+    "stars": 469,
+    "forks": 0,
+    "language": "Makefile",
+    "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+    "html_url": "https://github.com/weldbladesmithwharf/Gemini-Config-Checker-",
+    "topics": [
+      "ai",
+      "ai-search",
+      "aichecker",
+      "chatgpt",
+      "cli",
+      "config-checker",
+      "gemeni",
+      "gemeni-checker",
+      "generative-ai",
+      "lim-seo",
+      "llm",
+      "mcp-server",
+      "nextjs",
+      "open-code",
+      "seo-checker",
+      "seo-tool",
+      "typescript"
+    ],
+    "created_at": "2026-11-15T16:47:11Z",
+    "updated_at": "2026-11-21T19:37:39Z",
+    "pushed_at": "2026-11-15T16:48:07Z",
+    "license": "Apache-2.0",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "created_at": "2026-11-15T16:47:11Z",
+        "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+        "html_url": "https://github.com/weldbladesmithwharf/Gemini-Config-Checker-",
+        "stars": 472,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-22T20:56:37Z",
+      "observations": 4
+    }
+  },
+  {
+    "full_name": "WerewolfEmuHub/Gemini-Config-Checker-",
+    "captured_at": "2026-11-21T02:19:04Z",
+    "stars": 472,
+    "forks": 0,
+    "language": "Go",
+    "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+    "html_url": "https://github.com/WerewolfEmuHub/Gemini-Config-Checker-",
+    "topics": [
+      "ai",
+      "ai-search",
+      "aichecker",
+      "chatgpt",
+      "cli",
+      "config-checker",
+      "gemeni",
+      "gemeni-checker",
+      "generative-ai",
+      "lim-seo",
+      "llm",
+      "mcp-server",
+      "nextjs",
+      "open-code",
+      "seo-checker",
+      "seo-tool",
+      "typescript"
+    ],
+    "created_at": "2026-11-15T16:47:11Z",
+    "updated_at": "2026-11-19T09:39:44Z",
+    "pushed_at": "2026-11-15T16:48:11Z",
+    "license": "Apache-2.0",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T02:19:04Z",
+        "created_at": "2026-11-15T16:47:11Z",
+        "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+        "html_url": "https://github.com/WerewolfEmuHub/Gemini-Config-Checker-",
+        "stars": 472,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-21T02:19:04Z",
+      "observations": 1
+    }
+  },
+  {
+    "full_name": "WindGatorRise37/Gemini-Config-Checker-",
+    "captured_at": "2026-11-22T20:56:37Z",
+    "stars": 469,
+    "forks": 0,
+    "language": "Makefile",
+    "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+    "html_url": "https://github.com/WindGatorRise37/Gemini-Config-Checker-",
+    "topics": [
+      "ai",
+      "ai-search",
+      "aichecker",
+      "chatgpt",
+      "cli",
+      "config-checker",
+      "gemeni",
+      "gemeni-checker",
+      "generative-ai",
+      "lim-seo",
+      "llm",
+      "mcp-server",
+      "nextjs",
+      "open-code",
+      "seo-checker",
+      "seo-tool",
+      "typescript"
+    ],
+    "created_at": "2026-11-15T16:47:17Z",
+    "updated_at": "2026-11-21T19:09:36Z",
+    "pushed_at": "2026-11-15T16:48:17Z",
+    "license": "Apache-2.0",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "created_at": "2026-11-15T16:47:17Z",
+        "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+        "html_url": "https://github.com/WindGatorRise37/Gemini-Config-Checker-",
+        "stars": 472,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-22T20:56:37Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "WindowStaffGate11/Gemini-Config-Checker-",
+    "captured_at": "2026-11-21T02:19:04Z",
+    "stars": 472,
+    "forks": 0,
+    "language": "Makefile",
+    "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+    "html_url": "https://github.com/WindowStaffGate11/Gemini-Config-Checker-",
+    "topics": [
+      "ai",
+      "ai-search",
+      "aichecker",
+      "chatgpt",
+      "cli",
+      "config-checker",
+      "gemeni",
+      "gemeni-checker",
+      "generative-ai",
+      "lim-seo",
+      "llm",
+      "mcp-server",
+      "nextjs",
+      "open-code",
+      "seo-checker",
+      "seo-tool",
+      "typescript"
+    ],
+    "created_at": "2026-11-15T16:47:18Z",
+    "updated_at": "2026-11-19T09:39:41Z",
+    "pushed_at": "2026-11-15T16:48:20Z",
+    "license": "Apache-2.0",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T02:19:04Z",
+        "created_at": "2026-11-15T16:47:18Z",
+        "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+        "html_url": "https://github.com/WindowStaffGate11/Gemini-Config-Checker-",
+        "stars": 472,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-21T02:19:04Z",
+      "observations": 1
+    }
+  },
+  {
+    "full_name": "WyrmClimberManacle/Gemini-Config-Checker-",
+    "captured_at": "2026-11-22T20:56:37Z",
+    "stars": 469,
+    "forks": 1,
+    "language": "Makefile",
+    "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+    "html_url": "https://github.com/WyrmClimberManacle/Gemini-Config-Checker-",
+    "topics": [
+      "ai",
+      "ai-search",
+      "aichecker",
+      "chatgpt",
+      "cli",
+      "config-checker",
+      "gemeni",
+      "gemeni-checker",
+      "generative-ai",
+      "lim-seo",
+      "llm",
+      "mcp-server",
+      "nextjs",
+      "open-code",
+      "seo-checker",
+      "seo-tool",
+      "typescript"
+    ],
+    "created_at": "2026-11-15T16:48:18Z",
+    "updated_at": "2026-11-21T19:03:00Z",
+    "pushed_at": "2026-11-15T16:49:29Z",
+    "license": "Apache-2.0",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "created_at": "2026-11-15T16:48:18Z",
+        "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+        "html_url": "https://github.com/WyrmClimberManacle/Gemini-Config-Checker-",
+        "stars": 472,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-22T20:56:37Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "xcl-dev/xcl",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 8694,
+    "forks": 1213,
+    "language": "Rust",
+    "description": "Xbox Series compatibility layer for Windows - runs console game code natively, reimplements the console system libraries and recompiles RDNA2 shaders to DXIL",
+    "html_url": "https://github.com/xcl-dev/xcl",
+    "topics": [
+      "d3d12",
+      "gdk",
+      "rdna2",
+      "xbox"
+    ],
+    "created_at": "2026-11-20T20:03:21Z",
+    "updated_at": "2026-11-27T16:32:42Z",
+    "pushed_at": "2026-11-27T16:16:53Z",
+    "license": "GPL-3.0",
+    "open_issues": 1964,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-20T20:03:21Z",
+        "description": "Xbox Series compatibility layer for Windows - runs console game code natively, reimplements the console system libraries and recompiles RDNA2 shaders to DXIL",
+        "html_url": "https://github.com/xcl-dev/xcl",
+        "stars": 8694,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T23:46:47Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 8
+    }
+  },
+  {
+    "full_name": "XiaoYouChR/Ghost-Downloader-3",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 19686,
+    "forks": 1227,
+    "language": "Python",
+    "description": "The only downloader you need. 下载器的集大成者。",
+    "html_url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+    "topics": [
+      "async",
+      "asyncio",
+      "bittorent",
+      "bt",
+      "cross-platform",
+      "download-manager",
+      "downloader",
+      "fluent-design",
+      "ftp",
+      "http3",
+      "magnet",
+      "pyqt",
+      "pyside6",
+      "python",
+      "qt",
+      "quic",
+      "react",
+      "software",
+      "streaming"
+    ],
+    "created_at": "2023-08-16T04:23:44Z",
+    "updated_at": "2026-11-27T16:47:13Z",
+    "pushed_at": "2026-11-26T14:05:12Z",
+    "license": "GPL-3.0",
+    "open_issues": 120,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T23:55:41Z",
+        "description": "The only downloader you need. 下载器的集大成者。",
+        "full_name": "XiaoYouChR/Ghost-Downloader-3",
+        "language": "Python",
+        "trending_stars_period": 1102,
+        "trending_total_forks": null,
+        "trending_total_stars": 17299,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "xikhar/papercraft",
+    "captured_at": "2026-11-27T04:19:21Z",
+    "stars": 833,
+    "forks": 90,
+    "language": "JavaScript",
+    "description": "Agent skill to build games, interactive scenes, web pages and animations in a handcrafted pop-up papercraft style",
+    "html_url": "https://github.com/xikhar/papercraft",
+    "topics": [],
+    "created_at": "2026-11-21T00:29:56Z",
+    "updated_at": "2026-11-27T04:19:35Z",
+    "pushed_at": "2026-11-21T17:37:19Z",
+    "license": "MIT",
+    "open_issues": 2,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T04:19:21Z",
+        "created_at": "2026-11-21T00:29:56Z",
+        "description": "Agent skill to build games, interactive scenes, web pages and animations in a handcrafted pop-up papercraft style",
+        "html_url": "https://github.com/xikhar/papercraft",
+        "stars": 832,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-24T02:00:48Z",
+      "last_seen": "2026-11-27T04:19:21Z",
+      "observations": 8
+    }
+  },
+  {
+    "full_name": "YellowLaborerMarket/Gemini-Config-Checker-",
+    "captured_at": "2026-11-22T20:56:37Z",
+    "stars": 471,
+    "forks": 0,
+    "language": "Makefile",
+    "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+    "html_url": "https://github.com/YellowLaborerMarket/Gemini-Config-Checker-",
+    "topics": [
+      "ai",
+      "ai-search",
+      "aichecker",
+      "chatgpt",
+      "cli",
+      "config-checker",
+      "gemeni",
+      "gemeni-checker",
+      "generative-ai",
+      "lim-seo",
+      "llm",
+      "mcp-server",
+      "nextjs",
+      "open-code",
+      "seo-checker",
+      "seo-tool",
+      "typescript"
+    ],
+    "created_at": "2026-11-15T16:48:18Z",
+    "updated_at": "2026-11-21T19:02:59Z",
+    "pushed_at": "2026-11-15T16:49:31Z",
+    "license": "Apache-2.0",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "created_at": "2026-11-15T16:48:18Z",
+        "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) ",
+        "html_url": "https://github.com/YellowLaborerMarket/Gemini-Config-Checker-",
+        "stars": 474,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-22T20:56:37Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "yetanotherbrowser/yab",
+    "captured_at": "2026-11-21T11:07:34Z",
+    "stars": 766,
+    "forks": 83,
+    "language": "Swift",
+    "description": "Yab, yet another browser: a fast native macOS browser with an iPhone and Android companion",
+    "html_url": "https://github.com/yetanotherbrowser/yab",
+    "topics": [],
+    "created_at": "2026-11-14T23:56:32Z",
+    "updated_at": "2026-11-21T06:25:04Z",
+    "pushed_at": "2026-11-21T07:04:03Z",
+    "license": "Apache-2.0",
+    "open_issues": 961,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-21T11:07:34Z",
+        "created_at": "2026-11-14T23:56:32Z",
+        "description": "Yab, yet another browser: a fast native macOS browser with an iPhone and Android companion",
+        "html_url": "https://github.com/yetanotherbrowser/yab",
+        "stars": 766,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-21T11:07:34Z",
+      "observations": 2
+    }
+  },
+  {
+    "full_name": "zero5122/offline-file-converter-windows",
+    "captured_at": "2026-11-27T04:19:21Z",
+    "stars": 1072,
+    "forks": 2,
+    "language": "Python",
+    "description": "Free offline file converter for Windows – convert PDF, documents, images, audio and video privately.",
+    "html_url": "https://github.com/zero5122/offline-file-converter-windows",
+    "topics": [
+      "audio-converter",
+      "batch-conversion",
+      "conversion",
+      "convert",
+      "converter",
+      "desktop-app",
+      "document-conversion",
+      "file-conversion",
+      "file-converter",
+      "file-converter-pro",
+      "image-converter",
+      "offline",
+      "open-source",
+      "pdf",
+      "pdf-converter",
+      "pyside6",
+      "python",
+      "qt",
+      "video-converter",
+      "windows"
+    ],
+    "created_at": "2026-11-23T21:38:47Z",
+    "updated_at": "2026-11-26T22:17:18Z",
+    "pushed_at": "2026-11-23T21:39:16Z",
+    "license": "MIT",
+    "open_issues": 0,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T04:19:21Z",
+        "created_at": "2026-11-23T21:38:47Z",
+        "description": "Free offline file converter for Windows – convert PDF, documents, images, audio and video privately.",
+        "html_url": "https://github.com/zero5122/offline-file-converter-windows",
+        "stars": 1072,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-25T17:23:15Z",
+      "last_seen": "2026-11-27T04:19:21Z",
+      "observations": 5
+    }
+  },
+  {
+    "full_name": "zhouxiaoka/autoclip",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 17465,
+    "forks": 2463,
+    "language": "Python",
+    "description": "AutoClip｜The open-source OpusClip alternative — local-first AI clipping & MCP server, zero subscriptions. 一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。",
+    "html_url": "https://github.com/zhouxiaoka/autoclip",
+    "topics": [
+      "ai-agent",
+      "ai-video-editor",
+      "claude-code",
+      "content-repurposing",
+      "desktop-app",
+      "douyin",
+      "instagram-reels",
+      "local-first",
+      "mcp",
+      "mcp-server",
+      "open-source",
+      "opusclip-alternative",
+      "podcast",
+      "subtitles",
+      "tiktok",
+      "video-clipping",
+      "video-editing-software",
+      "whisper",
+      "xiaohongshu",
+      "youtube-shorts"
+    ],
+    "created_at": "2025-07-08T04:51:15Z",
+    "updated_at": "2026-11-27T16:46:17Z",
+    "pushed_at": "2026-11-27T16:44:21Z",
+    "license": "MIT",
+    "open_issues": 34,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-24T23:55:41Z",
+        "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+        "full_name": "zhouxiaoka/autoclip",
+        "language": "Python",
+        "trending_stars_period": 981,
+        "trending_total_forks": null,
+        "trending_total_stars": 15309,
+        "type": "trending_daily"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-21T02:19:04Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 18
+    }
+  },
+  {
+    "full_name": "ZigZagBoi1/ScarlettPort",
+    "captured_at": "2026-11-27T16:47:54Z",
+    "stars": 1097,
+    "forks": 144,
+    "language": "Rust",
+    "description": "Native PC port layer for an Xbox Series X|S title: the game's x64 code runs on your CPU and its RDNA2 GPU code is recompiled for your graphics card. Bring your own files.",
+    "html_url": "https://github.com/ZigZagBoi1/ScarlettPort",
+    "topics": [
+      "amd",
+      "compatibility-layer",
+      "d3d12",
+      "directx12",
+      "dxil",
+      "game-port",
+      "native-port",
+      "nvidia",
+      "pc-port",
+      "rust",
+      "shader-recompiler",
+      "shader-translation",
+      "victory",
+      "windows",
+      "xbox",
+      "xbox-series-s",
+      "xbox-series-x"
+    ],
+    "created_at": "2026-11-24T09:36:26Z",
+    "updated_at": "2026-11-27T16:47:03Z",
+    "pushed_at": "2026-11-27T16:20:21Z",
+    "license": "Other",
+    "open_issues": 12,
+    "default_branch": "main",
+    "sources": [
+      {
+        "captured_at": "2026-11-27T16:47:54Z",
+        "created_at": "2026-11-24T09:36:26Z",
+        "description": "Native PC port layer for an Xbox Series X|S title: the game's x64 code runs on your CPU and its RDNA2 GPU code is recompiled for your graphics card. Bring your own files.",
+        "html_url": "https://github.com/ZigZagBoi1/ScarlettPort",
+        "stars": 1097,
+        "type": "new_repo_search"
+      }
+    ],
+    "readme_excerpt": null,
+    "observation": {
+      "first_seen": "2026-11-27T16:47:54Z",
+      "last_seen": "2026-11-27T16:47:54Z",
+      "observations": 1
+    }
+  }
+]
