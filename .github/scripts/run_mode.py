@@ -7,19 +7,37 @@ from pathlib import Path
 import daily_run
 import weekly_run
 
-COLLECTION_CRON = "17 */3 * * *"
+SPLIT_WORKFLOW_CONTRACT = 1
+COLLECTION_CRON = "17 */2 * * *"
+LEGACY_COLLECTION_CRON = "17 */3 * * *"
 PUBLICATION_CRON = "0 7 * * 1"  # Retired; delayed events are collection-only.
 DAILY_CRON = "0 15 * * *"
 
 
 def choose(env):
+    operation = env.get("RUN_OPERATION", "")
+    if operation:
+        event = env.get("EVENT_NAME")
+        if operation not in ("collect", "preview", "publish"):
+            raise ValueError("Unknown workflow operation")
+        if event == "schedule":
+            expected = {"collect": COLLECTION_CRON, "publish": DAILY_CRON}.get(operation)
+            if expected is None or env.get("EVENT_SCHEDULE") != expected:
+                raise ValueError("Schedule does not match workflow operation")
+        elif event != "workflow_dispatch":
+            raise ValueError("Unsupported workflow operation event")
+        if operation == "collect":
+            return "collect", False, False
+        if operation == "preview":
+            return "daily-offline-preview", False, False
+        return ("daily-digest", True, True) if daily_run.delivery_enabled(env) else ("daily-preview", False, False)
     enabled = env.get("DIGEST_DELIVERY_ENABLED") == "true"
     edition = env.get("DIGEST_FORMAT", "") or "weekly"
     if edition not in ("daily", "weekly"):
         raise ValueError("Unknown digest format")
     if env.get("EVENT_NAME") == "schedule":
         schedule = env.get("EVENT_SCHEDULE")
-        if schedule == COLLECTION_CRON:
+        if schedule in (COLLECTION_CRON, LEGACY_COLLECTION_CRON):
             return "collect", False, False
         if schedule == DAILY_CRON:
             return ("daily-digest", True, True) if daily_run.delivery_enabled(env) else ("daily-preview", False, False)
@@ -72,12 +90,17 @@ def choose(env):
 
 def select_plan(env, now, weekly_receipts, daily_receipts, state):
     chosen = choose(env)
-    if env.get("EVENT_NAME") == "schedule":
-        if env.get("EVENT_SCHEDULE") == PUBLICATION_CRON:
-            return chosen, "daily-only-retired-weekly-schedule"
-        # Both the evening deadline and collection ticks recover only daily work.
-        # No weekly ACK, preview receipt or backlog may select a weekly sender.
+    operation = env.get("RUN_OPERATION", "")
+    if operation == "collect":
+        return chosen, "daily-collection-only"
+    if operation == "preview":
+        return chosen, "daily-offline-preview"
+    if operation == "publish":
         return daily_run.recovery_mode(env, now, daily_receipts, state)
+    if env.get("EVENT_NAME") == "schedule":
+        if env.get("EVENT_SCHEDULE") == DAILY_CRON:
+            return daily_run.recovery_mode(env, now, daily_receipts, state)
+        return chosen, "daily-collection-only"
     if env.get("RECOVER_WEEKLY") == "true":
         return weekly_run.recovery_mode(env, now, weekly_receipts, state)
     return chosen, "explicit-manual-request"

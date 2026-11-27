@@ -2,9 +2,9 @@
 #[cfg(test)]
 mod tests;
 use crate::clock::Clock;
+use crate::timestamp::Timestamp;
 use crate::{Snapshot, stamp, write_json};
 use anyhow::{Result, anyhow};
-use chrono::{DateTime, Duration, Utc};
 use reqwest::blocking::Client;
 use reqwest::header::{ACCEPT, USER_AGENT};
 use scraper::{Html, Selector};
@@ -15,6 +15,7 @@ use std::{
     path::{Path, PathBuf},
     time::Duration as StdDuration,
 };
+use time::SignedDuration as Duration;
 
 const API: &str = "https://api.github.com";
 const README_LIMIT: usize = 5_000;
@@ -182,7 +183,7 @@ fn source_entry(source: &str, url: &str, pagination: &str) -> Value {
 }
 
 pub(super) fn collect(
-    now: DateTime<Utc>,
+    now: Timestamp,
     runs: &Path,
     http: &dyn SourceHttp,
     clock: &dyn Clock,
@@ -203,11 +204,7 @@ pub(super) fn collect(
                 fs::write(dir.join(format!("trending-{period}.html")), &bytes)?;
                 let html = String::from_utf8_lossy(&bytes);
                 let rows = parse_trending(&html);
-                entry["fetched_at"] = json!(
-                    clock
-                        .now()
-                        .to_rfc3339_opts(chrono::SecondsFormat::Secs, true)
-                );
+                entry["fetched_at"] = json!(clock.now().rfc3339_seconds());
                 entry["parsed_candidates"] = json!(rows.len());
                 entry["complete"] = json!(!rows.is_empty());
                 entry["status"] = json!(if rows.is_empty() { "error" } else { "included" });
@@ -228,18 +225,14 @@ pub(super) fn collect(
                 }
             }
             Err(e) => {
-                entry["fetched_at"] = json!(
-                    clock
-                        .now()
-                        .to_rfc3339_opts(chrono::SecondsFormat::Secs, true)
-                );
+                entry["fetched_at"] = json!(clock.now().rfc3339_seconds());
                 entry["reason"] = json!(format!("fetch failed: {e:#}"));
             }
         }
         sources.push(entry);
     }
-    let from = (now - Duration::days(7)).date_naive();
-    let query = format!("created:>={}", from.format("%Y-%m-%d"));
+    let from = (now - Duration::days(7)).date();
+    let query = format!("created:>={from}");
     let mut url = reqwest::Url::parse(&format!("{API}/search/repositories"))?;
     url.query_pairs_mut()
         .append_pair("q", &query)
@@ -258,11 +251,7 @@ pub(super) fn collect(
             fs::write(dir.join("search-new-repos.json"), &bytes)?;
             let val: Value = serde_json::from_slice(&bytes)?;
             let items = val["items"].as_array().cloned().unwrap_or_default();
-            search_entry["fetched_at"] = json!(
-                clock
-                    .now()
-                    .to_rfc3339_opts(chrono::SecondsFormat::Secs, true)
-            );
+            search_entry["fetched_at"] = json!(clock.now().rfc3339_seconds());
             search_entry["complete"] = json!(
                 items.len() < 30
                     && val["incomplete_results"] != true
@@ -297,11 +286,7 @@ pub(super) fn collect(
         Err(e) => {
             let m = format!("{e:#}");
             api_blocked = m.contains("HTTP 403") || m.contains("HTTP 429");
-            search_entry["fetched_at"] = json!(
-                clock
-                    .now()
-                    .to_rfc3339_opts(chrono::SecondsFormat::Secs, true)
-            );
+            search_entry["fetched_at"] = json!(clock.now().rfc3339_seconds());
             search_entry["reason"] = json!(format!("fetch failed: {m}"));
         }
     }
@@ -322,11 +307,7 @@ pub(super) fn collect(
             "single repository response",
         );
         if api_blocked {
-            info["fetched_at"] = json!(
-                clock
-                    .now()
-                    .to_rfc3339_opts(chrono::SecondsFormat::Secs, true)
-            );
+            info["fetched_at"] = json!(clock.now().rfc3339_seconds());
             info["status"] = json!("excluded");
             info["reason"] = json!("skipped after GitHub API rate-limit response");
             api_records.push(info);
@@ -349,7 +330,7 @@ pub(super) fn collect(
                 };
                 let snap = Snapshot {
                     full_name: candidate.name.clone(),
-                    captured_at: now.to_rfc3339_opts(chrono::SecondsFormat::Secs, true),
+                    captured_at: now.rfc3339_seconds(),
                     stars: v["stargazers_count"].as_i64(),
                     forks: v["forks_count"].as_i64(),
                     language: v["language"].as_str().map(str::to_string),
@@ -377,11 +358,7 @@ pub(super) fn collect(
                     readme_excerpt: None,
                     observation: None,
                 };
-                info["fetched_at"] = json!(
-                    clock
-                        .now()
-                        .to_rfc3339_opts(chrono::SecondsFormat::Secs, true)
-                );
+                info["fetched_at"] = json!(clock.now().rfc3339_seconds());
                 info["complete"] = json!(true);
                 info["status"] = json!("included");
                 info["reason"] = json!("metadata captured");
@@ -394,18 +371,14 @@ pub(super) fn collect(
                 if m.contains("HTTP 403") || m.contains("HTTP 429") {
                     api_blocked = true;
                 }
-                info["fetched_at"] = json!(
-                    clock
-                        .now()
-                        .to_rfc3339_opts(chrono::SecondsFormat::Secs, true)
-                );
+                info["fetched_at"] = json!(clock.now().rfc3339_seconds());
                 info["reason"] = json!(format!("fetch failed: {m}"));
             }
         }
         api_records.push(info);
         clock.sleep(StdDuration::from_millis(100));
     }
-    let manifest = json!({"captured_at":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),"sources":sources,"candidate_policy":"All identities returned by configured Trending pages and bounded Search page are retained, including covered repositories and metadata failures; weekly selection happens later; not a global GitHub census.","candidate_count":snapshots.len(),"excluded_candidates":[],"api_repositories":api_records,"validation_notes":[]});
+    let manifest = json!({"captured_at":now.rfc3339_seconds(),"sources":sources,"candidate_policy":"All identities returned by configured Trending pages and bounded Search page are retained, including covered repositories and metadata failures; weekly selection happens later; not a global GitHub census.","candidate_count":snapshots.len(),"excluded_candidates":[],"api_repositories":api_records,"validation_notes":[]});
     write_json(&dir.join("candidate-observations.json"), &snapshots)?;
     write_json(&dir.join("manifest.json"), &manifest)?;
     Ok(RunData {
@@ -415,7 +388,7 @@ pub(super) fn collect(
     })
 }
 
-fn observed(candidate: &Candidate, now: DateTime<Utc>) -> Result<Snapshot> {
+fn observed(candidate: &Candidate, now: Timestamp) -> Result<Snapshot> {
     let field = |name: &str| {
         candidate
             .sources
@@ -424,7 +397,7 @@ fn observed(candidate: &Candidate, now: DateTime<Utc>) -> Result<Snapshot> {
     };
     Ok(serde_json::from_value(json!({
         "full_name":candidate.name,
-        "captured_at":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
+        "captured_at":now.rfc3339_seconds(),
         "stars":field("stars"),"description":field("description"),
         "html_url":field("html_url").unwrap_or_else(|| json!(format!("https://github.com/{}", candidate.name))),
         "created_at":field("created_at"),"language":field("language"),
@@ -477,11 +450,7 @@ pub(super) fn enrich_readmes(
                     )?;
                     let full = String::from_utf8_lossy(&bytes).to_string();
                     let excerpt: String = full.chars().take(README_LIMIT).collect();
-                    info["fetched_at"] = json!(
-                        clock
-                            .now()
-                            .to_rfc3339_opts(chrono::SecondsFormat::Secs, true)
-                    );
+                    info["fetched_at"] = json!(clock.now().rfc3339_seconds());
                     info["complete"] = json!(true);
                     info["status"] = json!("included");
                     info["reason"] = json!("raw README captured; bounded excerpt used for model");
@@ -489,11 +458,7 @@ pub(super) fn enrich_readmes(
                     snap.readme_excerpt = Some(excerpt);
                 }
                 Err(e) => {
-                    info["fetched_at"] = json!(
-                        clock
-                            .now()
-                            .to_rfc3339_opts(chrono::SecondsFormat::Secs, true)
-                    );
+                    info["fetched_at"] = json!(clock.now().rfc3339_seconds());
                     if let Some(error) = e.downcast_ref::<HttpStatusError>() {
                         info["http_status"] = json!(error.status.as_u16());
                     }

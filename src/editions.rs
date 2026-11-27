@@ -1,13 +1,14 @@
 //! Durable discovery queues. Observations are never consumed by a preview or a cap.
 //! Each format acknowledges only names actually included in a completed delivery.
+use crate::timestamp::Timestamp;
 use crate::{Ranked, Snapshot, State, parse_time, schedule};
 use anyhow::{Context, Result, ensure};
-use chrono::{DateTime, Duration, Utc};
 use serde::{Deserialize, Serialize};
 use serde_json::{Value, json};
 use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
 use std::path::Path;
+use time::SignedDuration as Duration;
 
 pub(super) const DAILY_LIMIT: usize = 12;
 const DAILY_FRESH_LIMIT: usize = 8;
@@ -26,10 +27,10 @@ impl Format {
         }
     }
 
-    pub(super) fn slot(self, now: DateTime<Utc>) -> String {
+    pub(super) fn slot(self, now: Timestamp) -> String {
         match self {
             Self::Weekly => crate::slot_key_of(now),
-            Self::Daily => format!("daily:{}", (now - Duration::hours(15)).date_naive()),
+            Self::Daily => format!("daily:{}", (now - Duration::hours(15)).date()),
         }
     }
 
@@ -52,7 +53,7 @@ pub(super) struct Ledger {
     #[serde(default)]
     analyses: BTreeMap<String, Analysis>,
     #[serde(default)]
-    daily_retry_at: BTreeMap<String, DateTime<Utc>>,
+    daily_retry_at: BTreeMap<String, Timestamp>,
 }
 
 #[derive(Clone, Serialize, Deserialize)]
@@ -95,7 +96,7 @@ pub(super) fn was_published(state: &State, format: Format, name: &str) -> bool {
 
 /// This is a persistent queue, not a rolling seven-day eligibility filter.
 /// The raw snapshots are its durable records; the format's receipts are its ACKs.
-pub(super) fn pending(state: &State, now: DateTime<Utc>, format: Format) -> Vec<Snapshot> {
+pub(super) fn pending(state: &State, now: Timestamp, format: Format) -> Vec<Snapshot> {
     schedule::all_candidates(state, now)
         .into_iter()
         .filter(|row| !was_published(state, format, &row.full_name))
@@ -110,7 +111,7 @@ fn first_seen(snapshot: &Snapshot) -> &str {
         .unwrap_or(&snapshot.captured_at)
 }
 
-pub(super) fn daily_retry_at(state: &State, name: &str) -> Option<DateTime<Utc>> {
+pub(super) fn daily_retry_at(state: &State, name: &str) -> Option<Timestamp> {
     state
         .editions
         .daily_retry_at
@@ -118,7 +119,7 @@ pub(super) fn daily_retry_at(state: &State, name: &str) -> Option<DateTime<Utc>>
         .copied()
 }
 
-pub(super) fn defer_daily(state: &mut State, name: &str, now: DateTime<Utc>) -> DateTime<Utc> {
+pub(super) fn defer_daily(state: &mut State, name: &str, now: Timestamp) -> Timestamp {
     let retry_at = now + Duration::hours(24);
     state
         .editions
@@ -161,7 +162,7 @@ pub(super) fn select(
     current: &[Snapshot],
     state: &State,
     format: Format,
-    now: DateTime<Utc>,
+    now: Timestamp,
 ) -> (Vec<Ranked>, Vec<Value>) {
     if format == Format::Weekly {
         return crate::select_candidates(current, &state.covered);
@@ -295,7 +296,7 @@ pub(super) fn remember_analyses(state: &mut State, digest: &Value) {
 pub(super) fn decorate(
     digest: &mut Value,
     current: &[Snapshot],
-    now: DateTime<Utc>,
+    now: Timestamp,
     format: Format,
     directory: &Path,
 ) -> Result<()> {
@@ -323,8 +324,7 @@ pub(super) fn decorate(
         .count();
     digest["edition"] = json!(format.name());
     digest["delivery_slot"] = json!(format.slot(now));
-    digest["period_start"] =
-        json!((now - Duration::days(days)).to_rfc3339_opts(chrono::SecondsFormat::Secs, true));
+    digest["period_start"] = json!((now - Duration::days(days)).rfc3339_seconds());
     digest["catalogue"] = json!(catalogue);
     digest["queue"] = json!({"pending_before":current.len(),"detailed":detailed.len(),
         "catalogue":catalogue.len(),"carried_from_earlier_periods":carried,
@@ -496,7 +496,7 @@ pub(super) fn acknowledge(state: &mut State, digest: &Value, day: &str) -> Resul
 /// Frozen pending payloads survive date/week changes. Never trim or regenerate them.
 pub(super) fn pending_issues(
     state: &State,
-    now: DateTime<Utc>,
+    now: Timestamp,
     format: Format,
 ) -> Result<Vec<(String, Value, String)>> {
     let mut issues = Vec::new();
@@ -520,7 +520,7 @@ pub(super) fn pending_issues(
     Ok(issues)
 }
 
-pub(super) fn resume(state: &mut State, now: DateTime<Utc>, format: Format) -> Result<()> {
+pub(super) fn resume(state: &mut State, now: Timestamp, format: Format) -> Result<()> {
     for (id, digest, slot) in pending_issues(state, now, format)? {
         if state.sent_slots.contains_key(&slot) {
             state.pending_digests.remove(&id);
@@ -535,13 +535,7 @@ pub(super) fn resume(state: &mut State, now: DateTime<Utc>, format: Format) -> R
             .as_str()
             .and_then(parse_time)
             .context("invalid pending timestamp")?;
-        crate::telegram_deliver_digest(
-            &digest,
-            &id,
-            &generated.date_naive().to_string(),
-            &slot,
-            state,
-        )?;
+        crate::telegram_deliver_digest(&digest, &id, &generated.date().to_string(), &slot, state)?;
     }
     Ok(())
 }
@@ -555,7 +549,7 @@ pub(super) fn preview_retained(args: &[String]) -> Result<()> {
     ensure!(!directory.exists(), "preview output directory must be new");
     let now = match args.iter().find_map(|arg| arg.strip_prefix("--at=")) {
         Some(value) => parse_time(value).context("invalid --at timestamp")?,
-        None => Utc::now(),
+        None => Timestamp::now(),
     };
     let format = if args.iter().any(|arg| arg == "--daily") {
         Format::Daily
@@ -578,8 +572,8 @@ pub(super) fn preview_retained(args: &[String]) -> Result<()> {
             "evidence_quote":cached.as_ref().map(|value| value.evidence_quote.as_str()).unwrap_or(""),
             "llm_used":cached.is_some()})
     }).collect();
-    let mut digest = json!({"format_version":3,"edition":format.name(),"generated_at":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
-        "delivery_slot":format.slot(now),"period_end":now.to_rfc3339_opts(chrono::SecondsFormat::Secs,true),
+    let mut digest = json!({"format_version":3,"edition":format.name(),"generated_at":now.rfc3339_seconds(),
+        "delivery_slot":format.slot(now),"period_end":now.rfc3339_seconds(),
         "entries":entries,"llm_used":false,"preview_kind":"retained-offline",
         "llm_budget":{"reason":"Offline preview: saved source descriptions only; no new provider requests"},
         "manifest":{"sources":[],"note":"Read-only replay of retained state; no source collection or delivery"}});
@@ -603,7 +597,7 @@ pub(super) fn preview_retained(args: &[String]) -> Result<()> {
 mod tests {
     use super::*;
 
-    fn time(value: &str) -> DateTime<Utc> {
+    fn time(value: &str) -> Timestamp {
         parse_time(value).unwrap()
     }
     fn row(name: &str, at: &str, metric: i64) -> Snapshot {
@@ -906,7 +900,7 @@ mod tests {
             acknowledge(
                 &mut state,
                 &issue(names, Format::Daily),
-                &now.date_naive().to_string(),
+                &now.date().to_string(),
             )
             .unwrap();
         }

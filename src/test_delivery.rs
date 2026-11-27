@@ -1,11 +1,11 @@
 //! Optional test-only target guard and server-acknowledged payload evidence.
 //! No secrets or chat metadata are copied into the receipt artifact.
+use crate::timestamp::Timestamp;
 use anyhow::{Context, Result, ensure};
-use chrono::{DateTime, Utc};
 use serde_json::{Value, json};
 use std::{env, fs, io::Write, path::Path};
 
-fn validate_target(chat: &str, expected: &str, until: &str, now: DateTime<Utc>) -> Result<()> {
+fn validate_target(chat: &str, expected: &str, until: &str, now: Timestamp) -> Result<()> {
     ensure!(
         !expected.is_empty() && chat == expected,
         "test delivery target mismatch"
@@ -21,7 +21,7 @@ pub(super) fn guard(chat: &str) -> Result<()> {
             chat,
             &env::var("TELEGRAM_TECH_CHAT_ID").unwrap_or_default(),
             &env::var("DIGEST_TEST_UNTIL").unwrap_or_default(),
-            Utc::now(),
+            Timestamp::now(),
         )?;
     }
     Ok(())

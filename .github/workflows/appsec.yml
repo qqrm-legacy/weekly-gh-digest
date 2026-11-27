@@ -15,6 +15,5 @@ jobs:
     uses: qqrm-labs/.github/.github/workflows/security.yml@e92efba3e5c6602e28860d91aa6d77c8f2c73b7c
     with:
       language: rust
-      # CodeQL requires Code Security, which is unavailable for this private repository.
-      # Gitleaks, workflow auditing, and the Rust CI security checks remain enabled.
-      codeql-mode: unavailable
+      # The transferred repository is public; require CodeQL rather than the private-only exemption.
+      codeql-mode: advanced

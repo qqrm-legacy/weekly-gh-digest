@@ -26,15 +26,21 @@ def delivery_enabled(env):
 
 
 def recovery_mode(env, now, receipts, state):
-    # Never turn morning collection into an early daily publication.
-    if now.astimezone(timezone.utc).hour < 15:
-        return ("collect", False, False), "daily-before-evening-deadline"
+    # Only a publication event calls this function. Before 15:00 UTC the
+    # latest due slot is yesterday, including a delayed publication event.
     key = slot(now)
     sent = state.get("sent_slots", {})
     if not isinstance(sent, dict):
         raise ValueError("Invalid authoritative sent_slots")
+    pending = state.get("pending_digests", {})
+    if not isinstance(pending, dict):
+        raise ValueError("Invalid authoritative pending_digests")
+    if delivery_enabled(env) and any(
+            isinstance(item, dict) and item.get("edition") == "daily"
+            and item.get("delivery_slot") not in sent for item in pending.values()):
+        return ("daily-digest", True, True), "daily-resume-pending"
     if key in sent:
-        return ("collect", False, False), "daily-already-delivered"
+        return ("skip", False, False), "daily-already-delivered"
     receipt = weekly_run.receipt_map(receipts).get(key)
     if receipt is not None:
         if (not isinstance(receipt, dict) or receipt.get("slot") != key
@@ -43,7 +49,7 @@ def recovery_mode(env, now, receipts, state):
                 or not str(receipt.get("artifact_id", "")).isdigit()):
             raise ValueError("Invalid daily artifact receipt")
         if not delivery_enabled(env):
-            return ("collect", False, False), "daily-preview-artifact-already-saved"
+            return ("skip", False, False), "daily-preview-artifact-already-saved"
     if delivery_enabled(env):
         return ("daily-digest", True, True), "daily-delivery-due"
     return ("daily-preview", False, env.get("PREVIEW_WITH_LLM") == "true"), "daily-preview-due"

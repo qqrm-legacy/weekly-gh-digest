@@ -1,0 +1,16 @@
+name: Collect Observations
+
+on:
+  schedule:
+    - cron: '17 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  collect:
+    uses: ./.github/workflows/run-bot.yml
+    with:
+      operation: collect
